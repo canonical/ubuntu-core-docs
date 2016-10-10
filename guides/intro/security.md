@@ -18,7 +18,7 @@ device can be seen with:
 
     $ snap interfaces
 
-The description of these interfaces is found in `interfaces.md`.
+The description of these interfaces is found in the [interfaces reference](reference/interfaces.md).
 
 Each command declared in `apps` by the snap is tracked by the system by
 assigning a security label to the command. This security label takes the form
