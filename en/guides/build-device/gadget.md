@@ -22,7 +22,7 @@ In additional to traditional snap metadata, the gadget snap also holds some setu
 
 Sample configuration files may be found in the [reference gadget snaps](https://github.com/CanonicalLtd/ubuntu-core-docs/blob/master/en/reference/gadget.md#user-content-examples-of-production-ready-gagdet-snaps).
 
-# gadget.yaml
+## gadget.yaml
 
 <!---
 Source: https://github.com/CanonicalLtd/ubuntu-image/blob/master/docs/gadget-yaml.rst
