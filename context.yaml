@@ -10,30 +10,30 @@ navigation:
             #location: guides/intro/architecture-overview.md
 
           - title: Security and sandboxing
-            location: guides/intro/security.md
+            location: en/guides/intro/security.md
 
           - title: Store and developer accounts
-            location: guides/intro/store.md
+            location: en/guides/intro/store.md
 
       - title: Build a device
 
         children:
           - title: Ubuntu Core images
-            location: guides/build-device/image-building.md
+            location: en/guides/build-device/image-building.md
 
           - title: Gadget snaps
-            location: guides/build-device/gadget.md
+            location: en/guides/build-device/gadget.md
 
           - title: Kernel porting and requirements
 
           - title: Configuration and hooks
-            location: guides/build-device/config-hooks.md
+            location: en/guides/build-device/config-hooks.md
 
-          - title: Assertions and signature keys
-            location: guides/build-device/assertions.md
+          - title: Assertions and signatures
+            location: en/guides/build-device/assertions.md
 
-          - title: Interfaces and snap declarations
-            location: guides/build-device/interfaces.md
+          - title: Interfaces
+            location: en/guides/build-device/interfaces.md
 
           - title: Debugging
 
@@ -41,6 +41,8 @@ navigation:
 
         children:
           - title: First boot experience
+
+          - title: User creation
 
           - title: Auto-updates and rollbacks
 
@@ -51,20 +53,20 @@ navigation:
 
         children:
           - title: Assertions types and syntax
-            location: reference/assertions.html
+            location: en/reference/assertions.md
 
           - title: Gadget snap syntax
-            location: reference/gadget.html
+            location: en/reference/gadget.md
 
           - title: Core interfaces reference
-            location: reference/interfaces.html
+            location: en/reference/interfaces.md
 
           - title: Snapd rest API reference
-            location: reference/rest.html
+            location: en/reference/rest.md
 
 
       - title: Build snaps
         location: http://snapcraft.io
 
       - title: Report a docs issue
-        location: https://github.com/CanonicalLtd/ubuntu-core-docs/issues/new
+        location: https://bugs.launchpad.net/snappy/+bugs?field.tag=snap-docs

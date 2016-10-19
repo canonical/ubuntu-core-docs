@@ -1,8 +1,8 @@
 ---
-title: Assertions syntax
+title: Assertions types and syntax
 ---
 
-# Supported assertions types and syntax
+# Assertions types and syntax
 
 The following assertions are currently supported:
 

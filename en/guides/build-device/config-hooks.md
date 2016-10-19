@@ -1,6 +1,8 @@
 ---
-title: Hooks
+title: Configuration and Hooks
 ---
+
+# Configuration and hooks
 
 There are a number of situations where snapd needs to notify a snap that
 something has happened. For example, when a snap is upgraded, it may need to run

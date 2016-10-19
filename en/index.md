@@ -1,15 +1,17 @@
 ---
-title: Welcome the Ubuntu Core documentation
+title: What is Ubuntu Core?
 ---
 
-# Welcome to the Ubuntu Core documentation
+# What is Ubuntu Core?
 
-## Concepts and terms
+Ubuntu Core is a minimalist rendition of Ubuntu. It is a lightweight, transactionally updated OS, where every application is installed confined from others. It is designed to run securely on autonomous machines, devices and other internet-connected digital things.
 
-### Snaps
+## What Ubuntu Core offers
 
-A snap is a packaged app. It has a read-only squashFS filesystem containing your app code, a snap.yaml file and metadata. Once installed, it also has selected writable areas for the app. It is self-contained and bundles most of the libraries and runtimes it needs. It can be updated and reverted without affecting the rest of the OS. It is confined from the OS and other snaps through security mechanisms, but can exchange content and functions with them according to fine-grained policies controlled by the user and the OS defaults.
+* Faster, more reliable and stronger security guarantees for apps and users.
+* Atomic transactional upgrades for apps and the OS itself, all of which can be rolled back if needed, for simple maintenance and upgrades.
+* Separation of OS and application files as a set of distinct read-only images, to easily and securely add multiple apps and functionalities onto a single device.
+* A new, simpler application packaging system to make it easier for developers to build and maintain apps within a application store model.
+* Signature authentication to prove that what’s running is exactly what developers have published, for greater end user security.
 
-### snapd
-
-snapd is the utility that allows you to manage snaps on a system. You can interact with it through the `snap` command.
+This documentation will walk you through the steps to install and manage Ubuntu Core on any device as well as creating your own Ubuntu Core images.

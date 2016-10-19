@@ -1,7 +1,7 @@
 ---
 title: Gadget snap reference and syntax
 ---
-# Gadget reference and syntax
+# Gadget snap reference and syntax
 
 ## Setup files
 

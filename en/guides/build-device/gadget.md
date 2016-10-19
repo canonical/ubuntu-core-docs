@@ -14,15 +14,15 @@ Canonical publishes [reference gadget snaps](../../reference/gadget.md#user-cont
 
 ## The `prepare-device` hook
 
-The optional `prepare-device` [hook](https://github.com/CanonicalLtd/ubuntu-core-docs/blob/master/en/guides/build-device/config-hooks.md) will be called on the gadget at the
-start of the device initialization process, after the gadget snap has
-been installed. The hook will also be called if this process is retried
+The optional `prepare-device` [hook](config-hooks.html) is a script that will be called on the gadget at the start of the device initialization process, after the gadget snap has been installed. The hook will also be called if this process is retried
 later from scratch in case of initialization failures.
 
 The device initialization process is for example responsible of setting
 the serial identification of the device through an exchange with a
 device service. The `prepare-device` hook can for example redirect this
 exchange and dynamically set options relevant to it.
+
+Like other hooks, the script should be an executable with the name of the hook triggering it and be in the `meta/hooks/` directory of your snap.
 
 ### Example
 

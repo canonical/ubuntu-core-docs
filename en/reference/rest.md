@@ -2,6 +2,8 @@
 title: Ubuntu Core REST API
 ---
 
+# Ubuntu Core REST API
+
 Version: v2pre0
 
 You can interface with snapd on any ubuntu-core system using its REST API.
