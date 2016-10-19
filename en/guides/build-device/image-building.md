@@ -1,6 +1,9 @@
 ---
 title: "Image building"
 ---
+
+# Build an Ubuntu Core image
+
 This document will walk you through all the steps to build an image for a device. You will learn how to:
 
 *   Create and upload a signature key to the store

@@ -2,45 +2,45 @@
 title: Assertions syntax
 ---
 
-A summary of the supported assertions of snapd with their syntax.
+# Supported assertions types and syntax
 
-## Account
+The following assertions are currently supported:
 
-Account holds an account assertion, which ties a name for an to its
-identifier and provides the authority's confidence in the name's
-validity.
+## account
 
-## AccountKey
+The account assertion ties a name for an to its identifier and provides the authority's confidence in the name's validity.
 
-AccountKey holds an account-key assertion, asserting a public key
-belonging to the account.
+## account-key
 
-## Model
+The account-key assertion holds a public key belonging to the account.
 
-Model holds a model assertion, which is a statement by a brand
-about the properties of a device model.
+## model
 
-## Serial
+The model assertion is a statement by a brand about the properties of a device model. See [Image building](/guides/build-device/image-building.html#1.-create-a-model-assertion) for a real-world example
 
-Serial holds a serial assertion, which is a statement binding a
-device identity with the device public key.
+## serial
 
-## SnapDeclaration
+The serial assertion is a statement binding a device identity with the device public key.
 
-SnapDeclaration holds a snap-declaration assertion, declaring a
-snap binding its identifying snap-id to a name, asserting its
-publisher and its other properties.
+## snap-declaration
 
-## SnapBuild
+The snap-declaration assertion defines some of the properties of the snap, such as the snap-id, the official name, the publisher, and so on.
 
-SnapBuild holds a snap-build assertion, asserting the properties of a snap
-at the time it was built by the developer.
+## snap-build
 
-## SnapRevision
+The snap-build assertion defines the basic properties of a snap at the time it was built by the developer.
 
-SnapRevision holds a snap-revision assertion, which is a statement by the
-store acknowledging the receipt of a build of a snap and labeling it with a
-snap revision.
+## snap-revision
+
+The snap-revision assertion is a statement by the store acknowledging the receipt of a build of a snap and labeling it with a snap revision.
+
+## system-user
+
+The system-user assertion is a permit by the brand for local system users to be created on its specified devices.
+
+## validation
+
+The validation assertion defines that a combination of (snap-id, approved-snap-id, approved-revision) has been validated for a given series, meaning refreshing to that revision of approved-snap-id has been approved by the owner of the gating snap with snap-id.
 
 ## System-user
 
