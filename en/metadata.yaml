@@ -1,0 +1,71 @@
+navigation:
+  - title: Introduction
+
+    children:
+      - title: About Ubuntu Core
+        #location: guides/intro/about-core.md
+
+      - title: Architecture overview
+        #location: guides/intro/architecture-overview.md
+
+      - title: Security and sandboxing
+        location: guides/intro/security.md
+
+      - title: Store and developer accounts
+        location: guides/intro/store.md
+
+  - title: Build a device
+
+    children:
+      - title: Ubuntu Core images
+        location: guides/build-device/image-building.md
+
+      - title: Gadget snaps
+        location: guides/build-device/gadget.md
+
+      - title: Kernel porting and requirements
+
+      - title: Configuration and hooks
+        location: guides/build-device/config-hooks.md
+
+      - title: Assertions and signatures
+        location: guides/build-device/assertions.md
+
+      - title: Interfaces
+        location: guides/build-device/interfaces.md
+
+      - title: Debugging
+
+  - title: Manage devices
+
+    children:
+      - title: First boot experience
+
+      - title: User creation
+
+      - title: Auto-updates and rollbacks
+
+      - title: Distribution and continuous integration
+
+
+  - title: Reference
+
+    children:
+      - title: Assertions types and syntax
+        location: reference/assertions.md
+
+      - title: Gadget snap syntax
+        location: reference/gadget.md
+
+      - title: Core interfaces reference
+        location: reference/interfaces.md
+
+      - title: Snapd rest API reference
+        location: reference/rest.md
+
+
+  - title: Build snaps
+    location: http://snapcraft.io
+
+  - title: Report a docs issue
+    location: https://bugs.launchpad.net/snappy/+bugs?field.tag=snap-docs
