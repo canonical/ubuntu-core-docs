@@ -2,11 +2,11 @@ navigation:
   - title: Introduction
 
     children:
-      - title: About Ubuntu Core
-        #location: guides/intro/about-core.md
+#       - title: About Ubuntu Core
+#        location: guides/intro/about-core.md
 
-      - title: Architecture overview
-        #location: guides/intro/architecture-overview.md
+#      - title: Architecture overview
+#        location: guides/intro/architecture-overview.md
 
       - title: Security and sandboxing
         location: guides/intro/security.md
@@ -23,7 +23,7 @@ navigation:
       - title: Gadget snaps
         location: guides/build-device/gadget.md
 
-      - title: Kernel porting and requirements
+#      - title: Kernel porting and requirements
 
       - title: Configuration and hooks
         location: guides/build-device/config-hooks.md
@@ -34,18 +34,18 @@ navigation:
       - title: Interfaces
         location: guides/build-device/interfaces.md
 
-      - title: Debugging
+#      - title: Debugging
 
-  - title: Manage devices
+#  - title: Manage devices
 
-    children:
-      - title: First boot experience
+#    children:
+#      - title: First boot experience
 
-      - title: User creation
+#      - title: User creation
 
-      - title: Auto-updates and rollbacks
+#      - title: Auto-updates and rollbacks
 
-      - title: Distribution and continuous integration
+#      - title: Distribution and continuous integration
 
 
   - title: Reference
