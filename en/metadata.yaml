@@ -2,6 +2,8 @@ navigation:
   - title: Introduction
 
     children:
+      - title: What is Ubuntu Core?
+        location: index.md
 #       - title: About Ubuntu Core
 #        location: guides/intro/about-core.md
 
