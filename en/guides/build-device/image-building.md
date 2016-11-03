@@ -4,9 +4,9 @@ title: "Ubuntu Core images"
 
 # Ubuntu Core images
 
-Official Ubuntu Core images for supported devices can be found on ...
+Official Ubuntu Core images for supported devices can be found [here](http://cdimage.ubuntu.com/ubuntu-core/16/stable).
 
-[Install Ubuntu Core on your device &rsaquo;](#)
+[Install Ubuntu Core on your device &rsaquo;](https://developer.ubuntu.com/en/snappy/start/)
 
 ## Build a custom Ubuntu Core image
 

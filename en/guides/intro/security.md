@@ -1,6 +1,8 @@
 ---
-title: Snap security policy and sandboxing
+title: Security and sandboxing
 ---
+
+# Security and sandboxing
 
 Snap packages run confined under a restrictive security sandbox by default.
 The security policies and store policies work together to allow developers to
@@ -9,7 +11,8 @@ quickly update their applications and to provide safety to end users.
 This document describes the sandbox and how to configure and work with the security policies for snap
 packages.
 
-## How policy is applied
+## How the security policy is applied
+
 Application authors should not have to know about or understand the low level
 implementation details on how security policy is enforced. Instead, all snaps
 run under default security policy which can be extended through the use of
@@ -18,7 +21,7 @@ device can be seen with:
 
     $ snap interfaces
 
-The description of these interfaces is found in the [interfaces reference](reference/interfaces.md).
+The description of these interfaces is found in the [interfaces reference](../../reference/interfaces.html).
 
 Each command declared in `apps` by the snap is tracked by the system by
 assigning a security label to the command. This security label takes the form

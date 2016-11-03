@@ -1,7 +1,7 @@
 ---
-title: Gadget snap reference and syntax
+title: Gadget snap syntax
 ---
-# Gadget snap reference and syntax
+# Gadget snap syntax
 
 ## Setup files
 
@@ -140,7 +140,7 @@ Used with the following directory structure:
     ├── (...)
     └── README
 
-## Examples of "production ready" gagdet snaps
+## Examples of production-ready gagdet snaps
 
 - [Beagleblack](http://bazaar.launchpad.net/~snappy-dev/snappy-hub/snappy-systems/files/head:/beagleblack/)
 - [Dragonboard](http://bazaar.launchpad.net/~snappy-dev/snappy-hub/snappy-systems/files/head:/dragonboard/)

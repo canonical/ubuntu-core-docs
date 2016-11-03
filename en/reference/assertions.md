@@ -1,8 +1,8 @@
 ---
-title: Assertions types and syntax
+title: Assertions types
 ---
 
-# Assertions types and syntax
+# Assertions types
 
 The following assertions are currently supported:
 
@@ -16,7 +16,7 @@ The account-key assertion holds a public key belonging to the account.
 
 ## model
 
-The model assertion is a statement by a brand about the properties of a device model. See [Image building](/guides/build-device/image-building.html#1.-create-a-model-assertion) for a real-world example
+The model assertion is a statement by a brand about the properties of a device model. See [Image building](../guides/build-device/image-building.html) for a real-world example
 
 ## serial
 

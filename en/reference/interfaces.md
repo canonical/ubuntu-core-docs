@@ -4,7 +4,7 @@ title: Core interfaces reference
 
 # Core interfaces reference
 
-This document references all the interfaces available by default on an ubuntu core system.
+This document references all the interfaces available by default on an Ubuntu Core system.
 ## Terminology
 
 * Auto-connect: the interface is connected upon snap install
@@ -28,13 +28,13 @@ This document references all the interfaces available by default on an ubuntu co
 | `screen-inhibit-control` | Can access desktop session manager screen inhibit and uninhibit functionality. | yes | no |  |
 | `unity7` | Can access Unity7. Unity 7 runs on X and requires access to various DBus services. This interface grants privileged access to the user\'s session since the Unity 7 environment does not prevent eavesdropping or apps interfering with one another. | yes | yes |  |
 | `x11` | Can access the X server which gives privileged access to the user\'s session since X does not prevent eavesdropping or apps interfering with one another. | yes | yes |  |
-| `browser-support` | Can access files and IPC needed by modern browsers. This interface is intended to be used when using an embedded Chromium Content API or using the sandboxes in major browsers from vendors like Google and Mozilla. The ``allow-sandbox`` attribute may be used to give the necessary access to use the browser\'s sandbox functionality. | yes | no | `allow-sandbox:` true\|false (defaults to ``false``) |
+| `browser-support` | Can access files and IPC needed by modern browsers. This interface is intended to be used when using an embedded Chromium Content API or using the sandboxes in major browsers from vendors like Google and Mozilla. The ``allow-sandbox`` attribute may be used to give the necessary access to use the browser's sandbox functionality. | yes | no | `allow-sandbox:` true or false (defaults to ``false``) |
 | `bluetooth-control` | Allow to manage the kernel side Bluetooth stack. | no | no |  |
 | `bluez` | Can access snaps providing the bluez interface which gives privileged access to bluetooth. | no | no |  |
 | `content` | Can access content from the providing snap from within the consuming snap\'s filesystem area. | yes for snaps from same publisher, no otherwise | no | `read` (slot): read-only paths from providing snap to expose to the consuming snap<br> `write` (slot): read-write paths from providing snap to expose to the consuming snap<br> `target` (plug): path in consuming snap to find providing snap\'s files |
 | `cups-control` | Can access cups control socket which gives privileged access to configure printing. | no | no |  |
 | `docker` | Can access snaps providing the docker interface which gives privileged access to the system. | no | no |  |
-| `docker-support` | Can access resources and syscalls necessary to run Docker application containers. The ``privileged-containers`` attribute may be used to give the necessary access to run privileged containers. Providing snaps specifying this interface currently may only be established with the Docker project. | no | no | `privileged-containers` (plug): true\|false (defaults to ``false``) |
+| `docker-support` | Can access resources and syscalls necessary to run Docker application containers. The ``privileged-containers`` attribute may be used to give the necessary access to run privileged containers. Providing snaps specifying this interface currently may only be established with the Docker project. | no | no | `privileged-containers` (plug): true or false (defaults to ``false``) |
 | `firewall-control` | Can configure network firewalling giving privileged access to networking. | no | no |  |
 | `fuse-support` | Can mount fuse filesystems (as root only). | no | no |  |
 | `fwupd` | Can access snaps providing the fwupd interface which gives privileged access to update UEFI capsule format firmware. | no | no |  |

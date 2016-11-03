@@ -30,7 +30,7 @@ navigation:
       - title: Configuration and hooks
         location: guides/build-device/config-hooks.md
 
-      - title: Assertions and signatures
+      - title: Assertions
         location: guides/build-device/assertions.md
 
       - title: Interfaces
@@ -53,7 +53,7 @@ navigation:
   - title: Reference
 
     children:
-      - title: Assertions types and syntax
+      - title: Assertions types
         location: reference/assertions.md
 
       - title: Gadget snap syntax
@@ -62,7 +62,7 @@ navigation:
       - title: Core interfaces reference
         location: reference/interfaces.md
 
-      - title: Snapd rest API reference
+      - title: Ubuntu Core REST API
         location: reference/rest.md
 
 

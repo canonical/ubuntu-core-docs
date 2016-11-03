@@ -22,7 +22,7 @@ available interfaces on a given system can be seen with ``snap interfaces``.
 
 ## Supported Interfaces
 
-A complete list of interfaces is provided in the [Interfaces reference](/reference/interfaces.md). You can also see the list of interfaces available on a system and the snaps using them with `snap interfaces` or use the command to get more specific information, including:
+A complete list of interfaces is provided in the [Interfaces reference](../../reference/interfaces.html). You can also see the list of interfaces available on a system and the snaps using them with `snap interfaces` or use the command to get more specific information, including:
 
 - `snap interfaces <snap>` to find the slots offered and plugs used by the specified snap.
 - `snap interfaces <snap>:<slot or plug>` for details of only the specified slot or plug.

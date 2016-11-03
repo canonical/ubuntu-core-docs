@@ -2,6 +2,8 @@
 title: Stores and developer accounts
 ---
 
+# Store and developer accounts
+
 Snaps and Ubuntu core devices in general are tied to accounts existing in the Ubuntu store or in another snaps enabled store.
 
 ## The Ubuntu Store

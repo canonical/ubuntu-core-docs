@@ -8,7 +8,7 @@ The _gadget_ snap is responsible for defining and manipulating the system proper
 
 For example, the brand may know that the device is actually a special VM to be used on a particular cloud, or it may know that it is going to be manufactured in a particular factory. The gadget snap may encode the mechanisms for device initialization - key generation and identity certification - as well as particular processes for the lifecycle of the device, such as factory resets. It is perfectly possible for different models to share a gadget snap.
 
-Canonical publishes [reference gadget snaps](../../reference/gadget.md#user-content-examples-of-production-ready-gagdet-snaps) as well as gadget snaps for main Canonical models such as official Ubuntu Core VMs on various certified public clouds, as well as general purpose computing images for popular physical devices like the 64-bit x86 PC and Raspberry Pi 2 and 3.
+Canonical publishes [reference gadget snaps](../../reference/gadget.html#examples-of-production-ready-gagdet-snaps) as well as gadget snaps for main Canonical models such as official Ubuntu Core VMs on various certified public clouds, as well as general purpose computing images for popular physical devices like the 64-bit x86 PC and Raspberry Pi 2 and 3.
 
 [The gadget snap syntax and tree &rsaquo;](../../reference/gadget.md)
 
