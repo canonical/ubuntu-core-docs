@@ -22,6 +22,9 @@ navigation:
       - title: Ubuntu Core images
         location: guides/build-device/image-building.md
 
+      - title: Board enablement overview
+        location: guides/build-device/board-enablement.md
+
       - title: Gadget snaps
         location: guides/build-device/gadget.md
 

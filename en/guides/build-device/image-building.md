@@ -16,6 +16,8 @@ This document will walk you through all the steps to build an image for a device
 *   Create a model assertion for your target device
 *   Compose and build a custom image using the `ubuntu-image` command
 
+If you want to build an Ubuntu Core image for a board that is not already supported, please follow the [Board enablement overview](../../guides/build-device/board-enablement.html) document.
+
 ### Your signature key
 
 Before starting with building the image, you need to create a key to sign your future store uploads.
@@ -79,7 +81,7 @@ As an example, here is one for a device based on a Raspberry Pi 3 board. The JSO
 
 *   `type`: the assertion type you are creating
 *   `authority-id`, `brand-id` refer to your store account id. You will find it on [your account page](https://myapps.developer.ubuntu.com/dev/account/), in the `Account-Id` field.
-*   `series`: the ubuntu-core series in use
+*   `series`: the Ubuntu Core series in use
 *   `model`: a free form lower-case name for your target device
 *   `architecture`: the architecture of the device you are building the image for
 *   The `gadget` and `kernel` values refer to snaps already existing in the store.
@@ -99,11 +101,11 @@ You can now create your image with the `ubuntu-image` tool.
 
 To install it, run:
 
-    snap install --edge --devmode ubuntu-image
+    snap install --beta --devmode ubuntu-image
 
 Then, create the image:
 
-    sudo /snap/bin/ubuntu-image -c beta -o pi3-test.img pi3.model
+    ubuntu-image -c beta -o pi3-test.img pi3.model
 
 ##### Arguments
 
@@ -112,7 +114,7 @@ Then, create the image:
 
 You can include specific snaps pre-installed by default in the image by using the `--extra-snaps` argument. For example:
 
-    sudo /snap/bin/ubuntu-image -c beta -o pi3-test.img pi3.model --extra-snaps rocketchat-server --extra-snaps nextcloud
+    ubuntu-image -c beta --extra-snaps rocketchat-server --extra-snaps nextcloud -o pi3-test.img pi3.model
 
 #### 4. Your image is ready
 
