@@ -74,7 +74,7 @@ As an example, here is one for a device based on a Raspberry Pi 3 board. The JSO
       "architecture": "armhf",
       "gadget": "pi3",
       "kernel": "pi2-kernel",
-      "timestamp": "$(date -Iseconds --utc)"
+      "timestamp": "<timestamp>"
     }
 
 ##### Keys description
@@ -85,6 +85,7 @@ As an example, here is one for a device based on a Raspberry Pi 3 board. The JSO
 *   `model`: a free form lower-case name for your target device
 *   `architecture`: the architecture of the device you are building the image for
 *   The `gadget` and `kernel` values refer to snaps already existing in the store.
+*   `timestamp` is a valid timestamp you need to generate using the `date -Iseconds --utc` command
 
 
 #### 2. Sign your model assertion

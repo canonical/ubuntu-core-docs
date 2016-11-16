@@ -132,7 +132,7 @@ First, prepare a JSON file describing the model assertion:
       "architecture": "armhf",
       "gadget": "roseapple-pi",
       "kernel": "roseapple-pi-kernel",
-      "timestamp": "$(date -Iseconds --utc)"
+      "timestamp": "<timestamp>"
     }
 
 ##### Keys description
@@ -143,6 +143,7 @@ First, prepare a JSON file describing the model assertion:
 *   `model`: a free form lower-case name for your target device
 *   `architecture`: the architecture of the device you are building the image for
 *   The `gadget` and `kernel` values refer to the name of your kernel and gadget snaps
+*   `timestamp` is a valid timestamp you need to generate using the `date -Iseconds --utc` command
 
 Additional supported keywords for model assertion are:
 
