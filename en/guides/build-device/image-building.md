@@ -117,6 +117,8 @@ You can include specific snaps pre-installed by default in the image by using th
 
     ubuntu-image -c beta --extra-snaps rocketchat-server --extra-snaps nextcloud -o pi3-test.img pi3.model
 
+Note: The `--extra-snaps` argument takes either a snap name accessible from the store or a local path to a built snap.
+
 #### 4. Your image is ready
 
 You can use a tool like `dd` to write the image to an SDcard and boot your device.

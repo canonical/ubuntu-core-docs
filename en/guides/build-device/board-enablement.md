@@ -220,9 +220,11 @@ You can now build your image using the following command:
     --image-size 4G \
     --extra-snaps <gadget snap file name, e.g. roseapple-pi_16.04-1_armhf.snap> \
     --extra-snaps <kernel snap file name, e.g. roseapple-pi-kernel_3.10.37-1_armhf.snap> \
-    --extra-snaps <add more preinstalled snaps here, e.g. nextcloud, rocketchat-server, etc.>
+    --extra-snaps <add more preinstalled snaps here, names from the store or local paths>
     -o <image output file name, e.g. roseapple-pi-20161107-0.img>
     <model file name, e.g. roseapple.model>
+
+Note: The `--extra-snaps` argument takes either a snap name accessible from the store or a local path to a built snap.
 
 Your image is ready, you can use a tool like `dd` to write the image to an SDcard and boot your board.
 
