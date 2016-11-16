@@ -215,7 +215,7 @@ This snap will not auto-update, so if want to get the latest version of `ubuntu-
 
 You can now build your image using the following command:
 
-    ubuntu-image \
+    sudo ubuntu-image \
     -c stable \        # available channels are: edge/beta/candidate/stable
     --image-size 4G \
     --extra-snaps <gadget snap file name, e.g. roseapple-pi_16.04-1_armhf.snap> \
@@ -236,7 +236,7 @@ To build a custom image for one of the Canonical supported boards, use a Canonic
 
     curl -H "Accept: application/x.ubuntu.assertion" "https://assertions.ubuntu.com/v1/assertions/model/16/canonical/pi3" > pi3.model
 
-    ubuntu-image \
+    sudo ubuntu-image \
     -c stable \
     --image-size 4G \
     --extra-snaps pi2-kernel \

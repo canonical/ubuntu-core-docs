@@ -106,7 +106,7 @@ To install it, run:
 
 Then, create the image:
 
-    ubuntu-image -c beta -o pi3-test.img pi3.model
+    sudo ubuntu-image -c beta -o pi3-test.img pi3.model
 
 ##### Arguments
 
@@ -115,7 +115,7 @@ Then, create the image:
 
 You can include specific snaps pre-installed by default in the image by using the `--extra-snaps` argument. For example:
 
-    ubuntu-image -c beta --extra-snaps rocketchat-server --extra-snaps nextcloud -o pi3-test.img pi3.model
+    sudo ubuntu-image -c beta --extra-snaps rocketchat-server --extra-snaps nextcloud -o pi3-test.img pi3.model
 
 Note: The `--extra-snaps` argument takes either a snap name accessible from the store or a local path to a built snap.
 
