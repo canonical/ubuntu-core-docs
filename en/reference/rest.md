@@ -1,10 +1,9 @@
 ---
 title: Ubuntu Core REST API
+table_of_contents: true
 ---
 
 # Ubuntu Core REST API
-
-Version: v2pre0
 
 You can interface with snapd on any Ubuntu Core system using its REST API.
 
@@ -193,8 +192,8 @@ See also the error kinds `two-factor-required` and
 `two-factor-failed`.
 
 
-## /v2/find
-### GET
+## `/v2/find`
+### `GET`
 
 * Description: Find snaps in the store
 * Access: authenticated
@@ -300,9 +299,9 @@ Alter the collection searched:
 * `suggested-currency`: the suggested currency to use for presentation,
    derived by Geo IP lookup.
 
-## /v2/snaps
+## `/v2/snaps`
 
-### GET
+### `GET`
 
 * Description: List of snaps
 * Access: authenticated
@@ -367,7 +366,7 @@ In addition to the fields described in `/v2/find`:
 
 furthermore, `download-size`, `screenshots` and `prices` cannot occur in the output of `/v2/snaps`.
 
-### POST
+### `POST`
 
 * Description: Install, refresh, revert, remove snaps
 * Access: trusted
@@ -389,15 +388,15 @@ kind of operation, optional flags and a list of snaps, or a
 }
 ```
 
-## /v2/snaps/[name]
-### GET
+## `/v2/snaps/[name]`
+### `GET`
 
 * Description: Details for an installed snap
 * Access: authenticated
 * Operation: sync
 * Return: snap details (as in `/v2/snaps`)
 
-### POST
+### `POST`
 
 * Description: Install, refresh, remove, revert, enable or disable
 * Access: trusted
@@ -419,8 +418,8 @@ field      | ignored except in action | description
 `action`   |                   | Required; a string, one of `install`, `refresh`, `remove`, `revert`, `enable`, or `disable`.
 `channel`  | `install` `refresh` | From which channel to pull the new package (and track henceforth). Channels are a means to discern the maturity of a package or the software it contains, although the exact meaning is left to the application developer. One of `edge`, `beta`, `candidate`, and `stable` which is the default.
 
-## /v2/snaps/[name]/conf
-### GET
+## `/v2/snaps/[name]/conf`
+### `GET`
 
 * Description: Configuration details for an installed snap
 * Access: superuser only
@@ -434,7 +433,7 @@ field      | ignored except in action | description
 Request the configuration values corresponding to the specific keys
 (comma-separated).
 
-### PUT
+### `PUT`
 
 * Description: Set the configuration details for an installed snap
 * Access: superuser only
@@ -450,9 +449,9 @@ Request the configuration values corresponding to the specific keys
 }
 ```
 
-## /v2/icons/[name]/icon
+## `/v2/icons/[name]/icon`
 
-### GET
+### `GET`
 
 * Description: Get an icon from a snap installed on the system. The
   response will be the raw contents of the icon file; the content-type
@@ -464,9 +463,9 @@ Request the configuration values corresponding to the specific keys
 
 This is *not* a standard return type.
 
-## /v2/assertions
+## `/v2/assertions`
 
-### POST
+### `POST`
 
 * Description: Tries to add an assertion to the system assertion database.
 * Authorization: trusted
@@ -479,8 +478,8 @@ To succeed the assertion must be valid, its signature verified with a
 known public key and the assertion consistent with and its
 prerequisite in the database.
 
-## /v2/assertions/[assertionType]
-### GET
+## `/v2/assertions/[assertionType]`
+### `GET`
 
 * Description: Get all the assertions in the system assertion database of the given type matching the header filters passed as query parameters
 * Access: authenticated
@@ -491,9 +490,9 @@ The response is a stream of assertions separated by double newlines.
 The X-Ubuntu-Assertions-Count header is set to the number of
 returned assertions, 0 or more.
 
-## /v2/interfaces
+## `/v2/interfaces`
 
-### GET
+### `GET`
 
 * Description: Get all the plugs, slots and their connections.
 * Access: authenticated
@@ -513,6 +512,13 @@ Sample result:
             "connections": [
                 {"snap": "keyboard-lights", "plug": "capslock-led"}
             ]
+        },
+        {
+            "snap":  "canonical-pi2",
+            "slot":  "port-0",
+            "interface":  "serial-port",
+            "label": "Serial Port 0",
+            "attrs": {"path": "/dev/ttyS0"}
         }
     ],
     "plugs": [
@@ -529,7 +535,18 @@ Sample result:
 }
 ```
 
-### POST
+#### Fields for plugs / slots
+
+field            | description
+-----------------|------------
+`snap`           | The snap this plug / slot is part of.
+`plug` or `slot` | The name of this plug / slot.
+`interface`      | The interface this plug / slot uses.
+`attrs`          | Dict containing attributes for the interface in use. Attributes values can be of any type, e.g. boolean, strings etc.
+`label`          | Human readable description of plug / slot.
+`connections`    | List of current slots / plugs that are connected to this. Each connection contains the name of the snap and the connected slot / plug.
+
+### `POST`
 
 * Description: Issue an action to the interface system
 * Access: authenticated
@@ -551,9 +568,9 @@ Sample input:
 }
 ```
 
-## /v2/events
+## `/v2/events`
 
-### GET
+### `GET`
 
 * Description: Websocket upgrade
 * Access: trusted
@@ -573,9 +590,9 @@ Comma separated list of notification types, either `logging` or `operations`.
 
 Generally the UUID of a background operation you are interested in.
 
-## /v2/buy
+## `/v2/buy`
 
-### POST
+### `POST`
 
 * Description: Buy the specified snap
 * Access: authenticated
@@ -587,11 +604,18 @@ Generally the UUID of a background operation you are interested in.
 ```javascript
 {
     "snap-id": "2kkitQurgOkL3foImG4wDwn9CIANuHlt",
-    "snap-name": "moon-buggy",
     "price": 2.99,
     "currency": "USD"
 }
 ```
+
+#### Fields in input object
+
+ field      | Description
+------------|------------
+ `snap-id`  | id of the snap being purchased
+ `price`    | Amount to be paid
+ `currency` | The currency to be paid with as an ISO 4217 code
 
 #### Sample result:
 
@@ -601,18 +625,18 @@ Generally the UUID of a background operation you are interested in.
 }
 ```
 
-## /v2/buy/ready
+## `/v2/buy/ready`
 
-### GET
+### `GET`
 
 * Description: Determine if the user's account ready to make purchases.
 * Access: authenticated
 * Operation: sync
 * Return: true, or error.
 
-## /v2/create-user
+## `/v2/create-user`
 
-### POST
+### `POST`
 
 * Description: Create a local user
 * Access: trusted

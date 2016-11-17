@@ -1,5 +1,6 @@
 ---
 title: "Interfaces"
+table_of_contents: true
 ---
 
 # Interfaces
@@ -48,9 +49,9 @@ The OS snap exposes a number of interfaces to grant snaps access to system funct
 
 The following tutorial will show you how: [Your first interface](http://www.zygoon.pl/2016/08/creating-your-first-snappy-interface.html).
 
-### Requesting an interface
+## Requesting an interface
 
-You can also file an interface request by [opening a bug report](https://bugs.launchpad.net/snappy/+bugs?field.tag=snapd-interface) with the `snapd-interface` bug tag.
+You can file an interface request exposing your use case by [opening a bug report](https://bugs.launchpad.net/snappy/+bugs?field.tag=snapd-interface) with the `snapd-interface` bug tag.
 
 ## Manually connecting interfaces
 

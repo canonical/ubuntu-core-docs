@@ -1,5 +1,6 @@
 ---
 title: Assertions types
+table_of_contents: true
 ---
 
 # Assertions types
@@ -38,16 +39,8 @@ The snap-revision assertion is a statement by the store acknowledging the receip
 
 The system-user assertion is a permit by the brand for local system users to be created on its specified devices.
 
-## validation
-
-The validation assertion defines that a combination of (snap-id, approved-snap-id, approved-revision) has been validated for a given series, meaning refreshing to that revision of approved-snap-id has been approved by the owner of the gating snap with snap-id.
-
-## System-user
-
-SystemUser holds a system-user assertion which allows creating local
-system users.
-
 The system-user assertion has the following form:
+
 ```
 type:           system-user
 authority-id:   account-id   // Owner of the key, must be the brand
@@ -67,9 +60,6 @@ revision:       integer
 signature       authority-sig
 ```
 
-## Validation
+## validation
 
-Validation holds a validation assertion, describing that a combination of
-(snap-id, approved-snap-id, approved-revision) has been validated for
-the series, meaning updating to that revision of approved-snap-id
-has been approved by the owner of the gating snap with snap-id.
+The validation assertion defines that a combination of (snap-id, approved-snap-id, approved-revision) has been validated for a given series, meaning refreshing to that revision of approved-snap-id has been approved by the owner of the gating snap with snap-id.

@@ -1,32 +1,29 @@
 ---
 title: Security and sandboxing
+table_of_contents: true
 ---
 
 # Security and sandboxing
 
-Snap packages run confined under a restrictive security sandbox by default.
-The security policies and store policies work together to allow developers to
-quickly update their applications and to provide safety to end users.
+Snap packages run confined under a restrictive security sandbox by default. The security policies and store policies work together to allow developers to quickly update their applications and to provide safety to end users.
 
-This document describes the sandbox and how to configure and work with the security policies for snap
-packages.
+This document describes the sandbox and how to configure and work with the security policies for snap packages.
 
-## How the security policy is applied
+## How a security policy is applied
 
-Application authors should not have to know about or understand the low level
+Application authors should not have to know about or understand the low-level
 implementation details on how security policy is enforced. Instead, all snaps
-run under default security policy which can be extended through the use of
-interfaces, slots and plugs and the available interfaces available on the
-device can be seen with:
+run under a default security policy which can be extended through the use of
+[interfaces](../../guides/build-device/interfaces.html). Slots, plugs, and the available interfaces available on the device can be seen with:
 
     $ snap interfaces
 
 The description of these interfaces is found in the [interfaces reference](../../reference/interfaces.html).
 
-Each command declared in `apps` by the snap is tracked by the system by
+Each command declared in `apps` snap metadata is tracked by the system
 assigning a security label to the command. This security label takes the form
-of `snap.<name>.<app>` where `<name>` is the name of the snap from `meta.md`
-and `<app>` is the command name. For example, if this is in `snap.yaml`:
+of `snap.<snap>.<app>` where `<snap>` is the name of the snap, and `<app>` is
+the application name. For example, if this is `snap.yaml`:
 
     name: foo
     ...
@@ -36,33 +33,29 @@ and `<app>` is the command name. For example, if this is in `snap.yaml`:
         ...
 
 then the security label for the `bar` command is `snap.foo.bar`. This security
-label is used throughout the system including in the enforcement of security
-policy by the app launcher. All snap commands declared via `apps` in `meta.md`
-are launched by the launcher and snaps run in the global (ie, default)
-namespace (except where noted otherwise) to facilitate communications and
-sharing between snaps and because this is more familiar for developers and
-administrators. The security policy and launcher enforce application isolation
-as per the snappy FHS. Under the hood, the launcher:
+label is used throughout the system including during the process confinement phase
+when running the application.
+
+Under the hood, the application runner:
 
 * Sets up various environment variables:
-    * `HOME`: set to `SNAP_DATA` for daemons and `SNAP_USER_DATA` for user
-      commands
+    * `HOME`: set to `SNAP_USER_DATA` for all commands
     * `SNAP`: read-only install directory
     * `SNAP_ARCH`: the architecture of device (eg, amd64, arm64, armhf, i386, etc)
     * `SNAP_DATA`: writable area for a particular revision of the snap
     * `SNAP_COMMON`: writable area common across all revisions of the snap
-    * `SNAP_LIBRARY_PATH`: additional directories added to `LD_LIBRARY_PATH`
-    * `SNAP_NAME`: snap name (from `meta.md`)
+    * `SNAP_LIBRARY_PATH`: additional directories which should be added to `LD_LIBRARY_PATH`
+    * `SNAP_NAME`: snap name
     * `SNAP_REVISION`: store revision of the snap
     * `SNAP_USER_DATA`: per-user writable area for a particular revision of the snap
     * `SNAP_USER_COMMON`: per-user writable area common across all revisions of the snap
-    * `SNAP_VERSION`: snap version (from `meta.md`)
-    * `TMPDIR`: set to `/tmp`
+    * `SNAP_VERSION`: snap version (from `snap.yaml`)
 * When hardware is assigned to the snap, sets up a device cgroup with default
   devices (eg, /dev/null, /dev/urandom, etc) and any devices that are assigned
-  to this snap
-* Sets up a private /tmp using a per-command private mount namespace and
-  mounting a per-command directory on /tmp
+  to this snap. Hardware is assigned via interface connections.
+* Sets up a private mount namespace shared across all commands of the snap
+* Sets up a private /tmp using a per-snap private mount namespace and
+  mounting a per-snap directory on /tmp
 * Sets up a per-command devpts new instance
 * Sets up the seccomp filter for the command
 * Executes the command under the command-specific AppArmor profile under a
@@ -76,32 +69,32 @@ devpts and device cgroups provides for strong application confinement and
 isolation.
 
 ### AppArmor
-Upon snap package install, `snap.yaml` is examined and AppArmor profiles are
+Upon snap install, the snap metadata is examined and AppArmor profiles are
 generated for each command to have the appropriate security label and
 command-specific AppArmor rules. As mentioned, each command runs under an
 app-specific default policy that may be extended through declared interfaces
-which are expressed in the yaml as `plugs` and `slots`.
+which are expressed in the metadata as `plugs` and `slots`.
 
 ### Seccomp
-Like with AppArmor, upon snap package install, `snap.yaml` is examined and
+Similar to AppArmor, upon snap install, the snap metadata is examined and
 seccomp filters are generated for each command to run under a default seccomp
 filter that may be extended through declared interfaces which are expressed in
-the yaml as `plugs` and `slots`.
+the metadata as `plugs` and `slots`.
 
-## Working with snap security policy
+## Working with security policies
 
-The `snap.yaml` need not specify anything for default confinement and may
+The snap metadata need not specify anything for default confinement and may
 optionally specify `plugs` and `slots` to declare additional interfaces to use.
 When an interface is connected, the snap's security policy will be updated to
-allow access to use the interface. See `meta.md` and `interface.md` for
-details.
+allow access to use the interface. See the [interfaces](../../guides/build-device/interfaces.html)
+for details.
 
-The default AppArmor policy is deny by default and snaps are restricted to
+The AppArmor policy is deny by default and snaps are restricted to
 their app-specific directories, libraries, etc (enforcing ro, rw, etc). The
 seccomp filter is also deny by default and the default filter allows enough
 safe syscalls so that snaps using the default security policy should work.
 
-Eg, consider the following:
+For example, consider the following:
 
     name: foo
     version: 1.0
@@ -115,9 +108,8 @@ Eg, consider the following:
 
 then:
 
-* the security label for `bar` is `snap.foo.bar`. It uses only the default
-  policy
-* the security label for `baz` is `snap.foo.baz`. It uses the `default` policy plus the `network` interface security policy as provided by the OS snap
+* the security label for `bar` is `snap.foo.bar`. It uses only the default policy
+* the security label for `baz` is `snap.foo.baz`. It uses the `default` policy plus the `network` interface security policy as provided by the core snap
 
 Security policies and store policies work together to provide flexibility,
 speed and safety. Because of this, use of some interfaces may trigger a manual
@@ -147,16 +139,16 @@ In the above it can be seen that the `snappy-debug` snap has the `log-observe`
 interface connected (and therefore the security policy from `log-observe` is
 added to it) and the `xkcd-webserver` has the `network` and `network-bind`
 interfaces connected. An interesting quality of interfaces is that they may
-either be either declared per-command or per-snap. If declared per-snap, all
+be either declared per-command or per-snap. If declared per-snap, all
 the commands within the snap have the interface security policy added to the
 command's security policy when the interface is connected. If declared
 per-command, only the commands within the snap that declare use of the
 interface have the interface security policy added to them.
 
-Snappy may autoconnect the requested interfaces upon install or may require the
+Snappy may auto-connect the requested interfaces upon install or may require the
 user to manually connect them. Interface connections and disconnections are
 performed via the `snap connect` and `snap disconnect` commands. See
-`interfaces.md` for details.
+[interfaces](../../guides/build-device/interfaces.html) for details.
 
 ## Developer mode
 
@@ -164,19 +156,19 @@ Sometimes it is helpful when developing a snap to not have to worry about the
 security sandbox in order to focus on developing the snap. To support this,
 snappy allows installing the snap in developer mode which puts the security
 policy in complain mode (where violations against security policy are logged,
-but permitted). Eg:
+but permitted). For example:
 
     $ sudo snap install --devmode <snap>
 
-### Jail mode
+## Jail mode
 
 Even if a developer has specified a package to be only installable in `devmode`, you can force a strict confinement by using the `--jailmode` flag.
 
     $ sudo snap install --jailmode <snap>
 
-
 ## Debugging
-To check to see if you have any policy violations:
+
+To check if you have any policy violations:
 
     $ sudo grep audit /var/log/syslog
 
@@ -190,12 +182,13 @@ A seccomp violation will look something like:
 
     audit: type=1326 audit(1430766107.122:16): auid=1000 uid=1000 gid=1000 ses=15 pid=1491 comm="env" exe="/bin/bash" sig=31 arch=40000028 syscall=983045 compat=0 ip=0xb6fb0bd6 code=0x0
 
-The `syscall=983045` can be resolved with the `scmp\_sys\_resolver` command:
+The `syscall=983045` can be resolved by running the `scmp_sys_resolver` command
+on a system of the same architecture as the one with the seccomp violation:
 
     $ scmp_sys_resolver 983045
     set_tls
 
-If there are no seccomp violations, seccomp isn't blocking the snap.
+If there are no seccomp violations, seccomp isn't blocking the snap. If you notice `compat=1` in the seccomp denial, then specify the correct compatibility architecture to `scmp_sys_resolver` with `-a <arch>`. Eg, if on an amd64 system, use `scmp_sys_resolver -a x86 191` (use `-a arm` on arm64 systems).
 
 The `snappy-debug` snap can be used to help with policy violations. To use it:
 
@@ -204,13 +197,13 @@ The `snappy-debug` snap can be used to help with policy violations. To use it:
 
 This will:
 
-* adjust kernel log rate limiting
-* follow /var/log/syslog looking for policy violations for `foo`
-* resolve syscall names
-* make reccomendations on how to fix violations
+ * adjust kernel log rate limiting
+ * follow /var/log/syslog looking for policy violations for `foo`
+ * resolve syscall names (considering `compat`)
+ * make recommendations on how to fix violations
 
 See `snappy-debug.security help` for details.
 
-If you believe there is a bug in the security policy or want to request a new
+If you believe there is a bug in the security policy or want to request and/or contribute a new
 interface, please [file a bug](https://bugs.launchpad.net/snappy/+filebug),
 adding the `snapd-interface` tag.

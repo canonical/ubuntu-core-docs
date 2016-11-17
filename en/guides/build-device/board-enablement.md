@@ -1,5 +1,6 @@
 ---
 title: Board enablement overview
+table_of_contents: true
 ---
 
 # Board enablement overview
@@ -8,14 +9,14 @@ This document will walk you through all the steps to enable an unsupported board
 
 You will learn how to:
 
-* [Create a kernel snap](#1.-the-kernel-snap)
-* [Create a gadget snap](#2.-the-gadget-snap)
-* [Create a model assertion](#3.-the-model-assertion)
-* [Build an image](#4.-image-building)
+* [Create a kernel snap](#the-kernel-snap)
+* [Create a gadget snap](#the-gadget-snap)
+* [Create a model assertion](#the-model-assertion)
+* [Build an image](#image-building)
 
 Note: this documentation has been tested and performed on Roseapple Pi, you can find the complete example source in [this repository](https://github.com/kubiko/roseapple-pi-ubuntuCore-build).
 
-## 1. The kernel snap
+## The kernel snap
 
 Ubuntu Core kernels are based on the `multiv7_defconfig` plus some mandatory Ubuntu configs (see the `snapcraft.yaml` example below).
 
@@ -66,7 +67,7 @@ Once you have a kernel ready for Ubuntu core, the recommended way to build a ker
                 - actduino_bubble_gum_sdboot_linux
             build-packages: [bc, kmod, cpio]
 
-## 2. The gadget snap
+## The gadget snap
 
 The [gadget snap](../../guides/build-device/gadget.html) is a key snap for device boot, as it contains the description of the boot and file system layout, which is then used for image building.
 
@@ -115,7 +116,7 @@ As of writing, snapcraft does not support native gadget building, you can snap i
 
     snapcraft snap <directory with gadget snap content>
 
-## 3. The model assertion
+## The model assertion
 
 Before you can build an image to flash on the board, you need to prepare a [model assertion](../../guides/build-device/assertions) and sign it.
 
@@ -201,7 +202,7 @@ Or
 
     snap known --remote model series=16 brand-id=canonical model=pi3
 
-## 4. Image building
+## Image building
 
 Ubuntu Core images are built using the `ubuntu-image` command.
 

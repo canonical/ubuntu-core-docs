@@ -1,8 +1,11 @@
 ---
 title: Configuration and Hooks
+table_of_contents: true
 ---
 
 # Configuration and hooks
+
+## Overview
 
 There are a number of situations where snapd needs to notify a snap that
 something has happened. For example, when a snap is upgraded, it may need to run
@@ -10,6 +13,8 @@ some sort of migration on the previous version's data in order to make it
 consumable by the new version. Or when an interface is connected or
 disconnected, the snap might need to obtain attributes specific to that
 connection. These types of situations are handled by hooks.
+
+## General usage
 
 A hook is defined as an executable contained within the `meta/hooks/` directory
 inside the snap. The file name of the executable is the name of the hook (e.g.

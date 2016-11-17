@@ -1,5 +1,6 @@
 ---
 title: Core interfaces reference
+table_of_contents: true
 ---
 
 # Core interfaces reference
@@ -46,6 +47,7 @@ This document references all the interfaces available by default on an Ubuntu Co
 | `location-control` | Can access snaps providing the location-control interface which gives privileged access to configure, observe and use location services. | no | no |  |
 | `location-observe` | Can access snaps providing the location-observe interface which gives privileged access to query location services. | no | no |  |
 | `log-observe` | Can read system logs and set kernel log rate-limiting. | no | no |  |
+| `lxd` | Can use the LXD API via the socket provided by the "lxd" snap. LXD_DIR must be set to /var/snap/lxd/common/lxd. This interface requires manual connection. | no | no |  |
 | `lxd-support` | Can access all resources and syscalls on the device for LXD to mediate access for its containers. This interface currently may only be established with the upstream LXD project. | yes | yes |  |
 | `modem-manager` | Can access snaps providing the modem-manager interface which gives privileged access to configure, observe and use modems. | no | no |  |
 | `mount-observe` | Can query system mount information. This is restricted because it gives privileged read access to mount arguments and should only be used with trusted apps. | no | no |  |
@@ -55,6 +57,7 @@ This document references all the interfaces available by default on an Ubuntu Co
 | `network-setup-observe` | Can read network setup configuration files. This is restricted because it gives access to system network configuration which can contain network security details. | no | no |  |
 | `ppp` | Can access Point-to-Point protocol daemon which gives privileged access to configure and observe PPP networking. | no | no |  |
 | `process-control` | Can manage processes via signals and nice. | no | no |  |
+| `raw-usb` | Can directly access connected USB devices via a raw interface (snapd 2.18+). | no | no |  |
 | `serial-port` | Can access serial ports. This is restricted because it provides privileged access to configure serial port hardware. | no | no |  |
 | `snapd-control` | Can manage snaps via snapd. | no | no |  |
 | `system-observe` | Can query system status information which gives privileged read access to all processes on the system. | no | no |  |
