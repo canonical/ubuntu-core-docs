@@ -63,7 +63,7 @@ navigation:
         location: reference/gadget.md
 
       - title: Core interfaces reference
-        location: reference/interfaces.md
+        location: reference/interfaces/index.md
 
       - title: Ubuntu Core REST API
         location: reference/rest.md
