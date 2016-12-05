@@ -28,18 +28,19 @@ You may have read about _assertions_ here and there. Let's clarify why they matt
 
 For more info, see TODO add link to assertions doc.
 
-### Keys and the Ubuntu Store
+## Keys and the Ubuntu Store
  
 Core and Snap assertion security is based a public/private keys. 
 
 **Note** Snap also has _confinement_ security, a different topic. See TODO add link.
+
 The private part of the key is used to sign an assertion file. The public part of the key is used to authenticate that the file came from the source you think it did and that is has not changed. The public key is registered in the Ubuntu Store and can be used to authenticate device boot, device update, and device reset.
 
 You can use standard assertions (which support the first production model), or you can create your own key to create signed custom assertions and thereby support the second more richly featured production model.
 
 For info on creating and registering your own key, see TODO add link.
 
-### Model Assertion
+## Model Assertion
 
 A signed _model assertion_ file is required to create an image using `ubuntu-image`. 
 
@@ -55,7 +56,7 @@ If you want additional functionality, you can create your own model assertion fi
 
 Let's take a closer look.
 
-#### Standard model assertion limitations
+### Standard model assertion limitations
 
 As noted, when using a standard model assertion, your image can only be made from uncustomized snaps plus your additional snaps. These extra snaps must be in the Ubuntu store and must be available without payment, and they must not be private.
 
@@ -63,7 +64,7 @@ Also, if the device is reset to factory defaults in the field, it boots into a p
 
 This production model may may be appropriate in many cases. Some cases require more. 
 
-#### Custom model assertion
+### Custom model assertion
 
 More highly customized images require a customized model assertion. For example, a customized model assertion can also list the extra snaps you installed in the original image so that if the device is reset to factory defaults in the field, on reboot it also contains your special etra snaps and is thus a customized device.
  
@@ -75,17 +76,17 @@ For information on creating a customized model assertion file and signing it wit
 
 The signed model assertion is needed for the device to boot to completion. It says what the device image consists of. Standard (unmodified) model assertions are simple but may not provide enough update and reset functionaly for some production models. For these more advanced case, one creates and signs their own model assertion and through this the devices get access to updates for protected snaps, and,in the case of reset, they include any extra snaps you want.
 
-### Serial Assertions
+## Serial Assertions
 
 The serial assertion has this name because it uniquely identifies a device to the store by its "serial number". (Just what a serial number is depends on how it is defined in the gadget snap. See TODO link to gadget snap.) Combined with the data in the model assertion, the store now has richly detailed and authenticated information that describes the device, including the snaps it is made of and, for custom serial assertions, provides access to protected updates.
 
 Note that a Snap device _always_ has a serial assertion. In the simple case, it is provided by the Ubuntu Store. The more richly featured case also involves a custom _serial vault_.
 
-#### Simpler production model
+### Simpler production model
 
 When a device image is created from the standard (unmodified) model assertion, it also (by definition) uses a (signed) serial assertion provided by the Ubuntu Store. That is, such generic devices get their signed serial assertion from the Ubuntu Store on boot. The running image in the field cannot update protected (for payment) snaps from the store. And, in the unlikely case that a reset is needed, the device cannot install extra snaps that were added to the base image.
 
-##### Custom Production model
+### Custom Production model
 
 To provide a richer production model, you can use:
 
@@ -95,14 +96,4 @@ To provide a richer production model, you can use:
 * a custom gadget snap (to point to the device to your serial vault and define how the unique serial number is created)
 
 The custom production model opens the door to a superior device update (and reset) experience.
-
-
-
-
-
-
-
-
-
-
 
