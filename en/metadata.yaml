@@ -19,6 +19,9 @@ navigation:
   - title: Build a device
 
     children:
+      - title: Build a Distribution
+        location: guides/build-device/build-distribution.md
+
       - title: Ubuntu Core images
         location: guides/build-device/image-building.md
 
