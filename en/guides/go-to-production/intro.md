@@ -12,11 +12,11 @@ Here, we cover two production models. Both models let you take your Snap image i
 
 The first production model is simple. It's a good choice when you publish your snap for free in the Ubuntu Store. Your device in the field gets updates, including updates of your own snaps that you included in the image.
 
-TODO: add image of model one
+!["Simple Production Model"](../../../media/production-model-simple.png)
 
 The second production model fits when you have protected snaps in the image, for example snaps that are available in the Ubuntu Store (or your own store) for payment but that are installed in your image and you want to be updated for free on your devices.
 
-TODO: add image of model two
+!["Richer Production Model"](../../../media/production-model-rich.png)
 
 Before diving into detail, let's deal with one of the key benefits of Snap Ubuntu: security.
 
