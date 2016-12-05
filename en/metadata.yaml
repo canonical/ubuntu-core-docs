@@ -39,6 +39,18 @@ navigation:
       - title: Interfaces
         location: guides/build-device/interfaces.md
 
+  - title: Go to production
+
+    children:
+      - title: Introduction
+        location: guides/go-to-production/intro.md
+
+      - title: Simple - Ubuntu store only
+        location: guides/go-to-production/simple.md
+
+      - title: Advanced - Branded store with Serial Vault
+        location: guides/go-to-production/advanced.md
+
 #      - title: Debugging
 
 #  - title: Manage devices
