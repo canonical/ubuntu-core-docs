@@ -65,7 +65,7 @@ As noted in the other docs, you sign this with your registered key, which produc
 
 Steps for building an image are provided here <http://docs.ubuntu.com/core/en/guides/build-device/image-building>.
 
-**Note** To include your extra snaps in the image, build the image using the `--extra-snaps argument` followed by  the names of your published snaps (they are obtained from the store and installed). This is the the same as the `required-snaps` key's value in the model assertion.
+**Note** While the `ubuntu-image` command provides an `extra-snaps` argument, it should not be used to install your special extra snaps. Instead, your extra snaps that are listed in the model assertion's `required-snaps` field are installed in the image.
 
 The result is an image file that you can flash onto your devices.
 
