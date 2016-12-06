@@ -78,7 +78,7 @@ The signed model assertion is needed for the device to boot to completion. It sa
 
 ## Serial Assertions
 
-The serial assertion has this name because it uniquely identifies a device to the store by its "serial number". (Just what a serial number is depends on how it is defined in the gadget snap. See TODO link to gadget snap.) Combined with the data in the model assertion, the store now has richly detailed and authenticated information that describes the device, including the snaps it is made of and, for custom serial assertions, provides access to protected updates.
+The serial assertion has this name because it uniquely identifies a device to the store by its "serial number". (Just what a serial number is depends on how it is defined in the gadget snap. See TODO link to gadget snap.) Combined with the data in the model assertion, the store now has richly detailed and authenticated information that describes the device, including the snaps it is made of and, for custom serial assertions, provides access to protected updates and private brands.
 
 Note that a Snap device _always_ has a serial assertion. In the simple case, it is provided by the Ubuntu Store. The more richly featured case also involves a custom _serial vault_.
 
