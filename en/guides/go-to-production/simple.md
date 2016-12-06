@@ -1,60 +1,80 @@
 ---
 table_of_contents: true
 ---
+# Simple Production Model
 
-# Build your device distribution
+Here we provide an overview of the simple production model:
 
-Here we cover how to build an Ubuntu Core/Snappy distribution for deployement.
+* Your device type is one of the supported device types TODO add link to page with list
+* Your device image consists only of snaps that are in the Ubuntu Store (not in a branded store subsection) 
+* Your image is made from unmodified core, kernel and gadget snaps
+* Your device also includes one or more extra snaps that you have published to the store as freely available (these provide the "special sauce" that makes your device unique and awesome)
+* Distribute your devices
+* Devices are updated in the field from the Ubuntu Store (all snaps are updated as updated become available)
+* Customers can also install snaps from the Ubuntu Store
 
-That is, we discuss the steps you take to create a Snap image that contains your special snaps, and cover the connection to the store such that all snaps (image snaps and your special snaps) are updated from the store.
+This is a great choice that provides the simplest path to production.
 
-There are many ways to accomplish this. For now, let's start a staighforward case:
+**Note** If you want your device to connect to a branded section in the Ubuntu Store, consider TODO add link to advanced production model,
 
-* Your distribution runs on a standardand supported Snappy device. In this case, let's use Intel Joule. TODO add link to list of standard devices
-* You start with an unmodified Ubuntu Snap image. That is, you distribution uses unmodified versions of the ubuntu-core snap, the kernel snap and the gadget snap
-* You add your own snaps. That is, the image also includes one or more snaps you have developed and published to the Ubuntu Store
-* Your distribution uses the Ubuntu Store (and the snap is not published privately in the store).
+!["Simple Production Model"](../../../media/production-model-simple.png)
 
-!["My Distribution"][id]
-[id]: ../../../media/g1b.png
+## Steps
 
-## Other distribution cases
+The high level steps are few for this production model:
 
-Other distribution cases not yet coverd here include:
+1. Develop your own _extra_ snaps and publish them in the Ubuntu Store as freely available
+1. Create a _model assertion_ and sign it using a key you have registered with the store
+1. Create your device image (including your extra snaps) and your signed model assertion
+1. Flash your image your devices (the _factory_ stage)
+1. Distribute your devices.
 
-* Porting Snappy to an unsupported device
-* Using modified core, kernel or gadget snaps
-* Using your own snap store
+Let's take a closer look at these steps.
+
+## Develop and publish your extra snaps
+
+There's no better place that <https://snapcraft.io> for learning how to develop snaps.
+
+Once your snap is working as exected, publish it the store as described here <http://snapcraft.io/docs/build-snaps/publish>.
+
+Next, up you need to create your signed model assertion, then build your image.
+
+## Create a signed model assertion
+
+Steps for creating a model assertion are provided here <http://docs.ubuntu.com/core/en/guides/build-device/image-building>.
+
+**Note** Your model assertion also should contain a key `required-snaps:` listing . These are the snaps that make your device special.
+
+Here's a sample model assertion file that defines a model named "my-pi3", is amrhf, uses the stable (unmodified) gadget, kernel and core snaps (the unmodified core snap is assumed and has no key), contains your extra snap ("myawesomesnap"), and is associated with your store account ID (the brand and authority).
  
-## Install Ubuntu Snap on your device
+    {
+      "type": "model",
+      "authority-id": "<your account id>",
+      "brand-id": "<your account id>",
+      "series": "16",
+      "model": "my-pi3",
+      "architecture": "armhf",
+      "gadget": "pi3",
+      "kernel": "pi2-kernel",
+      "required-snaps": ["myawesomesnap", "mysecondawesomenape"], 
+      "timestamp": "<timestamp>"
+    }
 
-As noted, the intention here is to create a distribution using standard Snap Ubuntu for Snap. 
+As noted in the other docs, you sign this with your registered key, which produces your signed model assertion file, which is used in the next step to build your image.
 
-After Snap Ubuntu is installed you can develop your snaps and test them on the device. 
+## Build the image
 
-Now, please install Snap Ubuntu on the device. This typically involves:
+Steps for building an image are provided here <http://docs.ubuntu.com/core/en/guides/build-device/image-building>.
 
-* Downloading the Ubuntu image file
-* Writing thne image onto an unpartitioned micro SD device with the `dd` command
-* Inserting the SD card into the device and booting the device with an HDMI monitor, USB keyboardattached
-* Completing the first boot configuration wizard in the terminal session displayed on the HDMI monitor. This includes entering the email address that you registered with the Ubuntu Store.
+**Note** To include your extra snaps in the image, build the image using the --extra-snaps argument followed by the names of your published snaps (they are obtained from the store and installed). This is the the same as the ```required-snaps``` key in the model assertion.
 
-On completion of the first boot configuration wizard, the `ssh` command needed for you to gain terminal access to the device is displayed. For example: `yourusername@192.168.0.101`. You use ssh to push development snaps to the device for installation and testint during snap development.
+The result is an image file that you can flash onto your devices.
 
-Now you are ready to develop the snaps you want in your distribution. 
+## Factory: flash your devices
 
-## Develop your snap for your device architecture
+Now, flash your devices with the image file you created. One approach is to use the `dd` command to flash the image to unpartitioned and unmounted SD cards that are destined for the devices. Details here may of course vary depending on your "factory".
 
-In this case, your snaps are what make this distribution unique. So, you need to develop your snaps, test them, and publish them in the Ubuntu Store.
+## Distribute your devices
 
-## Create your device image
-
-Use ubuntu-image with `--extra-snap` to create your factory image. This image contains your snaps and is the base image you can install in your factory onto your devices for shipping.
-
-## Factory (make image with snap) and distribute
-
-
-## Maintain in field (snaps updated)
-
-
+Obviously, the approach for getting your devices into customers hands in the field is up to you :)
 
