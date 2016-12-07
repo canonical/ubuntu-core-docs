@@ -46,10 +46,10 @@ navigation:
       - title: Introduction
         location: guides/go-to-production/intro.md
 
-      - title: Simple - Ubuntu store only
+      - title: Simple - Ubuntu store
         location: guides/go-to-production/simple.md
 
-      - title: Advanced - Branded store with Serial Vault
+      - title: Advanced - Branded store
         location: guides/go-to-production/advanced.md
 
 #      - title: Debugging
@@ -72,7 +72,7 @@ navigation:
       - title: Assertions types
         location: reference/assertions.md
 
-      - title: Gadget snap syntax
+      - title: Gadget snap format
         location: reference/gadget.md
 
       - title: Core interfaces reference
