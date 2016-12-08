@@ -235,6 +235,6 @@ In addition to the above, here are two useful techniques when debugging/developi
 Installing in devmode and developing policy can also be done; you will simply focus on getting rid of logged (but otherwise allowed) policy violations.
 
 ### References
- * https://github.com/snapcore/snapd/tree/master/interfaces for existing interface code and policy
- * http://manpages.ubuntu.com/manpages/xenial/man5/apparmor.d.5.html
- * http://wiki.apparmor.net/index.php/Profiling_by_hand (but use the paths listed above and don't use the `aa-genprof` or `aa-logprof` tools because they are not yet snappy-aware)
+ * [https://github.com/snapcore/snapd/tree/master/interfaces](https://github.com/snapcore/snapd/tree/master/interfaces) for existing interface code and policy
+ * [http://manpages.ubuntu.com/manpages/xenial/man5/apparmor.d.5.html](http://manpages.ubuntu.com/manpages/xenial/man5/apparmor.d.5.html)
+ * [http://wiki.apparmor.net/index.php/Profiling_by_hand](http://wiki.apparmor.net/index.php/Profiling_by_hand) (but use the paths listed above and don't use the `aa-genprof` or `aa-logprof` tools because they are not yet snappy-aware)
