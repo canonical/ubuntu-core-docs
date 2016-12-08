@@ -38,17 +38,45 @@ Each volume is described by:
 * a bootloader definition (`grub`, `u-boot`)
 * a partitioning schema eg. `mbr`
 
-Volumes defining the structure and content for the images to be written into one ore more block devices of the gadget device. Each volume in in the structure represents a different image for a "disk" in the device. (optional)
-volumes:
+Volumes define the structure and content of the images to be written into one or more block devices of the gadget device. Each volume in the structure represents a different image for a "disk" in the device.
+
+### Specification
+
+The following specification defines what is supported in `gadget.yaml`:
 
 ```
-  # Name of volume and image file generated. Must be formed by [a-z-]+. (required)
+# Define the format of this file. The default and latest format is zero.
+# Clients reading this file must reject it the format is greater than
+# the supported one. (optional)
+format: <int>
+
+# Default configuration options for defined snaps, applied on installation.
+# (optional)
+defaults:
+    <snap id>:
+        <key>: <value>
+
+# If device-tree is specified, `dtbs/<filename>` must exist in kernel or
+# gadget snap (depends on origin) and `snap_device_tree_origin` and
+# and `snap_device_tree` are made available for u-boot and grub. (optional)
+device-tree: <filename>
+
+# Defines where the device tree is. Defaults to gadget. (optional)
+device-tree-origin: kernel
+
+# Volumes defining the structure and content for the images to be written
+# into one ore more block devices of the gadget device. Each volume in
+# in the structure represents a different image for a "disk" in the device.
+# (optional)
+volumes:
+
+  # Name of volume and output image file. Must match [a-z-]+. (required)
   <volume name>:
 
     # 2-digit hex code for MBR disk ID or GUID for GPT disk id. (optional)
     id: <id>
 
-    # Bootloader in the volume. Required in at least one volume. (required/optional)
+    # Bootloader in the volume. Required in one volume. (required/optional)
     bootloader: grub | u-boot
 
     # Which partitioning schema to use. Defaults to gpt. (optional)
@@ -67,12 +95,20 @@ volumes:
         # GPT unique partition id, disallowed on MBR volumes. (optional)
         id: <id>
 
-        # Type of structure. May be specified as a two-hex-digit MBR partition
-        # type, a GPT partition type GUID, or both for hybrid schemas. It may
-        # also be "mbr" for the Master Boot Record of a disk. (required)
-        type: <mbr type> | <gpt guid> | <mbr type>,<gpt guide> | mbr
+        # Role defines a special role for this item in the image. (optional)
+        # Must be either unset, or one of:
+        #   mbr - Master Boot Record of the image.
+        #   system-boot - Partition holding the boot assets.
+        #   system-data - Partition holding the main operating system data.
+        role: mbr | system-boot | system-data
 
-        # Size for structure item. Maximum of 446 for the "mbr" type. (required)
+        # Type of structure. May be specified as a two-hex-digit MBR partition
+        # type, a GPT partition type GUID, or both on hybrid schemas.  The
+        # special value `bare` says to not create a disk partition for this
+        # structure. (required)
+        type: <mbr type> | <gpt guid> | <mbr type>,<gpt guide> | bare
+
+        # Size for structure item. Maximum of 446 for the mbr role. (required)
         size: <bytes> | <bytes/2^20>M | <bytes/2^30>G
 
         # The offset from the beginning of the image. Defaults to right after

@@ -5,7 +5,7 @@ table_of_contents: true
 
 # Security and sandboxing
 
-Snap packages run confined under a restrictive security sandbox by default. The security policies and store policies work together to allow developers to quickly update their applications and to provide safety to end users.
+Without providing custom flags at installation, snaps run confined under a restrictive security sandbox. The security policies and store policies work together to allow developers to quickly update their applications and to provide safety to end users.
 
 This document describes the sandbox and how to configure and work with the security policies for snap packages.
 
@@ -207,3 +207,34 @@ See `snappy-debug.security help` for details.
 If you believe there is a bug in the security policy or want to request and/or contribute a new
 interface, please [file a bug](https://bugs.launchpad.net/snappy/+filebug),
 adding the `snapd-interface` tag.
+
+## Interface development and security policy
+When participating in snappy development and implementing new interfaces for others to use, you will almost always need to write security policy for both the slots and the plugs side of the interface but keep in mind you are not expected to write perfect security policy on the first try. The review process for snapd includes a security review of the interface security policy and it is expected that the security policy will be iterated on during the review process (in other words, if you are stuck on writing security policy but the interface otherwise works, feel free to submit the interface and ask for help).
+
+### Tips
+
+When fine-tuning AppArmor policy, it is often easiest to install the snap in strict mode then modify the AppArmor policy in place on the target system, then copying it back. Eg, these steps might be:
+
+1. build your snap
+2. copy your snap to your target device and install it (or use `snap try`)
+3. use the snap (perhaps using `snap run --shell <name>.<command>`), monitoring /var/log/syslog for denials
+4. modifying `/var/lib/snapd/apparmor/profiles/snap.<name>.<command>` as needed (eg, adding rules before the final `}`)and running `sudo apparmor_parser -r /var/lib/snapd/apparmor/profiles/snap.<name>.<command>` to load the policy into the kernel
+5. use `sudo service snap.<name>.<command> stop/start/etc` as needed for daemons
+6. repeat until satisfied
+
+The same process as above holds for seccomp except the seccomp policy is in `/var/lib/snapd/seccomp/profiles/snap.<name>.<command>` and there is no command to load the policy (you simply have to relaunch the command or `snap run --shell`). The seccomp policy language is considerably simpler and is essentially a list of allowed syscalls.
+
+When done, copy any changes you make to `/var/lib/snapd/apparmor/profiles/snap.<name>.<command>` or `/var/lib/snapd/seccomp/profiles/snap.<name>.<command>` to your interface code.
+
+In addition to the above, here are two useful techniques when debugging/developing policy:
+
+ * temporarily specify `@unrestricted` in the seccomp policy and this will allow all syscalls
+ * temporarily use a combination of bare apparmor rules to focus on only the parts you want. Eg: `file, capability, network, mount, remount, pivot_root, umount, dbus, signal, ptrace, unix,`
+ * look at existing policy in `interfaces/apparmor/template.go`, `interfaces/seccomp/template.go` and `interfaces/builtin/*` for examples of the policy language
+
+Installing in devmode and developing policy can also be done; you will simply focus on getting rid of logged (but otherwise allowed) policy violations.
+
+### References
+ * https://github.com/snapcore/snapd/tree/master/interfaces for existing interface code and policy
+ * http://manpages.ubuntu.com/manpages/xenial/man5/apparmor.d.5.html
+ * http://wiki.apparmor.net/index.php/Profiling_by_hand (but use the paths listed above and don't use the `aa-genprof` or `aa-logprof` tools because they are not yet snappy-aware)
