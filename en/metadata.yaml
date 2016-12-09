@@ -40,17 +40,17 @@ navigation:
       - title: Interfaces
         location: guides/build-device/interfaces.md
 
-  - title: Go to production
+#  - title: Go to production
 
-    children:
-      - title: Introduction
-        location: guides/go-to-production/intro.md
+#    children:
+#      - title: Introduction
+#        location: guides/go-to-production/intro.md
 
-      - title: Simple - Ubuntu store
-        location: guides/go-to-production/simple.md
+#      - title: Simple - Ubuntu store
+#        location: guides/go-to-production/simple.md
 
-      - title: Advanced - Branded store
-        location: guides/go-to-production/advanced.md
+#      - title: Advanced - Branded store
+#        location: guides/go-to-production/advanced.md
 
 #      - title: Debugging
 
