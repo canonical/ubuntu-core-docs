@@ -1,9 +1,9 @@
 ---
-title: Gadget snap syntax
+title: Gadget snap format
 table_of_contents: true
 ---
 
-# Gadget snap syntax
+# Gadget snap format
 
 ## Setup files
 
