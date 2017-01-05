@@ -53,6 +53,6 @@ This switches the snap to using the `beta` channel for future updates.
 
 ## Publishing
 
-After you've chosen a channel, your snap is sent for review. Most snaps are reviewed by way of automated checks, but if your snap uses sensitive [interfaces](../../reference/interfaces.html), it may be flagged for a manual review and you will receive a notification email from the store whenever the status of the review evolves.
+After you've chosen a channel, your snap is sent for review. Most snaps are reviewed by way of automated checks, but if your snap uses sensitive [interfaces](../../reference/interfaces/index.html), it may be flagged for a manual review and you will receive a notification email from the store whenever the status of the review evolves.
 
 Once your snap has been reviewed and approved, you can publish it when you're ready, instantly making the snap available to users.

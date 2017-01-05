@@ -14,9 +14,10 @@ This document references all the interfaces available by default on an Ubuntu Co
 
 ## Interfaces
 
-| Interface name | Purpose | Auto-connect | Transitional | Attributes |
+| Interface | Purpose | Auto-connect | Transitional | Attributes |
 |----------------|---------|--------------|--------------|------------|
 | `camera` | Can access the first video camera. Suitable for programs wanting to use webcams. | no | no |  |
+| `dbus` | Providing snaps implementing a DBus API may be accessed via their well-known DBus connection name _(snapd 2.20+)._ | no | no | `name` (slot): well-known DBus connection name (eg, `org.foo.bar`)<br> `bus` (slot): DBus bus to use (ie, `session` or `system`)<br> `name` (plug): well-known DBus connection name of providing snap<br> `bus` (plug): DBus bus to use for providing snap |
 | `gsettings` | Can access global gsettings of the user\'s session which gives privileged access to sensitive information stored in gsettings and allows adjusting settings of other applications. | yes | yes |  |
 | `home` | Can access non-hidden files in user\'s `$HOME` and gvfs mounted directories owned by the user to read/write/lock. | yes on classic (traditional distributions), no otherwise | yes |  |
 | `mpris` | Providing snaps implementing the Media Player Remove Interfacing Specification (mpris) may be accessed via their well-known DBus name. | no | no | `name` (slot): optional, media player name to use for DBus well-known name |
@@ -47,6 +48,7 @@ This document references all the interfaces available by default on an Ubuntu Co
 | `hardware-observe` | Can query hardware information from the system. | no | no |  |
 | `hidraw` | Can access hidraw devices. This is restricted because it provides privileged access to hardware devices. | no | no |  |
 | `i2c` | Can access i2c devices. This is restricted because it provides privileged access to hardware devices. | no | no |  |
+| `iio` | Can access IIO devices. This is restricted because it provides privileged access to IIO hardware _(snapd 2.20+)._ | no | no |  |
 | `kernel-module-control` | Can insert kernel modules. This interface gives privileged access to the device. | no | no |  |
 | `libvirt` | Can access the libvirt control socket, which gives privileged access to control libvirtd on the host. This is commonly used to create and manage QEMU/KVM instances on the host. | no | no |  |
 | `locale-control` | Can manage locales directly separate from `config core`. | no | no |  |
@@ -58,11 +60,13 @@ This document references all the interfaces available by default on an Ubuntu Co
 | `mir` | Can access snaps providing the mir display server interface | yes | no |  |
 | `modem-manager` | Can access snaps providing the modem-manager interface which gives privileged access to configure, observe and use modems. | no | no |  |
 | `mount-observe` | Can query system mount information. This is restricted because it gives privileged read access to mount arguments and should only be used with trusted apps. | no | no |  |
-| `network-control` | Can configure networking which gives wide, privileged access to networking. | no | no |  |
+| `network-control` | Can configure networking and network namespaces via `ip netns` (_2.20+_) which gives wide, privileged access to networking. | no | no |  |
 | `network-manager` | Can access snaps providing the network-manager interface which gives privileged access to configure and observe networking. | no | no |  |
 | `network-observe` | Can query network status information which gives privileged read-only access to networking information. | no | no |  |
 | `network-setup-observe` | Can read network setup configuration files. This is restricted because it gives access to system network configuration which can contain network security details. | no | no |  |
 | `ofono` | Can access snaps providing the ofono interface which gives privileged access to configure, observe and use ofono devices. | no | no |  |
+| `openvswitch` | Can access the openvswitch control socket, which gives privileged access to control openvswitch on the host _(snapd 2.20+)._ | no | no |  |
+| `openvswitch-support` | Enables kernel support for openvswitch _(snapd 2.20+)._ | no | no |  |
 | `ppp` | Can access Point-to-Point protocol daemon which gives privileged access to configure and observe PPP networking. | no | no |  |
 | `process-control` | Can manage processes via signals and nice. | no | no |  |
 | `raw-usb` | Can directly access connected USB devices via a raw interface _(snapd 2.18+)._ | no | no |  |

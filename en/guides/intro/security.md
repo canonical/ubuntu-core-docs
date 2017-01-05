@@ -18,7 +18,7 @@ run under a default security policy which can be extended through the use of
 
     $ snap interfaces
 
-The description of these interfaces is found in the [interfaces reference](../../reference/interfaces.html).
+The description of these interfaces is found in the [interfaces reference](../../reference/interfaces/index.html).
 
 Each command declared in `apps` snap metadata is tracked by the system
 assigning a security label to the command. This security label takes the form
