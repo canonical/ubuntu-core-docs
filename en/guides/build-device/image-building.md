@@ -124,7 +124,7 @@ Note: The `--extra-snaps` argument takes either a snap name accessible from the 
 
 You can use a tool like `dd` to write the image to an SDcard and boot your device.
 
-    sudo dd if pi3-test.img of=/dev/sdb bs=32M
+    sudo dd if=pi3-test.img of=/dev/sdb bs=32M
 
 #### First boot tips
 
