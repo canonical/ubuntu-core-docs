@@ -1,15 +1,39 @@
 ---
-title: Assertions types
+title: Assertions
 table_of_contents: true
 ---
 
-# Assertions types
+# Assertions
+
+Assertions are digitally signed documents that express a fact or policy by a particular authority about a particular object in the snap universe. An assertion consists of a set of structured headers, which vary based on the type of assertion, an optional body (variable format, depends on type of assertion) and the signature.
+
+Assertions are intended to be understandable by human inspection, although full validation requires the use of provided tooling.
+
+The typical format of an assertion, with common headers, is as follows:
+
+```
+type:          <type>       # For example, “account” or “model”
+authority-id:  <account id> # On whose authority this assertion is made
+<key field 1>: <value>      # Fields identifying the object of the assertion
+...
+<key field N>: <value>
+<other field>: <value>
+...
+revision: <int>             # Assertions can be updated with a higher revision
+sign-key-sha3-384: <key id> # Encoded key id of signing key
+
+<body>                      # Optional type-dependent body
+
+<signature>                 # Encoded signature
+```
+
+Every assertion will have a `type` and `sign-key-sha3-384`, as well as a signature, and most will have an `authority-id`. Values may be scalars (strings, integers, booleans), lists, or maps. Some of the headers play the role of an index, which uniquely specifies the context of this assertion given the type. Most assertions will also have a revision which enables a particular assertion to be updated by issuing another assertion of the same type and index with a higher revision. Given a particular type and index, there is only one “latest” valid assertion that properly determines policy for a system - the one with the highest revision. For a given assertion the index headers must all be defined.
 
 The following assertions are currently supported:
 
 ## account
 
-The account assertion ties a name for an to its identifier and provides the authority's confidence in the name's validity.
+The account assertion ties a name for an account in the snap universe to its identifier and provides the authority's confidence in the name's validity.
 
 ## account-key
 
@@ -17,7 +41,7 @@ The account-key assertion holds a public key belonging to the account.
 
 ## model
 
-The model assertion is a statement by a brand about the properties of a device model. See [Image building](../guides/build-device/image-building.html) for a real-world example
+The model assertion is a statement by a brand about the properties of a device model.
 
 ## serial
 
@@ -39,26 +63,23 @@ The snap-revision assertion is a statement by the store acknowledging the receip
 
 The system-user assertion is a permit by the brand for local system users to be created on its specified devices.
 
-The system-user assertion has the following form:
+    type:           system-user
+    authority-id:   account-id   // Owner of the key, must be the brand
+    brand-id:       account-id   // Assertion will only work on models of this brand
+    email:          string       // Email of user
+    series:         list         // List of series which should accept this assertion
+    models:         list         // Models which should accept this assertion
+    name:           string       // Optional person’s name, for context and for gecos
+    username:       string       // Local system username for the user
+    password:       string       // Password for local system user, encoded and salted with
+                                    an algorithm hard to brute-force ($6$rounds=...$...)
+    ssh-keys:       list         // SSH keys to authorize for connection
+    since:          utc-datetime
+    until:          utc-datetime // Required!
+    revision:       integer
 
-```
-type:           system-user
-authority-id:   account-id   // Owner of the key, must be the brand
-brand-id:       account-id   // Assertion will only work on models of this brand
-email:          string       // Email of user
-series:         list         // List of series which should accept this assertion
-models:         list         // Models which should accept this assertion
-name:           string       // Optional person’s name, for context and for gecos
-username:       string       // Local system username for the user
-password:       string       // Password for local system user, encoded and salted with
-                                an algorithm hard to brute-force ($6$rounds=...$...)
-ssh-keys:       list         // SSH keys to authorize for connection
-since:          utc-datetime
-until:          utc-datetime // Required!
-revision:       integer
+    signature       authority-sig
 
-signature       authority-sig
-```
 
 ## validation
 

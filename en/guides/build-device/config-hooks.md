@@ -42,10 +42,7 @@ from snapd (or need to provide information to snapd) they can utilize the
 
 ### `configure`
 
-The `configure` hook will be called whenever the user requests a configuration
-change via the `snap set` command. The hook should use `snapctl get` to retrieve
-the requested configuration from snapd, and act upon it. If it exits non-zero,
-the configuration will not be applied.
+The `configure` hook is called upon initial install, upgrade, and whenever the user requests a configuration change via the `snap set` command. The hook should use `snapctl get` to retrieve the requested configuration from snapd, and act upon it. If it exits non-zero, the configuration will not be applied.
 
 
 #### `configure` example

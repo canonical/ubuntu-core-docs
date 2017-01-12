@@ -118,7 +118,7 @@ As of writing, snapcraft does not support native gadget building, you can snap i
 
 ## The model assertion
 
-Before you can build an image to flash on the board, you need to prepare a [model assertion](../../guides/build-device/assertions) and sign it.
+Before you can build an image to flash on the board, you need to prepare a [model assertion](../../reference/assertions.html) and sign it.
 
 First, prepare a JSON file describing the model assertion:
 
@@ -227,7 +227,7 @@ You can now build your image using the following command:
 
 Note: The `--extra-snaps` argument takes either a snap name accessible from the store or a local path to a built snap.
 
-Your image is ready, you can use a tool like `dd` to write the image to an SDcard and boot your board.
+Your image is ready, you can use a tool like `dd` to write the image to an SD Card and boot your board.
 
 ### Build a custom image for a reference board
 

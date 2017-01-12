@@ -68,7 +68,7 @@ The HTTP code will be 200 (`OK`), or 201 (`Created`, in which case the
 
 When a request results in a background operation, the HTTP code is set
 to 202 (`Accepted`) and the `Location` HTTP header is set to the
-operation's URL.
+operation's URL, which is `/v2/changes/{change-id}`.
 
 The body is a JSON object with the following structure:
 
@@ -85,7 +85,8 @@ The body is a JSON object with the following structure:
 ```
 
 Information about the background operation progress can be retrieved
-from the referenced change.
+by making a GET request to the URL returned in the `Location` header,
+which includes a reference to the same change returned in the JSON reply.
 
 ### Error
 
@@ -191,6 +192,13 @@ Reserved for human-readable content describing the service.
 See also the error kinds `two-factor-required` and
 `two-factor-failed`.
 
+## `/v2/logout`
+### `POST`
+
+* Description: Log user out of the store
+* Access: trusted
+* Operation: sync
+* Return: 200 OK or an error
 
 ## `/v2/find`
 ### `GET`
@@ -433,7 +441,7 @@ field      | ignored except in action | description
 Request the configuration values corresponding to the specific keys
 (comma-separated).
 
-### `PUT`
+### PUT
 
 * Description: Set the configuration details for an installed snap
 * Access: superuser only
@@ -568,28 +576,6 @@ Sample input:
 }
 ```
 
-## `/v2/events`
-
-### `GET`
-
-* Description: Websocket upgrade
-* Access: trusted
-* Operation: sync
-* Return: nothing (never ending flow of events)
-
-### Parameters
-
-The default is for all notifications to be received but the following filters
-are supported:
-
-#### types
-
-Comma separated list of notification types, either `logging` or `operations`.
-
-#### resource
-
-Generally the UUID of a background operation you are interested in.
-
 ## `/v2/buy`
 
 ### `POST`
@@ -681,5 +667,30 @@ Sample return:
   "username":"mvo",
   "ssh-keys": ["key1","key2"]
   "ssk-key-count": 2,
+}
+```
+
+## `/v2/aliases`
+
+### `POST`
+
+* Description: Issue an action on aliases
+* Access: authenticated
+* Operation: async
+* Return: background operation or standard error
+
+Available actions are:
+
+- alias: enable the provided aliases for the snap.
+- unalias: disable explicitly the provided aliases for the snap.
+- reset: reset the provided aliases for the snap to their default state, enabled for auto-aliases, disabled   otherwise.
+
+Sample input:
+
+```javascript
+{
+    "action": "alias",
+    "snap": "alias-snap",
+    "aliases": ["alias1", "alias2"]
 }
 ```

@@ -100,6 +100,9 @@ volumes:
         #   mbr - Master Boot Record of the image.
         #   system-boot - Partition holding the boot assets.
         #   system-data - Partition holding the main operating system data.
+        #
+        # A structure with role:system-data must either have an implicit
+        # file system label, or 'writable'.
         role: mbr | system-boot | system-data
 
         # Type of structure. May be specified as a two-hex-digit MBR partition
