@@ -85,9 +85,9 @@ As an example, here is one for a device based on a Raspberry Pi 3 board. The JSO
 *   `series`: the Ubuntu Core series in use
 *   `model`: a free form lower-case name for your target device
 *   `architecture`: the architecture of the device you are building the image for
-*   The `gadget` and `kernel` values refer to snaps already existing in the store.
+*   `gadget` and `kernel` refer to snaps already existing in the store or in the current directory
 *   `timestamp` is a valid timestamp you need to generate using the `date -Iseconds --utc` command
-
+*   `required-snaps`: you can optionally add a list of required snaps that will be unremovable and will be downloaded from the store or locally if they exist in the current directory
 
 ### 2. Sign your model assertion
 
