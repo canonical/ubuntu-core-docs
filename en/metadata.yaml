@@ -79,6 +79,9 @@ navigation:
       - title: Ubuntu Core REST API
         location: reference/rest.md
 
+      - title: Ubuntu Core Configuration
+        location: reference/core-configuration.md
+
 
   - title: Build snaps
     location: http://snapcraft.io
