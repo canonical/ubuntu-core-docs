@@ -47,6 +47,19 @@ navigation:
       - title: Advanced - Branded store
         location: guides/go-to-production/advanced.md
 
+  - title: Ubuntu Core Stacks
+
+    children:
+      - title: Introduction
+        location: index.md
+
+      - title: Stack Items
+        children:
+          - title: Audio management
+          - location: audio/index.md
+          - title: Bluetooth management
+          - location: bluetooth/index.md
+
 #      - title: Debugging
 
 #  - title: Manage devices
