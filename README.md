@@ -13,7 +13,7 @@ To build the documentation you need to install documentation-builder:
 Then install the git-repo utility:
 
     $ mkdir $HOME/.bin/
-    $ export PATH=\$PATH:$HOME/.bin/repo >> $HOME/bashrc
+    $ export PATH=$PATH:$HOME/.bin/repo
     $ curl https://storage.googleapis.com/git-repo-downloads/repo > $HOME/.bin/repo
     $ chmod a+x $HOME/.bin/repo
 
