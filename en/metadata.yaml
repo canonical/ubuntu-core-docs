@@ -56,9 +56,25 @@ navigation:
       - title: Stack Items
         children:
           - title: Audio management
-          - location: audio/index.md
+            location: stacks/audio/index.md
           - title: Bluetooth management
-          - location: bluetooth/index.md
+            location: stacks/bluetooth/doc/overview.md
+          - title: Disk management
+            location: stacks/disk/index.md
+          - title: Location services
+#            location: stacks/location/docs/index.md
+          - title: Media playback & recording
+#            location: stacks/media/docs/index.md
+          - title: Modem management
+            location: stacks/modem/docs/index.md
+          - title: Network management
+            location: stacks/network/docs/index.md
+          - title: Power management
+#            location: stacks/power/docs/index.md
+          - title: TPM
+            location: tpm/index.md
+          - title: WiFi access point
+#            location: stacks/wifi/docs/index.md
 
 #      - title: Debugging
 
