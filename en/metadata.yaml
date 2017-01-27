@@ -51,7 +51,7 @@ navigation:
 
     children:
       - title: Introduction
-        location: index.md
+        location: stacks/index.md
 
       - title: Stack Items
         children:
@@ -66,13 +66,13 @@ navigation:
           - title: Media playback & recording
 #            location: stacks/media/docs/index.md
           - title: Modem management
-            location: stacks/modem/docs/index.md
+#            location: stacks/modem/docs/index.md
           - title: Network management
             location: stacks/network/docs/index.md
           - title: Power management
 #            location: stacks/power/docs/index.md
           - title: TPM
-            location: tpm/index.md
+            location: stacks/tpm/index.md
           - title: WiFi access point
 #            location: stacks/wifi/docs/index.md
 
