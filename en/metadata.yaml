@@ -53,6 +53,11 @@ navigation:
       - title: Introduction
         location: stacks/index.md
 
+# TODO:
+#   * Need Markdown documentation for location-service
+#   * Need Markdown documentation for media-hub
+#   * Need Markdown documentation for upower
+#   * Need to move the wifi-ap documentation from Google Docs to Markdown
       - title: Stack Items
         children:
           - title: Audio management
@@ -61,13 +66,13 @@ navigation:
             location: stacks/bluetooth/doc/overview.md
           - title: Disk management
             location: stacks/disk/index.md
-          - title: Location services
+#          - title: Location services
 #            location: stacks/location/docs/index.md
-          - title: Media playback & recording
+#          - title: Media playback & recording
 #            location: stacks/media/docs/index.md
           - title: Network management & services
             location: stacks/network/index.md
-          - title: Power management
+#          - title: Power management
 #            location: stacks/power/docs/index.md
           - title: TPM
             location: stacks/tpm/index.md

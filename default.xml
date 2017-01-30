@@ -11,7 +11,6 @@
   <project path="en/stacks/audio/pulseaudio" name="pulseaudio" />
   <project path="en/stacks/tpm/tpm" name="tpm" />
   <project path="en/stacks/tpm/tpm2" name="tpm2" />
-  <project path="en/stacks/disk/udisks" name="udisks" />
   <project path="en/stacks/disk/udisks2" name="udisks2" />
   <project path="en/stacks/power" name="upower" />
   <project path="en/stacks/testing" name="engineering-tests" />

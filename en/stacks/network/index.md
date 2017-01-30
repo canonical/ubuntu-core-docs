@@ -4,9 +4,9 @@ title: Network management & services
 
 # Network management & services
 
-There are currently several interesting snaps which manage networking, modems
-and instantly creates a wireless access point:
+There are currently several snaps which manage networking, modems
+and one that instantly creates a wireless access point:
 
-1. modem-manager
-2. [network-manager](stacks/network/network-manager/docs/index.md)
-3. wifi-ap
+* modem-manager
+* [network-manager](network-manager/docs/index.md)
+* wifi-ap
