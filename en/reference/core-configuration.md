@@ -27,6 +27,8 @@ The following configuration options are currently supported:
 
 ## service.ssh.disabled
 
+Available since: 2.22
+
 Disable the SSH service of the system.
 
 **WARNING**: Disabling SSH disables the default way to access an Ubuntu Core
