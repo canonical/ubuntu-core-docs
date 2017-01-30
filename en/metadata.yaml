@@ -65,16 +65,12 @@ navigation:
 #            location: stacks/location/docs/index.md
           - title: Media playback & recording
 #            location: stacks/media/docs/index.md
-          - title: Modem management
-#            location: stacks/modem/docs/index.md
-          - title: Network management
-            location: stacks/network/docs/index.md
+          - title: Network management & services
+            location: stacks/network/index.md
           - title: Power management
 #            location: stacks/power/docs/index.md
           - title: TPM
             location: stacks/tpm/index.md
-          - title: WiFi access point
-#            location: stacks/wifi/docs/index.md
 
 #      - title: Debugging
 
