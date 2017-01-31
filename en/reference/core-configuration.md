@@ -25,7 +25,9 @@ e.g.:
 
 The following configuration options are currently supported:
 
-## service.sshd.disabled
+## service.ssh.disabled
+
+Available since: 2.22
 
 Disable the SSH service of the system.
 
@@ -46,5 +48,5 @@ The configuration option accepts the following values:
 Example:
 
 ```
- $ snap set core service.sshd.disabled=true
+ $ snap set core service.ssh.disabled=true
 ```
