@@ -16,6 +16,7 @@ This document references all the interfaces available by default on an Ubuntu Co
 
 | Interface | Purpose | Auto-connect | Transitional | Attributes |
 |----------------|---------|--------------|--------------|------------|
+| `account-control` | Can add users and change password. Suitable for administration tools. | no | no |  |
 | `camera` | Can access the first video camera. Suitable for programs wanting to use webcams. | no | no |  |
 | `dbus` | Providing snaps implementing a DBus API may be accessed via their well-known DBus connection name _(snapd 2.20+)._ | no | no | `name` (slot): well-known DBus connection name (eg, `org.foo.bar`)<br> `bus` (slot): DBus bus to use (ie, `session` or `system`)<br> `name` (plug): well-known DBus connection name of providing snap<br> `bus` (plug): DBus bus to use for providing snap |
 | `gsettings` | Can access global gsettings of the user\'s session which gives privileged access to sensitive information stored in gsettings and allows adjusting settings of other applications. | yes | yes |  |
