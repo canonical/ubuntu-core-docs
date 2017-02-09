@@ -40,9 +40,9 @@ system.
 
 The configuration option accepts the following values:
 
- * *false (default):* Enable the SSH service. The SSH service will directly
+ * `false` (default): Enable the SSH service. The SSH service will directly
  available for incoming connections.
- * *true:* Disable the SSH service. Existing SSH connection will remain but
+ * `true`: Disable the SSH service. Existing SSH connection will remain but
  establishing any further connections will be not possible.
 
 Example:
@@ -59,12 +59,18 @@ Specify the action to take when the power button is pressed.
 
 The configuration option accepts the following values:
 
-* *ignore:* Do nothing.
-* *poweroff (default):* Shut down the system.
-* *reboot:* Reboot the system.
-* *halt:* Halt the system.
-* *kexec:* Directly boot a new kernel.
-* *suspend:* Suspend the system.
-* *hibernate:* Hibernate the system.
-* *hybrid-sleep:* Suspend to both disk and RAM.
-* *lock:* Screen-lock all running sessions.
+* `ignore`: Do nothing.
+* `poweroff` (default): Shut down the system.
+* `reboot`: Reboot the system.
+* `halt`: Halt the system.
+* `kexec`: Directly boot a new kernel.
+* `suspend`: Suspend the system.
+* `hibernate`: Hibernate the system.
+* `hybrid-sleep`: Suspend to both disk and RAM.
+* `lock`: Screen-lock all running sessions.
+
+Example:
+
+```
+ $ snap set core system.power-key-action=reboot
+```
