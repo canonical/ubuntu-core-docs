@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="origin" fetch="https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git" />
+  <default revision="master" remote="origin"  sync-j="4" />
+  <project path="en/stacks/audio/alsa" name="alsa-utils" />
+  <project path="en/stacks/bluetooth" name="bluez" />
+  <project path="en/stacks/network/modem-manager" name="modem-manager" />
+  <project path="en/stacks/network/network-manager" name="network-manager" />
+  <project path="en/stacks/network/ofono" name="ofono" />
+  <project path="en/stacks/network/wifi-ap" name="wifi-ap" />
+  <project path="en/stacks/audio/pulseaudio" name="pulseaudio" />
+  <project path="en/stacks/tpm/tpm" name="tpm" />
+  <project path="en/stacks/tpm/tpm2" name="tpm2" />
+  <project path="en/stacks/disk/udisks2" name="udisks2" />
+  <project path="en/stacks/power" name="upower" />
+  <project path="en/stacks/testing" name="engineering-tests" />
+</manifest>
