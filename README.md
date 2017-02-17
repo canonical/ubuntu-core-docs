@@ -20,7 +20,7 @@ Then install the git-repo utility:
 From the root of the documentation source tree do the following to get the Ubuntu
 Core Stacks bits:
 
-    $ repo init -u git@github.com:CanonicalLtd/ubuntu-core-docs.git
+    $ repo init -u https://github.com/CanonicalLtd/ubuntu-core-docs.git
     $ repo sync
     $ documentation-builder
 
