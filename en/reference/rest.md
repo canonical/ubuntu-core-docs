@@ -635,7 +635,7 @@ A JSON object with the following keys:
 * email: the email of the user to create
 * sudoers: if true adds "sudo" access to the created user
 * known: use the local system-user assertions to create the user
-         (see assertions.md for details about the system-user assertion)
+         (see [assertions](assertions.md) for details about the system-user assertion)
 
 As a special case: if email is empty and known is set to true, the
 command will create users for all system-user assertions that are
