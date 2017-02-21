@@ -10,7 +10,10 @@ Assertions are digitally signed documents that express a fact or policy by a par
 Assertions are intended to be understandable by human inspection, although full validation requires the use of provided tooling.
 
 Assertions are the way trust information is transmitted between the different
-parts of the snap ecosystem (snap daemon, snapcraft, store...).
+parts of the snap ecosystem (snapd daemon, snapcraft tool, store...).
+They are used for things like stating who is the publisher of a snap or who
+created a device image, or for allowing to do some actions if the right
+assertion is provided (like creating a system user).
 
 The typical format of an assertion, with common headers, is as follows:
 
@@ -57,587 +60,68 @@ snap download <snap name>
 which will download the snap and a file with its assertions. The file will
 contain account-key of the snap owner, snap-declaration, and snap-revision assertions.
 
-Below we define the currently supported assertions. Unless otherwise noted, all
-fields are madatory.
-
-## account
-
-The account assertion ties a name for an account in the snap universe to its
-identifier and provides the authority's confidence in the name's validity.
-
-The format is as follows:
-
+Although in most cases assertions are generated automatically by the different
+parts of the system, it is worth noting that they can be generated manually
+with the `snap sign` command. The input must have a json format, for instance
 ```text
-type:              account
-authority-id:      <authority account id>
-revision:          <int>
-account-id:        <account id>
-display-name:      <friendly name for the account>
-username:          <store user name or nick>
-validation:        <uproven|certified>
-timestamp:         <UTC datetime>
-sign-key-sha3-384: <key id> # Encoded key id of signing key
-
-<signature>                 # Encoded signature
+$ cat account.json
+{
+    "type": "account",
+    "authority-id": "234njDFJHG0jkh0asdAGQ43SESwerrfg",
+    "revision": "14",
+    "account-id": "asdfv389h4SSEDB49hasdfh8hfajhfak",
+    "display-name": "John Smith",
+    "username": "jsmith",
+    "validation": "unproven",
+    "timestamp": "2017-02-20T10:23:51+00:00"
+}
 ```
-
-The index for this assertion is the `account-id`. Validation `certified` means
-that the authority is confident in that the display name accurately describes the
-owner of the account, while `unproven` means that no checks have been performed
-on that. Header `username` is optional.
-
-An example for this assertion:
-
+can be signed by doing
 ```text
+$ cat account.json | snap sign > account
+```
+(we would be signing with our default key). The output would be similar too
+```text
+$ cat account
 type: account
-authority-id: canonical
+authority-id: 234njDFJHG0jkh0asdAGQ43SESwerrfg
 revision: 14
-account-id: mmOOPWIl0sL7FoSA0KRTt83b1eoynkBa
+account-id: asdfv389h4SSEDB49hasdfh8hfajhfak
 display-name: John Smith
 timestamp: 2017-02-20T10:23:51+00:00
 username: jsmith
 validation: unproven
-sign-key-sha3-384: C9mhxTpowHTXM3HOwgg3ZCX-WD05CczlNMdrCBbl2l0d4J_CcjYBS8NQpI-TtQlL
+sign-key-sha3-384: Ix2EqDXjEdsY8yZACzvpc-3J1C022LPnHTP29fdpaWfOuTr8dG6Bva2qlm3ftn9b
 
-AcLBXAQAAQoABgUCWKrNXwAKCRC03QWqtcJXZZvwD/9GhSwf9GjiVj9k+x3zVvnHpCPeHDJT0MSJ
-yRsshygdh2njY7o7MWnQbQ3ThOvJsRMAayQejkLd6ro9/gyapJdafCVrTD6/yPrIfN8LaekVGmTL
-tIDluOfQPgboR1a3wA/zXSo077tmbsYTjiZSo73ubNLrEeHi92x7GsECdRVp8B8wPTbgzZUWZOo3
-/p8tXkot7wxqLsjgHbT+DlNSXe491ABM4TxVVYsSltUv+h+GAAfdvV2hMoPENLIVukqkGFq1XRGf
-zBlfODbNRIXoUQ3eFPThYfYdDEVlxF4cKDt2yt9Wcngs31ti5JdGJ7kqL6Hp5rI/Gkdm2dCdvLhf
-+9GDYt1+O9wVSfsZBgcy/shqSwHzP/GyBdPysSRNOSSiS/YFQiTjMWScNM9I1j0oyohlgnV6AOVa
-MeaJFf1Kv90IWL7SP81VZuyqUWcohwuQ5JtphMat2uFqRL0pgH5+btmiWiHCqLqdNJJBIcCpSG+t
-Iw1Z27hBm8cmYJW2IFop/fhZxEqggEmzh5hooIuk67he/FLuINuOb4qDlD+hqp6vSz5S9Br/0Gu/
-/0Vr/YCLo9b0xRIeAVZGHxhJMxrELYkGpBv8woaK3hKT53jPxX9tTUwQazYzMhqwZlZSBSFQtnSq
-aVrlphWrz4MOmWZ+6HJSx6Qc4p31K/QIVSip14fUYw==
+AcLBXAQAAQoABgUCWKwrggAKCRAr48PRDeXDupqkEACnHhKv0DLqApeyzsr6sImgMfZ3+j7pxUz3
+7NWk/0Ld/RzimlOavKitxi3wHPfb2Tw6kTI/faO3s+E3+Uq4/luzLILZ5CAOczqQAuPgAdphlHMx
+gJCdFrOlw9quF4MtWJpXNa05OJsDm2G+B3GehJzReQ6vXriNjqTe/OmLrSpMPp7NoZb3nGcrNwWo
+KULfveCgNRwl61vU3EfHif8qo1rlX0l4mxOp5w9GDhuZQZ8l+bJW9vBpGXmnEDYfsdbO2gCNykbV
+CM+nkza/QdoAaBOiz2E/PFyipamRpv0ATo/RSePKTp9iUbOl1xNOiJBwc5+pUb6s3sDyzFNWIDBK
+mN2J7tu2pO3yYTqR/DQs8eY+MkqGnBEK8KuKzfe87Nszrrd+ulBliYepkmk3xfrhJGLHN1qebZ2K
+9ykYR8m2uoE5c2r40toaf6tay0QlddZq9aq6FvdnnA6CArbsdwbXZuMv780MmwnIFJk2D4p0+5mM
+SbSU63kiSJ+oQRKmHZ7jryP06kvzfYmSwT7LXjvu0qLx7ac+OoMiCyFzXcwGfvM9KzZW71fMTfvI
+fmuDl+fSm0edz1QURcamr4WmwlNI+yebPfrhZAWXvvfk/sXT2N12ojxp4M3DnO+1WVFHKaWyeS0G
+eoyPdPAWyOm5KcTm3O92Q/jo3TQF5tyDMIHHOLnkUQ==
 ```
 
-## account-key
+Below we define in detail the currently supported assertions. Unless otherwise noted, all
+fields are madatory.
 
-The account-key assertion holds a public key belonging to an account.
+[account assertion](assertions/account.md)
 
-The format is as follows:
+[account-key assertion](assertions/account-key.md)
 
-```text
-type:                account-key
-authority-id:        <authority account id>
-revision:            <int>
-public-key-sha3-384: <key id/sha3-384 digest of the key>
-account-id:          <account id>
-name:                <human readable key name>
-since:               <UTC datetime>
-until:               <UTC datetime>
-sign-key-sha3-384:   <key id> # Encoded key id of signing key
+[model assertion](assertions/model.md)
 
-BODY: base64 encoded version prefixed public key packet
+[serial assertion](assertions/serial.md)
 
-<signature>                 # Encoded signature
-```
+[snap-declaration assertion](assertions/snap-declaration.md)
 
-The index for this assertion is `public-key-sha3-384`. The key is valid in the
-time interval specified by `since` and `until`, being valid forever if `until`,
-which is optional, is not defined.
+[snap-build assertion](assertions/snap-build.md)
 
-`public-key-sha3-384` is the SHA3-384 hash of the (decoded) body content. The
-body itself is a format version byte (0x1 for now) followed by the public key
-packet itself. The version 1 public key packet is a constrained/normalized
-RFC4880 public key packet (v4, new header format, algorithm fixed to RSA,
-timestamp fixed as well).
+[snap-revision assertion](assertions/snap-revision.md)
 
-The digest of the public key (`public-key-sha3-384`) is used for the lookup of keys
-when verifying signatures: all assertions reference their signing key by
-providing this digest in a `sign-key-sha3-384` header.
+[system-user assertion](assertions/system-user.md)
 
-Note that when validating an `account-key` it is essential to check that the digest
-matches the assertion body, besides the signature validation performed for all
-assertions.
-
-As an example, Canonical's public key for the store is
-
-```text
-type: account-key
-authority-id: canonical
-revision: 2
-public-key-sha3-384: BWDEoaqyr25nF5SNCvEv2v7QnM9QsfCc0PBMYD_i2NGSQ32EF2d4D0hqUel3m8ul
-account-id: canonical
-name: store
-since: 2016-04-01T00:00:00.0Z
-body-length: 717
-sign-key-sha3-384: -CvQKAwRQ5h3Ffn10FILJoEZUXOv6km9FwA80-Rcj-f-6jadQ89VRswHNiEB9Lxk
-
-AcbBTQRWhcGAARAA0KKYYQWuHOrsFVi4p4l7ZzSvX7kLgJFFeFgOkzdWKBTHEnsMKjl5mefFe9ji
-qe8NlmJdfY7BenP7XeBtwKp700H/t9lLrZbpTNAPHXYxEWFJp5bPqIcJYBZ+29oLVLN1Tc5X482R
-vCiDqL8+pPYqBrK2fNlyPlNNSum9wI70rDDL4r6FVvr+osTnGejibdV8JphWX+lrSQDnRSdM8KJi
-UM43vTgLGTi9W54oRhsA2OFexRfRksTrnqGoonCjqX5wO3OFSaMDzMsO2MJ/hPfLgDqw53qjzuKL
-Iec9OL3k5basvu2cj5u9tKwVFDsCKK2GbKUsWWpx2KTpOifmhmiAbzkTHbH9KaoMS7p0kJwhTQGA
-o9aJ9VMTWHJc/NCBx7eu451u6d46sBPCXS/OMUh2766fQmoRtO1OwCTxsRKG2kkjbMn54UdFULl9
-VfzvyghMNRKIezsEkmM8wueTqGUGZWa6CEZqZKwhe/PROxOPYzqtDH18XZknbU1n5lNb7vNfem9F
-2ai+3+JyFnW9UhfvpVF7gzAgdyCqNli4C6BIN43uwoS8HkykocZS/+Gv52aUQ/NZ8BKOHLw+7ant
-Q0o8W9ltSLZbEMxFIPSN0stiZlkXAp6DLyvh1Y4wXSynDjUondTpej2fSvSlCz/W5v5V7qA4nIcG
-vUvV7RjVzv17ut0AEQEAAQ==
-
-AcLDXAQAAQoABgUCV83k9QAKCRDUpVvql9g3IBT8IACKZ7XpiBZ3W4lqbPssY6On81WmxQLtvsMV
-WTp6zZpl/wWOSt2vMNUk9pvcmrNq1jG9CuhDfWFLGXEjcrrmVkN3YuCOajMSPFCGrxsIBLSRt/bP
-nrKykdLAAzMfG8rP1d82bjFFiIieE+urQ0Kcv09Jtdvavq3JT1Tek5mFyyfhHNlQEKOzWqmRWiLg
-3c3VOZUs1ZD8TSlnuq/x+5T0X0YtOyGjSlVxk7UybbyMNd6MZfNaMpIG4x+mxD3KHFtBAC7O6kLe
-eX3i6j5nCY5UABfA3DZEAkWP4zlmdBEOvZ9t293NaDdOpzsUHRkoi0Zez/9BHQ/kwx/uNc2WqrYm
-inCmu16JGNeXqsyinnLl7Ghn2RwhvDMlLxF6RTx8xdx1yk6p3PBTwhZMUvuZGjUtN/AG8BmVJQ19
-rsGSRkkSywvnhVJRB2sudnrMBmNS2goJbzSbmJnOlBrd2WsV0T9SgNMWZBiov3LvU4o2SmAb6b+k
-rYwh8H5QHcuuYJuxDjFhPswIp6Wes5T6hUicf3SWtObcDS4HSkVS4ImBjjX9YgCuFy7QdnooOWEY
-aPvkRw3XCVeYq0K6w9GRsk1YFErD4XmXXZjDYY650MX9v42Sz5MmphHV8jdIY5ssbadwFSe2rCQI
-6UX08zy7RsIb19hTndE6ncvSNDChUR9eEnCm73eYaWTWTnq1cxdVP/s52r8uss++OYOkPWqh5nOu
-haRn7INjH/yZX4qXjNXlTjo0PnHH0q08vNKDwLhxS+D9du+70FeacXFyLIbcWllSbJ7DmbumGpFo
-yYbtj3FDDPzachFQdIG3lSt+cSUGeyfSs6wVtc3cIPka/2Urx7RprfmoWSI6+a5NcLdj0u2z8O96
-HxeIgxDpg/3gT8ZIuFKePMcLDM19Fh/p0ysCsX+84B9chNWtsMSmIaE57V+959MVtsLu7SLb9gi7
-skrju0pQCwsu2wHMLTNd1f3PTHmrr49hxetTus07HSQUApMtAGKzQilF5zqFjbyaTd4xgQbd+PKW
-CjFyzQTDOcUhXpuUGt/IzlqiFfsCsmbj2K4KdSNYMlqIgZ3Azu8KvZLIhsyN7v5vNIZSPfEbjdeu
-ClU9r0VRiJmtYBUjcSghD9LWn+yRLwOxhfQVjm0cBwIt5R/yPF/qC76yIVuWUtM5Y2/zJR1J8OFq
-qWchvlImHtvDzS9FQeLyzJAOjvZ2CnWp2gILgUz0WQdOk1Dq8ax7KS9BQ42zxw9EZAEPw3PEFqRy
-IQsRTONp+iVS8YxSmoYZjDlCgRMWUmawez/Fv5b9Fb/XkO5Eq4e+KfrpUujXItaipb+tV8h5v3tr
-oG3Ie3WOHrVjCLXIdYslpL1O4nadqR6Xv58pHj6k
-```
-
-## model
-
-The model assertion is a statement by a brand about the properties of a device model.
-
-The format is as follows:
-
-```text
-type:              model
-authority-id:      <authority account id>
-revision:          <int>
-series             <string>
-brand-id           <account id>
-model              <model id>
-classic            <true|false>
-store              <string>
-display-name       <descriptive string>
-architecture       <debian architecture name>
-gadget             <gadget snap name>
-kernel             <kernel snap name>
-required-snaps     <string>
-timestamp          <UTC datetime>
-sign-key-sha3-384: <key id> # Encoded key id of signing key
-
-<signature>                 # Encoded signature
-```
-
-The index for this assertion is the tuple <`series`, `brand-id`, `model`>. `series`
-allows the brand to define which release of the platform the device uses.
-“rolling” is the name of the development series that bridges stable series,
-which have names like “16” or “18”. `brand-id` is the account id of the brand, and `model`
-is a string that identifies a set of devices as desired by the brand.
-
-The (optional) `classic` flag tells us if this is an all-snap system (false) or not (true).
-If not set, `architecture`, `gadget`, and `kernel` are mandatory. If set, `kernel`
-is forbidden and `architecture` and `gadget` are optional. If not present, an
-all-snap system is assumed.
-
-The optional `store` header specifies a particular branded virtual store to be
-used for this model.
-The store in question has custom content specific to that model, curated by that brand,
-and managed by the store owner or the relevant brand. Each model knows which
-store it needs to speak to in order to get the appropriate content. If left out
-the device defaults to use the main Ubuntu store.
-
-`gadget` and `kernel` specify respectively the gadget and kernel snaps used to build
-the device images. `required-snaps` (optional) is a list of snaps that must be installed at
-all times, and cannot be removed from the device.
-
-For instance, this is kvm's Ubuntu Core model assertion:
-
-```text
-type: model
-authority-id: canonical
-series: 16
-brand-id: canonical
-model: pc-amd64
-architecture: amd64
-gadget: pc
-kernel: pc-kernel
-timestamp: 2016-08-31T00:00:00.0Z
-sign-key-sha3-384: 9tydnLa6MTJ-jaQTFUXEwHl1yRx7ZS4K5cyFDhYDcPzhS7uyEkDxdUjg9g08BtNn
-
-AcLBXAQAAQoABgUCV9A82wAKCRDgT5vottzAEhq1D/4z66k0JS7sQrD54Ccros3HaAABF+7KwGqV
-ggg6Mk+N2QKNxpl7fxHeyB82KUy49v4Kp8cg4icPUfrZb1DyzjgyuJIzZfCp1+LLQ4ShJ0ZW9MLW
-p7r/FbITtbmGlCKjVtaSwLYTkZNfae/MTTuTB1nLXH939vdicRPtRQ1MsoQ6v8wUYeE4/F+SUxL9
-ekYf4G8sz+vzcO5BK9+1T3Wo/aLHDi0N4EOS3K4ia1BVITZKvyeIUEHOLQJAHKk43dAL0PqMFW+W
-IHhDXQoUeiURBfy6zcrRynaIj5tzlhFmJ3pjlmLQLlVCeGJ4yuZ6xb0YIl+oHpYzZrxTad2mEMUY
-si4qIyxVNGj7LZCloLRsDFBMh8RS9a8L0/Cq3hA2Q1Ugyw2D5U7J427SVYCDS9rrihNVvMFscou6
-vrZHMnAVl/F/TRUDYy29idiiibBQU02D1l4Qu7QnDQQCZygq1n+aeW5ZPwtF/KclkJm0YRUkqbtR
-FG2TYLmQ06MPmRuqVRaAdjfhnZ9YtFBDhI+obn99q/OmG2e7d4WNU3JPG1h5arIQGNeR9kVzBER1
-iO0V3iYjD0DxOsd2QVOdI/o8HqCRfycTMo/7TydVdWKXKpKdzeezfz/df2LRDCE712NVFhY0hDC6
-BvV4mMoqS17K7OMHfDohh0DFfp0yFl9oYfLY55G5HA==
-```
-
-## serial
-
-The serial assertion is a statement binding a device identity with the device public key.
-
-The format is as follows:
-
-```text
-type:               serial
-authority-id:       <authority account id>
-revision:           <int>
-brand-id            <account id>
-model               <model id>
-serial              <unique id for the device>
-device-key          <public key and type>
-device-key-sha3-384 <digest of the device key>
-timestamp           <UTC datetime>
-sign-key-sha3-384: <key id> # Encoded key id of signing key
-
-BODY: map of hardware constraints/details  # expected to be YAML
-
-<signature>                 # Encoded signature
-```
-
-The index is the tuple <`brand-id`, `model`, `serial`>, being `serial` a unique
-identifier for the device. `brand-id` and `model` must match an existing model assertion.
-
-The assertion provides a unique key for the device in the `device-key` header,
-being the format the same as for the key in the account-key assertion. A digest
-to identify it is also provided. The device key might change over time, in a
-controlled fashion, but at any given time there is only one device key per device.
-
-The (optional) body will contain device details in YAML format.
-
-This example is extracted from a kvm Ubuntu Core instance:
-
-```text
-type: serial
-authority-id: canonical
-brand-id: canonical
-model: pc-amd64
-serial: 03961d5d-26e5-443f-838d-6db046126bea
-device-key:
-    AcbBTQRWhcGAARAA0y/BXkBJjPOl24qPKOZWy7H+6+piDPtyKIGfU9TDDrFjFnv3R8EMTz1WNW8d
-    5nLR8gjDXNh3z7dLIbSPeC54bvQ7LlaO2VYICGdzHT5+68Rod9h5NYdTKgaWDyHdm2K1v2oOzmMF
-    Z+MmL15TvP9lX1U8OIVkmHhCO7FeDGsPlsTX2Wz++SrOqG4PsvpYsaYUTHE+oZ+Eo8oySW/OxTmp
-    rQIEUoDEWNbFR5/+33tHRDxKSjeErCVuVetZxlZW/gpCx5tmCyAcBgKoEKsPqrgzW4wUAONaSOGc
-    Zuo35DxwqeGHOx3C118rYrGvqA2mCn3fFz/mqnciK3JzLemLjw4HyVd1DyaKUgGjR6VYBcadL72n
-    YN6gPiMMmlaAPtkdFIkqIp1OpvUFEEEHwNI88klM/N8+t3JE8cFpG6n4WBdHUAwtMmmVxXm5IsM3
-    uNwrZdIBUu4WOAAgu2ZioeHLIQlDGw6dvVTaK+dTe0EXo5j+mH5DFnn0W1L7IAj6rX8HdiM5X5fP
-    4kwiezSfYXJgctdi0gizdGB7wcH0/JynaXA/tI3fEVDu45X7dA/XnCEzYkBxpidNfDkmXxSWt5N/
-    NMuHZqqmNHNfLeKAo1yQ/SH702nth6vJYJaIX4Pgv5cVrX5L429U5SHV+8HaE0lPCfFo/rKRJa9i
-    rvnJ5OGR4TeRTLsAEQEAAQ==
-device-key-sha3-384: _4U3nReiiIMIaHcl6zSdRzcu75Tz37FW8b7NHhxXjNaPaZzyGooMFqur0EFCLS6V
-timestamp: 2016-11-08T18:16:12.977431Z
-sign-key-sha3-384: BWDEoaqyr25nF5SNCvEv2v7QnM9QsfCc0PBMYD_i2NGSQ32EF2d4D0hqUel3m8ul
-
-AcLBUgQAAQoABgUCWCIWcgAARegQAB4/UsBpzqLOYOpmR/j9BX5XNyEWxOWgFg5QLaY+0bIz/nbU
-avFH4EwV7YKQxX5nGmt7vfFoUPsRrWO4E6RtXQ1x5kYr8sSltLIYEkUjHO7sqB6gzomQYkMnS2fI
-xOZwJs9ev2sCnqr9pwPC8MDS5KW5iwXYvdBP1CIwNfQO48Ys8SC9MdYH0t3DbnuG/w+EceOIyI3o
-ilkB427DiueGwlBpjNRSE4B8cvglXW9rcYW72bnNs1DSnCq8tNHHybBtOYm/Y/jmk7UGXwqYUGQQ
-Iwu1W+SgloJdXLLgM80bPzLy+cYiIe1W1FSMzVdOforTkG5mVFHTL/0l4eceWequfcxU3DW9ggcN
-YJx8MPW9ab5gPibx8FeVb6cMWEvm8S7wXIRSff/bkHMhpjAagp+A6dyYsuUwPXFxCvHSpT0vUwFS
-CCPHkPUwj54GjKAGEkKMx+s0psQ3V+fcZgW5TBxk/+J83S/+6AiQ06W8rkabWCRyl2fX81vMBynQ
-nu147uRGWTXfa31Mys9lAGNHMtEcMmA106f2XfATqNK99GlIIjOxqEe5zH3j51JtY+5kyJd9cqvl
-Pb0rZnPySeGxnV4Q2403As67AJrIExRrcrK2yXZjEW3G2zTsFNzBSSZr0U8id1UJ/EZLB/em2EHw
-D2FXTwfDiwGroHYUFAEu1DkHx7Sy
-```
-
-## snap-declaration
-
-The snap-declaration assertion defines some of the properties of the snap, such
-as the snap-id, the official name, the publisher, and so on.
-
-The format is as follows:
-
-```text
-type:               snap-declaration
-authority-id:       <authority account id>
-revision:           <int>
-series:             <series this assertion was created for>
-snap-id:            <string>
-snap-name:          <string>
-publisher-id:       <the owner of this snap-id space>
-timestamp:          <UTC datetime>
-refresh-control:    <list of snap-ids that have gated updates>
-  - [snap-id1]
-  - [snap-id2]
-  - ...
-auto-aliases:       <optional list of aliases that are automatically enabled>
-  - [alias1]
-  - ...
-plugs:              <map from [interface] to plug side rules>
-  [interface]:      <optional plug side rules for [interface]>
-    allow-installation:     <true|false>
-    deny-installation:      <true|false>
-    allow-connection:       <true|false>
-    deny-connection:        <true|false>
-    allow-auto-connection:  <true|false>
-    deny-auto-connection:   <true|false>
-  ...
-slots:              <map from [interface] to slot side rules>
-  [interface]:      <optional slot side rules for [interface]>
-  ...               <similar options as rule entries for plugs>
-sign-key-sha3-384: <key id> # Encoded key id of signing key
-
-<signature>                 # Encoded signature
-```
-
-The index is the tuple <`series`, `snap-id`>. `snap-id` is a key with the same
-format as the account ids.
-
-This assertion gives control on several aspects of the snap behaviour to the
-the authority:
-
-* `refresh-control` gives a list of snaps that are gated by the authority,
-so they are not automatically refreshed until they get validated by it.
-
-* `auto-aliases` gives a list of the aliases that we want to
-automatically enable when installing the snap.
-
-* `plugs` and `slots` define flags per interface, like allowing auto-connection
-of an interface when the snap is installed.
-
-For instance, for the modem-manager snap we have:
-
-```text
-type: snap-declaration
-format: 1
-authority-id: canonical
-revision: 9
-series: 16
-snap-id: KtwxgRlwCAVKFw92BUdt1WloH1Va3QPo
-plugs:
-  modem-manager:
-    allow-auto-connection: true
-publisher-id: canonical
-slots:
-  modem-manager:
-    allow-connection: true
-snap-name: modem-manager
-timestamp: 2016-10-25T15:35:43.646671Z
-sign-key-sha3-384: BWDEoaqyr25nF5SNCvEv2v7QnM9QsfCc0PBMYD_i2NGSQ32EF2d4D0hqUel3m8ul
-
-AcLBUgQAAQoABgUCWA970AAABF0QAMw+M28Rrm0m/3Gm5PYesQcQWKhGwmN0j3qfYG2LsSRiM0TU
-j7K7hvCPc9v0P4sL6Ewv/CEZAkVxPYd9eUMqiyKYBRMp9QeiL7KW3RWdHok0FUN7ia7ZxcPlpKoM
-uwV7qYDKktw/TJWX9bK15W6DnghlKtU464u7IqcHVmH2YzPBbcpJBuIhLHgYC2K5oj3ZvIjHqnV/
-ELRDtwW3UTTkonycc2IUTCd10qu590z7DWzORWdts9ZARBJXfc3lohYkSd1v4wDYZHRO9RF/bJix
-LBALp3kUR6X3OnLLJQAjVhIEY70B/5kLApuhrOpmi84Uawf+Uh91Ze++Bwatrw6QGw9cwkFgoLaj
-9neiV4y6HvQh7gsgXap1XOZeOeWVMISgqaXGER78Lx6nc6/Loz8Yhjp4p9xi2Ia4j7fLpXMkWIU4
-aoGudS1hQBsbeiNQvG6I+DraMN7xypMbOkGKwqNJ7prU63D3BmZiFl17ajT3SfffEO1/H6qqRVFS
-A8X9HXVGPmI2TGst36cBgjdd9f+jj9ZqISKs8jdHfPKEpOBdH4wo1rodXO1y/GxZeP2Z710qep4t
-8ynSRPi0l3boyM15D3IfnXMjLzUoace9vC6gltOHpW8GFPZvheQwknRvtfwRpZM2VsgaSw6cuz3+
-7K/m9/Ff04A86/gvRlzduXIjEvKJ
-```
-
-## snap-build
-
-The snap-build assertion defines the basic properties of a snap at the time it
-was built by the developer.
-
-The format is as follows:
-
-```text
-type:              snap-build
-authority-id:      <authority account id>
-revision:          <int>
-snap-sha3-384:     <sha3-384 digest as url-safe unpadded base64>
-snap-id:           <snap-id>
-grade:             <devel|stable>
-snap-size:         <int>
-timestamp:         <UTC datetime>
-sign-key-sha3-384: <key id> # Encoded key id of signing key
-
-<signature>                 # Encoded signature
-```
-
-The index is the digest of the snap blob, `snap-sha3-384`.
-
-An example for this assertion:
-
-```text
-type: snap-build
-authority-id: ouMZ22pMaY5EVwoLozfjM4fR31bko4yj
-snap-sha3-384: UFLajZv9twDGKvqorGn7ddN_hMPuq0DNlh24VGblYQZSM7EzcLRKGdxdigi6DUti
-developer-id: ouMZ22pMaY5EVwoLozfjM4fR31bko4yj
-grade: stable
-snap-id: xoHNzwxGwQ2D4rSZwI3DKsjtRuy9saeI
-snap-size: 6840320
-timestamp: 2017-02-20T12:50:12+01:00
-sign-key-sha3-384: kKl-kgxTJSR-wm5OT5M-gVxo4zv0Y19AAloJE4dq7C0QlbPsdbof0G5g0lCpg0J_
-
-AcLBXAQAAQoABgUCWKrX9AAKCRCuieT/1PiUiBwuD/0fEfBS1IZ62PS0kyRbUDxBEPN3gzgw6mhX
-DaB5bxz2xJ/qQEGfoZdddH7Q45K1lr5pPVL99P2WFwFmdCvWsrcYuK2MZnzwhovD3oPATcFxTnj3
-ZttXwW7hDVokdvOwLdyvEaBkuyyO6awidzxFISsqgiaK2DzAwzA6aSXIOaYGDAfALm/YdzvZsfrk
-+jTswZy/jbWlZf0z8C0bQGa/euJAWtzRScucHEK4RxM2qq7hok6AIl9xDBalfZOdlyB01ReM+68z
-KldXoDQlyvMygx63HTXkmirJjWAUiiQ+5rJz9/zn8j84gT+R7qBgWBRd0l9KCZjalEDlXaNjfau3
-NZHJ3FgGqZLx7vkGpqExJEAEDcyiMHj7XV5WSsKTgtTSkE4LvicICYiy6IhgiQ/+2wADMnTRQY0U
-2GuN3amiEQ9873aohlmmnJUUxpchNZHxgUSC0nUprmSgEUBNi4giRrD8Gs5Mji2cy9qk7yqxkXu0
-NjagDzsTHYPo2XlV93cyNJwPbjlshmS0NA/wAJRiwq0AkqgCaZweHuriJeewFnfAg2wyCz1nfh9X
-XWJSX+DR6tLnkZ1evRG9g0a8LzBtKwlrq7+sMAvxglAQlw3JZG/4yRw4NTZJQ4t4+9Eybzkf587f
-SDhf+j3c0JNUgb9o8isewL2+LLcvgM8tTSAmRxYqTw==
-```
-
-## snap-revision
-
-The snap-revision assertion is a statement by the store acknowledging the receipt of a build of a snap and labeling it with a snap revision.
-
-The format is as follows:
-
-```text
-type:              snap-build
-authority-id:      <authority account id>
-revision:          <int>
-snap-sha3-384:     <sha3-384 digest as url-safe unpadded base64>
-snap-id:           <snap-id>
-snap-size:         <int>
-snap-revision:     <int>
-developer-id:      <developer id>
-timestamp:         <UTC datetime>
-sign-key-sha3-384: <key id> # Encoded key id of signing key
-
-<signature>                 # Encoded signature
-```
-
-The index is the digest of the snap blob, `snap-sha3-384`. The store returns the
-`revision` assigned to the uploaded snap along other data.
-
-An example of this:
-
-```text
-type: snap-revision
-authority-id: canonical
-snap-sha3-384: F5gwZqB3EBPQ62fhu2CL65TPNdyLbxCVdsxEReYrnp5sNu2z2BXAjdk_BRfUKJgV
-developer-id: canonical
-snap-id: RmBXKl6HO6YOC2DE4G2q1JzWImC04EUy
-snap-revision: 44
-snap-size: 5234688
-timestamp: 2016-11-03T10:39:25.624109Z
-sign-key-sha3-384: BWDEoaqyr25nF5SNCvEv2v7QnM9QsfCc0PBMYD_i2NGSQ32EF2d4D0hqUel3m8ul
-
-AcLBUgQAAQoABgUCWBsT3QAA/JgQAH+XrRnxFLFzCHVXF5B6yKbj1e5M2YTUXZ3XLHp+eGU93t+h
-54UxBwgSKX/Wb1MliOpWG7IuhIw0WsUzM/Ynq5Ixhmf/f8E5p7hP9JJU6+UJaJCnnLtmRLG3x6Y7
-YmYIPGEvhn8VuznuTCyqyqRdiiu3U1aKecMyKRdKQvfDdJV4XveTuWlCuHjHplJ/apApyZQDCA/O
-Qr6grtz/Ud1bR9ThR0KISTuRhE/2qFOuNCVTHU2lFYGrECF0vJYo42tW2R85ZdsOpdVngAMUAJOZ
-REZKML9cgnJqIDwuZ4DNl+684p71+mNeQtbg2608F8fiK2jFJa8mHY5kxhzFGrIPVXEVmPTRlc0Q
-dPdViCOeg4jOuCybKQ/DrzE7Vjqhgl6UbKX2JtLbSxwBuB65YijCTVbqZD+u58ek9N9Z6ZKrJz2o
-HXq6RZqTpkCagV3FIxRRGhBDWQCePY4tRNEj9+3u31Af9daswRlmrFXwWDf46KPKx+fJ9jPECknO
-s+jQ5ij3fpMfWOzceHHLhIDm9Wj7sypD+63v4KDaXzQ+8dM/acMraNAJHRvCOr7bvFz9j7OEqr7y
-/6/QMZdkeYO94e1OPB5e+Dya95oCVqJhf05BAIKOn933EjGT3Vnm7HT+EzCvLUbbjMPlJ6ZyNnp/
-lE+8N8EQWmdLC+OwJRNHgucjvcaR
-```
-
-## system-user
-
-The system-user assertion is a permit by the brand for local system users to be created on its specified devices.
-
-The format is as follows:
-
-```text
-type:           system-user
-authority-id:   <authority account-id>
-revision:       <int>
-brand-id:       <account-id>
-email:          <user e-mail>
-series:         <list of series which should accept this assertion>
-models:         <models which should accept this assertion>
-name:           <optional person’s name>
-username:       <system user name>
-password:       <encoded password>
-ssh-keys:       <list>
-since:          <UTC datetime>
-until:          <UTC datetime>
-sign-key-sha3-384: <key id> # Encoded key id of signing key
-
-<signature>                 # Encoded signature
-```
-
-The index is the tuple <`brand-id`, `email`>. `series` is as specified by the
-model assertion. These assertions must be signed by the brand.
-
-The `password` header must be encoded and salted. The `until` header is in this
-case required.
-
-The simple addition of such assertions to a device assertion database should not
-be enough to trigger the user creation. This must be initiated explicitly (via
-`snap create-user`, or in the context of the auto-import mechanism for
-assertions from removable devices, which requires physical access to the device).
-
-This would be an example of this assertion:
-
-```text
-type: system-user
-authority-id: 4BKZlf4WMNBKgQfij0rftmp5BzDdVhlf
-brand-id: 4BKZlf4WMNBKgQfij0rftmp5BzDdVhlf
-email: test@localhost
-models:
-  - pc
-name: Default Test User
-password: $6$OCvKy4w/Ppxp7IvC$WPzWiIW.4y18h9htjbOuxLZ.sjQ5M2hoSiEu3FpMU0PMdHQuQdBOqvk8p6DMdS/R/nU/rXidClD23CbSkSgp30
-series:
-  - 16
-since: 2016-10-24T07:12:10+00:00
-until: 2017-10-24T07:12:10+00:00
-username: test
-sign-key-sha3-384: kKd-kgxTJSR-wm5OT5M-gVxo4zv0Y19AAloJE4dq7C0QlbPsdbof0G5g0lCpg0J_
-
-AcLBXAQAAQoABgUCWKrupwAKCRCuieT/1PiUiMbrD/0WcjG5Yw6kPZ4afE6vePpZfySvPLbguna+
-kMUtTYulfIVNK+VMR3ZeNQfHhe/WGIlxXUWqfIlp6EZ4ha7LBeeHYgdq6cOOrapa53wboQTOTCDp
-EZna2R5lDnlVlm06jKOoPhQZNi0P30GiS9e1xY0CNu/hzxLgwArHYj1hqof0zdu/A68GyfU9AWRe
-ne4QGFIwWuQE8vksgbRuCoRiu0zamU6WKdby4pad7Q1SHUdwn8+0i0/zmgRnvDeBloACNWHRYFy3
-PGjJ5ylIkXoBaIYGfYusdO+NvSUnLP4Rj6izsUbBIVeHyAqAkMz6y68NUpQupO4vqih3GSi1pqoj
-H5+p/e5UzcB7hqB8YOrwTtp5EsTPq/AOD0bu9EZdVS5eIAkGuvR3MJX+uGvTAXCCFMIPIxcNTPwp
-6HUiyQ3xMZL6FUg4ucxQH6jRZiZ5SMiuJ2OYl53f7v3MdFMe5lnYSw1nBger9nEXti3pdsS9Czpk
-3WdVRWSjvMupJUmlCJUTNeLwPn2gYCiZpFJntIltRq3McKqh6WrhTozsoVsLjTyx7bQEHp00QycJ
-1pfdMtVNbQKyF30dswc5TctzZEOY/YazMI8CqB3ZuCGyUpkJ0px2FgJQqVHYdtIDePp33aTy170A
-5dHym5SUQZqowwHN/PSc7rTyGn4fJCdRpRsjj72uSQ==
-```
-
-## validation
-
-The validation assertion tells us that a certain revision for a snap that is gated
-by another snap has been validated for a given series.
-
-The format is as follows:
-
-```text
-type:                   validation
-authority-id:           <authority account-id>
-revision:               <int>
-series:                 <list of series which should accept this assertion>
-snap-id:                <snap-id>
-approved-snap-id:       <snap-id>
-approved-snap-revision: <int>
-timestamp:              <UTC datetime>
-revoked:                <bool>
-sign-key-sha3-384: <key id> # Encoded key id of signing key
-
-<signature>                 # Encoded signature
-```
-
-The index is the tuple <`series`, `snap-id`, `approved-snap-id`, `approved-snap-revision`>.
-This assertion means that refreshing to revision number `revision` of snap
-`approved-snap-id` for `series` has been aproved by `authority-id`, being `snap-id`
-the snap that was gating the update, of which `authority-id` must be the owner.
-
-The validation can be revoked by using the optional flag `revoked`.
-
-An example of this type:
-
-```text
-type: validation
-authority-id: canonical
-revision: 1
-series: 16
-snap-id: kkOOPWIl0sF7FoSA0KRTt83b1eoynkBa
-approved-snap-id: JIpOmfrI0JpaN3uNQQgNv5x3fW06nOYX
-approved-snap-revision: 37
-timestamp: 2017-02-20T10:23:51+00:00
-sign-key-sha3-384: C9mhxTpowHTXM3HOwgg3ZCX-WD05CczlNMdrCBbl2l0d4J_CcjYBS8NQpI-TtQlL
-
-AcLBXAQAAQoABgUCWKrI2QAKCRC03QWqtcJXZRFbEACDcCy15wPNpjcJyFYEt05A4WWzGPQMlC09
-1lv62WAancrRaenLOi3xmeIPgsuPk9xKgrn16dBlytCK5GUHiHsafR+34mt/ridaVSKY5zCIkvcJ
-mgIH3jMB1RZiY2gtlxXD14G+nK67PKvM6BBfMdBB9ItLAdh5LM3ycbE/8ZqY7aYuTLKfOIPYGjUY
-2rRlOaCggeXsru9wbnNwCwGBHZ9ltBgsISZQiSMGnH38OMNgjNOQy0PIB+elmYLEoTKXc+qU1x5w
-/R8cwUzWwcd56Ty/WpGdAfBrpO4/afFgVtGrixEWtVigIoIigPb7wytmQYcnl/Y0bQMVNZiYFQdF
-tZ9MGGTzA/ieRrjJHOQEj+VfDA4rHU2vUTGlZtseukhGNhSNgI52zhDyynhB/Hxy1t0rJ8eJju2a
-G27p2GuJvGrxfjxcge47LZ0WJaKe9R82/AsrFLlnJ4d29K0RUPnYohwlDwWTAOTE2SAz6/kIRNIv
-sOuHdIXIMarsbbRIG1kC++Rl/XI9jWvoM++fT1kHCjXgKfi+CELo8YcOKHPbjWSd7DiAmSnR5I6f
-ovydzkMPTzzbsxyKePQHicKiqPs4dSfcEnPIGTpvgpGE4WEI3zYGYmsGgFOJqEnuy0IvVRCtJXU4
-yk/p3Jqwss3W0YbfypCWrvMBxho1mN5SRhaQv3r+kw==
-```
+[validation assertion](assertions/validation.md)
