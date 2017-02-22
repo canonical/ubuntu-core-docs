@@ -9,7 +9,7 @@ You can interface with snapd on any Ubuntu Core system using its REST API.
 
 ## Versioning
 
-As the API evolves, some changes are deemed backwards-compatible (such
+ The API evolves, some changes are deemed backwards-compatible (such
 as adding methods or verbs, or adding members to the returned JSON
 objects) and don't warrant an endpoint change; some changes won't be
 backwards compatible, and will be exposed under a new endpoint.
@@ -22,189 +22,191 @@ is `/run/snapd.socket`.
 
 ## Authentication
 
-The API documents three levels of access: *guest*, *authenticated* and
-*trusted*. The trusted level is allowed to modify all aspects of the
-system, the authenticated level can query most but not all aspects,
-and the guest level can only query static system-level information.
+The API documents three levels of access: *open*, *authenticated* and
+*root*.
+APIs with open access will succeed without authorization. Authenticated access requires suitable authorization to be provided with each request.
+Root requires the requester to be the root user.
+The root user also gains authenticated access without having to send authorization.
 
-Authentication over the unix socket is delegated to UNIX ACLs, and
-uses `SO_PEERCRED` to determine privilege levels. In essence this
-means that a user will be either *authenticated* or *trusted*, with
-the latter restricted to the superuser.
-
-[//]: # (QUESTION: map system user nobody to guest?)
+Authorization is provided by sending a Macaroon with the HTTP Authorization header. For example:
+```
+Authorization: Macaroon root="serialized-store-macaroon",discharge="discharge-for-macaroon-authentication"
+```
 
 ## Responses
 
-All responses are `application/json` unless noted otherwise. There are
-three standard return types:
-
-* Standard return value
-* Background operation
-* Error
-
-Status codes follow that of HTTP. Standard and background operation responses
-are capable of returning additional meta data key/values as part of the returned
-JSON object.
-
-### Standard return value
+### Synchronous Response
 
 For a standard synchronous operation, the following JSON object is
 returned:
 
+Example:
 ```javascript
 {
- "result": {},               // Extra resource/action specific data
- "status": "OK",
- "status-code": 200,
- "type": "sync"
+    "type": "sync"
+    "status-code": 200,
+    "status": "OK",
+    "result": { "name": "value" }
 }
 ```
 
-The HTTP code will be 200 (`OK`), or 201 (`Created`, in which case the
-`Location` HTTP header will be set), as appropriate.
+#### Fields
 
-### Background operation
+* `type`: Always `sync`.
+* `status-code`: HTTP status code matching the HTTP status line.
+* `status`: HTTP reason phrase matching the HTTP status line.
+* `result`: Result from the request. This can be any JSON structure and is commonly either an object or an array.
 
-When a request results in a background operation, the HTTP code is set
-to 202 (`Accepted`) and the `Location` HTTP header is set to the
-operation's URL, which is `/v2/changes/{change-id}`.
+### Asynchronous Response
 
-The body is a JSON object with the following structure:
+When a request takes time to complete an asynchronous response is returned.
+The request is assigned a change id, which can be checked by requesting `GET /v2/changes/[id]`.
 
+Example:
 ```javascript
 {
- "result": {
-     ...
- },
- "status": "Accepted",
- "status-code": 202,
- "type": "async"
- "change": "adWf",
+    "type": "async"
+    "status-code": 202,
+    "status": "Accepted",
+    "change": "401"
 }
 ```
 
-Information about the background operation progress can be retrieved
-by making a GET request to the URL returned in the `Location` header,
-which includes a reference to the same change returned in the JSON reply.
+#### Fields
 
-### Error
+* `type`: Always `async`.
+* `status-code`: HTTP status code matching the HTTP status line (always 202).
+* `status`: HTTP reason phrase matching the HTTP status line (always `Accepted`).
+* `change`: Id of the change in progress.
 
-There are various situations in which something may immediately go
-wrong, in those cases, the following return value is used:
+### Error Response
 
+If a request cannot be completed, an error response is returned.
+
+Example:
 ```javascript
 {
- "result": {
-   "message": "human-friendly description of the cause of the error",
-   "kind": "store-error",  // one of a list of kinds (TBD), only present iff "value" is present
-   "value": {"...": "..."} // kind-specific object, as required
- },
- "status": "Bad Request", // text description of status-code
- "status-code": 400,      // or 401, etc. (same as HTTP code)
- "type": "error"
+    "type": "error"
+    "status-code": 401,
+    "status": "Unauthorized",
+    "result": {
+        "message": "access denied",
+        "kind": "login-required",
+    }
 }
 ```
 
-HTTP code must be one of of 400, 401, 403, 404, 405, 409, 412 or 500.
+#### Fields
 
-Error *results* will also be used in the output of `async` responses.
+* `type`: Always `error`.
+* `status-code`: HTTP status code matching the HTTP status line.
+* `status`: HTTP reason phrase matching the HTTP status line.
+* `result`: Error information.
 
-If, in implementing a client, you find yourself keying off of
-`message` to alter the behaviour of your client to e.g. better inform
-the user of the error or otherwise adapt to the error condition,
-**STOP** and *talk to us*; this is where `kind` comes in. New entries
-for `kind` (and associated `value` metadata) will be added as needed
-by client implementations.
+#### Result Fields
+
+* `message`: Description of the error, suitable for displaying to a user.
+* `kind`: Unique code for the error, to enable a snapd client to display appropriate behaviour (optional).
 
 #### Error kinds
 
-kind               | value description
--------------------|--------------------
-`license-required` | see "A note on licenses", below
-`two-factor-required` | the client needs to retry the `login` command including an OTP
-`two-factor-failed` | the OTP provided wasn't recognised
-`login-required` | the requested operation cannot be performed without an authenticated user. This is the kind of any other 401 Unauthorized response.
-`invalid-auth-data` | the authentication data provided failed to validate (e.g. a malformed email address). The `value` of the error is an object with a key per failed field and a list of the failures on each field.
-`terms-not-accepted` | the user has not accepted the store's terms of service.
-`no-payment-methods` | the user does not have a payment method registered to complete a purchase.
-`payment-declined` | the user's payment method was declined by the payment provider.
+* `two-factor-required`: the client needs to retry the `login` command including an OTP
+* `two-factor-failed`: the OTP provided wasn't recognised
+* `login-required`: the requested operation cannot be performed without an authenticated user. This is the kind of any other 401 Unauthorized response.
+* `invalid-auth-data`: the authentication data provided failed to validate (e.g. a malformed email address). The `value` of the error is an object with a key per failed field and a list of the failures on each field.
+* `terms-not-accepted`: the user has not accepted the store's terms of service.
+* `no-payment-methods`: the user does not have a payment method registered to complete a purchase.
+* `payment-declined`: the user's payment method was declined by the payment provider.
+* `snap-already-installed`: the requested snap is already installed.
+* `snap-not-installed`: the requested snap is not installed.
+* `snap-no-update-available`: the requested snap does not have an update available.
 
-### Timestamps
-
-Timestamps are presented in RFC3339 format, with µs precision, and in
-UTC. For example, `2009-02-13T23:31:31.234567Z`.
-
-## `/`
+## `GET /`
 
 Reserved for human-readable content describing the service.
 
-## `/v2/system-info`
-### `GET`
+## `GET /v2/system-info`
 
 * Description: Server configuration and environment information
-* Access: guest
+* Access: open
 * Operation: sync
 * Return: Dict with the operating system's key values.
 
-#### Sample result:
+### Response
 
+Example:
 ```javascript
 {
- "series": "16",
- "version": "2.0.17",
- "os-release": {
-   "id": "ubuntu",
-   "version-id": "17.04",
- },
- "on-classic": true,
- "store": "store-id"          // only if not default
+    "series": "16",
+    "version": "2.0.17",
+    "os-release": {
+        "id": "ubuntu",
+        "version-id": "17.04",
+    },
+    "on-classic": true,
+    "managed": false
 }
 ```
 
-## `/v2/login`
-### `POST`
+#### Fields
+
+* `series`: The core series in use.
+* `version`: The version of snapd.
+* `os-release`: Object containing release information as sourced from `/etc/os-release`. Contains `id` which is a unique ID for each OS and `version-id` which is a string describing the version of this OS.
+* `on-classic`: true if not running on fully snap managed system.
+* `managed`: true if able to manage user accounts (?).
+* `store`: the name of the store being used (optional, omitted if using the standard store).
+
+## `POST /v2/login`
 
 * Description: Log user in the store
-* Access: trusted
+* Access: root
 * Operation: sync
-* Return: Dict with the authenticated user information.
+* Return: Dict with the authenticated user information or error.
 
-#### Sample input
+### Request
 
+Example:
 ```javascript
 {
-  "username": "foo@bar.com", // username is an email
-  "password": "swordfish",   // the password (!)
-  "otp": "123456"            // OTP, if the account needs it
+     "username": "foo@bar.com",
+     "password": "swordfish",
+     "otp": "123456"
 }
 ```
 
-#### Sample result:
+#### Fields
 
+* `username`: The username being logged in with. This must be a valid email address.
+* `password`: Password for this account.
+* `otp`: One time password for this account (optional). This field being wrong will generate the `two-factor-required` or `two-factor-failed` errors.
+
+### Response
+
+Example:
 ```javascript
 {
- "macaroon": "serialized-store-macaroon",
- "discharges": ["discharge-for-macaroon-authentication"]
+    "macaroon": "serialized-store-macaroon",
+    "discharges": ["discharge-for-macaroon-authentication"]
 }
 ```
 
-See also the error kinds `two-factor-required` and
-`two-factor-failed`.
+#### Fields
 
-## `/v2/logout`
-### `POST`
+* `macaroon`: Serialized macaroon to be passed back in the HTTP `Authorization` header.
+* `discharges`: Array of serialized discharges to be passed back in the HTTP `Authorization` header.
+
+## `POST /v2/logout`
 
 * Description: Log user out of the store
-* Access: trusted
+* Access: root
 * Operation: sync
 * Return: 200 OK or an error
 
-## `/v2/find`
-### `GET`
+## `GET /v2/find`
 
 * Description: Find snaps in the store
-* Access: authenticated
+* Access: open or authenticated
 * Operation: sync
 * Return: list of snaps in the store that match the search term and
   that this system can handle.
@@ -223,6 +225,10 @@ together with `q`. This is meant for things like autocompletion. The
 match is exact (i.e. find would return 0 or 1 results) unless the
 string ends in `*`.
 
+#### `section`
+
+Section in the store to search. Use `GET /v2/sections` to get the names of the sections.
+
 #### `select`
 
 Alter the collection searched:
@@ -232,10 +238,9 @@ Alter the collection searched:
   public snaps). Can't be used with `name`, only `q` (for now at
   least).
 
-#### Sample result:
+### Response
 
-[//]: # (keep the fields sorted, both in the sample and its description below. Makes scanning easier)
-
+Example:
 ```javascript
 [{
       "channel": "stable",
@@ -270,11 +275,9 @@ Alter the collection searched:
 }]
 ```
 
-##### Fields
+#### Fields
 
-[//]: # (keep the fields sorted, both in the description and the sample above. Makes scanning easier)
-
-* `channel`: which channel the snap is currently tracking.
+* `channel`: the channel this snap is from.
 * `confinement`: the confinement requested by the snap itself; one of `strict` or `devmode`.
 * `description`: snap description.
 * `developer`: developer who created the snap.
@@ -292,13 +295,12 @@ Alter the collection searched:
 * `type`: the type of snap; one of `app`, `kernel`, `gadget`, or `os`.
 * `version`: a string representing the version.
 
-[//]: # (seriously, keep the fields sorted!)
+#### Response meta data:
 
-#### Result meta data:
-
+Example:
 ```javascript
 {
- "suggested-currency": "GBP"
+    "suggested-currency": "GBP"
 }
 ```
 
@@ -307,19 +309,16 @@ Alter the collection searched:
 * `suggested-currency`: the suggested currency to use for presentation,
    derived by Geo IP lookup.
 
-## `/v2/snaps`
+## `GET /v2/snaps`
 
-### `GET`
-
-* Description: List of snaps
-* Access: authenticated
+* Description: List installed snaps
+* Access: open
 * Operation: sync
 * Return: list of snaps installed in this Ubuntu Core system, as for `/v2/find`
 
-Sample result:
+### Response
 
-[//]: # (keep the fields sorted, both in the description and the sample above. Makes scanning easier)
-
+Example:
 ```javascript
 [{
       "apps": [{"name": "moon-buggy"}]
@@ -363,93 +362,133 @@ Sample result:
 
 In addition to the fields described in `/v2/find`:
 
-[//]: # (keep the fields sorted!)
-
-* `apps`: JSON array of apps the snap provides. Each app has a `name` field to name a binary this app provides.
+* `apps`: JSON array of apps the snap provides. See below for fields.
 * `devmode`: true if the snap is currently installed in development mode.
 * `installed-size`: how much space the snap itself (not its data) uses.
-* `install-date`: the date and time when the snap was installed.
+* `install-date`: the date and time when the snap was installed in RFC3339 UTC format.
 * `status`: can be either `installed` or `active` (i.e. is current).
+* `tracking-channel`: the channel updates will be installed from.
 * `trymode`: true if the app was installed in try mode.
 
 furthermore, `download-size`, `screenshots` and `prices` cannot occur in the output of `/v2/snaps`.
 
-### `POST`
+#### App Fields
 
-* Description: Install, refresh, revert, remove snaps
-* Access: trusted
+* `name`: Name of the app, i.e. the name of the executable.
+* `aliases`: A list of alias names for this app (optional).
+* `daemon`: The type of daemon this app is. One of "simple", "forking", "oneshot", "dbus" or "notify" (optional, only applicable for daemons)
+
+## `POST /v2/snaps`
+
+* Description: Install, refresh, revert, remove, enable, disable snaps
+* Access: authenticated
 * Operation: async
 * Return: background operation or standard error
 
-#### Input
+### Store Request
 
-This endpoint accepts an `application/json` request specifying the
-kind of operation, optional flags and a list of snaps, or a
-`multipart/form-data` request with one file named "snap".
-
-#### Sample JSON input
-
+Example:
 ```javascript
 {
-  "action": "refresh",
-  "snaps": [...] // for refresh an empty or absent snaps field means "refresh all"
+    "action": "refresh",
+    "snaps": ["moon-buggy"]
 }
 ```
 
-## `/v2/snaps/[name]`
-### `GET`
+Fields:
+* `action`: Either `install`, `refresh`, `remove`, `revert`, `enable`, or `disable`.
+* `channel`: Channel to install from (optional, only applicable with `action` set to `install` or `refresh`).
+* `classic` Put snap in classic mode and disable security confinement if `true` (optional, only applicable with `action` set to `install`, `refresh`, `revert`).
+* `devmode` Put snap in development mode and disable security confinement if `true` (optional, only applicable with `action` set to `install`, `refresh`, `revert`. Not allowed when more than one snap requested).
+* `ignore-validation`: Ignore validation by other snaps blocking the refresh if `true` (optional, only applicable with `action` set to `refresh`).
+* `jailmode` Put snap in enforced confinement mode if `true` (optional, only applicable with `action` set to `install`, `refresh`, `revert`. Not allowed when more than one snap requested).
+* `revision`: Revision to install (optional, only applicable with `action` set to `install`, `refresh`, `revert`. Not allowed when more than one snap requested).
+* `snaps`: Array of snap names to perform action on (optional, interpreted as all snaps if not present for a refresh).
+
+### Sideload Request
+
+Snaps can be sideloaded by passing the snap content in a `multipart/form-data` request with one file named "snap".
+
+Example:
+```
+POST /v2/snaps HTTP/1.1
+Host:
+Content-Type: multipart/form-data; boundary=foo
+Content-Length: 20638
+
+--foo
+Content-Disposition: form-data; name="devmode"
+
+true
+--foo
+Content-Disposition: form-data; name="snap"; filename="hello-world_27.snap"
+
+<20480 bytes of snap file data>
+--foo
+```
+
+The following fields are supported:
+* `action`: The action to perform, either `install` or `try` (optional, defaults to `install`).
+* `classic`: Put snap in classic mode and disable security confinement if `true` (optional).
+* `dangerous`: Put snap into development mode and disable security confinement if `true` (optional).
+* `devmode`: Put snap in development mode and disable security confinement if `true` (optional).
+* `jailmode`: Put snap in enforced confinement mode if `true` (optional).
+* `snap`: The contents of the snap file. Note that `filename` is required to be set but the value is not used. `Content-Type` is not required, but recommended.  (optional, required if `action` is `install`)
+* `snap-path`: Directory to install in try mode (optional, required if `action` is `try`).
+
+## `GET /v2/snaps/[name]`
 
 * Description: Details for an installed snap
-* Access: authenticated
+* Access: open
 * Operation: sync
 * Return: snap details (as in `/v2/snaps`)
 
-### `POST`
+## `POST /v2/snaps/[name]`
 
 * Description: Install, refresh, remove, revert, enable or disable
-* Access: trusted
+* Access: authenticated
 * Operation: async
 * Return: background operation or standard error
 
-#### Sample input
+### Request
 
+Example:
 ```javascript
 {
- "action": "install"
+    "action": "install",
+    "channel": "beta"
 }
 ```
 
-#### Fields in the input object
+#### Fields
 
-field      | ignored except in action | description
------------|-------------------|------------
-`action`   |                   | Required; a string, one of `install`, `refresh`, `remove`, `revert`, `enable`, or `disable`.
-`channel`  | `install` `refresh` | From which channel to pull the new package (and track henceforth). Channels are a means to discern the maturity of a package or the software it contains, although the exact meaning is left to the application developer. One of `edge`, `beta`, `candidate`, and `stable` which is the default.
+* `action`: Either `install`, `refresh`, `remove`, `revert`, `enable`, or `disable`.
+* `channel`: From which channel to pull the new package (and track henceforth). Channels are a means to discern the maturity of a package or the software it contains, although the exact meaning is left to the application developer. One of `edge`, `beta`, `candidate`, and `stable` which is the default. (optional, only applicable when `action` is `install` or `refresh`).
 
-## `/v2/snaps/[name]/conf`
-### `GET`
+## `GET /v2/snaps/[name]/conf`
 
 * Description: Configuration details for an installed snap
-* Access: superuser only
+* Access: root
 * Operation: sync
 * Return: JSON map of configuration keys and values
 
-#### Parameters
+### Parameters
 
-##### `keys`
+#### `keys`
 
 Request the configuration values corresponding to the specific keys
 (comma-separated).
 
-### PUT
+## `PUT /v2/snaps/[name]/conf`
 
 * Description: Set the configuration details for an installed snap
-* Access: superuser only
+* Access: root
 * Operation: async
 * Return: background operation or standard error
 
-#### Sample input
+### Request
 
+Example:
 ```javascript
 {
     "conf-key1": "conf-value1",
@@ -457,9 +496,7 @@ Request the configuration values corresponding to the specific keys
 }
 ```
 
-## `/v2/icons/[name]/icon`
-
-### `GET`
+## `GET /v2/icons/[name]/icon`
 
 * Description: Get an icon from a snap installed on the system. The
   response will be the raw contents of the icon file; the content-type
@@ -467,30 +504,14 @@ Request the configuration values corresponding to the specific keys
   the filename.
 
   This fetches the icon from the snap itself.
-* Access: guest
+* Access: open
 
 This is *not* a standard return type.
 
-## `/v2/assertions`
+## `GET /v2/assertions/[assertionType]`
 
-### `POST`
-
-* Description: Tries to add an assertion to the system assertion database.
-* Authorization: trusted
-* Operation: sync
-
-The body of the request provides the assertion to add. The assertion
-may also be a newer revision of a preexisting assertion that it will replace.
-
-To succeed the assertion must be valid, its signature verified with a
-known public key and the assertion consistent with and its
-prerequisite in the database.
-
-## `/v2/assertions/[assertionType]`
-### `GET`
-
-* Description: Get all the assertions in the system assertion database of the given type matching the header filters passed as query parameters
-* Access: authenticated
+* Description: Get all the assertions in the system assertion database of the given type
+* Access: open
 * Operation: sync
 * Return: stream of assertions
 
@@ -498,17 +519,70 @@ The response is a stream of assertions separated by double newlines.
 The X-Ubuntu-Assertions-Count header is set to the number of
 returned assertions, 0 or more.
 
-## `/v2/interfaces`
+Assertions can be filtered on header values using parameters, e.g. `GET /v2/assertions/account?username=canonical` will return all account assertions where `type=account` and `username=canonical`.
 
-### `GET`
+Example:
+```
+HTTP/1.1 200 OK
+Content-Type: application/x.ubuntu.assertion; bundle=y
+X-Ubuntu-Assertions-Count: 2
+<http-headers>
+
+type: <type>
+<assertion-headers>
+body-length: <length>
+sign-key-sha3-384: <key>
+
+<body>
+
+<signature>
+
+type: <type>
+<assertion-headers>
+sign-key-sha3-384: <key>
+
+<signature>
+```
+
+Note, to determine the boundary between assertions the headers need to be decoded to check if each assertion contains a body.
+
+## `POST /v2/assertions`
+
+* Description: Tries to add an assertion to the system assertion database.
+* Authorization: root
+* Operation: sync
+* Return: 200 OK or an error
+
+The body of the request provides the assertion to add. The assertion
+may also be a newer revision of a pre-existing assertion that it will replace.
+
+To succeed the assertion must be valid, its signature verified with a
+known public key and the assertion consistent with and its
+prerequisite in the database.
+
+Example:
+```
+POST /v2/assertions HTTP/1.1
+Content-Type: application/x.ubuntu.assertion
+<http-headers>
+
+type: <type>
+<assertion-headers>
+sign-key-sha3-384: <key>
+
+<signature>
+```
+
+## `GET /v2/interfaces`
 
 * Description: Get all the plugs, slots and their connections.
 * Access: authenticated
 * Operation: sync
 * Return: an object with two arrays of plugs, slots and their connections.
 
-Sample result:
+### Response
 
+Example:
 ```javascript
 {
     "slots": [
@@ -545,29 +619,21 @@ Sample result:
 
 #### Fields for plugs / slots
 
-field            | description
------------------|------------
-`snap`           | The snap this plug / slot is part of.
-`plug` or `slot` | The name of this plug / slot.
-`interface`      | The interface this plug / slot uses.
-`attrs`          | Dict containing attributes for the interface in use. Attributes values can be of any type, e.g. boolean, strings etc.
-`label`          | Human readable description of plug / slot.
-`connections`    | List of current slots / plugs that are connected to this. Each connection contains the name of the snap and the connected slot / plug.
+* `snap`: The snap this plug / slot is part of.
+* `plug` or `slot`: The name of this plug / slot.
+* `interface`: The interface this plug / slot uses.
+* `attrs`: Dict containing attributes for the interface in use. Attributes values can be of any type, e.g. boolean, strings etc.
+* `label`: Human readable description of plug / slot.
+* `connections`: List of current slots / plugs that are connected to this. Each connection contains the name of the snap and the connected slot / plug.
 
-### `POST`
+## `POST /v2/interfaces`
 
 * Description: Issue an action to the interface system
 * Access: authenticated
 * Operation: async
 * Return: background operation or standard error
 
-Available actions are:
-
-- connect: connect the plug to the given slot.
-- disconnect: disconnect the given plug from the given slot.
-
-Sample input:
-
+Example:
 ```javascript
 {
     "action": "connect",
@@ -576,17 +642,22 @@ Sample input:
 }
 ```
 
-## `/v2/buy`
+#### Fields
 
-### `POST`
+* `action`: Action to perform, either `"connect"` or `"disconnect"`
+* `plugs`: Array of plugs to connect. Each plug is referred to by the `snap` it is part of and the name of the `plug`.
+* `slots`: Array of slots to connect to. Each slot is referred to by the `snap` it is part of and the name of the `slot`.
+
+## `POST /v2/buy`
 
 * Description: Buy the specified snap
 * Access: authenticated
 * Operation: sync
 * Return: Dict with buy state.
 
-#### Sample input using default payment method:
+### Request
 
+Example:
 ```javascript
 {
     "snap-id": "2kkitQurgOkL3foImG4wDwn9CIANuHlt",
@@ -595,43 +666,47 @@ Sample input:
 }
 ```
 
-#### Fields in input object
+#### Fields
 
- field      | Description
-------------|------------
- `snap-id`  | id of the snap being purchased
- `price`    | Amount to be paid
- `currency` | The currency to be paid with as an ISO 4217 code
+* `snap-id`: id of the snap being purchased
+* `price`: Amount to be paid
+* `currency`: The currency to be paid with as an ISO 4217 code
 
-#### Sample result:
+### Response
 
+Example:
 ```javascript
 {
- "state": "Complete",
+    "state": "Complete",
 }
 ```
 
-## `/v2/buy/ready`
-
-### `GET`
+## `GET /v2/buy/ready`
 
 * Description: Determine if the user's account ready to make purchases.
 * Access: authenticated
 * Operation: sync
 * Return: true, or error.
 
-## `/v2/create-user`
-
-### `POST`
+## `POST /v2/create-user`
 
 * Description: Create a local user
-* Access: trusted
+* Access: root
 * Operation: sync
 * Return: an object with the created username and the ssh keys imported.
 
-#### Input
+### Request
 
-A JSON object with the following keys:
+Example:
+```javascript
+{
+    "email": "michael@example.com",
+    "sudoer": false
+}
+```
+
+#### Fields
+
 * email: the email of the user to create
 * sudoers: if true adds "sudo" access to the created user
 * known: use the local system-user assertions to create the user
@@ -641,9 +716,19 @@ As a special case: if email is empty and known is set to true, the
 command will create users for all system-user assertions that are
 valid for this device.
 
-#### Output
+### Response
 
-A JSON object with the following keys:
+Example:
+```javascript
+{
+    "username": "mvo",
+    "ssh-keys": ["key1","key2"]
+    "ssk-key-count": 2,
+}
+```
+
+#### Fields
+
 * username: the username of the created user
 * ssh-keys: a list of strings with the ssh keys that got added
 * ssh-key-count: (deprecated) the number of ssh keys that got added
@@ -652,45 +737,187 @@ As a special case: if the input email was empty and known set to true,
 multiple users can be created, so the return type is a list of the above
 objects.
 
-Sample input:
+## `GET /v2/changes/[id]`
 
-```javascript
-{
-  "email":"michael@example.com",
-  "sudoer": false
-}
-```
-
-Sample return:
-```javascript
-{
-  "username":"mvo",
-  "ssh-keys": ["key1","key2"]
-  "ssk-key-count": 2,
-}
-```
-
-## `/v2/aliases`
-
-### `POST`
-
-* Description: Issue an action on aliases
+* Description: Get the current status of a change
 * Access: authenticated
-* Operation: async
-* Return: background operation or standard error
+* Operation: sync
+* Return: current status of change or standard error
 
-Available actions are:
+### Response
 
-- alias: enable the provided aliases for the snap.
-- unalias: disable explicitly the provided aliases for the snap.
-- reset: reset the provided aliases for the snap to their default state, enabled for auto-aliases, disabled   otherwise.
-
-Sample input:
-
+Example:
 ```javascript
 {
-    "action": "alias",
-    "snap": "alias-snap",
-    "aliases": ["alias1", "alias2"]
+    "id": "123",
+    "kind": "make-lamington",
+    "summary": "Make a tasty Lamington",
+    "status": "Done",
+    "tasks": [
+        {
+            "id": "1353",
+            "kind": "cut-cake",
+            "summary": "Cut cake into pieces",
+            "status": "Done",
+            "progress":
+            {
+                "label": "Cutting piece",
+                "done": 16,
+                "total": 16
+            },
+            "spawn-time": "2017-01-23T12:00:44.806931498+13:00",
+            "ready-time": "2017-01-23T12:00:45.001581654+13:00"
+        },
+        {
+            "id": "1354",
+            "kind": "dip",
+            "summary": "Dip cake into chocolate",
+            "status": "Done",
+            "progress":
+            {
+                "label": "Dipping piece",
+                "done": 16,
+                "total": 16
+            },
+            "spawn-time": "2017-01-23T12:00:44.806945878+13:00",
+            "ready-time": "2017-01-23T12:00:45.125187175+13:00"
+        },
+        {
+            "id": "1355",
+            "kind": "coat",
+            "summary": "Coating cake in desiccated coconut",
+            "status": "Done",
+            "progress":
+            {
+                 "label": "Coating piece",
+                 "done": 16,
+                 "total": 16
+            },
+            "spawn-time": "2017-01-23T12:00:44.806951938+13:00",
+            "ready-time": "2017-01-23T12:00:45.448964018+13:00"
+        },
+    ],
+    "ready": true,
+    "spawn-time": "2017-01-23T12:00:44.806971766+13:00",
+    "ready-time": "2017-01-23T12:00:45.693234787+13:00"
 }
+```
+
+#### Fields
+
+* `id`: A unique ID for this change.
+* `kind`: A code describing what type of change this is.
+* `summary`: Human readable description of the change.
+* `status`: Human readable description of the change status.
+* `tasks`: array of objects describing tasks in this change (optional, see below).
+* `ready`: true if this change has completed.
+* `spawn-time`: the time this change started in in RFC3339 UTC format with µs precision.
+* `ready-time`: the time this change completed in RFC3339 UTC format with µs precision. (omitted if not completed).
+* `data`: result of the change (optional, omitted until completed).
+
+#### Task Fields
+
+* `id`: A unique ID for this task.
+* `kind`: A code describing what type of task this is.
+* `summary`: Human readable description of the task.
+* `status`: Human readable description of the task status.
+* `progress`: object containing the current progress of this task. `label` is a human readable description of the progress, `done` and `total` are numbers showing the progress of this task.
+* `spawn-time`: the time this task started in RFC3339 UTC format with µs precision.
+* `ready-time`: the time this task completed in RFC3339 UTC format with µs precision (omitted if not completed).
+
+## `POST /v2/changes/[id]`
+
+* Description: Abort a change in progress
+* Access: authenticated
+* Operation: sync
+* Return: current status of change or standard error
+
+### Request
+
+Example:
+```javascript
+{
+    "action": "abort"
+}
+```
+
+### Response
+
+See return from GET.
+
+## `GET /v2/changes`
+
+* Description: Get all the changes in progress
+* Access: authenticated
+* Operation: sync
+* Return: current changes or standard error
+
+Returns an array containing all the changes as that would have been returned from `/v2/changes/[id]`.
+
+## `POST /v2/snapctl`
+
+* Description: Run snapctl command
+* Access: authenticated
+* Operation: sync
+* Return: command output or standard error
+
+### Request
+
+Example:
+```javascript
+{
+    "context-id": "ABCDEF",
+    "args": [ "get", "username" ]
+}
+```
+
+#### Fields
+
+* `context-id`: Context for this call.
+* `args`: Arguments to snapctl.
+
+### Response
+
+Example:
+```javascript
+{
+    "stdout": "username",
+    "stderr": ""
+}
+```
+
+#### Fields
+
+* `stdout`: Data written to stdout from snapctl command.
+* `stderr`: Data written to stderr from snapctl command.
+
+## `GET /v2/users`
+
+* Description: TBD
+* Access: root
+* Operation: sync
+* Return: array of users
+
+### Response
+
+Example:
+```javascript
+[
+    { "id": 1, "username": "user1@example.com" },
+    { "id": 2, "username": "user2@example.com" }
+]
+```
+
+## `GET /v2/sections`
+
+* Description: Get the store sections
+* Access: open
+* Operation: sync
+* Return: an array containing the store section names
+
+### Response
+
+Example:
+```javascript
+[ "featured", "database", "ops", "messaging", "media", "internet-of-things" ]
 ```
