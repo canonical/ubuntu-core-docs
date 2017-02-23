@@ -80,7 +80,9 @@ can be signed by doing
 ```text
 $ cat account.json | snap sign > account
 ```
-(we would be signing with our default key). The output would be similar too
+(we would be signing with our default key).
+
+The output would be similar to:
 ```text
 $ cat account
 type: account
@@ -108,20 +110,12 @@ eoyPdPAWyOm5KcTm3O92Q/jo3TQF5tyDMIHHOLnkUQ==
 Below we define in detail the currently supported assertions. Unless otherwise noted, all
 fields are madatory.
 
-[account assertion](assertions/account.md)
-
-[account-key assertion](assertions/account-key.md)
-
-[model assertion](assertions/model.md)
-
-[serial assertion](assertions/serial.md)
-
-[snap-declaration assertion](assertions/snap-declaration.md)
-
-[snap-build assertion](assertions/snap-build.md)
-
-[snap-revision assertion](assertions/snap-revision.md)
-
-[system-user assertion](assertions/system-user.md)
-
-[validation assertion](assertions/validation.md)
+* [account assertion](assertions/account.md)
+* [account-key assertion](assertions/account-key.md)
+* [model assertion](assertions/model.md)
+* [serial assertion](assertions/serial.md)
+* [snap-declaration assertion](assertions/snap-declaration.md)
+* [snap-build assertion](assertions/snap-build.md)
+* [snap-revision assertion](assertions/snap-revision.md)
+* [system-user assertion](assertions/system-user.md)
+* [validation assertion](assertions/validation.md)
