@@ -9,4 +9,4 @@ and one that instantly creates a wireless access point:
 
 * modem-manager
 * [network-manager](network-manager/docs/index.md)
-* wifi-ap
+* [wifi-ap](wifi-ap/docs/index.html)
