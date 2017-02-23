@@ -78,6 +78,26 @@ navigation:
       - title: Assertions
         location: reference/assertions.md
 
+        children:
+          - title: account
+            location: reference/assertions/account.md
+          - title: account-key
+            location: reference/assertions/account-key.md
+          - title: model
+            location: reference/assertions/model.md
+          - title: serial
+            location: reference/assertions/serial.md
+          - title: snap-declaration
+            location: reference/assertions/snap-declaration.md
+          - title: snap-build
+            location: reference/assertions/snap-build.md
+          - title: snap-revision
+            location: reference/assertions/snap-revision.md
+          - title: system-user
+            location: reference/assertions/system-user.md
+          - title: validation
+            location: reference/assertions/validation.md
+
       - title: Gadget snap format
         location: reference/gadget.md
 
