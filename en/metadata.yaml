@@ -59,6 +59,8 @@ navigation:
 #            location: stacks/power/docs/index.md
           - title: TPM
             location: stacks/tpm/index.md
+          - title: Utilities
+            location: stacks/utilities/index.md
 
   - title: Go to production
 

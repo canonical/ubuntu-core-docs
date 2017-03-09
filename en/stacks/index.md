@@ -28,6 +28,7 @@ to many different types of Ubuntu Core-based systems:
 * [Network interface management](network/network-manager/docs/index.md) (both wired and wireless)
 * Power management for battery-operated devices
 * [TPM](tpm/index.md) [Reference](https://en.wikipedia.org/wiki/Trusted_Platform_Module)
+* [Utilities](utilities/index.md)
 * WiFi Access Point (AP)
 
 * Extensive manual and automatic testing framework for above functionality via
