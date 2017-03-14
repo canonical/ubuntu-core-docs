@@ -5,11 +5,11 @@ table_of_contents: true
 
 # Reviewer tools
 
-The reviewer tools are suite of tests and utilities to help you reviewing packages. Tests that are run by default are equivalent to store default settings.
+The reviewer tools are a suite of tests and utilities to help you reviewing packages. Checks that are run by default are equivalent to store default settings.
 
 ## Install the tools
 
-You  first need to install the `bzr` package to fetch the source of the tools:
+You first need to install the `bzr` package to fetch the source of the tools:
 
 ```bash
 sudo apt install bzr
@@ -25,7 +25,7 @@ export PYTHONPATH=./
 
 ## Run checks locally
 
-The `click-review` binary is the main tool to run automated checks on snaps. This command takes a path to a local snap as an argument. It does not run the snap but sanity checks its metadata and paths according to the general security policy.
+The `click-review` binary is the main tool to run checks on snaps. This command takes a path to a local snap as an argument. It does not run the snap but sanity checks its metadata and paths according to the general security policy.
 
 ```bash
 $ ./bin/click-review /tmp/foo-snap_1.0_amd64.snap
@@ -58,18 +58,18 @@ You can then:
 
 * ask the uploader to remove or change the offending code
 * reject the snap
-* approve the snap
+* approve the snap anyway
 * edit its `snap-declaration` assertion to make it conform to your security policies or to adapt it to your users needs.
 
-[//]: <> (## Test a snap in a virtual machine)
+[//]: <> (TODO: Test a snap in a virtual machine)
 
 ## Edit snap declarations
 
 Snap declarations allow reviewers to enable specific features on snaps, such as allowing auto-connections of interfaces and setting up automated aliases for snap commands.
 
-Their content needs to be provided in JSON through the snap review UI in the store. To ease this process, you can use the `bin/create-snap-declaration.py` script.
+Their content needs to be provided in JSON through the reviewer form in the store. To ease this process, you can use the `bin/create-snap-declaration.py` script.
 
-For example, the network manager snap declares: `slots: [ network-manager ]` and `plugs: [ firewall-control, network, network-bind, network-control, network-manager ]`. If all the plugged interfaces for network-manager are meant to be auto-connected and other snaps are to be allowed to connect to the network-manager slot, the reviewer would use:
+For example, the `network manager` snap declares: `slots: [ network-manager ]` and `plugs: [ firewall-control, network, network-bind, network-control, network-manager ]`. If all the plugged interfaces for network-manager are meant to be auto-connected and other snaps are to be allowed to connect to the network-manager slot, the reviewer would use:
 
 ```bash
 $ ./bin/create-snap-declaration.py --plug-auto-connection=network-control,firewall-control,network-manager,network,network-bind --slot-connection=network-manager
