@@ -1,5 +1,5 @@
 ---
-title: Advanced production model - Branded store
+title: Advanced production model - Brand store
 table_of_contents: true
 ---
 
@@ -11,7 +11,7 @@ Here we provide an overview of the advanced production model:
     * A kernel snap of you choice. See the [board enablement overview](../build-device/board-enablement.html) for details.
     * A gadget snap that you have created. See the [board enablement overview](../build-device/board-enablement.html) for details.
     * A factory image that contains snaps that are not publicly available
-* You curate your own store of snaps, a _Branded store_
+* You curate your own store of snaps, a [Brand store](../../build-store)
 * You want _Update Control_, to decide when updates are published to devices you have created
 
 They provide all the functionality and control required to manage your device ecosystem.
@@ -24,7 +24,7 @@ The high level steps for this production model are:
 
 1. Contact your Canonical representative to:
     * Create you a _Brand Account_
-    * Create your _Branded store_ associated with this account
+    * Create your _[Brand store](../../build-store)_ associated with this account
     * Provide instructions on tools and process needed for manufacturing
 1. Create your gadget snap and publish it in your store
 1. Create the extra snaps needed for your device's base functionality and publish them in your store
@@ -44,7 +44,7 @@ Of particular importance is the prepare-device hook which must contain the detai
 
 ## Create the extra snaps
 
-Once your snap is working as expected, publish it to the branded store. These snaps will only be available to devices whose model assertion specifies your brand and store.
+Once your snap is working as expected, publish it to the brand store. These snaps will only be available to devices whose model assertion specifies your brand and store.
 
 Detailed information about building snap packages can be found on [snapcraft.io](http://snapcraft.io).
 
@@ -78,8 +78,8 @@ Steps for creating an image from the signed model assertion are found [here](../
 
 The process requires a serial assertion signed by your brand account. To support you in managing you keys and signing the serial assertion during the production process Canonical have developed an open source tool called the [Serial Vault](http://github.com/ubuntu-core/identity-vault).
 
-The Serial Vault allows you to make sure the device leaves production ready to communicate with the branded store and gives you confidence that only devices produced by you have access to your snaps.
+The Serial Vault allows you to make sure the device leaves production ready to communicate with the brand store and gives you confidence that only devices produced by you have access to your snaps.
 
 ## Distribute your devices
 
-When your devices are in the field and operational they will communicate with your branded store to identify when updates are available or to install snaps that the user wants.
+When your devices are in the field and operational they will communicate with your brand store to identify when updates are available or to install snaps that the user wants.
