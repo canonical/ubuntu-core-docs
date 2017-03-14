@@ -16,4 +16,4 @@ This documentation will walk you through:
 
 First, let's have a look at how to request the creation of a brand store.
 
-<p><a href="create.md"><button class="p-button--base">Create a brand store</button></a></p>
+<p><a href="/core/en/build-store/create.html"><button class="p-button--base">Create a brand store</button></a></p>
