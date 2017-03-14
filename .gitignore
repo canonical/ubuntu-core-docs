@@ -1,2 +1,6 @@
 build/*
 env3/*
+/en/stacks/audio/alsa-utils/
+/en/stacks/audio/pulseaudio/
+/en/stacks/network/network-manager/
+/en/stacks/network/wifi-ap/
