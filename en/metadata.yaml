@@ -59,14 +59,14 @@ navigation:
       - title: TPM
         location: stacks/tpm/index.md
 
-  - title: Build a store
+  - title: Get a store
 
     children:
-      - title: Get started
+      - title: Introduction
         location: build-store/index.md
 
         children:
-          - title: Create a brand store
+          - title: Request a brand store
             location: build-store/create.md
 
           - title: Client setup
