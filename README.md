@@ -17,13 +17,7 @@ documentation-builder:
 
 Then install the git-repo utility:
 
-    $ mkdir $HOME/.bin/
-    $ export PATH=$PATH:$HOME/.bin/repo
-    $ curl https://storage.googleapis.com/git-repo-downloads/repo > $HOME/.bin/repo
-    $ chmod a+x $HOME/.bin/repo
-
-Note: There's also an experimental [git-repo snap](https://code.launchpad.net/~snappy-hwe-team/+snap/git-repo-publish)
-that you can use instead of the previous manual installation steps.
+    $ snap install git-repo
 
 From the root of the documentation source tree (e.g. ubuntu-core-docs) do the
 following to get the Ubuntu Core Stacks sub-repositories:
