@@ -54,8 +54,8 @@ navigation:
 #            location: stacks/media/docs/index.md
       - title: Network management & services
         location: stacks/network/index.md
-#          - title: Power management
-#            location: stacks/power/docs/index.md
+      - title: Power management
+        location: stacks/power/index.md
       - title: TPM
         location: stacks/tpm/index.md
 

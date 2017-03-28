@@ -4,3 +4,4 @@ env3/*
 /en/stacks/audio/pulseaudio/
 /en/stacks/network/network-manager/
 /en/stacks/network/wifi-ap/
+/en/stacks/power/upower/
