@@ -2,6 +2,7 @@
 <manifest>
   <remote name="origin" fetch="https://git.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git" />
   <default revision="master" remote="origin"  sync-j="4" />
+  <project path="en/stacks/network/modem-manager" name="modem-manager" />
   <project path="en/stacks/network/network-manager" name="network-manager" />
   <project path="en/stacks/network/wifi-ap" name="wifi-ap" />
   <project path="en/stacks/audio/alsa-utils" name="alsa-utils" />

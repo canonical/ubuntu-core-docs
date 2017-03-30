@@ -1,6 +1,8 @@
 build/*
 env3/*
+/.repo/
 /en/stacks/audio/alsa-utils/
 /en/stacks/audio/pulseaudio/
+/en/stacks/network/modem-manager/
 /en/stacks/network/network-manager/
 /en/stacks/network/wifi-ap/
