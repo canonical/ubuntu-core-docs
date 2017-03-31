@@ -20,7 +20,7 @@ Ubuntu Core Stacks currently offers the following areas of functionality relevan
 to many different types of Ubuntu Core-based systems:
 
 * [Audio management](audio/index.md)
-* Bluetooth device management
+* [Bluetooth device management](bluetooth/index.md)
 * [Disk management](disk/index.md)
 * Location services (GPS, WiFi, etc)
 * Multimedia management
