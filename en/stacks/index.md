@@ -24,7 +24,7 @@ to many different types of Ubuntu Core-based systems:
 * [Disk management](disk/index.md)
 * Location services (GPS, WiFi, etc)
 * Multimedia management
-* Cellular modem device data management
+* [Cellular modem device data management](network/modem-manager/docs/index.md)
 * [Network interface management](network/network-manager/docs/index.md) (both wired and wireless)
 * Power management for battery-operated devices
 * [TPM](tpm/index.md) [Reference](https://en.wikipedia.org/wiki/Trusted_Platform_Module)
