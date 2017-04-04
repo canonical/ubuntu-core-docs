@@ -41,26 +41,59 @@ navigation:
 #   * Need Markdown documentation for media-hub
 #   * Need Markdown documentation for upower
 #   * Need to move the wifi-ap documentation from Google Docs to Markdown
-      - title: Features
-        children:
-          - title: Audio management
-            location: stacks/audio/index.md
-#          - title: Bluetooth management
-#            location: stacks/bluetooth/doc/overview.md
-          - title: Disk management
-            location: stacks/disk/index.md
+
+      - title: Audio management
+        location: stacks/audio/index.md
+      - title: Bluetooth management
+        location: stacks/bluetooth/index.md
+      - title: Disk management
+        location: stacks/disk/index.md
 #          - title: Location services
 #            location: stacks/location/docs/index.md
 #          - title: Media playback & recording
 #            location: stacks/media/docs/index.md
-          - title: Network management & services
-            location: stacks/network/index.md
-#          - title: Power management
-#            location: stacks/power/docs/index.md
-          - title: TPM
-            location: stacks/tpm/index.md
-          - title: Utilities
-            location: stacks/utilities/index.md
+      - title: Network management & services
+        location: stacks/network/index.md
+      - title: Power management
+        location: stacks/power/index.md
+      - title: TPM
+        location: stacks/tpm/index.md
+
+  - title: Get a store
+
+    children:
+      - title: Introduction
+        location: build-store/index.md
+
+        children:
+          - title: Request a brand store
+            location: build-store/create.md
+
+          - title: Client setup
+            location: build-store/client-setup.md
+
+      - title: Manage
+        location: build-store/manage.md
+
+        children:
+          - title: Settings
+            location: build-store/settings.md
+
+          - title: Reviews
+            location: build-store/reviews.md
+
+          - title: Reviewer tools
+            location: build-store/reviewer-tools.md
+
+      - title: Develop
+        location: build-store/develop.md
+
+        children:
+          - title: Upload snaps
+            location: build-store/upload-snaps.md
+
+      - title: Report an issue
+        location: build-store/issues.md
 
   - title: Go to production
 
@@ -71,7 +104,7 @@ navigation:
       - title: Simple - Ubuntu store
         location: guides/go-to-production/simple.md
 
-      - title: Advanced - Branded store
+      - title: Advanced - Brand store
         location: guides/go-to-production/advanced.md
 
   - title: Reference

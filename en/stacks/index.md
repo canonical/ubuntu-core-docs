@@ -20,13 +20,13 @@ Ubuntu Core Stacks currently offers the following areas of functionality relevan
 to many different types of Ubuntu Core-based systems:
 
 * [Audio management](audio/index.md)
-* Bluetooth device management
+* [Bluetooth device management](bluetooth/index.md)
 * [Disk management](disk/index.md)
 * Location services (GPS, WiFi, etc)
 * Multimedia management
-* Cellular modem device data management
+* [Cellular modem device data management](network/modem-manager/docs/index.md)
 * [Network interface management](network/network-manager/docs/index.md) (both wired and wireless)
-* Power management for battery-operated devices
+* [Power management for battery-operated devices](power/index.md)
 * [TPM](tpm/index.md) [Reference](https://en.wikipedia.org/wiki/Trusted_Platform_Module)
 * [Utilities](utilities/index.md)
 * WiFi Access Point (AP)
