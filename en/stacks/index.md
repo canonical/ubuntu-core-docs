@@ -26,7 +26,7 @@ to many different types of Ubuntu Core-based systems:
 * Multimedia management
 * [Cellular modem device data management](network/modem-manager/docs/index.md)
 * [Network interface management](network/network-manager/docs/index.md) (both wired and wireless)
-* Power management for battery-operated devices
+* [Power management for battery-operated devices](power/index.md)
 * [TPM](tpm/index.md) [Reference](https://en.wikipedia.org/wiki/Trusted_Platform_Module)
 * WiFi Access Point (AP)
 

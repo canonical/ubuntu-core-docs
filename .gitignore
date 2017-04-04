@@ -6,4 +6,5 @@ env3/*
 /en/stacks/network/modem-manager/
 /en/stacks/network/network-manager/
 /en/stacks/network/wifi-ap/
+/en/stacks/power/upower/
 /en/stacks/bluetooth/bluez/
