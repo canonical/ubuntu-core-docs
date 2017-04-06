@@ -1,5 +1,6 @@
 build/*
 env3/*
+.repo/*
 /.repo/
 /en/stacks/audio/alsa-utils/
 /en/stacks/audio/pulseaudio/
