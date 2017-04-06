@@ -28,9 +28,8 @@ to many different types of Ubuntu Core-based systems:
 * [Network interface management](network/network-manager/docs/index.md) (both wired and wireless)
 * [Power management for battery-operated devices](power/index.md)
 * [TPM](tpm/index.md) [Reference](https://en.wikipedia.org/wiki/Trusted_Platform_Module)
+* [WiFi Access Point (AP)](network/wifi-ap/docs/index.md)
 * [Utilities](utilities/index.md)
-* WiFi Access Point (AP)
-
 * Extensive manual and automatic testing framework for above functionality via
   [Plainbox](https://pypi.python.org/pypi/plainbox) and [Spread](https://github.com/snapcore/spread)
 
