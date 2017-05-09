@@ -9,7 +9,7 @@ Snaps and Ubuntu core devices in general are tied to accounts existing in the Ub
 
 ## The Ubuntu Store
 
-The main way of distributing snaps to is through [the Ubuntu Store](https://myapps.developer.ubuntu.com/dev/click-apps/ "Ubuntu store"), where you can customize how your snap is presented, review each new upload, and control publishing over several release channels. Here is the model it follows.
+The main way of distributing snaps to is through [the Ubuntu Store](https://dashboard.snapcraft.io "Ubuntu store"), where you can customize how your snap is presented, review each new upload, and control publishing over several release channels. Here is the model it follows.
 
 ## Developer namespace
 
@@ -17,7 +17,7 @@ You'll choose a unique developer namespace as part of the store account creation
 
 ## Naming
 
-You can publish a snap under any name you have rights to. Names can be registered by using the `snapcraft register` command, clicking **New Snap** on the developer portal, or by visiting the [Register name](https://myapps.developer.ubuntu.com/dev/click-apps/register-name/ "register name") page. You can also grant other developers permission to publish versions of a snap you own, for example as part of an open source project.
+You can publish a snap under any name you have rights to. Names can be registered by using the `snapcraft register` command, clicking **New Snap** on the developer portal, or by visiting the [Register name](https://dashboard.snapcraft.io/dev/snaps/register-name/ "register name") page. You can also grant other developers permission to publish versions of a snap you own, for example as part of an open source project.
 
 ## Collaborating
 
@@ -25,7 +25,7 @@ You can share the management of any snap registered in the store under your own 
 
 ## Uploading
 
-Uploading snaps to the store can be done directly from the command line or on the [store website](https://myapps.developer.ubuntu.com/dev/click-apps/ "Ubuntu store") itself. Once uploaded you choose the release channel(s) (`stable`, `candidate`, `beta`, `edge`) that the snap will be published to.
+Uploading snaps to the store can be done directly from the command line or on the [store website](https://dashboard.snapcraft.io "Ubuntu store") itself. Once uploaded you choose the release channel(s) (`stable`, `candidate`, `beta`, `edge`) that the snap will be published to.
 
 It's worth noting that when you upload a snap, the store assigns it a revision number of 1\. The store then automatically increments this revision number each time you upload a new version.
 

@@ -7,7 +7,7 @@ table_of_contents: true
 
 By default, snapcraft will upload snaps to the main snap store. To change this behaviour and upload snaps to a specific brand store, you need to:
 
-1. Know the id of the store your are targeting, which is available in the [Store List](https://myapps.developer.ubuntu.com/dev/store/list/) page, which lists stores you can upload to or manage
+1. Know the id of the store your are targeting, which is available in the [Store List](https://dashboard.snapcraft.io/dev/store/list/) page, which lists stores you can upload to or manage
 * Pass it to snapcraft through the `SNAPCRAFT_UBUNTU_STORE` environment variable
 
 ## Example

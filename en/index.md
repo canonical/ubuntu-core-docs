@@ -25,7 +25,7 @@ This documentation will walk you through the steps to install and manage Ubuntu 
 
 #### Developer tools and websites
 
-* [myapps.ubuntu.com](https://myapps.ubuntu.com): the developer portal to manage your snaps in the store
-* [snapcraft.io](http://snapcraft.io): the snap format and snap creation reference documentation
 * **`snapcraft`**: the command-line tool to guide you through creating snaps, push and release them to users
+* [snapcraft.io](http://snapcraft.io): the snap format and snap creation reference documentation
+* [dashboard.snapcraft.io](https://dashboard.snapcraft.io): the developer portal to manage your snaps in the store
 * **`ubuntu-image`**: the command-line tool to guide you through creating your own Ubuntu Core images

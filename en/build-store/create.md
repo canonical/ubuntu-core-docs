@@ -31,15 +31,15 @@ For this request to go through, you will be asked:
 ### Important
 
 Please note that for adding admins, reviewers and (optionally)
-uploaders you need to ensure that these users have [logged in to the store](https://myapps.developer.ubuntu.com/) at least once.
+uploaders you need to ensure that these users have [logged in to the store](https://dashboard.snapcraft.io/) at least once.
 
 ## Accessing your store
 
 To access your store, you need to:
 
-* log in to the [main snap store](https://myapps.developer.ubuntu.com)
+* log in to the [main snap store](https://dashboard.snapcraft.io/)
 * click on the arrow next to your name at the top right of the screen
 * click on the **Stores you can access** menu item
 * click on your store name in the list, it should be under the **You can manage and change settings in the stores** header
 
-This will take your to your [store settings](docs/settings.md).
+This will take your to your [store settings](settings.md).

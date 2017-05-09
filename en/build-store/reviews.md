@@ -7,12 +7,12 @@ table_of_contents: true
 
 If you haven't disabled it in the [store settings](settings.md), snaps reviews are run automatically. They consist of linting and security policy checks, using a set of reviewer tools, which can be installed and used locally if you need to do an in-depth manual review or override a snap declaration (see below for details).
 
-All snaps pending reviews can be found in the [review queue](https://myapps.developer.ubuntu.com/dev/click-apps/reviewer/
+All snaps pending reviews can be found in the [review queue](https://dashboard.snapcraft.io/dev/snaps/reviewer/
 ) store page.
 
 ## Adding reviewers
 
-As of now, to add reviewers, you need to get in touch with the Store team. The only prerequisite to add reviewers is to ensure they have [created a store account](https://myapps.developer.ubuntu.com) beforehand.
+As of now, to add reviewers, you need to get in touch with the Store team. The only prerequisite to add reviewers is to ensure they have [created a store account](https://dashboard.snapcraft.io) beforehand.
 
 See the [Report an issue section](issues.md) for contact details.
 
@@ -20,7 +20,7 @@ See the [Report an issue section](issues.md) for contact details.
 
 The role of a reviewer is to periodically:
 
-* Examine the [review queue](https://myapps.developer.ubuntu.com/dev/click-apps/reviewer/
+* Examine the [review queue](https://dashboard.snapcraft.io/dev/snaps/reviewer/
 ) and select an app to be reviewed
 * Check to see if there are any warnings or errors in the review output
   * If the error is for an interface restriction or [`confinement: classic`](https://snapcraft.io/docs/reference/confinement) and you deem it is acceptable to grant: update the snap declaration on the store, leave a comment as to why it was granted, then click 'Run the automated review again'. This should now pass automated review

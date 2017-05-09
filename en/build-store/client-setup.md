@@ -13,7 +13,7 @@ To connect any snap enabled device to your brand store, the snapd service needs 
 
 There are several ways to expose an environment variable to a service. Here is one of them, that creates the environment variable and makes it persistent between reboots:
 
-1. Get your store `id` from [this page](https://myapps.developer.ubuntu.com/dev/store/list/?next=/dev/store/admin/), your store id being the value between parenthesis (eg. `my-brand-store`).
+1. Get your store `id` from [this page](https://dashboard.snapcraft.io/dev/store/list/?next=/dev/store/admin/), your store id being the value between parenthesis (eg. `my-brand-store`).
 * Open `/etc/environment` for edition with root privileges
 
         $ sudo nano /etc/environment

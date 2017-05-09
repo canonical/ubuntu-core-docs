@@ -81,7 +81,7 @@ As an example, here is one for a device based on a Raspberry Pi 3 board. The JSO
 #### Keys description
 
 *   `type`: the assertion type you are creating
-*   `authority-id`, `brand-id` refer to your store account id. You will find it on [your account page](https://myapps.developer.ubuntu.com/dev/account/), in the `Account-Id` field.
+*   `authority-id`, `brand-id` refer to your store account id. You will find it on [your account page](https://dashboard.snapcraft.io/dev/account/), in the `Account-Id` field.
 *   `series`: the Ubuntu Core series in use
 *   `model`: a free form lower-case name for your target device
 *   `architecture`: the architecture of the device you are building the image for
