@@ -21,6 +21,10 @@ There are three categories of settings:
 
 * "Unlisted": this makes the store semi-private. The name and store id will not be listed in the main [store list](https://dashboard.snapcraft.io/dev/store/list/), but will still be accessible to clients and uploaders who know its id.
 
+* "Add packages to this store": you can add snaps from other public stores to your store
+
+    When clicking on this option you will be presented with a list of snaps from other public stores or other stores you are administrator of that you can select to be included in your store.
+
 ## Automatic review checks
 
 * "Manual approval": the first setting of this category enforces manual approval on all snaps, regardless of the results of the automated review.
