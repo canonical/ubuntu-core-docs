@@ -11,4 +11,5 @@
   <project path="en/stacks/disk/udisks2" name="udisks2" />
   <project path="en/stacks/power/upower" name="upower" />
   <project path="en/stacks/network/wifi-ap" name="wifi-ap" />
+  <project path="en/stacks/network/wpa-supplicant" name="wpa-supplicant" />
 </manifest>
