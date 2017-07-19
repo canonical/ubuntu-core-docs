@@ -36,6 +36,13 @@ navigation:
       - title: Introduction
         location: stacks/index.md
 
+  - title: Manage a device
+
+    children:
+
+      - title: System User
+        location: guides/manage-devices/index.md
+
 # TODO:
 #   * Need Markdown documentation for location-service
 #   * Need Markdown documentation for media-hub
