@@ -5,101 +5,118 @@ table_of_contents: true
 
 # Introduction
 
-On first boot, most stock core images finally run a program called console-conf. If the user has a terminal session on the device, they can use console-conf to do various things, such as configure the network and add a system user account.  The system user account can then be used to ssh to the device for various management purposes. 
+On some systems it is appropriate to have a system user. For example, with a system user, one can ssh to the device and run commands. (A system user is not required.)
 
-Or, you can create a system user account with a *system-user assertion*, if you have authority for the image, that is, if you built is using a model assertion that you signed. IF a device is not already **managed**, this system user assertion can be put in the root dir of a USB, with the file name auto-import.assert, and upon insertion it is imported and the system user is created. More on this below.
+By default on first boot, stock core images finally run a program called console-conf. If the user has a keyboard and monitor attached to the device, they can use console-conf to configure the network and add a user account. This user account can then be used to ssh to the device for various management purposes.
 
-Let's break this down a bit.
+Some systems suppress console-conf, and a user is not created by default. In these cases, one may add a system-user if one has the information and authority needed to do so for the particular system. This is done by inserting a USB key with a special file (named `auto-import.assert`) in the root directory. Snapd imports the assertions found in it, and, if the assertions are valid for the given system, the system-user is created. After this, you can log into the device (locally or over ssh) using the username and password defined.
 
-# Making the image
+In general, you cannot add a system-user to a system that is already "managed". A system is managed if a user was already created by console-conf, or if a system-user was created through the auto-import mechanism described here.
 
-When you make an image with the `ubuntu-image ...` command, you prvoide a signed model assertion as the final argument. (See TODO).
+Whether you can add a system-user to an unmanaged system depends on the model assertion that was used to create the image. It also depends on whether you have an authorized snapcraft key on your local system.
 
-The model assertion contains critical data that is needed when making a system user assertion, for example the:
+## Model assertions that allow adding a system user
 
-* model
-* brand
+### The simplest case is where you did everything:
 
-When you sign the model assertion (before making the image) you sign it with a key that you have registered with your Ubuntu SSO account. And that key must be available in your current sesssion, that is, the command `snapcraft list-keys must show the key. 
+* You created a snapcraft key and it is registered to your SSO
+* You created a model assertion
+* The model assertion has the `authority-id` set to your SSO account ID
+* The model assertion has the `brand-id` set to your SSO account ID
+* You signed the model assertion using the key mentioned above
+* You built the image using that model assertion
 
-Let's say you have a model JSON file (mypi3model.json) like this:
+The model assertion (original JSON) may look like this:
 
-```code
+```
 {
   "type": "model",
-  "system-user-authority": "*",
-  "authority-id": "xXBKQdXsFgTcTNWFH6NlFsTz7Epn4kvJ",
-  "brand-id": "xXBKQdXsFgTcTNWFH6NlFsTz7Epn4kvJ",
+  "authority-id": "THE-SSO-ACCOUNT-ID",
+  "brand-id": "THE-SSO-ACCOUNT-ID",
   "series": "16",
-  "model": "mypi3model",
+  "model": "mymodel",
   "architecture": "armhf",
   "kernel": "pi2-kernel",
-  "gadget": "pi3",
+  "gadget": "cm3",
   "timestamp": "2017-07-11T15:55:59+00:00"
 }
 ```
 
-It's required that:
+Note that this model assertion does not have a `system-user-authority` key. When a model assertion lacks this key, a system-user assertion can only be signed by a key registered to the SSO account specified by the `brand-id` field. But, in this case, you do have the key needed to sign the system-user assertion, so all is well.
 
-* The `authority-id` and the `brand-id` values are an Ubuntu SSO account ID that you can access
-* The snapcraft key you will sign the model with is registered to that SSO account
+### Specifying other SSO accounts that can sign the system-user assertion
 
-You can sign the model JSON file and create mypi3model.assertion as follows:
+You can use the optional `system-user-authority` field to list a set of SSO account IDs that are authorized to sign system-user assertions for any image built with this model assertion.
 
-```code
-cat mypi3model.json | snap sign -k KEY > mypi3model.assertion
+```
+{
+  "type": "model",
+  "authority-id": "THE-SSO-ACCOUNT-ID",
+  "brand-id": "THE-SSO-ACCOUNT-ID",
+  "system-user-authority": [
+    "ANOTHER-SSO-ACCOUNT-ID",
+    "YET-ANOTHER-SSO-ACCOUNT_ID"
+  ],
+  "series": "16",
+  "model": "mymodel",
+  "architecture": "armhf",
+  "kernel": "pi2-kernel",
+  "gadget": "cm3",
+  "timestamp": "2017-07-11T15:55:59+00:00"
+}
 ```
 
-(Let's assume the name of the registered KEY is "model".)
+In this case, any one who can log in to either ANOTHER-SSO-ACCOUNT-ID or YET-ANOTHER-SSO-ACCOUNT_ID accounts can sign system-user assertions with keys registered to those accounts. And such system-user assertions are valid for systems built with this model.
 
-Then you can build the image (from stable chanel, for example) like so:
+### Self-signed system-user assertions
 
-```code
-sudo ubuntu-image -O outputdir --channel stable mypi3model.assertion
+A model can also specify that anyone with a registered key can create a valid system-user assertion. This is done with an asterisk ("*") in the `system-user-authority` field:
+
+```
+{
+  "type": "model",
+  "authority-id": "THE-SSO-ACCOUNT-ID",
+  "brand-id": "THE-SSO-ACCOUNT-ID",
+  "system-user-authority": "*",
+  "series": "16",
+  "model": "mymodel",
+  "architecture": "armhf",
+  "kernel": "pi2-kernel",
+  "gadget": "cm3",
+  "timestamp": "2017-07-11T15:55:59+00:00"
+}
 ```
 
-You can dd the outputdir/pi3.img file to an SD card and boot a pi3 from it. This pi3 image will be a stock image (unmodified) in every sense **except** it will be **your** model and brand. Therefore, you have athority to create a system-user assertion to create a system user. 
+## Creating a system-user assertion
 
-# About system-user assertions
+We now know that creating a valid system-user assertion is limited by the model assertion. And, there is information in the model assertion that is needed to create the system-user assertion, specifically the `brand-id` and the `model`.
 
-System users can only be added via a system user assertion to a device that is not already **managed**. When you boot a stock image and complete the console-conf process, the result is that the system is **managed**, and you cannot then add a system user via a system user assertion. 
-
-If you have terminal to the device, you can tell if it is managed with:
-
-```code
-$ snap managed
-true
-``e
-
-Some image makers prefer to disable console-conf (covered elsewhere: TODO) entirely. If they need console/system user on a device, they can use the system user assertion on a USB key to create one. 
-
-If you boot a system for the first time in which console-conf is not disabled, and you boot it with a valid system user assertion USB key insterted, the system user on the USB is created, and the portion of console-conf that creates the system user is skipped (but the part that allows you to configure the network is not skipped). 
-
-Let's use the information we have about our image to create a system user assertion
-
-# Creating a system user assertion
 
 There's a snap that makes this part easy: make-system-user
 
 1. Install it 
 
-        snap install make-system-user
+        $ snap install make-system-user --classic
 
 1. Check its help:
-        sudo make-system-user.run --help
 
-    The help specifies that you need the value of the `brand` field of the model assertion. This are the SSO account ID.
+        $ sudo make-system-user.run --help
 
-    You also need the value of the `model` field, in this case: `mypi3model`
+    The help specifies that you need the brand, which is the `brand-id` field's value in the model assertion. 
 
-    It also specifies you need a username and password, and you need to name the key (that was used to sign the model)
+    You also need the value of the `model` field, in this case: `mymodel`
+
+    You need to specify a username and password. 
+
+    And, you need to name the key to sign the assertion. Note that the assertion only works on a given system if the key is within the limitations of the model assertion as described previously.
+
 
 1. Here is a sample execution matching the above:
 
 ```code
-$ sudo make-system-user.run --brand xXBKQdXsFgTcTNWFH6NlFsTz7Epn4kvJ --model mypi3model --username chuckthecoolcat --password heresapassword --key model
+$ sudo make-system-user.run --brand THE-SSO-ACCOUNT-ID --model mymodel --username chuckthecoolcat --password heresapassword --key MYVALIDKEY
 You need a passphrase to unlock the secret key for
-user: "model"
+user: "MYVALIDKEY"
 4096-bit RSA key, ID C375E301, created 2016-01-01
 
 Done. You may copy auto-import.assert to a USB stick and insert it into an unmanaged Core system, after which you can log in using the username and password you provided.
@@ -112,7 +129,7 @@ Simply copy `auto-import.assert` to the root directory of a USB, insert it, and 
 **Tip**: If you are creating the system on the first boot, it may take some minutes for the assertion to be imported and for the system user to be created. 
 
 
-# Checking if a system user assertion was created 
+## Checking if a system user assertion was created 
 
 If you can log in with the username and password, the system user has been created. 
 
