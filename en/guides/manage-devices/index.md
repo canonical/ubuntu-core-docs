@@ -42,7 +42,7 @@ The model assertion (original JSON) may look like this:
 }
 ```
 
-Note that this model assertion does not have a `system-user-authority` key. When a model assertion lacks this key, a system-user assertion can only be signed by a key registered to the SSO account specified by the `brand-id` field. But, in this case, you do have the key needed to sign the system-user assertion.
+Note that this model assertion does not have a `system-user-authority` field. When a model assertion lacks this key, a system-user assertion can only be signed by a key registered to the SSO account specified by the `brand-id` field. But, in this case, you do have the key needed to sign the system-user assertion.
 
 ### Specifying other SSO accounts that can sign the system-user assertion
 
