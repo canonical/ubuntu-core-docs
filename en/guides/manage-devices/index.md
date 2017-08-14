@@ -7,7 +7,7 @@ table_of_contents: true
 
 On some systems it is appropriate to have a system user. For example, with a system user, one can ssh to the device and run commands.
 
-By default on first boot, stock Core images run a program called console-conf. If the user has a keyboard and monitor attached to the device, they can use console-conf to configure the network and add a user account. This user account can then be used to ssh to the device for various management purposes.
+By default on first boot, stock Core images run a program called console-conf. If the you have a keyboard and monitor attached to the device or have a serial connection, you can use console-conf to configure the network and add a user account. The user account is created based on your registered email address and ssh key. This user account can then be used to ssh to the device for various management purposes. (Technically, this is not a system user account because it is not created through assertion, but the end result is equivalent.)
 
 Some systems suppress console-conf,  and a user is not created by default. In these cases, one may add a system-user if one has the information and authority needed to do so for the particular system. This is done by inserting a USB drive with a special file (named `auto-import.assert`) in the root directory. Snapd imports the assertions found in it, and, if the assertions are valid for the given system, the system-user is created. After this, you can log into the device (locally or over ssh) using the username and password defined.
 
