@@ -9,11 +9,11 @@ On some systems it is appropriate to have a system user. For example, with a sys
 
 By default on first boot, stock Core images run a program called console-conf. If you have a keyboard and monitor attached to the device or have a serial connection, you can use console-conf to configure the network and add a user account. The user account is created based on your registered email address and SSH key. This user account can then be used to SSH to the device for various management purposes. (Technically, this is not a system user account because it is not created through assertion, but the end result is equivalent.)
 
-Some systems suppress console-conf,  and a user is not created by default. In these cases, one may add a system-user if one has the information and authority needed to do so for the particular system. This is done by inserting a USB drive with a special file (named `auto-import.assert`) in the root directory. Snapd imports the assertions found in it, and, if the assertions are valid for the given system, the system-user is created. After this, you can log into the device (locally or over SSH) using the username and password defined.
+Some systems suppress console-conf, and a user is not created by default. In these cases, one may add a system user if one has the information and authority needed to do so for the particular system. This is done by inserting a USB drive with a special file (named `auto-import.assert`) in the root directory. Snapd imports the assertions found in it, and, if the assertions are valid for the given system, the system user is created. After this, you can log into the device (locally or over SSH) using the username and password defined.
 
-In general, you cannot add a system-user to a system that is already "managed". A system is managed if a user was already created by console-conf, or if a system-user was created through the auto-import mechanism described here.
+In general, you cannot add a system user to a system that is already "managed". A system is managed if a user was already created by console-conf, or if a system user was created through the auto-import mechanism described here.
 
-Whether you can add a system-user to an unmanaged system depends on the model assertion that was used to create the image. It also depends on whether you have an authorized snapcraft key on your local system. For a discussion of keys, see [Ubuntu Core Images](../build-device/image-building.md).
+Whether you can add a system user to an unmanaged system depends on the model assertion that was used to create the image. It also depends on whether you have an authorized snapcraft key on your local system. For a discussion of keys, see [Ubuntu Core Images](../build-device/image-building.md).
 
 ## Model assertions that allow adding a system user
 
@@ -42,11 +42,11 @@ The model assertion (original JSON) may look like this:
 }
 ```
 
-Note that this model assertion does not have a `system-user-authority` field. When a model assertion lacks this key, a system-user assertion can only be signed by a key registered to the SSO account specified by the `brand-id` field. But, in this case, you do have the key needed to sign the system-user assertion.
+Note that this model assertion does not have a `system-user-authority` field. When a model assertion lacks this key, a system user assertion can only be signed by a key registered to the SSO account specified by the `brand-id` field. But, in this case, you do have the key needed to sign the system user assertion.
 
-### Specifying other SSO accounts that can sign the system-user assertion
+### Specifying other SSO accounts that can sign the system user assertion
 
-You can use the optional `system-user-authority` field to list a set of SSO account IDs that are authorized to sign system-user assertions for any image built with this model assertion.
+You can use the optional `system-user-authority` field to list a set of SSO account IDs that are authorized to sign system user assertions for any image built with this model assertion.
 
 ```
 {
@@ -66,11 +66,11 @@ You can use the optional `system-user-authority` field to list a set of SSO acco
 }
 ```
 
-In this case, any one who can log in to either ANOTHER-SSO-ACCOUNT-ID or YET-ANOTHER-SSO-ACCOUNT_ID accounts can sign system-user assertions with keys registered to those accounts. And such system-user assertions are valid for systems built with this model.
+In this case, any one who can log in to either ANOTHER-SSO-ACCOUNT-ID or YET-ANOTHER-SSO-ACCOUNT_ID accounts can sign system user assertions with keys registered to those accounts. And such system user assertions are valid for systems built with this model.
 
-### Self-signed system-user assertions
+### Self-signed system user assertions
 
-A model can also specify that anyone with a registered key can create a valid system-user assertion. This is done with an asterisk ("*") in the `system-user-authority` field:
+A model can also specify that anyone with a registered key can create a valid system user assertion. This is done with an asterisk ("*") in the `system user-authority` field:
 
 ```
 {
@@ -87,12 +87,12 @@ A model can also specify that anyone with a registered key can create a valid sy
 }
 ```
 
-## Creating a system-user assertion
+## Creating a system user assertion
 
-We now know that creating a valid system-user assertion is limited by the model assertion. And, there is information in the model assertion that is needed to create the system-user assertion, specifically the `brand-id` and the `model`.
+We now know that creating a valid system user assertion is limited by the model assertion. And, there is information in the model assertion that is needed to create the system user assertion, specifically the `brand-id` and the `model`.
 
 
-There's a snap that makes this part easy: make-system-user
+There's a snap that makes this part easy: make-system user
 
 1. Install it 
 
