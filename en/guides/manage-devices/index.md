@@ -94,7 +94,7 @@ A model can also specify that anyone with a registered key can create a valid sy
 We now know that creating a valid system user assertion is limited by the model assertion. And, there is information in the model assertion that is needed to create the system user assertion, specifically the `brand-id` and the `model`.
 
 
-There's a snap that makes this part easy: make-system user
+There's a snap that makes this part easy: make-system user. This can be installed on a classic Ubuntu system or a Core system using the classic snap.
 
 1. Install it 
 
