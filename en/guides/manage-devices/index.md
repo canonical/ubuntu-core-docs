@@ -1,9 +1,9 @@
 ---
-title: Introduction
+title: System user
 table_of_contents: true
 ---
 
-# Introduction
+# System user
 
 On some systems it is appropriate to have a system user. For example, with a system user, one can SSH to the device and run commands.
 
