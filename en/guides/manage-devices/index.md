@@ -17,12 +17,14 @@ Whether you can add a system user to an unmanaged system depends on the model as
 
 ## Model assertions that allow adding a system user
 
+The model includes store account IDs. You can find yours [your](https://dashboard.snapcraft.io/dev/account/) `n the `Snap account-id` field.
+
 ### The simplest case is where you did everything:
 
-* You created a snapcraft key and it is registered to your SSO
+* You created a snapcraft key and you have registered it with `snapcraft register-key KEY`
 * You created a model assertion
-* The model assertion has the `authority-id` set to your SSO account ID
-* The model assertion has the `brand-id` set to your SSO account ID
+* The model assertion has the `authority-id` set to your account ID
+* The model assertion has the `brand-id` set to your account ID
 * You signed the model assertion using the key mentioned above
 * You built the image using that model assertion
 
@@ -31,8 +33,8 @@ The model assertion (original JSON) may look like this:
 ```
 {
   "type": "model",
-  "authority-id": "THE-SSO-ACCOUNT-ID",
-  "brand-id": "THE-SSO-ACCOUNT-ID",
+  "authority-id": "ACCOUNT-ID",
+  "brand-id": "ACCOUNT-ID",
   "series": "16",
   "model": "mymodel",
   "architecture": "armhf",
@@ -42,20 +44,20 @@ The model assertion (original JSON) may look like this:
 }
 ```
 
-Note that this model assertion does not have a `system-user-authority` field. When a model assertion lacks this key, a system user assertion can only be signed by a key registered to the SSO account specified by the `brand-id` field. But, in this case, you do have the key needed to sign the system user assertion.
+Note that this model assertion does not have a `system-user-authority` field. When a model assertion lacks this key, a system user assertion can only be signed by a key registered to the store account specified by the `brand-id` field. But, in this case, you do have the key needed to sign the system user assertion.
 
-### Specifying other SSO accounts that can sign the system user assertion
+### Specifying other accounts that can sign the system user assertion
 
-You can use the optional `system-user-authority` field to list a set of SSO account IDs that are authorized to sign system user assertions for any image built with this model assertion.
+You can use the optional `system-user-authority` field to list a set of account IDs that are authorized to sign system user assertions for any image built with this model assertion.
 
 ```
 {
   "type": "model",
-  "authority-id": "THE-SSO-ACCOUNT-ID",
-  "brand-id": "THE-SSO-ACCOUNT-ID",
+  "authority-id": "ACCOUNT-ID",
+  "brand-id": "ACCOUNT-ID",
   "system-user-authority": [
-    "ANOTHER-SSO-ACCOUNT-ID",
-    "YET-ANOTHER-SSO-ACCOUNT_ID"
+    "ANOTHER-ACCOUNT-ID",
+    "YET-ANOTHER-ACCOUNT_ID"
   ],
   "series": "16",
   "model": "mymodel",
@@ -66,7 +68,7 @@ You can use the optional `system-user-authority` field to list a set of SSO acco
 }
 ```
 
-In this case, any one who can log in to either ANOTHER-SSO-ACCOUNT-ID or YET-ANOTHER-SSO-ACCOUNT_ID accounts can sign system user assertions with keys registered to those accounts. And such system user assertions are valid for systems built with this model.
+In this case, any one who can log in to either ANOTHER-ACCOUNT-ID or YET-ANOTHER-ACCOUNT_ID accounts can sign system user assertions with keys registered to those accounts. And such system user assertions are valid for systems built with this model.
 
 ### Self-signed system user assertions
 
@@ -75,8 +77,8 @@ A model can also specify that anyone with a registered key can create a valid sy
 ```
 {
   "type": "model",
-  "authority-id": "THE-SSO-ACCOUNT-ID",
-  "brand-id": "THE-SSO-ACCOUNT-ID",
+  "authority-id": "ACCOUNT-ID",
+  "brand-id": "ACCOUNT-ID",
   "system-user-authority": "*",
   "series": "16",
   "model": "mymodel",
@@ -114,7 +116,7 @@ There's a snap that makes this part easy: make-system user
 1. Here is a sample execution matching the above:
 
 ```code
-$ sudo make-system-user.run --brand THE-SSO-ACCOUNT-ID --model mymodel --username chuckthecoolcat --password heresapassword --key MYVALIDKEY
+$ sudo make-system-user.run --brand ACCOUNT-ID --model mymodel --username chuckthecoolcat --password heresapassword --key MYVALIDKEY
 You need a passphrase to unlock the secret key for
 user: "MYVALIDKEY"
 4096-bit RSA key, ID C375E301, created 2016-01-01
