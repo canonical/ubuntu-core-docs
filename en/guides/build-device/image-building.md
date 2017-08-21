@@ -13,13 +13,13 @@ Official Ubuntu Core images for supported devices can be found [here](http://cdi
 
 This document will walk you through all the steps to build an image for a device family. You will learn how to:
 
-*   Create and upload a signature key to the store
+*   Create and upload a snapcraft key to the store
 *   Create a model assertion for your target device
 *   Compose and build a custom image using the `ubuntu-image` command
 
 If you want to build an Ubuntu Core image for a board that is not already supported, please follow the [Board enablement overview](../../guides/build-device/board-enablement.html) document.
 
-## Signature keys
+## Snapcraft keys
 
 Before starting with building the image, you need to create a key to sign your future store uploads.
 
@@ -27,11 +27,11 @@ Before starting with building the image, you need to create a key to sign your f
 
 As a first step, you have to generate a key that will be linked to your Ubuntu Store account. To do so, run:
 
-    snap create-key
+    snapcraft create-key
 
 You can pass an optional name for the key:
 
-    snap create-key foo
+    snapcraft create-key foo
 
 This command will ask you for a password to protect the key.
 
@@ -39,7 +39,7 @@ It will take some time, as it's creating a 4096 bit long key and needs some entr
 
 Now, you can list your keys with:
 
-    snap keys
+    snapcraft list-keys
 
 ### 2. Upload the key to the store
 
