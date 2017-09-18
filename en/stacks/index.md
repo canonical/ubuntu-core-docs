@@ -22,7 +22,7 @@ to many different types of Ubuntu Core-based systems:
 * [Audio management](audio/index.md)
 * [Bluetooth device management](bluetooth/index.md)
 * [Disk management](disk/index.md)
-* [Location services](http://locationd.readthedocs.io/en/latest/index.html)
+* [Location services](location/index.md)
 * Multimedia management
 * [Cellular modem device data management](network/modem-manager/docs/index.md)
 * [Network interface management](network/network-manager/docs/index.md) (both wired and wireless)
