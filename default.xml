@@ -13,4 +13,5 @@
   <project path="en/stacks/network/wifi-ap" name="wifi-ap" />
   <project path="en/stacks/location/location-service" name="location-service" />
   <project path="en/stacks/network/wpa-supplicant" name="wpa-supplicant" />
+  <project path="en/stacks/network/easy-openvpn" name="easy-openvpn" />
 </manifest>
