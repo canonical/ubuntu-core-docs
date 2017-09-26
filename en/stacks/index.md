@@ -22,6 +22,7 @@ to many different types of Ubuntu Core-based systems:
 * [Audio management](audio/index.md)
 * [Bluetooth device management](bluetooth/index.md)
 * [Disk management](disk/index.md)
+* [Easy OpenVPN](easy-openvpn/index.md)
 * [Location services](location/index.md)
 * Multimedia management
 * [Cellular modem device data management](network/modem-manager/docs/index.md)
