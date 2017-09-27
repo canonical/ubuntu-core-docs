@@ -183,9 +183,9 @@ Used with the following directory structure:
 
 ## Examples of production-ready gagdet snaps
 
-- [Beagleblack](http://bazaar.launchpad.net/~snappy-dev/snappy-hub/snappy-systems/files/head:/beagleblack/)
-- [Dragonboard](http://bazaar.launchpad.net/~snappy-dev/snappy-hub/snappy-systems/files/head:/dragonboard/)
-- [amd64](http://bazaar.launchpad.net/~snappy-dev/snappy-hub/snappy-systems/files/head:/generic-amd64/)
-- [i386](http://bazaar.launchpad.net/~snappy-dev/snappy-hub/snappy-systems/files/head:/generic-i386/)
-- [pi2](http://bazaar.launchpad.net/~snappy-dev/snappy-hub/snappy-systems/files/head:/pi2/)
-- [pi3](http://bazaar.launchpad.net/~snappy-dev/snappy-hub/snappy-systems/files/head:/pi3/)
+- [Beagleblack](https://github.com/ogra1/beaglebone-gadget)
+- [Dragonboard](https://github.com/snapcore/dragonboard-gadget)
+- [amd64](https://github.com/snapcore/pc-amd64-gadget)
+- [i386](https://github.com/snapcore/pc-i386-gadget)
+- [pi2](https://github.com/snapcore/pi2-gadget)
+- [pi3](https://github.com/snapcore/pi3-gadget)
