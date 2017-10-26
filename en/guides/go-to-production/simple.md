@@ -44,7 +44,9 @@ Next up, you need to create your signed model assertion, then build your image.
 
 Steps for creating a model assertion are provided [here](../build-device/image-building.html).
 
-**Note** Your model assertion should also contain an additional key `required-snaps: ` that lists your extra snaps as a json list of strings. These are the snaps that make your device special and help define your model.
+**Note** Your model assertion should also contain an additional key 
+`required-snaps: ` that lists your extra snaps as a JSON list of strings.
+These are the snaps that make your device special and help define your model.
 
 Here's a sample model assertion file that defines a model named "my-pi3", is armhf, uses the stable (unmodified) gadget, kernel and core snaps (the unmodified core snap is assumed and has no key), contains your extra snaps ("myawesomesnap" and "mysecondawesomesnap"), and is associated with your store account ID (via the `brand-id` and `authority-id`).
 

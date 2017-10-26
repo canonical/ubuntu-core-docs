@@ -45,7 +45,7 @@ Now, you can list your keys with:
 
 Next, you have to upload it to the store, effectively linking it to your account. During this step, you will be asked to select an existing key and login with your store account credentials.
 
-    $ snapcraft register-key
+    snapcraft register-key
 
 The key is now registered with the store and you can start the actual image building.
 
@@ -91,11 +91,14 @@ As an example, here is one for a device based on a Raspberry Pi 3 board. The JSO
 
 ### 2. Sign your model assertion
 
-Now you have to sign the model assertion with a key, by piping your json model through the `snap sign -k <key name>` command and outputing a model file, the actual assertion document you will use to build your image.
+Now you have to sign the model assertion with a key, by piping your JSON model
+through the `snap sign -k <key name>` command and outputing a model file, the
+actual assertion document you will use to build your image.
 
     cat pi3-model.json | snap sign -k default &> pi3.model
 
-This command will ask you for the password you used on key creation to secure the key.
+This command will ask you for the password you used on key creation to secure
+the key.
 
 ### 3. Build the image
 
