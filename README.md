@@ -22,7 +22,7 @@ Then install the git-repo utility:
 From the root of the documentation source tree (e.g. ubuntu-core-docs) do the
 following to get the Ubuntu Core Stacks sub-repositories:
 
-    $ repo init -u https://github.com/CanonicalLtd/ubuntu-core-docs.git
+    $ repo init -u https://github.com/canonical-docs/ubuntu-core-docs.git
     $ repo sync
 
 Then build the documentation via:
