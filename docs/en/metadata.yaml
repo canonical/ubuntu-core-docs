@@ -1,162 +1,47 @@
 navigation:
-  - title: Introduction
 
-    children:
-      - title: What is Ubuntu Core?
-        location: index.md
-
-      - title: Security and sandboxing
-        location: guides/intro/security.md
-
-      - title: Store and developer accounts
-        location: guides/intro/store.md
-
-  - title: Build a device
-
+  - title: Get started
+    location: index.md
     children:
 
-      - title: Ubuntu Core images
-        location: guides/build-device/image-building.md
+      - title: Architecure overview
+        location: architecture-overview.md
 
-      - title: Board enablement overview
-        location: guides/build-device/board-enablement.md
+      - title: About snaps
+        location: snaps.md
 
-      - title: Gadget snaps
-        location: guides/build-device/gadget.md
+      - title: Software lifecycle
+        location: lifecycle.md
 
-      - title: Configuration and hooks
-        location: guides/build-device/config-hooks.md
+      - title: System security and stability
+        location: security.md
 
-      - title: Interfaces
-        location: guides/build-device/interfaces.md
+  - title: Building and testing
+    location: building-and-testing.md
 
-  - title: Build a stack
+  - title: Device enablement
+    location: device-enablement.md
 
-    children:
-      - title: Introduction
-        location: stacks/index.md
+  - title: Device management
+    location: device-management.md
 
-  - title: Manage a device
+  - title: Device features
+    location: device-features.md
 
-    children:
-
-      - title: System User
-        location: guides/manage-devices/index.md
-
-# TODO:
-#   * Need Markdown documentation for location-service
-#   * Need Markdown documentation for media-hub
-#   * Need Markdown documentation for upower
-#   * Need to move the wifi-ap documentation from Google Docs to Markdown
-
-      - title: Audio management
-        location: stacks/audio/index.md
-      - title: Bluetooth management
-        location: stacks/bluetooth/index.md
-      - title: Disk management
-        location: stacks/disk/index.md
-#          - title: Location services
-#            location: stacks/location/docs/index.md
-#          - title: Media playback & recording
-#            location: stacks/media/docs/index.md
-      - title: Network management & services
-        location: stacks/network/index.md
-      - title: Power management
-        location: stacks/power/index.md
-      - title: TPM
-        location: stacks/tpm/index.md
-
-  - title: Get a store
-
-    children:
-      - title: Introduction
-        location: build-store/index.md
-
-        children:
-          - title: Request a brand store
-            location: build-store/create.md
-
-          - title: Client setup
-            location: build-store/client-setup.md
-
-      - title: Manage
-        location: build-store/manage.md
-
-        children:
-          - title: Settings
-            location: build-store/settings.md
-
-          - title: Reviews
-            location: build-store/reviews.md
-
-          - title: Reviewer tools
-            location: build-store/reviewer-tools.md
-
-      - title: Develop
-        location: build-store/develop.md
-
-        children:
-          - title: Upload snaps
-            location: build-store/upload-snaps.md
-
-      - title: Report an issue
-        location: build-store/issues.md
-
-  - title: Go to production
-
-    children:
-      - title: Introduction
-        location: guides/go-to-production/intro.md
-
-      - title: Simple - Ubuntu store
-        location: guides/go-to-production/simple.md
-
-      - title: Advanced - Brand store
-        location: guides/go-to-production/advanced.md
+  - title: Software stores
+    location: stores.md
 
   - title: Reference
+    location: reference.md
 
-    children:
-      - title: Assertions
-        location: reference/assertions.md
+  - title: Tools
+    location: tools.md
 
-        children:
-          - title: account
-            location: reference/assertions/account.md
-          - title: account-key
-            location: reference/assertions/account-key.md
-          - title: model
-            location: reference/assertions/model.md
-          - title: serial
-            location: reference/assertions/serial.md
-          - title: snap-declaration
-            location: reference/assertions/snap-declaration.md
-          - title: snap-build
-            location: reference/assertions/snap-build.md
-          - title: snap-revision
-            location: reference/assertions/snap-revision.md
-          - title: system-user
-            location: reference/assertions/system-user.md
-          - title: validation
-            location: reference/assertions/validation.md
+  - title: Guides
+   location: guides.md
 
-      - title: Gadget snap format
-        location: reference/gadget.md
+  - title: Certification
+    location: certification.md
 
-      - title: Core interfaces reference
-        location: reference/interfaces/index.md
-
-      - title: Automatic refreshes
-        location: reference/automatic-refreshes.md
-
-      - title: Ubuntu Core REST API
-        location: reference/rest.md
-
-      - title: Ubuntu Core Configuration
-        location: reference/core-configuration.md
-
-  - title: Build snaps
-    location: http://snapcraft.io
-
-  - title: Report a docs issue
-    location: https://bugs.launchpad.net/snappy/+bugs?field.tag=snap-docs
+  - title: Support
+    location: support.md
