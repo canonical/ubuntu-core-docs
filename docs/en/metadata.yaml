@@ -124,9 +124,6 @@ navigation:
           - title: Flashing image
             location: flashing-image.md
 
-          - title: Flashing image
-            location: flashing-image.md
-
           - title: Booting and testing an image
             location: booting-testing-image.md
 
