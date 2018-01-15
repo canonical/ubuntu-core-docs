@@ -4,7 +4,7 @@
     "clean": "rm -rf node_modules yarn-error.log css static/css *.log *.sqlite _site/ build/ .jekyll-metadata .bundle .repo en .extra; yarn run clean-git-repos",
     "watch": "watch -p 'docs/**/*.md' -c 'yarn run build-css'",
     "build-repo": "git config --global user.email 'you@example.com' && git config --global user.name 'Your Name' && git config --global color.ui false && ./bin/repo --trace  init --manifest-url \"$(./bin/get-manifest-url)\" --manifest-branch \"$(git rev-parse HEAD)\" && ./bin/repo sync",
-    "build": "yarn run build-repo && documentation-builder --base-directory docs --output-path templates",
+    "build": "yarn run build-repo && documentation-builder --base-directory docs --output-path templates --output-media-path 'static/media/core' --media-url '/static/media/core' --tag-manager-code 'GTM-K92JCQ' --search-domain 'docs.ubuntu.com/core' --search-url '/search' --search-placeholder 'Search Ubuntu Core docs' --no-link-extensions",
     "test": "",
     "serve": "cd dist && FLASK_DEBUG=true FLASK_APP=app.py flask run -h 0.0.0.0 -p $PORT"
   },
