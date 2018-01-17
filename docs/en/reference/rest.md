@@ -37,7 +37,7 @@ Authorization may also be performed using [Polkit](https://www.freedesktop.org/w
 
 ```
 X-Allow-Interaction: true
-````
+```
 
 ## Responses
 
@@ -130,6 +130,8 @@ Example:
 * `snap-needs-classic`: the requested snap needs classic confinement to be installed.
 * `snap-needs-classic-system`: the requested snap can't be installed on the current system.
 * `snap-no-update-available`: the requested snap does not have an update available.
+* `bad-query`: a bad query was provided.
+* `network-timeout`: a timeout occurred during the request.
 
 ## `GET /`
 
@@ -205,7 +207,7 @@ Example:
 Example:
 ```javascript
 {
-     "username": "foo@bar.com",
+     "email": "foo@bar.com",
      "password": "swordfish",
      "otp": "123456"
 }
@@ -213,7 +215,7 @@ Example:
 
 #### Fields
 
-* `username`: The username being logged in with. This must be a valid email address.
+* `email`: The email address being logged in with. This must be a valid email address (also supported with legacy `username` field).
 * `password`: Password for this account.
 * `otp`: One time password for this account (optional). This field being wrong will generate the `two-factor-required` or `two-factor-failed` errors.
 
@@ -222,6 +224,9 @@ Example:
 Example:
 ```javascript
 {
+    "id": 1,
+    "username": "user1",
+    "email": "user1@example.com",
     "macaroon": "serialized-store-macaroon",
     "discharges": ["discharge-for-macaroon-authentication"]
 }
@@ -229,6 +234,9 @@ Example:
 
 #### Fields
 
+* `id`: Unique ID for this user account.
+* `email`: Email address associated with this account.
+* `username`: Local username associated with this account (optional).
 * `macaroon`: Serialized macaroon to be passed back in the HTTP `Authorization` header.
 * `discharges`: Array of serialized discharges to be passed back in the HTTP `Authorization` header.
 
@@ -348,7 +356,7 @@ Example:
 #### Fields
 
 * `channel`: the channel this snap is from.
-* `channels`: available channels to download. See below for fields.
+* `channels`: available channels to download. See below for fields. (only returned for searches with name parameter).
 * `confinement`: the confinement requested by the snap itself; one of `strict`, `classic` or `devmode`.
 * `contact`: the method of contacting the developer.
 * `description`: snap description.
@@ -467,7 +475,7 @@ furthermore, `channels`, `download-size`, `screenshots`,`prices` and `tracks` ca
 
 ## `POST /v2/snaps`
 
-* Description: Install, refresh, revert, remove, enable, disable snaps.
+* Description: Install, refresh, revert, remove, enable, disable or switch snaps.
 * Access: authenticated
 * Operation: async
 * Return: Background operation or standard error.
@@ -484,13 +492,13 @@ Example:
 
 #### Fields
 
-* `action`: Either `install`, `refresh`, `remove`, `revert`, `enable`, or `disable`.
-* `channel`: Channel to install from (optional, only applicable with `action` set to `install` or `refresh`).
+* `action`: Either `install`, `refresh`, `remove`, `revert`, `enable`, `disable` or `switch`.
+* `channel`: Channel to install from (optional, only applicable with `action` set to `install`, `refresh`, or `switch`).
 * `classic` Put snap in classic mode and disable security confinement if `true` (optional, only applicable with `action` set to `install`, `refresh`, `revert`).
 * `devmode` Put snap in development mode and disable security confinement if `true` (optional, only applicable with `action` set to `install`, `refresh`, `revert`. Not allowed when more than one snap requested).
 * `ignore-validation`: Ignore validation by other snaps blocking the refresh if `true` (optional, only applicable with `action` set to `refresh`).
 * `jailmode`: Put snap in enforced confinement mode if `true` (optional, only applicable with `action` set to `install`, `refresh`, `revert`. Not allowed when more than one snap requested).
-* `revision`: Revision to install (optional, only applicable with `action` set to `install`, `refresh`, `revert`. Not allowed when more than one snap requested).
+* `revision`: Revision to install (optional, only applicable with `action` set to `install`, `refresh` or `revert`. Not allowed when more than one snap requested).
 * `snaps`: Array of snap names to perform action on (optional, interpreted as all snaps if not present for a refresh).
 
 ### Sideload Request
@@ -840,6 +848,29 @@ As a special case: if the input email was empty and known set to true,
 multiple users can be created, so the return type is a list of the above
 objects.
 
+## `GET /v2/users`
+
+* Description: Get information on user accounts.
+* Access: root
+* Operation: sync
+* Return: Array of user account information.
+
+### Response
+
+Example:
+```javascript
+[
+    { "id": 1, "user1", "email": "user1@example.com" },
+    { "id": 2, "email": "user2@example.com" }
+]
+```
+
+#### Fields
+
+* `id`: Unique ID for this user account.
+* `email`: Email address associated with this account.
+* `username`: Local username associated with this account (optional).
+
 ## `GET /v2/changes/[id]`
 
 * Description: Get the current status of a change.
@@ -855,7 +886,7 @@ Example:
     "id": "123",
     "kind": "make-lamington",
     "summary": "Make a tasty Lamington",
-    "status": "Done",
+    "status": "Doing",
     "tasks": [
         {
             "id": "1353",
@@ -875,34 +906,31 @@ Example:
             "id": "1354",
             "kind": "dip",
             "summary": "Dip cake into chocolate",
-            "status": "Done",
+            "status": "Doing",
             "progress":
             {
                 "label": "Dipping piece",
-                "done": 16,
+                "done": 7,
                 "total": 16
             },
-            "spawn-time": "2017-01-23T12:00:44.806945878+13:00",
-            "ready-time": "2017-01-23T12:00:45.125187175+13:00"
+            "spawn-time": "2017-01-23T12:00:44.806931498+13:00",
         },
         {
             "id": "1355",
             "kind": "coat",
             "summary": "Coating cake in desiccated coconut",
-            "status": "Done",
+            "status": "Do",
             "progress":
             {
                  "label": "Coating piece",
-                 "done": 16,
+                 "done": 0,
                  "total": 16
             },
-            "spawn-time": "2017-01-23T12:00:44.806951938+13:00",
-            "ready-time": "2017-01-23T12:00:45.448964018+13:00"
+            "spawn-time": "2017-01-23T12:00:44.806931498+13:00",
         },
     ],
-    "ready": true,
+    "ready": false,
     "spawn-time": "2017-01-23T12:00:44.806971766+13:00",
-    "ready-time": "2017-01-23T12:00:45.693234787+13:00"
 }
 ```
 
@@ -911,7 +939,7 @@ Example:
 * `id`: A unique ID for this change.
 * `kind`: A code describing what type of change this is.
 * `summary`: Human readable description of the change.
-* `status`: Human readable description of the change status.
+* `status`: Summary status of the current combined task statuses (see below).
 * `tasks`: array of objects describing tasks in this change (optional, see below).
 * `ready`: true if this change has completed.
 * `spawn-time`: the time this change started in in RFC3339 UTC format with µs precision.
@@ -924,9 +952,17 @@ Example:
 * `id`: A unique ID for this task.
 * `kind`: A code describing what type of task this is.
 * `summary`: Human readable description of the task.
-* `status`: Human readable description of the task status.
+* `status`: One of the following status codes:
+  * `"Do"` - Task ready to start.
+  * `"Doing"` - Task in progress.
+  * `"Done"` - Task is complete.
+  * `"Abort"` - Task has been aborted.
+  * `"Undo"` - Task needs to be undone.
+  * `"Undoing"` - Task is being undone.
+  * `"Hold"` - Task will not be run (probably due to failure of another task).
+  * `"Error"` - Task completed with an error.
 * `progress`: object containing the current progress of this task. `label` is a human readable description of the progress, `done` and `total` are numbers showing the progress of this task.
-* `spawn-time`: the time this task started in RFC3339 UTC format with µs precision.
+* `spawn-time`: the time this task was created in RFC3339 UTC format with µs precision.
 * `ready-time`: the time this task completed in RFC3339 UTC format with µs precision (omitted if not completed).
 
 ## `POST /v2/changes/[id]`
@@ -956,7 +992,20 @@ See return from GET.
 * Operation: sync
 * Return: Current changes or standard error.
 
-Returns an array containing all the changes as that would have been returned from `/v2/changes/[id]`.
+Returns an array containing all the changes that have occurred. Changes are returned in the same form as `GET /v2/change/[id]`.
+
+### Parameters:
+
+#### `select`
+
+Limit which changes are returned. One of:
+* `all`: All changes returned
+* `in-progress`: Only changes that are in progress are returned (default)
+* `ready`: Only changes that are ready
+
+#### `for`
+
+Optional snap name to limit results to.
 
 ## `POST /v2/snapctl`
 
@@ -994,23 +1043,6 @@ Example:
 
 * `stdout`: Data written to stdout from snapctl command.
 * `stderr`: Data written to stderr from snapctl command.
-
-## `GET /v2/users`
-
-* Description: TBD
-* Access: root
-* Operation: sync
-* Return: Array of users.
-
-### Response
-
-Example:
-```javascript
-[
-    { "id": 1, "username": "user1@example.com" },
-    { "id": 2, "username": "user2@example.com" }
-]
-```
 
 ## `GET /v2/sections`
 
