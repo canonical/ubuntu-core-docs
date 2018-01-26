@@ -1,5 +1,5 @@
 ---
-title: Serial Vault user guide
+title: Serial Vault User Guide
 table_of_contents: true
 ---
 
@@ -40,7 +40,8 @@ will need the following:
 
 !['image'][serial-vault-image1]
 
-### Gadget Snap
+### Gadget snap
+
 Systems requesting a serial assertion must have a [gadget snap][gadget-snap].
 That snap includes a [prepare-device][prepare-device] hook script where
 details of the system and Serial Vault connection such as the URL, API key,
@@ -55,7 +56,7 @@ prepare-device hook:
 | device-service.headers       | The API key defined as an HTTP header in JSON string format.  This value must match the one configured for this device model in the SerialVault Admin portal web user interface. <br> You can generate a valid API key with `$pwgen 64 1` and then copy it into the Serial Vault when creating your Model. Or, you can auto create the API key in the Serial Vault when creating a Model and copy it into the `prepare-device` hook script. |   |   |   |
 | registration.proposed-serial | The unique serial number of the device. How to get this serial depends on the device platform.                                                                                                                                                                                                                                                                                                                                         |   |   |   |
 
-## Getting the account-id of your Brand SSO Account
+## Getting the account-id of your Brand SSO account
 
 Requirements:
 
@@ -148,6 +149,7 @@ $ snapcraft list-keys
 ```
 
 ### Exporting the key
+
 Before uploading the key, it must be encrypted. Export the key using ASCII
 armored encryption, as follows:
  
@@ -182,14 +184,16 @@ created ASCII-armored serial key file..
 1. Click Save. 
 The list of models and signing keys displays, including this new one.
 
-## Creating a Model
-You need to create a Model. This corresponds to the model previously used when
+## Creating a model
+
+You need to create a model. This corresponds to the model previously used when
 building an image. (Every system has a model.) At runtime, the system sends
 the model to the Serial Vault, which uses it to authenticate the system before
 generating a serial assertion.
 
 The model contains key data that must exactly match data in the model in the
 deployed system, including:
+
  - brand-id: this is the account-id of the Brand SSO account
  - model name
 
@@ -230,19 +234,16 @@ a secure Brand Store.
 The Models page now lists your model:
 
 ![image][serial-vault-image7]
+
 You can edit an existing model by pressing a model’s pencil icon button.
 
 ## Checking the Signing Log
+
 You can review the Signing Log to check whether serial assertions have been
 signed and issued.
 
 The Signing Log displays the list of serial numbers and device keys that have
 been used to sign serial assertions. You can also filter the log. 
-
-
-
-
-
 
 ![image][serial-vault-image8]
 
@@ -256,8 +257,7 @@ auto-imported from a USB drive. See here and [system user][system-user] and
 The system-user assertion is signed by a key you create, register, export and
 upload to the Serial Vault just like the serial key. See the the content
 elsewhere in this doc for detailed instructions.
-
-###   
+ 
 The System-User menu lets you create system user assertion for a certain brand
 /model, as follows:
 1. Click System-User.
@@ -275,8 +275,6 @@ field.
           system user assertion was registered.  
 1. Press Create to generate the assertion.
 
-
-
 !['image'][serial-vault-image9]
 
 After pressing Create, the generated assertion is displayed. Click Download 
@@ -288,6 +286,7 @@ inserted in an unmanaged Core system, the assertion is imported and the system
 user is created. 
 
 ## Verifying a system obtained a serial assertion
+
 You can verify from a terminal session on a system if a serial assertion has
 been retrieved from the Serial Vault in various ways.
 
@@ -298,6 +297,7 @@ been retrieved from the Serial Vault in various ways.
           assertion as explained elsewhere in this document.
 
 ### Verifying serial with snap known serial
+
 Display the system’s serial assertion, if any, as follows. If there is now
 output, the system does not have a serial assertions.
 
@@ -316,6 +316,7 @@ Qf7mCC2yrjPLgSPmDvZm58Mnh3y+TFL9dF6lF6L0qXM865LO07sD1nZKE9lvl61jt+opmHviwTvb
 
 
 ### Checking Initialize device transaction with snap changes
+
 The system reports transactions with snap changes. The Initialize device
 transaction includes Serial Vault operations. If snap known serial does not
 output a serial assertion, you can troubleshoot further as follows:
@@ -354,34 +355,31 @@ net/http: request canceled while waiting for connection (Client.Timeout
 exceeded while awaiting headers)
 ```
 
-
-
 <--! LINKS -->
-[system-user-assertions.]: https://docs.ubuntu.com/core/en/reference/assertions/system-user
-[system-user]: https://docs.ubuntu.com/core/en/guides/manage-devices/index
-[prepare-device]: https://docs.ubuntu.com/core/en/guides/build-device/gadget
+
+[system-user-assertions.]: ./reference/assertions/system-user
+[system-user]: ./guides/manage-devices/index
+[prepare-device]: ./guides/build-device/gadget
 [gadget-snap]: https://forum.snapcraft.io/t/the-gadget-snap/696
 [https://dashboard.snapcraft.io/dev/account/]: https://dashboard.snapcraft.io/dev/account/
-[https://dashboard.snapcraft.io/dev/account/]: https://dashboard.snapcraft.io/dev/account/
 [https://login.ubuntu.com/]: https://login.ubuntu.com/
-[here]: https://docs.ubuntu.com/core/en/guides/manage-devices/index
-[system-user-assertions]: https://docs.ubuntu.com/core/en/reference/assertions/system-user
-[serial-assertions]: https://docs.ubuntu.com/core/en/reference/assertions/serial
+[here]: ./guides/manage-devices/index
+[system-user-assertions]: ./reference/assertions/system-user
+[serial-assertions]: ./reference/assertions/serial
 [secure-brand-store]: https://docs.google.com/document/d/1L6Tqu8ntpYaKGIi-Kh5W-2vrMoBKA0KhyLoaRJhbDHU
-[checking-initialize-device-transaction-with-snap-changes]: #heading=h.1zso7regwuwn
-[verifying-serial-with-snap-known-serial]: #heading=h.lcyj6hpswmhj
-[verifying-a-system-obtained-serial-assertion]: #heading=h.s0gufg8jvd27
-[creating-system-user-assertions]: #heading=h.cyyj2dga7ved
-[checking-the-signing-log]: #heading=h.d2ly9m9l6n6t
-[creating-a-model]: #heading=h.3j3789uvo5ji
-[uploading-the-key-to-the-serial-vault]: #heading=h.cn0lu6fat38j
-[exporting-the-key]: #heading=h.wedv1fsiyz5m
-[registering-the-key]: #heading=h.mxrvpdv23my0
-[generating-a-key]: #heading=h.1nzyoxo47obo
-[providing-a-key]: #heading=h.jxmlgg92td7t
-[getting-the-account-id-of-your-brand-sso-account]: #heading=h.k4iej1w6x1hp
-[gadget-snap]: #heading=h.tt1h8umt55fj
-
+[checking-initialize-device-transaction-with-snap-changes]: #checking-initialize-device-transaction-with-snap-changes
+[verifying-serial-with-snap-known-serial]: #verifying-serial-with-snap-known-serial
+[verifying-a-system-obtained-serial-assertion]: #verifying-a-system-obtained-serial-assertion
+[creating-system-user-assertions]: #creating-system-user-assertions
+[checking-the-signing-log]: #checking-the-signing-log
+[creating-a-model]: #creating-a-model
+[uploading-the-key-to-the-serial-vault]: #uploading-the-key-to-the-serial-vault
+[exporting-the-key]: exporting-the-key
+[registering-the-key]: #registering-the-key
+[generating-a-key]: #generating-a-key
+[providing-a-key]: #providing-a-key
+[getting-the-account-id-of-your-brand-sso-account]: #getting-the-account-id-of-your-brand-sso-account
+[gadget-snap]: #gadget-snap
 
 <--! IMAGES -->
 
