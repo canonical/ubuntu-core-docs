@@ -1,9 +1,9 @@
 ---
-title: Serial Vault User Guide
+title: Serial Vault user guide
 table_of_contents: true
 ---
 
-## Introduction
+# Serial Vault user guide
 
 The Serial Vault is a Canonical-hosted web service that is required to use a
 [Secure Brand Store][secure-brand-store]. The Serial Vault provides :
@@ -49,26 +49,11 @@ and serial number are defined.
 The following table explains the configuration settings that need to be in the
 prepare-device hook:
 
-snapd Setting
-Description
-device-service.url
-The base API URl for the Serial Vault, ending in a trailing slash ("/")
-This value must be set to:
-https://serial-vault-partners.canonical.com/v1/
-device-service.headers
-The API key defined as an HTTP header in JSON string format
-This value must match the one configured for this device model in the Serial
-Vault Admin portal web user interface
-
-You can generate a valid API key with $pwgen 64 1 and then copy it into the
-Serial Vault when creating your Model. 
-
-Or, you can auto create the API key in the Serial Vault when creating a Model
-and copy it into the prepare-device hook script.
-registration.proposed-serial
- The unique serial number of the device. How to get this serial depends on the
-device platform
-
+| snapd setting                | Description                                                                                                                                                                                                                                                                                                                                                                                                                            |   |   |   |
+|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|---|---|
+| device-service.url           | The base API URl for the Serial Vault, ending in a trailing slash ("/"). <br> This value must be set to: `https://serial-vault-partners.canonical.com/v1`                                                                                                                                                                                                                                                |   |   |   |
+| device-service.headers       | The API key defined as an HTTP header in JSON string format.  This value must match the one configured for this device model in the SerialVault Admin portal web user interface. <br> You can generate a valid API key with `$pwgen 64 1` and then copy it into the Serial Vault when creating your Model. Or, you can auto create the API key in the Serial Vault when creating a Model and copy it into the `prepare-device` hook script. |   |   |   |
+| registration.proposed-serial | The unique serial number of the device. How to get this serial depends on the device platform.                                                                                                                                                                                                                                                                                                                                         |   |   |   |
 
 ## Getting the account-id of your Brand SSO Account
 
