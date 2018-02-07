@@ -55,7 +55,7 @@ your devices and are therefore considered brand activities.
 
 The Brand Store and its Brand Store SSO account:
 
-![image](../../media/brand-store-1.png)
+![image][brand-store-1]
 
 ### Brand SSO Keys
 
