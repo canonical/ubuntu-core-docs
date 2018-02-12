@@ -74,23 +74,27 @@ Throughout the following tasks, you need to use the account-id of your Brand
 SSO account in various places. You can display this account-id as follows:
 
 1. Login to snapcraft with Brand SSO account credentials:
-```bash
-$ snapcraft login
-Enter your Ubuntu One SSO credentials.
-Email: <enter the vendor SSO account email>
-Password: <enter the vendor SSO account password>
 
-Login successful.
+```bash
+snapcraft login
 ```
+
+You will be prompted for the email address and password - be sure to use the email and password of the vendor SSO account.
+
 
 1. Display the SSO account’s account-id:
 ```bash
-$ snapcraft whoami
-email:    	 THE-EMAIL
-developer-id: THE-ACCOUNT-ID
+snapcraft whoami
 ```
 
-The developer-id is the account-id of the Brand SSO account.
+This should return information in the form: 
+
+```
+email:        vendor.sso@example.com
+developer-id: enAn0ZFfJUhbdHt2T7AjNeCI65vPt2iY
+```
+
+The developer-id listed here is the account-id of the Brand SSO account.
 
 ## Providing a key
 
@@ -101,13 +105,6 @@ securely to the Serial Vault.
 
 Generate the keys for signing serial and system-user assertions as follows:
 
-
-!!! Note:
-          The key must have no passphrase. Be sure to not enter a passphrase
-          when prompted (press Enter) and when prompted to confirm the
-          passphrase.
-
-
 !!! Note:
           Keys used for brand purposes are critically important assets that
           should not be lost. Snapcraft keys are created in ~/.snap/gnupg/.
@@ -116,17 +113,21 @@ Generate the keys for signing serial and system-user assertions as follows:
           support key recovery.
 
 ```bash
-$ snap create-key serial 
-Passphrase:               # must be a passwordless key
-Confirm passphrase:
+snap create-key serial 
 ```
+
+You will be prompted for a passphrase. In this case, the passphrase **MUST BE BLANK** so just press `Return` twice.
 
 Note that it takes some time to create the key. 
 
-After completion, verify creation as follows:
+After completion, verify creation with the following command:
 
 ```bash
-$ snapcraft list-keys
+snapcraft list-keys
+```
+This will return a list of the known keys. At the moment, the key you just added will be marked as 'not registered'.
+
+```bash
     Name 	SHA3-384 fingerprint
 -   serial   yOkSks8x1OICgx60WW-YEKehTeWvQpE2qA17ZM-RT8i0u7YYrIOjSp1DARkv4Cuu 
 (not registered)
@@ -137,13 +138,17 @@ $ snapcraft list-keys
 Register the key to the Brand SSO account as follows:
 
 ```bash
-$ snapcraft register-key serial
+snapcraft register-key serial
 ```
 
-Now the key is registered:
+You can confirm the key has been added with the command:
 
 ```bash
-$ snapcraft list-keys
+snapcraft list-keys
+```
+...which will now list the key with an asterisk (`*`) denoting that it is registered:
+
+```bash
     Name 	SHA3-384 fingerprint
 *   serial   yOkSks8x1OICgx60WW-YEKehTeWvQpE2qA17ZM-RT8i0u7YYrIOjSp1DARkv4Cuu
 ```
@@ -154,7 +159,7 @@ Before uploading the key, it must be encrypted. Export the key using ASCII
 armored encryption, as follows:
  
 ```bash
-$ gpg --homedir ~/.snap/gnupg --armor --export-secret-key serial > serial.asc
+gpg --homedir ~/.snap/gnupg --armor --export-secret-key serial > serial.asc
 ```
 
 In this example, serial.asc is the serial key file to upload to Serial Vault.
@@ -298,11 +303,15 @@ been retrieved from the Serial Vault in various ways.
 
 ### Verifying serial with snap known serial
 
-Display the system’s serial assertion, if any, as follows. If there is now
-output, the system does not have a serial assertions.
+Display the system’s serial assertion, if any, as follows:
 
 ```bash
-$ snap known serial
+snap known serial
+```
+
+The output should show a variety of information, including the serial identifier:
+
+```bash
 type: serial
 authority-id: canonical
 brand-id: mybrand
@@ -314,6 +323,9 @@ Qf7mCC2yrjPLgSPmDvZm58Mnh3y+TFL9dF6lF6L0qXM865LO07sD1nZKE9lvl61jt+opmHviwTvb
 ...
 ```
 
+If there is no output from this command, the system does not have a serial assertion.
+
+
 
 ### Checking Initialize device transaction with snap changes
 
@@ -321,10 +333,15 @@ The system reports transactions with snap changes. The Initialize device
 transaction includes Serial Vault operations. If snap known serial does not
 output a serial assertion, you can troubleshoot further as follows:
 
-1. Display snap changes as follows:
+1. Display snap changes with the command:
 
 ```bash
-$ snap changes
+snap changes
+```
+
+This will list the  transactions in reverse chronological order (most recent first), labelling each with an ID:
+
+```bash
 ID   Status  Spawn                 Ready                 Summary
 1    Done    2016-12-01T10:50:30Z  2016-12-01T10:55:26Z  Initialize system
 state
@@ -333,29 +350,32 @@ state
 
 1. Display the detail about the initialize device change with its ID, as
 follows:
-Any Status other than Done indicates the transaction has not yet been able to
-complete successfully.
 
 ```bash
-$ snap change 2
-Status  Spawn             	Ready             	Summary
+snap change 2
+```
+
+Any status other than `Done` indicates that the transaction has not yet 
+been able to complete successfully:
+
+```bash
+Status  Spawn             	Ready               Summary
 Done	2017-10-23T14:33:10Z  2017-10-23T14:50:53Z  Run prepare-device hook
 Done	2017-10-23T14:33:10Z  2017-10-23T14:50:53Z  Generate device key
-Doing   2017-10-23T14:33:10Z  -                 	Request device serial
+Doing   2017-10-23T14:33:10Z  -                     Request device serial
 
 ......................................................................
 Request device serial
 
 2017-10-24T05:31:31Z ERROR cannot retrieve request-id for making a request for
-a serial: Post https://serial-vault-partners.canonical.com/v1/request-id: dial
-tcp 10.50.182.5:443: connect: network is unreachable
+a serial: Post https://serial-vault-partners.canonical.com/v1/request-id: dial tcp 10.50.182.5:443: connect: network is unreachable
 2017-11-02T13:22:43Z ERROR cannot retrieve request-id for making a request for
 a serial: Post https://serial-vault-partners.canonical.com/v1/request-id:
 net/http: request canceled while waiting for connection (Client.Timeout
 exceeded while awaiting headers)
 ```
 
-<--! LINKS -->
+<!-- LINKS -->
 
 [system-user-assertions.]: ./reference/assertions/system-user
 [system-user]: ./guides/manage-devices/index
@@ -381,7 +401,7 @@ exceeded while awaiting headers)
 [getting-the-account-id-of-your-brand-sso-account]: #getting-the-account-id-of-your-brand-sso-account
 [gadget-snap]: #gadget-snap
 
-<--! IMAGES -->
+<!-- IMAGES -->
 
 [serial-vault-image0]: ../media/serial-vault-image0.png
 [serial-vault-image1]: ../media/serial-vault-image1.png
