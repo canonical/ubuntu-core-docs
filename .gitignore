@@ -18,6 +18,9 @@ Thumbs.db
 *.pyc
 *-cache/
 
+# built docs
+docs/build
+
 # [data] Local data
 *.sqlite*
 *.log
