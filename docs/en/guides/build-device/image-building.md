@@ -47,7 +47,7 @@ Now, you can list your keys with:
 
 ### 2. Register the key with the store
 
-Next, you have to register the key in the store, effectively linking it to your account. During this step, you will be asked to select an existing key and login with your store account credentials.
+Next, you have to register the key with the store, effectively linking it to your account. During this step, you will be asked to select an existing key and login with your store account credentials.
 
     snapcraft register-key
 
