@@ -329,7 +329,7 @@ If there is no output from this command, the system does not have a serial asser
 
 
 
-### Checking Initialize device transaction with snap changes
+### Checking `Initialize device` transaction with snap changes
 
 The system reports transactions with snap changes. The Initialize device
 transaction includes Serial Vault operations. If snap known serial does not
@@ -407,7 +407,7 @@ exceeded while awaiting headers)
 
 [serial-vault-image0]: ../media/serial-vault-image0.png
 [serial-vault-image1]: ../media/serial-vault-image1.png
-[serial-vault-image2]: ./serial-vault-image2.png
+[serial-vault-image2]: ../media/serial-vault-image2.png
 [serial-vault-image3]: ../media/serial-vault-image3.png
 [serial-vault-image4]: ../media/serial-vault-image4.png
 [serial-vault-image5]: ../media/serial-vault-image5.png
