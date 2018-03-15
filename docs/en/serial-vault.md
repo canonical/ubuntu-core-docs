@@ -301,7 +301,7 @@ been retrieved from the Serial Vault in various ways.
 !!! Note:
           If the Core system does not have a user so you cannot get a terminal
           session into the device, you can create one with a system-user
-          assertion as explained elsewhere in this document.
+          assertion as explained [elsewhere in this document](#creating-system-user-assertions).
 
 ### Verifying serial with snap known serial
 
@@ -325,7 +325,8 @@ Qf7mCC2yrjPLgSPmDvZm58Mnh3y+TFL9dF6lF6L0qXM865LO07sD1nZKE9lvl61jt+opmHviwTvb
 ...
 ```
 
-If there is no output from this command, the system does not have a serial assertion.
+If there is no output from this command, the system does not have a serial assertion
+assigned.
 
 
 
@@ -341,7 +342,7 @@ output a serial assertion, you can troubleshoot further as follows:
 snap changes
 ```
 
-This will list the  transactions in reverse chronological order (most recent first), labelling each with an ID:
+This lists the transactions in reverse chronological order (most recent first), labelling each with an ID:
 
 ```bash
 ID   Status  Spawn                 Ready                 Summary
