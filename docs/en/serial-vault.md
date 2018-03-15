@@ -5,17 +5,19 @@ table_of_contents: true
 
 # Serial Vault user guide
 
-The Serial Vault is a Canonical-hosted web service that is required to use a
-[Secure Brand Store][secure-brand-store]. The Serial Vault provides :
+The Serial Vault is a Canonical-hosted web service which must be used
+if you want to maintain a [secure Brand Store][secure-brand-store]. 
+The Serial Vault provides:
 
- - Signed [serial assertions][serial-assertions]  to authenticated systems of
+ - Signed [serial assertions][serial-assertions] to authenticated systems of
    a given brand/model, which then use it to access a secure Brand Store.
  - Signed [system-user assertions][system-user-assertions], which allow
-   creating a system user account from a USB drive on an unmanaged Core system.
+   creating a system user account from a USB drive on an Ubuntu Core system
+   which currently has no system user set.
    For additional information, see [here][here].
 
-After Canonical creates a Serial Vault account for you, you can login here:
-[https://serial-vault-partners-admin.canonical.com/]
+After Canonical creates your Serial Vault account, you can login here:
+[https://serial-vault-partners-admin.canonical.com]
 
 Serial Vault tasks include:
 
@@ -255,7 +257,7 @@ been used to sign serial assertions. You can also filter the log.
 ## Creating system-user assertions
 
 A system-user assertion allows you to create a user on an unmanaged Core
-system. The system-user assertion can be seeded into an image, or it can be
+system. The system-user assertion can be pre-populated into an image, or it can be
 auto-imported from a USB drive. See here and [system user][system-user] and
 [system user assertions.][system-user-assertions.] 
 
