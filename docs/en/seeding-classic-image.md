@@ -1,14 +1,14 @@
 ---
-title: "Seeding a Classic Image"
+title: "Seeding a classic Ubuntu Image"
 table_of_contents: true
 ---
 
-# Seeding a Classic Image
+# Seeding a classic Ubuntu Image
 
 ## Introduction
 
-A Classic image is seeded to include snaps and [assertions][assertions]. That
-is, you add the snaps and the assertions to the image so that on first boot it
+A Classic image is seeded such that it is pre-populated with snaps and [assertions][assertions]. 
+That is, you add the snaps and the assertions to the image so that on first boot it
 contains what your product needs. For example, a [gadget snap][gadget-snap] is
 normally seeded to point the system at a Serial Vault. Also, one seeds snaps
 to provide the software that customises the system. This document explains
@@ -17,9 +17,9 @@ what you may want to seed and how to do it.
 
 !!! Note:
            Core images are seeded automatically with snaps and the model
-          assertion when created with the normal  ubuntu-image tool (available
-          as a snap in the beta channel). But, `ubuntu-image` does not yet
-          support building Classic images. However, the principles explained
+          assertion when created with the normal `ubuntu-image` tool (available
+          as a snap in the beta channel). However, `ubuntu-image` does not yet
+          support building Classic images. The principles explained
           here can be used to manually modify a Core image after it is built
 to
           seed additional snaps and assertions.
@@ -28,15 +28,15 @@ to
 
 Usually one needs to seed:
 
- - A model assertion.
- - An account assertion: for the brand SSO account used to authenticate the
+ - A [model assertion][model-assertion].
+ - An [account assertion][account-assertion]: for the brand SSO account used to authenticate the
 model assertion.
- - An account-key assertion: to authenticate the key that signs the model
+ - An [account-key assertion][account-key-assertion]: to authenticate the key that signs the model
 assertion.
- - A gadget snap and its assertions.
+ - A [gadget snap][gadget-snap] and its assertions.
 
 !!! Note:
-          The gadget snap must be uploaded using the brand SSO account
+          The gadget snap must be uploaded using the Brand SSO account.
 
  - A core snap and its assertions.
  - Any additional snaps (each with an assertion file).
@@ -54,7 +54,7 @@ This directory has a certain structure. For example:
  - `/var/snapd/seed/assertions/` contains the assertions you want to seed.
  - `/var/snapd/seed/seed.yaml` provides configuration data.
 
-All you need to do is add this directory to your image in the required place.
+All you need to do is add this directory to the root of your image.
 On first boot, snapd handles the rest, verifying the snaps by their assertions
 and installing them, and verifying and importing any assertions (such as  the
 model assertion).
@@ -75,7 +75,7 @@ Create your seed directory as follows:
 
         mkdir seed/snaps
 
-The seed directory needs to be owned by root user.  Change ownership of these
+The seed directory needs to be owned by root user. Change ownership of these
 directories as follows:
 
 1. From the parent directory of `seed/`, recursively change the ownership of all files in the seed directory to the root user as follows:
@@ -97,22 +97,22 @@ place an assertion file for each snap in `seed/assertions/`.
 !!! Note:
           You should only seed snaps that are available in the store the image
           points at. Otherwise the snap cannot be updated in the running
-          system.  (The core snap is always available in every store. )
+          system. (The core snap is always available in every store.)
 
 You can download both the snap and its assertion file with a single command.
-When the snap is published in a brand store, you need to know the store ID.
-The default behavior  downloads from the stable channel of the store. You can
-optionally download from any channel.  You can also download a snap (and its
+When the snap is published in a Brand Store, you need to know the store ID.
+The default behaviour downloads from the stable channel of the store. You can
+optionally download from any channel. You can also download a snap (and its
 assertion) by specifying the snap’s revision (if the snap is not published on
 a channel, you can only download it by revision if you are the snap uploader
 or a collaborator).
 
-Download the latest revision from the stable channel of the global store as
+Download the latest revision from the stable channel of the global snap store as
 follows:
 
     snap download SNAPNAME
 
-Download the latest revision from the stable channel of a brand store (where
+Download the latest revision from the stable channel of a Brand Store (where
 the store ID is “my-brand-store”) as follows:
 
     UBUNTU_STORE_ID=my-brand-store snap download SNAPNAME
@@ -127,12 +127,12 @@ The result is two files, for example:
 - classic-gadget-1_1.snap
 
 By default, snap download gets a snap of the same CPU architecture as the
-current host system’s CPU architecture.  If your classic image is a different
-CPU architecture than your host system, you can download that different arch
-with the `UBUNTU_STORE_ARCH` env variable.
+current host system’s CPU architecture. If your classic image is a different
+CPU architecture than your host system, you can download that different architecture 
+with the `UBUNTU_STORE_ARCH` environment variable.
 
-For example, the following downloads  a snap named classic-gadge (and its
-assertion file)t from my-brand-store of CPU architecture armhf (if the store
+For example, the following downloads a snap named classic-gadget (and its
+assertion file) from my-brand-store of CPU architecture armhf (if the store
 has it):
 
     UBUNTU_STORE_ARCH=armhf UBUNTU_STORE_ID=my-brand-store snap download classic-gadget
@@ -141,7 +141,7 @@ Next, we cover what to do with these files.
 
 ### Getting the core snap file and assertion file
 
-The core snap is always in the global store.
+The core snap is always in the global snap store.
 
 1. Download the core snap and its assertion file:
 
@@ -156,7 +156,7 @@ The core snap is always in the global store.
 
 ### Getting the gadget snap
 
-Your gadget snap may be published in a brand store. Let’s assume the store ID
+Your gadget snap may be published in a Brand Store. Let’s assume the store ID
 is “my-brand-store”.
 
 1. Download your gadget snap and its assertion file from my-brand-store as
@@ -192,7 +192,7 @@ included in the seed directory).
 
 
 !!! Note:
-          A snap ID is a a long alphanumeric string, for example:
+          A snap ID is a long alphanumeric string, for example:
           `X03kFuB2OQ3oiEI563kRMSgdQc8YiBfX`
 
 You can get the snap ID for the core snap (or any other snap) with the `snap
@@ -213,14 +213,14 @@ account that is used for critical brand activities. This includes making and
 signing the model assertion:
 
  - The model assertion must state the account-id of the Brand SSO account in
-the brand-id and the  authority-id fields.
+the brand-id and the authority-id fields.
  - The model assertion must be signed by a key generated under the Brand SSO
 account, and it must be registered.  
 
 Also note:
 
- - The model’s store field’s value must be the brand store ID.
- - The model’s model field’s value must be registered in the Serial Vault.
+ - The `store` field value must be the Brand Store ID.
+ - The `model` field value must be registered in the Serial Vault.
  - The model must have `“classic”: true`
  - If the classic image has a gadget snap, it must be mentioned in the model:
 
@@ -233,9 +233,9 @@ Sign the model assertion json file as follows:
 For background information on model assertions and signing them, see
 [image building][image-building]
 
-### Getting the brand SSO account assertion
+### Getting the Brand SSO account assertion
 
-As noted, the brand SSO account is used to generate the key used to sign the
+As noted, the Brand SSO account is used to generate the key used to sign the
 model. Therefore, this account assertion needs to be seeded for the model to
 be authenticated.
 
@@ -253,18 +253,18 @@ You can download this account assertion as follows:
         email:        THE-EMAIL
         developer-id: THE-ACCOUNT-ID
 
-1. Download the brand SSO account assertion:
+1. Download the Brand SSO account assertion:
 
         snap known account account-id=THE-ACCOUNT-ID > brand-account.assert
 
-### Getting the brand account-key assertion
+### Getting the Brand account-key assertion
 
 As noted, you need to obtain the account-key assertion for the key that signed
 the model. For this, you need the SHA3-384 fingerprint of the key. If the keys
 were generated on a system you can access, you can do the following on the
 system:
 
-1. Login to snapcraft using the brand SSO account details on the machine on
+1. Login to snapcraft using the Brand SSO account details on the machine on
 which the model signing key was generated.
 1. Display known keys and copy the SHA3-384 fingerprint of the key used to
 sign the model with `snapcraft list-keys`:
@@ -274,7 +274,7 @@ sign the model with `snapcraft list-keys`:
         *   model     KEY-SHA3-384-FINGERPRINT
         *   serial    KEY-SHA3-384-FINGERPRINT
 
-    If the keys were generated on another system, you need someone who can access that system provide the fingerprint.
+    If the keys were generated on another system, you need someone who can access that system to provide the fingerprint.
 
 1. With the fingerprint, obtain the assertion as follows:
 
@@ -282,11 +282,11 @@ sign the model with `snapcraft list-keys`:
 
 ## Placing the seed directory into your image
 
-Now, simply copy the seed directory and all that it contains into your image
+Now, simply copy the seed directory and its contents into your image
 in `/var/snapd/`, resulting in: `/var/snapd/seed/`.
 
 As noted, the seed directory and all files in it need to be owned by root
-user.  Recursively set ownership to root as follows:
+user. Recursively set ownership to root as follows:
 
 1. From the parent directory of seed/, change the owner recursively to root
 user as follows:
@@ -301,7 +301,7 @@ You can verify success in a running image as follows:
 
         snap list
 
-    You should see each snap you seeded as installed.
+    You should see each snap you seeded listed as installed.
 
 1. Verify the model assertion with:
 
@@ -310,7 +310,7 @@ You can verify success in a running image as follows:
     You should see the model assertion you seeded.
 
 1. If your gadget snap includes a prepare-device hook in order to obtain a
-signed serial assertion from a serial vault, you can check the status with:
+signed serial assertion from a Serial Vault, you can check the status with:
 
         snap known serial
 
@@ -318,12 +318,15 @@ signed serial assertion from a serial vault, you can check the status with:
 
         snap changes
 
-    Find the Initialize device change. If its status is not Done, note the ID and
+    Find the `Initialize device` change. If its status is not `Done`, note the ID and
 check the details of the change with:
 
         snap change ID
 
 
-[image-building]: https://docs.ubuntu.com/core/en/guides/build-device/image-building
+[image-building]: image-building
 [gadget-snap]: https://forum.snapcraft.io/t/the-gadget-snap/696
-[assertions]: https://docs.ubuntu.com/core/en/reference/assertions
+[assertions]: assertions
+[account-assertion]: account
+[account-key-assertion]: account-key
+[model-assertion]: model
