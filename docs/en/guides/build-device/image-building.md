@@ -23,9 +23,13 @@ If you want to build an Ubuntu Core image for a board that is not already suppor
 
 Before starting with building the image, you need to create a key to sign your future store uploads.
 
+
 ### 1. Create a key
 
+**Note**: If you are building an image to work with a Brand Store, you need to use the Brand SSO account for these steps. You can use `snapcraft logout`. Then use `snapcraft login` and provide the Brand SSO Account credentials to login.  
+
 As a first step, you have to generate a key that will be linked to your Ubuntu Store account. To do so, run:
+
 
     snapcraft create-key
 
@@ -41,9 +45,9 @@ Now, you can list your keys with:
 
     snapcraft list-keys
 
-### 2. Upload the key to the store
+### 2. Register the key with the store
 
-Next, you have to upload it to the store, effectively linking it to your account. During this step, you will be asked to select an existing key and login with your store account credentials.
+Next, you have to register the key with the store, effectively linking it to your account. During this step, you will be asked to select an existing key and login with your store account credentials.
 
     snapcraft register-key
 
@@ -64,6 +68,7 @@ To build an image, it is required you have a signed model assertion.
 
 ### Example
 
+
 As an example, here is one for a device based on a Raspberry Pi 3 board. The JSON file is named `pi3-model.json`, with the following content:
 
     {
@@ -78,22 +83,23 @@ As an example, here is one for a device based on a Raspberry Pi 3 board. The JSO
       "timestamp": "<timestamp>"
     }
 
-#### Keys description
-
-*   `type`: the assertion type you are creating
-*   `authority-id`, `brand-id` refer to your store account id. You will find it on [your account page](https://dashboard.snapcraft.io/dev/account/), in the `Account-Id` field.
+*   `authority-id`, `brand-id` are your Ubuntu SSO account ID. See [your account page](https://dashboard.snapcraft.io/dev/account/), in the `Account-Id` field.
 *   `series`: the Ubuntu Core series in use
-*   `model`: a free form lower-case name for your target device
+*   `model`: a free form lower-case name for your target device. 
 *   `architecture`: the architecture of the device you are building the image for
 *   `gadget` and `kernel` refer to snaps already existing in the store or in the current directory
-*   `timestamp` is a valid timestamp you need to generate using the `date -Iseconds --utc` command
+*   `timestamp` is a valid timestamp you need to generate using the `date -Iseconds --utc` command. The timestamp must be later than when the key that signs the model was registered.
 *   `required-snaps`: you can optionally add a list of required snaps that will be unremovable and will be downloaded from the store or locally if they exist in the current directory
+
+**Note**: There are additional requirements when the image targets a Brand Store. Use your Brand SSO Account's account-id in the the `authority-id` and `brand-id` fields. Also add a `store` key whose value is your Brand `store-id`. 
 
 ### 2. Sign your model assertion
 
 Now you have to sign the model assertion with a key, by piping your JSON model
-through the `snap sign -k <key name>` command and outputing a model file, the
+through the `snap sign -k <key name>` command and outputting a model file, the
 actual assertion document you will use to build your image.
+
+**Note**: If the model is for a Brand Store, the key must be registered by the Brand SSO Account. 
 
     cat pi3-model.json | snap sign -k default &> pi3.model
 
@@ -110,12 +116,12 @@ To install it, run:
 
 Then, create the image:
 
-    sudo ubuntu-image -c beta -o pi3-test.img pi3.model
+    sudo ubuntu-image -c beta -O pi3-test pi3.model
 
 #### Arguments
 
 *   `-c`: the channel snaps are downloaded from
-*   `-o`: the output image file
+*   `-O`: a directory for generated files
 
 You can include specific snaps pre-installed by default in the image by using the `--extra-snaps` argument. For example:
 
