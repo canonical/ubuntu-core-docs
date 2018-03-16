@@ -5,7 +5,7 @@ table_of_contents: true
 
 ## Introduction
 
-A Brand Store provides snaps (via channels) to systems that are configured to use the store and that are authenticated by the store. There are several parts of this system. This guide explains conceptually what these parts are and how they fit together.
+A Brand Store provides snaps (via [channels][channels]) to systems that are configured to use the store and that are authenticated by the store. There are several parts of this system. This guide explains conceptually what these parts are and how they fit together.
 
 Let’s start by taking a look at Ubuntu Single Sign On (SSO) accounts.
 
@@ -13,9 +13,9 @@ Let’s start by taking a look at Ubuntu Single Sign On (SSO) accounts.
 
 An Ubuntu SSO account grants a logged in user a set of privileges. For
  example, a Brand Store is administered by an SSO account. Developers upload
-snaps to a Brand Store under an SSO account. Ubuntu assertions are signed by
+snaps to a Brand Store under an SSO account. Ubuntu [assertions][assertions] are signed by
 keys associated with an SSO account. SSO accounts also authenticate users to
- launchpad.net, forum.snapcraft.io, and many more sites and services.
+ launchpad.net, forum.snapcraft.io, and additional sites and services.
 
 You can create an SSO account here: https://login.ubuntu.com/
 
@@ -23,21 +23,21 @@ You can then see additional account data here:
 [https://dashboard.snapcraft.io/dev/account/][https://dashboard.snapcraft.io/dev/account/] 
 
 Note the snap account-id. This is a critical identifier that is used in many
-parts of the Brand Store ecosystem.  It is often referred to simply as the
+parts of the Brand Store ecosystem. It is often referred to simply as the
 account-id.
 
 ### Brand SSO account
 
 The first step in creating a Brand Store is creating a dedicated Brand SSO 
 account. When requesting the Brand Store, you provide the Brand Store SSO
-account to the Canonical Store team, and they make that account the Brand
+account to Canonical in order to make that account the Brand
 Store administrator. (You can add other administrators later).
 
 !!! Note:
           It is strongly recommended to dedicate the Brand Store SSO account to
-          single purpose of Brand activities. It should not be used for any
-          purposes. It should be considered a critical project asset
-          use is strictly limited and controlled. (You can always create
+          a single purpose of Brand activities. It should not be used for any
+          other purposes. It should be considered a critical project asset and its 
+          use be strictly limited and controlled. (You can always create
           SSO accounts for these other purposes, although each SSO
           account requires a unique email address.)
 
@@ -61,7 +61,7 @@ The Brand Store and its Brand Store SSO account:
 
 Keys created by the Brand Store SSO account are normally used to sign the
 model assertion included in every image that is configured to point at a Brand
- Store. You also generate a special serial key that is uploaded to the Serial 
+ Store. You also need to generate a special serial key that is uploaded to the Serial 
 Vault, which provides each device a signed serial assertion that is used to 
 authenticate the device to the Brand Store.
 
@@ -91,7 +91,7 @@ authenticated and the information it contains to be validated.
 The snap system uses assertions in many places. For example, the model 
 assertion (discussed next) provides key information defining the device **model**. 
 It is signed by a key under a Brand SSO account. This means it can be
- authenticated and the data it contains can be relied on as correct.
+ authenticated and the data it contains can be relied on as being correct.
 
 ## Models
 
@@ -140,26 +140,26 @@ was signed by a key made under that account.
 
 !!! Note:
           This picture still does not show the required system authentication
-          through which a system may gain access to their Brand Store.
+          through which a system may gain access to its Brand Store.
 
-Systems whose model points at a Brand Store are rejected unless authentication
+Its model points at a Brand Store are rejected unless authentication
  via a Serial Vault is also used:
 
 ![image][brand-store-4]
 
 - Models point systems to their Brand Store
-- Systems can be rejected by the Brand Store as unauthenticated
+- Systems can be rejected by the Brand Store as being unauthenticated
 
 ## Authentication through the Serial Vault
 
 A normally configured Brand Store authenticates a system trying to access it. 
 Authentication is done based on an authentication token called a **macaroon** (see 
 figure below). The macaroon is provided by the Canonical **Authentication
- Service** after the device has obtained a signed serial assertion. Without a 
+ Service**, included in the Store API, after the device has obtained a signed serial assertion. Without a 
 proper serial assertion, the device cannot obtain the macaroon and is rejected 
-by the Brand Store. A proper signed serial assertion is given to a system by
- the **Serial Vault**. Obtaining a signed serial assertion from the Serial vault
- normally occurs when the system first boots up.
+by the Brand Store. A proper signed serial assertion is given to a system by 
+the **Serial Vault**. Obtaining a signed serial assertion from the Serial vault 
+normally occurs when the system first boots up.
 
 This process involves a couple of pieces:
 
@@ -184,9 +184,10 @@ On first boot (or soon thereafter), a system obtains a signed serial assertion f
 
 <!-- LINKS -->
 
-[seeding-a-classic-image]: https://docs.ubuntu.com/core/en/seeding-classic-image
-[assertions]: https://docs.ubuntu.com/core/en/reference/assertions
+[seeding-a-classic-image]: seeding-classic-image
+[assertions]: assertions
 [snapcraft]: https://snapcraft.io
+[channels]: https://docs.snapcraft.io/reference/channels
 [https://dashboard.snapcraft.io/dev/account/]: https://dashboard.snapcraft.io/dev/account/
 
 <!-- IMAGES -->
