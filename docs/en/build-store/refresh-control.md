@@ -24,7 +24,7 @@ Ask a store administrator/reviewer to edit the package declaration for the gatin
 * Under "refresh control" put a json list with the snap IDs of the snaps you want gated: \["xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", ...\]
 * The list can, of course, contain more than one snap ID, in which case this gating snap will be able to control updates for all the gated snaps.
 
-# Publisher setup
+## Publisher setup
 
 Since gating involves pushing [`validation` assertions][2] which are signed by the publisher indicating their authorization to restrict updates of snaps, some GPG keys must be generated and published to the store. If a store key already exists, it can be used. If not, one must be generated and registered.
 
@@ -42,13 +42,13 @@ Since gating involves pushing [`validation` assertions][2] which are signed by t
         $ snapcraft register-key my-key
         Enter your Ubuntu One e-mail address and password.
         If you do not have an Ubuntu One account, you can create one at https://dashboard.snapcraft.io/openid/login
-        Email: daniel.manrique@canonical.com
+        Email: roadmr.developer@example.com
         Password:
         Second-factor auth: 111111
         Registering key ...
         Done. The key "my-key" (mfomTtPB1cE3IFs51NtdnFoPlQwJxFgxOMU_q0mPkH7M2gKB-4m28d99XrVjA53B) may be used to sign your assertions.
 
-# Publishing workflow, examples
+## Publishing workflow, examples
 
 At this point, the developer can issue validations asserting which revision of the gated snap is allowed to be installed when the gating snap is installed on a device. For example, specify that if the roadmr-gating snap is installed, the roadmr-gated snap can only be installed or refreshed to revision 2.
 
@@ -169,7 +169,7 @@ At this point a refresh will take gated-1 to rev 3 which was validated.
     roadmr-gated    2018-05-30-04 3      stable     snapdeveloper    -
     roadmr-gating   2018-05-30-01 1      stable     snapdeveloper    -
 
-# Gating multiple snaps
+## Gating multiple snaps
 
 A validation can be issued to restrict the revisions of more than one gated snap (assuming the “publisher setup” was done to allow the gating snap to control the indicated gated snaps):
 
@@ -182,9 +182,9 @@ A validation can be issued to restrict the revisions of more than one gated snap
 In this example, if roadmr-gating is installed on a device, roadmr-gated will only install or refresh to revision 2, and facundo-gated will only install or refresh to revision 5.
 
 
-# Notes
+## Notes
 
-* At the moment, validations can only be issued to gate snaps which have a release on the stable channel _at the moment of creating the validation_. (There’s [a snapcraft bug for this][3]). This is because `snapcraft validate` uses the details API to get the details from the stable channel only, and it doesn’t allow specifying another channel to get the gated snap’s details. Once the validation is in place, validations are channel-agnostic because they operate at the revision level. 
+* At the moment, validations can only be issued to gate snaps which have a release on the stable channel _at the moment of creating the validation_. (There’s [a snapcraft bug for this][3]). This is because `snapcraft validate` uses the details API to get the details from the stable channel only, and it doesn’t allow specifying another channel to get the gated snap’s details. Once the validation is in place, validations are channel-agnostic because they operate at the revision level.
 
         $ snapcraft status gated-1
         Track    Arch    Channel    Version        Revision
