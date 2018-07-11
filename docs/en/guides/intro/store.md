@@ -42,12 +42,12 @@ There are four channels available and snaps can be published into several at the
 
 By default, snaps are installed from the `stable` channel. Versions of snaps from other channels need to be explicitly selected by users:
 
-    $ snap install hello --beta
+    snap install hello --beta
 
 And snaps can be refreshed from a different channel to the one it was originally installed from:
 
-    $ snap install hello
-    $ snap refresh hello --beta
+    snap install hello
+    snap refresh hello --beta
 
 This switches the snap to using the `beta` channel for future updates.
 

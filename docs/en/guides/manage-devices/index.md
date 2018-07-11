@@ -98,11 +98,11 @@ There's a snap that makes this part easy: make-system user. This can be installe
 
 1. Install it 
 
-        $ snap install make-system-user --classic
+        snap install make-system-user --classic
 
 1. Check its help:
 
-        $ make-system-user.run --help
+        make-system-user.run --help
 
     The help specifies that you need the brand, which is the `brand-id` field's value in the model assertion. 
 
@@ -115,8 +115,12 @@ There's a snap that makes this part easy: make-system user. This can be installe
 
 1. Here is a sample execution matching the above:
 
-```code
-$ sudo make-system-user.run --brand ACCOUNT-ID --model mymodel --username chuckthecoolcat --password heresapassword --key MYVALIDKEY
+```bash
+sudo make-system-user.run --brand ACCOUNT-ID --model mymodel --username chuckthecoolcat --password heresapassword --key MYVALIDKEY
+```
+Which should generate output similar to:
+
+```no-highlight
 You need a passphrase to unlock the secret key for
 user: "MYVALIDKEY"
 4096-bit RSA key, ID C375E301, created 2016-01-01
