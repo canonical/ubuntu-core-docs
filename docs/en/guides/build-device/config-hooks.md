@@ -50,7 +50,7 @@ The `configure` hook is called upon initial install, upgrade, and whenever the u
 Say the user runs:
 
 ```bash
-$ snap set <snapname> username=foo password=bar
+snap set <snapname> username=foo password=bar
 ```
 
 The `configure` hook would be located within the snap at `meta/hooks/configure`.

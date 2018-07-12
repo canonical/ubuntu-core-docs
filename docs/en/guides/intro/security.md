@@ -16,7 +16,9 @@ implementation details on how security policy is enforced. Instead, all snaps
 run under a default security policy which can be extended through the use of
 [interfaces](../../guides/build-device/interfaces.html). Slots, plugs, and the available interfaces available on the device can be seen with:
 
-    $ snap interfaces
+```bash
+snap interfaces
+```
 
 The description of these interfaces is found in the [interfaces reference](../../reference/interfaces/index.html).
 
@@ -117,9 +119,13 @@ review in the official Ubuntu store and/or may need to be connected by the user
 or gadget snap developer.
 
 The interfaces available on the system and those used by snaps can be seen with
-the `snap interfaces` command. Eg:
+the `snap interfaces` command:
 
-    $ snap interfaces
+```bash
+snap interfaces
+```
+...will produce output similar to:
+```no-highlight
     Slot                 Plug
     :firewall-control    -
     :home                -
@@ -134,7 +140,7 @@ the `snap interfaces` command. Eg:
     :system-observe      -
     :timeserver-control  -
     :timezone-control    -
-
+```
 In the above it can be seen that the `snappy-debug` snap has the `log-observe`
 interface connected (and therefore the security policy from `log-observe` is
 added to it) and the `xkcd-webserver` has the `network` and `network-bind`
@@ -158,42 +164,61 @@ snappy allows installing the snap in developer mode which puts the security
 policy in complain mode (where violations against security policy are logged,
 but permitted). For example:
 
-    $ sudo snap install --devmode <snap>
+```bash
+sudo snap install --devmode <snap>
+```
 
 ## Jail mode
 
 Even if a developer has specified a package to be only installable in `devmode`, you can force a strict confinement by using the `--jailmode` flag.
 
-    $ sudo snap install --jailmode <snap>
+```bash
+sudo snap install --jailmode <snap>
+```
 
 ## Debugging
 
 To check if you have any policy violations:
 
-    $ sudo grep audit /var/log/syslog
+```bash
+sudo grep audit /var/log/syslog
+```
 
 An AppArmor violation will look something like:
 
+```no-highlight
     audit: type=1400 audit(1431384420.408:319): apparmor="DENIED" operation="mkdir" profile="snap.foo.bar" name="/var/lib/foo" pid=637 comm="bar" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
-
+```
 If there are no AppArmor denials, AppArmor shouldn't be blocking the snap.
 
 A seccomp violation will look something like:
 
+```no-highlight
     audit: type=1326 audit(1430766107.122:16): auid=1000 uid=1000 gid=1000 ses=15 pid=1491 comm="env" exe="/bin/bash" sig=31 arch=40000028 syscall=983045 compat=0 ip=0xb6fb0bd6 code=0x0
+```
 
 The `syscall=983045` can be resolved by running the `scmp_sys_resolver` command
 on a system of the same architecture as the one with the seccomp violation:
 
-    $ scmp_sys_resolver 983045
+```bash
+scmp_sys_resolver 983045
+```
+might output:
+```no-highlight
     set_tls
+```
 
 If there are no seccomp violations, seccomp isn't blocking the snap. If you notice `compat=1` in the seccomp denial, then specify the correct compatibility architecture to `scmp_sys_resolver` with `-a <arch>`. Eg, if on an amd64 system, use `scmp_sys_resolver -a x86 191` (use `-a arm` on arm64 systems).
 
-The `snappy-debug` snap can be used to help with policy violations. To use it:
+The `snappy-debug` snap can be used to help with policy violations. It can be installed:
+```bash
+sudo snap install snappy-debug
+```
+And run like this:
 
-    $ sudo snap install snappy-debug
-    $ sudo /snap/bin/snappy-debug.security scanlog foo
+```bash
+sudo /snap/bin/snappy-debug.security scanlog foo
+```
 
 This will:
 

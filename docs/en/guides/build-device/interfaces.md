@@ -59,57 +59,90 @@ Interfaces may either be auto-connected by `snapd` on install or manually connec
 
 To list the available connectable interfaces and connections:
 
-    $ snap interfaces
+```bash
+snap interfaces
+```
 
 To make a connection:
 
-    $ snap connect <snap>:<plug interface> <snap>:<slot interface>
+```bash
+snap connect <snap>:<plug interface> <snap>:<slot interface>
+```
 
 To disconnect snaps:
 
-    $ snap disconnect <snap>:<plug interface> <snap>:<slot interface>
+```bash
+snap disconnect <snap>:<plug interface> <snap>:<slot interface>
+```
 
 Consider a snap ``foo`` that uses ``plugs: [ log-observe ]``. Since
 ``log-observe`` is not auto-connected, ``foo`` will not have access to the
 interface upon install:
 
-    $ sudo snap install foo
-    $ snap interfaces
+```bash
+sudo snap install foo
+snap interfaces
+```
+...will show:
+
+```no-highlight
     Slot                 Plug
     :log-observe         -
     -                    foo:log-observe
+```
 
 You may manually connect using ``snap connect``:
 
-    $ sudo snap connect foo:log-observe core:log-observe
-    $ snap interfaces
+```bash
+sudo snap connect foo:log-observe core:log-observe
+snap interfaces
+```
+
     Slot                 Plug
     :log-observe         foo:log-observe
 
 and disconnect using ``snap disconnect``:
 
-    $ sudo snap disconnect foo:log-observe core:log-observe
-    $ snap interfaces # shows they are disconnected
+```bash
+sudo snap disconnect foo:log-observe core:log-observe
+```
+Now running:
+``bash
+snap interfaces 
+```
+... will show that they are no longer connected
+ 
+```no-highlight
     Slot                 Plug
     :log-observe         -
     -                    foo:log-observe
+```
 
 On the other hand, ``bar`` could use ``plugs: [ network ]`` and since
 ``network`` is auto-connected, ``bar`` has access to the interface upon
 install:
 
-    $ sudo snap install bar
-    $ snap interfaces
+``bash
+sudo snap install bar
+```
+
+Displaying the interfaces again...
+
+```bash
+snap interfaces
+```
+...shows the new plug has been autoconnected.
+
+```no-highlight
     Slot                 Plug
     :network             bar:network
+```
 
-You may disconnect an auto-connected interface:
+You can still disconnect an auto-connected interface:
 
-    $ sudo snap disconnect bar:network core:network
-    $ snap interfaces
-    Slot                 Plug
-    :network             -
-    -                    bar:network
+```bash
+sudo snap disconnect bar:network core:network
+```
 
 Whether the slot is provided by the core snap or not doesn't matter in terms of
 snap interfaces except that if the slot is provided by a snap, a snap that
@@ -118,20 +151,28 @@ implements the slot must be installed for it to be connectable. Eg, the
 implementing the bluez service might use ``slots: [ bluez ]``. Then after
 install, the bluez interface shows up as available:
 
-    $ sudo snap install foo-blue
-    $ snap interfaces
+```bash
+sudo snap install foo-blue
+```
+After install, the `bluez` interface will show as available
+
+```bash
+snap interfaces
+```
+```no-highlight
     Slot                 Plug
     foo-blue:bluez       -
+```
 
 Now install and connect works like before (eg, ``baz`` uses
 ``plugs: [ bluez ]``):
 
-    $ sudo snap install baz
-    $ snap interfaces
-    Slot                 Plug
-    foo-blue:bluez       -
-    -                    baz:bluez
-    $ sudo snap connect baz:bluez foo-blue:bluez
-    $ snap interfaces
+```bash 
+sudo snap install baz
+sudo snap connect baz:bluez foo-blue:bluez
+snap interfaces
+```
+```no-highlight
     Slot                 Plug
     foo-blue:bluez       baz:bluez
+```
