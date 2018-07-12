@@ -13,21 +13,21 @@ to a working directory on your local computer.
 Next, to be able to build the documentation, you need to install
 documentation-builder:
 
-    $ snap install documentation-builder
+     snap install documentation-builder
 
 Then install the git-repo utility:
 
-    $ snap install git-repo
+    snap install git-repo
 
 From the root of the documentation source tree (e.g. ubuntu-core-docs) do the
 following to get the Ubuntu Core Stacks sub-repositories:
 
-    $ repo init -u https://github.com/canonical-docs/ubuntu-core-docs.git
-    $ repo sync
+     repo init -u https://github.com/canonical-docs/ubuntu-core-docs.git
+     repo sync
 
 Then build the documentation via:
 
-    $ documentation-builder
+     documentation-builder
 
 All of the generated documentation will be placed under build/
 
