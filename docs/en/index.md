@@ -170,27 +170,17 @@ Assertions are intended to be understandable by human inspection, although full 
 
 The following table summarizes the various types of assertions that exist and what they’re used for:
 
-
-Assertion Type
-Use Case
-account
-Ties a name for an account to its identifier and provides the authority's confidence in the name's validity.
-account-key
-Holds a public key belonging to an SSO account.
-model
-Lists the properties of a device model. It should contain all needed information to create a working Ubuntu Core image.
-serial
-Binds a particular device identity to a device public key.
-snap-declaration
-Defines some of the properties of a snap such as the snap-id, the official snap name, the publisher, etc.
-snap-build
-Defines the basic properties of a snap at the time it was built by the developer.
-snap-revision
-Acknowledges receipt of a build of a snap and labels it with a snap revision.
-system-user
-A permit by the brand for local system users to be created on specific devices.
-validation
-Shows that a certain revision for a snap that is gated by another snap has been validated for a given Ubuntu Core series.
+| Assertion Type   | Use Case                                                                                                                  |
+|------------------|---------------------------------------------------------------------------------------------------------------------------|
+| account          | Ties a name for an account to its identifier and provides the authority's confidence in the name's validity.              |
+| account-key      | Holds a public key belonging to an SSO account.                                                                           |
+| model            | Lists the properties of a device model. It should contain all needed information to create a working Ubuntu Core image.   |
+| serial           | Binds a particular device identity to a device public key.                                                                |
+| snap-declaration | Defines some of the properties of a snap such as the snap-id, the official snap name, the publisher, etc.                 |
+| snap-build       | Defines the basic properties of a snap at the time it was built by the developer.                                         |
+| snap-revision    | Acknowledges receipt of a build of a snap and labels it with a snap revision.                                             |
+| system-user      | A permit by the brand for local system users to be created on specific devices.                                           |
+| validation       | Shows that a certain revision for a snap that is gated by another snap has been validated for a given Ubuntu Core series. |
 
 
 More details about assertions will be covered in greater detail in later sections of this documentation.
@@ -202,7 +192,11 @@ Ubuntu Core is part of the larger IoT ecosystem which includes various things li
 
 ### Snap and snapd documentation
 
-Snap and snapd are the technologies behind the snap packaging format. They provide the command line and behind-the-scenes services that allow snap packages to be installed on a system and kept up-to-date. [The documentation for snap and snapd is located on the snapcraft.io site][the-documentation-for-snap-and-snapd-is-located-on-the-snapcraft.io-site]. There is also a [public forum][public-forum] where you are able to interact with other people involved in the snap community by asking and answering questions.
+Snap and snapd are the technologies behind the snap packaging format.
+They provide the command line and behind-the-scenes services that allow
+snap packages to be installed on a system and kept up-to-date.
+[The documentation for snap and snapd is located on the snapcraft.io site][snapcraft.io-site]. 
+There is also a [public forum][public-forum] where you are able to interact with other people involved in the snap community by asking and answering questions.
 
 You can find the [source code to snap and snapd on github][source-code-to-snap-and-snapd-on-github].
 
@@ -213,7 +207,12 @@ There is also the [Ubuntu Tutorials][ubuntu-tutorials] site that covers tutorial
 
 ## Introduction to snap architecture
 
-Snaps are different from other packaging systems and require a different way of thinking when working with them. One main concept is to provide a highly robust system in which applications and daemons are isolated from each other and any co-interaction is carefully mediated. Tighter security and a system always being in a known good state are the two most significant characteristics of a system based on snaps, such as Ubuntu Core.
+Snaps are different from other packaging systems and require a different
+way of thinking when working with them. One main concept is to provide a
+highly robust system in which applications and daemons are isolated from
+each other and any co-interaction is carefully mediated. Tighter security
+and a system always being in a known good state are the two most
+significant characteristics of a system based on snaps, such as Ubuntu Core.
 
 On an Ubuntu Core system, only snaps are used for installing new software.
 Debian packages are not supported and will not work on Ubuntu Core. This
@@ -239,7 +238,7 @@ architected is available in the [snapcraft.io snap documentation][snapcraft.io-s
 [ubuntu-tutorials]: https://tutorials.ubuntu.com/?q=snap
 [source-code-to-snap-and-snapd-on-github]: https://github.com/snapcore/snapd
 [public-forum]: https://forum.snapcraft.io/categories
-[the-documentation-for-snap-and-snapd-is-located-on-the-snapcraft.io-site]: https://docs.snapcraft.io/
+[snapcraft.io-site]: https://docs.snapcraft.io/
 [refer-to-this-documentation]: https://developer.ubuntu.com/core/get-started/developer-setup
 [get-in-contact]: https://www.ubuntu.com/core/contact-us
 [guide]: https://docs.ubuntu.com/core/en/build-store/create
