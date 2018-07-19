@@ -13,21 +13,41 @@ Last released to Markdown: not yet released
 
 ## Intro to Ubuntu IoT Developer documentation
 Ubuntu IoT Developer documentation covers the core set of platform and service
-technologies that make up Ubuntu’s Internet of Things (IoT) offering. It includes a set of Ubuntu operating systems geared towards different device use cases and associated cloud services. 
+technologies that make up Ubuntu’s Internet of Things (IoT) offering. It 
+includes a set of Ubuntu operating systems geared towards different device 
+use cases and associated cloud services. 
 
-Classic Ubuntu includes the traditional Ubuntu Desktop, Ubuntu Server and Ubuntu Cloud distributions. These are well-known distributions and have broad support for various device configurations including user-interactive desktop systems, enterprise server systems and Internet of Things (IoT) devices. Ubuntu Desktop, Server and Cloud are widely deployed across diverse public and private sectors by millions of people and thousands of organizations. Built from the common Ubuntu Debian package archives, they are well-known, time-tested and proven in the field.
+Classic Ubuntu includes the traditional Ubuntu Desktop, Ubuntu Server and 
+Ubuntu Cloud distributions. These are well-known distributions and have broad
+support for various device configurations including user-interactive desktop
+systems, enterprise server systems and Internet of Things (IoT) devices.
+Ubuntu Desktop, Server and Cloud are widely deployed across diverse public and
+private sectors by millions of people and thousands of organizations. Built
+from the common Ubuntu Debian package archives, they are well-known, time-tested
+and proven in the field.
 
-Ubuntu Core is the newest Ubuntu operating system (OS). It primarily targets the requirements of headless IoT devices and their distributors. It is a minimalist rendition of Ubuntu that is lightweight, highly secure, and transactionally updated. Every application and data are isolated from every other application and data.
-An Ubuntu Core system is built using snaps: a core snap, a kernel snap, a gadget snap, and usually runs one or more application snaps. Canonical provides reference snaps and OS images for some current best-of-breed IoT platforms; you can also roll your own image. Ubuntu Core uses a rolling release model that aligns with Ubuntu LTS releases. The latest Ubuntu Core is currently UC16 and is based on the 16.04 long-term support release of classic Ubuntu. UC18 is currently under development and its beta is set to release at the same time as the 18.04 long-term support release of Ubuntu.
+Ubuntu Core is the newest Ubuntu operating system (OS). It primarily targets
+the requirements of headless IoT devices and their distributors. It is a
+minimalist rendition of Ubuntu that is lightweight, highly secure, and
+transactionally updated. Every application and data are isolated from every
+other application and data.
+An Ubuntu Core system is built using snaps: a core snap, a kernel snap, a gadget
+snap, and usually runs one or more application snaps. Canonical provides
+reference snaps and OS images for some current best-of-breed IoT platforms;
+you can also roll your own image. Ubuntu Core uses a rolling release model that
+aligns with Ubuntu LTS releases. The latest Ubuntu Core is currently UC16 and is
+based on the 16.04 long-term support release of classic Ubuntu. UC18 is currently
+under development and its beta is set to release at the same time as the
+18.04 long-term support release of Ubuntu.
 
 
 ### Ubuntu Core high level features
 
-Faster, more reliable, with stronger security guarantees for applications and users compared to a traditional Linux distribution.
-Atomic transactional upgrades for applications and the OS itself, all of which can be rolled back if needed automating most maintenance and upgrades.
-Separation of OS and application files into sets of distinct read-only images, to easily and securely add multiple applications and additional functionality onto a device.
-Applications are distributed via snaps, a simple application packaging system that makes it easy for developers to build and distribute applications across many Linux distributions from a public or private app store.
-Public/private key-based validation and authentication is built-in at every stage, proving that what runs is exactly what OS and app developers intend.
+ - Faster, more reliable, with stronger security guarantees for applications and users compared to a traditional Linux distribution.
+ - Atomic transactional upgrades for applications and the OS itself, all of which can be rolled back if needed automating most maintenance and upgrades.
+ - Separation of OS and application files into sets of distinct read-only images, to easily and securely add multiple applications and additional functionality onto a device.
+ - Applications are distributed via snaps, a simple application packaging system that makes it easy for developers to build and distribute applications across many Linux distributions from a public or private app store.
+ - Public/private key-based validation and authentication is built-in at every stage, proving that what runs is exactly what OS and app developers intend.
 
 
 ### Key Differences between Core and classic Ubuntu
@@ -68,12 +88,13 @@ Updates for snaps are transactional
 Snap is the native Ubuntu Core packaging system. There is no Debian package support in the runtime of Ubuntu Core. And, Snaps are increasingly used in classic Ubuntu flavours and other Linux distributions. 
 
 Snaps solve multiple problems at the same time:
-It’s easy to package applications pulled from multiple upstream sources using diverse build systems.
+
+ - It’s easy to package applications pulled from multiple upstream sources using diverse build systems.
 Each snap includes its own dependencies, freeing publishers from problems when  implicit dependencies change without their knowledge.
-Developers publish snaps in a snap store (the global snap store or a private Brand store) and take responsibility for their quality, making software distribution fast and free of procedural obstacles.
-Snaps are sandboxed from each other and from the OS, providing system stability and overall security. Powerful slot-and-plug (“interface”) capabilities enable content sharing of all kinds, including data, sockets, D-Bus and much more. 
-Snaps use simple declarations for system access (for example network or GPIO), and IoT product developers control whether and how this access is granted. 
-Automatic roll-backs to a previous installed revision occur if a snap upgrade issue arises, with manual reversion as needed.
+ - Developers publish snaps in a snap store (the global snap store or a private Brand store) and take responsibility for their quality, making software distribution fast and free of procedural obstacles.
+ - Snaps are sandboxed from each other and from the OS, providing system stability and overall security. Powerful slot-and-plug (“interface”) capabilities enable content sharing of all kinds, including data, sockets, D-Bus and much more. 
+ - Snaps use simple declarations for system access (for example network or GPIO), and IoT product developers control whether and how this access is granted. 
+ - Automatic roll-backs to a previous installed revision occur if a snap upgrade issue arises, with manual reversion as needed.
 
 Snaps are created for device systems that need to have high availability, security and be very robust. They are specifically geared towards delivering applications and their updates in a transactional, minimal downtime manner to devices that don’t have a lot or any direct human interaction. Snaps also work well on all Ubuntu Classic flavours (Desktop and Server editions) alongside traditional Debian packages and bring a greater level of predictability, security and robustness to all of Ubuntu.
 
@@ -235,12 +256,24 @@ There is also the [Ubuntu Tutorials][ubuntu-tutorials] site that covers tutorial
 
 Snaps are different from other packaging systems and require a different way of thinking when working with them. One main concept is to provide a highly robust system in which applications and daemons are isolated from each other and any co-interaction is carefully mediated. Tighter security and a system always being in a known good state are the two most significant characteristics of a system based on snaps, such as Ubuntu Core.
 
-On an Ubuntu Core system, only snaps are used for installing new software. Debian packages are not supported and will not work on Ubuntu Core. This makes Ubuntu Core more robust than using a system like classic Ubuntu where both Debian and snap packages coexist. The tradeoff of this is a decrease in flexibility when working with Ubuntu Core since snap package confinement requires more attention to detail. Sharing resources or required external communication between your application and other parts of the system, requires an interface declaration.
-Interfaces are defined as an internal declaration within snapd. Many existing common interfaces exist with most being reusable by any snap.
+On an Ubuntu Core system, only snaps are used for installing new software.
+Debian packages are not supported and will not work on Ubuntu Core. This
+makes Ubuntu Core more robust than using a system like classic Ubuntu
+where both Debian and snap packages coexist. The tradeoff of this is a
+decrease in flexibility when working with Ubuntu Core since snap package
+confinement requires more attention to detail. Sharing resources or
+required external communication between your application and other parts
+of the system, requires an interface declaration.
 
-As an example of what an interface is used for, in order for a snap to gain access to the data in a user’s home directory, a snap needs to use the home interface.
+Interfaces are defined as an internal declaration within snapd. Many
+existing common interfaces exist with most being reusable by any snap.
 
-More information on the specifics of how snaps work and how they’re architected is available in the [snapcraft.io snap documentation][snapcraft.io-snap-documentation].
+As an example of what an interface is used for, in order for a snap to
+gain access to the data in a user’s home directory, a snap needs to use
+the home interface.
+
+More information on the specifics of how snaps work and how they’re
+architected is available in the [snapcraft.io snap documentation][snapcraft.io-snap-documentation].
 
 <!-- LINKS -->
 [snapcraft.io-snap-documentation]: https://docs.snapcraft.io/snaps/intro
