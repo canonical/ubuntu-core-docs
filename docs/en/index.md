@@ -43,11 +43,17 @@ under development and its beta is set to release at the same time as the
 
 ### Ubuntu Core high level features
 
- - Faster, more reliable, with stronger security guarantees for applications and users compared to a traditional Linux distribution.
- - Atomic transactional upgrades for applications and the OS itself, all of which can be rolled back if needed automating most maintenance and upgrades.
- - Separation of OS and application files into sets of distinct read-only images, to easily and securely add multiple applications and additional functionality onto a device.
- - Applications are distributed via snaps, a simple application packaging system that makes it easy for developers to build and distribute applications across many Linux distributions from a public or private app store.
- - Public/private key-based validation and authentication is built-in at every stage, proving that what runs is exactly what OS and app developers intend.
+ - Faster, more reliable, with stronger security guarantees for applications and
+   users compared to a traditional Linux distribution.
+ - Atomic transactional upgrades for applications and the OS itself, all of which
+   can be rolled back if needed automating most maintenance and upgrades.
+ - Separation of OS and application files into sets of distinct read-only images,
+   to easily and securely add multiple applications and additional functionality onto a device.
+ - Applications are distributed via snaps, a simple application packaging system
+   that makes it easy for developers to build and distribute applications across
+   many Linux distributions from a public or private app store.
+ - Public/private key-based validation and authentication is built-in at every
+   stage, proving that what runs is exactly what OS and app developers intend.
 
 
 ### Key Differences between Core and classic Ubuntu
@@ -100,18 +106,22 @@ The following table covers some scenarios when you’d want to use the global sn
 
 | Scenario                                                      | Global Snap Store | Private Brand Store |
 |---------------------------------------------------------------|-------------------|---------------------|
-| Distribute an application to anyone                           |                  |                     |
-| Distribute an application to certain clients via a paywall    |                  |                     |
-| Distribute an application to a specific set of client devices |                   |                    |
-| Canonical-hosted store solution                               |                  |                    |
-| Can be proxied and cached on local premises                   |                  |                    |
-| *Self-hosted store solution                                   |                   |                    |
+| Distribute an application to anyone                           |        ✓          |                     |
+| Distribute an application to certain clients via a paywall    |        ✓          |                     |
+| Distribute an application to a specific set of client devices |                   |          ✓          |
+| Canonical-hosted store solution                               |        ✓          |          ✓          |
+| Can be proxied and cached on local premises                   |        ✓          |          ✓          |
+| *Self-hosted store solution                                   |                   |          ✓          |
 
 * A self-hosted store solution is an upcoming feature.
 
-There are many other important things to know about the global snap store and Brand stores. These are covered in greater detail in later sections of this documentation.
+There are many other important things to know about the global snap store
+and Brand stores. These are covered in greater detail in later sections of
+this documentation.
 
-Follow this [guide][guide] to request a Brand store or [get in contact][get-in-contact] with someone from Canonical to learn more about getting your own Brand store.
+Follow this [guide][guide] to request a Brand store or
+[get in contact][get-in-contact] with someone from Canonical to learn more
+about getting your own Brand store.
 
 ## Platforms
 
@@ -127,46 +137,26 @@ The following table shows the reference hardware platforms that run
 Ubuntu Core and use snaps:
 
 
-Platform Name
-Hardware Description
-Raspberry Pi 2
-Broadcom BCM2836 4x ARM Cortex-A7 32-bit CPU
-1 GB of RAM
-No built-in flash storage
-Raspberry Pi 3
-Broadcom BCM2837 4x ARM Cortex-A53 64-bit CPU
-1 GB of RAM
-No built-in flash storage
-Raspberry Pi Compute Module 3
-Broadcom BCM2837 4x ARM Cortex-A53 64-bit CPU
-1 GB of RAM
-No built-in flash storage
-Orange Pi Zero
-ARM H2 Quad-core Cortex-A7 64-bit CPU
-256/512 MB of RAM
-No built-in flash storage
-Qualcomm Snapdragon 410c
-ARM Quad-core Cortex A53 64-bit CPU
-1 GB of RAM
-8 GB eMMC on-board flash storage
-Intel NUC
-Intel Core i3, i5, i7 64-bit CPU
-Up to 32 GB of RAM
-No built-in flash storage
-Samsung Artik 5
-ARM Dual/Quad Core Cortex-A7 64-bit CPU
-512 MB/1 GB of RAM
-4 GB eMMC on-board flash storage
-Samsung Artik 10
-ARM Quad Cortex-A15 + quad Cortex-A7 64-bit CPU
-2 GB of RAM
-16 GB eMMC on-board flash storage
-KVM
-Full x86 32/64 bit CPI software virtualization platform
+| Platform Name         | Hardware Description                         |
+|-----------------------|----------------------------------------------|
+| Raspberry Pi 2        | ARM H2 Quad-core Cortex-A7 64-bit CPU <br> 256/512 MB of RAM <br> No built-in flash storage |
+| Raspberry Pi 3         | Broadcom BCM2837 4x ARM Cortex-A53 64-bit CPU<br>1 GB of RAM<br>No built-in flash storage|
+| Raspberry Pi Compute Module 3 | Broadcom BCM2837 4x ARM Cortex-A53 64-bit CPU<br>1 GB of RAM<br>No built-in flash storage |
+| Orange Pi Zero         | ARM H2 Quad-core Cortex-A7 64-bit CPU<br>256/512 MB of RAM<br>No built-in flash storage |
+| Qualcomm Snapdragon 410c | ARM Quad-core Cortex A53 64-bit CPU<br>1 GB of RAM<br>8 GB eMMC on-board flash storage |
+| Intel NUC             | Intel Core i3, i5, i7 64-bit CPU<br>Up to 32 GB of RAM<br>No built-in flash storage |
+| Samsung Artik 5       | ARM Dual/Quad Core Cortex-A7 64-bit CPU<br>512 MB/1 GB of RAM<br>4 GB eMMC on-board flash storage |
+| Samsung Artik 10      | ARM Quad Cortex-A15 + quad Cortex-A7 64-bit CPU<br>2 GB of RAM<br>16 GB eMMC on-board flash storage |
+| KVM                   | Full x86 32/64 bit CPI software virtualization platform|
 
-There are official images produced by Canonical for these specific hardware platforms. Also, Ubuntu community members work with and produce images for other platforms and CPUs. Refer to these individual projects for more information on what other unofficial images might work for your use cases.
+There are official images produced by Canonical for these specific hardware
+platforms. Also, Ubuntu community members work with and produce images for
+other platforms and CPUs. Refer to these individual projects for more information
+on what other unofficial images might work for your use cases.
 
-For more information on getting started developing your own Ubuntu Core image and configuring a useful developer setup, [refer to this documentation][refer-to-this-documentation].
+For more information on getting started developing your own Ubuntu Core image and
+configuring a useful developer setup,
+[refer to this documentation][refer-to-this-documentation].
 
 ## Assertions
 
