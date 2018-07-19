@@ -98,32 +98,14 @@ A Brand store can be configured such that it can inherit all snaps from the glob
 
 The following table covers some scenarios when you’d want to use the global snap store versus a private Brand store.
 
-
-Scenario
-Global Snap Store
-Private Brand Store
-Distribute an application to anyone
-✔
-
-
-Distribute an application to certain clients via a paywall
-✔
-
-
-Distribute an application to a specific set of client devices
-
-
-✔
-Canonical-hosted store solution
-✔
-✔
-Can be proxied and cached on local premises
-✔
-✔
-*Self-hosted store solution
-
-
-✔
+| Scenario                                                      | Global Snap Store | Private Brand Store |
+|---------------------------------------------------------------|-------------------|---------------------|
+| Distribute an application to anyone                           |                  |                     |
+| Distribute an application to certain clients via a paywall    |                  |                     |
+| Distribute an application to a specific set of client devices |                   |                    |
+| Canonical-hosted store solution                               |                  |                    |
+| Can be proxied and cached on local premises                   |                  |                    |
+| *Self-hosted store solution                                   |                   |                    |
 
 * A self-hosted store solution is an upcoming feature.
 
@@ -133,9 +115,16 @@ Follow this [guide][guide] to request a Brand store or [get in contact][get-in-c
 
 ## Platforms
 
-There are several hardware platforms that run Ubuntu Core with snaps. Each has a pre-built reference image that you are able to get started with right now. This section describes each and points you to more information on getting started with these. These reference platforms/Ubuntu Core images are meant to get you started evaluating and working with Ubuntu Core as quickly and inexpensively as possible. If a particular reference platform matches your own use cases, you may take these Canonical-provided images and customize them for your purposes.
+There are several hardware platforms that run Ubuntu Core with snaps. Each has
+a pre-built reference image that you are able to get started with right now.
+This section describes each and points you to more information on getting started
+with these. These reference platforms/Ubuntu Core images are meant to get you
+started evaluating and working with Ubuntu Core as quickly and inexpensively as
+possible. If a particular reference platform matches your own use cases, you may
+take these Canonical-provided images and customize them for your purposes.
 
-The following table shows the reference hardware platforms that run Ubuntu Core and use snaps:
+The following table shows the reference hardware platforms that run
+Ubuntu Core and use snaps:
 
 
 Platform Name
