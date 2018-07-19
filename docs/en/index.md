@@ -54,33 +54,13 @@ under development and its beta is set to release at the same time as the
 
 
 
-
-Core
-classic (server edition)
-Minimum requirements
-500 MHz single core processor
-256 MB RAM
-512 MB storage
-1 GHz dual core processor
-512 MB RAM
-1.5 GB storage
-Graphical UI
-None by default (can utilize Wayland or Mir)
-Xorg and GNOME Shell or Wayland and GNOME Shell
-Package system
-snaps
-Debs & snaps
-Application security
-Isolation via AppArmor and Seccomp
-Traditional user and group permissions (for Debs);
-Strict isolation via AppArmor and Seccomp for snaps;
-Transitional security with classic confinement for snaps
-Updates
-Pushed from the Global (public) store & optionally a Brand (private) store;
-All updates are transactional
-Traditional apt repository updates;
-Also from public store & optionally Brand store for snaps;
-Updates for snaps are transactional
+|                      | Core                                                                                                     | classic                                                                                                                                                        |
+|----------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Minimum requirements | 500 MHz single core processor256 MB RAM512 MB storage                                                    | 1 GHz dual core processor512 MB RAM1.5 GB storage                                                                                                              |
+| Graphical UI         | None by default (can utilize Wayland or Mir)                                                             | Xorg and GNOME Shell or Wayland and GNOME Shell                                                                                                                |
+| Package system       | snaps                                                                                                    | Debs & snaps                                                                                                                                                   |
+| Application security | Isolation via AppArmor and Seccomp                                                                       | Traditional user and group permissions (for Debs);Strict isolation via AppArmor and Seccomp for snaps;Transitional security with classic confinement for snaps |
+| Updates              | Pushed from the Global (public) store & optionally a Brand (private) store;All updates are transactional | Traditional apt repository updates;Also from public store & optionally Brand store for snaps;Updates for snaps are transactional                               |
 
 
 ## Snaps
