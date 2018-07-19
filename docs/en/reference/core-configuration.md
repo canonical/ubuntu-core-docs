@@ -1,9 +1,9 @@
 ---
-title: Ubuntu Core Configuration
+title: Ubuntu Core configuration
 table_of_contents: true
 ---
 
-# Ubuntu Core Configuration
+# Ubuntu Core configuration
 
 The core snap offers a few configuration options which allow customization of
 how the system works.
@@ -11,16 +11,15 @@ how the system works.
 A configuration option of the core snap can be set via the *snap set* command
 as for any snap, e.g.:
 
-```
- $ snap set core option=value
+```bash
+ snap set core option=value
 ```
 
 The current value of an option can be retrieved via the *snap get* command,
 e.g.:
 
-```
- $ snap get core option
- value
+```bash
+ snap get core option
 ```
 
 The following configuration options are currently supported:
@@ -47,8 +46,8 @@ The configuration option accepts the following values:
 
 Example:
 
-```
- $ snap set core service.ssh.disable=true
+```bash
+snap set core service.ssh.disable=true
 ```
 
 ## system.power-key-action
@@ -71,6 +70,6 @@ The configuration option accepts the following values:
 
 Example:
 
-```
- $ snap set core system.power-key-action=reboot
+```bash
+snap set core system.power-key-action=reboot
 ```
