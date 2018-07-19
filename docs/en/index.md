@@ -113,7 +113,7 @@ The following table covers some scenarios when you’d want to use the global sn
 | Can be proxied and cached on local premises                   |        ✓          |          ✓          |
 | *Self-hosted store solution                                   |                   |          ✓          |
 
-* A self-hosted store solution is an upcoming feature.
+(* A self-hosted store solution is an upcoming feature).
 
 There are many other important things to know about the global snap store
 and Brand stores. These are covered in greater detail in later sections of
