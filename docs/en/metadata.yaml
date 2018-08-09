@@ -1,0 +1,151 @@
+navigation:
+  - title: Introduction
+
+    children:
+      - title: What is Ubuntu Core?
+        location: index.md
+
+      - title: Security and sandboxing
+        location: guides/intro/security.md
+
+      - title: Store and developer accounts
+        location: guides/intro/store.md
+
+  - title: Build a device
+
+    children:
+
+      - title: Ubuntu Core images
+        location: guides/build-device/image-building.md
+
+      - title: Board enablement overview
+        location: guides/build-device/board-enablement.md
+
+      - title: Gadget snaps
+        location: guides/build-device/gadget.md
+
+      - title: Configuration and hooks
+        location: guides/build-device/config-hooks.md
+
+      - title: Interfaces
+        location: guides/build-device/interfaces.md
+
+  - title: Build a stack
+
+    children:
+      - title: Introduction
+        location: stacks/index.md
+
+  - title: Manage a device
+
+    children:
+
+      - title: System User
+        location: guides/manage-devices/index.md
+      - title: Audio management
+        location: stacks/audio/index.md
+      - title: Bluetooth management
+        location: stacks/bluetooth/index.md
+      - title: Disk management
+        location: stacks/disk/index.md
+      - title: Network management & services
+        location: stacks/network/index.md
+      - title: Power management
+        location: stacks/power/index.md
+      - title: TPM
+        location: stacks/tpm/index.md
+
+  - title: Get a store
+
+    children:
+      - title: Introduction
+        location: build-store/index.md
+
+        children:
+          - title: Request a brand store
+            location: build-store/create.md
+
+          - title: Client setup
+            location: build-store/client-setup.md
+
+      - title: Manage
+        location: build-store/manage.md
+
+        children:
+          - title: Settings
+            location: build-store/settings.md
+
+          - title: Reviews
+            location: build-store/reviews.md
+
+          - title: Reviewer tools
+            location: build-store/reviewer-tools.md
+
+      - title: Develop
+        location: build-store/develop.md
+
+        children:
+          - title: Upload snaps
+            location: build-store/upload-snaps.md
+
+      - title: Report an issue
+        location: build-store/issues.md
+
+  - title: Go to production
+
+    children:
+      - title: Introduction
+        location: guides/go-to-production/intro.md
+
+      - title: Simple - Ubuntu store
+        location: guides/go-to-production/simple.md
+
+      - title: Advanced - Brand store
+        location: guides/go-to-production/advanced.md
+
+  - title: Reference
+
+    children:
+      - title: Assertions
+        location: reference/assertions.md
+
+        children:
+          - title: account
+            location: reference/assertions/account.md
+          - title: account-key
+            location: reference/assertions/account-key.md
+          - title: model
+            location: reference/assertions/model.md
+          - title: serial
+            location: reference/assertions/serial.md
+          - title: snap-declaration
+            location: reference/assertions/snap-declaration.md
+          - title: snap-build
+            location: reference/assertions/snap-build.md
+          - title: snap-revision
+            location: reference/assertions/snap-revision.md
+          - title: system-user
+            location: reference/assertions/system-user.md
+          - title: validation
+            location: reference/assertions/validation.md
+
+      - title: Gadget snap format
+        location: reference/gadget.md
+
+      - title: Core interfaces reference
+        location: reference/interfaces/index.md
+
+      - title: Automatic refreshes
+        location: reference/automatic-refreshes.md
+
+      - title: Ubuntu Core REST API
+        location: reference/rest.md
+
+      - title: Ubuntu Core Configuration
+        location: reference/core-configuration.md
+
+  - title: Build snaps
+    location: http://snapcraft.io
+
+  - title: Report a docs issue
+    location: https://bugs.launchpad.net/snappy/+bugs?field.tag=snap-docs
