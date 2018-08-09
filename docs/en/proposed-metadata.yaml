@@ -1,0 +1,223 @@
+navigation:
+  - title: Getting started
+
+    children:
+      - title: Introduction
+        location: index.md
+
+        children:
+          - title: What is the Ubuntu platform
+            location: what-is-ubuntu-platform.md
+
+          - title: Snap highlights
+            location: snap-highlights.md
+
+          - title: Introduction to stores
+            location: intro-to-stores.md
+
+          - title: Platforms
+            location: platforms.md
+
+          - title: Assertions
+            location: assertions.md
+
+          - title: Resources
+            location: resources.md
+
+      - title: Introduction to snap architecture
+        location: intro-snaps-arch.md
+
+        children:
+          - title: What are snaps
+            location: what-are-snaps.md
+
+          - title: Why you want to use snaps
+            location: why-use-snaps.md
+
+  - title: Developer
+    children:
+
+      - title: Building a snap for confinement
+        location: build-snap-for-confinement.md
+
+        children:
+          - title: Run time mount view
+            location: run-time-mount-view.md
+
+          - title: Snap variables
+            location: snap-variables.md
+
+          - title: Snap paths
+            location: snap-paths.md
+
+      - title: Tools
+        location: tools.md
+
+        children:
+          - title: snapcraft
+            location: snapcraft.md
+
+          - title: systemd related
+            location: systemd-related.md
+
+          - title: journalctl
+            location: journalctl.md
+
+          - title: ubuntu-image
+            location: ubuntu-image.md
+
+          - title: make-system-user
+            location: make-system-user.md
+
+          - title: screen
+            location: screen.md
+
+      - title: Continuous Integration (CI)
+        location: continuous-integration.md
+
+      - title: Keys
+        location: keys.md
+
+        children:
+          - title: Introduction to keys
+            location: intro-to-keys.md
+
+          - title: Brand SSO account keys
+            location: brand-sso-account-keys.md
+
+          - title: Generating keys
+            location: generating-keys.md
+
+          - title: Registering keys
+            location: registering-keys.md
+
+          - title: Backing up/restoring keys
+            location: backingup-restoring-keys.md
+
+          - title: Signing an assertion with a key
+            location: signing-an-assertion.md
+
+      - title: Assertions
+        location: assertions.md
+
+      - title: Resources
+        location: resources.md
+        # Add a page that links to upstream developer resources on snapcraft.io
+        # for working with snaps and Core/Classic
+
+  - title: Images
+    children:
+
+      - title: Building a Core Image
+        location: build-core-image.md
+
+        children:
+          - title: Introduction to Core image customization
+            location: intro-core-image-customization.md
+
+          - title: Steps to build an image
+            location: steps-build-image.md
+
+          - title: Post image build customization
+            location: post-image-build-customization.md
+
+          - title: Flashing image
+            location: flashing-image.md
+
+          - title: Booting and testing an image
+            location: booting-testing-image.md
+
+      - title: Seeding a Classic image
+        location: seed-classic-image.md
+
+        children:
+          - title: Introduction to Classic image customization
+            location: intro-classic-image-customization.md
+
+  - title: Brand
+    children:
+      - title: Introduction to Brands
+        location: intro-brands.md
+
+      - title: Serial Vault
+        location: serial-vault.md
+
+      - title: Store API Reference
+        location: store-api-ref.md
+
+  - title: Management
+    children:
+
+      - title: Introduction to device management
+        location: intro-device-management.md
+
+      - title: Refresh scheduling
+        location: refresh-scheduling.md
+
+        children:
+          - title: What is refresh scheduling
+            location: refresh-scheduling.md
+            # Add examples
+
+      - title: Refresh control
+        location: refresh-control.md
+
+        children:
+          - title: What is refresh control
+            location: refresh-control.md
+            # Add examples
+
+      - title: snapd-control interface and snapd REST API
+        location: snapd-control-rest-api.md
+
+      - title: SSH/terminal access
+        location: ssh-terminal-access.md
+
+      - title: Emergency repair
+        location: emergency-repair.md
+
+      - title: System user import from USB drive
+        location: system-user-important-usb.md
+
+      - title: Serial console
+        location: serial-console.md
+
+      - title: journalctl
+        location: journalctl.md
+        # See also tools guide on this topic
+
+  - title: System Variants
+    children:
+
+      - title: IoT base
+        location: iot-base.md
+
+      - title: ONLP base
+        location: onlp-base.md
+
+  - title: Reference
+    children:
+
+      - title: Core REST API reference
+        location: core-reference.md
+
+      - title: Store REST API reference
+        location: store-reference.md
+
+  - title: Certification
+    children:
+
+      - title: Introduction to certification
+        location: intro-certification.md
+
+      - title: How to get your image certified
+        location: how-to-certify-image.md
+
+  - title: Support
+    children:
+
+      - title: Support
+        location: support.md
+
+      - title: Commercial contact
+        location: commercial-contact.md
