@@ -7,7 +7,7 @@
     "build-docs": "documentation-builder --base-directory docs --output-path templates --output-media-path 'static/media/core' --media-url '/static/media/core' --tag-manager-code 'GTM-K92JCQ' --search-domain 'docs.ubuntu.com/core' --search-url '/search' --search-placeholder 'Search Ubuntu Core docs' --no-link-extensions",
     "build": "yarn run build-repo && yarn run build-docs",
     "test": "",
-    "serve": "cd dist && FLASK_DEBUG=true FLASK_APP=app.py flask run -h 0.0.0.0 -p $PORT"
+    "serve": "./entrypoint 0.0.0.0:$PORT"
   },
   "dependencies": {
     "watch-cli": "^0.2.2"
