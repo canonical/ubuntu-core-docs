@@ -1,0 +1,3 @@
+~^/(core/?|en/?|core/en)?$ /core/en/;
+/core/en/guides/build-device/assertions /core/en/reference/assertions;
+
