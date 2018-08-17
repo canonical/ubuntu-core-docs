@@ -83,3 +83,4 @@ docs/en/stacks/utilities/*
 !docs/en/stacks/utilities/index.md
 /templates/
 static/
+build/
