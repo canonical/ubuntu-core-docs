@@ -51,7 +51,7 @@ Your keys are located within *~/.snap/gnupg*, and it's a good idea to keep a bac
 
 ### 2. Register the key with the store
 
-With the key created, you now need to register it with the store, effectively linking it to your account. During this step, you will be asked to select an existing key (if you have more than one) and login with your store account credentials:
+With the key created, you now need to register it with the store, effectively linking it to your account. During this step, you will be asked to select an existing key (if you have more than one) and log in with your store account credentials:
 
 ```
 snapcraft register-key
