@@ -66,7 +66,7 @@ An Ubuntu Core image is composed of at least three snaps installed together: OS,
 *   The OS snap contains *Ubuntu Core* itself and will be downloaded during image creation.
 *   The kernel and gadget snaps are layers to personalise or enable your target device. They can be locally built or pulled from the store if they already exist.
 
-The composition of your image is described through a "model assertion", a JSON document signed with your key.
+A *model assertion*, defined within a JSON-formatted file and consumed by the build process, is used to configure your image.
 
 ### 1. Create a model assertion
 
@@ -101,14 +101,14 @@ The following is an example model assertion that builds a Core 18 image for a Ra
 *   `timestamp` is a valid timestamp you need to generate using the `date -Iseconds --utc` command. The timestamp must be later than when the key that signs the model was registered.
 *   `required-snaps`: you can optionally add a list of required snaps that will be unremovable and will be downloaded from the store or locally if they exist in the current directory
 
-To alternatively build an Ubuntu Core 16 image, replace the `build`, `gadget` and `kernel` lines with the following:
+To alternatively build an Ubuntu Core 16 image, replace the `base`, `gadget` and `kernel` lines with the following:
 
 ```json
   "gadget": "pi3",
   "kernel": "pi2-kernel",
 ```
 
-**Note**: There are additional requirements when the image targets a Brand Store. Use your Brand SSO Account's account-id in the the `authority-id` and `brand-id` fields. Also add a `store` key whose value is your Brand `store-id`. 
+**Note**: There are additional requirements when the image targets a Brand Store. Use your Brand SSO Account's account-id in the `authority-id` and `brand-id` fields. Also add a `store` key whose value is your Brand `store-id`. 
 
 ### 2. Sign your model assertion
 
