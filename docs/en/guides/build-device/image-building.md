@@ -74,7 +74,7 @@ To build an image, it is required you have a signed model assertion.
 
 ### Example
 
-The following is an example model assertion that builds a Core 18 image for a Raspberry Pi 3 (or Compute Module 3) board. The JSON file is named `pi3-model.json`:
+The following is an example model assertion that builds a Core 18 image for a Raspberry Pi 3 board. The JSON file is named `pi3-model.json`:
 
 ```json
 {
@@ -85,8 +85,8 @@ The following is an example model assertion that builds a Core 18 image for a Ra
   "model": "my-pi3",
   "architecture": "armhf",
   "base": "core18",
-  "gadget": "pi=18-cm3",
-  "kernel": "pi-kernel=18-cm3",
+  "gadget": "pi=18-pi3",
+  "kernel": "pi-kernel=18-pi3",
   "timestamp": "<timestamp>"
 }
 ```
