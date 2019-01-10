@@ -38,7 +38,7 @@ snapcraft create-key foo
 
 The *create-key* command will ask you for a password to protect the key.
 
-Generating the key will take some time because it's creating a 4096 bit long key that needs some entropy to complete. To speed up the process, you can install the `rng-tools` package beforehand.
+Generating the key will take some time because it's creating a 4096 bit long key that needs some entropy to complete. Moving the mouse or typing can help to speed up the process, as will installing the `rng-tools` package beforehand.
 
 Now, you can list your keys with:
 
