@@ -5,7 +5,7 @@ table_of_contents: true
 
 # Ubuntu Core images
 
-For [supported devices](https://developer.ubuntu.com/core/get-started), there are official Ubuntu Core images for both [Core 18](http://cdimage.ubuntu.com/ubuntu-core/18/stable/) and [Core 16](http://cdimage.ubuntu.com/ubuntu-core/18/stable/).
+For [supported devices](https://developer.ubuntu.com/core/get-started), there are official Ubuntu Core images for both [Core 18](http://cdimage.ubuntu.com/ubuntu-core/18/stable/) and [Core 16](http://cdimage.ubuntu.com/ubuntu-core/16/stable/).
 
 ## Build a custom Ubuntu Core image
 
