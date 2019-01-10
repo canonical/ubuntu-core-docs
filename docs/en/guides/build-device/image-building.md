@@ -97,7 +97,7 @@ The following is an example model assertion that builds a Core 18 image for a Ra
 *   `architecture`: the architecture of the device you are building the image for.
 *   `base`: the runtime environment to use.
 *   `gadget` and `kernel` refer to snaps already existing in the store or in the current directory.
-*   `=18-cm3`, appended to *gadget* and *kernel*, defines the channel to track. For the universal *pi* snaps, these denote channels for specific models.
+*   `=18-pi3`, appended to *gadget* and *kernel*, defines the channel to track. For the universal *pi* snaps, these denote channels for specific models.
 *   `timestamp` is a valid timestamp you need to generate using the `date -Iseconds --utc` command. The timestamp must be later than when the key that signs the model was registered.
 *   `required-snaps`: you can optionally add a list of required snaps that will be unremovable and will be downloaded from the store or locally if they exist in the current directory
 
