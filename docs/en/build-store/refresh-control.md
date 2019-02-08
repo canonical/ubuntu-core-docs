@@ -1,16 +1,16 @@
 ---
-title: Validations and refresh control
+title: Validations and Refresh Control
 table_of_contents: true
 ---
 
-# Validations and refresh control
+# Validations and Refresh Control
 
-## What is refresh control?
+## What is Refresh Control?
 
 _“🎵 baby don't update me, don't update me no more 🎵”_
 
 
-Refresh control is a mechanism for controlling the revisions of a snap that will be offered as updates  to a device. A *gating snap* can control the revisions of a *gated snap* so that, if the *gating snap* is installed on a device, only revisions of the *gated snap* which have been validated by the publisher of the *gating snap* can be installed or refreshed to.
+Refresh Control is a mechanism for controlling the revisions of a snap that will be offered as updates  to a device. A *gating snap* can control the revisions of a *gated snap* so that, if the *gating snap* is installed on a device, only revisions of the *gated snap* which have been validated by the publisher of the *gating snap* can be installed or refreshed to.
 
 A gating snap can control revisions of one or more gated snaps. Similarly, a gated snap can require verification from more than one gating snap, and a particular revision of the gated snap will only be installable or refreshable to, if it satisfies the constraints of all its gating snaps. However, because it can be confusing to device operators, use of multiple gating snaps to control one specific gated snap is not recommended. The best practice is to use a single gating snap for each gated snap.
 
@@ -24,8 +24,7 @@ Establishing the relationship between a gating and gated snap is required only o
 Ask a store reviewer to edit the package declaration for the gating snap on the [snap's page][1]. The reviewer should:
 
 * Click on "review capabilities"
-* Under "refresh control" put a json list with the snap IDs of the snaps you want gated: \["xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", ...\]
-* The list can, of course, contain more than one snap ID, in which case this gating snap will be able to control updates for all the gated snaps.
+* Under "Refresh Control" put a json list with the snap IDs of one or more snaps you want gated: \["xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", ...\]. Keep in mind this gating snap will be able to control updates for all the gated snaps.
 
 ## Publisher setup
 
