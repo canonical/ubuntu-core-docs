@@ -21,7 +21,7 @@ This is especially useful for device manufacturers to mediate releases of the *c
 
 Establishing the relationship between a gating and gated snap is required only once and can only be performed by a user with reviewer permission for the gating snap's store.
 
-Ask a store administrator/reviewer to edit the package declaration for the gating snap on the [snap's page][1]. The administrator should:
+Ask a store reviewer to edit the package declaration for the gating snap on the [snap's page][1]. The reviewer should:
 
 * Click on "review capabilities"
 * Under "refresh control" put a json list with the snap IDs of the snaps you want gated: \["xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", ...\]
