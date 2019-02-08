@@ -26,7 +26,7 @@ Ask a store reviewer to edit the package declaration for the gating snap on the 
 * Click on "review capabilities"
 * Under "Refresh Control" put a json list with the snap IDs of one or more snaps you want gated: \["xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", ...\]. Keep in mind this gating snap will be able to control updates for all the gated snaps.
 
-## Publisher setup
+## Gating snap publisher's signing key setup
 
 Since gating involves pushing [`validation` assertions][2] which are signed by the publisher indicating their authorization to restrict updates of snaps, some GPG keys must be generated and published to the store. If a store key already exists, it can be used. If not, one must be generated and registered.
 
@@ -54,9 +54,9 @@ Since gating involves pushing [`validation` assertions][2] which are signed by t
     Done. The key "my-key" (mfomTtPB1cE3IFs51NtdnFoPlQwJxFgxOMU_q0mPkH7M2gKB-4m28d99XrVjA53B) may be used to sign your assertions.
     ```
 
-## Publishing workflow, examples
+## Example gating workflows
 
-At this point, the developer can issue validations asserting which revision of the gated snap is allowed to be installed when the gating snap is installed on a device. For example, specify that if the roadmr-gating snap is installed, the roadmr-gated snap can only be installed or refreshed to revision 2.
+At this point, the publisher can issue validations asserting which revision of the gated snap is allowed to be installed when the gating snap is installed on a device. For example, specify that if the roadmr-gating snap is installed, the roadmr-gated snap can only be installed or refreshed to revision 2.
 
 ```text
 $ snapcraft validate roadmr-gating roadmr-gated=2 --key-name my-key
