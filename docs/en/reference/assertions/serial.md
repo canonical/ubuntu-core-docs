@@ -46,7 +46,7 @@ controlled fashion, but at any given time there is only one device key per devic
 
 The (optional) body will contain device details in YAML format.
 
-This example was extracted from a kvm Ubuntu Core instance with `sudo known serial`:
+This example was extracted from a kvm Ubuntu Core instance with `sudo snap known serial`:
 
 ```text
 type: serial
