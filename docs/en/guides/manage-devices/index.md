@@ -17,7 +17,8 @@ Whether you can add a system user to an unmanaged system depends on the model as
 
 ## Model assertions that allow adding a system user
 
-The model includes store account IDs. You can find yours listed as `Snap account-id` on the [Your account details](https://dashboard.snapcraft.io/dev/account/) page on [https://dashboard.snapcraft.io](https://dashboard.snapcraft.io).
+The model includes store account IDs. Yours is listed alongside `Snap account-id` on [Your account details](https://dashboard.snapcraft.io/dev/account/) page at [https://dashboard.snapcraft.io](https://dashboard.snapcraft.io).
+
 
 ### The simplest case is where you did everything:
 
