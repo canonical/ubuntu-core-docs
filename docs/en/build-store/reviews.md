@@ -33,7 +33,7 @@ The role of a reviewer is to periodically:
 
 Snapd, the daemon that powers snaps on a system, uses snap declarations to check for installation, interface connection and interface auto-connection. Snap declarations are text files generated and signed by the store that ensure communication of policies and ownership between stores and clients.
 
-In essence, a base declaration defines all the available interfaces and when they are installable, connectable or auto-connectable (see below for details). The store uses the base declaration to prompt for manual review or not. A reviewer may override the base declaration with a snap declaration and the store provides text areas in a form (the contents should be JSON and can be generated with reviewers tools). The snap declaration applies to all revisions for that snap.
+In essence, a base declaration defines all the available interfaces and when they are installable, connectable or auto-connectable (see below for details). The store uses the base declaration to prompt for manual review or not. A reviewer may override the base declaration with a snap declaration. The store provides a form that allows enabling/disabling (auto-)connection of the declared interfaces that will update the declaration accordingly. The snap declaration applies to all revisions for that snap.
 
 Importantly, if a snap declaration is specified, it overrides the base declaration constraints (eg, installation, connection, auto-connection) and the base declaration is not consulted.
 
