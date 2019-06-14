@@ -45,7 +45,6 @@ navigation:
       - title: Refresh control
         location: build-store/refresh-control.md
       - title: Audio management
-      - title: Audio management
         location: stacks/audio/index.md
       - title: Bluetooth management
         location: stacks/bluetooth/index.md
