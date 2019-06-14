@@ -43,7 +43,7 @@ navigation:
       - title: System user
         location: guides/manage-devices/index.md
       - title: Refresh control
-        location: guides/build-store/refresh-control.md
+        location: build-store/refresh-control.md
       - title: Audio management
       - title: Audio management
         location: stacks/audio/index.md
