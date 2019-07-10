@@ -12,14 +12,13 @@ running `snap download <snap-name>`.
 The format is as follows:
 
 ```text
-type:              snap-build
+type:              snap-revision
 authority-id:      <authority account id>
-revision:          <int>
 snap-sha3-384:     <sha3-384 digest as url-safe unpadded base64>
+developer-id:      <developer account id>
 snap-id:           <snap-id>
-snap-size:         <int>
 snap-revision:     <int>
-developer-id:      <developer id>
+snap-size:         <int>
 timestamp:         <UTC datetime>
 sign-key-sha3-384: <key id> # Encoded key id of signing key
 
