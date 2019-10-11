@@ -30,12 +30,6 @@ navigation:
       - title: Interfaces
         location: guides/build-device/interfaces.md
 
-  - title: Build a stack
-
-    children:
-      - title: Introduction
-        location: stacks/index.md
-
   - title: Manage a device
 
     children:
