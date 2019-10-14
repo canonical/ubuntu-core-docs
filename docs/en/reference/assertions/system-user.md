@@ -34,7 +34,7 @@ The index is the tuple <`brand-id`, `email`>. `series` is as specified by the
 model assertion. These assertions must be signed by the brand.
 
 The `password` header must be encoded and salted, following the format
-specified by [crypt](http://manpages.ubuntu.com/manpages/zesty/man3/crypt.3.html)(3).
+specified by [crypt](http://manpages.ubuntu.com/manpages/bionic/en/man1/crypt.1.html)(3).
 The `until` header is in this case required.
 
 The simple addition of such assertions to a device assertion database should not
