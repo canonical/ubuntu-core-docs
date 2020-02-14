@@ -13,6 +13,24 @@ Ubuntu Core is Ubuntu for IoT and embedded environments, optimised for security 
 reliable updates. It's easy to deploy, tamper-resistant, and hardened against
 corruption.
 
+Its read-only root filesystem is built from the same packages used to build the
+wider set of Ubuntu distributions, and only differs in the way packages are
+delivered, and crucially, updated. This is all handled by snaps, a secure,
+confined, dependency-free, cross-platform Linux packaging system.
+
+Snap packages ensure there is always a clean separation between the base system
+and whatever applications need to be installed, as well as isolation between
+each and every application, their data, and even application version data.
+
+Updates are transactional, which means they’re either 100% successful or
+they’re not installed. If they're not installed, they leave no trace of any
+failure other than log details. This means the system remains fully operational
+and in a continuously well-defined state during both application and system
+updates. The system can also recover or revert to previous states if necessary, 
+even if a system fails to boot. Unlike alternative or more traditional
+package managers, a failed update never leaves the system in an unpredictable
+state.
+
 Ubuntu Core is engineered to meet the precise requirements of IoT devices. It
 runs an large range of hardware, including Raspberry Pi, Intel NUC, Qualcomm
 Snapdragon 410c and even a KVM. Features include:
@@ -28,25 +46,23 @@ Snapdragon 410c and even a KVM. Features include:
   to distribute. Public/private key validation ensures what's running is
 exactly what's intended to run
 
-> A snap is a bundle of an app and its dependencies that's confined from the rest
-of the system. They work, without modification, across many different Linux
-distributions. 
-
 Designed from the ground-up to solve the complex problems associated with
 deploying, running and updating critical software, **Ubuntu Core** makes updates
 automatics, reliable, secure and transparent whilst still offering a broad and
 carefully selected level of control and customisation over an update’s
 deployment.
 
-#### How Ubuntu Core compares to Ubuntu
+#### Ubuntu Core and Ubuntu
 
-Both Ubuntu Core and Ubuntu are built from the same foundations, but they
-differ in the way those foundations are packaged and deployed.
+Ubuntu is widely known as the Ubuntu Desktop and Ubuntu Server Linux
+distributions, as well as Ubuntu Cloud which is optimised and certified for
+most major clouds. Ubuntu Core and Ubuntu are built from the same foundations,
+but they differ in the way those foundations are packaged and deployed.
 
 | **Comparison** | Ubuntu Core | Ubuntu |
 |--|--|--|
 | Minimum requirements | 500Mhz single-core CPU <br /> 256MB RAM, 512MB storage | 1GHz dual-core CPU <br /> 512MB RAM, 1.5GB storage | 
-| Package system       | Snaps, with autonmous updates via either the global store or a private brand store | Debs and snaps, with traditional update mechanics and organisation |
+| Packaging       | Snaps, with autonomous updates via either the global store or a private brand store | Debs and snaps, with traditional update mechanics and organisation |
 | App security         | Confinement via AppArmor / Seccomp | No system-wide confinement for deb packages |
-| Graphical UI         | None by default (can utilize Wayland or Mir)	| Xorg/GNOME Shell or Wayland/GNOME Shell |
+| Graphical UI         | None by default (Wayland or Mir are options)	| Xorg/GNOME Shell or Wayland/GNOME Shell |
 
