@@ -64,5 +64,4 @@ but they differ in the way those foundations are packaged and deployed.
 | Minimum requirements | 500Mhz single-core CPU <br /> 256MB RAM, 512MB storage | 1GHz dual-core CPU <br /> 512MB RAM, 1.5GB storage | 
 | Packaging       | Snaps, with autonomous updates via either the global store or a private brand store | Debs and snaps, with traditional update mechanics and organisation |
 | App security         | Confinement via AppArmor / Seccomp | No system-wide confinement for deb packages |
-| Graphical UI         | None by default (Wayland or Mir are options)	| X.org/GNOME Shell or Wayland/GNOME Shell |
-
+| Graphical UI         | None by default (Wayland or Mir are options)	| X.Org/GNOME or Wayland/GNOME |
