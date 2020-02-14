@@ -37,10 +37,10 @@ Snapdragon 410c and even a KVM. Features include:
 
 - **simple, consistent installation and deployment**: Ubuntu Core is installed
   via an immutable image, which can be either installed or built specifically
-  for your platform and application.
+  for your platform and application
 - **a read-only filesystem**: apps run in isolation from each other and access
   to system resources is only granted with explicit permissions
-- **transactional updates**: autonomous and impregnable, updates can withstand
+- **transactional updates**: signed, autonomous and atomic, updates can withstand
   unpredictable hardware and network conditions, even to the operating system
 - **snap-based, security first**: snaps are secure, easy to build, and painless
   to distribute. Public/private key validation ensures what's running is
