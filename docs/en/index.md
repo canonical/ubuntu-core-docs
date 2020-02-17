@@ -48,16 +48,16 @@ exactly what's intended to run
 
 Designed from the ground-up to solve the complex problems associated with
 deploying, running and updating critical software, **Ubuntu Core** makes updates
-automatics, reliable, secure and transparent whilst still offering a broad and
+automatic, reliable, secure and transparent whilst still offering a broad and
 carefully selected level of control and customisation over an update’s
 deployment.
 
 #### Ubuntu Core and Ubuntu
 
-Ubuntu is widely known as the Ubuntu Desktop and Ubuntu Server Linux
-distributions, as well as Ubuntu Cloud which is optimised and certified for
-most major clouds. Ubuntu Core and Ubuntu are built from the same foundations,
-but they differ in the way those foundations are packaged and deployed.
+The Ubuntu family of Linux distributions includes Ubuntu Desktop and Ubuntu
+Server, as well as Ubuntu Cloud which is optimised and certified for most major
+clouds. Ubuntu Core is built from the same foundations but differs in the way
+those foundations are packaged and deployed.
 
 | **Comparison** | Ubuntu Core | Ubuntu |
 |--|--|--|
