@@ -1,4 +1,8 @@
-## Snaps in Ubuntu Core
+---
+title: Ubuntu IoT Developer Documentation
+---
+
+# Snaps in Ubuntu Core
 
 Ubuntu Core is built from _snaps_, a secure, confined, dependency-free,
 cross-platform Linux packaging format.
