@@ -37,20 +37,19 @@ For further details on how snaps work and how they're built, see
 <a href=https://snapcraft.io/docs>Snap documentation</a>.
 </p></div>
 
-
 ## Types of snap
 
 The snap packaging ecosystem consists of the following parts:  
+
 - **snap** is both the command line interface and the application package format
 - **snapd** is the background service that manages and maintains your snaps
 - **snapcraft** is the command and the framework used to build your own snaps
 - **Snap Store** provides a place to upload your snaps, and for users to browse and install
 
 Developers can publish snaps to the Snap Store or to their own private _Brand
-Store_. They take sole responsibility for update cadence and quality.
-
-While snaps are commonly known as an application packaging format, Ubuntu Core
-is built from several different types of snap:
+Store_. They take sole responsibility for update cadence and quality. While
+snaps are commonly known as an application packaging format, Ubuntu Core is
+built from several different types of snap:
 
 1. **kernel**: defines the Linux kernel for a device  
     The kernel snap is selected with a _model assertion_ which is produced and
