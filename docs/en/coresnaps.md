@@ -31,7 +31,7 @@ interrupted updates
 priority and incorporate the update back into the regular update service
 
 - **Unpredictable hardware and network conditions** - in situations that can’t
-  be easily  modelled or predicted, and update system needs to have enough
+  be easily modelled or predicted, any update system needs to have enough
 redundancy to handle roll-backs, network-free bootstrapping and autonomous
 re-provisioning
 
