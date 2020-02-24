@@ -5,6 +5,9 @@ navigation:
       - title: What is Ubuntu Core?
         location: index.md
 
+      - title: Supported platforms
+        location: platforms.md
+
       - title: Snaps in Ubuntu Core
         location: coresnaps.md
 
