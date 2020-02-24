@@ -5,6 +5,9 @@ navigation:
       - title: What is Ubuntu Core?
         location: index.md
 
+      - title: Snaps in Ubuntu Core
+        location: coresnaps.md
+
       - title: Security and sandboxing
         location: guides/intro/security.md
 
