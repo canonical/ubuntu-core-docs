@@ -10,7 +10,7 @@ tools. On all but the earliest releases of Ubuntu Core, even the _snapd_ daemon
 that manages snaps is itself installed via its own snap.
 
 Reference images are available for supported platforms, including Raspberry Pi,
-Qualcomm Snapdragin and x86 KVM virtualisation, and these can be download and
+Qualcomm Snapdragon and x86 KVM virtualisation, and these can be download and
 installed easily. See [Supported platforms](platforms.md) for the current list. 
 
 ## Inside a model assertion
