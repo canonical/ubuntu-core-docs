@@ -17,12 +17,15 @@ navigation:
       - title: Store and developer accounts
         location: guides/intro/store.md
 
-  - title: Build a device
+  - title: Building a device
 
     children:
 
-      - title: Ubuntu Core images
-        location: guides/build-device/image-building.md
+      - title: Image building
+        location: image-building.md
+
+      - title: Custom images
+        location: custom-images.md
 
       - title: Board enablement overview
         location: guides/build-device/board-enablement.md
