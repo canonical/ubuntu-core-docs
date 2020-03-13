@@ -5,13 +5,14 @@ title: Ubuntu IoT Developer Documentation
 # Image building
 
 Any device running Ubuntu Core is instantiated from an image. This image
-contains little more than the kernel, an _init_ process and a few essential
+contains little more than the kernel, an _init_ process, and a few essential
 tools. On all but the earliest releases of Ubuntu Core, even the _snapd_ daemon
 that manages snaps is itself installed via its own snap.
 
 Reference images are available for supported platforms, including Raspberry Pi,
-Qualcomm Snapdragon and x86 KVM virtualisation, and these can be download and
-installed easily. See [Supported platforms](platforms.md) for the current list. 
+Qualcomm Snapdragon and x86/KVM virtualisation, and these can be download and
+installed easily. See [Supported platforms](platforms.md) for the current list
+and for download links to both the images and the model assertions they use.
 
 ## Inside a model assertion
 
@@ -33,29 +34,34 @@ aspect of the image:
 }
 ```
 
-The above snippet shows the stock model assertion for the Raspberry Pi. It
-includes details such as the store to use (`brand-id` and `authority-id`) and
-the hardware architecture (`arm64`). Any snaps installed on the device will
-respect this selected architecture.
+The above snippet shows the stock [model assertion for the Raspberry
+Pi](http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-arm64+raspi.model-assertion).
+It includes details such as the store to use (`brand-id` and `authority-id`),
+the model name (`ubuntu-core-18-pi-arm64`) and the hardware architecture
+(`arm64`). Any snaps installed on the device will respect this selected
+architecture.
 
 As outlined in [Snaps in Ubuntu Core](coresnaps.md), there are three principle
-snaps-types that combine to create the Ubuntu Core environment,
-**kernel**,**gadget** and **core**. These are also referenced within the model
-assertion.
+snaps-types that combine to create the Ubuntu Core environment. These are
+**kernel**, **gadget** and **core**, and all three need to be referenced within
+a custom model assertion.
 
 ## Building with ubuntu-image
 
 Images are built from a model assertion using [Ubuntu image
-builder](https://github.com/CanonicalLtd/ubuntu-image), which can be installed
-on a [snap-supporting Linux system](https://snapcraft.io/docs/installing-snapd)
-as follows:
+builder](https://github.com/CanonicalLtd/ubuntu-image), a tool to generate a
+bootable image. It can be installed on a [snap-supporting Linux
+system](https://snapcraft.io/docs/installing-snapd) as follows:
 
 ```bash
 $ sudo snap install ubuntu-image --beta --classic
 ```
 
-The ubuntu-image tool needs to be run on the same architecture as the target
-image and needs only the filename of the model assertion to build an image:
+The _ubuntu-image_ command needs to be run on the same architecture as the
+target image and needs only the filename of the model assertion to build an
+image.
+
+The following will build an _amd64_ image:
 
 ```bash
 $ ubuntu-image snap ubuntu-core-18-amd64+kassel.model-assertion
