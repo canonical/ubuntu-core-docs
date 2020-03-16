@@ -9,8 +9,8 @@ Ubuntu Core device to be customised at the point of deployment.  Customisation
 options include configuration for both hardware and software, specific kernels,
 and which snap packages to pre-install.
 
-See [Image building](image-building.md) for an overview of building stock
-Ubuntu Core images.
+See [Image building](image-building.md) for an overview of building reference
+Ubuntu Core images for a supported platform.
 
 <div class="p-notification--positive"><p markdown="1" class="p-notification__response"><span class="p-notification__status">Note:</span>
 Building for non-reference architectures is also easily accomplished but
@@ -78,7 +78,7 @@ following modified properties:
 - `base`: provides the run-time environment  
   _core18_ is the current standard base and as is built from [Ubuntu 18.04 LTS](http://releases.ubuntu.com/18.04/). See [Base snaps](https://forum.snapcraft.io/t/base-snaps/11198) for more details.
 - `authority-id`, `brand-id`: defines the authority signing the assertion  
-  stock assertions are signed by `canonical`. Non-reference assertions are
+  reference assertions are signed by `canonical`. Non-reference assertions are
 signed by their [brand store](build-store/index.md). For a custom model
 assertion, this needs to be the developer ID.
 - `timestamp`: UTC formatted time and date  
@@ -90,7 +90,7 @@ For a complete list of model assertion keywords, see [Model assertion](reference
 
 ## Signing a model assertion
 
-The difference between building an image from a stock model assertion and
+The difference between building an image from a reference model assertion and
 building from a modified model assertion is that the modified model assertion
 needs to be digitally signed. This is accomplished in four stages:
 
@@ -146,7 +146,7 @@ now be used to build the image.
 ## Building the image
 
 With a [signed model assertion](#signing-a-model-assertion), the Ubuntu Core
-image can now be built just like a stock image, using the
+image can now be built just like a reference image, using the
 [ubuntu-image](image-building.md#building-with-ubuntu-image) command:
 
 ```bash
@@ -161,7 +161,7 @@ Fetching core
 WARNING: model has base "core18" but some snaps ("hello", "hello-world") require "core" as base as well, for compatibility it was added implicitly, adding "core" explicitly is recommended
 ```
 
-As with when building a stock image, you can now use the image to boot either
+As with when building a reference image, you can now use the image to boot either
 real or virtual hardware. See [Building the
 image](image-building.md#building-with-ubuntu-image) for more details.
 

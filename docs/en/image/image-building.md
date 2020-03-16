@@ -34,7 +34,7 @@ aspect of the image:
 }
 ```
 
-The above snippet shows the stock [model assertion for the Raspberry
+The above snippet shows the reference [model assertion for the Raspberry
 Pi](http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-arm64+raspi.model-assertion).
 It includes details such as the store to use (`brand-id` and `authority-id`),
 the model name (`ubuntu-core-18-pi-arm64`) and the hardware architecture
