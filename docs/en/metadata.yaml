@@ -22,10 +22,10 @@ navigation:
     children:
 
       - title: Image building
-        location: image-building.md
+        location: image/image-building.md
 
       - title: Custom images
-        location: custom-images.md
+        location: image/custom-images.md
 
       - title: Board enablement overview
         location: guides/build-device/board-enablement.md
