@@ -13,7 +13,7 @@ See [Image building](image-building.md) for an overview of building stock
 Ubuntu Core images.
 
 <div class="p-notification--positive"><p markdown="1" class="p-notification__response"><span class="p-notification__status">Note:</span>
-Building for non-reference architectures is also easily accomplished, but
+Building for non-reference architectures is also easily accomplished but
 requires upstream enablement. For further details, <a
 href="https://ubuntu.com/core#get-in-touch">contact Canonical.</a> </p></div>
 
@@ -33,7 +33,7 @@ account](https://snapcraft.io/docs/creating-your-developer-account) if you
 don't yet have an account.
 
 Before creating a custom model assertion, you will need to retrieve your
-developer ID and generate a properly formatted date stamp. The _snapcraft_
+developer ID and generate a properly formatted timestamp. The _snapcraft_
 command can be used to retrieve your developer id:
 
 ```bash
@@ -42,7 +42,8 @@ email: <email>
 developer-id: bJzr2XzZ56Qv6Z51HIeziXvxtn1XItIq
 ```
 
-Use the following _date_ command to output the correctly formatted timestamp for the model assertion:
+Use the following _date_ command to output the correctly formatted timestamp
+for the model assertion:
 
 ```bash
 $ date -Iseconds --utc
@@ -71,8 +72,8 @@ The following is a tweaked JSON-formatted custom model assertion based on
 }
 ```
 
-The above example, stored in `my-model.json`, contains the following modified
-properties:
+The above example, we've stored in a file called `my-model.json`, contains the
+following modified properties:
 
 - `base`: provides the run-time environment  
   _core18_ is the current standard base and as is built from [Ubuntu 18.04 LTS](http://releases.ubuntu.com/18.04/). See [Base snaps](https://forum.snapcraft.io/t/base-snaps/11198) for more details.
@@ -85,7 +86,7 @@ assertion, this needs to be the developer ID.
 - `required-snaps`: one or more snaps to be pre-installed for deployment
   any snap can be listed here. If there's a dependency on a different base, such as _core_, this will be installed too.  
 
-For a complete list of model assertion keywords, see [Model assertion](reference/assertions/model.md)
+For a complete list of model assertion keywords, see [Model assertion](reference/assertions/model.md).
 
 ## Signing a model assertion
 
@@ -144,8 +145,8 @@ now be used to build the image.
 
 ## Building the image
 
-With a signed model assertion, the Ubuntu Core image can now be built just like
-a stock image, using the
+With a [signed model assertion](#signing-a-model-assertion), the Ubuntu Core
+image can now be built just like a stock image, using the
 [ubuntu-image](image-building.md#building-with-ubuntu-image) command:
 
 ```bash
@@ -173,7 +174,7 @@ $ hello-world
 Hello World!
 ```
 
-See which snaps are installed:
+Use _snap list_ to see which snaps are installed:
 
 
 ```bash
@@ -188,7 +189,8 @@ pc-kernel    4.15.0-88.88  399   18        canonical✓  kernel
 snapd        2.43.3        6434  stable    canonical✓  snapd
 ```
 
-and view the custom model assertion:
+The _snap known model_ command will show the read-only custom model
+assertion used to build the image:
 
 ```bash
 $ snap known model
