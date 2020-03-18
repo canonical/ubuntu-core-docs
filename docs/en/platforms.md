@@ -17,7 +17,7 @@ Canonical produces official images for the following platforms:
 | Raspberry Pi 2       <br /> `ubuntu-core-18-pi2` | Broadcom BCM2836 <br />ARM Cortex-A7 | 4 cores &#124; 1 GB RAM <br /> no built-in storage | <br /> [core-18-pi2-armhf][18-pi2-armhf] |
 | Raspberry Pi 3       <br /> `ubuntu-core-18-pi3` | Broadcom BCM2837 <br />ARM Cortex-A53 64-bit | 4 cores &#124; 1 GB RAM <br /> no built-in storage| [core-18-pi3-arm64][18-pi3-arm64] <br /> [core-18-pi3-armhf][18-pi3-armhf]|
 | Raspberry Pi CM 3    <br /> `ubuntu-core-18-cm3` | Broadcom BCM2837 <br />ARM Cortex-A53 64-bit | 4 cores &#124; 1 GB RAM <br /> no built-in storage | [core-18-cm3-arm64][18-cm3-arm64] |
-| Raspberry Pi 4       <br /> `ubuntu-core-18-pi-arm64` | Broadcom BCM2711 <br />Cortex-A72 (ARM v8) 64-bit | 4 cores &#124; 1/2/4 GB RAM  <br /> no built-in storage | [core-18-pi4-arm64][18-pi4-arm64] <br /> [core-18-pi4-armhf][18-pi4-armhf]|
+| Raspberry Pi 4       <br /> `ubuntu-core-18-pi` | Broadcom BCM2711 <br />Cortex-A72 (ARM v8) 64-bit | 4 cores &#124; 1/2/4 GB RAM  <br /> no built-in storage | [core-18-pi4-arm64][18-pi4-arm64] <br /> [core-18-pi4-armhf][18-pi4-armhf]|
 | Qualcomm DragonBoard <br /> `ubuntu-core-18-dragonboard` | Snapdragon 410c <br /> ARM Cortex A53 64-bit | 4 cores &#124; 1 GB RAM <br /> 8 GB eMMC flash storage | [core-18-dragon][18-dragon] |
 | Intel NUC            <br /> `ubuntu-core-18-amd64` | Intel Core i3, i5, i7 64-bit | >8 cores &#124; >32 GB RAM <br /> no built-in storage | <br /> [core-18-amd64][18-amd64] |
 | Generic x86 / KVM     <br /> `ubuntu-core-18` | Full x86 32/64 bit <br /> CPU virtualisation | as defined | [core-18-amd64][18-amd64] <br /> [core18-i386][18-i386] |
