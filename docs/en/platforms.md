@@ -11,18 +11,16 @@ Core's features and evaluate its potential.
 
 Canonical produces official images for the following platforms:
 
-| Platform              | Hardware/CPU | Cores | Memory    | Storage   |
-|-----------------------|----------|-----------|-----------|-----------|
-| Raspberry Pi 2        | Broadcom BCM2836 ARM Cortex-A7 | 4 | 1 GB | Not built-in |
-| Raspberry Pi 3        | Broadcom BCM2837 ARM Cortex-A53 64-bit | 4 | 1 GB | Not built-in |
-| Raspberry Pi CM 3 | Broadcom BCM2837 ARM Cortex-A53 64-bit | 4 | 1 GB  | Not built-in |
-| Raspberry Pi 4        | Broadcom BCM2711 Cortex-A72 (ARM v8) 64-bit | 4 | 1/2/4 GB | Not built-in |
-| Orange Pi Zero         | ARM H2 Cortex-A7 64-bit | 4 | 256/512 MB | Not built-in |
-| Qualcomm Snapdragon 410c | ARM Cortex A53 64-bit | 4 |  1 GB | 8 GB eMMC on-board flash storage |
-| Intel NUC             | Intel Core i3, i5, i7 64-bit | >8| >32 GB | Not built-in |
-| Samsung Artik 5       | ARM Cortex-A7 64-bit | 2/4 | 512 MB/1 GB | 4 GB eMMC on-board flash storage |
-| Samsung Artik 10      | ARM Cortex-A15 + Quad Cortex-A7 64-bit | 4 | 2 GB | 16 GB eMMC on-board flash storage |
-| KVM                   | Full x86 32/64 bit CPU virtualisation | as defined | as defined | as defined |
+| Platform / model name    | Hardware / CPU | Cores / memory / storage   | Image links |
+|--------------------------|--------------|-------------------|-----------|
+| Raspberry Pi         <br /> `ubuntu-core-18-pi` | Broadcom BCM2835 <br />ARM Cortex-A72 | 4/1 cores &#124; 1/2/4 GB RAM <br /> no built-in storage | [core-18-pi-arm64][18-pi-arm64] <br /> [core-18-pi-armhf][18-pi-armhf] |
+| Raspberry Pi 2       <br /> `ubuntu-core-18-pi2` | Broadcom BCM2836 <br />ARM Cortex-A7 | 4 cores &#124; 1 GB RAM <br /> no built-in storage | <br /> [core-18-pi2-armhf][18-pi2-armhf] |
+| Raspberry Pi 3       <br /> `ubuntu-core-18-pi3` | Broadcom BCM2837 <br />ARM Cortex-A53 64-bit | 4 cores &#124; 1 GB RAM <br /> no built-in storage| [core-18-pi3-arm64][18-pi3-arm64] <br /> [core-18-pi3-armhf][18-pi3-armhf]|
+| Raspberry Pi CM 3    <br /> `ubuntu-core-18-cm3` | Broadcom BCM2837 <br />ARM Cortex-A53 64-bit | 4 cores &#124; 1 GB RAM <br /> no built-in storage | [core-18-cm3-arm64][18-cm3-arm64] |
+| Raspberry Pi 4       <br /> `ubuntu-core-18-pi` | Broadcom BCM2711 <br />Cortex-A72 (ARM v8) 64-bit | 4 cores &#124; 1/2/4 GB RAM  <br /> no built-in storage | [core-18-pi4-arm64][18-pi4-arm64] <br /> [core-18-pi4-armhf][18-pi4-armhf]|
+| Qualcomm DragonBoard <br /> `ubuntu-core-18-dragonboard` | Snapdragon 410c <br /> ARM Cortex A53 64-bit | 4 cores &#124; 1 GB RAM <br /> 8 GB eMMC flash storage | [core-18-dragon][18-dragon] |
+| Intel NUC            <br /> `ubuntu-core-18-amd64` | Intel Core i3, i5, i7 64-bit | >8 cores &#124; >32 GB RAM <br /> no built-in storage | <br /> [core-18-amd64][18-amd64] |
+| Generic x86 / KVM     <br /> `ubuntu-core-18` | Full x86 32/64 bit <br /> CPU virtualisation | as defined | [core-18-amd64][18-amd64] <br /> [core18-i386][18-i386] |
 
 Images are available from
 [http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/](http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/)
@@ -30,3 +28,18 @@ Images are available from
 Ubuntu community members also work with, and produce, images for other
 platforms and CPUs. Refer to these individual projects for more information on
 what other unofficial images might work for your use cases.
+
+<!-- LINKS -->
+
+[18-pi-arm64]:  http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-arm64+raspi.img.xz 
+[18-pi-armhf]:  http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-armhf+raspi.img.xz 
+[18-pi2-armhf]: http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-armhf+raspi2.img.xz  
+[18-pi3-arm64]: http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-arm64+raspi3.img.xz
+[18-pi3-armhf]: http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-armhf+raspi3.img.xz
+[18-cm3-arm64]: http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-armhf+cm3.img.xz
+[18-pi4-arm64]: http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-arm64+raspi4.img.xz
+[18-pi4-armhf]: http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-armhf+raspi4.img.xz  
+[18-dragon]:    http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-arm64+snapdragon.img.xz
+[18-nuc]:       http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-amd64.img.xz  
+[18-amd64]:     http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-amd64.img.xz
+[18-i386]:      http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-i386.img.xz 
