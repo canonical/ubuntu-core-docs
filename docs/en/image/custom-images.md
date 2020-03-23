@@ -128,9 +128,8 @@ With a key created, use the _snapcraft_ command to upload and register it with
 the store:
 
 ```bash
-$ snap export-key \
---account=E-n0AOKPFjIyy4S_i9JxTT4tkuaZf7rP9D2ARCmBNXjlgTGDjL8euFSlb87U0NPl \
-my-key-name
+$ snapcraft register-key
+Registering key ...
 ```
 
 A custom model assertion is signed by piping the assertion through the _snap
