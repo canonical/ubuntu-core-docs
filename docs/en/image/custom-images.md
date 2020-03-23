@@ -72,8 +72,8 @@ The following is a tweaked JSON-formatted custom model assertion based on
 }
 ```
 
-In the above example, we've stored in a file called `my-model.json`, contains the
-following modified properties:
+We've saved the above example in a file called `my-model.json`, and it contains
+the following modified properties:
 
 - `base`: provides the run-time environment  
   _core18_ is the current standard base and as is built from [Ubuntu 18.04 LTS](http://releases.ubuntu.com/18.04/). See [Base snaps](https://forum.snapcraft.io/t/base-snaps/11198) for more details.
