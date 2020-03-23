@@ -72,7 +72,7 @@ The following is a tweaked JSON-formatted custom model assertion based on
 }
 ```
 
-The above example, we've stored in a file called `my-model.json`, contains the
+In the above example, we've stored in a file called `my-model.json`, contains the
 following modified properties:
 
 - `base`: provides the run-time environment  
