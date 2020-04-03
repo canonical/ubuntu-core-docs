@@ -4,7 +4,7 @@ title: Ubuntu IoT Developer Documentation
 
 # Custom images
 
-Building a bespoke image for a [Supported platform](platforms.md) enables an
+Building a bespoke image for a [Supported platform](../platforms.md) enables an
 Ubuntu Core device to be customised at the point of deployment.  Customisation
 options include configuration for both hardware and software, specific kernels,
 and which snap packages to pre-install.
@@ -86,7 +86,7 @@ assertion, this needs to be the developer ID.
 - `required-snaps`: one or more snaps to be pre-installed for deployment
   any snap can be listed here. If there's a dependency on a different base, such as _core_, this will be installed too.  
 
-For a complete list of model assertion keywords, see [Model assertion](reference/assertions/model.md).
+For a complete list of model assertion keywords, see [Model assertion](../reference/assertions/model.md).
 
 ## Signing a model assertion
 

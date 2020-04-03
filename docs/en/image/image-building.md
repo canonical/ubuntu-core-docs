@@ -11,7 +11,7 @@ that manages snaps is itself installed via its own snap.
 
 Reference images are available for supported platforms, including Raspberry Pi,
 Qualcomm Snapdragon and x86/KVM virtualisation, and these can be download and
-installed easily. See [Supported platforms](platforms.md) for the current list
+installed easily. See [Supported platforms](../platforms.md) for the current list
 and for download links to both the images and the model assertions they use.
 
 ## Inside a model assertion
@@ -41,7 +41,7 @@ the model name (`ubuntu-core-18-pi-arm64`) and the hardware architecture
 (`arm64`). Any snaps installed on the device will respect this selected
 architecture.
 
-As outlined in [Snaps in Ubuntu Core](coresnaps.md), there are three principle
+As outlined in [Snaps in Ubuntu Core](../coresnaps.md), there are three principle
 snaps-types that combine to create the Ubuntu Core environment. These are
 **kernel**, **gadget** and **core**, and all three need to be referenced within
 a custom model assertion.
