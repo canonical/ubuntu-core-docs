@@ -11,7 +11,7 @@ Installed snaps are automatically refreshed a few times a day, assuming a differ
 More details about when it is to be triggered may be obtained via:
 
 ```bash
-$ snap refreh --time
+$ snap refresh --time
 timer: 00:00~24:00/4
 last: today at 09:08 BST
 next: today at 15:09 BST
