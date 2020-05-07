@@ -2,8 +2,7 @@
 title: Ubuntu IoT Developer Documentation
 ---
 
-# What is Ubuntu Core?
-
+# Ubuntu Core documentation
 
 <!-- 
 Version: 2.0
@@ -30,6 +29,28 @@ updates. The system can also recover or revert to previous states if necessary,
 even if a system fails to boot. Unlike alternative or more traditional
 package managers, a failed update never leaves the system in an unpredictable
 state.
+
+### Ubuntu Core releases
+
+Each Ubuntu Core release is built on the foundations of a corresponding [Ubuntu
+LTS release](https://ubuntu.com/about/release-cycle). The following versions of
+Ubuntu Core are currently available:
+
+| **Ubuntu Core version** | **Ubuntu base** | **Status** |
+|--|--|--|
+| Ubuntu Core 20 (UC20) | [Ubuntu 20.04 LTS (Focal Fossa)](https://releases.ubuntu.com/20.04/) | beta |
+| Ubuntu Core 18 (UC18) | [Ubuntu 18.04 LTS (Bionic Beaver)](https://releases.ubuntu.com/18.04/) | supported |
+| Ubuntu Core 16 (UC16) | [Ubuntu 16.04 LTS (Xenial Xerus)](https://releases.ubuntu.com/16.04/)  | supported |
+
+The current recommended version of Ubuntu Core is UC18. UC20 is under active
+development with a final release due soon. 
+
+<div class="p-notification--positive"><p markdown="1" class="p-notification__response">
+<span class="p-notification__status">Download Ubuntu Core:</span> the latest Ubuntu Core images are available from: </br>
+<a href="https://cdimage.ubuntu.com/ubuntu-core/20/beta/current">https://cdimage.ubuntu.com/ubuntu-core/20/beta/current</a>
+</p></div>
+
+### Advantages for IoT
 
 Ubuntu Core is engineered to meet the precise requirements of IoT devices. It
 runs on a large range of hardware, including Raspberry Pi, Intel NUC, Qualcomm
