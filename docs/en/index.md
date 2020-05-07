@@ -48,7 +48,7 @@ development with a final release due soon. See [Ubuntu Core 20
 
 <div class="p-notification--positive"><p markdown="1" class="p-notification__response">
 <span class="p-notification__status">Download Ubuntu Core:</span> the latest Ubuntu Core images are available from: </br>
-<a href="https://cdimage.ubuntu.com/ubuntu-core/20/beta/current">https://cdimage.ubuntu.com/ubuntu-core/20/beta/current</a>
+<a href="http://cdimage.ubuntu.com/ubuntu-core">http://cdimage.ubuntu.com/ubuntu-core</a>
 </p></div>
 
 ### Advantages for IoT
