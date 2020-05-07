@@ -27,7 +27,7 @@ Images are available from
 
 Ubuntu Core 20 (UC20), built on the foundation of [Ubuntu 20.04 LTS (Focal
 Fossa)](https://releases.ubuntu.com/20.04/) is currently under active
-development.
+development. See [Ubuntu Core 20](releases/uc20.md) for more details.
 
 Ubuntu community members also work with, and produce, images for other
 platforms and CPUs. Refer to these individual projects for more information on
