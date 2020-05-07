@@ -51,8 +51,7 @@ the device defaults to use the main Ubuntu store.
 the device images. `required-snaps` (optional) is a list of snaps that must be installed at
 all times, and cannot be removed from the device.
 
-This assertion is needed when creating an Ubuntu Core device image (see
-[documentation](../../guides/build-device/image-building.md) on this).
+This assertion is needed when [creating an Ubuntu Core device image](../../guides/build-device/image-building.md).
 
 For instance, this is an Ubuntu Core model assertion for amd64 architecture:
 
