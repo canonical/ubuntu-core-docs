@@ -25,6 +25,10 @@ Canonical produces official images for the following platforms:
 Images are available from
 [http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/](http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/)
 
+Ubuntu Core 20 (UC20), built on the foundation of [Ubuntu 20.04 LTS (Focal
+Fossa)](https://releases.ubuntu.com/20.04/), is currently under active
+development. See [Ubuntu Core 20](releases/uc20.md) for more details.
+
 Ubuntu community members also work with, and produce, images for other
 platforms and CPUs. Refer to these individual projects for more information on
 what other unofficial images might work for your use cases.
