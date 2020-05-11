@@ -38,7 +38,7 @@ Ubuntu Core are currently available:
 
 | **Ubuntu Core version** | **Ubuntu base** | **Status** |
 |--|--|--|
-| Ubuntu Core 20 (UC20) | [Ubuntu 20.04 LTS (Focal Fossa)](https://releases.ubuntu.com/20.04/) | beta |
+| Ubuntu Core 20 (UC20) | [Ubuntu 20.04 LTS (Focal Fossa)](https://releases.ubuntu.com/20.04/) | [beta](releases/uc20.md) |
 | Ubuntu Core 18 (UC18) | [Ubuntu 18.04 LTS (Bionic Beaver)](https://releases.ubuntu.com/18.04/) | supported |
 | Ubuntu Core 16 (UC16) | [Ubuntu 16.04 LTS (Xenial Xerus)](https://releases.ubuntu.com/16.04/)  | supported |
 
