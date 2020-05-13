@@ -33,6 +33,17 @@ Ubuntu community members also work with, and produce, images for other
 platforms and CPUs. Refer to these individual projects for more information on
 what other unofficial images might work for your use cases.
 
+## Installation guides
+
+| Platform   | Requirements | Install guide |
+|--------------------------|--------------|-------------------|-----------|
+| Raspberry Pi 2, 3, 4 or CM3   | >2GB microSD card, display, USB keyboard, network access | <https://ubuntu.com/download/raspberry-pi-core> |
+| Intel NUC | >2GB USB flash storage, USB keyboard, display, network access | <https://ubuntu.com/download/raspberry-pi-core> | 
+| Intel® IEI TANK 870 | >2GB USB flash storage, USB keyboard, display, network access | <https://ubuntu.com/download/intel-iei-tank-870> |
+| Qualcomm DragonBoard 410c | >2GB microSD card, display, USB keyboard, network access | <https://ubuntu.com/download/qualcomm-dragonboard-410c> |
+| KVM | x86 virtualisation with 10GB storage | <https://ubuntu.com/download/kvm> |
+
+
 <!-- LINKS -->
 
 [18-pi-arm64]:  http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-arm64+raspi.img.xz 
