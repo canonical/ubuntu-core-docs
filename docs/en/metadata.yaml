@@ -11,6 +11,9 @@ navigation:
       - title: Snaps in Ubuntu Core
         location: coresnaps.md
 
+      - title: Using Ubuntu Core
+        location: using-core.md
+
       - title: Security and sandboxing
         location: guides/intro/security.md
 
