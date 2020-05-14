@@ -156,4 +156,4 @@ navigation:
     location: http://snapcraft.io
 
   - title: Report a docs issue
-    location: https://bugs.launchpad.net/snappy/+bugs?field.tag=snap-docs
+    location: https://github.com/canonical-web-and-design/ubuntu-core-docs/issues
