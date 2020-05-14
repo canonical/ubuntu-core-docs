@@ -149,7 +149,7 @@ navigation:
       - title: Ubuntu Core REST API
         location: reference/rest.md
 
-      - title: Ubuntu Core Configuration
+      - title: Ubuntu Core configuration
         location: reference/core-configuration.md
 
   - title: Build snaps
