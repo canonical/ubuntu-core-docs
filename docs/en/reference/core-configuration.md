@@ -5,71 +5,185 @@ table_of_contents: true
 
 # Ubuntu Core configuration
 
-The core snap offers a few configuration options which allow customization of
-how the system works.
+Ubuntu Core supports a set of system-wide options that allow you to customise your
+snap and core environment.
 
-A configuration option of the core snap can be set via the *snap set* command
-as for any snap, e.g.:
-
-```bash
- snap set core option=value
-```
-
-The current value of an option can be retrieved via the *snap get* command,
-e.g.:
+As with [Configuration in
+snaps](https://snapcraft.io/docs/configuration-in-snaps), these options are
+changed with the `snap set` and `snap get` commands, but with a target of either
+*system* or *core* instead of a specific snap:
 
 ```bash
- snap get core option
+$ snap set system <some.option>="some value"
+$ snap get system <some.option>
 ```
 
-The following configuration options are currently supported:
-
-## service.ssh.disable
-
-Available since: 2.22
-
-Disable the SSH service of the system.
-
-**WARNING**: Disabling SSH disables the default way to access an Ubuntu Core
-system. If your system does not provide any other way to interact with it
-like a management system or a monitor you will lock yourself out of the system
-and will be left with a brick. If you really want to disable SSH make sure
-you have a user and a password available and another way to interact with the
-system.
-
-The configuration option accepts the following values:
-
- * `false` (default): Enable the SSH service. The SSH service will directly
- available for incoming connections.
- * `true`: Disable the SSH service. Existing SSH connection will remain but
- establishing any further connections will be not possible.
-
-Example:
+Configuration options can be unset by either passing their names to the unset
+command or by adding an exclamation mark (!) to the end of an option name:
 
 ```bash
-snap set core service.ssh.disable=true
+$ snap unset system <some.option>
+$ # or (from snapd 2.41+)
+$ snap set system <some.option>!
 ```
 
-## system.power-key-action
-
-Available since: 2.23
-
-Specify the action to take when the power button is pressed.
-
-The configuration option accepts the following values:
-
-* `ignore`: Do nothing.
-* `poweroff` (default): Shut down the system.
-* `reboot`: Reboot the system.
-* `halt`: Halt the system.
-* `kexec`: Directly boot a new kernel.
-* `suspend`: Suspend the system.
-* `hibernate`: Hibernate the system.
-* `hybrid-sleep`: Suspend to both disk and RAM.
-* `lock`: Screen-lock all running sessions.
-
-Example:
+Additionally, there are Ubuntu Core specific options which replace
+_system_ with _core_:
 
 ```bash
-snap set core system.power-key-action=reboot
+$ snap set core <some.option>
 ```
+
+Ubuntu Core specific options:
+
+- [system.disable-backlight-service](#disable-backlight)
+- [journal.persistent](#journal-persistent)
+
+System supported options:
+
+- [pi-config](#heading--pi-config)
+- [proxy.{http,https,ftp}](#heading--proxy)
+- [refresh](#heading--refresh)
+- [service.ssh.disable](#heading--ssh)
+- [snapshots.automatic.retention](#heading--snapshots-automatic-retention)
+- [store-certs](#heading--store-certs)
+- [system.power-key-action](#heading--power-key-action)
+
+<h2 id="heading--disable-backlight">core system.disable-backlight-service</h2>
+
+Setting this to true disables the system backlight service by masking
+_systemd-backlight@.service_. Setting it to false removes the mask and
+re-enables any system backlight:
+
+```bash
+$ snap set core system.disable-backlight-service=false
+```
+
+Available since snapd 2.45.
+
+<h2 id="heading--journal-persistent">core journal.persistent</h2>
+
+Setting this to true enables persistent (non volatile) journaling in
+`/var/log/journal`, via _journald_.
+
+```bash
+$ snap set core journal.persistent=true
+```
+
+Setting `journal.persistent` to false disables persistent journaling and
+**removes** _/var/log/journal_ if it was created by snapd.
+
+**Note:** With _core16_ it is necessary to restart the device manually for
+changes to take effect.
+
+Available since snapd 2.45.
+
+<h2 id="heading--pi-config">system pi-config</h2>
+
+On a Raspberry Pi, the following options set corresponding values in the
+_config.txt_ system configuration file:
+
+  * pi-config.disable-overscan
+  * pi-config.framebuffer-width
+  * pi-config.framebuffer-height
+  * pi-config.framebuffer-depth
+  * pi-config.framebuffer-ignore_alpha
+  * pi-config.overscan-left
+  * pi-config.overscan-right
+  * pi-config.overscan-top
+  * pi-config.overscan-bottom
+  * pi-config.overscan-scale
+  * pi-config.display-rotate
+  * pi-config.hdmi-group
+  * pi-config.hdmi-mode
+  * pi-config.hdmi-drive
+  * pi-config.avoid-warnings
+  * pi-config.gpu-mem-256
+  * pi-config.gpu-mem-512
+  * pi-config.gpu-mem
+
+Further details on the above, see the [official Raspberry Pi
+documentation](https://www.raspberrypi.org/documentation/configuration/config-txt/).
+
+<h2 id="heading--proxy">system proxy.{http,https,ftp}</h2>
+
+These options may be set to change the proxies to be used by the system when
+communicating with external sites that speak the respective protocols.
+
+Available since snapd 2.28.
+
+<h2 id="heading--refresh">system refresh</h2>
+
+There are four system-wide options that are used to manage how updates are
+handed:
+
+- **refresh.timer**: defines the refresh frequency and schedule
+- **refresh.hold**: delays the next refresh until the defined time and date
+- **refresh.metered**: pauses refresh updates when network connection is metered
+- **refresh.retain**: sets how many revisions of a snap are stored on the system
+
+See [Controlling updates](https://snapcraft.io/docs/keeping-snaps-up-to-date)
+for further details on how the above options are used.
+
+<h2 id="heading--ssh">system service.ssh.disable</h2>
+
+May be set to _true_ for disabling the SSH service at startup.
+
+Available since snapd 2.22.
+
+<h2 id='heading--snapshots-automatic-retention'>system snapshots.automatic.retention</h2>
+
+[Automatic snapshot](https://snapcraft.io/docs/snapshots) retention time is
+configured with the `snapshots.automatic.retention` system option. The default
+value is 31 days, and the value needs to be greater than 24 hours:
+
+```bash
+$ snap set system snapshots.automatic.retention=30h
+```
+To disable automatic snapshots, set the retention time to `no`:
+
+```bash
+$ snap set system snapshots.automatic.retention=no
+```
+
+> ⓘ Disabling automatic snapshots will *not* affect pre-existing, automatically
+> generated snapshots, but only those generated by subsequent snap removals.
+
+Automatic snapshots require snap version _2.39+_. 
+
+<h2 id='heading--store-certs'>system store-certs</h2>
+
+A custom SSL certificate can be added to snapd'd trusted certificates pool for
+the store communication with the `store-certs.<name>=<value>` system option.
+
+To add a certificate, enter the following:
+
+```bash
+$ snap set system store-certs.cert1="$(cat /path/to/mycert)"
+```
+
+A certificate can be removed with _unset_:
+
+```bash
+$ snap unset system store-certs.cert1
+```
+
+Available since snapd 2.45
+
+<h2 id='heading--power-key-action'>system system.power-key-action</h2>
+
+Defines the behaviour of the system when the power key is pressed.
+
+May be set to one of:
+
+* ignore
+* poweroff
+* reboot
+* halt
+* kexec
+* suspend
+* hibernate
+* hybrid-sleep
+* lock
+
+Available since snapd 2.23.
