@@ -149,11 +149,11 @@ navigation:
       - title: Ubuntu Core REST API
         location: reference/rest.md
 
-      - title: Ubuntu Core Configuration
+      - title: Ubuntu Core configuration
         location: reference/core-configuration.md
 
   - title: Build snaps
     location: http://snapcraft.io
 
   - title: Report a docs issue
-    location: https://bugs.launchpad.net/snappy/+bugs?field.tag=snap-docs
+    location: https://github.com/canonical-web-and-design/ubuntu-core-docs/issues
