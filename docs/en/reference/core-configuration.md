@@ -10,8 +10,8 @@ snap and core environment.
 
 As with [Configuration in
 snaps](https://snapcraft.io/docs/configuration-in-snaps), these options are
-changed with the `snap set` and `snap get` commands, but with a target of either
-*system* or *core* instead of a specific snap:
+changed with the `snap set` and `snap get` commands, but with a target of
+*system* instead of a specific snap:
 
 ```bash
 $ snap set system <some.option>="some value"
@@ -27,20 +27,10 @@ $ # or (from snapd 2.41+)
 $ snap set system <some.option>!
 ```
 
-Additionally, there are Ubuntu Core specific options which replace
-_system_ with _core_:
-
-```bash
-$ snap set core <some.option>
-```
-
-Ubuntu Core specific options:
+Supported options:
 
 - [system.disable-backlight-service](#disable-backlight)
 - [journal.persistent](#journal-persistent)
-
-System supported options:
-
 - [pi-config](#heading--pi-config)
 - [proxy.{http,https,ftp}](#heading--proxy)
 - [refresh](#heading--refresh)
@@ -49,25 +39,25 @@ System supported options:
 - [store-certs](#heading--store-certs)
 - [system.power-key-action](#heading--power-key-action)
 
-<h2 id="heading--disable-backlight">core system.disable-backlight-service</h2>
+<h2 id="heading--disable-backlight">system.disable-backlight-service</h2>
 
 Setting this to true disables the system backlight service by masking
 _systemd-backlight@.service_. Setting it to false removes the mask and
 re-enables any system backlight:
 
 ```bash
-$ snap set core system.disable-backlight-service=false
+$ snap set system system.disable-backlight-service=false
 ```
 
 Available since snapd 2.45.
 
-<h2 id="heading--journal-persistent">core journal.persistent</h2>
+<h2 id="heading--journal-persistent">journal.persistent</h2>
 
 Setting this to true enables persistent (non volatile) journaling in
 `/var/log/journal`, via _journald_.
 
 ```bash
-$ snap set core journal.persistent=true
+$ snap set system journal.persistent=true
 ```
 
 Setting `journal.persistent` to false disables persistent journaling and
@@ -78,7 +68,7 @@ changes to take effect.
 
 Available since snapd 2.45.
 
-<h2 id="heading--pi-config">system pi-config</h2>
+<h2 id="heading--pi-config">pi-config</h2>
 
 On a Raspberry Pi, the following options set corresponding values in the
 _config.txt_ system configuration file:
@@ -105,14 +95,14 @@ _config.txt_ system configuration file:
 Further details on the above, see the [official Raspberry Pi
 documentation](https://www.raspberrypi.org/documentation/configuration/config-txt/).
 
-<h2 id="heading--proxy">system proxy.{http,https,ftp}</h2>
+<h2 id="heading--proxy">proxy.{http,https,ftp}</h2>
 
 These options may be set to change the proxies to be used by the system when
 communicating with external sites that speak the respective protocols.
 
 Available since snapd 2.28.
 
-<h2 id="heading--refresh">system refresh</h2>
+<h2 id="heading--refresh">refresh</h2>
 
 There are four system-wide options that are used to manage how updates are
 handed:
@@ -125,7 +115,7 @@ handed:
 See [Controlling updates](https://snapcraft.io/docs/keeping-snaps-up-to-date)
 for further details on how the above options are used.
 
-<h2 id="heading--ssh">system service.ssh.disable</h2>
+<h2 id="heading--ssh">service.ssh.disable</h2>
 
 May be set to _true_ for disabling the SSH service at startup.
 
@@ -151,7 +141,7 @@ $ snap set system snapshots.automatic.retention=no
 
 Automatic snapshots require snap version _2.39+_. 
 
-<h2 id='heading--store-certs'>system store-certs</h2>
+<h2 id='heading--store-certs'>store-certs</h2>
 
 A custom SSL certificate can be added to snapd'd trusted certificates pool for
 the store communication with the `store-certs.<name>=<value>` system option.
@@ -170,7 +160,7 @@ $ snap unset system store-certs.cert1
 
 Available since snapd 2.45
 
-<h2 id='heading--power-key-action'>system system.power-key-action</h2>
+<h2 id='heading--power-key-action'>system.power-key-action</h2>
 
 Defines the behaviour of the system when the power key is pressed.
 
