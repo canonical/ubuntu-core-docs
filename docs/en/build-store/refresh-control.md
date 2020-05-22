@@ -7,8 +7,6 @@ table_of_contents: true
 
 ## What is Refresh Control?
 
-_“🎵 baby don't update me, don't update me no more 🎵”_
-
 
 Refresh Control is a mechanism for controlling the revisions of a snap that will be offered as updates  to a device. A *gating snap* can control the revisions of a *gated snap* so that, if the *gating snap* is installed on a device, only revisions of the *gated snap* which have been validated by the publisher of the *gating snap* can be installed or refreshed to.
 
