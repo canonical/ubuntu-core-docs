@@ -60,8 +60,6 @@ navigation:
         location: stacks/network/index.md
       - title: Power management
         location: stacks/power/index.md
-      - title: TPM
-        location: stacks/tpm/index.md
 
   - title: Get a store
 
