@@ -42,6 +42,9 @@ navigation:
       - title: Interfaces
         location: guides/build-device/interfaces.md
 
+      - title: Get a store
+        location: build-store/index.md
+
   - title: Manage a device
 
     children:
@@ -58,39 +61,6 @@ navigation:
         location: stacks/disk/index.md
       - title: Network management & services
         location: stacks/network/index.md
-
-  - title: Get a store
-
-    children:
-      - title: Introduction
-        location: build-store/index.md
-
-        children:
-          - title: Request a brand store
-            location: build-store/index.md#brand-stores
-
-      - title: Manage
-        location: build-store/manage.md
-
-        children:
-          - title: Settings
-            location: build-store/settings.md
-
-          - title: Reviews
-            location: build-store/reviews.md
-
-          - title: Reviewer tools
-            location: build-store/reviewer-tools.md
-
-      - title: Develop
-        location: build-store/develop.md
-
-        children:
-          - title: Upload snaps
-            location: build-store/upload-snaps.md
-
-      - title: Report an issue
-        location: build-store/issues.md
 
   - title: Go to production
 
