@@ -67,7 +67,7 @@ navigation:
 
         children:
           - title: Request a brand store
-            location: build-store/create.md
+            location: build-store/index.md#brand-stores
 
       - title: Manage
         location: build-store/manage.md
