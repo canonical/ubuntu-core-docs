@@ -69,9 +69,6 @@ navigation:
           - title: Request a brand store
             location: build-store/create.md
 
-          - title: Client setup
-            location: build-store/client-setup.md
-
       - title: Manage
         location: build-store/manage.md
 
