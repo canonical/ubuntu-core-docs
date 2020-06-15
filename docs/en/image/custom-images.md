@@ -52,7 +52,7 @@ $ date -Iseconds --utc
 
 ## Custom model assertion
 
-The following is a tweaked JSON-formatted custom model assertion based on
+The following is a tweaked JSON-structured custom model assertion based on
 [ubuntu-core-18-amd64](http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-amd64.model-assertion):
 
 ```json
