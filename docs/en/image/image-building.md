@@ -17,8 +17,8 @@ and for download links to both the images and the model assertions they use.
 ## Inside a model assertion
 
 Creating an Ubuntu Core image starts with a _model assertion_, a digitally
-signed and JSON-formatted text file with structured headers to define every
-aspect of the image:
+signed text file with structured headers defining every aspect of the image.
+The input for defining and signing such a document is provided as JSON text:
 
 ```json
 {
