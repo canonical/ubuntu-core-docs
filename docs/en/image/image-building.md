@@ -48,9 +48,9 @@ a custom model assertion.
 
 ## Building with ubuntu-image
 
-Images are built from a model assertion using [Ubuntu image
-builder](https://github.com/CanonicalLtd/ubuntu-image), a tool to generate a
-bootable image. It can be installed on a [snap-supporting Linux
+Images are built from a model assertion using
+[ubuntu-image](https://github.com/CanonicalLtd/ubuntu-image), a tool to
+generate a bootable image. It can be installed on a [snap-supporting Linux
 system](https://snapcraft.io/docs/installing-snapd) as follows:
 
 ```bash
@@ -61,10 +61,13 @@ The _ubuntu-image_ command needs to be run on the same architecture as the
 target image and needs only the filename of the model assertion to build an
 image.
 
-The following will build an _amd64_ image:
+The following will build an _amd64_ image using the
+[ubuntu-core-18-amd64.model](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-18-amd64.model)
+reference model assertion:
+
 
 ```bash
-$ ubuntu-image snap ubuntu-core-18-amd64+kassel.model-assertion
+$ ubuntu-image snap ubuntu-core-18-amd64.model
 fetching snapd
 fetching pc-kernel
 fetching core18
@@ -80,7 +83,8 @@ instance, the following command will boot the image inside a VM and forward
 (SSH) port 22 to 8022 on your machine: 
 
 ```bash
-$ qemu-system-x86_64 -enable-kvm -smp 2 -m 1500 -netdev user,id=mynet0,hostfwd=tcp::8022-:22,hostfwd=tcp::8090-:80 \ 
+$ qemu-system-x86_64 -enable-kvm -smp 2 -m 1500 \
+-netdev user,id=mynet0,hostfwd=tcp::8022-:22,hostfwd=tcp::8090-:80 \
 -device virtio-net-pci,netdev=mynet0 -drive file=pc.img,format=raw
 ```
 
@@ -105,7 +109,8 @@ pc-kernel  4.15.0-88.88  399   18        canonical✓  kernel
 snapd      2.43.3        6434  stable    canonical✓  snapd
 ```
 
-To view the model assertion used to build the image, type `snap known model`:
+To view the model assertion used to build the image, type `snap model
+--assertion`:
 
 ```bash
 $ snap known model
@@ -122,6 +127,16 @@ kernel: pc-kernel=18
 timestamp: 2018-08-13T09:00:00+00:00
 sign-key-sha3-384: 9tydnLa6MTJ-jaQTFUXEwHl1yRx7ZS4K5cyFDhYDcPzhS7uyEkDxdUjg9g08BtNn
 [...]
+```
+
+To output the serial assertion rather than the model assertion, type `snap
+model --serial`:
+
+```bash
+$ snap model --serial
+brand-id:  canonical
+model:     ubuntu-core-18-amd64
+serial:    acb9cfdc-c4a1-4317-809e-e9c306cfc7e5
 ```
 
 See the [Snap documentation](https://snapcraft.io/docs) for more details on
