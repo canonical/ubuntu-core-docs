@@ -52,7 +52,7 @@ $ date -Iseconds --utc
 
 ## Custom model assertion
 
-The following is a tweaked JSON-formatted custom model assertion based on
+The following is a tweaked JSON-structured custom model assertion based on
 [ubuntu-core-18-amd64](http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-amd64.model-assertion):
 
 ```json
@@ -99,6 +99,10 @@ needs to be digitally signed. This is accomplished in four stages:
 1. sign the model assertion
 1. build the image
 
+<div class="p-notification--positive"><p markdown="1" class="p-notification__response"><span class="p-notification__status">Note:</span>
+Rather than creating a key for every device, the same key is typically used across all models or model family.
+</p></div>
+
 First, sign in to the [Snap Store](https://snapcraft.io/store) (_snap login_)
 and check whether there is already a published key available. You can list any
 published snaps with the _snap keys_ command:
@@ -115,7 +119,7 @@ No keys registered, see `snapcraft create-key`
 If you have no registered keys, create one as follows:
 
 ```bash
-$ snap create-key my-key-name
+$ snap create-key my-models
 Passphrase:
 Confirm passphrase: <passphrase>
 
