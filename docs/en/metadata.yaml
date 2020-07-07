@@ -106,9 +106,6 @@ navigation:
       - title: Automatic refreshes
         location: reference/automatic-refreshes.md
 
-      - title: Ubuntu Core REST API
-        location: reference/rest.md
-
       - title: Ubuntu Core configuration
         location: reference/core-configuration.md
 
