@@ -15,6 +15,8 @@ This document describes the sandbox and how to configure and work with the secur
 - [AppArmor, Seccomp and device permissions](#heading--permissions)
 - [Interface security policies](#heading--interface)
 
+For help resolving issues that may arise from a snap’s security policy, see [Debugging snaps](https://snapcraft.io/docs/debug-snaps).
+
 <h2 id='heading--walkthrough'>Security policy walkthrough</h2>
 
 Application developers should not need to know about, or understand, the low-level implementation details of how a security policy is enforced.

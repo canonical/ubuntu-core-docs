@@ -30,7 +30,7 @@ navigation:
       - title: Custom images
         location: image/custom-images.md
 
-      - title: Board enablement overview
+      - title: Board enablement
         location: guides/build-device/board-enablement.md
 
       - title: Gadget snaps
@@ -38,9 +38,6 @@ navigation:
 
       - title: Configuration and hooks
         location: guides/build-device/config-hooks.md
-
-      - title: Interfaces
-        location: guides/build-device/interfaces.md
 
       - title: Get a store
         location: build-store/index.md
@@ -59,7 +56,7 @@ navigation:
         location: stacks/bluetooth/index.md
       - title: Disk management
         location: stacks/disk/index.md
-      - title: Network management & services
+      - title: Network management
         location: stacks/network/index.md
 
   - title: Go to production
@@ -103,20 +100,14 @@ navigation:
       - title: Gadget snap format
         location: reference/gadget.md
 
-      - title: Core interfaces reference
-        location: reference/interfaces/index.md
-
       - title: Automatic refreshes
         location: reference/automatic-refreshes.md
-
-      - title: Ubuntu Core REST API
-        location: reference/rest.md
 
       - title: Ubuntu Core configuration
         location: reference/core-configuration.md
 
-  - title: Build snaps
-    location: http://snapcraft.io
+  - title: Snap documentation
+    location: https://snapcraft.io/docs
 
   - title: Report a docs issue
     location: https://github.com/canonical-web-and-design/ubuntu-core-docs/issues
