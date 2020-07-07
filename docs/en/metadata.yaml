@@ -39,9 +39,6 @@ navigation:
       - title: Configuration and hooks
         location: guides/build-device/config-hooks.md
 
-      - title: Interfaces
-        location: guides/build-device/interfaces.md
-
       - title: Get a store
         location: build-store/index.md
 
