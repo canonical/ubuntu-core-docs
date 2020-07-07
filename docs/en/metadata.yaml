@@ -30,7 +30,7 @@ navigation:
       - title: Custom images
         location: image/custom-images.md
 
-      - title: Board enablement overview
+      - title: Board enablement
         location: guides/build-device/board-enablement.md
 
       - title: Gadget snaps
@@ -56,7 +56,7 @@ navigation:
         location: stacks/bluetooth/index.md
       - title: Disk management
         location: stacks/disk/index.md
-      - title: Network management & services
+      - title: Network management
         location: stacks/network/index.md
 
   - title: Go to production
