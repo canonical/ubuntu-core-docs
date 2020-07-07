@@ -112,8 +112,8 @@ navigation:
       - title: Ubuntu Core configuration
         location: reference/core-configuration.md
 
-  - title: Build snaps
-    location: http://snapcraft.io
+  - title: Snap documentation
+    location: https://snapcraft.io/docs
 
   - title: Report a docs issue
     location: https://github.com/canonical-web-and-design/ubuntu-core-docs/issues
