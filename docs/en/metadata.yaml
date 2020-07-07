@@ -103,9 +103,6 @@ navigation:
       - title: Gadget snap format
         location: reference/gadget.md
 
-      - title: Core interfaces reference
-        location: reference/interfaces/index.md
-
       - title: Automatic refreshes
         location: reference/automatic-refreshes.md
 
