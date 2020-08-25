@@ -57,9 +57,8 @@ system](https://snapcraft.io/docs/installing-snapd) as follows:
 $ sudo snap install ubuntu-image --beta --classic
 ```
 
-The _ubuntu-image_ command needs to be run on the same architecture as the
-target image and needs only the filename of the model assertion to build an
-image.
+The _ubuntu-image_ command needs only the filename of the model assertion to build an
+image. 
 
 The following will build an _amd64_ image using the
 [ubuntu-core-18-amd64.model](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-18-amd64.model)
