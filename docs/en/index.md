@@ -1,5 +1,5 @@
 ---
-title: Getting started
+title: Ubuntu Core documentation
 table_of_contents: true
 ---
 

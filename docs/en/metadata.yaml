@@ -2,6 +2,9 @@ navigation:
   - title: Using
 
     children:
+      - title: Getting started
+        location: guides/intro/get-started.md
+
       - title: What is Ubuntu Core?
         location: guides/intro/what-is-core.md
 
