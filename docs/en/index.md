@@ -1,61 +1,16 @@
 ---
-title: Ubuntu IoT Developer Documentation
+title: Ubuntu Core documentation
+table_of_contents: true
 ---
 
 # Ubuntu Core documentation
 
-<!-- 
-Version: 2.0
--->
+Welcome to the home of Ubuntu Core documentation.
 
-Ubuntu Core is Ubuntu for IoT and embedded environments, optimised for security and
-reliable updates. It's easy to deploy, tamper-resistant, and hardened against
-corruption.
+> Ubuntu Core is Ubuntu, engineered for IoT and embedded systems. It's easy to
+deploy, tamper-resistant and hardened against corruption.
 
-Its read-only root filesystem is built from the same packages used to build the
-wider set of Ubuntu distributions, and only differs in the way packages are
-delivered, and crucially, updated. This is all handled by snaps, a secure,
-confined, dependency-free, cross-platform Linux packaging system.
-
-Snap packages ensure there is always a clean separation between the base system
-and whatever applications need to be installed, as well as isolation between
-each and every application, their data, and even application version data.
-
-Updates are transactional, which means they’re either 100% successful or
-they’re not installed. If they're not installed, they leave no trace of any
-failure other than log details. This means the system remains fully operational
-and in a continuously well-defined state during both application and system
-updates. The system can also recover or revert to previous states if necessary, 
-even if a system fails to boot. Unlike alternative or more traditional
-package managers, a failed update never leaves the system in an unpredictable
-state.
-
-### Ubuntu Core releases
-
-Each Ubuntu Core release is built on the foundations of a corresponding [Ubuntu
-LTS release](https://ubuntu.com/about/release-cycle). The following versions of
-Ubuntu Core are currently available:
-
-| **Ubuntu Core version** | **Ubuntu base** | **Status** |
-|--|--|--|
-| Ubuntu Core 20 (UC20) | [Ubuntu 20.04 LTS (Focal Fossa)](https://releases.ubuntu.com/20.04/) | [beta1](releases/uc20.md) |
-| Ubuntu Core 18 (UC18) | [Ubuntu 18.04 LTS (Bionic Beaver)](https://releases.ubuntu.com/18.04/) | supported |
-| Ubuntu Core 16 (UC16) | [Ubuntu 16.04 LTS (Xenial Xerus)](https://releases.ubuntu.com/16.04/)  | supported |
-
-The current recommended version of Ubuntu Core is UC18. UC20 is under active
-development with a final release due soon. See [Ubuntu Core 20
-](releases/uc20.md) for details.
-
-<div class="p-notification--positive"><p markdown="1" class="p-notification__response">
-<span class="p-notification__status">Download Ubuntu Core:</span> the latest Ubuntu Core images are available from: </br>
-<a href="http://cdimage.ubuntu.com/ubuntu-core">http://cdimage.ubuntu.com/ubuntu-core</a>
-</p></div>
-
-### Advantages for IoT
-
-Ubuntu Core is engineered to meet the precise requirements of IoT devices. It
-runs on a large range of hardware, including Raspberry Pi, Intel NUC, Qualcomm
-Snapdragon 410c and even a KVM. Features include:
+Ubuntu Core features:
 
 - **simple, consistent installation and deployment**: Ubuntu Core is installed
   via an immutable image, which can be either installed or built specifically
@@ -68,22 +23,35 @@ Snapdragon 410c and even a KVM. Features include:
   to distribute. Public/private key validation ensures what's running is
 exactly what's intended to run
 
-Designed from the ground-up to solve the complex problems associated with
-deploying, running and updating critical software, **Ubuntu Core** makes updates
-automatic, reliable, secure and transparent whilst still offering a broad and
-carefully selected level of control and customisation over an update’s
-deployment.
+From a single Raspberry Pi, to a deployment of tens of thousands, it's the
+ideal platform for anything that needs to run securely, be ever-ready,
+autonomously updated, and tamper-proof.
 
-#### Ubuntu Core and Ubuntu
+To learn more, take a look at the highlighted documentation below, or dive into
+the documentation on the left.
 
-The Ubuntu family of Linux distributions includes Ubuntu Desktop and Ubuntu
-Server, as well as Ubuntu Cloud which is optimised and certified for most major
-clouds. Ubuntu Core is built from the same foundations but differs in the way
-those foundations are packaged and deployed.
+**Discovering Ubuntu Core:**
 
-| **Comparison** | Ubuntu Core | Ubuntu |
-|--|--|--|
-| Minimum requirements | 500Mhz single-core CPU <br /> 256MB RAM, 512MB storage | 1GHz dual-core CPU <br /> 512MB RAM, 1.5GB storage | 
-| Packaging       | Snaps, with autonomous updates via either the global store or a private brand store | Debs and snaps, with traditional update mechanics and organisation |
-| App security         | Confinement via AppArmor / Seccomp | No system-wide confinement for deb packages |
-| Graphical UI         | None by default (Wayland or Mir are options)	| X.Org/GNOME or Wayland/GNOME |
+|  |  |
+|--|--|
+| [Getting started](guides/intro/get-started.md) | Try out Ubuntu Core, learn how to install it, and use it on your device |
+| [What is Ubuntu Core](guides/intro/what-is-core.md)  | Discover Ubuntu Core is different and the advantages it offers |
+| [Using Ubuntu Core](using-core.md) | Access your device, install apps, manage services and view the logs |
+
+**Advanced features:**
+
+|  |  |
+|--|--|
+| [Snaps in Ubuntu Core](coresnaps) | Discover which snaps Ubuntu Core is built upon |
+| [Security and sandboxing](guides/intro/security.md) | See how security policies allow developers to quickly update their apps |
+| [Core configuration](reference/core-configuration) | Access system-wide options to customise your core environment |
+
+**Building images:**
+
+|  |  |
+|--|--|
+| [Image building](image/image-building) | Use the `ubuntu-image` command to build images for your hardware |
+| [Custom images](image/custom-images) | Build a bespoke image for any supported Ubuntu Core platform |
+| [Gadget snap](reference/gadget) | Understand the gadget snap, used to manipulate system properties |
+
+

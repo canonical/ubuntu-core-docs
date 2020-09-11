@@ -1,9 +1,12 @@
 navigation:
-  - title: Introduction
+  - title: Using
 
     children:
+      - title: Getting started
+        location: guides/intro/get-started.md
+        
       - title: What is Ubuntu Core?
-        location: index.md
+        location: guides/intro/what-is-core.md
 
       - title: Supported platforms
         location: platforms.md
