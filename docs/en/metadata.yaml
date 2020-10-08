@@ -57,8 +57,6 @@ navigation:
         location: stacks/audio/index.md
       - title: Bluetooth management
         location: stacks/bluetooth/index.md
-      - title: Disk management
-        location: stacks/disk/index.md
       - title: Network management
         location: stacks/network/index.md
 

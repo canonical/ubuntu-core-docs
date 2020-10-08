@@ -8,70 +8,50 @@ table_of_contents: true
 Ubuntu Core supports a set of system-wide options that allow you to customise your
 snap and core environment.
 
-As with [Configuration in
-snaps](https://snapcraft.io/docs/configuration-in-snaps), these options are
-changed with the `snap set` and `snap get` commands, but with a target of
-*system* instead of a specific snap:
+As with [Configuration in snaps](/t/configuration-in-snaps/510), these options are changed with the `set` and `get` commands, but with a target of  *system* instead of a specific snap:
 
 ```bash
-$ snap set system <some.option>="some value"
-$ snap get system <some.option>
+$ snap set system some.option="some value"
+$ snap get system some.option
 ```
 
-Configuration options can be unset by either passing their names to the unset
-command or by adding an exclamation mark (!) to the end of an option name:
+Configuration options can be unset by either passing their names to the unset command or by 
+adding an exclamation mark (!) to the end of an option name: (from _snapd 2.41+_):
 
 ```bash
-$ snap unset system <some.option>
-$ # or (from snapd 2.41+)
-$ snap set system <some.option>!
+$ snap unset system some.option
+$ # or
+$ snap set system some.option!
 ```
-
-Supported options:
-
-- [system.disable-backlight-service](#disable-backlight)
-- [journal.persistent](#journal-persistent)
-- [pi-config](#heading--pi-config)
-- [proxy.{http,https,ftp}](#heading--proxy)
-- [refresh](#heading--refresh)
-- [service.ssh.disable](#heading--ssh)
-- [snapshots.automatic.retention](#heading--snapshots-automatic-retention)
-- [store-certs](#heading--store-certs)
-- [system.power-key-action](#heading--power-key-action)
-
-<h2 id="heading--disable-backlight">system.disable-backlight-service</h2>
-
-Setting this to true disables the system backlight service by masking
-_systemd-backlight@.service_. Setting it to false removes the mask and
-re-enables any system backlight:
+Typing `snap get system` outputs a top-level view of system-wide option categories which can be added as arguments to view their contents:
 
 ```bash
-$ snap set system system.disable-backlight-service=false
+$ snap get system
+Key           Value
+experimental  {...}
+refresh       {...}
+seed          {...}
+$ snap get system experimental
+Key                   Value
+experimental.hotplug  true
+experimental.layouts  true
 ```
+---
 
-Available since snapd 2.45.
+| Supported options | |
+|--|--|
+| [pi-config](#heading--pi-config) | [proxy.{http,https,ftp}](#heading--proxy) |
+| [refresh](#heading--refresh)| [resilience.vitality-hint](#heading-resiliance) | 
+| [service.console-conf.disable](#heading--console)| [service.ssh.disable](#heading--ssh)| 
+|[snapshots.automatic.retention](#heading--snapshots-automatic-retention) | [store-certs](#heading--store-certs) | 
+| [system.disable-backlight](#heading--backlight) | [system.power-key-action](#heading--power-key-action)| 
+| [system.system.timezone](#heading--timezone) ||
 
-<h2 id="heading--journal-persistent">journal.persistent</h2>
-
-Setting this to true enables persistent (non volatile) journaling in
-`/var/log/journal`, via _journald_.
-
-```bash
-$ snap set system journal.persistent=true
-```
-
-Setting `journal.persistent` to false disables persistent journaling and
-**removes** _/var/log/journal_ if it was created by snapd.
-
-**Note:** With _core16_ it is necessary to restart the device manually for
-changes to take effect.
-
-Available since snapd 2.45.
+---
 
 <h2 id="heading--pi-config">pi-config</h2>
 
-On a Raspberry Pi, the following options set corresponding values in the
-_config.txt_ system configuration file:
+On a Raspberry Pi, the following options set corresponding values in the _config.txt_ system configuration file:
 
   * pi-config.disable-overscan
   * pi-config.framebuffer-width
@@ -92,40 +72,60 @@ _config.txt_ system configuration file:
   * pi-config.gpu-mem-512
   * pi-config.gpu-mem
 
-Further details on the above, see the [official Raspberry Pi
-documentation](https://www.raspberrypi.org/documentation/configuration/config-txt/).
+Further details on the above, see the [official Raspberry Pi documentation](https://www.raspberrypi.org/documentation/configuration/config-txt/).
 
 <h2 id="heading--proxy">proxy.{http,https,ftp}</h2>
 
-These options may be set to change the proxies to be used by the system when
-communicating with external sites that speak the respective protocols.
+These options may be set to change the proxies to be used by the system when communicating with external sites that speak the respective protocols.
 
 Available since snapd 2.28.
 
 <h2 id="heading--refresh">refresh</h2>
 
-There are four system-wide options that are used to manage how updates are
-handed:
+There are four system-wide options that are used to manage how updates are handed:
 
 - **refresh.timer**: defines the refresh frequency and schedule
 - **refresh.hold**: delays the next refresh until the defined time and date
 - **refresh.metered**: pauses refresh updates when network connection is metered
 - **refresh.retain**: sets how many revisions of a snap are stored on the system
 
-See [Controlling updates](https://snapcraft.io/docs/keeping-snaps-up-to-date)
-for further details on how the above options are used.
+See [Controlling updates](/t/managing-updates/7022#heading--controlling-updates) for further details on how the above options are used.
+
+<h2 id='heading--resiliance'>resilience.vitality-hint</h2>
+
+This option adjusts the Linux kernel's out-of-memory ([OOM](https://www.kernel.org/doc/gorman/html/understand/understand016.html)) killer behaviour for specific snap services.
+
+By default, all snap services have the same value for systemd's `OOMScoreAdjust`. By passing a list of snaps ordered by decreasing importance to the `resilience.vitality-hint` system option, the order is respected if snap processes are killed in low memory situations.
+
+The list of snaps need to be as string containing comma separated snap instance names in decreasing order of importance, such as:
+
+```bash
+snapA,snapB,snapC
+```
+
+In the above example, services inside `snapA` are the **least likely** to be killed in _out of memory_ situations, followed by services in `snapB`, services in `snapC`, and then the services in all the other snaps not referenced by the `vitality-hint` option.
+
+[note]
+:information_source: Snaps added to `resilience.vitality-hint` are still _more likely_ to be killed than the snap daemon, snapd, itself.
+[/note]
+
+Available since snapd 2.46.
+
+<h2 id="heading--console">service.console-conf.disable</h2>
+
+May be set to _true_ to disable the console-conf system configuration wizard that is launched by default when booting an initialised Ubuntu Core image.
+
+Available since snapd 2.46.
 
 <h2 id="heading--ssh">service.ssh.disable</h2>
 
-May be set to _true_ for disabling the SSH service at startup.
+May be set to _true_ to disable the SSH service at startup.
 
 Available since snapd 2.22.
 
-<h2 id='heading--snapshots-automatic-retention'>system snapshots.automatic.retention</h2>
+<h2 id='heading--snapshots-automatic-retention'>snapshots.automatic.retention</h2>
 
-[Automatic snapshot](https://snapcraft.io/docs/snapshots) retention time is
-configured with the `snapshots.automatic.retention` system option. The default
-value is 31 days, and the value needs to be greater than 24 hours:
+[Automatic snapshot](/t/snapshots/9468) retention time is configured with the `snapshots.automatic.retention` system option. The default value is 31 days, and the value needs to be greater than 24 hours:
 
 ```bash
 $ snap set system snapshots.automatic.retention=30h
@@ -136,15 +136,13 @@ To disable automatic snapshots, set the retention time to `no`:
 $ snap set system snapshots.automatic.retention=no
 ```
 
-> ⓘ Disabling automatic snapshots will *not* affect pre-existing, automatically
-> generated snapshots, but only those generated by subsequent snap removals.
+> ⓘ Disabling automatic snapshots will *not* affect preexisting, automatically generated snapshots, but only those generated by subsequent snap removals.
 
 Automatic snapshots require snap version _2.39+_. 
 
 <h2 id='heading--store-certs'>store-certs</h2>
 
-A custom SSL certificate can be added to snapd'd trusted certificates pool for
-the store communication with the `store-certs.<name>=<value>` system option.
+A custom SSL certificate can be added to snapd'd trusted certificates pool for the store communication with the `store-certs.<name>=<value>` system option.
 
 To add a certificate, enter the following:
 
@@ -159,6 +157,13 @@ $ snap unset system store-certs.cert1
 ```
 
 Available since snapd 2.45
+
+<h2 id='heading--backlight'>system.disable-backlight-service</h2>
+
+May be set to _true_ to disable the backlight service.
+
+Available since snapd 2.46.
+
 
 <h2 id='heading--power-key-action'>system.power-key-action</h2>
 
@@ -177,3 +182,9 @@ May be set to one of:
 * lock
 
 Available since snapd 2.23.
+
+<h2 id='heading--timezone'>system.timezone</h2>
+
+May be used to set a time zone value, as typically found in `/usr/share/zoneinfo`, such as `America/Chicago`.
+
+Available since snapd 2.46.

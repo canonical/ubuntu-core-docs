@@ -30,28 +30,24 @@ autonomously updated, and tamper-proof.
 To learn more, take a look at the highlighted documentation below, or dive into
 the documentation on the left.
 
-**Discovering Ubuntu Core:**
+</br>
 
-|  |  |
+| **Discovering Ubuntu Core**  |  |
 |--|--|
-| [Getting started](guides/intro/get-started.md) | Try out Ubuntu Core, learn how to install it, and use it on your device |
-| [What is Ubuntu Core](guides/intro/what-is-core.md)  | Discover Ubuntu Core is different and the advantages it offers |
-| [Using Ubuntu Core](using-core.md) | Access your device, install apps, manage services and view the logs |
+| [Getting started](guides/intro/get-started.md) | Install and try Ubuntu Core on your own devices |
+| [What is Ubuntu Core](guides/intro/what-is-core.md)  | Inside Ubuntu Core's strengths and advantages |
+| [Using Ubuntu Core](using-core.md) | Access your device, install apps and manage services |
 
-**Advanced features:**
-
-|  |  |
+| **Advanced features** |  |
 |--|--|
 | [Snaps in Ubuntu Core](coresnaps) | Discover which snaps Ubuntu Core is built upon |
-| [Security and sandboxing](guides/intro/security.md) | See how security policies allow developers to quickly update their apps |
-| [Core configuration](reference/core-configuration) | Access system-wide options to customise your core environment |
+| [Security and sandboxing](guides/intro/security.md) | Security policies and how they're implemented |
+| [Core configuration](reference/core-configuration) | System options to customise your core environment |
 
-**Building images:**
-
-|  |  |
+| **Building images**  |  |
 |--|--|
-| [Image building](image/image-building) | Use the `ubuntu-image` command to build images for your hardware |
-| [Custom images](image/custom-images) | Build a bespoke image for any supported Ubuntu Core platform |
-| [Gadget snap](reference/gadget) | Understand the gadget snap, used to manipulate system properties |
+| [Image building](image/image-building) | How to build images for your hardware |
+| [Custom images](image/custom-images) | Bespoke images for any supported platform |
+| [Gadget snap](reference/gadget) | Understanding the gadget snap and system properties |
 
 
