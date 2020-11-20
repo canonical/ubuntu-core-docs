@@ -15,9 +15,10 @@ authority-id:      <authority account id>
 revision:          <int>
 series             <string>
 brand-id           <account id>
+serial-authority   <list<string>> # optional list of serial authorities. Use “generic” to have the snap store generate a serial.
 model              <model id>
-classic            <true|false>
-store              <string>
+classic            <true|false> # optional
+store              <string> # optional
 display-name       <descriptive string>
 architecture       <debian architecture name>
 gadget             <gadget snap name>
