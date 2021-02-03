@@ -1,3 +1,4 @@
 ~^/(core/?|core/en)?$ /en/;
 /en/guides/build-device/assertions /en/reference/assertions;
-
+# redirect to new ubuntu.com/core/docs
+~^/(en/|/en/)?$ https://ubuntu.com/core/docs;
