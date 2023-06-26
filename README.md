@@ -1,3 +1,11 @@
+**Archived**
+
+The whole core.docs.ubuntu.com domain [now redirects](https://github.com/canonical/ubuntu.com/blob/main/konf/site.yaml#L391) to ubuntu.com/core/docs, which is now [served from Discourse in the ubuntu.com app](https://github.com/canonical/ubuntu.com/blob/main/webapp/app.py#L746).
+
+This project is no longer used, and the repo is being archived.
+
+---
+
 # Ubuntu Core documentation repository
 
 This documentation will walk you through the steps of building and managing
