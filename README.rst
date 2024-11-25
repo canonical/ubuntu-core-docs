@@ -1,5 +1,3 @@
-:hide-toc:
-
 Ubuntu Core documentation
 =========================
 
@@ -9,7 +7,7 @@ https://ubuntu.com/core/docs
 The above documentation is published directly from Discourse:
 https://discourse.ubuntu.com/c/ubuntu-core-docs/47
 
-**Work in progress**
+**November, 2024: Work in progress**
 
 This repository contains the source files to build the Ubuntu Core documentation outside of Discourse. We are actively working to migrate the source material to this repository. 
 
