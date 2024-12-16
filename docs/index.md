@@ -1,74 +1,48 @@
-# Starter pack
+(index)=
 
-**A single sentence that says what the product is, succinctly and memorably.**
-Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua.
+**Ubuntu Core** is a version of the Ubuntu operating system designed and engineered for deploying IoT and embedded systems.
 
-**A paragraph of one to three short sentences, that describe what the product
-does.** Urna cursus eget nunc scelerisque viverra mauris in. Nibh mauris
-cursus mattis molestie a iaculis at vestibulum rhoncus est pellentesque
-elit. Diam phasellus vestibulum lorem sed.
+In Ubuntu Core, every element of the system runs within a confined sandbox using **Snap packages**, which are used exclusively to create a transaction-based system. **Security and robustness** are the key features, alongside being **easy to install, easy to maintain, and easy to upgrade**.
 
-**A third paragraph of similar length, this time explaining what need the
-product meets.** Dui ut ornare lectus sit amet est. Nunc sed augue lacus
-viverra vitae congue eu consequat ac libero id faucibus nisl tincidunt eget
-nullam.
+Ubuntu Core is ideal for embedded devices because it manages itself. Whether it’s running on a **PC-style** system hidden for media streaming, or an **embedded ARM** device handling garage door automation, Ubuntu Core remains **transparent, trustworthy and autonomous**.
 
-**Finally, a paragraph that describes whom the product is useful for.** Nunc
-non blandit massa enim nec dui nunc mattis enim. Ornare arcu odio ut sem
-nulla pharetra diam porttitor leo a diam sollicitudin tempor id eu. Ipsum
-dolor sit amet consectetur adipiscing elit pellentesque habitant.
+From Linux and maker space tinkerers, to the robotics, automotive and signage industries; from a single device, to a deployment of thousands: Ubuntu Core can handle it.
 
----------
+---
 
 ## In this documentation
 
-````{grid} 1 1 2 2
+| | |
+|--|--|
+|  [Tutorials](/tutorials/index)</br>  Get started - a hands-on introduction to Ubuntu Core for new users </br> |  [How-to guides](/how-to-guides/index) </br> Step-by-step guides covering key operations and common tasks |
+| [Explanation](/explanation/index) </br> Concepts - discussion and clarification of key topics  | [Reference](/reference/index) </br> Technical information - specifications, APIs, architecture |
 
-```{grid-item-card} [Tutorials](index)
-
-**Start here**: a hands-on introduction to Example Product for new users
-```
-
-```{grid-item-card} [How-to guides](index)
-
-**Step-by-step guides** covering key operations and common tasks
-```
-
-````
-
-````{grid} 1 1 2 2
-:reverse:
-
-```{grid-item-card} [Reference](index)
-
-**Technical information** - specifications, APIs, architecture
-```
-
-```{grid-item-card} [Explanations](index)
-
-**Discussion and clarification** of key topics
-```
-
-````
-
----------
+---
 
 ## Project and community
 
-Example Project is a member of the Ubuntu family. It’s an open source project that warmly welcomes community projects, contributions, suggestions, fixes and constructive feedback.
+Ubuntu Core is a member of the Ubuntu family. It's an open source project that welcomes community projects, contributions, suggestions, fixes and constructive feedback. 
 
-* Code of conduct
-* Get support
-* Join our online chat
-* Contribute
-* Roadmap
-* Thinking about using Example Product for your next project? Get in touch!
+* [Community engagement commitment](/)
+* [Our Code of Conduct](https://launchpad.net/codeofconduct/2.0)
+* [How to get support](https://ubuntu.com/support/community-support)
+* [Join the Discourse forum](https://forum.snapcraft.io/c/device/10)
+* [Interactive chat on Matrix.org](https://matrix.to/#/#snapd:ubuntu.com)
+* [Product roadmap](https://snapcraft.io/docs/snapd-roadmap)
+
+Thinking about using Ubuntu Core for your next project? [Get in touch!](https://ubuntu.com/core/contact-us?product=core-overview) 
+
+<!-- Metadata for discourse module -->
 
 ```{toctree}
 :hidden:
+:titlesonly:
 :maxdepth: 2
+:glob:
 
-self
+ubuntu-core-24
+/tutorial*/index
+/how*/index
+/reference*/index
+/explanation*/index
 contributing
-```
