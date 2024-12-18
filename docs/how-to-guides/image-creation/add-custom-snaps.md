@@ -11,7 +11,7 @@ ubuntu-image snap ubuntu-core-20-amd64.model
 
 _ubuntu-image_ tool retrieves signed snaps with the given _snap-id_ in the model assertion from the store. To override these default snaps, first make sure the [model assertion](/t/model-assertion/19745#heading--fields) has a grade of dangerous to allow non-store snaps to be included:
 
-```json
+```
 grade: dangerous
 ```
 
