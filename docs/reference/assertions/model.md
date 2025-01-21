@@ -20,10 +20,7 @@ For more details on using a model assertion to create an image, see [Custom imag
 
 Model assertions for supported devices and systems can be found at [https://github.com/snapcore/models/tree/master](https://github.com/snapcore/models/tree/master).
 
-- [Model  assertion fields](#heading--fields)
-- [Example assertion](#heading--example)
-
-<h2 id='heading--fields'>Model assertion fields</h2>
+## Model assertion fields
 
 The following fields can be used in a model assertion:
 
@@ -34,6 +31,7 @@ authority-id:          <authority account id>
 base:                  <string>
 brand-id               <account id>
 classic                <true|false>   # Optional
+components:            <list[dict]>   # Optional, see below for details
 display-name           <descriptive string>
 grade:                 <string>
 model                  <model id>
@@ -95,7 +93,27 @@ For "recovery" and "install" modes, "ephemeral" can be used. This will install t
     * An _optional_ snap is not added to the [ubuntu-seed](/t/storage-layout/21632#heading--seed) partition when the image is created with [ubuntu-image](/how-to-guides/image-creation/use-ubuntu-image) unless the `--snap` option is used to add the snap explicitly. Optional snaps can be used to adapt the same base model for different hardware configurations, deployment objectives, and for use with a dynamic modelling agent. 
   * `default-channel` *(optional)*: initial tracking channel for the snap, default is “latest/stable”.
 
-<h3 id='heading--validation-sets'></h3>
+### Components
+
+A [component](/) is part of a snap that has been declared as optional. Models need to specify which snap components should be included in an image as they are not installed by default. 
+
+They're added as a structured list with a single `presence` attribute for whether each component is required or options. If required, the component must be in the image seed.
+
+The modes for which the component must be present can be specified as well. Syntax is as follows:
+
+```yaml
+    components:                                 # optional
+      <component-name-1>:
+        presence: "optional"|"required"
+        modes: [<mode-specifier>]               # list of modes, optional 
+	                                            # must be a subset of snap one
+                                                # defaults to the same modes
+                                                # as the snap
+      <component-name-2>: "required"|"optional" # presence, shortcut
+	                                            # syntax
+```
+
+### Validation sets
 
 - `validation-sets` (optional, from _snapd 2.60_ onwards) list specific snaps that are either required to be installed together or are permitted to be installed together on a device or system.
   * `account-id` (optional): if not set, the account-id is taken from the model itself.

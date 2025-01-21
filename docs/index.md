@@ -40,9 +40,9 @@ Thinking about using Ubuntu Core for your next project? [Get in touch!](https://
 :maxdepth: 2
 :glob:
 
-Ubuntu Core 24 <ubuntu-core-24>
+Home <self>
 /tutorial*/index
 /how*/index
 /reference*/index
 /explanation*/index
-How to contribute <contributing>
+*

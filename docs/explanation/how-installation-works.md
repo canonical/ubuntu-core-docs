@@ -1,11 +1,11 @@
 (explanation-how-installation-works)=
 # How installation works
 
-The Ubuntu Core install image is composed from the kernel, gadget, base, snapd and app snaps (see [Snaps in Ubuntu Core](/explanation/core-components/snaps-in-ubuntu-core) for further details). The resultant image typically contains the following:
+The Ubuntu Core install image is composed from the kernel, gadget, base, snapd and app snaps (see [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu-core) for further details). The resultant image typically contains the following:
 
 ![Core install image partition](https://assets.ubuntu.com/v1/108d3dba-core-install-image-partition.png) 
 
-Any device booting an Ubuntu Core installation image will create or use the partitions defined by its [Storage layout](/explanation/core-components/storage-layout) and proceed through the following installation steps. 
+Any device booting an Ubuntu Core installation image will create or use the partitions defined by its [Storage layout](/explanation/core-elements/storage-layout) and proceed through the following installation steps. 
 
 The first three (1-3) are also described in the [recovery mode](/t/recovery-modes/20332#heading--modes) boot process:
 

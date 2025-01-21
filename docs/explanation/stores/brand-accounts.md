@@ -23,7 +23,7 @@ The brand account can be used to:
 * Sign Model Assertions used to build images that point at a dedicated snap store.
 * Register kernel and gadget snap names.
 
-The kernel and gadget snaps are special snaps that can only be registered by the brand account, which also must also be given a publisher role in the base store. Similarly, kernel and gadget snap names must be registered by the brand account (or by Canonical). See [Snaps in Ubuntu Core](/explanation/core-components/snaps-in-ubuntu-core) for more details on the snaps used to build Ubuntu Core.
+The kernel and gadget snaps are special snaps that can only be registered by the brand account, which also must also be given a publisher role in the base store. Similarly, kernel and gadget snap names must be registered by the brand account (or by Canonical). See [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu-core) for more details on the snaps used to build Ubuntu Core.
 
 Use of the Brand Account and its credentials should be strictly limited. Canonical recommends that the Brand Account not be assigned any Roles that are not strictly needed. Do not make the Brand Account a store Administrator, a Reviewer or a Viewer.
 

@@ -24,6 +24,8 @@ These are the currently used assertion types:
 - **[serial](/reference/assertions/serial)**: binds the device identity to the device's key by carrying the public part
 - **[snap-build](/reference/assertions/snap-build)**: the basic properties of a snap at the time it was built by the developer
 - **[snap-declaration](/reference/assertions/snap-declaration)**:  defines various snap properties, such as `snap-id`, its name, and the publisher, plus policy related to accessing privileged interfaces
+- **[snap-resource-pair](/reference/assertions/snap-resource-pair)**: links a snap revision to a component revision
+- **[snap-resource-revision](/reference/assertions/snap-resource-revision)**: store acknowledgement on receipt of a component build labelled with a revision
 - **[snap-revision](/reference/assertions/snap-revision)**: store acknowledgement on receipt of a snap build labelled with a revision
 - **[store](/reference/assertions/store)**: defines the configuration needed to connect a device to a store
 - **[system-user](/reference/assertions/system-user)**: usually brand authorisation to create local system users on specified devices
