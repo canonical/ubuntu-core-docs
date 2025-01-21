@@ -1,7 +1,7 @@
 (how-to-guides-image-creation-optimise-boot-speed)=
 # Optimise boot speed
 
-When Ubuntu Core boots for the first time, a _seeding_ process installs an initial set of snaps and runs their respective hooks (see [Snaps in Ubuntu Core](/explanation/core-components/snaps-in-ubuntu-core) for more details).
+When Ubuntu Core boots for the first time, a _seeding_ process installs an initial set of snaps and runs their respective hooks (see [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu-core) for more details).
 
 Each installed snap needs to be verified and have their respective AppArmor and seccomp security profiles, systemd units, and mount points created. The time this takes is proportional to the number of asserted snaps being seeded, but installing many snaps can impact first boot speed.
 
@@ -37,7 +37,7 @@ The `--preseed-sign-key` argument is optional and the default GPG key will be us
 
 A custom AppArmor features directory may be specified with `--apparmor-features-dir=...`. The target should be a snapshot of `sys/kernel/security/apparmor/features` from the target system. If not specified, the `sys/kernel/security/apparmor/features` from the host system will be used.
 
-On a new device, snaps are installed from the `ubuntu-seed` volume (see [Inside Ubuntu Core](/explanation/core-components/index)).  On a classic system, this set of snaps to install is defined in `/var/lib/snapd/seed/seed.yaml`.
+On a new device, snaps are installed from the `ubuntu-seed` volume (see [Inside Ubuntu Core](/explanation/core-elements/index)).  On a classic system, this set of snaps to install is defined in `/var/lib/snapd/seed/seed.yaml`.
 
 <h2>Single boot installation</h2>
 During the installation of an Ubuntu Core system, the target device will undergo a reboot to finalize the installation process. If a system is preseeded, the installation can be completed without necessitating a system reboot. Note that this feature requires snapd version 2.62 and greater.

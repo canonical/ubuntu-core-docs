@@ -6,7 +6,7 @@ Our explanatory and conceptual guides are written to provide a better understand
 
 | **Explanation guides** | Why it does what it does |
 |--|--|
-| [Snaps in Ubuntu Core](/explanation/core-components/snaps-in-ubuntu-core) | Discover which snaps Ubuntu Core is built upon |
+| [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu-core) | Discover which snaps Ubuntu Core is built upon |
 | [Refresh control](/explanation/refresh-control) | Updates that are finely managed and controlled  |
 | [Security and sandboxing](/explanation/security-and-sandboxing) | Understanding security policies and configuration  |
 

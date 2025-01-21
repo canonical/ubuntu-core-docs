@@ -1,7 +1,7 @@
 (how-to-guides-image-creation-calculate-partition-sizes)=
 # Calculate partition sizes
 
-The partitions within Ubuntu Core's [Storage layout](/explanation/core-components/storage-layout) are defined within the _gadget.yaml_ of the [Gadget snap](/reference/gadget-snap-format). The size of each partition can be customised for a particular device and deployment. The process for doing this, and estimating partition sizes, is described below.
+The partitions within Ubuntu Core's [Storage layout](/explanation/core-elements/storage-layout) are defined within the _gadget.yaml_ of the [Gadget snap](/reference/gadget-snap-format). The size of each partition can be customised for a particular device and deployment. The process for doing this, and estimating partition sizes, is described below.
 
 See [Building a gadget snap](/how-to-guides/image-creation/build-a-gadget-snap) for details on how a gadget snap can be built. 
 

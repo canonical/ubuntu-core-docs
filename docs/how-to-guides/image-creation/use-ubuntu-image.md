@@ -77,7 +77,7 @@ The above example shows an unsigned reference model for [Raspberry Pi/arm64](htt
 
 The model includes details such as the store to use (`brand-id` and `authority-id`), the model name (`ubuntu-core-24-pi-arm64`) and the hardware architecture (`arm64`). Any snaps installed on the device will respect this selected architecture.
 
-As outlined in [Snaps in Ubuntu Core](/explanation/core-components/snaps-in-ubuntu-core), there are four principle types of snap that combine to create the Ubuntu Core environment. These are **kernel**, **gadget**, **base** and **snapd**, and all four need to be referenced within a model assertion.
+As outlined in [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu-core), there are four principle types of snap that combine to create the Ubuntu Core environment. These are **kernel**, **gadget**, **base** and **snapd**, and all four need to be referenced within a model assertion.
 
 ```{tip}
  
