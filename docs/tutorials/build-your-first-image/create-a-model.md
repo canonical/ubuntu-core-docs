@@ -1,4 +1,3 @@
-(tutorials-get-started-build-your-first-image-create-a-model)=
 # Create a model
 
 At the heart of custom Ubuntu Core image creation is the _model assertion_. An assertion is a signed recipe that describes the components that comprise a complete image. An assertion is provided as JSON in a text file which is signed by a GPG key associated with the publisher's Ubuntu One account.
@@ -12,14 +11,7 @@ See below for details on how to download and modify a model file to include your
 
 ---
 
-- [1. Download a model file](#heading--download-model)
-- [2. Edit the model file](#heading--edit-model)
-  - [2.1 `authority-id` and `brand-id`](#heading--edit-model-1)
-  - [2.2 `timestamp`](#heading--edit-model-2)
-  - [2.3 `snaps`](#heading--edit-model-3)
-  - [2.4 `my-model.json`](#heading--edit-model-3)
-
-<h2 id='heading--download-model'>1. Download a model file</h2>
+## Download a model file
 
 The quickest way to create a new model assertion is to edit a model that already exists. Reference models for every supported Ubuntu Core device can be found in the [snapcore/models](https://github.com/snapcore/models) GitHub repository.
 
@@ -31,7 +23,7 @@ Download and save the file locally with the following _wget_ command. We've call
 wget -O my-model.json https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-pi-arm64.json
 ```
 
-<h2 id='heading--edit-model'>2. Edit the model file</h2>
+## Edit the model file
 
 We now need to edit `my-model.json` using a text editor:
 
@@ -42,7 +34,7 @@ nano my-model.json
 The following fields in `my-model.json` need to be changed:
 
 
-<h3 id='heading--edit-model-1'>2.1 "authority-id" and "brand-id"</h3>
+###  "authority-id" and "brand-id"
 
 ```json
 "authority-id": "canonical",
@@ -60,7 +52,7 @@ These properties define the authority responsible for the image. Change both ins
 
 This needs to be provided at the end of the process; we’ll come back to this.
 
-<h3 id='heading--edit-model-3'>2.3 "snaps"</h3>
+###  "snaps"
 
 ```json
     "snaps": [
@@ -109,7 +101,7 @@ Snaps do not have dependencies, but they do require the presence of the [base sn
 
 The `snap-id` for a snap is in the output of the `snap info <snap-name>` command.
 
-<h3 id='heading--edit-model-4'>3. Complete model example</h3>
+### Complete model example
 
 After finishing all your edits, the completed **my-model.json** text file should now contain the following:
 

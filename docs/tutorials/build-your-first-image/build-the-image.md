@@ -1,12 +1,11 @@
-(tutorials-get-started-build-your-first-image-build-the-image)=
 # Build the image
 
 Images are built from the recipe contained in the [model assertion](/tutorials/get-started/build-your-first-image/create-a-model) using [ubuntu-image](https://github.com/canonical/ubuntu-image), a tool to generate a bootable image. Creating a bootable device is a two-step process:
 
-- [1. Compile the image](#heading--build)
-- [2. Write the image](#heading--write)
+- Compile the image
+- Write the image
 
-<h2 id='heading--build'>1. Compile the image</h2>
+## Compile the image
 
 First, install the `ubuntu-image` command from its snap:
 
@@ -41,7 +40,7 @@ The _console-conf_ user-interface that configures the network and system user wh
 This is covered in [Create a model assertion](/tutorials/get-started/build-your-first-image/create-a-model), but `ubuntu-image` can add `console-conf` at image build time with an additional `--snap console-conf ` argument. For more details on these changes, see [console-conf for device onboarding](/how-to-guides/image-creation/add-console-conf).
 ```
 
-<h2 id='heading--write'>2. Write the image</h2>
+## Write the image
 
 The next step is to write the `pi.img` file to the microSD card. There are many ways to do this, but our recommended way is to use Raspberry Pi Imager. This can be installed from its snap:
 
