@@ -3,18 +3,26 @@
 
 This section of our documentation contains step-by-step tutorials to help outline what Ubuntu Core is capable of while helping you achieve specific aims, such as installing Ubuntu Core or building a custom image for your device.
 
-We hope our tutorials make as few assumptions as possible and are broadly accessible to anyone with an interest in Ubuntu Core. They should also be a good place to start learning about Ubuntu Core, how it works and what it's capable of. 
 
-| Tutorials | Step-by-step walkthroughs |
-|--|--|
-| [Create a custom image](/how-to-guides/image-creation/add-custom-snaps) | Build your own Ubuntu Core with your own apps |
+## Build an image
 
-If you have a specific goal, but are already familiar with Ubuntu Core, take a look at our _How-to_ guides. These have more in-depth detail and can be applied to a broader set of applications.
+Ubuntu Core has been designed to facilitate the creation, deployment, and  management of secure custom images running on your own hardware. 
 
-Take a look at our  _Reference section_ when you need to know which options can be used, what functions the API supports, which rescue modes are supported and the contents of _gadget.yaml_.
 
-Finally, for a better understanding of how Ubuntu Core works and how it can be used and configured, our _Explanation_ section enables you to expand your knowledge.
+* [Build your first Ubuntu Core image](/tutorials/build-your-first-image/index):
 
+  A step-by-step guide to building and testing your own image with your own selection of applications.
+
+## Install Ubuntu Core
+
+But pre-built test images are also available, for both x86-based PC-style hardware and ARM-based platforms. These testing images are ideal for exploration  and experimentation but they're not intended for deployment or for use at scale.
+
+
+* [Install and try a pre-built image](/tutorials/try-pre-built-images/index)
+
+    Test a pre-built image within a VM, or by installing Ubuntu Core on either x86-based or ARM-based hardware.
+
+After you get Ubuntu Core up and running, take a look at our [First steps using Ubuntu Core](/how-to-guides/using-ubuntu-core) guide.
 
 ```{toctree}
 :hidden:
@@ -22,5 +30,5 @@ Finally, for a better understanding of how Ubuntu Core works and how it can be u
 :maxdepth: 2
 :glob:
 
-*
-*/index
+Build your first image <build-your-first-image/index>
+Try pre-built images <try-pre-built-images/index>
