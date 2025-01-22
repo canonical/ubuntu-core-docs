@@ -1,4 +1,3 @@
-(tutorials-get-started-try-pre-built-images-install-on-a-device-use-raspberry-pi-imager)=
 # Use Raspberry Pi Imager
 
 Ubuntu Core runs on a large range of hardware, and pre-built images are available for _amd64_ and Raspberry Pi reference platforms.
@@ -11,21 +10,12 @@ At the end of this tutorial, you'll be able to connect to your Raspberry Pi, ins
 
 ---
 
-- [Requirements](#heading--requirements)
-- 1\. [Write the image to a microSD card](#heading--1)
-- 2\. [Boot Ubuntu Core for the first time](#heading--2)
-- 3\. [Configure a network connection](#heading--3)
-  - [Wi-Fi](#heading--31)
-  - [Ethernet](#heading--32)
-- 4\. [Add Ubuntu SSO details](#heading--4)
-- 5\. [Connect to the device](#heading--5)
-
 ```{tip}
  
 Installation is very similar across each supported Ubuntu Core device. See [Supported platforms](/reference/testing-platforms) for a list of which images are available for which platforms. 
 ```
 
-<h2 id='heading--requirements'>Requirements</h2>
+## Requirements
 
 This tutorial is suitable for anyone with an interest in Ubuntu Core - no prior knowledge necessary, but you will need a few things first:
 
@@ -45,7 +35,7 @@ After Ubuntu Core is up and running, if you want to access your device remotely,
 
 Both SSH and the network configuration become optional when [building a custom image](/tutorials/get-started/build-your-first-image/index).
 
-<h2 id='heading--1'>1. Write the image to a microSD card</h2>
+## Write the image to a microSD card
 
 We're going to use the Raspberry Pi Foundation's _Raspberry Pi Imager_ to write the Ubuntu Core image to the microSD card. Raspberry Pi Imager both downloads and safely installs an image to your microSD card.
 
@@ -67,7 +57,7 @@ After it's installed and running, you will see its main window showing buttons f
 
 When the process has finished, Raspberry Pi Imager will proclaim "Write Successful" and you can remove the card from the reader. It's now ready to be inserted into your Raspberry Pi.
 
-<h2 id='heading--2'>3. Boot Ubuntu Core for the first time</h2>
+## Boot Ubuntu Core for the first time
 
 You can now insert the microSD card into your powered-off Raspberry Pi and power-on the device.
 
@@ -87,11 +77,11 @@ Press **Enter** again and you will be taken to the network setup page:
 
 ![Network connections](https://assets.ubuntu.com/v1/2017b744-8db3caab6834b5307574a8b6d7d6bb1f4a08230f_2_690x434.png)
 
-<h2 id='heading--3'>3. Configure a network connection</h2>
+## Configure a network connection
 
 Network access is a requirement for Ubuntu Core, at least initially, and you have a choice about whether to use a wired connection (Ethernet) or Wi-Fi, if your Raspberry Pi supports it. 
 
-<h3 id='heading--31'>Wi-Fi</h3>
+### Wi-Fi
 
 ```{caution}
 
@@ -119,7 +109,7 @@ For advanced network configuration, such as setting a static IP address, select 
 
 When you've finished configuring your network settings, select **Done** and press enter on the _Network connections_ page to move on to the final step.
 
-<h3 id='heading--32'>Ethernet</h3>
+### Ethernet
 
 If an Ethernet cable is connected to your device, a network connection will attempt to be automatically negotiated and, if this is successful, you will see an IP address for the device after the DHCPv4 entry in the _Network connections_ page. In this case, you don't need to do anything further:
 
@@ -135,7 +125,7 @@ Selecting _Manual_ will allow you to configure your Ethernet connection manually
 
 Select **Save** to apply those changes and for the connection to be attempted. You can now proceed to the next step by pressing **Done**.
 
-<h2 id='heading--4'>4. Add Ubuntu SSO details</h2>
+## Add Ubuntu SSO details
 
 This is the final step before completing the Ubuntu Core setup and you simply need to enter the email address linked to your Ubuntu SSH account. 
 
@@ -158,7 +148,7 @@ ssh <username>@<ip-address>
 
 Everything is now configured and you're ready to connect to the device.
 
-<h2 id='heading--5'>5. Connect to the device</h2>
+## Connect to the device
 
 If a display is connected, the network addresses and associated account username will be shown.
 
@@ -184,5 +174,5 @@ As shown above, the first time you connect to a new device you will be asked to 
 
 Congratulations! You have successfully downloaded, installed, and connected to a pre-built Ubuntu Core image on your Raspberry Pi.
 
-See [First steps with Ubuntu Core](/how-to-guides/using-ubuntu-core) for an introduction to using your new Ubuntu Core installation or learn how to [build your Ubuntu Core image](/tutorials/get-started/build-your-first-image/index).
+See [First steps with Ubuntu Core](/how-to-guides/using-ubuntu-core) for an introduction to using your new Ubuntu Core installation or learn how to [build your Ubuntu Core image](/tutorials/build-your-first-image/index).
 

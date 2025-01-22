@@ -1,4 +1,3 @@
-(tutorials-get-started-try-pre-built-images-install-on-a-device-index)=
 # Install on a device
 
 We create pre-built Ubuntu Core images for several testing platforms. These images are a way to explore Ubuntu Core. Canonical produces official images for the [following platforms](https://ubuntu.com/core/docs/supported-platforms).
@@ -14,5 +13,6 @@ Once you have downloaded the respective image, follow one of the next options:
 :maxdepth: 2
 :glob:
 
-*
-*/index
+Use Raspberry Pi imager <use-raspberry-pi-imager>
+Use the dd command <use-the-dd-command>
+

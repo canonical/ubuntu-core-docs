@@ -11,22 +11,12 @@ At the end of this tutorial, you'll be able to connect to your PC, install and c
 
 ---
 
-- [Requirements](#heading--requirements)
-- 1\. [Flash Ubuntu to a USB flash drive](#heading--1)
-- 2\. [Install Ubuntu Core from live Ubuntu desktop](#heading--2)
-- 3\. [Boot Ubuntu Core for the first time](#heading--3)
-- 4\. [Configure a network connection](#heading--4)
-  - [Ethernet](#heading--41)
-  - [Wi-Fi](#heading--42)
-- 5\. [Add Ubuntu SSO details](#heading--5)
-- 6\. [Connect to the device](#heading--6)
-
 ```{tip}
  
 See [Supported platforms](/reference/testing-platforms) for a list of which  images are available for which platforms. 
 ```
 
-<h2 id='heading--requirements'>Requirements</h2>
+## Requirements
 
 This tutorial is suitable for anyone with an interest in Ubuntu Core - no prior knowledge necessary, but you will need a few things first:
 
@@ -48,7 +38,7 @@ Alongside enough flash storage to hold an Ubuntu image (6GB+), you will need a s
 
 After Ubuntu Core is up and running, if you want to access your device remotely, you'll need an SSH client for your operating system. Linux and macOS both have clients built-in, whereas Windows users can use [Ubuntu on WSL](https://ubuntu.com/wsl).
 
-<h2 id='heading--1'>1. Flash Ubuntu desktop to a USB drive</h2>
+## Flash Ubuntu desktop to a USB drive
 
 First, download the desktop ISO image of [Ubuntu](https://ubuntu.com/download/desktop).
 
@@ -60,7 +50,7 @@ Run MultiWriter, and use the _Choose file_ button to open a file requester. From
 
 When the process has finished, remove the flash device. It's now ready to be inserted into the target NUC or PC.
 
-<h2 id='heading--2'>2. Install Ubuntu Core from live Ubuntu desktop</h2>
+## Install Ubuntu Core from live Ubuntu desktop
 
 Connect the your freshly flashed USB device to your target NUC or PC and make sure it's configured to boot from an external USB device, either via function-key triggered boot menu, via a BIOS setting, or simply by default.
 
@@ -91,7 +81,7 @@ From the live desktop that now appears, we need to do three things:
    ```
 **Your internal storage will be irrevocably overwritten**. Please make sure anything you wish to keep is backed-up before you start. After the write process has completed, you can safely restart and reboot your machine, which will then trigger the Ubuntu Core installation process.
 
-<h2 id='heading--3'>3. Boot Ubuntu Core for the first time</h2>
+## Boot Ubuntu Core for the first time
 
 When your device boots for the first time, you will see the following error message. This can be safely ignored:
 
@@ -111,11 +101,11 @@ Press **Enter** again and you will be taken to the network setup page:
 
 ![Network connections](https://assets.ubuntu.com/v1/74586cbe-uc03.png)
 
-<h2 id='heading--4'>4. Configure a network connection</h2>
+## Configure a network connection
 
 Network access is a requirement for Ubuntu Core, at least initially, and you have a choice about whether to use a wired connection (Ethernet) or if you have a compatible device connected, Wi-Fi.
 
-<h3 id='heading--41'>Ethernet</h3>
+### Ethernet
 
 If an Ethernet cable is connected to your device, a network connection will attempt to be automatically negotiated and, if this is successful, you will see an IP address for the device after the DHCPv4 entry in the _Network connections_ page. In this case, you don't need to do anything further:
 
@@ -129,7 +119,7 @@ Selecting _Manual_ will allow you to configure your Ethernet connection manually
 
 ![Ethernet manual configuration](https://assets.ubuntu.com/v1/ad78cf8a-uc05.png)
 
-<h3 id='heading--42'>Wi-Fi</h3>
+### Wi-Fi
 
 If you have a device with Wi-Fi capabilities, _WiFi_ will appear as a separate network device beneath any Ethernet devices.
 
@@ -153,7 +143,7 @@ When you've finished configuring your network settings, select **Done** and pres
 
 Select **Save** to apply those changes and for the connection to be attempted. You can now proceed to the next step by pressing **Done**.
 
-<h2 id='heading--5'>5. Add Ubuntu SSO details</h2>
+## Add Ubuntu SSO details
 
 This is the final step before completing the Ubuntu Core setup and you simply need to enter the email address linked to your Ubuntu SSH account. 
 
@@ -176,7 +166,7 @@ ssh <username>@<ip-address>
 
 Everything is now configured and you're ready to connect to the device.
 
-<h2 id='heading--6'>6. Connect to the device</h2>
+## Connect to the device
 
 Each time the device starts up, if a display connected it will show its various addresses and the account linked to the device:
 
