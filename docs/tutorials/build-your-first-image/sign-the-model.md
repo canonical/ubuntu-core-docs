@@ -1,16 +1,14 @@
-(tutorials-get-started-build-your-first-image-sign-the-model)=
 #  Sign the model
 
-After a model has been [created or modified](/tutorials/get-started/build-your-first-image/create-a-model), it must be signed with a GPG key to become a _model assertion_. This ensures the model cannot be altered without the key and also links the created image to both the signed version of the model and your [Ubuntu One account](t/create-an-ubuntu-one-account/30907).
+After a model has been [created or modified](create-a-model), it must be signed with a GPG key to become a _model assertion_. This ensures the model cannot be altered without the key and also links the created image to both the signed version of the model and your [Ubuntu One account](access-ubuntu-one).
 
 This is accomplished in three stages: 
 
-- [1. Create a key](#heading--signing-1)
-- [2. Register the key](#heading--signing-2)
-- [3. Sign the model ](#heading--signing-3)
+- Create a key
+- Register the key
+- Sign the model
 
-
-<h3 id='heading--signing-1'>1. Create a key</h3>
+## Create a key
 
 First make sure there are no keys already associated with your account by running the `snapcraft list-keys` command (you will only have a key if you've previously signed an assertion; if you already have a key, you can use that one):
 
@@ -33,7 +31,7 @@ As shown above, you will be asked for a passphrase. You need to remember this as
 Rather than creating a key for every device, the same key is typically used across all models or model families.
 ```
 
-<h3 id='heading--signing-2'>2. Register the key</h3>
+## Register the key
 
 We now need to upload the key and register it with your Ubuntu One account. This is accomplished with register-key:
 
@@ -56,7 +54,7 @@ $ snapcraft list-keys
 *   my-model-key  <key fingerprint>
 ```
 
-#### Update the timestamp
+### Update the timestamp
 
 As mentioned earlier, the timestamp in the model assertion must be set to a time and date _after_ the creation of our key. This means we need to edit `my-model.json` to [update the timestamp](#heading--edit-model-2) with the current time.
 
@@ -71,7 +69,7 @@ $ date -Iseconds --utc
 2023-09-29T09:29:09+00:00
 ```
 
-<h3 id='heading--signing-4'>3. Sign the model</h3>
+## Sign the model
 
 A model assertion is created by feeding the JSON file into the `snap sign` command with your recently-created key name and capturing the output in the corresponding model file:
 

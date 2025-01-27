@@ -1,4 +1,3 @@
-(tutorials-get-started-build-your-first-image-access-ubuntu-one)=
 # Access Ubuntu One
 
 To use Ubuntu Core, to build and sign an image, or publish a snap, you need an [Ubuntu One](https://login.ubuntu.com/) account.
@@ -8,12 +7,7 @@ Ubuntu One is a single sign-on service (SSO) for Ubuntu and its affiliated proje
 See below for details on how to create an account, login, and retrieve your developer account details.
 
 ---
-
-- [1. Create an Ubuntu One account](#heading--create-account)
-- [2. Snapcraft credentials](#heading--create-account)
-- [3. Retrieve your developer account id](#heading--developer-id)
-
-<h2 id='heading--create-account'>1. Create an Ubuntu One account</h2>
+## Create an Ubuntu One account
 
 You will need an [Ubuntu One account](https://snapcraft.io/account) with an uploaded public key of a locally generated SSH key pair. 
 
@@ -23,7 +17,7 @@ You will now need to retrieve your developer account identifier. This is part of
 
 The next steps need to be performed in an existing Ubuntu LTS environment.
 
-<h2 id='heading--snapcraft-credentials'>2. Snapcraft credentials</h2>
+## Snapcraft credentials
 
 Your developer identifier can be retrieved with the [`snapcraft`](https://snapcraft.io/docs/snapcraft-overview) command, the tool that's also used to build and publish snaps. It can be installed by running:
 
@@ -40,7 +34,7 @@ export SNAPCRAFT_STORE_CREDENTIALS=$(cat credentials.txt)
 
 You will be asked for your Ubuntu One email address and password, and encouraged to enable two-factor authentication (2FA) if you haven't already done so.
 
-<h2 id='heading--developer-id'>3. Retrieve your developer account ID</h2>
+## Retrieve your developer account ID
 
 With your authentication in place, the `snapcraft whoami` command will now display your developer identifier after the `id` field:
 

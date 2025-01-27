@@ -1,19 +1,10 @@
-(explanation-core-components-index)=
-# Core-Components
-
-Ubuntu Core is built from the same components as the corresponding Ubuntu LTS release, such as [Ubuntu 24.04 LTS (Noble Numbat)](https://releases.ubuntu.com/24.04/) and [Ubuntu 22.04 LTS (Jammy Jellyfish)](https://releases.ubuntu.com/22.04/) for `core24` and `core22` respectively.
+# Inside Ubuntu Core
 
 The kernel, boot assets, runtime environment, applications and device enablement capabilities are all delivered as snaps that are controlled by _snapd_ (the snap daemon), which is itself packaged as a snap.
 
 See below for how these elements combine in Ubuntu Core:
 
-- [Volume layouts](#heading--layouts)
-- [Boot process](#heading--bootloader)
-- [Confinement](#heading--confinement)
-- [Ubuntu Core snaps](#heading--system)
-- [REST API](#heading--api)
-
-<h2 id='heading--layouts'>Volume layouts</h2>
+## Volume layouts
 
 The storage layout of the generated image used to install Ubuntu Core, and the resultant storage on the device after installation, is described by the [gadget snap](/reference/gadget-snap-format) and its associated `gadget.yaml` file.
 
@@ -26,7 +17,7 @@ Ubuntu Core typically uses the following storage partitions:
 
 All these partitions but `ubuntu-seed` are created at installation time.
 
-<h2 id='heading--bootloader'>Boot process</h2>
+## Boot process
 
 The system boot process:
 
@@ -45,7 +36,7 @@ The system boot process:
 1. *snap-bootstrap* on kernel and base snap upgrades will also handle updating bootloader environment variables to implement A/B or try-boot functionality.
 1. *snap-bootstrap* then finally may do some additional setup of the root filesystem such as copying some default files for ephemeral system modes such as recover.
 
-<h2 id='heading--system'>Ubuntu Core snaps </h2>
+## Ubuntu Core snaps 
 
 The following components make up Ubuntu Core:
 - **snapd** is the system daemon that supervises all other snaps on Ubuntu Core. It exposes a REST API that makes Ubuntu Core appliances IP-addressable by default. This API facilitates device management.
@@ -70,20 +61,13 @@ After installation, which happens on first boot, the layout will be similar to w
 
 ![uc2x block diagram|690x517](https://assets.ubuntu.com/v1/033c55fb-uc-diag-03.png) 
 
-<h2 id='heading-api'>The REST API</h2>
+## The REST API
 
 Ubuntu Core exposes a built-in [REST API](https://snapcraft.io/docs/snapd-api) for secure device command and control. Authenticated and authorised clients can perform software management and configuration tasks on their Ubuntu Core devices remotely. Devices running Ubuntu Core can be configured remotely via the REST API.
 
 ![core-partition-layout (1)|628x168](https://assets.ubuntu.com/v1/e9bba730-uc-diag-01.png) 
 
-See also [Snaps in Ubuntu Core](/explanation/core-components/snaps-in-ubuntu-core) for a general overview.
+See also [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu-core) for a general overview.
 
 
-```{toctree}
-:hidden:
-:titlesonly:
-:maxdepth: 2
-:glob:
 
-*
-*/index

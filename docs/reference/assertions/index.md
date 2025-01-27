@@ -1,4 +1,3 @@
-(reference-assertions-index)=
 # Assertions
 
 An assertion is a digitally signed document that either verifies the validity of a process, as attested by the signer, or carries policy information, as formulated by the signer.  
@@ -7,13 +6,7 @@ An assertion is a digitally signed document that either verifies the validity of
 
 Assertions are text-based and take a context-dependent format that always includes one or more headers, an optional body, and the encoded signature.
 
-- [Assertion types](#heading--types)
-- [Assertion format](#heading--format)
-- [Viewing assertions](#heading--viewing)
-
----
-
-<h2 id='heading--types'>Assertion types</h2>
+## Assertion types
 
 These are the currently used assertion types:
 
@@ -32,7 +25,7 @@ These are the currently used assertion types:
 - **[validation](/reference/assertions/validation)**: validates a specific snap revision for a given series
 - **[validation-set](/reference/assertions/validation-set)**: a group of snaps that are either installed or permitted to be installed together
 
-<h2 id='heading--format'>Assertion format</h2>
+## Assertion format
 
 The typical format of an assertion, with common headers, is as follows:
 
@@ -62,7 +55,7 @@ sign-key-sha3-384: <key id> # Encoded key id of signing key
 
 Given a particular type and index, there is only one “latest” valid assertion that properly determines policy for a system - the one with the highest revision. For a given assertion, the index headers must all be defined.
 
-<h2 id='heading--viewing'>Viewing assertions</h2>
+## Viewing assertions
 
 The `snap known <type> [<header>=<value>...]` command can be used to view assertions or a specific type:
 
