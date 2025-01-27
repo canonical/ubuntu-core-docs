@@ -1,20 +1,33 @@
-(explanation-index)=
 # Explanation
 
 
 Our explanatory and conceptual guides are written to provide a better understanding of how Ubuntu Core works and how it can be used and configured. They enable you to expand your knowledge and become better at Ubuntu Core.
 
-| **Explanation guides** | Why it does what it does |
-|--|--|
-| [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu-core) | Discover which snaps Ubuntu Core is built upon |
-| [Refresh control](/explanation/refresh-control) | Updates that are finely managed and controlled  |
-| [Security and sandboxing](/explanation/security-and-sandboxing) | Understanding security policies and configuration  |
+## Operations
 
-For a simpler place to start your Ubuntu Core journey, our tutorials section contains step-by-step tutorials to help outline what Ubuntu Core is capable of while helping you achieve specific aims, such as installing Ubuntu Core or building a custom image for your device.
+Understanding how certain operations work in Ubuntu Core is key to getting the most out of the system.
 
-If you have a specific goal, but are already familiar with Ubuntu Core, our _How-to_ guides have more in-depth detail than our tutorials and can be applied to a broader set of applications. They'll help you achieve an end-result but may require you to understand and adapt the steps to fit your specific requirements.
+- [How installation works](how-installation-works)
+- [Refresh control](refresh-control)
+- [Remodelling](remodelling)
+- [Preseed performance](preseed-performance)
+- [Recovery modes](recovery-modes)
+- [Docker companion snap](docker-companion-snap)
 
-Take a look at our  _Reference section_ when  you need to know which options can be used, what functions the API supports, which rescue modes are supported and the contends of _gadget.yaml_.
+## Security
+
+A devices data and runtime environment is secure and isolated from other applications and devices.
+
+- [Security and sandboxing](security-and-sandboxing)
+- [Full disk encryption](full-disk-encryption)
+
+## Inside Ubuntu Core
+
+There are many different components in an Ubuntu Core deployment that keep every system updated and secure.
+
+- [Core elements](core-elements/index)
+- [Stores](stores/index)
+- [System snaps](system-snaps/index)
 
 
 ```{toctree}
@@ -23,5 +36,15 @@ Take a look at our  _Reference section_ when  you need to know which options can
 :maxdepth: 2
 :glob:
 
-*
-*/index
+How installation works <how-installation-works>
+Refresh control <refresh-control>
+Remodelling <remodelling>
+Preseed performance <preseed-performance>
+Docker companion snap <docker-companion-snap>
+Full disk encryption <full-disk-encryption>
+Recovery modes <recovery-modes>
+Security and sandboxing <security-and-sandboxing>
+Core elements <core-elements/index>
+Stores <stores/index>
+System snaps <system-snaps/index>
+
