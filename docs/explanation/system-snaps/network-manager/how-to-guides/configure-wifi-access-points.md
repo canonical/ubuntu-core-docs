@@ -1,8 +1,8 @@
 (explanation-system-snaps-network-manager-how-to-guides-configure-wifi-access-points)=
-# Configure WiFi Access Points
+# Configure Wi-Fi Access Points
 
 
-It is possible to create WiFi Access Points with the network-manager snap. This can be done by running
+It is possible to create Wi-Fi Access Points with the network-manager snap. This can be done by running
 ```bash
 $ nmcli d wifi hotspot ifname <wifi_iface> ssid <ssid> password <password>
 ```

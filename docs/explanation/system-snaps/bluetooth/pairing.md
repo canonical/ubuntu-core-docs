@@ -17,9 +17,9 @@ Pairing with a remote device can be done in two ways due to the fact that it can
 
 ## Handling Authentication Requests by BlueZ
 
-The pairing procedure includes an authentication that requires confirmation by the user. If you have ever used Bluetooth previously you probably remeber entering a pin code or answering a "would you like to connect yes/no" question.
+The pairing procedure includes an authentication that requires confirmation by the user. If you have ever used Bluetooth previously you probably remember entering a pin code or answering a "would you like to connect yes/no" question.
 
-To pair with other devices BlueZ uses an agent-style DBus API. See the following links for more details on this:
+To pair with other devices BlueZ uses an agent-style D-Bus API. See the following links for more details on this:
 
 * [Agent API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/agent-api.txt)
 * [Device API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/device-api.txt)

@@ -16,7 +16,7 @@ $ sudo mmcli -m 0 --list-bearers
 Found 1 bearers:
     /org/freedesktop/ModemManager1/Bearer/0
 ```
-To retrieve information about the bearer (as usual, we specify the bearer with the number at the end of the bearer's DBus path):
+To retrieve information about the bearer (as usual, we specify the bearer with the number at the end of the bearer's D-Bus path):
 
 ```bash
 $ sudo mmcli -b 0

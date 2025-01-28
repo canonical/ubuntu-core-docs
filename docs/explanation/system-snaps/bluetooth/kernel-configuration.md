@@ -58,7 +58,7 @@ Device Drivers
     <M>   User-space I/O driver support for HID subsystem
     <M>   Generic HID driver 
 ```
-Below are the Linux kenrel config options for reference. They are based on the Linux core16 4.4.0-1040-raspi2 kernel which is the official Ubuntu Core Linux kernel for Raspberry Pi 2/3.
+Below are the Linux kernel config options for reference. They are based on the Linux core16 4.4.0-1040-raspi2 kernel which is the official Ubuntu Core Linux kernel for Raspberry Pi 2/3.
 ```
 CONFIG_NET=y
 CONFIG_BT=m

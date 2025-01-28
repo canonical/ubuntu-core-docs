@@ -9,7 +9,7 @@ $ sudo mmcli -L
 Found 1 modems:
     /org/freedesktop/ModemManager1/Modem/0 [BRAND] MODEL
 ```
-The command shows the DBus path for the modem, with the number at the end of the path being the argument to access it from the cli:
+The command shows the D-Bus path for the modem, with the number at the end of the path being the argument to access it from the cli:
 
 ```bash
 $ sudo mmcli -m 0

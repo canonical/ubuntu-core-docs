@@ -36,6 +36,8 @@ There are many different components in an Ubuntu Core deployment that keep every
 :maxdepth: 2
 :glob:
 
+Community engagement <community-engagement>
+Ubuntu Core 24 <ubuntu-core-24>
 How installation works <how-installation-works>
 Refresh control <refresh-control>
 Remodelling <remodelling>

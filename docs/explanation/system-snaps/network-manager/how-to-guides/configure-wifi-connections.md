@@ -1,24 +1,24 @@
 (explanation-system-snaps-network-manager-how-to-guides-configure-wifi-connections)=
-# Configure WiFi Connections
+# Configure Wi-Fi Connections
 
-This section explains how to establish a WiFi connection. It covers creating and modifying connections as well as directly connecting.
+This section explains how to establish a Wi-Fi connection. It covers creating and modifying connections as well as directly connecting.
 
 ## Establish a Wireless Connection
 This section will show how to establish a wifi connection to the wireless network. Note that directly connecting will implicitly create a connection (that can be seen with "nmcli c"). The naming of such will follow "SSID N" pattern, where N is a number.
 
-First, determine the name of the WiFi interface:
+First, determine the name of the Wi-Fi interface:
 ```bash
 $ nmcli d
 DEVICE             TYPE      STATE         CONNECTION
 ...
 wlan0              wifi      disconnected     --
 ```
-Make sure the WiFi radio is on (which is its default state):
+Make sure the Wi-Fi radio is on (which is its default state):
 
 ```bash
 $ nmcli r wifi on
 ```
-Then, list the available WiFi networks:
+Then, list the available Wi-Fi networks:
 ```
 $ nmcli d wifi list
 *  SSID           MODE   CHAN  RATE       SIGNAL  BARS  SECURITY

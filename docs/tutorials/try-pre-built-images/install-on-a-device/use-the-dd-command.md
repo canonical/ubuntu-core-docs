@@ -121,17 +121,17 @@ Selecting _Manual_ will allow you to configure your Ethernet connection manually
 
 ### Wi-Fi
 
-If you have a device with Wi-Fi capabilities, _WiFi_ will appear as a separate network device beneath any Ethernet devices.
+If you have a device with Wi-Fi capabilities, _Wi-Fi_ will appear as a separate network device beneath any Ethernet devices.
 
 ![wlan selection](https://assets.ubuntu.com/v1/3765991b-uc06.png)
 
-To configure Wi-Fi, press the cursor up key until  the wireless device is selected and press **Enter**. You will see a small menu and you need to select **Edit Wifi**.
+To configure Wi-Fi, press the cursor up key until  the wireless device is selected and press **Enter**. You will see a small menu and you need to select **Edit Wi-Fi**.
 
-![Edit Wifi](https://assets.ubuntu.com/v1/f4889452-uc07.png)
+![Edit Wi-Fi](https://assets.ubuntu.com/v1/f4889452-uc07.png)
 
-After selecting _Edit Wifi_, you will see the network interface configuration panel for Wi-Fi. If you know the name of the Wi-Fi network you wish to connect to, it can be entered directly, or cursor down to _Choose a visible network_ and select a network from a list of those that have been detected.
+After selecting _Edit Wi-Fi_, you will see the network interface configuration panel for Wi-Fi. If you know the name of the Wi-Fi network you wish to connect to, it can be entered directly, or cursor down to _Choose a visible network_ and select a network from a list of those that have been detected.
 
-![Wifi password](https://assets.ubuntu.com/v1/bf6ddac7-uc8.png)
+![Wi-Fi password](https://assets.ubuntu.com/v1/bf6ddac7-uc8.png)
 
 Finally, enter the Wi-Fi password and select **Save** to complete the configuration. You will be returned to the previous menu and your device will attempt to connect to the network. If successful, you will see its IP address to the right of DHCPv4.
 

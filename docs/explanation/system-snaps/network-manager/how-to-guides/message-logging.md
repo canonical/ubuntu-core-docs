@@ -24,5 +24,5 @@ The <level> is the desired log level. You can choose from the following:
 **WARN**: will log warning messages
 **INFO**: will log various informational messages
 **DEBUG**: enables verbose logging for debugging purposes
-<domain> is the category of messages that shall be logged with given severity. **WIFI** will include only WiFi related messages, **IP4** will include only IPv4 related messages, and so on.
+<domain> is the category of messages that shall be logged with given severity. **Wi-Fi** will include only Wi-Fi related messages, **IP4** will include only IPv4 related messages, and so on.
 

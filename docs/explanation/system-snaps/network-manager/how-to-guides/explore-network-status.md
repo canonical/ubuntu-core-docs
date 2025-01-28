@@ -26,7 +26,7 @@ Wired connection 1  59b3aab1-f9a8-3bee-8fd2-2497a1dcd99c  ethernet  enp0s31f6
 docker0             b13e1f13-c23c-47c3-9b3e-ca43ecd79e79  bridge    docker0         
 ```
 
-Finally, we can see the state of radio interfaces, including WiFi and WWAN (cellular) with the _radio_ argument:
+Finally, we can see the state of radio interfaces, including Wi-Fi and WWAN (cellular) with the _radio_ argument:
 
 ```bash
 $ nmcli r
@@ -34,9 +34,9 @@ WIFI-HW  WIFI     WWAN-HW  WWAN
 enabled  enabled  enabled  enabled 
 ```
 
-It is important to make sure that WiFi/WWAN radios are enabled so the respective connection types can establish a connection (we will specify how to this in following sections). As with the other commands, “--help” shows usage information.
+It is important to make sure that Wi-Fi/WWAN radios are enabled so the respective connection types can establish a connection (we will specify how to this in following sections). As with the other commands, “--help” shows usage information.
 
-Observe NetworkManage activity (changes in connectivity state, devices or connection properties):
+Observe NetworkManager activity (changes in connectivity state, devices or connection properties):
 
 ```bash
 $ nmcli monitor

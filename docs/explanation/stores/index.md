@@ -18,7 +18,7 @@ Applications and updates are delivered from a _store_. By default, this is Canon
 :maxdepth: 2
 :glob:
 
-Store overview <store-overview?
+Store overview <store-overview>
 Brand accounts <brand-accounts>
 Dedicated Snap Stores <dedicated-snap-stores>
 Store scoping <store-scoping>

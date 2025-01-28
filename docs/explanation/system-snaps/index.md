@@ -4,7 +4,7 @@ System snaps provide essential device functionality, usually associated with con
 
 ## Connectivity
 
-There are several system snaps that can be used to connect to a local or wide area network, as well as local devics over Bluetooth.
+There are several system snaps that can be used to connect to a local or wide area network, as well as local devices over Bluetooth.
 
 - [Bluetooth manager](bluetooth/index)
 - [Modem Manager](modem-manager/index)

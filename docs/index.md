@@ -1,5 +1,7 @@
 (index)=
 
+# Ubuntu Core documentation
+
 **Ubuntu Core** is a version of the Ubuntu operating system designed and engineered for deploying IoT and embedded systems.
 
 In Ubuntu Core, every element of the system runs within a confined sandbox using **Snap packages**, which are used exclusively to create a transaction-based system. **Security and robustness** are the key features, alongside being **easy to install, easy to maintain, and easy to upgrade**.
@@ -23,7 +25,7 @@ From Linux and maker space tinkerers, to the robotics, automotive and signage in
 
 Ubuntu Core is a member of the Ubuntu family. It's an open source project that welcomes community projects, contributions, suggestions, fixes and constructive feedback. 
 
-* [Community engagement commitment](/)
+* [Community engagement commitment](explanation/community-engagement)
 * [Our Code of Conduct](https://launchpad.net/codeofconduct/2.0)
 * [How to get support](https://ubuntu.com/support/community-support)
 * [Join the Discourse forum](https://forum.snapcraft.io/c/device/10)

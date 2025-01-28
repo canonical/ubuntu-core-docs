@@ -12,7 +12,7 @@ $ sudo modem-manager.mmcli -L
 Found 1 modems:
     /org/freedesktop/ModemManager1/Modem/0 [description]
 ```
-In this case we have just one modem, with index 0 (the number at the end of the DBus object path).
+In this case we have just one modem, with index 0 (the number at the end of the D-Bus object path).
 
 Show detailed information about the modem using that index:
 ```bash

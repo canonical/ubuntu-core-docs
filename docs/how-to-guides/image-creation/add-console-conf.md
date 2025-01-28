@@ -1,4 +1,3 @@
-(how-to-guides-image-creation-add-console-conf)=
 # Add console-conf
 
 Console-conf is a text-based user-interface that can be optionally included in an Ubuntu Core image to provide interactive network and user configuration.
@@ -30,7 +29,7 @@ See [Create a model assertion](/tutorials/get-started/build-your-first-image/cre
 
 ### Using the ubuntu-image command
 
-The [ubuntu-image](/) command is used to generate a bootable Ubuntu Core image from your source files. To build an image from the [ubuntu-core-24-amd64](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-amd64.model) model assertion for the pre-bulit images, for example, use the following command:
+The [ubuntu-image](/) command is used to generate a bootable Ubuntu Core image from your source files. To build an image from the [ubuntu-core-24-amd64](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-amd64.model) model assertion for the pre-built images, for example, use the following command:
 
 ```bash
 ubuntu-image snap ubuntu-core-24-amd64.model

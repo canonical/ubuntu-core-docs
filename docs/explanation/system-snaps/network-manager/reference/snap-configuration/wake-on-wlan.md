@@ -6,7 +6,7 @@ Wake on WLAN (called WoWLAN in the following) is a feature which allows a device
 
 The NetworkManager snap allows its users to configure one or more triggers to allow the device it operates on to be woken up remotely.
 
-An important precondition for WoWLAN to work is that your device's kernel WiFi driver has support for it. If it is has support for WoWLAN it may only support a subset of possible triggers.
+An important precondition for WoWLAN to work is that your device's kernel Wi-Fi driver has support for it. If it is has support for WoWLAN it may only support a subset of possible triggers.
 
 You can read more about the kernel side implementation on the following sites:
 
