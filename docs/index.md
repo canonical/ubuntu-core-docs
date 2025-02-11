@@ -26,7 +26,7 @@ From Linux and maker space tinkerers, to the robotics, automotive and signage in
 Ubuntu Core is a member of the Ubuntu family. It's an open source project that welcomes community projects, contributions, suggestions, fixes and constructive feedback. 
 
 * [Community engagement commitment](explanation/community-engagement)
-* [Our Code of Conduct](https://launchpad.net/codeofconduct/2.0)
+* [Our Code of Conduct](https://ubuntu.com/community/ethos/code-of-conduct)
 * [How to get support](https://ubuntu.com/support/community-support)
 * [Join the Discourse forum](https://forum.snapcraft.io/c/device/10)
 * [Interactive chat on Matrix.org](https://matrix.to/#/#snapd:ubuntu.com)
