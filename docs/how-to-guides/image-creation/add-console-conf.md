@@ -25,7 +25,7 @@ The console-conf snap can be added to the model declaration just like any other 
 
 It's also included in the `ubuntu-core-24` [test image model declarations](https://github.com/snapcore/models), although it's marked at `optional` in these. Removing the `"presence": "optional"` line will trigger its inclusion when building your own versions of these models.
 
-See [Create a model assertion](/tutorials/get-started/build-your-first-image/create-a-model) for more details.
+See [Create a model assertion](/tutorials/build-your-first-image/create-a-model) for more details.
 
 ### Using the ubuntu-image command
 

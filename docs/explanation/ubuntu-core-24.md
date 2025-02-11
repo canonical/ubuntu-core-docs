@@ -3,7 +3,7 @@
 
 Ubuntu Core 24 (UC24) is the latest Ubuntu Core release, and is built on the foundations of [Ubuntu 24.04 LTS (Noble Numbat)](https://releases.ubuntu.com/24.04/).
 
-With 12 years of Long Term Support, our strictly-confined OS enables developers to [build production-grade images](/tutorials/get-started/build-your-first-image/index)  for embedded devices on various architectures.
+With 12 years of Long Term Support, our strictly-confined OS enables developers to [build production-grade images](/tutorials/build-your-first-image/index)  for embedded devices on various architectures.
 
 Ubuntu Core 24 delivers a new factory installation system for IoT device makers, GPU support for AIoT and device management with Landscape in its fifth LTS release. We've also added support for the Raspberry Pi 5.
 
@@ -16,9 +16,9 @@ New features for this release include:
 
 In addition to the above, Ubuntu Core 24 bundles both the latest Linux Kernel  6.8 and *systemd* 2.55 and includes all the latest features of _snapd_, including [Dynamic kernel boot parameters](/how-to-guides/manage-ubuntu-core/modify-kernel-options), [Quota group limits for Journal log](https://snapcraft.io/docs/quota-groups#heading--journal) and [Offline remodelling](/explanation/remodelling).
 
-Support for Ubuntu Core has also been added to [Multipass](/tutorials/get-started/try-pre-built-images/install-on-a-vm), for single-command deployment.
+Support for Ubuntu Core has also been added to [Multipass](/tutorials/try-pre-built-images/install-on-a-vm), for single-command deployment.
 
-See [Get started with Ubuntu Core](/tutorials/get-started/index)  to build your own image, or to try a pre-built image of Ubuntu Core 24.
+See [Get started with Ubuntu Core](/tutorials/index)  to build your own image, or to try a pre-built image of Ubuntu Core 24.
 
 ## Improved GPU integration
 
@@ -52,7 +52,7 @@ Canonical has made [ROS foundational snaps](https://snapcraft.io/docs/ros2-appli
 
  ## New documentation and documentation structure
 
-Our documentation has been restructured to primarily support image building, which is focus for Ubuntu Core. This includes a step-by-step [Build your first Ubuntu Core image](/tutorials/get-started/build-your-first-image/index) tutorial, new documentation on [Using ubuntu-image](/how-to-guides/image-creation/use-ubuntu-image), and including the [console-conf for device onboarding](/how-to-guides/image-creation/add-console-conf), plus an overhauled [First steps with Ubuntu Core](/how-to-guides/using-ubuntu-core).
+Our documentation has been restructured to primarily support image building, which is focus for Ubuntu Core. This includes a step-by-step [Build your first Ubuntu Core image](/tutorials/build-your-first-image/index) tutorial, new documentation on [Using ubuntu-image](/how-to-guides/image-creation/use-ubuntu-image), and including the [console-conf for device onboarding](/how-to-guides/image-creation/add-console-conf), plus an overhauled [First steps with Ubuntu Core](/how-to-guides/using-ubuntu-core).
 
 We've also removed a lot of the duplication in the Ubuntu Core documentation and the [snapcraft.io/docs](https://snapcraft.io/docs) documentation, and we now have in-depth guides on [Creating a recovery system from the REST API](/how-to-guides/manage-ubuntu-core/create-a-recovery-system-from-the-api), [calculating partition sizes](/how-to-guides/image-creation/calculate-partition-sizes),
  

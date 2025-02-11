@@ -7,7 +7,7 @@ This snap orchestrates the workflow by communicating with a Docker Engine on the
 
 Companion snaps are most useful when creating self-contained Ubuntu Core images that boot into a production state without manual intervention.
 
-This is achieved by building a [custom Ubuntu Core image](/tutorials/get-started/build-your-first-image/index) that includes the companion snap along with the [Docker Engine](https://snapcraft.io/docker).
+This is achieved by building a [custom Ubuntu Core image](/tutorials/build-your-first-image/index) that includes the companion snap along with the [Docker Engine](https://snapcraft.io/docker).
 
 The Ubuntu Core image can also include the application configurations if they aren't sourced from remote media.
 

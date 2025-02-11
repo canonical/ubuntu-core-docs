@@ -3,7 +3,6 @@
 
 This section of our documentation contains step-by-step tutorials to help outline what Ubuntu Core is capable of while helping you achieve specific aims, such as installing Ubuntu Core or building a custom image for your device.
 
-
 ## Build an image
 
 Ubuntu Core has been designed to facilitate the creation, deployment, and  management of secure custom images running on your own hardware. 

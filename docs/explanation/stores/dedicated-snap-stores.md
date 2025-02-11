@@ -31,7 +31,7 @@ Dedicated Snap Stores have their roles and administration controlled by a _Brand
 
 <h2 id="heading--brand-sso-account">Brand accounts</h2>
 
-The Brand account grants roles and privileges to the dedicated Snap Store, and is itself derived from a nominated  [Ubuntu SSO account](/tutorials/get-started/build-your-first-image/access-ubuntu-one). It's strongly recommended that the Ubuntu SSO account is used only for Brand activities and that its use is strictly limited and controlled.
+The Brand account grants roles and privileges to the dedicated Snap Store, and is itself derived from a nominated  [Ubuntu SSO account](/tutorials/build-your-first-image/access-ubuntu-one). It's strongly recommended that the Ubuntu SSO account is used only for Brand activities and that its use is strictly limited and controlled.
 
 ![Dedicated Snap Store SSU](https://assets.ubuntu.com/v1/90807b1f-brand-store-1.png)
 

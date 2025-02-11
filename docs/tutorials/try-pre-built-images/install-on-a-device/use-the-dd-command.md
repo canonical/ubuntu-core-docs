@@ -30,7 +30,7 @@ This tutorial is suitable for anyone with an interest in Ubuntu Core - no prior 
 Pre-built Ubuntu Core images do not use a username and password to login to the system. Instead, they uses SSH with SSH keys uploaded to your Ubuntu One account using the console-conf snap. SSH is not a requirement for other Ubuntu Core images. See [Connect to Ubuntu Core with SSH](https://discourse.ubuntu.com/t/connect-to-ubuntu-core-with-ssh/29020) for further details.
 ```
 
-Unlike installing Ubuntu Core on an IoT device, such as [Installing Ubuntu Core a Raspberry Pi](/tutorials/get-started/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager), NUC or PC installations require the Ubuntu Core image to be written directly to internal storage. This cannot be done from an operating system running on the same storage, and needs to be performed from an external storage device.
+Unlike installing Ubuntu Core on an IoT device, such as [Installing Ubuntu Core a Raspberry Pi](/tutorials/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager), NUC or PC installations require the Ubuntu Core image to be written directly to internal storage. This cannot be done from an operating system running on the same storage, and needs to be performed from an external storage device.
 
 In this tutorial, we will first write and boot a _live_ version of Ubuntu to a USB flash drive, download Ubuntu Core, and write the Ubuntu Core image to the device's internal storage.
 

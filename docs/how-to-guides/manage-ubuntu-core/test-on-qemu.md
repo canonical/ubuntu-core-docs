@@ -6,7 +6,7 @@ You can test Ubuntu Core without specific hardware from within a virtual machine
 - Multipass has integrated support for the latest Ubuntu Core images and is quicker to get started with
 - QEMU is more configurable and can boot either a supported image or a custom image, with or without TPM emulation and full disk encryption.
 
-Using QEMU is covered below. For details on using Multipass, see [Test Ubuntu Core with Multipass](/tutorials/get-started/try-pre-built-images/install-on-a-vm).
+Using QEMU is covered below. For details on using Multipass, see [Test Ubuntu Core with Multipass](/tutorials/try-pre-built-images/install-on-a-vm).
 
 ## Test QEMU
 

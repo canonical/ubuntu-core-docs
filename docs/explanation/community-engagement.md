@@ -2,7 +2,7 @@
 
 Ubuntu Core is an open source project hosted by Canonical. We warmly welcome community contributions, suggestions, fixes and constructive feedback.
 
-In particular, we're committed to:
+We're committed to:
 * actively encouraging community contributions
 * providing support and help to both established and potential contributors
 * managing our capacity planning to facilitate community engagement
@@ -10,7 +10,7 @@ In particular, we're committed to:
 
 ## Where to find the project
 
-Ubuntu Core does not have a its own code repository.  It is instead built entirely from [snap packages](/t/snaps-in-ubuntu-core/19730) and managed by the snap daemon, snapd. As a result, the source code for the project is split across several locations, alongside any other snap packages that may be installed:
+Ubuntu Core does not have a its own code repository.  It is instead built entirely from [snap packages](/explanation/core-elements/snaps-in-ubuntu-core/) and managed by the snap daemon, snapd. As a result, the source code for the project is split across several locations, alongside any other snap packages that may be installed:
 
 - **[snapd](https://github.com/snapcore/snapd)** is the background service that manages and maintains snaps, and provides the `snap` command line tool.
 - **[gadget snaps](https://github.com/search?q=org%3Asnapcore+gadget&type=repositories)** define and configures system properties specific to one or more devices.

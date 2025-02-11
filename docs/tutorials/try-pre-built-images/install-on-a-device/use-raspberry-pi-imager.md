@@ -33,7 +33,7 @@ Alongside enough storage to hold the Ubuntu Core image, you will need a screen a
 
 After Ubuntu Core is up and running, if you want to access your device remotely, you'll need an SSH client for your operating system. Linux and macOS both have clients built-in, whereas Windows users can use [Ubuntu on WSL](https://ubuntu.com/wsl).
 
-Both SSH and the network configuration become optional when [building a custom image](/tutorials/get-started/build-your-first-image/index).
+Both SSH and the network configuration become optional when [building a custom image](/tutorials/build-your-first-image/index).
 
 ## Write the image to a microSD card
 
