@@ -18,9 +18,7 @@ The following factors affect how a device is encrypted:
 
 For a non-standard (non-UEFI+TPM platform) FDE platform, such as a Raspberry Pi or other ARM devices, implementation is board-specific and will typically involve creating custom gadget and kernel snaps. UC20/UC22, however, do provide a helper mechanism, via a hook interface, to ensure the integrity of any subsequently executed or accessed data. See the [full-disk-encryption hook interface](https://snapcraft.io/docs/uc20-fde-hooks) for further details.
 
----
-
-<h2 id='heading--layouts'>Storage layouts</h2>
+## Storage layouts
 
 The layout of the generated image used to install Ubuntu Core, and the resultant storage on the device, is described by the [gadget snap](https://snapcraft.io/docs/gadget-snap) and its associated `gadget.yaml`.
 
@@ -46,7 +44,7 @@ If an encrypted drive is detected, but the TPM does not contain a valid key, the
 
 For more information on how Ubuntu Core uses these partitions, what they contain, and how they boot, see [Storage layout](/explanation/core-elements/storage-layout).
 
-<h2 id='heading--disable'>Disabling encryption</h2>
+## Disabling encryption
 
 It is sometimes desirable to install Ubuntu Core without encryption, even when the device hardware supports it.
 
@@ -56,9 +54,9 @@ This option is provided by the “storage-safety” setting in the [model assert
 - **prefer-encrypted**: do encrypt if the hardware supports it.
 - **prefer-unencrypted**: do not encrypt by default, even if the device supports encryption.
 
-See [Creating a bespoke image](/how-to-guides/image-creation/add-custom-snaps) for further details on building an image from a model assertion.
+See [Add custom snaps](/how-to-guides/image-creation/add-custom-snaps) for further details on building an image from a model assertion.
 
-<h2 id='heading--grade'>Model grade</h2>
+## Model grade
 
 The `grade` option in the model assertion is used to set the constraints for the device. It can be one of the following:
 
@@ -81,7 +79,7 @@ timestamp:     today at 08:54 UTC
 
 The values of both a model’s grade and the storage-safety option influence whether a device is encrypted, unencrypted, or generates an error, as shown in the tables below:
 
-<h3 id='heading--with-hardware'>With hardware support</h3>
+### With hardware support
 
 | grade &#8595; / safety &#8594; |unset|encrypted|prefer-encrypted|prefer-unencrypted|
 |---|--- |--- |--- |--- |
@@ -89,7 +87,7 @@ The values of both a model’s grade and the storage-safety option influence whe
 |**signed** | encrypted | encrypted  | encrypted  |  unencrypted |
 |**secured**  | encrypted | encrypted| encrypted | _invalid_ |
 
-<h3 id='heading--without-hardware'>Without hardware support</h3>
+### Without hardware support
 
 | grade &#8595; / safety &#8594; |unset|encrypted|prefer-encrypted|prefer-unencrypted|
 |---|--- |--- |--- |--- |
@@ -97,8 +95,6 @@ The values of both a model’s grade and the storage-safety option influence whe
 |**signed**|  unencrypted | _error output_ | unencrypted |  unencrypted |
 |**secured** | _error output_ |  _error output_ | _error output_ | _invalid_|
 
-[note status="Note "]
-`grade:secured` is the same as `grade:signed` and `storage-safety:encrypted`.
+Note: `grade:secured` is the same as `grade:signed` and `storage-safety:encrypted`.
 `storage-safety:prefer-encrypted` is the same as `unset`
-```
 
