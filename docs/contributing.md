@@ -10,6 +10,31 @@ As [Voltaire](https://en.wikipedia.org/wiki/Voltaire) wrote, "_Perfect is the en
 
 ---
 
+## Documentation source
+
+The documentation for Ubuntu Core is open source and is available at the [Ubuntu Core documentation repository](https://cigithub.com/canonical/ubuntu-core-docs) on GitHub.
+
+We welcome contributions, suggestions, fixes and constructive feedback from the user community. If you feel something is inaccurate, unclear or broken, you have a number of ways to fix it:
+
+- Fix the issue and [raise a pull request](https://github.com/canonical/ubuntu-core-docs/pulls) against the docs repository.
+- Report it as a bug on [GitHub](https://github.com/canonical/ubuntu-core-docs/issues).
+- Talk to us on the [Snapcraft devices forum](https://forum.snapcraft.io/c/device/10).
+
+Contributing to our documentation is straightforward. We only require that all contributors sign the [Canonical contributor license agreement](https://ubuntu.com/legal/contributors).
+
+In order to contribute, you will need to set up a [GitHub](https://github.com/) account and a [git environment](https://github.com/canonical/open-documentation-academy/blob/main/getting-started/install_git.md). The [Getting Started guide](https://github.com/canonical/open-documentation-academy/blob/main/getting-started/get_started.md) from the Canonical Open Documentation Academy is a useful resource for people who are new to contributing using the Ubuntu command line.
+
+The navigational structure, style, and content of our documentation follows the Diátaxis systematic framework for technical documentation. This categorizes the documentation into tutorials, how-to guides, reference material and explanatory text.
+
+Consistency is vital in documentation, which is why we request contributors to follow the {ref}`style-guide`. We also set up the following GitHub actions to run automatically on every pull request raised against our docs repository:
+
+- Inclusive language check
+- Spellcheck
+- Accessibility check
+- Link check
+
+However, do not let this be a barrier to your contribution. You can still submit contributions to the best of your ability, and if something is inconsistent, we will fix it. We are targeting continuous improvement rather than delayed perfection.
+
 ## Open Documentation Academy
 
 Our [Canonical Open Documentation Academy](https://discourse.ubuntu.com/t/about-the-open-documentation-academy/39615/3) is a great way to make your first open source documentation contributions to Ubuntu Core, snap and Snapcraft.
