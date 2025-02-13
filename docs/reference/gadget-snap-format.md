@@ -1,17 +1,6 @@
 (reference-gadget-snap-format)=
 # Gadget snap format
 
-[quote]
-:construction: **NOTE TO EDITORS** :construction:
-
-This is a read-only copy of https://forum.snapcraft.io/t/gadget-snaps/696, placed here for convenience.
-
-Please direct your edits and updates to the above link.
-
-Thanks!
-
-[/quote]
-
 The gadget snap is responsible for defining and configuring system properties specific to one or more devices.
 
 The gadget metadata and content defines:
