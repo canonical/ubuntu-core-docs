@@ -26,7 +26,7 @@ This tutorial is suitable for anyone with an interest in Ubuntu Core - no prior 
 - An [Ubuntu SSO account with associated SSH keys](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh).
 
 ```{tip}
-A pre-built Ubuntu Core image does use a username and password to login to the system. It instead uses SSH and your public SSH key, which is uploaded to your Ubuntu One account. This is handled by the [console-conf](/how-to-guides/image-creation/add-console-conf) snap bundled in pre-built test images. SSH is otherwise not a requirement for Ubuntu Core images. See [Connect to Ubuntu Core with SSH](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh) for further details.
+A pre-built Ubuntu Core image does not use a username and password to login to the system. It instead uses SSH and your public SSH key, which is uploaded to your Ubuntu One account. This is handled by the [console-conf](/how-to-guides/image-creation/add-console-conf) snap bundled in pre-built test images. SSH is otherwise not a requirement for Ubuntu Core images. See [Connect to Ubuntu Core with SSH](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh) for further details.
 ```
 
 Alongside enough storage to hold the Ubuntu Core image, you will need a screen and keyboard connected to the Raspberry Pi. These are needed to navigate a few installation prompts, but neither are needed after setup has been completed.
