@@ -12,9 +12,9 @@ Otherwise, the full disk encryption implementation in Ubuntu Core is generic and
 TPM-based FDE seals the FDE secret key to the full EFI state, including the kernel command line, which is subsequently unsealed by the initrd code in the secure-boot protected _kernel.efi_ at boot time.
 
 The following factors affect how a device is encrypted:
-- [Storage layouts](#heading--layouts): the potential partitions created on the device
-- [Disabling encryption](#heading--disable): an optional parameter that can disable encryption
-- [Model grade](#heading--grade): interacts with _storage-safety_ to set the device constraints 
+- [Storage layouts](#storage-layouts): the potential partitions created on the device
+- [Disabling encryption](#disabling-encryption): an optional parameter that can disable encryption
+- [Model grade](#model-grade): interacts with _storage-safety_ to set the device constraints 
 
 For a non-standard (non-UEFI+TPM platform) FDE platform, such as a Raspberry Pi or other ARM devices, implementation is board-specific and will typically involve creating custom gadget and kernel snaps. UC20/UC22, however, do provide a helper mechanism, via a hook interface, to ensure the integrity of any subsequently executed or accessed data. See the [full-disk-encryption hook interface](https://snapcraft.io/docs/uc20-fde-hooks) for further details.
 
@@ -40,7 +40,7 @@ The system boot process:
 
 When run normally, the snap content comes from snaps in the encrypted data partition, with the exception of the kernel image which is loaded from the system boot partition via secure boot. In any case the unsealing of the disk encryption key(s) is tied to the correct TPM boot measurements.
 
-If an encrypted drive is detected, but the TPM does not contain a valid key, the Ubuntu Core boot process will prompt for a recovery key. See [Using recovery keys](/t/using-recovery-modes/20332#heading--recovery-keys) for further details.
+If an encrypted drive is detected, but the TPM does not contain a valid key, the Ubuntu Core boot process will prompt for a recovery key. See [Using recovery keys](/how-to-guides/manage-ubuntu-core/use-a-recovery-mode.md#using-recovery-keys) for further details.
 
 For more information on how Ubuntu Core uses these partitions, what they contain, and how they boot, see [Storage layout](/explanation/core-elements/storage-layout).
 
