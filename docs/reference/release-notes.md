@@ -14,7 +14,7 @@ This page outlines the release notes of Ubuntu Core, summarising new features, b
 
 A new version of Ubuntu Core is released every two years, and each release is considered an LTS release. Minor updates are delivered continuously through new versions of snapd.
 
-To upgrade an Ubuntu Core image from one version to another, see [Remodelling](/explanation/remodelling).
+To upgrade an Ubuntu Core image from one version to another, see [Upgrade Ubuntu Core](/how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core.md).
 
 When Ubuntu Core is running, its snap packages update automatically. To manually control or modify this process, see [Refresh control](/explanation/refresh-control).
 
