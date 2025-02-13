@@ -20,13 +20,11 @@ The purpose of the  *bluez*  snap is to provide the BlueZ Bluetooth stack. Apart
 
 There is a quick way of checking what a snap provides. To do this you can use the snap scheme for exposing commands which is  *snap_name.command* . To see all the commands provided by the  *bluez*  snap type:
 ```bash
-$ bluez.<TAB><TAB>
+bluez.<TAB><TAB>
 ```
 The double  **TAB**  indicates that you should hit the tab key twice for bash auto-completion to kick in. Immediately you will see a list of available commands:
 ```bash
-$ bluez. 
 bluez.bluetoothctl bluez.btmon bluez.hcidump bluez.obexctl bluez.btattach bluez.hciattach bluez.hcitool bluez.sdptool bluez.btmgmt bluez.hciconfig bluez.meshctl 
-$ bluez.
 ```
 
 ## Sending and receiving files
@@ -109,11 +107,11 @@ Profile Descriptor List:
 
 ### Connect OPP Profile
 
-Make sure that the pairing is successfully completed. You can learn how to do it on the [Pairing page](pairing/introduction.html)
+Make sure that the pairing is successfully completed. You can learn how to do it on the [Pairing page](pairing.md).
 
 Once the pairing is successfully completed, it is time to connect the OBEX Object Push profile. To interact with OBEX, the obexctl tool is used. Open another terminal and type
 ```
-$ sudo bluez.obexctl
+sudo bluez.obexctl
 ```
 
 You will see output like this:
@@ -155,7 +153,7 @@ therefore it must be placed in a readable location. For example:
 
 /var/snap/bluez/current.
 
-Also keep in mind that the regular use of the OPP shall be accomplished through the [D-Bus OBEX API](https://git.kernel.org/pub/scm/bluetooth/bluez.git/tree/doc/obex-api.txt)
+Also keep in mind that the regular use of the OPP shall be accomplished through the [D-Bus OBEX API](https://github.com/pauloborges/bluez/blob/master/doc/obex-agent-api.txt).
 
 therefore the bluez snap itself does not need access to other snaps data.
 Below is example output of sending a file:
@@ -176,7 +174,7 @@ Transfer /org/bluez/obex/client/session5/transfer10
 
 ### Receiving Files
 
-By default there is no way to receive a file using Bluetooth on Ubuntu Core unless the application snap implements the receiving side. This is because the incoming transfer has to be allowed and the obexctl tool does not provide such an agent. It is assumed that the application will implement this. For reference, here is the [OBEX D-Bus Agent API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/obex-agent-api.txt) description.
+By default there is no way to receive a file using Bluetooth on Ubuntu Core unless the application snap implements the receiving side. This is because the incoming transfer has to be allowed and the obexctl tool does not provide such an agent. It is assumed that the application will implement this. For reference, here is the [OBEX D-Bus Agent API](https://github.com/pauloborges/bluez/blob/master/doc/obex-agent-api.txt) description.
 
 For convenience, there is a bluez-tests snap that packages the
 

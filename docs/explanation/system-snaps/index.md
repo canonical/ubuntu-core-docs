@@ -1,6 +1,6 @@
 # System snaps
 
-System snaps provide essential device functionality, usually associated with connectivity.
+System snaps provide additional device functionality, usually associated with connectivity. They're managed and maintained by separate projects outside of the central Ubuntu Core.
 
 ## Connectivity
 
