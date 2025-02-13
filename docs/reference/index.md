@@ -23,6 +23,7 @@ Configuration and security options.
 :maxdepth: 2
 :glob:
 
+Release notes <release-notes>
 System requirements <system-requirements>
 Testing platforms <testing-platforms>
 Gadget snap format <gadget-snap-format>
