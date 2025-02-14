@@ -15,7 +15,7 @@ license:   unset
 description: |
   NetworkManager is a system network service that manages your network
   devices and connections, attempting to keep active network connectivity
-  when available. It manages ethernet, WiFi, mobile broadband (WWAN) and
+  when available. It manages ethernet, Wi-Fi, mobile broadband (WWAN) and
   PPPoE devices, provides VPN integration with a variety of different
   VPN serivces.
   Please find the source code for this track at:

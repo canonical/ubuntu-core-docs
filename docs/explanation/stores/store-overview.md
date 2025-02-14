@@ -5,7 +5,7 @@ Ubuntu Core includes access to the Canonical's [Snap Store](https://snapcraft.io
 
 See [Releasing to the Snap Store](https://snapcraft.io/docs/releasing-to-the-snap-store) for more details on how to publish and distribute snaps to devices from the Snap Store.
 
-<h2 id="heading--brand-stores">Dedicated Snap Stores</h2>
+## Dedicated Snap Stores
 
 For larger projects and ISVs, it is often a requirement to publish snaps using a brand account to a brand-specific dedicated Snap Store.
 
@@ -13,7 +13,7 @@ A [Dedicated Snap Store](/explanation/stores/dedicated-snap-stores) allows vendo
 
 Here is an overview of how to create a brand account and define collaborators.
 
-<h2 id="heading--registering-accounts">Registering accounts</h2>
+## Registering accounts
 
 To create an account, go to <https://snapcraft.io/account>. We then recommend the following process:
 
@@ -21,11 +21,11 @@ To create an account, go to <https://snapcraft.io/account>. We then recommend th
 -   let each team member who releases and manages snaps register a personal account
 -   grant each team member access to the snaps by adding their personal accounts as collaborators
 
-<h2 id="heading--registering-snaps">Registering Snaps</h2>
+## Registering Snaps
 
 Snaps can be registered using the `snapcraft` tool or via the web. Snaps should be registered using the brand/umbrella account.
 
-<h3 id="heading--registering-snaps-with-snapcraft">Registering snaps with Snapcraft</h3>
+### Registering snaps with Snapcraft
 
 -   install `snapcraft` using `snap install snapcraft --classic` on Linux or `brew install snapcraft` on macOS
 -   execute `snapcraft login` and authenticate using the brand/umbrella account
@@ -33,12 +33,12 @@ Snaps can be registered using the `snapcraft` tool or via the web. Snaps should 
 
 For more details on this process, see [Registering your app name](https://snapcraft.io/docs/registering-your-app-name).
 
-<h3 id="heading--registering-snaps-via-the-web">Registering snaps via the web</h3>
+### Registering snaps via the web
 
--   login to [https://snapcraft.io]() using the brand/umbrella account
+-   login to [https://snapcraft.io](https://snapcraft.io/) using the brand/umbrella account
 -   register snap(s) here: [https://snapcraft.io/account/register-name]()
 
-<h2 id="heading--collaborators">Collaborators</h2>
+## Collaborators
 
 When you've registered snap(s) using a brand/umbrella account, you should add team members' personal accounts to the umbrella/brand account via the Dashboard for your snap. For example:
 

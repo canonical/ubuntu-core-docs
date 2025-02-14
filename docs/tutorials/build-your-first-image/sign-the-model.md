@@ -56,7 +56,7 @@ $ snapcraft list-keys
 
 ### Update the timestamp
 
-As mentioned earlier, the timestamp in the model assertion must be set to a time and date _after_ the creation of our key. This means we need to edit `my-model.json` to [update the timestamp](#heading--edit-model-2) with the current time.
+As mentioned earlier, the timestamp in the model assertion must be set to a time and date _after_ the creation of our key. This means we need to edit `my-model.json` to update the timestamp with the current time.
 
 ```json
     "timestamp": "2022-04-04T10:40:41+00:00",

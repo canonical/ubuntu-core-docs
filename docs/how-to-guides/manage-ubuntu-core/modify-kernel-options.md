@@ -66,7 +66,7 @@ snapd_recovery_mode=recover snapd_recovery_system=20210512 console=ttyS0 console
 
 In the above examples, the mode arguments are `snapd_recovery_mode` and `snapd_recovery_system`. The static command line content for the grub bootloader is `console=ttyS0 console=tty1 panic=-1` which is defined in the snapd source code.
 
-Below we describe how to add additional static parameters (static with the meaning that they cannot be manipulated dynamcally from the snapd API).
+Below we describe how to add additional static parameters (static with the meaning that they cannot be manipulated dynamically from the snapd API).
 
 <h3 id='heading--gadgetcmdline'>Adding static parameters from the gadget</h3>
 

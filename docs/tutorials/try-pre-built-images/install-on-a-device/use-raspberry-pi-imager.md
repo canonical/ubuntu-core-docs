@@ -20,20 +20,20 @@ Installation is very similar across each supported Ubuntu Core device. See [Supp
 This tutorial is suitable for anyone with an interest in Ubuntu Core - no prior knowledge necessary, but you will need a few things first:
 
 - A Raspberry Pi model 3, 4 or 5.
-- A macOs, Windows or Linux computer with a microSD card reader.
+- A macOS, Windows or Linux computer with a microSD card reader.
 - 4GB+ microSD card (this will be erased, so make sure it's backed up).
 - Connected screen and keyboard for installation.
 - An [Ubuntu SSO account with associated SSH keys](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh).
 
 ```{tip}
-A pre-built Ubuntu Core image does use a username and password to login to the system. It instead uses SSH and your public SSH key, which is uploaded to your Ubuntu One account. This is handled by the [console-conf](/how-to-guides/image-creation/add-console-conf) snap bundled in pre-built test images. SSH is otherwise not a requirement for Ubuntu Core images. See [Connect to Ubuntu Core with SSH](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh) for further details.
+A pre-built Ubuntu Core image does not use a username and password to login to the system. It instead uses SSH and your public SSH key, which is uploaded to your Ubuntu One account. This is handled by the [console-conf](/how-to-guides/image-creation/add-console-conf) snap bundled in pre-built test images. SSH is otherwise not a requirement for Ubuntu Core images. See [Connect to Ubuntu Core with SSH](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh) for further details.
 ```
 
 Alongside enough storage to hold the Ubuntu Core image, you will need a screen and keyboard connected to the Raspberry Pi. These are needed to navigate a few installation prompts, but neither are needed after setup has been completed.
 
 After Ubuntu Core is up and running, if you want to access your device remotely, you'll need an SSH client for your operating system. Linux and macOS both have clients built-in, whereas Windows users can use [Ubuntu on WSL](https://ubuntu.com/wsl).
 
-Both SSH and the network configuration become optional when [building a custom image](/tutorials/get-started/build-your-first-image/index).
+Both SSH and the network configuration become optional when [building a custom image](/tutorials/build-your-first-image/index).
 
 ## Write the image to a microSD card
 
@@ -93,11 +93,11 @@ This is the most common option. If you have a device with Wi-Fi capabilities, su
 
 ![Choose wlan0](https://assets.ubuntu.com/v1/3765991b-3765991b629df12859941fe22c7c2fa90a693289.png)
 
-To configure Wi-Fi, press the cursor up key until  _wlan0_ is selected and press **Enter**. You will see a small menu and you need to select **Edit Wifi**.
+To configure Wi-Fi, press the cursor up key until  _wlan0_ is selected and press **Enter**. You will see a small menu and you need to select **Edit Wi-Fi**.
 
-![Edit Wifi](https://assets.ubuntu.com/v1/f4889452-f4889452487e4f2eb052ad7410d078a8c0bddd06.png)
+![Edit Wi-Fi](https://assets.ubuntu.com/v1/f4889452-f4889452487e4f2eb052ad7410d078a8c0bddd06.png)
 
-After selecting _Edit Wifi_, you will see the network interface configuration panel for Wi-Fi. If you know the name of the Wi-Fi network you wish to connect to, it can be entered directly, or cursor down to _Choose a visible network_ and select a network from a list of those that have been detected.
+After selecting _Edit Wi-Fi_, you will see the network interface configuration panel for Wi-Fi. If you know the name of the Wi-Fi network you wish to connect to, it can be entered directly, or cursor down to _Choose a visible network_ and select a network from a list of those that have been detected.
 
 ![Enter password](https://assets.ubuntu.com/v1/04bb9874-bf6ddac76e5fdc34bfdcf353e035c4e1d679d5a4_2_690x385.png)
 

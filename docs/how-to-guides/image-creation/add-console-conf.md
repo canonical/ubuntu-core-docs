@@ -1,4 +1,3 @@
-(how-to-guides-image-creation-add-console-conf)=
 # Add console-conf
 
 Console-conf is a text-based user-interface that can be optionally included in an Ubuntu Core image to provide interactive network and user configuration.
@@ -26,11 +25,11 @@ The console-conf snap can be added to the model declaration just like any other 
 
 It's also included in the `ubuntu-core-24` [test image model declarations](https://github.com/snapcore/models), although it's marked at `optional` in these. Removing the `"presence": "optional"` line will trigger its inclusion when building your own versions of these models.
 
-See [Create a model assertion](/tutorials/get-started/build-your-first-image/create-a-model) for more details.
+See [Create a model assertion](/tutorials/build-your-first-image/create-a-model) for more details.
 
 ### Using the ubuntu-image command
 
-The [ubuntu-image](/) command is used to generate a bootable Ubuntu Core image from your source files. To build an image from the [ubuntu-core-24-amd64](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-amd64.model) model assertion for the pre-bulit images, for example, use the following command:
+The [ubuntu-image](/) command is used to generate a bootable Ubuntu Core image from your source files. To build an image from the [ubuntu-core-24-amd64](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-amd64.model) model assertion for the pre-built images, for example, use the following command:
 
 ```bash
 ubuntu-image snap ubuntu-core-24-amd64.model

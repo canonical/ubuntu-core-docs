@@ -8,9 +8,18 @@ Ubuntu Core has instead been designed to facilitate creating, deploying, and man
 
 See [Supported testing platforms](/reference/testing-platforms) for links to image downloads, ant to learn how to create your own custom image, read our [Build an image](/tutorials/build-your-first-image/index) guide.
 
-| | |
-|:-|:-|
+## Install on a virtual machine
 
+You can try Ubuntu Core without any specific hardware from within a virtual machine using Multipass on Windows, Mac and Linux.
+
+* [Install on a VM](install-on-a-vm): Try Ubuntu Core on on a local machine
+
+## Install on a device
+
+Ubuntu Core runs on a large range of hardware, and pre-built images are available for amd64 and Raspberry Pi reference platforms.
+
+- [Use Raspberry Pi imager](install-on-a-device/use-raspberry-pi-imager): install a pre-built Ubuntu Core image on a Raspberry Pi
+- [Use the dd command](install-on-a-device/use-the-dd-command): write an Ubuntu Core reference image to internal storage
 
 ```{toctree}
 :hidden:
@@ -19,4 +28,4 @@ See [Supported testing platforms](/reference/testing-platforms) for links to ima
 :glob:
 
 Install on a VM <install-on-a-vm>
-Install in a device <install-on-a-device/index>
+Install on a device <install-on-a-device/index>

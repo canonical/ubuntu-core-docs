@@ -3,12 +3,10 @@
 
 VPN support requires both the use of `core22` and network-manager from a `22/*` channel. Currently, two types of VPN are supported:
 
-- [OpenVPN](#heading--openvpn)
-- [WireGuard](#heading--WireGuard)
+- [OpenVPN](#openvpn)
+- [WireGuard](#wireguard)
 
----
-
-<h2 id='heading--openvpn'>Configuring an OpenVPN connection</h2>
+## OpenVPN
 
 Network Manager supports two methods to create an OpenVPN connection:
 - import an OpenVPN credentials file
@@ -48,12 +46,12 @@ nmcli c add connection.id vpntest connection.type vpn \
     +vpn.data verify-x509-name=name:access.is
 ```
 
-## Configuring a WireGuard connection
+## WireGuard
 
 The recommended way to configure a WireGuard connection is to place a configuration file in a folder readable by the network-manager snap, such as SNAP_DATA or SNAP_COMMON folders, and to import the configuration with a command similar to the following:
 
 ```bash
- nmcli c import type WireGuard file /var/snap/nm-vpn-client/common/wg.conf
+nmcli c import type WireGuard file /var/snap/nm-vpn-client/common/wg.conf
 ```
 
 As with an OpenVPN connection, it is also possible to create a WireGuard connection using only `nmcli` with multiple parameters. Unfortunately, configuring peers in this way is not currently possible (see [WireGuard in NetworkManager](https://blogs.gnome.org/thaller/2019/03/15/WireGuard-in-networkmanager/)).

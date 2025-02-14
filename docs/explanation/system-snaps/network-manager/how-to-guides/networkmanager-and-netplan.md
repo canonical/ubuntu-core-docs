@@ -1,5 +1,4 @@
-(explanation-system-snaps-network-manager-how-to-guides-networkmanager-and-netplan)=
-# NetworkManager and netplan
+# NetworkManager and Netplan
 
 Ubuntu Core's default Netplan configuration defers networking to _networkd_.
 
@@ -32,7 +31,7 @@ network:
 
 On boot the Netplan.io generator processes all of the YAML files and renders them into the corresponding a Network Manager configuration in `/run/NetworkManager/system-connections`. The usual `Netplan generate/try/apply` can be used to re-generate this configuration after the YAML was modified.
 
-If a connection profile is modified or created from within Network Manager, such as updating a WiFi password with `nmcli`, Network Manager will create an ephemeral keyfile that will be immediately converted to Netplan YAML and stored in `/etc/Netplan`. Network Manager automatically calls `Netplan generate` to re-process the current YAML configuration to render Network Manager connection profiles in `/run/NetworkManager/system-connections`.
+If a connection profile is modified or created from within Network Manager, such as updating a Wi-Fi password with `nmcli`, Network Manager will create an ephemeral keyfile that will be immediately converted to Netplan YAML and stored in `/etc/Netplan`. Network Manager automatically calls `Netplan generate` to re-process the current YAML configuration to render Network Manager connection profiles in `/run/NetworkManager/system-connections`.
 
 The system wide network configuration can be read with `sudo netplan get`:
 

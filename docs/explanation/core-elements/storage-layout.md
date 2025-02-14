@@ -3,10 +3,10 @@
 
 Storage layouts for Ubuntu Core have been designed to support [recovery modes](/how-to-guides/manage-ubuntu-core/use-a-recovery-mode), and the following partitions are used:
 
-- [ubuntu-seed](#heading--seed): configuration for the first-stage/recovery boot loader
-- [ubuntu-boot](#heading--boot): second-stage/run bootloader and unpacked kernel(s)
-- [ubuntu-save](#heading-save): cross-installation device identity and selected snap backup data
-- [ubuntu-data](#heading-data): user and system data and is expanded upon installation
+- [ubuntu-seed](#the-ubuntu-seed-partition): configuration for the first-stage/recovery boot loader
+- [ubuntu-boot](#the-ubuntu-boot-partition): second-stage/run bootloader and unpacked kernel(s)
+- [ubuntu-save](#the-ubuntu-save-partition): cross-installation device identity and selected snap backup data
+- [ubuntu-data](#the-ubuntu-data-partition): user and system data and is expanded upon installation
 
 See below for more details on each partition. Additional partitions may be required by the device/board specific bootloader.
 
@@ -18,17 +18,15 @@ The definitive layout of the generated image used to install Ubuntu Core, and th
 
 A device image for both Ubuntu Core 20 and Ubuntu Core 22 devices must only contain _bootloader-specific_ partitions and **ubuntu-seed**,  such that a recovery system in it can be booted into install mode.  Installation will create and size the other missing partitions.
 
-See [Installation process](/explanation/how-installation-works) for more details on how an installation proceeds.
+See [How installation works](/explanation/how-installation-works) for more details on how an installation proceeds.
 
----
-
-<h2 id='heading--seed'>ubuntu-seed</h2>
+## The ubuntu-seed partition
 
 **role**: system-seed; *read-only*, *ext4* or typically *vfat*
 
 This partition contains the configuration for the first-stage/recovery boot loader and at least one recovery system. This is a set of snaps (base, kernel, gadget and application snaps, see [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu-core) for more details), together with a model assertion and snap assertions that define the device and for which the device can be recovered or reinstalled .
 
- <h2 id='heading--layout'>ubuntu-seed layout</h2>
+### ubuntu-seed layout
 
 When the image is created, the recovery systems partition is populated with any required bootloader-specific binaries and assets extracted from the gadget. 
 
@@ -45,13 +43,13 @@ In all cases, **ubuntu-seed**  will contain the following directories:
 
 -   A snaps directory which operates as a pool of snaps shared across all recovery systems. The assertions in a recovery system will define and reference which of these will be used by the system.
 
-<h2 id='heading--boot'>ubuntu-boot</h2>
+## The ubuntu-boot partition
 
 **role**: system-boot; *read-only*, *ext4* or *vfat*
 
 Contains the second-stage/run bootloader and unpacked kernel(s) to boot and with.
 
-<h2 id='heading--save'>ubuntu-save</h2>
+## The ubuntu-save partition
 
 **role**: system-save; *writable*, *ext4*
 
@@ -65,7 +63,7 @@ This data might include certificates, data blobs, or configuration files, to hel
 
 Device provisioning needs to consider space requirements and snap developers need to understand the consequences of storing persistent data to _ubuntu-save_.
 
-<h2 id='heading--data'>ubuntu-data</h2>
+## The ubuntu-data partition
 
 **role**: system-data; *writable*, *ext4*
 

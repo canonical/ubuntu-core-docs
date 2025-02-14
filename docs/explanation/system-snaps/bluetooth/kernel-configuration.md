@@ -14,8 +14,7 @@ In short:
 |>= 3.13|Ok for Bluetooth Classic and LE however consider backporting|
 |>= 3.10|Ok for Bluetooth Classic however consider backporting|
 
-The heart of Ubuntu Core is  *snapd*  which has some constraints on the kernel version used. In particular it requires the newest AppArmor patches. Therefore, when choosing a kernel please take a look at [sample kernels](https://github.com/snapcore/sample-kernels) that have all the bits necessary for  *snapd*  to run included. Also make sure to read the [Board enablement overview](/t/board-enablement-overview/19731).
-
+The heart of Ubuntu Core is  *snapd*  which has some constraints on the kernel version used. In particular it requires the newest AppArmor patches. Therefore, when choosing a kernel please take a look at [sample kernels](https://github.com/snapcore/sample-kernels) that have all the bits necessary for  *snapd*  to run included. Also make sure to read the [Board enablement overview](/how-to-guides/image-creation/board-enablement.md).
 
 ## Configuration
 
@@ -58,7 +57,7 @@ Device Drivers
     <M>   User-space I/O driver support for HID subsystem
     <M>   Generic HID driver 
 ```
-Below are the Linux kenrel config options for reference. They are based on the Linux core16 4.4.0-1040-raspi2 kernel which is the official Ubuntu Core Linux kernel for Raspberry Pi 2/3.
+Below are the Linux kernel config options for reference. They are based on the Linux core16 4.4.0-1040-raspi2 kernel which is the official Ubuntu Core Linux kernel for Raspberry Pi 2/3.
 ```
 CONFIG_NET=y
 CONFIG_BT=m

@@ -4,8 +4,8 @@ At the heart of custom Ubuntu Core image creation is the _model assertion_. An a
 
 The model contains:
 * identification information, such as the developer-id and model name.
-* which [essential snaps](/t/20777#heading--system) make up the device system.
-* other required or optional snaps that implement the device functionality.
+* [essential snaps](/explanation/core-elements/inside-ubuntu-core/) to create the device operating system.
+* other required or optional snaps that implement the device application functionality.
 
 See below for details on how to download and modify a model file to include your own selection of snaps.
 
@@ -41,9 +41,9 @@ The following fields in `my-model.json` need to be changed:
 "brand-id": "canonical",
 ```
 
-These properties define the authority responsible for the image. Change both instances of the string "canonical" to your developer id, retrieved with the [`snapcraft whoami`](/tutorials/get-started/build-your-first-image/access-ubuntu-one) command. ("xSfWKGdLoQBoQx88", in our example output). This links the image to your Ubuntu One account and ensures that only *you* can push image updates to devices using your model.
+These properties define the authority responsible for the image. Change both instances of the string "canonical" to your developer id, retrieved with the `snapcraft whoami` command. ("xSfWKGdLoQBoQx88", in our example output). This links the image to your Ubuntu One account and ensures that only *you* can push image updates to devices using your model.
 
-<h3 id='heading--edit-model-2'>2.2 "timestamp"</h3>
+### timestamp
 
 
 ```json
@@ -52,7 +52,7 @@ These properties define the authority responsible for the image. Change both ins
 
 This needs to be provided at the end of the process; we’ll come back to this.
 
-###  "snaps"
+###  snaps
 
 ```json
     "snaps": [
@@ -163,5 +163,5 @@ After finishing all your edits, the completed **my-model.json** text file should
 }
 ```
 
-After the file has been created, the next step is to sign it. See [Sign a model](/tutorials/get-started/build-your-first-image/sign-the-model) for further details.
+After the file has been created, the next step is to sign it. See [Sign a model](/tutorials/build-your-first-image/sign-the-model) for further details.
 

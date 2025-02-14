@@ -55,7 +55,7 @@ This assertion gives control on several aspects of the snap behaviour to the aut
 
 -   `refresh-control` gives a list of snaps that are gated when the one specified by `snap-id` is installed, so they are not automatically refreshed until they are "validated". Validation is performed by using [validation asserts](/core/docs/reference/assertions/validation), which specify the revision of the gated snap that should be installed if the gating snap has been installed.
 
--   `aliases` gives a list of the explict aliases that we want to automatically enable when installing the snap. Aliases provide short names for applications contained in the snap, so we do not need to use the full command name `<snap-name>`.`<target-command>`. 
+-   `aliases` gives a list of the explicit aliases that we want to automatically enable when installing the snap. Aliases provide short names for applications contained in the snap, so we do not need to use the full command name `<snap-name>`.`<target-command>`. 
 
 -   `plugs` and `slots` define flags per interface. This lets define restrictions on how the snap plugs/slots used by the snap are handled. For instance, we can allow or deny connections with `allow-connection` and `deny-connection`. With `allow-auto-connection` or `deny-auto-connection` we let snapd know if it should automatically connect plugs/slots on snap installation.
 

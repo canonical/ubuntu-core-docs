@@ -13,7 +13,7 @@ During deployment, _snapd_ still performs the _seeding_ process but it automatic
 
 <h3 id='heading--preseed-image'>Building a preseeded image</h3>
 
-When [Building an image](/how-to-guides/image-creation/index), preseeded images are created with the same `ubuntu-image` tool, or the `snap prepare-image` command, with an additional `--preseed` argument.
+During the process of [Image creation](/how-to-guides/image-creation/index), preseeded images are created with the same `ubuntu-image` tool, or the `snap prepare-image` command, with an additional `--preseed` argument.
 
 Pre-seeding requirements:
 * snapd 2.56 or newer, both on the host system (where the image is created) and in the resultant preseeded system.
@@ -37,7 +37,7 @@ The `--preseed-sign-key` argument is optional and the default GPG key will be us
 
 A custom AppArmor features directory may be specified with `--apparmor-features-dir=...`. The target should be a snapshot of `sys/kernel/security/apparmor/features` from the target system. If not specified, the `sys/kernel/security/apparmor/features` from the host system will be used.
 
-On a new device, snaps are installed from the `ubuntu-seed` volume (see [Inside Ubuntu Core](/explanation/core-elements/index)).  On a classic system, this set of snaps to install is defined in `/var/lib/snapd/seed/seed.yaml`.
+On a new device, snaps are installed from the `ubuntu-seed` volume (see [Core elements](/explanation/core-elements/index)).  On a classic system, this set of snaps to install is defined in `/var/lib/snapd/seed/seed.yaml`.
 
 <h2>Single boot installation</h2>
 During the installation of an Ubuntu Core system, the target device will undergo a reboot to finalize the installation process. If a system is preseeded, the installation can be completed without necessitating a system reboot. Note that this feature requires snapd version 2.62 and greater.

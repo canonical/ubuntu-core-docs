@@ -20,7 +20,7 @@ This is specifically useful for ensuring that a recovery system is built from a 
 
 <h2 id="heading--snaps">Recovery system snaps</h2>
 
-Any recovery system created using the API is derived from a device’s current [model](/reference/assertions/model). Each required snap in the model will be a part of any newly created recovery system. Optionals snaps in the model will be included if the snap is already installed, or if the snap is required by any validation sets that are provided.
+Any recovery system created using the API is derived from a device’s current [model](/reference/assertions/model). Each required snap in the model will be a part of any newly created recovery system. Optional snaps in the model will be included if the snap is already installed, or if the snap is required by any validation sets that are provided.
 
 <h3 id="heading--validation-sets">Validation sets</h3>
 

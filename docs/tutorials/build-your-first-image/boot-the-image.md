@@ -1,6 +1,6 @@
 # Boot the image
 
-After [building and writing](/tutorials/get-started/build-your-first-image/build-the-image) a custom image for a Raspberry Pi, the device can now be booted and configured.
+After [building and writing](/tutorials/build-your-first-image/build-the-image) a custom image for a Raspberry Pi, the device can now be booted and configured.
 
 ## Boot Ubuntu Core
 
@@ -30,13 +30,13 @@ This is the most common option. If you have a device with Wi-Fi capabilities, su
 
 ![wlan0 menu](https://assets.ubuntu.com/v1/3765991b-image%20(1).png)
 
-To configure Wi-Fi, press the cursor up key until  _wlan0_ is selected and press **Enter**. You will see a small menu and you need to select **Edit Wifi**.
+To configure Wi-Fi, press the cursor up key until  _wlan0_ is selected and press **Enter**. You will see a small menu and you need to select **Edit Wi-Fi**.
 
 ![Edit wifi](https://assets.ubuntu.com/v1/f4889452-image%20(2).png)
 
-After selecting _Edit Wifi_, you will see the network interface configuration panel for Wi-Fi. If you know the name of the Wi-Fi network you wish to connect to, it can be entered directly, or cursor down to _Choose a visible network_ and select a network from a list of those that have been detected.
+After selecting _Edit Wi-Fi_, you will see the network interface configuration panel for Wi-Fi. If you know the name of the Wi-Fi network you wish to connect to, it can be entered directly, or cursor down to _Choose a visible network_ and select a network from a list of those that have been detected.
 
-![Wifi network](https://assets.ubuntu.com/v1/bf6ddac7-image%20(3).png)
+![Wi-Fi network](https://assets.ubuntu.com/v1/bf6ddac7-image%20(3).png)
 
 Finally, enter the Wi-Fi password and select **Save** to complete the configuration. You will be returned to the previous menu and your device will attempt to connect to the network. If successful, you will see its IP address to the right of DHCPv4.
 

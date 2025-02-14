@@ -4,11 +4,10 @@ This section will show what are the necessary bits in the  *snapcraft.yaml*  whi
 
 ## Bluetooth Interfaces
 
-There are two Bluetooth related interfaces available on Ubuntu Core.
+There are two Bluetooth related interfaces available on Ubuntu Core:
 
-**bluez**  interface that allows accessing the Bluetooth service through D-Bus API
-
-**bluetooth-control**  that can be used to talk to the kernel-side of the Bluetooth stack directly.
+- [bluez](https://snapcraft.io/docs/bluez-interface): allows accessing the Bluetooth service through D-Bus API
+- [bluetooth-control](https://snapcraft.io/docs/bluetooth-control-interface):  used to talk to the kernel-side of the Bluetooth stack directly.
 
 ## Contents of snapcraft.yaml
 

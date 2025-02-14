@@ -1,5 +1,5 @@
 (explanation-system-snaps-network-manager-reference-routing-tables)=
-# Routing Tables
+# Manage routing tables
 
 This section describes the way to setup routing table as well as it explains the logic used to prioritize interfaces.
 
@@ -25,8 +25,8 @@ The metric field/column translates to the number of hops required to reach the d
 
 The metric value can be set manually however when NetworkManager creates a connection the following defaults are applied:
 
-* Ethernet is preferred over WiFi
-* WiFi is preferred over WWAN
+* Ethernet is preferred over Wi-Fi
+* Wi-Fi is preferred over WWAN
 
 ### Editing the routing tables
 
