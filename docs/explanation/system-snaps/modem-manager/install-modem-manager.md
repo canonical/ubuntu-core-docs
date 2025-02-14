@@ -1,17 +1,16 @@
 (explanation-system-snaps-modem-manager-install-modem-manager)=
 # Install Modem Manager
 
-
-The ModemManager snap is currently available from the Ubuntu Store. It can be installed on any system that supports snaps but is only recommended on [Ubuntu Core](https://www.ubuntu.com/core) at the moment.
+The ModemManager snap is currently available from the Ubuntu Store. It can be installed on any system that supports snaps but is only recommended on [Ubuntu Core](/index) at the moment.
 
 You can install the snap with the following command:
 ```bash
-$ snap install modem-manager modem-manager (1.10/stable) 1.10.0-4 from Canonical✓ installed
+snap install modem-manager modem-manager (1.10/stable) 1.10.0-4 from Canonical✓ installed
 ```
 
 All necessary plugs and slots will be automatically connected within the installation process. You can verify this with:
 ```bash
-$ snap connections modem-manager Interface Plug Slot Notes modem-manager modem-manager:mmcli modem-manager:service - modem-manager network-manager:modem-manager modem-manager:service -
+snap connections modem-manager Interface Plug Slot Notes modem-manager modem-manager:mmcli modem-manager:service - modem-manager network-manager:modem-manager modem-manager:service -
 ```
 We see here that the  *mmcli*  command line utility can use the ModemManager service and that network-manager can do the same (we will see that if the network-manager snap is already installed in the system).
 
@@ -27,7 +26,7 @@ Now you have ModemManager successfully installed. In the next sections we will b
 
 Finally, note that to run both  *mmcli*  and  *dbus-send*  we need root permissions, so we use  *sudo*  with them.
 
-# modem-manager tracks and channels
+## modem-manager tracks and channels
 
 The modem-manager snap has currently five tracks, and with the exception of the 'latest' and '1.10' track, the track will refer to the version of the base used.
 
@@ -36,11 +35,3 @@ The modem-manager snap has currently five tracks, and with the exception of the 
 * **20** : Contains upstream version 1.18.6 and has a core20 base.
 * **1.10** : Contains upstream version 1.10.0 and has a core18 base. The track name refers to the upstream version. More modern releases have changed the convention so the track now refers to the base snap.
 * **latest** : Contains upstream version 1.8.0 and has a core16 base. Despite the unfortunate name (there are historical reasons for that) it is the oldest version.
-
-## Next Steps
-
-* [Gathering Modem Information](/core/docs/modem-manager/install-configure/gathering-modem-information)
-* [Entering SIM Passwords](/core/docs/modem-manager/install-configure/entering-sim-passwords)
-* [Configuring Cellular Connections](/core/docs/modem-manager/install-configure/configuring-cellular-connnections)
-* [Enable Debug Support](/core/docs/modem-manager/reference/snap-configuration/debug)
-

@@ -1,0 +1,214 @@
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
+" Vundle plugin system settings
+" Type :PluginInstall to install
+"
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'djoshea/vim-autoread'
+Plugin 'vimwiki/vimwiki'
+Plugin 'godlygeek/tabular'
+Plugin 'preservim/vim-markdown'
+Plugin 'tpope/vim-surround'
+Plugin 'airblade/vim-rooter'
+" gruvbox colourscheme installation
+Plugin 'morhetz/gruvbox'
+
+" Fuzzy search
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
+
+" Pencil writing tool"
+" Plugin 'reedes/vim-pencil'
+
+" augroup pencil
+"  autocmd!
+"  autocmd FileType markdown,mkd              call pencil#init()
+"  autocmd FileType text                      call pencil#init()
+"  autocmd FileType markdown,mkd,text         call pencil#init({'wrap': 'soft'})
+"augroup END
+
+" Ditto
+
+Plugin 'dbmrq/vim-ditto'
+
+" Use autocmds to check your text automatically and keep the highlighting
+" up to date (easier):
+au FileType markdown,text,tex DittoOn  " Turn on Ditto's autocmds
+nmap <leader>di <Plug>ToggleDitto      " Turn Ditto on and off
+
+" If you don't want the autocmds, you can also use an operator to check
+" specific parts of your text:
+" vmap <leader>d <Plug>Ditto	       " Call Ditto on visual selection
+" nmap <leader>d <Plug>Ditto	       " Call Ditto on operator movement
+
+nmap =d <Plug>DittoNext                " Jump to the next word
+nmap -d <Plug>DittoPrev                " Jump to the previous word
+nmap +d <Plug>DittoGood                " Ignore the word under the cursor
+nmap _d <Plug>DittoBad                 " Stop ignoring the word under the cursor
+nmap ]d <Plug>DittoMore                " Show the next matches
+nmap [d <Plug>DittoLess                " Show the previous matches
+
+" Light spelling correction
+Plugin 'preservim/vim-litecorrect'
+
+augroup litecorrect
+  autocmd!
+  autocmd FileType markdown,mkd call litecorrect#init()
+  autocmd FileType textile call litecorrect#init()
+augroup END
+
+" sentence navigation
+Plugin 'kana/vim-textobj-user'
+Plugin 'preservim/vim-textobj-sentence'
+
+augroup textobj_sentence
+  autocmd!
+  autocmd FileType markdown call textobj#sentence#init()
+  autocmd FileType textile call textobj#sentence#init()
+augroup END
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+" set tw=79
+set so=999
+set laststatus=2
+set number
+set title
+set hlsearch
+syntax on
+set showmatch
+set laststatus=2
+set t_Co=256
+set nocompatible
+
+set spell spelllang=en_gb
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd FileType gitcommit setlocal spell
+set complete+=kspell
+nn <F7> :setlocal spell! spell?<CR>
+
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+highlight clear SpellCap
+highlight SpellCap term=underline cterm=underline
+highlight clear SpellRare
+highlight SpellRare term=underline cterm=underline
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=underline
+
+" Changed for vim 8
+set backspace=indent,eol,start
+set history=50        " keep 50 lines of command line history
+set ruler                " show the cursor position all the time
+set showcmd                " display incomplete commands
+set incsearch                " do incremental searching
+
+" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
+call plug#begin('~/.vim/plugged')
+
+call plug#end()
+
+
+"=====[ Show help files in a new tab, plus add a shortcut for helpg]==============
+
+let g:help_in_tabs = 1
+
+nmap <silent> H  :let g:help_in_tabs = !g:help_in_tabs<CR>
+
+" fix indentation being applied incorrectly
+set nosmartindent
+set cindent
+filetype plugin indent on
+set cinkeys-=0#
+set indentkeys-=0#
+autocmd FileType * set cindent 
+
+"Only apply to .txt files...
+augroup HelpInTabs
+    autocmd!
+    autocmd BufEnter  *.txt   call HelpInNewTab()
+augroup END
+
+"Only apply to help files...
+function! HelpInNewTab ()
+    if &buftype == 'help' && g:help_in_tabs
+        "Convert the help window to a tab...
+        execute "normal \<C-W>T"
+    endif
+endfunction
+
+set autoread
+
+set undodir=~/.vim/.undo//
+set backupdir=~/.vim/.backup//
+set directory=~/.vim/.swp//
+set mousefocus=true
+set splitbelow
+set splitright
+set background=dark
+set noshowmode
+set nofoldenable    " disable folding
+
+filetype plugin on
+
+"split keymaps:"
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+let g:vimwiki_global_ext = 0
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
+let g:vim_markdown_conceal_code_blocks = 0
+
+augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+augroup END
+
+" GM: macros: level 3 headings
+let @w='/###\$Â€klÂ€kl%Â€kr13xÂ€kd'
+let @d='0dt>€ý5€kDi### €ý5A€kb€kb€kb€kb€kb€ý50'
+
+" GM: map run previous macro to comma
+nnoremap , @@
+
+" Rooter options
+"let g:rooter_targets = ['/']
+let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh']
+"let g:rooter_patterns = ['Makefile']
+let g:rooter_targets = '*.md,*.yaml'
+let g:rooter_change_directory_for_non_project_files = 'current'
+let g:rooter_manual_only = 1
+
+set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/viminfo
