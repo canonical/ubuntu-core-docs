@@ -8,6 +8,7 @@ Ubuntu Core provides a minimalist base that can run on a wide range of hardware,
 
 - [System requirements](system-requirements)
 - [Testing platforms](testing-platforms)
+- [Release notes](release-notes)
 
 ## Image creation
 
@@ -23,9 +24,9 @@ Configuration and security options.
 :maxdepth: 2
 :glob:
 
-Release notes <release-notes>
 System requirements <system-requirements>
 Testing platforms <testing-platforms>
+Release notes <release-notes>
 Gadget snap format <gadget-snap-format>
 Kernel boot parameters <kernel-boot-parameters>
 Assertions <assertions/index>
