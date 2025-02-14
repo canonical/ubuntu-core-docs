@@ -1,6 +1,5 @@
 (explanation-system-snaps-network-manager-reference-snap-configuration-debug)=
-# Debug
-
+# Debug the snap
 
 Debug is a feature that controls the amount of logs produced by the network-manager snap. It is useful for collecting information required to either report a bug or investigate a network-manager failure (if happens).
 
@@ -23,16 +22,16 @@ Changing the  **debug**  configuration option has immediate effect and also affe
 
 **Example:**  Enable debug feature
 ```bash
-$ snap set network-manager debug.enable=true
+snap set network-manager debug.enable=true
 ```
 **Example:**  Disable debug feature.
 ```bash
-$ snap set network-manager debug.enable=false
+snap set network-manager debug.enable=false
 ```
 ## Viewing logs
 
 The debug information, when enabled, will be available in the journal and can be viewed with:
 ```bash
-$ journalctl --no-pager -l -u snap.network-manager.networkmanager.service
+journalctl --no-pager -l -u snap.network-manager.networkmanager.service
 ```
 

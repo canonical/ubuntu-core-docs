@@ -1,5 +1,5 @@
 (explanation-system-snaps-network-manager-reference-routing-tables)=
-# Routing Tables
+# Manage routing tables
 
 This section describes the way to setup routing table as well as it explains the logic used to prioritize interfaces.
 

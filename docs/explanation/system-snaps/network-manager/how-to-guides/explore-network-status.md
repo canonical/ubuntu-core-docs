@@ -1,6 +1,5 @@
 (explanation-system-snaps-network-manager-how-to-guides-explore-network-status)=
-# Explore Network Status
-
+# Explore network status
 
 This section shows how to use the _nmcli_ command line tool to examine the status of NetworkManager’s connections and devices.
 
@@ -39,7 +38,7 @@ It is important to make sure that Wi-Fi/WWAN radios are enabled so the respectiv
 Observe NetworkManager activity (changes in connectivity state, devices or connection properties):
 
 ```bash
-$ nmcli monitor
+nmcli monitor
 ```
 
 See nmcli connection monitor and nmcli device monitor to watch for changes in certain connections or devices.

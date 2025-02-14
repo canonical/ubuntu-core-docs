@@ -26,7 +26,7 @@ Now you have ModemManager successfully installed. In the next sections we will b
 
 Finally, note that to run both  *mmcli*  and  *dbus-send*  we need root permissions, so we use  *sudo*  with them.
 
-## modem-manager tracks and channels
+## Tracks and channels
 
 The modem-manager snap has currently five tracks, and with the exception of the 'latest' and '1.10' track, the track will refer to the version of the base used.
 
