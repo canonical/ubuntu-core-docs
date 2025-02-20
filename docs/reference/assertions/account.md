@@ -5,10 +5,7 @@ The _account_  [assertion](/reference/assertions/index) ties the name for an acc
 
 Whenever a snap is installed, the account assertion linked to the owner of each snap is added to the system. To list account assertions present on a system, use the `snap known account` command.
 
-- [Account  assertion fields](#heading--fields)
-- [Example assertion](#heading--example)
-
-<h2 id='heading--fields'>Account assertion fields</h2>
+## Account assertion fields
 
 The following fields can be used in an account assertion:
 
@@ -29,12 +26,12 @@ sign-key-sha3-384: <key id> # Encoded key id of signing key
 The index for this assertion is the `account-id` and the fields are typically used in the following order:
 
 - `validation` when set to `certified` means that the authority is confident in that the display name accurately describes the owner of the account while `unproven` means that no checks have been performed.
-- `display-name` is a human-friendly name for the account-d, while  username` is an optional username associated with the account.
+- `display-name` is a human-friendly name for the account-d, while username is an optional username associated with the account.
 - `timestamp` contains the UTC formatted date and time that
 
-See [Assertion format](/t/assertions/19742#heading--format) for details on fields common to most assertions.
+See [Assertion format](/reference/assertions/index.md#assertion-format) for details on fields common to most assertions.
 
-<h2 id='heading--example'>Example assertion</h2>
+## Example assertion
 
 The following is a typical account assertion:
 
@@ -55,6 +52,5 @@ cUFh3ul/+EIQkSpXoRq9ChlA3QsbL6EszhD8ON4L58xauGotl/WbcwHqEoSGt9lURvSDTWWnW/rz
 4IvKQsHF0paJ1YDcx+vNBZksaVBlltBswrquOqrA/lABenUuQdwRNYMckdyBb2rPHUG709luY1HA
 jmcRTl2++1yzVmhXV16I0HnOuajZAbr7fUL4PpyylMr1+gl9pulk9rbUkMCyyAYC5fd3QP2A+Aoc
 52+mPD8PDkTnDpS91q4m3k9NW0j2
-
 ```
 

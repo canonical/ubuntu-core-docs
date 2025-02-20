@@ -93,7 +93,7 @@ serial: 5764993d-e063-887a-b79c536066ad
 [...]
 ```
 
-For more details on which snaps are included with Ubuntu Core, see [Snaps in Ubuntu Core](https://discourse.ubuntu.com/t/ubuntu-iot-developer-documentation/19730).
+For more details on which snaps are included with Ubuntu Core, see [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu-core).
 
 Any snaps you manually install can be removed with the `snap remove` command:
 

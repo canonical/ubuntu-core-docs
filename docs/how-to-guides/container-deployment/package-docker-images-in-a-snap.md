@@ -1,7 +1,7 @@
 (how-to-guides-container-deployment-package-docker-images-in-a-snap)=
 # Package Docker images in a snap
 
-Docker containers can be deployed on Ubuntu Core [from the command-line][docker-run], or via a [Docker companion snap][docker-companion-snap].
+Docker containers can be deployed on Ubuntu Core from [the command-line](run-a-docker-container), or via a [Docker companion snap](/explanation/docker-companion-snap).
 
 This guide explains how Docker images can be bundled inside snaps to be deployed together with other resources within the package.
 
@@ -68,7 +68,7 @@ Refer below for a complete example.
 
 ## Example: RabbitMQ Docker companion snap
 
-Let's take the snap created in the [Docker companion snap][deploy-docker-containers-from-a-snap] guide.
+Let's take the snap created in the [Docker companion snap](deploy-docker-from-a-snap) guide.
 
 With that snap, the Docker image was pulled from DockerHub on first startup and after every refresh (upgrade/downgrade). This is because the image wasn't available locally.
 
@@ -103,8 +103,3 @@ if [ ... ]; then
         ...
 fi
 ```
-
-[deploy-docker-containers-from-a-snap]: /t/44537
-[docker-companion-snap]: /t/46690
-[docker-run]: /t/44773
-

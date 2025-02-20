@@ -9,10 +9,7 @@ To create a system user on these systems,  the `system-user` [assertion](/refere
 
 See [System user](/how-to-guides/manage-ubuntu-core/add-a-system-user) for further details on creating a system user.
 
-- [system-user assertion fields](#heading--fields)
-- [Example system-user assertion](#heading--example)
-
-<h2 id='heading--fields'>System-user assertion fields</h2>
+## System-user assertion fields
 
 The following fields can be used in a system-user assertion:
 
@@ -53,11 +50,11 @@ The index is the tuple \<`brand-id`, `email`\>, with `series` being as specified
 
 - `user-presence` (optional) when set to `until-expiration` means users created through the system-user assertion are valid until the expiration of the actual assertion. Requires that `    "format": "2",` is also set.
 
-See [Assertion format](/t/assertions/19742#heading--format) for more details on fields common to most assertions.
+See [Assertion format](/reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
 
 The simple addition of such assertions to a device assertion database should not be enough to trigger the user creation. This must be initiated explicitly (via `snap create-user`, or in the context of the auto-import mechanism for assertions from removable devices, which requires physical access to the device).
 
-<h2 id='heading--example'>Example system-user assertion</h2>
+## Example system-user assertion
 
 The following is a the JSON input for an example system-user assertion:
 

@@ -5,15 +5,9 @@ Kernel boot parameters are used to enable, disable or configure kernel-specific 
 
 On Ubuntu Core, when using the default GNU GRUB bootloader, kernel boot parameters can be configured either in the [Gadget snap](/reference/gadget-snap-format), or through [system options](https://snapcraft.io/docs/system-options). See [Modifying kernel boot parameters](/how-to-guides/manage-ubuntu-core/modify-kernel-options) for further details on each process. It is still possible to use this kernel parameters if not using GRUB, although the way to modify them will depend then on system.
 
-Alongside parameters supported by the kernel, such as `splash` to display the [Splash screen configuration](/how-to-guides/image-creation/add-a-splash-screen), Ubuntu Core supports the following additional kernel parameters that permit special access to the system:
+Alongside parameters supported by the kernel, such as `splash` to display the [Splash screen configuration](/how-to-guides/image-creation/add-a-splash-screen), Ubuntu Core supports the following additional kernel parameters that permit special access to the system.
 
-- [snapd.debug](#heading--snapd-debug)
-- [ubuntu_core.bootchart](#heading--bootchart)
-- [snapd_system_disk](#heading--system-disk)
-
----
-
-<h2 id='heading--snapd-debug'>snapd.debug</h2>
+## snapd.debug
 
 If `snapd.debug` is set to `1`, debug traces for snapd and other commands included in the snapd snap will be produced. They will be accessible from the journal:
 
@@ -27,14 +21,14 @@ Aug 20 16:00:47 host snapd[792]: logger.go:99: DEBUG: pid=768;uid=0;socket=/run/
 ...
 ```
 
-<h2 id='heading--bootchart'>ubuntu_core.bootchart</h2>
+## ubuntu_core.bootchart
 
 The [systemd-bootchart](https://manpages.ubuntu.com/manpages/jammy/man1/systemd-bootchart.1.html) performance graphing tool is a standard feature of the Linux Systemd initialisation and service manager.
 
 _Bootchart_ collects metrics on CPU load, memory usage and process resources during a system boot. On Ubuntu Core, the sample collector will run until the system is seeded, stopping when when the `snapd.seeded.service` stops. It then renders these details as text and charts into an SVG-formatted image file.
 
 ![Ubuntu Core bootchart graphs](https://assets.ubuntu.com/v1/d39bae51-bootchart-graph.png)
-This feature is enabled either as a [Static boot option](/t/modifying-kernel-boot-parameters/24955#heading--static) in the gadget snap, or as a [Dynamic parameter modification](/t/modifying-kernel-boot-parameters/24955#heading--dynamic) with the `snap set` command:
+This feature is enabled either as a [Static boot option](/how-to-guides/manage-ubuntu-core/modify-kernel-option.md#static-boot-option-modifications) in the gadget snap, or as a [Dynamic parameter modification](/how-to-guides/manage-ubuntu-core/modify-kernel-option.md#dynamic-kernel-parameter-modifications) with the `snap set` command:
 
 ```
 snap set system system.kernel.dangerous-cmdline-append="ubuntu_core.bootchart"
@@ -56,7 +50,7 @@ To remove a dynamically set kernel command, use the `snap unset` command:
 snap unset system system.kernel.dangerous-cmdline-append
 ```
 
-<h2 id='heading--system-disk'>snapd_system_disk</h2>
+## snapd_system_disk
 
  Requires _snapd 2.59_.
 

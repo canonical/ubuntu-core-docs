@@ -24,9 +24,9 @@ To ensure compatibility with the required UEFI features in Ubuntu Core, also ins
 
 ```bash
 sudo apt install ovmf
-`` file`
+```
 
-Download the preferred Ubuntu Core image for your device platform. See [Supported platforms](https://discourse.ubuntu.com/t/supported-platforms/24399) for links to images.
+Download the preferred Ubuntu Core image for your device platform. See [Testing platforms](/reference/testing-platforms) for links to images.
 
 By default, images are compressed with _xz_ and can be expanded from the Linux command line with the following command:
 
@@ -176,5 +176,5 @@ ssh -i <path-to-private-key> <sso-username>@localhost -p 8022
 
 In addition to SSH access, QEMU will start a VNC-shared console which can be accessed at `vnc://localhost:5900` on the system. Some configurations may also forward port 80 to 8090 for any web server application you wish to install in the VM.
 
-For a brief introduction on how to get started with Ubuntu Core, see [Using Ubuntu Core](https://discourse.ubuntu.com/t/using-ubuntu-core/24056).
+For a brief introduction on how to get started with Ubuntu Core, see [Using Ubuntu Core](/how-to-guides/using-ubuntu-core).
 

@@ -5,16 +5,9 @@ System time on an Ubuntu Core 20+ device is set and updated over several potenti
 
 Regardless of how system time is set, it always moves forward monotonically and is never permitted to move backwards.
 
-- [Update process](#heading--how)
-- [Current time](#heading--current-time)
-- [Real time clock (RTC) check](#heading--rtc)
-- [Setting a timezone](#heading--timezone)
-- [Network time synchronisation](#heading--ntp)
----
+## System time update process
 
-<h2 id='heading--how'>System time update process</h2>
-
-The system time value and update process is tightly coupled to the [boots process](/t/inside-ubuntu-core-20/20777#heading--bootloader) and device capabilities. From a fresh boot of the device, the process for setting the time is as follows:
+The system time value and update process is tightly coupled to the [boots process](/explanation/core-elements/inside-ubuntu-core) and device capabilities. From a fresh boot of the device, the process for setting the time is as follows:
 
 1. **initrd**
    When the device boots, _initrd_ first moves system time forward to match the time _initrd_ was built.
@@ -29,7 +22,7 @@ The system time value and update process is tightly coupled to the [boots proces
   
    When the network becomes available, the device will begin to use NTP to periodically update the system time. See [Network time synchronisation](#heading--ntp) below for more details.
 
-<h2 id='heading--current-time'>Current time</h3>
+## Current time
 
 The current system time and date can be retrieved with the `timedatectl` command:
 
@@ -44,7 +37,7 @@ System clock synchronized: yes
           RTC in local TZ: no
 ```
 
-<h2 id='heading--rtc'>Real-time clock (RTC) check</h3>
+## Real-time clock (RTC) check
 
 If no real-time clock is present or accessible, the output from _timedatectl_ will include **`RTC time: n/a`**:
 
@@ -59,7 +52,7 @@ System clock synchronized: yes
           RTC in local TZ: no
 ```
 
-<h2 id='heading--timezone'>Setting a timezone</h3>
+## Setting a timezone
 
 The timezone can be configured with the [system.timezone](https://snapcraft.io/docs/system-options#heading--timezone) system value:
 
@@ -69,7 +62,7 @@ $ timedatectl | grep zone
                 Time zone: America/Chicago (CDT, -0500)
 ```
 
-<h2 id='heading--ntp'>Network time synchronisation</h3>
+## Network time synchronisation
 
 By default, _timesyncd_ is configured to use the Network Time Protocol (NTP) for network time synchronisation as soon as the network becomes available.
 

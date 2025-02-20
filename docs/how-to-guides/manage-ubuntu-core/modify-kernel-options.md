@@ -14,16 +14,7 @@ snapd_recovery_mode=run console=ttyS0,115200n8 console=tty1 panic=-1
 
 In addition to parameters supported by the kernel, there are also *Ubuntu Core-specific* [kernel boot parameters](/reference/kernel-boot-parameters).
 
-- [Dynamic boot parameter modifications](#heading--dynamic)
-- [Static boot parameter modifications](#heading--static)
-  - [Adding static parameters from the gadget](#heading--gadgetcmdline)
-  -  [Files for modification](#heading--cmdline)
-   - [Customising the kernel command line](#heading--customise)
-   - [Modifying an existing gadget snap](#heading--gadget)
-
----
-
-<h2 id='heading--dynamic'>Dynamic kernel parameter modifications</h2>
+## Dynamic kernel parameter modifications
 
 There are two [system options](https://snapcraft.io/docs/system-options) that can be used to add new kernel boot parameters  to a system that has been deployed and is running:
 
@@ -48,7 +39,7 @@ To remove a dynamically set kernel command, use the `snap unset` command:
 snap unset system system.kernel.dangerous-cmdline-append
 ```
 
-<h2 id='heading--static'>Static boot option modifications</h2>
+## Static boot option modifications
 
 Static kernel boot-time options are formed from mode arguments set by _snapd_, a static element declared in the bootloader configuration script, and optional extra arguments.
 
@@ -68,11 +59,11 @@ In the above examples, the mode arguments are `snapd_recovery_mode` and `snapd_r
 
 Below we describe how to add additional static parameters (static with the meaning that they cannot be manipulated dynamcally from the snapd API).
 
-<h3 id='heading--gadgetcmdline'>Adding static parameters from the gadget</h3>
+### Adding static parameters from the gadget
 
 The recommended way to add static parameters is by using the `kernel-cmdline` stanza as described in [gadget.yaml](https://snapcraft.io/docs/the-gadget-snap#heading--gadget). This allows to add new parameters by using the `append` list or removing some of the default Ubuntu Core parameters by putting them in the `remove` list. As already explained, a list of the allowed dynamic parameters can be set from there too.
 
-<h3 id='heading--cmdline'>Files for modification</h3>
+### Files for modification
 
 The legacy way of customizing statically the kernel command line is by adding one of two possible files to the top level of the filesystem in the [Gadget snap](/reference/gadget-snap-format):
 
@@ -106,7 +97,7 @@ The gadget snap can contain only one of `cmdline.full` or `cmdline.extra`; the p
 
 Extending the kernel command line using drop-in files is also supported on systems using the full disk encryption. See [Full disk encryption](/) for more details.
 
-<h3 id='heading--customise'>Customising the kernel command line</h3>
+## Customising the kernel command line
 
 If setting the parameters in `gadget.yaml`, you will just need to edit that file in your sources and build the gadget as usual with `snapcraft`.
 
@@ -120,7 +111,7 @@ The second is to modify an existing gadget snap directly, and this procedure is 
 Enabling the Ubuntu Core splash screen requires a modified kernel command line. See [Splash screen configuration](/how-to-guides/image-creation/add-a-splash-screen) for details.
 ```
 
-<h3 id='heading--gadget'>Modify an existing gadget snap</h3>
+## Modify an existing gadget snap
 
 When building your own [custom Ubuntu Core image](/how-to-guides/image-creation/add-custom-snaps), the gadget snap that you include can be  modified manually to include the kernel command line file.
 
@@ -167,7 +158,7 @@ With the _cmdline.extra_ or _cmdline.full_ file created, the gadget snap can be 
 snap pack squashfs-root
 ```
 
-The final step is to build a new Ubuntu Core image with the modified gadget snap. This requires a [model assertion](/t/model-assertion/19745/) with `grade: dangerous` set (as we are using local snaps for the build - this would not be necessary if we have uploaded the gadget to the store) and the `ubuntu-image` command to compile the image. See [Custom images](/how-to-guides/image-creation/add-custom-snaps) for more details.
+The final step is to build a new Ubuntu Core image with the modified gadget snap. This requires a [model assertion](/reference/assertions/model) with `grade: dangerous` set (as we are using local snaps for the build - this would not be necessary if we have uploaded the gadget to the store) and the `ubuntu-image` command to compile the image. See [Custom images](/how-to-guides/image-creation/add-custom-snaps) for more details.
 
 You can then build the image with the new gadget snap using _ubuntu-image_:
 

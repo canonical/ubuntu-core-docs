@@ -6,10 +6,7 @@ The _snap-revision_ [assertion](/reference/assertions/index) is a statement by t
 
 Alongside [account](/reference/assertions/account), [snap-declaration](/reference/assertions/snap-declaration) and [account-key-assertion](/reference/assertions/account-key) assertions,  snap-revision_ is bundled within the composite `.assert` file that accompanies a snap downloaded with the `snap download <snap-name>` command.
 
-- [Snap-revision assertion fields](#heading--fields)
-- [Example snap-revision assertion](#heading--example)
-
-<h2 id='heading--fields'>Snap-revision assertion fields</h2>
+## Snap-revision assertion fields
 
 The assertion format is as follows:
 
@@ -29,9 +26,9 @@ sign-key-sha3-384: <key id> # Encoded key id of signing key
 
 The index is the digest of the snap blob, `snap-sha3-384`. The store returns the `revision` assigned to the uploaded snap along other data.
 
-See [Assertion format](/t/assertions/19742#heading--format) for more details on fields common to most assertions.
+See [Assertion format](/reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
 
-<h2 id='heading--example'>Example assertion</h2>
+## Example assertion
 
 The following is an example `snap-revision` assertion:
 

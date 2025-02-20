@@ -3,9 +3,9 @@
 
 As with any other snap-enabled environment, Ubuntu Core can install and deploy _Docker containers_ from the command line, first by installing the [Docker container runtime](https://snapcraft.io/docker) snap, and then running either `docker run` or `docker compose`. This approach is useful for testing, but it's difficult to scale.
 
-Ubuntu Core has been designed to boot into a production state without manual interaction. This is accomplished by building a [custom Ubuntu Core image](https://discourse.ubuntu.com/t/build-your-first-ubuntu-core-image/26825) for your specific application and device deployment.
+Ubuntu Core has been designed to boot into a production state without manual interaction. This is accomplished by building a [custom Ubuntu Core image](/tutorials/build-your-first-image/index) for your specific application and device deployment.
 
-To build such an image to deploy Docker with your own configuration requires the creation a [companion snap](https://discourse.ubuntu.com/t/docker-companion-snap/46690), the creation of which is described in this _How-to_. Our example will deploy [RabbitMQ](https://www.rabbitmq.com/), an industry-grade message broker implementing protocols such as AMQP and MQTT, but it can easily be adapted to deploy any other Docker application.
+To build such an image to deploy Docker with your own configuration requires the creation a [companion snap](/explanation/docker-companion-snap), the creation of which is described in this _How-to_. Our example will deploy [RabbitMQ](https://www.rabbitmq.com/), an industry-grade message broker implementing protocols such as AMQP and MQTT, but it can easily be adapted to deploy any other Docker application.
 
 Basic familiarity with snaps isn't required but paves the way for a smooth experience. We suggest going though the [tutorial on creating a snap](https://snapcraft.io/docs/create-a-new-snap) or another similar guide.
 
