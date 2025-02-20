@@ -404,12 +404,11 @@ This will create: `rabbitmq_3.13-management_amd64.snap`, using the Docker image 
 In this guide, we created a RabbitMQ companion snap that made it possible to deploy, configure, and maintain the RabbitMQ Docker image on Ubuntu Core. 
 
 The companion snap can be extended to take care of many other requirements including:
-- Shipping the Docker image inside the snap for better reproducibility and deployment in air-gapped environments; see [Package Docker images in a snap](https://discourse.ubuntu.com/t/package-docker-images-in-a-snap/46767).
+- Shipping the Docker image inside the snap for better reproducibility and deployment in air-gapped environments; see [Package Docker images in a snap](package-docker-images-in-a-snap).
 - Pruning dangling images to save disk space after upgrades
 - Using Docker compose; although this isn't recommended because it will encapsulate several containers into a single service
 
-
-Apart from installing the snap, we performed a few manual operations on target such as for interface connections and setting snap configuration options. This went against our initial goal of deploying the application without manual interaction. Ubuntu Core leverages other tools and services to automate such operations. These include Ubuntu Core [image creation](https://ubuntu.com/core/docs/image-building) with custom snaps, [gadget snaps](https://snapcraft.io/docs/the-gadget-snap) for adding default configurations and connections into the image, and [dedicated snap stores](https://ubuntu.com/core/docs/dedicated-snap-stores) with deployment-specific interface auto-connection assertions.
+Apart from installing the snap, we performed a few manual operations on target such as for interface connections and setting snap configuration options. This went against our initial goal of deploying the application without manual interaction. Ubuntu Core leverages other tools and services to automate such operations. These include Ubuntu Core [image creation](/tutorials/build-your-first-image/index) with custom snaps, [gadget snaps](https://snapcraft.io/docs/the-gadget-snap) for adding default configurations and connections into the image, and [dedicated snap stores](/explanation/stores/dedicated-snap-stores) with deployment-specific interface auto-connection assertions.
 
 The created snap and its future revisions can be published to a snap store to allow remote deployment and OTA updates of the Docker container.
 

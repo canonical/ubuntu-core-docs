@@ -193,7 +193,7 @@ Now you have to sign the model assertion with your key, by piping your JSON mode
 $ cat roseapple-model.json | snap sign -k my-key | tee roseapple.model
 ```
     
-You can find a more detailed example of this process on the [Custom image building](/t/custom-images/19809#heading--signing) page.
+You can find a more detailed example of this process on the [Custom image building](/tutorials/build-your-first-image/sign-the-model) page.
 
 <h4 id="heading--canonical-signed-assertions">Canonical signed assertions</h4>
 

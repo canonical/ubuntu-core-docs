@@ -9,7 +9,7 @@ sudo snap install ubuntu-image --classic
 
 The `ubuntu-image` command requires only a path to a model assertion to build an image.
 
-If you want to include your own core snaps, such as a custom gadget snap, see [Building an image with custom snaps](/t/custom-images/19809#heading--custom-snaps) for details on how the model assertion and _ubuntu-image_ command need to be modified.
+If you want to include your own core snaps, such as a custom gadget snap, see [Building an image with custom snaps](/how-to-guides/image-creation/add-custom-snaps) for details on how the model assertion and _ubuntu-image_ command need to be modified.
 
 ---
 
@@ -99,7 +99,7 @@ The output includes the _img_ file itself, alongside a _seed.manifest_ file. The
 
 Snaps can be optionally added at build time with the '--snap' argument.
 
-These additional snaps can include [custom snaps](/how-to-guides/image-creation/add-custom-snaps), locally-stored [offline snaps](/t/24954#heading--offline), and snaps that can be downloaded directly from the store.
+These additional snaps can include [custom snaps](/how-to-guides/image-creation/add-custom-snaps), locally-stored [offline snaps](/explanation/remodelling.md#offline-remodelling-with-offline), and snaps that can be downloaded directly from the store.
 
 - **Custom snaps** can only be added when a [model](/reference/assertions/model) has a `grade` attribute of `dangerous` 
 - Production-grade images cannot include custom snaps, and additional snaps must first be declared with a `presence` attribute of `optional` in the model.
@@ -117,7 +117,7 @@ You can also specify multiple volume sizes by separating them with commas, and y
 
 <h2 id='heading--testing'>Testing an image</h2>
 
-Rather than immediately booting an image on native hardware, it's good practice to boot an image first with QEMU ([https://www.qemu.org/](https://www.qemu.org)). See [Testing Ubuntu Core with QEMU](https://discourse.ubuntu.com/t/testing-ubuntu-core-with-qemu/24058) for further details.
+Rather than immediately booting an image on native hardware, it's good practice to boot an image first with QEMU ([https://www.qemu.org/](https://www.qemu.org)). See [Testing Ubuntu Core with QEMU](/how-to-guides/manage-ubuntu-core/test-on-qemu) for further details.
 
 After a successful boot, Ubuntu Core initialisation will ask for both networking parameters and an Ubuntu One account (see <a href="https://snapcraft.io/account" class="uri">https://snapcraft.io/account</a>). 
 

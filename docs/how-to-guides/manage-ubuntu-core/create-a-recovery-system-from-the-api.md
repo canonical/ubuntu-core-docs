@@ -1,7 +1,7 @@
 (how-to-guides-manage-ubuntu-core-create-a-recovery-system-from-the-api)=
 # Create a recovery system from the API
 
-An [Ubuntu Core image](https://discourse.ubuntu.com/t/build-your-first-ubuntu-core-image/26825) contains a recovery system created from the snaps listed in the model. This recovery system is used by a [Recovery mode](/explanation/recovery-modes) to restore a system  to the state at which the image was created.
+An [Ubuntu Core image](/tutorials/build-your-first-image/index) contains a recovery system created from the snaps listed in the model. This recovery system is used by a [Recovery mode](/explanation/recovery-modes) to restore a system  to the state at which the image was created.
 
 One issue with this approach is that there may be snaps included in the recovery system that have since received security updates. This will have been updated automatically in the running system, but not in the image-based recovery system. 
 
@@ -9,31 +9,22 @@ To resolve this, the recovery system [snapd REST API](https://snapcraft.io/docs/
 
 This is specifically useful for ensuring that a recovery system is built from a set of snaps with well known revisions.
 
-- [Recovery system snaps](#heading--snaps)
-  - [Validation sets](#heading--validation-sets)
-- [Using the API](#heading--using)
-  - [JSON-based](#heading--json)
-  - [Form-based](#heading--form)
-- [Removing API usage](#heading--remove)
-
----
-
-<h2 id="heading--snaps">Recovery system snaps</h2>
+## Recovery system snaps
 
 Any recovery system created using the API is derived from a device’s current [model](/reference/assertions/model). Each required snap in the model will be a part of any newly created recovery system. Optionals snaps in the model will be included if the snap is already installed, or if the snap is required by any validation sets that are provided.
 
-<h3 id="heading--validation-sets">Validation sets</h3>
+### Validation sets
 
 Snaps within a new recovery system will follow whatever constraints may be defined by any provided [validation sets](https://snapcraft.io/docs/validation-sets). Additionally, because a model can reference validation sets, those validation sets will also be considered.
 
 - Validation sets in the model that are marked `enforce` will be enforced.
 - Validation sets in the model marked as `prefer-enforce` will be enforced only if they have not been explicitly forgotten. If any validation sets (either explicitly provided or from the model) are in conflict with each other, then the API will refuse to create a new recovery system.
 
-<h2 id="heading--using">Using the API</h2>
+## Using the API
 
 To create a recovery system, a POST request is made to /v2/systems with the action set to `create`. The new system will be created with the provided label.
 
-<h3 id="heading--json">JSON-based</h3>
+### JSON-based
 
 Example POST to `/v2/systems`:
 
@@ -59,9 +50,9 @@ Validation sets are provided as a list of strings. Each string is in the format 
 
 The “offline” field is used to force snapd to create a recovery system without reaching out to the store. This means that all snaps and assertions that are needed to create the system must already be installed on the system. To create a recovery system from locally provided snaps/assertions that are not already installed, see _Form-based_ usage below.
 
-<h3 id="heading--form">Form-based</h3>
+### Form-based
 
-Similar to [offline remodelling](/t/remodelling/24954#heading--offline) API, an offline/form-based recovery system API variant enables users to create recovery systems from a set of snaps and assertions that are provided locally.
+Similar to [offline remodelling](/explanation/remodelling.md#offline-remodelling) API, an offline/form-based recovery system API variant enables users to create recovery systems from a set of snaps and assertions that are provided locally.
 
 When using the offline API, snaps and assertions must either be provided via the API, or they must already be installed on the system. The API will not reach out to the store to fetch any missing snaps or assertions.
 
@@ -84,7 +75,7 @@ curl -X POST --unix-socket /run/snapd.socket \
 
 In this example, “validation-set.assert”, “pc.assert”, “pc-kernel.assert”, “pc.snap”, and “pc-kernel.snap” are all files on the local system. Note that the “assertion” field expects the literal string contents to be the value of the field. The “snap” field is processed as an HTTP form file upload.
 
-<h2 id="heading--remove">Removing API Usage</h2>
+## Removing API Usage
 
 Recovery systems can be removed by using the remove API. Note that the “current” system, the default recovery system, and the last recovery system cannot be removed.
 

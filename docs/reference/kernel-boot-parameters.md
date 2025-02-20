@@ -35,7 +35,7 @@ snap set system system.kernel.dangerous-cmdline-append="ubuntu_core.bootchart"
 sudo reboot
 ```
 
-Generated bootcharts are stored in the [ubuntu-data](/t/full-disk-encryption/19871#heading--layouts) partition, under `/var/log/debug/boot<N>/` , where `<N>` is the boot number since _bootcharts_ was enabled. If a chart has also been collected by the initramfs, it's same folder.
+Generated bootcharts are stored in the [ubuntu-data](/explanation/full-disk-encryption.md#storage-layouts) partition, under `/var/log/debug/boot<N>/` , where `<N>` is the boot number since _bootcharts_ was enabled. If a chart has also been collected by the initramfs, it's same folder.
 
  The file names will include the date and time of the boot:
 

@@ -12,9 +12,9 @@ This page includes an overview of what a gadget snap includes, plus templates fo
 	- [Cross-building](#heading--building-crossbuilding)
 	- [Native building](#heading--building-native)
 	    
-> See [Gadget snaps](/reference/gadget-snap-format) for reference details on what gadget snaps can contain, and see [Types of snap](/t/snaps-in-ubuntu-core/19730#heading--types-of-snap) for details on the other types of snap that make up an Ubuntu Core image. 
+> See [Gadget snaps](/reference/gadget-snap-format) for reference details on what gadget snaps can contain, and see [Types of snap](/explanation/core-elements/snaps-in-ubuntu-core.md#types-of-snap) for details on the other types of snap that make up an Ubuntu Core image. 
 
-<h2 id='heading--inside'>Inside a gadget snap</h2>
+## Inside a gadget snap
 
 A gadget snap is built the same way other snaps are built, using [snapcraft](https://snapcraft.io/docs/snapcraft-overview) with a corresponding [snapcraft.yaml](https://snapcraft.io/docs/snapcraft-schema).
 
@@ -52,11 +52,9 @@ Canonical's IoT Devices Field team maintains a [GitHub repository](https://githu
 - [risc64-icicle](https://github.com/canonical/iot-field-gadget-snap/tree/22-riscv64-icicle)
 - [risc64-nezha](https://github.com/canonical/iot-field-gadget-snap/tree/24-riscv64-nezha)
 
-<h3 id='heading--template-gadget'>Template: gadget.yaml</h3>
+### Template: gadget.yaml
 
 The following is an annotated gadget.yaml file that can be used as the basis for your own gadget snap:
-
-[details=gadget.yaml]
 
 ```yaml
 # A template gadget.yaml
@@ -133,13 +131,9 @@ volumes:
 # Default connection settings should go here
 ```
 
-[/details]
-
-<h3 id='heading--template-snapcraft'>Template: snapcraft.yaml</h3>
+### Template: snapcraft.yaml
 
 The following is an annotated snapcraft.yaml file that can be used as the basis for your own gadget's snapcraft.yaml:
-
-[details=snapcraft.yaml]
 
 ```yaml
 # A template snapcraft.yaml
@@ -362,18 +356,16 @@ hooks:
     environment:
       MODEL_APIKEY: ""
 ```
-[/details]
 
-
-<h2 id='heading--building'>Build the snap</h2>
+## Build the snap
 
 There are typically two methods for building a gadget snap, _native building_ and _cross building_. Cross building is likely the most convenient and performant as the gadget is built within a container on the host machine.
 
-<h3 id='heading--requirements'>Requirements</h3>
+### Requirements
 
 The build system must support [snap](https://snapcraft.io/docs/installing-snapd), and have both the [Snapcraft](https://snapcraft.io/docs/snapcraft-overview) build tool and the [LXD](https://canonical.com/lxd) virtualisation platform installed, all of which are provided by any Ubuntu release.
 
-<h3 id='heading--building-native'>Native building</h3>
+### Native building
 
 This method builds a gadget snap on the same hardware that the gadget is intended for. The following example will build the [22-amd64-pc](https://github.com/canonical/iot-field-gadget-snap/tree/22-amd64-pc) gadget snap on an x86 generic PC.
 
@@ -406,7 +398,7 @@ Created snap package amd64-gadget_0.1_amd64.snap
 
 See [Image building](https://ubuntu.com/core/docs/board-enablement#heading--image-building) for instructions on how to build a bootable image that includes the gadget snap.
 
-<h3 id='heading--building-crossbuilding'>Cross-building</h3>
+### Cross-building
 
 Cross-building allows a gadget snap to be built on an architecture different from the target.
 
