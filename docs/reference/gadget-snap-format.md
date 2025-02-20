@@ -1,17 +1,6 @@
 (reference-gadget-snap-format)=
 # Gadget snap format
 
-[quote]
-:construction: **NOTE TO EDITORS** :construction:
-
-This is a read-only copy of https://forum.snapcraft.io/t/gadget-snaps/696, placed here for convenience.
-
-Please direct your edits and updates to the above link.
-
-Thanks!
-
-[/quote]
-
 The gadget snap is responsible for defining and configuring system properties specific to one or more devices.
 
 The gadget metadata and content defines:
@@ -23,17 +12,7 @@ The gadget metadata and content defines:
 
 See [Building a gadget snap](/how-to-guides/image-creation/build-a-gadget-snap) for details on how a gadget snap can be built. For store deployment, gadget snaps must be produced by the device [brand](https://snapcraft.io/docs/glossary#heading--brand-store), as defined in the [model assertion](/reference/assertions/model), or a reference gadget must be used. It is perfectly possible for different models to share a gadget snap.
 
-A typical gadget snap will consist of the following:
-- [Setup files](#heading--setup)
-- [Gadget.yaml](#heading--gadget)
-  - [Volumes](#heading--volumes)
-  - [Kernel parameters](#heading--dynamic)
-  - [Specification](#heading--specification)
-  - [Raspberry Pi example](#heading--piexample)
-- [Prepare-device hook](#heading--prepare)
-  - [Example script](#heading--example-prepare)
-
-<h2 id='heading--setup'>Setup files</h2>
+## Setup files
 
 In addition to traditional snap metadata, the gadget snap also holds some setup files fundamental to the initialisation and lifecycle of the device:
 
@@ -43,7 +22,7 @@ In addition to traditional snap metadata, the gadget snap also holds some setup 
 - **u-boot.conf**: required U-Boot configuration when using this bootloader.
 - **cloud.conf**: optional [cloud-init](https://cloudinit.readthedocs.io/en/latest/) configuration; cloud-init is disabled if missing. </br>Using cloud-init is _not recommended_ for production devices, and should only be included for testing and development purposes.
 
-<h2 id='heading--examples'>Example gadget snaps</h2>
+## Example gadget snaps
 
 The following gadget repositories contain the gadget snap definitions for _amd64_ (64 bit PC Gadget Snap) and the Raspberry Pi family of devices supported by Ubuntu Core:
 
@@ -62,7 +41,7 @@ In addition to the above, the IoT Devices Field team maintains a GitHub reposito
 
 In the near future, we expect to add a RISC-V reference gadget snap to this list.
 
-<h2 id='heading--gadget'>The gadget.yaml file</h2>
+## The gadget.yaml file
 
 Two YAML keys are used to describe your target device:
 
@@ -88,7 +67,7 @@ Values in `defaults:` (other than `system:`) are not consumed and do not become 
 
 - **volumes** (YAML sub-section, required): the volumes layout, where each disk image is represented as a YAML sub-section.
 
-<h3 id='heading--volumes'>The volumes mapping sub-section</h3>
+### The volumes mapping sub-section
 
 Each volume entry  is described by:
 -   a name as defined by the entry key
@@ -111,7 +90,7 @@ Ubuntu Core typically uses the following storage partitions:
 
 The structure section lists entities with gadget data inside the image, most of which are partitions with a file system inside, with the exception of structures of type: bare, which can describe a region of data without a corresponding entry in the partition table.
 
-<h3 id='heading--dynamic'>Dynamic kernel parameters</h3>
+### Dynamic kernel parameters
 
 There are two [system options](https://snapcraft.io/docs/system-options) that can be used to add new kernel boot parameters to a system that has been deployed and is running:
 
@@ -133,7 +112,7 @@ The `*` character can be used as a wildcard to accept any parameter argument. It
 
 See [Modifying kernel boot parameters](/how-to-guides/manage-ubuntu-core/modify-kernel-options) for more details on defining kernel boot parameters.
 
-<h3 id='heading--static'>Static kernel parameters</h3>
+### Static kernel parameters
 
 ```yaml
 kernel-cmdline:
@@ -152,7 +131,7 @@ To which we should add
 
 The parameters from `append` will be added to the default command line. The parameters matched by `remove` will be removed from the default command line.
 
-<h3 id='heading--specification'>Specification</h3>
+### Specification
 
 The `meta/gadget.yaml` file contains the basic metadata for gadget-specific functionality, including a detailed specification of which structure items compose an image. The latter is used both by snapd and by ubuntu-image when creating images for these devices.
 
@@ -160,7 +139,6 @@ A gadget snap's boot assets can also be automatically updated when the snap is r
 
 The following specification defines what is supported in `gadget.yaml`:
 
-[details="gadget.yaml"]
 ```yaml
 # Define the format of this file. The default and latest format is zero.
 # Clients reading this file must reject it the format is greater than
@@ -302,11 +280,9 @@ volumes:
             preserve: 
               - <filename>
 ```
-[/details]
-<h3 id='heading--piexample'>Example: Raspberry Pi 3 gadget.yaml</h3>
 
+### Example: Raspberry Pi 3 gadget.yaml
 
-[details="Raspberry Pi gadget.yaml"]
 ```yaml
 device-tree: bcm2709-rpi-3-b-plus
 volumes:
@@ -357,9 +333,8 @@ connections:
   - plug: LVkazk0JLrL0ivuHRlv3wp3bK1nAgwtN:shell-config-files
     slot: system:system-files           
 ```
-[/details]
 
-<h2 id='heading--prepare'> prepare-device hook</h2>
+##  prepare-device hook
 
 The optional `prepare-device` hook will be called on the gadget at the start of the device initialisation process, after the gadget snap has been installed.
 
@@ -371,7 +346,7 @@ The `prepare-device` hook can for example redirect this exchange and dynamically
 
 One must ensure that `registration.proposed-serial`  is set to a _unique value_  across all devices of the brand and model and that it does not contain a `/`. It is going to be used as the "serial number" (a string, not necessarily a number) part of the identification in case the device service supports setting it or **requires** it, as is the case with the *serial-vault*. **Important:** Ensure the `-s` option is used with `set` when setting the serial.
 
-<h3 id='heading--example-prepare'>prepare-device options</h3>
+### prepare-device options
 
 
 ```bash

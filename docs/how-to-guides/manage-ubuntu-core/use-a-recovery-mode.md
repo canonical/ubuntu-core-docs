@@ -16,15 +16,9 @@ Recovery modes are available on Ubuntu Core 20 and later.
 
 Device manufacturers may choose to implement alternative methods to access recovery functionality. These will be specific to those devices.
 
-See [Recovery modes](https://ubuntu.com/core/docs/recovery-modes) for more details on each supported recovery mode, what they do, and how they can be used.
+See [Recovery modes](/explanation/recovery-modes) for more details on each supported recovery mode, what they do, and how they can be used.
 
-- [System mode selection menu](#heading--chooser)
-- [Recovery modes from snap boot](#heading--reboot)
-- [Using recovery keys](#heading--recovery-keys)
-
----
-
-<h2 id='heading--chooser'>System mode selection menu</h2>
+## System mode selection menu
 
 To access the system mode selection menu, start or reboot the device with the ‘1’ key held on a connected keyboard. If the chooser fails to launch, try pressing _1_ repeatedly from boot. It needs to be captured by Ubuntu Core boot process.
 
@@ -36,7 +30,7 @@ The menu system requires that you tab or cursor to highlight your chosen option.
 
 Selecting an option followed by ‘Confirm’ will reboot the device into the selected mode (see below).
 
-<h2 id='heading--reboot'>Recovery modes from snap reboot</h2>
+## Recovery modes from snap reboot
 
 Alongside using `sudo snap reboot` to reboot the system, the following  arguments can be added to select a recovery mode with or without an additional system label for the target system:
 
@@ -67,7 +61,7 @@ The system is going down for reboot at Wed 2020-11-25 13:25:51 UTC!
 Reboot into "20201117" "recover" mode.
 ```
 
-<h2 id='heading--recovery-keys'>Using recovery keys</h2>
+## Using recovery keys
 
 When using [Full Disk Encryption](/explanation/full-disk-encryption), a device's Trusted Platform Module (TPM) seals the encryption keys necessary to decrypt and boot the device. 
 

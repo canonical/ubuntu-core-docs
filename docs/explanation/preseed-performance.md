@@ -7,15 +7,13 @@ The resultant image is called a _preseeded_ image, and a preseeded image is part
 
 With a preseeded image, the snap installation and update process is performed as part of the image creation process, before device deployment. This means a device is ready to go from the first boot, rather than requiring the further snap installation and updates that may be required with a non-preseeded image.
 
-
 For details on how to create a preseeded image, see [Optimise boot speed](/how-to-guides/image-creation/optimise-boot-speed).
 
 ## Measuring boot performance
 
-The time it takes for a new device to be ready can be measured with the [ubuntu_core.bootchart](/t/kernel-boot-parameters/36892#heading--bootchart) kernel option. When enabled, a performance profile is built for each device boot, allowing you to compare how a non-preseeded image performs against a preseeded image.
+The time it takes for a new device to be ready can be measured with the [ubuntu_core.bootchart](/how-to-guides/manage-ubuntu-core/modify-kernel-options) kernel option. When enabled, a performance profile is built for each device boot, allowing you to compare how a non-preseeded image performs against a preseeded image.
 
 The following are real examples of bootchart performance profiles, generated for the same deployment with and without preseeding and initialised over cell data.
-
 
 ## Without preseeding
 

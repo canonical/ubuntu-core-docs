@@ -2,15 +2,11 @@
 # Store scoping
 
 
-_Store scoping_ is the inclusion of a [brand store](https://discourse.ubuntu.com/t/store-overview/19724#heading--brand-stores) _`on-store`_ constraint linked to an [auto-connection](https://snapcraft.io/docs/auto-connection-mechanism) in the [snap-declaration assertion](/reference/assertions/snap-declaration), a file used to describe various snap properties.
+_Store scoping_ is the inclusion of a [brand store](/explanation/stores/store-overview) _`on-store`_ constraint linked to an [auto-connection](https://snapcraft.io/docs/auto-connection-mechanism) in the [snap-declaration assertion](/reference/assertions/snap-declaration), a file used to describe various snap properties.
 
 Linking an auto-connection grant to a brand store limits the scope of an interface. This then safeguards against malicious attacks that might otherwise allow auto-connections to be made outside a brand store when a snap is installed on a generic device.
 
-- [Declaration syntax](#heading--snap-declaration)
-- [Devices on shelves](#heading--shelves)
-- [Rolling back store scoping](#heading--roll-back)
-
-<h2 id='heading--snap-declaration'>Declaration syntax</h2>
+## Declaration syntax
 
 Old versions of the snap-declaration assertion could only define auto-connections in a way that couldn't link connections to a brand store:
 
@@ -31,7 +27,7 @@ timestamp: 2022-01-26T11:15:49.885580Z
 sign-key-sha3-384: some-account-key
 ```
 
-With the release of [snapd](https://snapcraft.io/docs/glossary#heading--snapd)  version _2.36_ in 2018, the snap-declaration assertion was updated to include a [brand store](/t/store-overview/19724#heading--brand-stores) definition for each granted interface:
+With the release of [snapd](https://snapcraft.io/docs/glossary#heading--snapd)  version _2.36_ in 2018, the snap-declaration assertion was updated to include a [brand store](/explanation/stores/store-overview) definition for each granted interface:
 
 ```yaml
 type: snap-declaration
@@ -73,7 +69,7 @@ Design limitations mean a snap can't be prevented from being installed, but link
 
 The [Snap Store team](https://snapcraft.io/docs/permission-requests) admins can enable this feature with no action needed from the customer: the process includes generating new revisions for each snap-declaration assertion, for each snap, with special interface grants in the customer's brand store.
 
-<h2 id='heading--shelves'>Devices on shelves</h2>
+## Devices on shelves
 
 The oldest version of snapd that supports snap-declaration store scoping is _2.36_.
 
@@ -85,7 +81,7 @@ Lastly, if a customer has **existing** snaps that require **new** auto-connectio
 
 Pre-existing auto-connections in a pre store-scoped snap-declaration should not be affected because of the assertion format handling.
 
-<h2 id='heading--roll-back'>Rolling back store scoping</h2>
+## Rolling back store scoping
 
 In the unlikely event that enabling store scoping causes a customer to experience issues, the constraint can be disabled. It's possible for a snap to have a snap-declaration assertion revision with the `on-store` constraint and next one without, for example, and snapd will use the newer revision.
 

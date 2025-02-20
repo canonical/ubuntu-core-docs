@@ -12,20 +12,11 @@ The model assertion contains:
 
 When one or more of the above elements change, the updated model assertion and its associated image are deployed to the device, authenticated and linked through its serial assertion, to the store. This process is called remodelling.
 
-One example of remodelling is [Upgrading Ubuntu Core](/t/upgrade-to-ubuntu-core-22/28320/).
+One example of remodelling is [Upgrading Ubuntu Core](how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core).
 
 The remodelling process is triggered by either updating the model assertion, running the `snap remodel` command, or from the [snapd the REST API](https://snapcraft.io/docs/snapd-api) (the last two require _snapd 2.61_ or later). Remodelling triggers the generation of a new recovery system, which means care needs to be taken to ensure the [ubuntu-seed](/explanation/core-elements/index) partition is sized accordingly.
 
-
-
-- [Viability](#heading--viability)
-- [Compatibility](#heading--context)
-- [Snap removal](#heading--removal)
-- [Offline remodelling](#heading--offline)
-
----
-
-<h2 id='heading--viability'>Remodelling viability</h2>
+## Remodelling viability
 
 Remodelling is the responsibility of the snap daemon (_snapd_) running on the device. It both mediates the update process and the re-registration of the device after the update (if required). But the complexity and viability of the remodelling process is dependent on several factors outside of snapd’s control.
 
@@ -40,7 +31,7 @@ Works as a simple contextual carrier for the new model.
 - **same brand/model -> different dedicated Snap Store**
 Keeps access to the device state kept on the remodel change, creates a store that uses that state, and then refers to the new dedicated Snap Store. Requires a new serial in the [Serial Vault](/) and the creation of a new  [Serial assertion](/reference/assertions/serial).
 
-<h2 id='heading--context'>Remodelling compatibility</h2>
+## Remodelling compatibility
 
 The below permutations of the remodelling contexts are all valid:
 
@@ -53,13 +44,13 @@ The below permutations of the remodelling contexts are all valid:
 
 If a [validation set](https://snapcraft.io/docs/validation-sets) has been defined for the old model and the new model, or just the new model, the snaps installed during the remodelling process must follow the validation set rules.
 
-<h2 id='heading--removal'>Remodelling snap removal</h2>
+## Remodelling snap removal
 
 The remodelling process does not automatically remove snaps which are no longer marked as `required` or `optional` in the new model assertion. Those snaps stay in the system and keep receiving updates, but since they are no longer required by the model, it is possible to remove them.
 
 The general practice is that either the operator who invoked `snap remodel` command, or the management agent which started the remodel process, is responsible for requesting removal of said snaps. If snap data is no longer needed, the remove request should include the `purge` option to remove all data associated with the removed snap.
 
-<h2 id='heading--offline'>Offline remodelling</h2>
+## Offline remodelling
 
 A network connection is not required if there is local access to:
 

@@ -12,8 +12,8 @@ In Bluetooth terminology pairing is the process of making two devices know about
 
 Pairing with a remote device can be done in two ways due to the fact that it can be initiated from both endpoints. Both ways are described further in this section.
 
-* [Inbound pairing](/t/inbound-pairing/19982)
-* [Outbound pairing](/t/outbound-pairing/19979)
+* [Inbound pairing](#inboud-pairing)
+* [Outbound pairing](#outbound-pairing)
 
 ## Handling Authentication Requests by BlueZ
 

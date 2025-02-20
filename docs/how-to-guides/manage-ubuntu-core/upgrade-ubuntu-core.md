@@ -11,13 +11,7 @@ It is not currently possible to upgrade from releases earlier than UC20, or from
 
 Upgrades are performed by [remodelling](/explanation/remodelling), which is the process of replacing one model assertion with another on a deployed system. For an upgrade from UC20 to UC22, for example, this means updating the base and system snaps in a UC20 model assertion with their UC22 counterparts.
 
-- [Prerequisites](#heading--prerequisites)
-- [Model assertions](#heading--model)
-- [Perform the upgrade](#heading--remodel)
-
----
-
-<h2 id='heading--pre'>Prerequisites</h2>
+## Prerequisites
 
 On the device, run `snap model` to make sure the device has been assigned a serial:
 
@@ -42,7 +36,7 @@ HOME_URL="https://snapcraft.io/"
 BUG_REPORT_URL="https://bugs.launchpad.net/snappy/"
 ```
 
-<h2 id='heading--model'>Model assertions</h2>
+## Model assertions
 
 The model assertion defines which [system snaps](/t/inside-ubuntu-core-20/20777#heading--system) make up the device's operating system, including the gadget snap, kernel snap and the base snap with the (read-only) root filesystem.
 
@@ -149,7 +143,7 @@ The updated model will need to be signed with the same key that the original mod
 
 Reference unsigned model assertions for both UC20 and UC22 can be found here: [https://github.com/snapcore/models](https://github.com/snapcore/models).
 
-<h2 id'heading--remodel'>Perform the upgrade</h2>
+## Perform the upgrade
 
 To manually upgrade a device running the original UC20 model assertion, first copy the signed and updated UC22 model assertion to the device. This can be accomplished in many ways, but _scp_ OpenSSH secure file copy is a good option:
 

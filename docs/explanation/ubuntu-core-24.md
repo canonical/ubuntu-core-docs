@@ -14,7 +14,7 @@ New features for this release include:
 - New ROS integration for robotics developers
 - New documentation and documentation structure
 
-In addition to the above, Ubuntu Core 24 bundles both the latest Linux Kernel  6.8 and *systemd* 2.55 and includes all the latest features of _snapd_, including [Dynamic kernel boot parameters](/how-to-guides/manage-ubuntu-core/modify-kernel-options), [Quota group limits for Journal log](https://snapcraft.io/docs/quota-groups#heading--journal) and [Offline remodelling](/explanation/remodelling).
+In addition to the above, Ubuntu Core 24 bundles both the latest Linux Kernel  6.8 and *systemd* 2.55 and includes all the latest features of _snapd_, including [Dynamic kernel boot parameters](/how-to-guides/manage-ubuntu-core/modify-kernel-options), [Quota group limits for Journal log](https://snapcraft.io/docs/quota-groups#heading--journal) and [Offline remodelling](/explanation/remodelling.md#offline-remodelling).
 
 Support for Ubuntu Core has also been added to [Multipass](/tutorials/get-started/try-pre-built-images/install-on-a-vm), for single-command deployment.
 
@@ -62,8 +62,8 @@ There's also a new section on using Ubuntu Core to host containers, with how-to 
 
 This release adds many other new features, including:
 
-- [Dynamic kernel parameter modification](/t/modifying-kernel-boot-parameters/24955#heading--dynamic)
+- [Dynamic kernel parameter modification](/how-to-guides/manage-ubuntu-core/modify-kernel-options)
 - [Optional console-conf for device onboarding](/how-to-guides/image-creation/add-console-conf)
 - [Configurable splash screen](/how-to-guides/image-creation/add-a-splash-screen)
-- [Offline device upgrades and remodelling](/t/remodelling/24954#heading--offline)
+- [Offline device upgrades and remodelling](/explanation/remodelling.md#offline-remodelling)
 

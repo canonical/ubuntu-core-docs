@@ -42,7 +42,7 @@ The system boot process:
 
 When run normally, the snap content comes from snaps in the encrypted data partition, with the exception of the kernel image which is loaded from the system boot partition via secure boot. In any case the unsealing of the disk encryption key(s) is tied to the correct TPM boot measurements.
 
-If an encrypted drive is detected, but the TPM does not contain a valid key, the Ubuntu Core boot process will prompt for a recovery key. See [Using recovery keys](/t/using-recovery-modes/20332#heading--recovery-keys) for further details.
+If an encrypted drive is detected, but the TPM does not contain a valid key, the Ubuntu Core boot process will prompt for a recovery key. See [Using recovery keys](/how-to-guides/manage-ubuntu-core/use-a-recovery-mode.md#using-recovery-keys) for further details.
 
 For more information on how Ubuntu Core uses these partitions, what they contain, and how they boot, see [Storage layout](/explanation/core-elements/storage-layout).
 

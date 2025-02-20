@@ -21,7 +21,7 @@ To allow users to enable or disable WoWLAN, the snap provides two configuration 
 
 Both options can be set via the configuration API snaps provide. See [Managing snap configuration](https://snapcraft.io/docs/configuration-in-snaps) for more details.
 
-Both configuration options will affect all wireless network devices. If you want to change it just for a single wireless connection take a look at [Per Connection Configuration](/t/wake-on-wlan/19938#heading--per) below.
+Both configuration options will affect all wireless network devices. If you want to change it just for a single wireless connection take a look at [Per connection configuration](#per-connection-configuration) below.
 
 #### wifi.wake-on-wlan
 
@@ -39,7 +39,7 @@ This configuration option accepts the following values:
 Example:
 
 ```bash
-$ snap set network-manager wifi.wake-on-wlan=magic
+snap set network-manager wifi.wake-on-wlan=magic
 ```
 
 #### wifi.wake-on-wlan-password
@@ -48,9 +48,9 @@ This configuration option accepts a textual value. If specified, the value will 
 
 Example:
 ```bash
-$ snap set network-manager wifi.wake-on-wlan-password=MyPassword
+snap set network-manager wifi.wake-on-wlan-password=MyPassword
 ```
-<h3 id='heading--per'>Per Connection Configuration</h3>
+### Per connection configuration
 
 To configure WoWLAN per connection you have to use the  *nmcli*  utility which comes with the NetworkManager snap. It allows you to configure the same two options as the snap accepts. However, the  *wifi.wake-on-wlan*  option takes a numeric value instead of a textual one.
 
@@ -70,7 +70,7 @@ The  *wifi.wake-on-wlan-password*  option accepts the same values as the snap co
 
 Example:
 ```bash
-$ nmcli c modify my-connection wifi.wake-on-wlan 2 $ nmcli c modify my-connection wifi.wake-on-wlan-password Test1234
+nmcli c modify my-connection wifi.wake-on-wlan 2 $ nmcli c modify my-connection wifi.wake-on-wlan-password Test1234
 ```
 ### Verify WoWLAN Configuration
 
@@ -78,7 +78,7 @@ NetworkManager will use the kernel to configure WoWLAN on the hardware level. Th
 
 If you don't have the  *iw*  utility on your system you can install it with the  *wireless-tools*  snap.
 ```bash
-$ snap install --devmode wireless-tools $ sudo wireless-tools.iw phy phy0 wowlan show WoWLAN is enabled: * wake up on magic packet
+snap install --devmode wireless-tools $ sudo wireless-tools.iw phy phy0 wowlan show WoWLAN is enabled: * wake up on magic packet
 ```
 See the help output of the  *iw*  command for more documentation and available options.
 
