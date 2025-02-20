@@ -55,9 +55,9 @@ This assertion gives control on several aspects of the snap behaviour to the aut
 
 -   `plugs` and `slots` define flags per interface. This lets define restrictions on how the snap plugs/slots used by the snap are handled. For instance, we can allow or deny connections with `allow-connection` and `deny-connection`. With `allow-auto-connection` or `deny-auto-connection` we let snapd know if it should automatically connect plugs/slots on snap installation.
 
-    See [Connection management](#heading--connection-management) (below) for more details on  these restrictions, and see [snap-declaration store scoping](/) for more information on how auto-connections can be linked to a brand store.
+    See [Connection management](#connection-management) (below) for more details on  these restrictions, and see [snap-declaration store scoping](/) for more information on how auto-connections can be linked to a brand store.
 
-See [Assertion format](reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
+See [Assertion format](/reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
 
 ## Connection management
 

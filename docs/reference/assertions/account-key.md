@@ -38,7 +38,7 @@ The index for this assertion is `public-key-sha3-384`. The key is valid in the t
 
 In addition to the signature validation that's performed for all assertions, it's essential for the account-key assertion that the digest of the public key matches the assertion body.
 
-See [Assertion format](reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
+See [Assertion format](/reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
 
 ## Example assertion
 

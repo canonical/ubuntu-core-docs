@@ -12,7 +12,7 @@ The model assertion contains:
 
 When one or more of the above elements change, the updated model assertion and its associated image are deployed to the device, authenticated and linked through its serial assertion, to the store. This process is called remodelling.
 
-One example of remodelling is [Upgrading Ubuntu Core](how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core).
+One example of remodelling is [Upgrading Ubuntu Core](/how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core).
 
 The remodelling process is triggered by either updating the model assertion, running the `snap remodel` command, or from the [snapd the REST API](https://snapcraft.io/docs/snapd-api) (the last two require _snapd 2.61_ or later). Remodelling triggers the generation of a new recovery system, which means care needs to be taken to ensure the [ubuntu-seed](/explanation/core-elements/index) partition is sized accordingly.
 
