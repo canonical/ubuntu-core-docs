@@ -7,21 +7,11 @@ However, some projects can benefit from holding a deployed snap, or a set of sna
 
 A snap’s [revision](https://snapcraft.io/docs/glossary#heading--revision) is an automatic number assigned by the Snap Store to give each snap build a unique identity within its channel. Refresh control allows specific snaps to be kept at a specified revision, even when a new or different revision of a snap is released.
 
-- [Gating snaps](#heading--gating)
-- [Preliminary setup](#heading--preliminary-setup)
-- [Setting up the signing key](#heading--gating-snap-publishers-signing-key-setup)
-- [Example gating workflows](#heading--example-gating-workflows)
-- [Gating multiple snaps](#heading--gating-multiple-snaps)
-- [Revoking assertion validity](#heading--revoke)
-- [Notes](#heading--notes)
-
 ```{tip}
 Another possible refresh control solution is to use a _validation set_. A validation set can be used to ensure only specific snaps are installed, and optionally, only specific snaps at fixed revisions. See [Validation sets](https://snapcraft.io/docs/validation-sets) for further details.
 ```
 
----
-
-<h2 id="heading--gating">Gating snaps</h2>
+## Gating snaps
 
 Refresh control can be accomplished by using a **gating snap** to control which revisions of one or more **gated snaps**  to install:
 
@@ -33,7 +23,7 @@ A gated snap can also require verification from *more than one* gating snaps, bu
 
 Gating is especially useful when a device manufacturer needs to mediate  releases of its *base* snap, allowing time for testing and validation of new revisions on their device models and compatibility with their software. This is separate from the ability for device managers to control the schedule of refreshes and revision control via a snap proxy.
 
-<h2 id="heading--preliminary-setup">Preliminary setup</h2>
+## Preliminary setup
 
 The mechanism of defining refresh control behaviour involves:
 
@@ -47,7 +37,7 @@ Validations can only be issued by the owner/publisher of the *gating* snap becau
 
 Establishing the relationship between a gating and gated snap is required only once and can only be performed by a user with permission from the team operating the store controlling the gating snap.
 
-<h2 id="heading--gating-snap-publishers-signing-key-setup">Setting up the signing key</h2>
+## Setting up the signing key
 
 Gating involves pushing [validation assertions](/reference/assertions/validation) signed by the publisher, indicating their authorisation to restrict updates of snaps. To do this, several GPG keys must be generated and published to the store. If a store key already exists, it can be used. If not, one must be generated and registered.
 
@@ -71,7 +61,7 @@ Gating involves pushing [validation assertions](/reference/assertions/validation
         Registering key ...
         Done. The key "my-key" (mfomTtPB1cE3IFs51NtdnFoPlQwJxFgxOMU_q0mPkH7M2gKB-4m28d99XrVjA53B) may be used to sign your assertions.
 
-<h2 id="heading--example-gating-workflows">Example gating workflows</h2>
+## Example gating workflows
 
 At this point, the publisher can issue validations asserting which revision of the gated snap is allowed to be installed when the gating snap is installed on a device. For example, specify that if the `roadmr-gating` snap is installed, the `roadmr-gated` snap can only be installed or refreshed to revision 2.
 
@@ -227,7 +217,7 @@ roadmr-gating   2018-05-30-01 1      stable     snapdeveloper    -
 
 **Without a validation assertion, a gated snap will not refresh**
 
-<h2 id="heading--gating-multiple-snaps">Gating multiple snaps</h2>
+## Gating multiple snaps
 
 A validation can be issued to restrict the revisions of more than one gated snap (assuming the “publisher setup” was done to allow the gating snap to control the indicated gated snaps):
 
@@ -247,7 +237,7 @@ In this example, if `roadmr-gating` is installed on a device, `roadmr-gated` wil
 If a validation assertions is updated to include additional snaps, the new snaps will not be installed automatically. They will instead need to be installed locally through the _snap_ command or through the [snapd REST API](https://snapcraft.io/docs/snapd-api#heading--snaps-post).
 ```
 
-<h2 id='heading--revoke'>Revoking assertion validity</h2>
+## Revoking assertion validity
 
 The `snapcraft validate --revoke` command is used to remove an assertion for a snap, and consequently,  its validity requirements which means a gated snap will no longer refresh:
 
@@ -255,10 +245,11 @@ The `snapcraft validate --revoke` command is used to remove an assertion for a s
 snapcraft validate --revoke <gating-snap> <gated-snap>=<revision> --key-name <signing-key>
 ```
 
-<h2 id="heading--notes">Notes</h2>
+## Limitations
 
--   At the moment, validations **by snap name** can only be issued to gate snaps which are **public** and have a release on the stable channel *at the moment of creating the validation*.  This is because `snapcraft validate` uses the details API to get the details from the stable channel only, and it doesn’t allow specifying another channel to get the gated snap’s details.
-- If you need to issue validations for non public snaps (such as snap in brand stores) or for snap revisions that are not released to the stable channel, you need to fallback to using snap IDs instead of snap names, and the operate as usual.
+At the moment, validations **by snap name** can only be issued to gate snaps which are **public** and have a release on the stable channel *at the moment of creating the validation*.  This is because `snapcraft validate` uses the details API to get the details from the stable channel only, and it doesn’t allow specifying another channel to get the gated snap’s details.
+
+If you need to issue validations for non public snaps (such as snap in brand stores) or for snap revisions that are not released to the stable channel, you need to fallback to using snap IDs instead of snap names, and the operate as usual.
 
 In the following example, we are validating revision _1234_ of the `core` snap which is not the current stable release:
 

@@ -12,13 +12,11 @@ Otherwise, the full disk encryption implementation in Ubuntu Core is generic and
 TPM-based FDE seals the FDE secret key to the full EFI state, including the kernel command line, which is subsequently unsealed by the initrd code in the secure-boot protected _kernel.efi_ at boot time.
 
 The following factors affect how a device is encrypted:
-- [Storage layouts](#heading--layouts): the potential partitions created on the device
-- [Disabling encryption](#heading--disable): an optional parameter that can disable encryption
-- [Model grade](#heading--grade): interacts with _storage-safety_ to set the device constraints 
+- [Storage layouts](#storage-layouts): the potential partitions created on the device
+- [Disabling encryption](#disabling-encryption): an optional parameter that can disable encryption
+- [Model grade](#model-grade): interacts with _storage-safety_ to set the device constraints 
 
 For a non-standard (non-UEFI+TPM platform) FDE platform, such as a Raspberry Pi or other ARM devices, implementation is board-specific and will typically involve creating custom gadget and kernel snaps. UC20/UC22, however, do provide a helper mechanism, via a hook interface, to ensure the integrity of any subsequently executed or accessed data. See the [full-disk-encryption hook interface](https://snapcraft.io/docs/uc20-fde-hooks) for further details.
-
----
 
 ## Storage layouts
 
@@ -56,7 +54,7 @@ This option is provided by the “storage-safety” setting in the [model assert
 - **prefer-encrypted**: do encrypt if the hardware supports it.
 - **prefer-unencrypted**: do not encrypt by default, even if the device supports encryption.
 
-See [Creating a bespoke image](/how-to-guides/image-creation/add-custom-snaps) for further details on building an image from a model assertion.
+See [Add custom snaps](/how-to-guides/image-creation/add-custom-snaps) for further details on building an image from a model assertion.
 
 ## Model grade
 
@@ -97,8 +95,6 @@ The values of both a model’s grade and the storage-safety option influence whe
 |**signed**|  unencrypted | _error output_ | unencrypted |  unencrypted |
 |**secured** | _error output_ |  _error output_ | _error output_ | _invalid_|
 
-[note status="Note "]
-`grade:secured` is the same as `grade:signed` and `storage-safety:encrypted`.
+Note: `grade:secured` is the same as `grade:signed` and `storage-safety:encrypted`.
 `storage-safety:prefer-encrypted` is the same as `unset`
-```
 

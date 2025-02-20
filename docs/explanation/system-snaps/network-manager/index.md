@@ -1,7 +1,7 @@
 (explanation-system-snaps-network-manager-index)=
 # Network-Manager
 
-Network Manager is a system network service that manages your network devices and connections and attempts to keep network connectivity active when available. It manages Ethernet, WiFi, mobile broadband (WWAN) and PPPoE devices while also providing VPN integration with a variety of different VPN services.
+Network Manager is a system network service that manages your network devices and connections and attempts to keep network connectivity active when available. It manages Ethernet, Wi-Fi, mobile broadband (WWAN) and PPPoE devices while also providing VPN integration with a variety of different VPN services.
 
 By default network management on [Ubuntu Core](https://www.ubuntu.com/core) is handled by systemd's [networkd](https://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) and [netplan](https://launchpad.net/netplan). However, when Network Manager is installed, it will take control of all networking devices in the system by creating a netplan configuration file in which it sets itself as the default network renderer.
 
@@ -11,10 +11,10 @@ The upstream Network Manager project offers a wide range of features and most, b
 
 Currently we provide support for the following high level features:
 
-* WiFi connectivity
+* Wi-Fi connectivity
 * WAN connectivity (together with Modem Manager)
 * Ethernet connectivity
-* WiFi access point creation
+* Wi-Fi access point creation
 * Shared connections
 * VPN connections
 

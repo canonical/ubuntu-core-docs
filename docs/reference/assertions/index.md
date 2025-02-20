@@ -95,4 +95,3 @@ revision: 2
 :glob:
 
 *
-*/index

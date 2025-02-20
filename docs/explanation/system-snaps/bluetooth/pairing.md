@@ -12,17 +12,17 @@ In Bluetooth terminology pairing is the process of making two devices know about
 
 Pairing with a remote device can be done in two ways due to the fact that it can be initiated from both endpoints. Both ways are described further in this section.
 
-* [Inbound pairing](#inboud-pairing)
+* [Inbound pairing](#inbound-pairing)
 * [Outbound pairing](#outbound-pairing)
 
 ## Handling Authentication Requests by BlueZ
 
-The pairing procedure includes an authentication that requires confirmation by the user. If you have ever used Bluetooth previously you probably remeber entering a pin code or answering a "would you like to connect yes/no" question.
+The pairing procedure includes an authentication that requires confirmation by the user. If you have ever used Bluetooth previously you probably remember entering a pin code or answering a "would you like to connect yes/no" question.
 
-To pair with other devices BlueZ uses an agent-style DBus API. See the following links for more details on this:
+To pair with other devices BlueZ uses an agent-style D-Bus API. See the following links for more details on this:
 
-* [Agent API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/agent-api.txt)
-* [Device API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/device-api.txt)
+* [Agent API](https://github.com/bluez/bluez/blob/master/doc/org.bluez.Agent.rst)
+* [Device API](https://git.kernel.org/pub/scm/bluetooth/bluez.git/tree/doc/device-api.txt?h=5.64)
 
 Within the bluetoothctl utility we can register such an agent with a specific IO capability with the BlueZ service and then process any further pairing operation.
 
@@ -40,7 +40,7 @@ The pairing section will walk you through the pairing procedure with a keyboard.
 
 In this scenario it is the remote device that is active in the pairing procedure. It will search, discover and initiate pairing. The only thing that an Ubuntu Core device has to make sure of is to be discoverable and pairable, as this will allow the remote device to discover and initiate a connection with it.
 ```bash
-$ bluetoothctl [bluetooth]# discoverable on Changing discoverable on succeeded [bluetooth]# pairable on Changing pairable on succeeded
+bluetoothctl [bluetooth]# discoverable on Changing discoverable on succeeded [bluetooth]# pairable on Changing pairable on succeeded
 ```
 At this stage the Ubuntu Core device is ready to be discovered. It is important to register the pairing agent so that the authentication process can be completed. Type:
 ```bash
@@ -69,11 +69,11 @@ At this stage the devices are paired and can be connected.
 
 Having the  *bluez*  snap installed start the  *bluetoothctl*  tool which is a command-line interface to BlueZ.
 ```bash
-$ sudo bluetoothctl
+sudo bluetoothctl
 ```
 You should see the output similar to the following:
 ```bash
-$ sudo bluez.bluetoothctl [NEW] Controller 00:1A:7D:DA:71:08 core16 [default] [NEW] Device 00:25:56:D1:36:6B ubuntu-0 [bluetooth]#
+sudo bluez.bluetoothctl [NEW] Controller 00:1A:7D:DA:71:08 core16 [default] [NEW] Device 00:25:56:D1:36:6B ubuntu-0 [bluetooth]#
 ```
 The "[NEW] Controller" line displays the information about your Bluetooth chip. The "[NEW] Device" line displays the information about already known devices such as previously paired ones. Note that there might be multiple or no lines starting with [NEW] Device, as it depends on what happened prior. The last line is the  *bluetoothctl*  prompt.
 

@@ -3,15 +3,11 @@
 
 The global [Snap Store](https://snapcraft.io/store) is the default source for all snaps, including those used by Ubuntu Core. It’s where the majority of snaps are published, where public, unlisted and private snaps can be shared with users and collaborators, and where developers can manage their releases across channels and tracks.
 
-But snaps can also be hosted, and published from a dedicated snap store, often called a [Brand store](/explanation/stores/dedicated-snap-stores) or IoT App Store. For a more in-depth look at dedicated snap stores, and how they're used with Ubuntu Core and IoT devices, see our [IoT App Store](https://ubuntu.com/core/services/guide/iot-app-store-intro) documentation.
-
+But snaps can also be hosted, and published from a dedicated snap store, often called a [Brand store](/explanation/stores/dedicated-snap-stores) or IoT App Store. For a more in-depth look at dedicated snap stores, and how they're used with Ubuntu Core and IoT devices, see the [IoT App Store](https://ubuntu.com/core/services/guide/iot-app-store-intro) documentation.
 
 A store is managed and governed through a brand account and the authority it delegates to other associated accounts. This is outlined below.
 
-* [Brand account](#heading--brand)
-* [Roles](#heading--roles)
-----
-<h2 id='heading--brand'>Brand accounts</h2>
+## Brand accounts
 
 A brand account is an ordinary Ubuntu SSO account augmented by the store team after a support request. It then defines the scope of authority of a dedicated snap store, and it must be used for certain functions.
 
@@ -35,7 +31,7 @@ Enable two-factor authentication
 We recommend enabling two-factor authentication on all Ubuntu SSO accounts, but especially the brand and administrator accounts described below. See [SSO two-factor authentication](https://help.ubuntu.com/community/SSO/2FactorAuthentication) for details.
 ```
 
-<h2 id='heading--roles'>Roles</h2>
+## Roles
 
 Roles are a vital part of the device and snap management lifecycle. They enable accounts other than the master brand account to control various aspects of the deployment process, and for those aspects to be safeguarded from the key and registry functions that maintain the integrity of the brand account.
 

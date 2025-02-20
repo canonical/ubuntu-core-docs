@@ -30,7 +30,7 @@ This tutorial is suitable for anyone with an interest in Ubuntu Core - no prior 
 Pre-built Ubuntu Core images do not use a username and password to login to the system. Instead, they uses SSH with SSH keys uploaded to your Ubuntu One account using the console-conf snap. SSH is not a requirement for other Ubuntu Core images. See [Connect to Ubuntu Core with SSH](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh) for further details.
 ```
 
-Unlike installing Ubuntu Core on an IoT device, such as [Installing Ubuntu Core a Raspberry Pi](/tutorials/get-started/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager), NUC or PC installations require the Ubuntu Core image to be written directly to internal storage. This cannot be done from an operating system running on the same storage, and needs to be performed from an external storage device.
+Unlike installing Ubuntu Core on an IoT device, such as [Installing Ubuntu Core a Raspberry Pi](/tutorials/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager), NUC or PC installations require the Ubuntu Core image to be written directly to internal storage. This cannot be done from an operating system running on the same storage, and needs to be performed from an external storage device.
 
 In this tutorial, we will first write and boot a _live_ version of Ubuntu to a USB flash drive, download Ubuntu Core, and write the Ubuntu Core image to the device's internal storage.
 
@@ -121,17 +121,17 @@ Selecting _Manual_ will allow you to configure your Ethernet connection manually
 
 ### Wi-Fi
 
-If you have a device with Wi-Fi capabilities, _WiFi_ will appear as a separate network device beneath any Ethernet devices.
+If you have a device with Wi-Fi capabilities, _Wi-Fi_ will appear as a separate network device beneath any Ethernet devices.
 
 ![wlan selection](https://assets.ubuntu.com/v1/3765991b-uc06.png)
 
-To configure Wi-Fi, press the cursor up key until  the wireless device is selected and press **Enter**. You will see a small menu and you need to select **Edit Wifi**.
+To configure Wi-Fi, press the cursor up key until  the wireless device is selected and press **Enter**. You will see a small menu and you need to select **Edit Wi-Fi**.
 
-![Edit Wifi](https://assets.ubuntu.com/v1/f4889452-uc07.png)
+![Edit Wi-Fi](https://assets.ubuntu.com/v1/f4889452-uc07.png)
 
-After selecting _Edit Wifi_, you will see the network interface configuration panel for Wi-Fi. If you know the name of the Wi-Fi network you wish to connect to, it can be entered directly, or cursor down to _Choose a visible network_ and select a network from a list of those that have been detected.
+After selecting _Edit Wi-Fi_, you will see the network interface configuration panel for Wi-Fi. If you know the name of the Wi-Fi network you wish to connect to, it can be entered directly, or cursor down to _Choose a visible network_ and select a network from a list of those that have been detected.
 
-![Wifi password](https://assets.ubuntu.com/v1/bf6ddac7-uc8.png)
+![Wi-Fi password](https://assets.ubuntu.com/v1/bf6ddac7-uc8.png)
 
 Finally, enter the Wi-Fi password and select **Save** to complete the configuration. You will be returned to the previous menu and your device will attempt to connect to the network. If successful, you will see its IP address to the right of DHCPv4.
 

@@ -32,7 +32,7 @@ Customise Ubuntu Core images and the running environment.
 :maxdepth: 2
 :glob:
 
-Test on QEMU <use-ubuntu-one-ssh>
+Test on QEMU <test-on-qemu>
 Use Ubuntu One SSH <use-ubuntu-one-ssh>
 Upgrade Ubuntu Core <upgrade-ubuntu-core>
 Set system options <set-system-options>

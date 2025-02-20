@@ -50,7 +50,7 @@ ubuntu-image snap my-model.model --factory-image
 
 See [Building the image](/tutorials/build-your-first-image/index) for details on how images are built.
 
-The factory image hint is cleared directly before rebooting into **run mode** (step 5, above). 
+The factory image hint is cleared directly before rebooting into **run mode**. 
 
 For the current boot, the state of the factory image hint can be viewed by invoking `snapctl system-mode` and checking whether `factory: true` is included in its YAML output. See [The snapctl tool](https://snapcraft.io/docs/using-snapctl) for more information.
 

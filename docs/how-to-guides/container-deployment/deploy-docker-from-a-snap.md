@@ -313,7 +313,7 @@ To verify this setup:
 
 ## Allow container creation configuration
 
-In the earlier steps we hardcoded some of the container configurations, passed to the `docker create` command in the `run.sh` script.
+In the earlier steps we hard coded some of the container configurations, passed to the `docker create` command in the `run.sh` script.
 For example, we exposed the service ports with the same number on the host:
 ```bash
 if [ ! "$(docker ps --all --quiet --filter name="$container_name")" ]; then

@@ -11,16 +11,7 @@ The `ubuntu-image` command requires only a path to a model assertion to build an
 
 If you want to include your own core snaps, such as a custom gadget snap, see [Building an image with custom snaps](/how-to-guides/image-creation/add-custom-snaps) for details on how the model assertion and _ubuntu-image_ command need to be modified.
 
----
-
-- [Inside a model assertion](#heading--inside)
-- [Building with ubuntu-image](#heading--ubuntu-image)
-- [Additional snaps](#heading--adding-snaps)
-- [Image size](#heading--size)
-- [Testing an image](#heading--testing)
-
-    
-<h2 id='heading--inside'>Inside a model</h2>
+## Inside a model
 
 Creating an Ubuntu Core image starts with a _model assertion_, a digitally signed text file with structured headers defining every aspect of the image.
 
@@ -73,7 +64,7 @@ The input model for defining and signing such a document is provided as JSON tex
 }
 ```
 
-The above example shows an unsigned reference model for [Raspberry Pi/arm64](http://cdimage.ubuntu.com/ubuntu-core/24/stable/current/ubuntu-core-24-arm64.model-assertion). To see how this can be modified and signed, see [Custom images](/how-to-guides/image-creation/add-custom-snaps).
+The above example shows an unsigned reference model for [Raspberry Pi/arm64](http://cdimage.ubuntu.com/ubuntu-core/24/stable/current/ubuntu-core-24-arm64.model-assertion). To see how this can be modified and signed, see [Add custom snaps](add-custom-snaps).
 
 The model includes details such as the store to use (`brand-id` and `authority-id`), the model name (`ubuntu-core-24-pi-arm64`) and the hardware architecture (`arm64`). Any snaps installed on the device will respect this selected architecture.
 
@@ -84,7 +75,7 @@ As outlined in [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu
 The _console-conf_ user-interface that configures the network and system user when a device first boots, has migrated to an optional snap in Ubuntu Core 24 and later. See [console-conf for device onboarding](/how-to-guides/image-creation/add-console-conf) for further details.
 ```
 
-<h2 id='heading--ubuntu-image'>Building with ubuntu-image</h2>
+## Building with ubuntu-image
 
 The following will build an _amd64_ image using the [ubuntu-core-24-amd64.model](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-amd64.model) reference model:
 
@@ -95,7 +86,7 @@ ubuntu-image snap ubuntu-core-24-amd64.model
 
 The output includes the _img_ file itself, alongside a _seed.manifest_ file. The manifest file simply lists the specific revision numbers of the snapd, pc, pc-kernel and core snaps built within the image, plus any other snaps added to the model.
 
-<h2 id='heading--adding-snaps'>Additional snaps</h2>
+## Additional snaps
 
 Snaps can be optionally added at build time with the '--snap' argument.
 
@@ -105,7 +96,7 @@ These additional snaps can include [custom snaps](/how-to-guides/image-creation/
 - Production-grade images cannot include custom snaps, and additional snaps must first be declared with a `presence` attribute of `optional` in the model.
 - **Offline snaps** must include locally cached assertions. Using offline locally stored snaps can speed up the image creation process.
 
-<h2 id='heading--size'>Image size</h2>
+## Image size
 
 The size of a generated disk image can optionally be controlled with the `--image-size` argument.
 
@@ -115,7 +106,7 @@ An extended syntax is supported for [Gadget snaps](/how-to-guides/image-creation
 
 You can also specify multiple volume sizes by separating them with commas, and you can mix and match integer indices and volume-name indices. Thus, if gadget.yaml names three volumes, and you want to set all three to different sizes, you can use --image-size 0:2G,sdcard:8G,eMMC:4G.
 
-<h2 id='heading--testing'>Testing an image</h2>
+## Testing an image
 
 Rather than immediately booting an image on native hardware, it's good practice to boot an image first with QEMU ([https://www.qemu.org/](https://www.qemu.org)). See [Testing Ubuntu Core with QEMU](/how-to-guides/manage-ubuntu-core/test-on-qemu) for further details.
 
@@ -154,5 +145,5 @@ grade:     signed
 serial:    1194d330-d27b-4230-a16f-ab0d23665010
 ```
 
-See the [Snap documentation](https://snapcraft.io/docs) for more details on working with snaps. To build a custom image that includes your own selection of snaps, take a look at [Custom images](/how-to-guides/image-creation/add-custom-snaps).
+See the [Snap documentation](https://snapcraft.io/docs) for more details on working with snaps. To build a custom image that includes your own selection of snaps, take a look at [Add custom snaps](add-custom-snaps).
 
