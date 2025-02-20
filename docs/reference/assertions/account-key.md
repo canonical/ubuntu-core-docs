@@ -7,12 +7,9 @@ This assertion is used to transmit key information between the [store](/explanat
 
 Alongside [account](/reference/assertions/account), [snap-declaration](/reference/assertions/snap-declaration) and [snap-revision](/reference/assertions/snap-revision) assertions,  _account-key_ is bundled within the composite `.assert` file that accompanies a snap downloaded with the `snap download <snap-name>` command.
 
-The `make-system-user` snap can is used to create a composite assertion file which includes all of the required assertions needed to trigger automatic creation of a user account via an inserted USB drive containing this file. See [make-system-user](/t/system-user/19740#heading--make-system-user) for more details.
+The `make-system-user` snap can is used to create a composite assertion file which includes all of the required assertions needed to trigger automatic creation of a user account via an inserted USB drive containing this file. See [make-system-user](/how-to-guides/manage-ubuntu-core/add-a-system-user) for more details.
 
-- [Account-key assertion fields](#heading--fields)
-- [Example system-user assertion](#heading--example)
-
-<h2 id='heading--fields'>Account-key assertion fields</h2>
+## Account-key assertion fields
 
 The following fields can be used in an account-key user assertion:
 
@@ -41,9 +38,9 @@ The index for this assertion is `public-key-sha3-384`. The key is valid in the t
 
 In addition to the signature validation that's performed for all assertions, it's essential for the account-key assertion that the digest of the public key matches the assertion body.
 
-See [Assertion format](/t/assertions/19742#heading--format) for more details on fields common to most assertions.
+See [Assertion format](reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
 
-<h2 id='heading--example'>Example assertion</h2>
+## Example assertion
 
 The following is Canonical's public key for the store:
 

@@ -7,8 +7,7 @@ Every Ubuntu Core device belongs to a particular model, as defined by its [model
 
 Each device also has a unique device identity and the ability to _prove that identity_ with cryptographic keys. The precise implementation of this cryptography may vary from device to device, based on the hardware and software capabilities, which is described as part of the [gadget snap](/reference/gadget-snap-format).
 
-- [Serial assertion fields](#heading--fields)
-- [Example serial assertion](#heading--example)
+## Fields
 
 The following fields can be used in an serial assertion:
 
