@@ -15,11 +15,11 @@ See [Using recovery modes](/how-to-guides/manage-ubuntu-core/use-a-recovery-mode
 
 With **install mode**, all existing user and system data on the device will be removed and the device will be initialised from the system version image dated and listed in the reinstall text.
 
-Unlike with a factory reset (see below), install mode will erase the contents of the [ubuntu-save](/t/inside-ubuntu-core/20777#heading--layouts) partition, reverting the device to its manufactured state, potentially removing configuration data essential to its functionality.
+Unlike with a factory reset (see below), install mode will erase the contents of the [ubuntu-save](/explanation/core-elements/storage-layout) partition, reverting the device to its manufactured state, potentially removing configuration data essential to its functionality.
 
 After the re-initialisation process has completed, you will need to step through the installation process of network configuration and account credentials again.
 
-See [Installation steps](/t/installing-ubuntu-core-20/20260#heading--general) for further details on how the installation will proceed.
+See [Installation steps](/tutorials/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager) for further details on how the installation will proceed.
 
 ```{warning}
 
@@ -43,9 +43,9 @@ Rebooting from recovery mode will return the system to run mode.
 
 The **factory reset** option will erase all system data and reset the device to its original _fresh from the factory_ state. This means that not everything is removed. 
 
-In particular, the contents of the [ubuntu-save](/t/inside-ubuntu-core/20777#heading--layouts) partition remains intact. This partition typically contains configuration data essential for the original functionality of the device, such as network configuration details. To fully initialise such a device, and remove all data, use `install mode`.
+In particular, the contents of the [ubuntu-save](/explanation/core-elements/storage-layout) partition remains intact. This partition typically contains configuration data essential for the original functionality of the device, such as network configuration details. To fully initialise such a device, and remove all data, use `install mode`.
 
 This is a dangerous option and should only be performed when you are certain the data on a device data is either backed-up or unwanted.
 
-Additionally, the [install-device hook](/t/installation-process/22737#heading--install-device) may optionally be executed with a factory-reset.
+Additionally, the [install-device hook](/explanation/how-installation-works.md#the-install-device-hook) may optionally be executed with a factory-reset.
 

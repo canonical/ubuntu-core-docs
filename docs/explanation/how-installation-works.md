@@ -21,7 +21,7 @@ The first three (1-3) are also described in the [recovery mode](/t/recovery-mode
 1.  snapd proceeds to reboot into **run mode**.
 1.  From run mode, snapd  bootstraps itself and proceeds to _seeding_, installing and activating all the snaps marked for **run mode** use in the recovery system.
 
-<h2 id='heading--install-device'>The install-device hook</h2>
+## The install-device hook
 
 A [gadget](/reference/gadget-snap-format) can optionally define an _install-device hook_ . This is invoked from **install mode** before rebooting into **run mode**, between steps 4 and 5 above, and also after a [factory reset](/t/recovery-modes/24096#heading--factory), to perform early hardware and firmware configuration.
 
@@ -38,7 +38,7 @@ snapctl reboot --halt|--poweroff
 ```
 Either reboot command will only take effect after the hook has finished.
 
-<h2 id='heading--factory'>Factory image hint</h2>
+## Factory image hint
 
 A Ubuntu Core image can be built to include a _hint_ that an image is intended to be used, or first booted, in the device factory. This hint can then be used to govern whether factory-only resources are accessible, for instance, but no security-related decisions should be made based solely on its inclusion as it could be possible for the hint to be set again in the field.
 

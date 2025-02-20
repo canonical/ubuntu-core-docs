@@ -4,7 +4,7 @@ At the heart of custom Ubuntu Core image creation is the _model assertion_. An a
 
 The model contains:
 * identification information, such as the developer-id and model name.
-* which [essential snaps](/t/20777#heading--system) make up the device system.
+* which [essential snaps](/explanation/core-elements/snaps-in-ubuntu-core) make up the device system.
 * other required or optional snaps that implement the device functionality.
 
 See below for details on how to download and modify a model file to include your own selection of snaps.
@@ -71,7 +71,7 @@ This section lists the snaps to be included in the image. **pi** (shown above), 
 
 Additional snaps are included using the same schema, with each snap requiring the following fields:
 - `name`: simply the snap name.
-- `type`: the [type of snap](/t/snaps-in-ubuntu-core/19730#heading--types-of-snap). This is `app` for standard application snaps.
+- `type`: the [type of snap](/explanation/core-elements/snaps-in-ubuntu-core.md#types-of-snap). This is `app` for standard application snaps.
 - `default-channel`: the [channel](https://snapcraft.io/docs/channels) to install the snap from.
 - `id`: a unique snap identifier associated with every published snap. This is `snap-id` in the output from `snap info <snap-name>`.
 
