@@ -3,10 +3,21 @@
 
 _Store scoping_ is the inclusion of a [dedicated snap store](dedicated-snap-store) _`on-store`_ constraint linked to an [auto-connection](https://snapcraft.io/docs/auto-connection-mechanism) in the [snap-declaration assertion](/reference/assertions/snap-declaration), a file used to describe various snap properties.
 
+<<<<<<< HEAD
+_Store scoping_ is the inclusion of a [brand store](/explanation/stores/store-overview) _`on-store`_ constraint linked to an [auto-connection](https://snapcraft.io/docs/auto-connection-mechanism) in the [snap-declaration assertion](/reference/assertions/snap-declaration), a file used to describe various snap properties.
+=======
 Linking an auto-connection grant to a dedicated snap store limits the scope of an interface. This then safeguards against malicious attacks that might otherwise allow auto-connections to be made outside a dedicated snap store when a snap is installed on a generic device.
+>>>>>>> main
+
 ## Declaration syntax
 
+<<<<<<< HEAD
+## Declaration syntax
+
+Old versions of the snap-declaration assertion could only define auto-connections in a way that couldn't link connections to a brand store:
+=======
 Old versions of the snap-declaration assertion could only define auto-connections in a way that couldn't link connections to a dedicated snap store:
+>>>>>>> main
 
 ```yaml
 type: snap-declaration
@@ -25,7 +36,11 @@ timestamp: 2022-01-26T11:15:49.885580Z
 sign-key-sha3-384: some-account-key
 ```
 
+<<<<<<< HEAD
+With the release of [snapd](https://snapcraft.io/docs/glossary#heading--snapd)  version _2.36_ in 2018, the snap-declaration assertion was updated to include a [brand store](/explanation/stores/store-overview) definition for each granted interface:
+=======
 With the release of [snapd](https://snapcraft.io/docs/glossary#heading--snapd)  version _2.36_ in 2018, the snap-declaration assertion was updated to include a [dedicated snap store](dedicated-snap-store) definition for each granted interface:
+>>>>>>> main
 
 ```yaml
 type: snap-declaration

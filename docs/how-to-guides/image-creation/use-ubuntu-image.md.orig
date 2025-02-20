@@ -9,7 +9,11 @@ sudo snap install ubuntu-image --classic
 
 The `ubuntu-image` command requires only a path to a model assertion to build an image.
 
+<<<<<<< HEAD
 If you want to include your own core snaps, such as a custom gadget snap, see [Building an image with custom snaps](/how-to-guides/image-creation/add-custom-snaps) for details on how the model assertion and _ubuntu-image_ command need to be modified.
+=======
+If you want to include your own core snaps, such as a custom gadget snap, see [Build an image with custom snaps](add-custom-snaps) for details on how the model assertion and _ubuntu-image_ command need to be modified.
+>>>>>>> main
 
 ## Inside a model
 

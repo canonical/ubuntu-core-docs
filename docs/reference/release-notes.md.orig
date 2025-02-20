@@ -39,7 +39,11 @@ New features for this release include:
 - New ROS integration for robotics developers
 - New documentation and documentation structure
 
+<<<<<<< HEAD:docs/explanation/ubuntu-core-24.md
 In addition to the above, Ubuntu Core 24 bundles both the latest Linux Kernel  6.8 and *systemd* 2.55 and includes all the latest features of _snapd_, including [Dynamic kernel boot parameters](/how-to-guides/manage-ubuntu-core/modify-kernel-options), [Quota group limits for Journal log](https://snapcraft.io/docs/quota-groups#heading--journal) and [Offline remodelling](/explanation/remodelling.md#offline-remodelling).
+=======
+In addition to the above, Ubuntu Core 24 bundles both the latest Linux Kernel  6.8 and *systemd* 2.55 and includes all the latest features of _snapd_, including [Dynamic kernel boot parameters](/how-to-guides/manage-ubuntu-core/modify-kernel-options), [Quota group limits for Journal log](https://snapcraft.io/docs/quota-groups#heading--journal) and [Offline remodelling](/explanation/remodelling)
+>>>>>>> main:docs/reference/release-notes.md
 
 Support for Ubuntu Core has also been added to [Multipass](/tutorials/try-pre-built-images/install-on-a-vm), for single-command deployment.
 

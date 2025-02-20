@@ -11,9 +11,14 @@ For details on how to create a preseeded image, see [Optimise boot speed](/how-t
 
 ## Measuring boot performance
 
-The time it takes for a new device to be ready can be measured with the [ubuntu_core.bootchart](/reference/kernel-boot-parameters) kernel option. When enabled, a performance profile is built for each device boot, allowing you to compare how a non-preseeded image performs against a preseeded image.
+<<<<<<< HEAD
+The time it takes for a new device to be ready can be measured with the [ubuntu_core.bootchart](/how-to-guides/manage-ubuntu-core/modify-kernel-options) kernel option. When enabled, a performance profile is built for each device boot, allowing you to compare how a non-preseeded image performs against a preseeded image.
+=======
+The time it takes for a new device to be ready can be measured with the [ubuntu_core.bootchart](/reference/kernel-boot-parameters.md) kernel option. When enabled, a performance profile is built for each device boot, allowing you to compare how a non-preseeded image performs against a preseeded image.
+>>>>>>> main
 
 The following are real examples of bootchart performance profiles, generated for the same deployment with and without preseeding and initialised over cell data.
+
 ## Without preseeding
 
 Without preseeding, a device will need to reboot after the base and system snaps have been updated, and this has a significant impact on the length of time a device takes to become available.H

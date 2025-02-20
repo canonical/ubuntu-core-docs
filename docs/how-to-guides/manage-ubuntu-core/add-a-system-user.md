@@ -11,22 +11,12 @@ Some systems, however, suppress _console-conf_ and its user creation.
 
 To create a system user on these systems, a [system-user assertion](/reference/assertions/system-user) needs to be embedded within a file called `auto-import.assert` that's added to the system via the root directory of a removable USB storage device. This process is covered below.
 
----
-- [Creating users with auto-import.assert](#heading--without)
-  - [Inside model assertions](#heading--model-assertions)
-    - [Specifying system-user-authority](#heading--system-user-authority)
-    - [Self-signed system-user assertions](#heading--self-signed)
-  - [Creating the system-user assertion](#heading--creating)
-  - [Generating auto-import.assert](#heading--generating-auto)
-  - [Checking the system-user assertion](#heading--checking)
----
-
 ```{caution}
 
 A **managed** system already has a user account whereas an **unmanaged** system does not. A system user cannot typically be added to a system that is already _managed_.
 ```
 
-<h2 id='heading--without'>Creating users with auto-import.assert</h2>
+## Creating users with auto-import.assert
 
 The `auto-import.assert` file contains the following assertions:
 
@@ -42,7 +32,7 @@ The following are required by for the `system-user` assertion and by the creatio
 
 The snap daemon (_snapd_) can import these assertions through the `auto-import.assert` file on an external USB storage device. If those assertions are valid for the given system, a system user is created. After this, you can log into the device (locally or over SSH) using the username and password defined.
 
-<h3 id="heading--model-assertions">Inside model assertions</h3>
+### Inside model assertions
 
 Creating a valid system-user assertion is limited by the [model assertion](/reference/assertions/model) which contains store account ID defined as _brand-id_ and _authority-id,_ alongside the model name, _model_.
 
@@ -72,7 +62,7 @@ When a model assertion lacks a `system-user-authority` field, the system-user as
 - a key registered to the store account specified by the `brand-id` field (_bJzr2XzZg6Qv6Z53dsjhg20975Skjs_  in our example)
 - the key that's part of the [account-key](/reference/assertions/account-key) assertion when the system-user assertion is submitted to the device
 
-<h4 id="heading--system-user-authority">Specifying system-user-authority</h4>
+#### Specifying system-user-authority
 
 The optional `system-user-authority` field can be added to a model assertion to list a set of account IDs that are authorised to sign system-user assertions for any image built with the assertion:
 
@@ -96,7 +86,7 @@ The optional `system-user-authority` field can be added to a model assertion to 
 
 Anyone who can log in to either ANOTHER-ACCOUNT-ID or YET-ANOTHER-ACCOUNT_ID accounts can sign system-user assertions with keys registered to those accounts. And such system-user assertions are valid for systems built with this model.
 
-<h4 id='heading--self-signed'>Self-signed system-user assertions</h4>
+#### Self-signed system-user assertions
 
 A model can also specify that anyone with a registered key can create a valid system-user assertion. This is done with an asterisk ("*") in the `system-user-authority` field:
 
@@ -117,7 +107,7 @@ A model can also specify that anyone with a registered key can create a valid sy
 
 `mymodel` will also need to be the same as the model assertion.
 
-<h2 id="heading--creating">Creating the system-user assertion</h2>
+## Creating the system-user assertion
 
 As covered earlier, to create a user assertion you will need access to the following:
 
@@ -154,7 +144,7 @@ You will be asked for the password and the output can be inserted into the `syst
 
 For further details on system-user fields, including `since` and `until`, see the [System-user assertion](/reference/assertions/system-user) documentation.
 
-<h2 id="heading--generating-auto">Generating auto-import.assert</h2>
+## Generating auto-import.assert
 
 First, make sure you're logged in with both `snap` and `snapcraft`:
 
@@ -171,7 +161,7 @@ Name         SHA3-384
 my-key-name  E-n0AOKPFjIyy4S_i9JxTT4tkuaZf7rP9D2mBNXjlgTGDjL8euFSlb87U0NPl
 ```
 
-See [Signing a model assertion](/t/custom-images/19809#heading--signing) for details on creating and uploading keys.
+See [Signing a model assertion](/tutorials/build-your-first-image/sign-the-model) for details on creating and uploading keys.
 
 The contents of the `system-user` template needs to be signed. This is accomplished with the `snap` command, which can also generate the accompanying `account` and `account-key` assertions at the same time:
 
@@ -189,7 +179,7 @@ Simply copy `auto-import.assert` to the root directory of a USB drive, insert it
 
 **Tip**: If you are creating the system user on the first boot, it may take some minutes for the assertion to be imported and for the system user to be created.
 
-<h2 id="heading--checking">Checking the system-user assertion</h2>
+## Checking the system-user assertion
 
 If you can log in with the username and password, the system user has been created.
 

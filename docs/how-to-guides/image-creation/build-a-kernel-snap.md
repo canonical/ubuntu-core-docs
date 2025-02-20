@@ -9,7 +9,7 @@ A custom Linux kernel build allows for device-specific architectures, configurat
 
 Before building a kernel snap, we highly recommend building a working kernel first before migrating this to a kernel snap. The same configuration options and dependencies will be required.
 
-> See [Kernel snaps](https://snapcraft.io/docs/the-kernel-snap) for reference details on what gadget snaps can contain, and see [Types of snap](/t/snaps-in-ubuntu-core/19730#heading--types-of-snap) for details on the other types of snap that make up an Ubuntu Core image. 
+> See [Kernel snaps](https://snapcraft.io/docs/the-kernel-snap) for reference details on what gadget snaps can contain, and see [Types of snap](/explanation/core-elements/snaps-in-ubuntu-core.md#types-of-snap) for details on the other types of snap that make up an Ubuntu Core image. 
 
 ## Inside a kernel snap
 

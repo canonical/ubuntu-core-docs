@@ -7,17 +7,11 @@ A device can be upgraded to a later Ubuntu Core release if it has:
 - **identical storage layout**: layouts are identical unless they've been manually reconfigured.
 - **consistent base and system snaps**: significant differences will cause an upgrade to fail.
 
-It is not currently possible to upgrade from releases earlier than UC20, or from either a UC20 reference image or a reference [model assertion](/reference/assertions/model), including those available on [https://cdimage.ubuntu.com/ubuntu-core/20](https://cdimage.ubuntu.com/ubuntu-core/20). However, reference model assertions can be easily modified to build a [custom image](/t/custom-images/19809/) that can be upgraded. 
+It is not currently possible to upgrade from releases earlier than UC20, or from either a UC20 reference image or a reference [model assertion](/reference/assertions/model), including those available on [https://cdimage.ubuntu.com/ubuntu-core/20](https://cdimage.ubuntu.com/ubuntu-core/20). However, reference model assertions can be easily modified to build a [custom image](/tutorials/build-your-first-image/index) that can be upgraded. 
 
 Upgrades are performed by [remodelling](/explanation/remodelling), which is the process of replacing one model assertion with another on a deployed system. For an upgrade from UC20 to UC22, for example, this means updating the base and system snaps in a UC20 model assertion with their UC22 counterparts.
 
-- [Prerequisites](#heading--prerequisites)
-- [Model assertions](#heading--model)
-- [Perform the upgrade](#heading--remodel)
-
----
-
-<h2 id='heading--pre'>Prerequisites</h2>
+## Prerequisites
 
 On the device, run `snap model` to make sure the device has been assigned a serial:
 
@@ -42,9 +36,9 @@ HOME_URL="https://snapcraft.io/"
 BUG_REPORT_URL="https://bugs.launchpad.net/snappy/"
 ```
 
-<h2 id='heading--model'>Model assertions</h2>
+## Model assertions
 
-The model assertion defines which [system snaps](/t/inside-ubuntu-core-20/20777#heading--system) make up the device's operating system, including the gadget snap, kernel snap and the base snap with the (read-only) root filesystem.
+The model assertion defines which [system snaps](/explanation/core-elements/inside-ubuntu-core.md#ubuntu-core-snaps) make up the device's operating system, including the gadget snap, kernel snap and the base snap with the (read-only) root filesystem.
 
 On an Ubuntu Core 20 system, _kernel_ and _gadget_ snaps are installed from a `20` [track](https://snapcraft.io/docs/channels#heading--tracks), with the [base snap](https://snapcraft.io/docs/base-snaps) being `core20`. The _snapd_ snap remains unchanged, as it's always at the latest version available.
 
@@ -145,11 +139,11 @@ Another important requirement for the updated model is the inclusion of a `revis
 
 The presence of a revision value permits an assertion to be updated to an updated assertion with a higher revision value. If no revision is specified, as in our previous UC20 example, a revision value of `0` is implied. Consequently, our UC22 example above has a revision value of `1`. See [Assertions](/reference/assertions/index) for further details.
 
-The updated model will need to be signed with the same key that the original model was signed with. See [Signing a model assertion](/t/custom-images/19809#heading--signing) for detailed instructions.
+The updated model will need to be signed with the same key that the original model was signed with. See [Signing a model assertion](/tutorials/build-your-first-image/sign-the-model) for detailed instructions.
 
 Reference unsigned model assertions for both UC20 and UC22 can be found here: [https://github.com/snapcore/models](https://github.com/snapcore/models).
 
-<h2 id'heading--remodel'>Perform the upgrade</h2>
+## Perform the upgrade
 
 To manually upgrade a device running the original UC20 model assertion, first copy the signed and updated UC22 model assertion to the device. This can be accomplished in many ways, but _scp_ OpenSSH secure file copy is a good option:
 

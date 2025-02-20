@@ -188,8 +188,13 @@ Now you have to sign the model assertion with your key, by piping your JSON mode
 ```bash
 cat roseapple-model.json | snap sign -k my-key | tee roseapple.model
 ```
-
+<<<<<<< HEAD
+    
 You can find a more detailed example of this process on the [Custom image building](/tutorials/build-your-first-image/sign-the-model) page.
+=======
+>>>>>>> main
+
+You can find a more detailed example of this process on the [Custom image building](tutorials/build-your-first-image/index) page.
 
 ### Canonical signed assertions
 

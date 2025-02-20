@@ -3,10 +3,10 @@
 
 Storage layouts for Ubuntu Core have been designed to support [recovery modes](/how-to-guides/manage-ubuntu-core/use-a-recovery-mode), and the following partitions are used:
 
-- [ubuntu-seed](#the-ubuntu-seed-partition): configuration for the first-stage/recovery boot loader
-- [ubuntu-boot](#the-ubuntu-boot-partition): second-stage/run bootloader and unpacked kernel(s)
-- [ubuntu-save](#the-ubuntu-save-partition): cross-installation device identity and selected snap backup data
-- [ubuntu-data](#the-ubuntu-data-partition): user and system data and is expanded upon installation
+- [ubuntu-seed](#heading--seed): configuration for the first-stage/recovery boot loader
+- [ubuntu-boot](#heading--boot): second-stage/run bootloader and unpacked kernel(s)
+- [ubuntu-save](#heading-save): cross-installation device identity and selected snap backup data
+- [ubuntu-data](#heading-data): user and system data and is expanded upon installation
 
 See below for more details on each partition. Additional partitions may be required by the device/board specific bootloader.
 
@@ -18,14 +18,17 @@ The definitive layout of the generated image used to install Ubuntu Core, and th
 
 A device image for both Ubuntu Core 20 and Ubuntu Core 22 devices must only contain _bootloader-specific_ partitions and **ubuntu-seed**,  such that a recovery system in it can be booted into install mode.  Installation will create and size the other missing partitions.
 
-See [How installation works](/explanation/how-installation-works) for more details on how an installation proceeds.
-## The ubuntu-seed partition
+See [Installation process](/explanation/how-installation-works) for more details on how an installation proceeds.
+
+---
+
+<h2 id='heading--seed'>ubuntu-seed</h2>
 
 **role**: system-seed; *read-only*, *ext4* or typically *vfat*
 
 This partition contains the configuration for the first-stage/recovery boot loader and at least one recovery system. This is a set of snaps (base, kernel, gadget and application snaps, see [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu-core) for more details), together with a model assertion and snap assertions that define the device and for which the device can be recovered or reinstalled .
 
-### ubuntu-seed layout
+ <h2 id='heading--layout'>ubuntu-seed layout</h2>
 
 When the image is created, the recovery systems partition is populated with any required bootloader-specific binaries and assets extracted from the gadget. 
 
@@ -42,13 +45,13 @@ In all cases, **ubuntu-seed**  will contain the following directories:
 
 -   A snaps directory which operates as a pool of snaps shared across all recovery systems. The assertions in a recovery system will define and reference which of these will be used by the system.
 
-## The ubuntu-boot partition
+<h2 id='heading--boot'>ubuntu-boot</h2>
 
 **role**: system-boot; *read-only*, *ext4* or *vfat*
 
 Contains the second-stage/run bootloader and unpacked kernel(s) to boot and with.
 
-## The ubuntu-save partition
+<h2 id='heading--save'>ubuntu-save</h2>
 
 **role**: system-save; *writable*, *ext4*
 
@@ -58,11 +61,11 @@ This partition is mandatory on encrypted systems where it should have a minimum 
 
 From _snapd 2.57+_, snaps can save small amounts of persistent data to the _ubuntu-save_ partition. This location is accessible from the [SNAP_SAVE_DATA](https://snapcraft.io/docs/environment-variables#heading--snap-save-data) environment variable.
 
-This data might include certificates, data blobs, or configuration files, to help snaps function. This data will survive a [factory reset](/explanation/recovery-modes.md#factory-reset), and consequently, the stored data should be device-oriented and not specific to a particular user of the device.
+This data might include certificates, data blobs, or configuration files, to help snaps function. This data will survive a [factory reset](/t/recovery-modes/24096#heading--factory), and consequently, the stored data should be device-oriented and not specific to a particular user of the device.
 
 Device provisioning needs to consider space requirements and snap developers need to understand the consequences of storing persistent data to _ubuntu-save_.
 
-## The ubuntu-data partition
+<h2 id='heading--data'>ubuntu-data</h2>
 
 **role**: system-data; *writable*, *ext4*
 

@@ -1,7 +1,7 @@
 (how-to-guides-image-creation-add-custom-snaps)=
 # Add custom snaps
 
-An Ubuntu Core image is built using the [ubuntu-image](/t/image-building/19808#heading--ubuntu-image) command with a signed model assertion:
+An Ubuntu Core image is built using the [ubuntu-image](/how-to-guides/image-creation/use-ubuntu-image) command with a signed model assertion:
 
 ```bash
 ubuntu-image snap ubuntu-core-20-amd64.model
@@ -9,7 +9,7 @@ ubuntu-image snap ubuntu-core-20-amd64.model
 
 > See [Build your own Ubuntu Core image](/tutorials/build-your-first-image/index) for more details on the entire process.
 
-_ubuntu-image_ tool retrieves signed snaps with the given _snap-id_ in the model assertion from the store. To override these default snaps, first make sure the [model assertion](/t/model-assertion/19745#heading--fields) has a grade of dangerous to allow non-store snaps to be included:
+_ubuntu-image_ tool retrieves signed snaps with the given _snap-id_ in the model assertion from the store. To override these default snaps, first make sure the [model assertion](/reference/assertions/model.md$model-assertion-fields) has a grade of dangerous to allow non-store snaps to be included:
 
 ```
 grade: dangerous

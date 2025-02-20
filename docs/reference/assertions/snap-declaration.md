@@ -7,15 +7,11 @@ This assertion is downloaded with the snap when installing a snap from a store a
 
 The `snap-declaration` assertions for all installed snaps can be seen by running `snap known snap-declaration`.
 
-- [Snap-declaration assertion fields](#heading--fields)
-- [Connection management](#heading--connection-management)
-- [Example snap-declaration assertion](#heading--example)
-
-<h2 id='heading--fields'>Snap-declaration assertion fields</h2>
+## Snap-declaration assertion fields
 
 The format is as follows:
 
-``` text
+```yaml
 type:               snap-declaration
 authority-id:       <authority account id>
 revision:           <int>
@@ -49,7 +45,7 @@ sign-key-sha3-384: <key id> # Encoded key id of signing key
 <signature>                 # Encoded signature
 ```
 
-The index is the tuple \<`series`, `snap-id`\>. `snap-id` is a key with the same format as the account ids.
+The index is the tuple `< series`, `snap-id >`, and `snap-id` is a key with the same format as the account ids.
 
 This assertion gives control on several aspects of the snap behaviour to the authority:
 
@@ -59,11 +55,11 @@ This assertion gives control on several aspects of the snap behaviour to the aut
 
 -   `plugs` and `slots` define flags per interface. This lets define restrictions on how the snap plugs/slots used by the snap are handled. For instance, we can allow or deny connections with `allow-connection` and `deny-connection`. With `allow-auto-connection` or `deny-auto-connection` we let snapd know if it should automatically connect plugs/slots on snap installation.
 
-    See [Connection management](#heading--connection-management) (below) for more details on  these restrictions, and see [snap-declaration store scoping](/) for more information on how auto-connections can be linked to a brand store.
+    See [Connection management](#connection-management) (below) for more details on  these restrictions, and see [snap-declaration store scoping](/) for more information on how auto-connections can be linked to a brand store.
 
-See [Assertion format](/t/assertions/19742#heading--format) for more details on fields common to most assertions.
+See [Assertion format](/reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
 
-<h2 id='heading--connection-management'>Connection management</h2>
+## Connection management
 
 The overall structure of the snap-declaration has two top-level keys, plugs and slots, which affect the plugs and slots of the snap respectively. Beneath these keys are the names of interfaces, and for each interface key is an map which has 6 possible keys:
 
@@ -78,7 +74,7 @@ Each of these keys can either have a static value of true/false in the assertion
 
 The `deny-*` variant of keys are almost never used in snap-declarations and are instead mainly used in the base-declaration inside snapd to express more complex default behaviours, for example some interfaces should auto-connect only on classic but not on Core or vice versa, and having `deny-*` keys makes this simpler/easier to express, but when granting snap-declarations for brand store users, `allow-*` keys are almost always used so this document only covers allow-* keys below.
 
-<h4 id='heading--allow-installation'>allow-installation</h4>
+### allow-installation
 
 The allow-installation key is the first key that is evaluated when the snap is being installed. If this evaluates to false, the snap cannot be installed if the interface plug or slot for which `allow-installation` evaluated to false exists in the snap.
 
@@ -94,7 +90,7 @@ If a snap does not plug snapd-control then this rule does not apply, but if the 
 
 Snap interfaces which have allow-installation set to false for their plugs in the base-declaration are said to be “super-privileged” meaning they cannot be used at all without a [snap-declaration assertion](/reference/assertions/snap-declaration).
 
-<h4 id='heading--allow-connection'>allow-connection</h4>
+### allow-connection
 
 The `allow-connection` key is the next key to be evaluated, after the snap is allowed to be installed. 
 
@@ -135,13 +131,13 @@ plugs:
     content: specific-files
 ```
 
-<h4 id='heading--allow-auto-connection'>allow-auto-connection</h4>
+### allow-auto-connection
 
 The`allow-auto-connection` key is the final key to consider when snapd is considering automatic connection of interface plugs and slots. 
 
 If this key evaluates to true, then this plug/slot combination is considered a valid candidate for automatic connection. This is the most common key used when granting [snap-declaration assertions](/reference/assertions/snap-declaration) since many interfaces are not super-privileged, so they do not need `allow-installation` set in the assertion and they also do not have any `allow-connection` rules in the base-declaration, so the only thing that needs to be setup is `allow-auto-connection`.
 
-<h2 id='heading--example'>Example snap-declaration assertion</h2>
+## Example snap-declaration assertion
 
 The following is an example `snap-declaration` assertion from the [modem-manager](https://snapcraft.io/modem-manager) snap:
 

@@ -4,8 +4,13 @@ At the heart of custom Ubuntu Core image creation is the _model assertion_. An a
 
 The model contains:
 * identification information, such as the developer-id and model name.
+<<<<<<< HEAD
 * which [essential snaps](/explanation/core-elements/snaps-in-ubuntu-core) make up the device system.
+* other required or optional snaps that implement the device functionality.
+=======
+* [essential snaps](/explanation/core-elements/inside-ubuntu-core/) to create the device operating system.
 * other required or optional snaps that implement the device application functionality.
+>>>>>>> main
 
 See below for details on how to download and modify a model file to include your own selection of snaps.
 

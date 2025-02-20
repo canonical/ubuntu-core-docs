@@ -7,8 +7,7 @@ Every Ubuntu Core device belongs to a particular model, as defined by its [model
 
 Each device also has a unique device identity and the ability to _prove that identity_ with cryptographic keys. The precise implementation of this cryptography may vary from device to device, based on the hardware and software capabilities, which is described as part of the [gadget snap](/reference/gadget-snap-format).
 
-- [Serial assertion fields](#heading--fields)
-- [Example serial assertion](#heading--example)
+## Fields
 
 The following fields can be used in an serial assertion:
 
@@ -33,14 +32,14 @@ The index is the tuple \<`brand-id`, `model`, `serial`\>, with `serial` being th
 
 - `serial` is crucial. In the context of the _model_, this this defines the unique identifier for a single device. The [brand](/explanation/stores/dedicated-snap-stores) should never assign the same serial to more than one device of the same model.
 
-- `device-key` is also unique to each device, and takes the same format used by the key in the [account-key assertion](/t/account-key-assertion/19743#heading--fields). 
+- `device-key` is also unique to each device, and takes the same format used by the key in the [account-key assertion](/reference/assertions/account-key).
 
   The device key might change over time, in a controlled fashion, but at any given time there is only one device key per device.
 - `device-key-sha3-384` is the digest of the public key and should also be provided. 
 
 - `BODY` (optional) contains device details in YAML format.
 
-This assertion must then be signed by the brand. See [Assertion format](/t/assertions/19742#heading--format) for more details on fields common to most assertions.
+This assertion must then be signed by the brand. See [Assertion format](/reference/assertions/index) for more details on fields common to most assertions.
 
 <h2 id='heading--example'>Example assertion</h2>
 

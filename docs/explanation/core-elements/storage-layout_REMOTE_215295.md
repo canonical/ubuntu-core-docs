@@ -19,6 +19,7 @@ The definitive layout of the generated image used to install Ubuntu Core, and th
 A device image for both Ubuntu Core 20 and Ubuntu Core 22 devices must only contain _bootloader-specific_ partitions and **ubuntu-seed**,  such that a recovery system in it can be booted into install mode.  Installation will create and size the other missing partitions.
 
 See [How installation works](/explanation/how-installation-works) for more details on how an installation proceeds.
+
 ## The ubuntu-seed partition
 
 **role**: system-seed; *read-only*, *ext4* or typically *vfat*
@@ -58,7 +59,7 @@ This partition is mandatory on encrypted systems where it should have a minimum 
 
 From _snapd 2.57+_, snaps can save small amounts of persistent data to the _ubuntu-save_ partition. This location is accessible from the [SNAP_SAVE_DATA](https://snapcraft.io/docs/environment-variables#heading--snap-save-data) environment variable.
 
-This data might include certificates, data blobs, or configuration files, to help snaps function. This data will survive a [factory reset](/explanation/recovery-modes.md#factory-reset), and consequently, the stored data should be device-oriented and not specific to a particular user of the device.
+This data might include certificates, data blobs, or configuration files, to help snaps function. This data will survive a [factory reset](/t/recovery-modes/24096#heading--factory), and consequently, the stored data should be device-oriented and not specific to a particular user of the device.
 
 Device provisioning needs to consider space requirements and snap developers need to understand the consequences of storing persistent data to _ubuntu-save_.
 

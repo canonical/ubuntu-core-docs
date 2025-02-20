@@ -3,10 +3,7 @@
 
 The _validation_ [assertion](/reference/assertions/index)  declares that a certain [revision](https://snapcraft.io/docs/glossary#heading--revision) for a _snap that is gated by another snap_ has been validated for a given [series](https://snapcraft.io/docs/glossary#heading--series). It is closely related to the [snap-declaration](/reference/assertions/snap-declaration) assertion.
 
-- [Validation assertion fields](#heading--fields)
-- [Example validation assertion](#heading--example)
-
-<h2 id='heading--fields'>Validation assertion fields</h2>
+## Validation assertion fields
 
 The following fields can be used in a validation assertion:
 
@@ -36,9 +33,9 @@ This means the recommended revision for `approved-snap-id` in a system that has 
 
 The validation can be revoked by using the optional flag `revoked`.
 
-See [Assertion format](/t/assertions/19742#heading--format) for more details on fields common to most assertions.
+See [Assertion format](/reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
 
-<h2 id='heading--example'>Example assertion</h2>
+## Example assertion
 
 The following is an example validation assertion:
 

@@ -52,7 +52,7 @@ The index for this assertion is the tuple \<`series`, `brand-id`, `model`\> and 
 
 - `series` allows the brand to define which release of the platform the device uses. “rolling” is the name of the development series that bridges stable series, which have names like “16” or “18”.
 
-- `authority-id` and `brand-id` fields define the authority signing the assertion. Reference assertions are signed by Canonical and non-reference assertions are signed by their [brand store](/t/store-overview/19724#heading--brand-stores). For a custom model assertion, this needs to be the developer ID.
+- `authority-id` and `brand-id` fields define the authority signing the assertion. Reference assertions are signed by Canonical and non-reference assertions are signed by their [brand store](/explanation/stores/store-overview). For a custom model assertion, this needs to be the developer ID.
 
  - `model` is a string that identifies a set of devices as desired by the brand.
 
@@ -63,7 +63,7 @@ The index for this assertion is the tuple \<`series`, `brand-id`, `model`\> and 
    * `prefer-encrypted`: do encrypt if the hardware supports it.
    * `encrypted`: ensure encryption is used and fail if the device does not support it.
 
-- `system-user-authority` is used to list a set of account IDs that are authorised to sign system user assertions for any image built with the assertion. See [Specifying system-user-authority](/t/system-user/19740#heading--system-user-authority) for more details.
+- `system-user-authority` is used to list a set of account IDs that are authorised to sign system user assertions for any image built with the assertion. See [Specifying system-user-authority](/how-to-guides/manage-ubuntu-core/add-a-system-user.md#-specifying-system-user-authority) for more details.
 
 - `timestamp` can be generated with the ` date -Iseconds --utc` command.
 
@@ -90,7 +90,7 @@ Default is *[run]* which should not be used for types `kernel|gadget` and for th
 For "recovery" and "install" modes, "ephemeral" can be used. This will install the snaps only while the system is in an ephemeral state (running from tmpfs). They will not be installed on *ubuntu-data* unless explicitly declared, such as with `[run, ephemeral]`, although those snaps will still reside on *ubuntu-seed*.
   * `presence` *(optional)*:  set to mark a snap whose absence will not fail installation or recovery. Can be either _optional_ or _required_ but defaults to _required_. 
     * A _required_ snap cannot be removed from the system.    
-    * An _optional_ snap is not added to the [ubuntu-seed](/t/storage-layout/21632#heading--seed) partition when the image is created with [ubuntu-image](/how-to-guides/image-creation/use-ubuntu-image) unless the `--snap` option is used to add the snap explicitly. Optional snaps can be used to adapt the same base model for different hardware configurations, deployment objectives, and for use with a dynamic modelling agent. 
+    * An _optional_ snap is not added to the [ubuntu-seed](/explanation/core-elements/storage-layout) partition when the image is created with [ubuntu-image](/how-to-guides/image-creation/use-ubuntu-image) unless the `--snap` option is used to add the snap explicitly. Optional snaps can be used to adapt the same base model for different hardware configurations, deployment objectives, and for use with a dynamic modelling agent. 
   * `default-channel` *(optional)*: initial tracking channel for the snap, default is “latest/stable”.
 
 ### Components
@@ -138,10 +138,9 @@ The modes for which the component must be present can be specified as well. Synt
 
 ---
 
-See [Assertion format](/t/assertions/19742#heading--format) for details on fields common to most assertions.
+See [Assertion format](/reference/assertions/index.md#assertion-format) for details on fields common to most assertions.
 
-
-<h2 id='heading--example'>Example assertion</h2>
+## Example assertion
 
 The following is a JSON input for an example Ubuntu Core model assertion based on `ubuntu-core-22-amd64`:
 

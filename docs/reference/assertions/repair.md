@@ -20,12 +20,7 @@ The snap-repair process will retrieve and run repair assertions in sequence, exe
 
 See [Repair capability](https://forum.snapcraft.io/t/repair-capability-emergency-fixes/311) on the Snapcraft forum for discussions related to the development of this feature.
 
----
-
-- [Repair assertion fields](#heading--fields)
-- [Example repair assertion](#heading--example)
-
-<h2 id='heading--fields'>Repair assertion fields</h2>
+## Repair assertion fields
 
 The following fields can be found in a repair assertion:
 
@@ -58,7 +53,7 @@ There are no `since` or `until` values because a device's system clock cannot be
 When optional series or architectures are omitted, all respective
 devices will be targeted.
 
-<h2 id='heading--example'>Example assertion</h2>
+## Example assertion
 
 The following is an example repair assertion used by the testing suite at Canonical:
 

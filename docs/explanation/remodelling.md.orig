@@ -12,14 +12,24 @@ The model assertion contains:
 
 When one or more of the above elements change, the updated model assertion and its associated image are deployed to the device, authenticated and linked through its serial assertion, to the store. This process is called remodelling.
 
+<<<<<<< HEAD
+One example of remodelling is [Upgrading Ubuntu Core](/how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core).
+=======
 One example of remodelling is [Upgrading Ubuntu Core](/how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core.md).
-## Remodelling viability
+>>>>>>> main
 
 The remodelling process is triggered by either updating the model assertion, running the `snap remodel` command, or from the [snapd the REST API](https://snapcraft.io/docs/snapd-api) (the last two require _snapd 2.61_ or later). Remodelling triggers the generation of a new recovery system, which means care needs to be taken to ensure the [ubuntu-seed](/explanation/core-elements/storage-layout.md#ubuntu-seed) partition is sized accordingly.
+
+<<<<<<< HEAD
+## Remodelling viability
+=======
+## Viability
+>>>>>>> main
 
 Remodelling is the responsibility of the snap daemon (_snapd_) running on the device. It both mediates the update process and the re-registration of the device after the update (if required). But the complexity and viability of the remodelling process is dependent on several factors outside of snapd’s control.
 
 At its simplest, a device can be successfully remodelled when using the same model name and the same dedicated Snap Store but with a new model revision where the only difference is an added or removed snap, or changed snap track or channel. The device also needs to have a [Serial assertion](/reference/assertions/serial).
+
 
 But if the dedicated Snap Store needs to change, even under the same brand scope, this requires the acquisition of a new serial assertion, and the success or failure of such a process will depend on the context.
 
@@ -29,7 +39,11 @@ Works as a simple contextual carrier for the new model.
 - **same brand/model -> different dedicated Snap Store**
 Keeps access to the device state kept on the remodel change, creates a store that uses that state, and then refers to the new dedicated Snap Store. Requires a new serial in the [Serial Vault](https://ubuntu.com/core/services/guide/serial-vault-overview) and the creation of a new  [Serial assertion](/reference/assertions/serial).
 
+<<<<<<< HEAD
+## Remodelling compatibility
+=======
 ## Compatibility
+>>>>>>> main
 
 The below permutations of the remodelling contexts are all valid:
 
@@ -42,7 +56,11 @@ The below permutations of the remodelling contexts are all valid:
 
 If a [validation set](https://snapcraft.io/docs/validation-sets) has been defined for the old model and the new model, or just the new model, the snaps installed during the remodelling process must follow the validation set rules.
 
+<<<<<<< HEAD
+## Remodelling snap removal
+=======
 ## Snap removal
+>>>>>>> main
 
 The remodelling process does not automatically remove snaps which are no longer marked as `required` or `optional` in the new model assertion. Those snaps stay in the system and keep receiving updates, but since they are no longer required by the model, it is possible to remove them.
 
