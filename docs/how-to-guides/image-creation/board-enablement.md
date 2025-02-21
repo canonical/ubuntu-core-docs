@@ -111,7 +111,7 @@ See [Building a gadget snap](/how-to-guides/image-creation/build-a-gadget-snap) 
 
 ## Create the model assertion
 
-Before you can build an image to flash on the board, you need to prepare a [model assertion](reference/assertions/model) and sign it.
+Before you can build an image to flash on the board, you need to prepare a [model assertion](/reference/assertions/model) and sign it.
 
 First, prepare a JSON file describing the model assertion:
 
