@@ -8,11 +8,100 @@ Documentation consistency is vital, which is why we're listing some guidelines b
 
 As [Voltaire](https://en.wikipedia.org/wiki/Voltaire) wrote, "_Perfect is the enemy of good_," and we'd rather have documentation we can fix than non-existent documentation we can't.
 
----
+## Open Documentation Academy
+
+The [Open Documentation Academy](https://discourse.ubuntu.com/t/about-the-open-documentation-academy/39615/) is an initiative led by the documentation team at Canonical to provide help, advice, mentorship, and dozens of different tasks to get started on, within a friendly and encouraging environment. 
+
+A key aim of this initiative is to help lower the barrier into successful open-source software contribution, by making documentation into the gateway, and it's a great way to make your first open source documentation contributions to Ubuntu Core, snap and Snapcraft.
+
+But even if you're an expert, we want the Academy to be place to  share knowledge, a place to get involved with new developments, and somewhere you can ask for help on your own projects.
+
+The best way to get started is with our [task list](https://github.com/canonical/open-documentation-academy/issues) . Take a look, bookmark it, and see our [Getting started](https://discourse.ubuntu.com/t/getting-started/42769) guide for next steps.
+
+Stay in touch either through the task list, or through one of the following locations:
+- Our [discussion forum](https://discourse.ubuntu.com/c/open-documentation-academy) on the Ubuntu Community Hub.
+- On [Matrix](https://matrix.to/#/#documentation:ubuntu.com) group for interactive chat.
+- And [follow us on Fosstodon](https://fosstodon.org/@CanonicalDocumentation) for the latest updates and events.
+
+If you’d like to ask us questions outside of our public forums, feel free to email us at [docsacademy@canonical.com](mailto:docsacademy@canonical.com).
+
+In addition to the above, we have a weekly **Open Documentation Hour** starting at 16:00 UTC every Friday. Everyone is welcome, and links and comments can be found on the [forum post](https://discourse.ubuntu.com/t/documentation-office-hours/42771).
+
+Finally, subscribe to our [Documentation event calendar](https://calendar.google.com/calendar/u/0?cid=Y19mYTY4YzE5YWEwY2Y4YWE1ZWNkNzMyNjZmNmM0ZDllOTRhNTIwNTNjODc1ZjM2ZmQ3Y2MwNTQ0MzliOTIzZjMzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). We’ll expand our Documentation Office Hours schedule and add other events throughout the year.
+
+### Agreements
+
+Everyone involved with CODA needs to follow the words and spirit of the [Ubuntu Code of Conduct v2.0](https://ubuntu.com/community/ethos/code-of-conduct).
+
+Most of the projects that participate in CODA require that a contributor has signed a Contributor licence agreement, or CLA. Such an agreement will typically grant permission for the project to use a contribution while the contributor retains the copyright and the rights to modify their own work, or use it in other projects.
+
+The [Canonical contributor licence agreement](https://ubuntu.com/legal/contributors) is one such CLA. This needs to be signed before a contribution can be considered for inclusion within one of Canonical's projects. Many GitHub repositories for Canonical projects will automatically check whether a contributor has signed the CLA when a contribution is made.
+
+The cla issue label is used to help identify which tasks require a contributor to have signed a CLA.
+
+### Identifying tasks
+
+There is no guarantee a task will be worked on, or that a contributor will complete a task within a specified time. Consequently, you should choose tasks outside the scope of your current cycle, or create tasks from long-standing documentation issues that have yet to be addressed.
+
+To best reflect the entire range of work that documentation requires, we want our task list to be as broad and as diverse as possible, from composition, structure and maintenance, to the tools and frameworks used to generate and publish the final output.
+
+Small tasks, such as replacing outdated terminology, checking for broken links, and ensuring adherence to the [Canonical Documentation Style Guide](https://docs.ubuntu.com/styleguide/en) are an ideal place to start. Moderately sized  tasks might include converting documentation from one format to another, or migrating the contents of a blog post into the official documentation. But more ambitious tasks are also welcome, such as adding a new *How-to* guide, restructuring a group of documents, developing new tests and automations.
+
+### Creating a task
+
+Tasks are created as new issues on the CODA repository:
+
+[https://github.com/canonical/open-documentation-academy/issues/new](https://github.com/canonical/open-documentation-academy/issues/new)
+
+* The title of the task starts with the name of the associated project, such as Snapcraft: or LXD:, followed by a short sentence describing the task.
+
+* The description of the task should expand upon the title of the task, provide additional context and expectations, and give some indication of the amount of effort required.
+
+* Include links to any current documentation that may help a contributor research a task and understand a solution.
+
+* List any prerequisites for completing a task, such as understanding how a certain tool works. Make it clear if a task requires specific domain experience, and also if it's suitable for anyone without specific experience.
+
+* Add appropriate [labels](https://github.com/canonical/open-documentation-academy#user-content-issue-labels) for size estimations and the type of work required. 
+
+### Task suggestions
+
+The following are starting suggestions for potential tasks requiring either a small, medium or large amount of work.
+
+#### Small
+
+**Convert a table from using two columns to three columns**
+
+A contributor needs only a high level understanding of the project, and of the formatting syntax, to complete this task, and can use what already exists as a template.
+
+Example: [Public Cloud: Change table format](https://github.com/canonical/open-documentation-academy/issues/51)
+
+#### Medium
+
+**Improve the way a concept is explained**
+
+This requires the potential contributor to learn and understand the concept with enough depth that they can improve the way it's already documented.
+
+Example: [Snap: improve interface management documentation](https://github.com/canonical/open-documentation-academy/issues/8)
+
+#### Large
+
+**Update an example to use more modern tooling**
+
+A contributor will need a good understanding of why an example has become stale, and technically how it might be updated and improved. They will also need to be prepared to change the documentation in unpredictable ways, such as new sections on new tools, and to potentially document the migration from one version of a tool to another.
+
+Example: [Snapcraft: Update Java example to use core22](https://github.com/canonical/open-documentation-academy/issues/5)
+
+### Completing and closing tasks
+
+When a task has been completed to your satisfaction, we'll ask the contributor whether they would prefer to merge their work into your project themselves, or leave this to the project.
+
+### Recognition
+
+After a task has been successfully completed, we'll give credit to the contributor and share their success in our forum here, on the pages themselves, and in our news updates and release notes.
 
 ## Documentation source
 
-The documentation for Ubuntu Core is open source and is available at the [Ubuntu Core documentation repository](https://cigithub.com/canonical/ubuntu-core-docs) on GitHub.
+The documentation for Ubuntu Core is open source and is available at the [Ubuntu Core documentation repository](https://github.com/canonical/ubuntu-core-docs) on GitHub.
 
 We welcome contributions, suggestions, fixes and constructive feedback from the user community. If you feel something is inaccurate, unclear or broken, you have a number of ways to fix it:
 
@@ -22,7 +111,7 @@ We welcome contributions, suggestions, fixes and constructive feedback from the 
 
 Contributing to our documentation is straightforward. We only require that all contributors sign the [Canonical contributor license agreement](https://ubuntu.com/legal/contributors).
 
-In order to contribute, you will need to set up a [GitHub](https://github.com/) account and a [git environment](https://github.com/canonical/open-documentation-academy/blob/main/getting-started/install_git.md). The [Getting Started guide](https://github.com/canonical/open-documentation-academy/blob/main/getting-started/get_started.md) from the Canonical Open Documentation Academy is a useful resource for people who are new to contributing using the Ubuntu command line.
+In order to contribute, you will need to set up a [GitHub](https://github.com/) account and a git environment. The [Get started with git](https://canonical-coda.readthedocs-hosted.com/en/latest/docs/howto/get-started/using_git/) guide, from the Canonical Open Documentation Academy, is a useful resource for people who are new to contributing using the Ubuntu command line.
 
 The navigational structure, style, and content of our documentation follows the Diátaxis systematic framework for technical documentation. This categorizes the documentation into tutorials, how-to guides, reference material and explanatory text.
 
