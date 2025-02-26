@@ -294,28 +294,6 @@ Sometimes it's useful to provide information to documentation editors. For that,
 This note is not visible in the dedicated documentation site.
 [/quote]
 ```
-### Foldouts
-
-When a page contains a lot of extraneous information such as walkthroughs or reference tables, a *foldout* can be used. This will create a collapsed header which, when clicked, will expand to display all the content below it.
-
-Foldout syntax uses two sets of square brackets with an open and close details tag that acts as the title in the opening brackets:
-
-```markdown
-[details=Manually create a network on a 10.x.x.x subnet]
-
-If you try to run `lxd init` on a system that is connected to a network with a `10.x.x.x` subnet,
-then the final step of the *init* may fail with the following error:
-
-[/details]
-```
-The above will appear as follows:
-
-[details=Manually create a network on a 10.x.x.x subnet]
-
-If you try to run `lxd init` on a system that is connected to a network with a
-`10.x.x.x` subnet, then the final step of the *init* may fail with the following error:
-
-[/details]
 
 ### Images
 
