@@ -42,11 +42,13 @@ In all cases, **ubuntu-seed**  will contain the following directories:
 
 -   A snaps directory which operates as a pool of snaps shared across all recovery systems. The assertions in a recovery system will define and reference which of these will be used by the system.
 
+For [remodelling](/explanation/remodelling) to function, the seed partition needs to be large enough to hold two recovery systems.
+
 ## The ubuntu-boot partition
 
 **role**: system-boot; *read-only*, *ext4* or *vfat*
 
-Contains the second-stage/run bootloader and unpacked kernel(s) to boot and with.
+Contains the second-stage/run bootloader and unpacked kernel(s) only, which are used to boot the system.
 
 ## The ubuntu-save partition
 
@@ -54,7 +56,7 @@ Contains the second-stage/run bootloader and unpacked kernel(s) to boot and with
 
 Stores device identity backup data and data to facilitate recovery or re-install.
 
-This partition is mandatory on encrypted systems where it should have a minimum size of approximately 20+MB to handle volume and file system creation.  
+This partition is mandatory on encrypted systems where it should have a minimum size of approximately 20+MB to handle volume and file system creation (32MB is recommended).
 
 From _snapd 2.57+_, snaps can save small amounts of persistent data to the _ubuntu-save_ partition. This location is accessible from the [SNAP_SAVE_DATA](https://snapcraft.io/docs/environment-variables#heading--snap-save-data) environment variable.
 
