@@ -27,13 +27,9 @@ WARNING: "pc" installed from local snaps disconnected from a store cannot be ref
 Copying "./pc_20-0.4_amd64.snap" (pc)
 ```
 
-You can now use the image to boot either real or virtual hardware. From within a running session on a custom image, you can run the pre-installed snap:
+You can now use the image to boot either real or virtual hardware. From within a running session on a custom image, you can run the pre-installed snap, such as `htop` in our example.
 
-```bash
-htop
-```
-
-Use snap list to see which snaps are installed:
+Use `snap list` to see which snaps are installed:
 
 ```bash
 $ snap list
