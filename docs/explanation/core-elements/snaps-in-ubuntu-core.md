@@ -37,6 +37,7 @@ The [base snap](https://snapcraft.io/docs/base-snaps) provides the run-time envi
 For historical reasons the core snap has a different specific type: core.
 1. **snapd**: the snap daemon
 The core16, core18 and core20 onwards base snaps do not include the snap daemon (core, however, does). Instead, they package the daemon as an upgradeable snap of this type.
+> The core16 base snap is supported inline with the wider [Ubuntu release cycle](https://ubuntu.com/about/release-cycle) and cannot run the latest versions of the daemon.
 1. **app**: applications, daemons and tools
 Packages applications, pulled from multiple upstream sources using diverse build systems. The snapd daemon is itself installed as a snap (except with an old core, where it's included).
 
