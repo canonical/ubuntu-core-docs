@@ -17,10 +17,7 @@ On Ubuntu Core 22 and later, when using the default GNU GRUB bootloader, kernel 
 
 The splash screen can be customised in two different ways, either by including a new logo or image file, or by completely replacing the Plymouth theme used to generate the splash screen.
 
-- [New vendor logo or image](#heading--vendor-logo)
-- [Replacement Plymouth theme](#heading--plymouth)
-
-<h3 id='heading--vendor-logo'>New vendor logo or image</h3>
+### New vendor logo or image
 
 ![Ubuntu Core vendor splash screen,  50%](https://assets.ubuntu.com/v1/3410143e-core-splash_02.png) 
 
@@ -51,7 +48,7 @@ A PNG-formatted vendor logo, or any other PNG-formatted image, can be placed wit
 
 The image will be scaled accordingly and images with a 2:1 aspect ratio work best (such as images with resolution of 800x400). Larger files will obviously increase the size of the gadget snap and the resulting Ubuntu Core image.
 
-<h3 id='heading--plymouth'>Replacement Plymouth theme</h3>
+### Replacement Plymouth theme
 
 The most flexible way to change the appearance of the Ubuntu Core splash screen is to install a replacement [Plymouth](https://wiki.ubuntu.com/Plymouth) theme.
 
