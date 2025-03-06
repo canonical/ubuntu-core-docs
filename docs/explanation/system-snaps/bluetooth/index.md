@@ -88,7 +88,7 @@ If bluez is not listed by the above command you can install it with:
 $ sudo snap install bluez
 ```
 
-<h2><a name="bluetooth-daemons" class="anchor" href="#bluetooth-daemons"></a>Bluetooth Daemons</h2>
+## Bluetooth daemons
 
 Normally, once the snap is installed, the Bluetooth daemon is up and running.
 
