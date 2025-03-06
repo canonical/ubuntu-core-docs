@@ -7,15 +7,7 @@ Snap developers need to be aware of the scope their applications have from withi
 
 Security policies and store policies work together to allow developers to quickly update their applications, and to provide safety to end users, and this document describes the sandbox and how to configure and work with the security policies for snaps you publish.
 
-For more general details on what confinement entails, see [Snap confinement](https://snapcraft.io/docs/snap-confinement), and see below for implementation details:
-
-- [Security overview](#heading--walkthrough)
-- [Cryptography](#heading--cryptography)
-- [AppArmor, Seccomp and device permissions](#heading--permissions)
-- [Refresh awareness security policy](#heading--refresh)
-- [Interface security policies](#heading--interface)
-
-For help resolving issues that may arise from a snap's security policy, see [Debugging snaps](https://snapcraft.io/docs/debug-snaps).
+For more general details on what confinement entails, see [Snap confinement](https://snapcraft.io/docs/snap-confinement), and for help resolving issues that may arise from a snap's security policy, see [Debugging snaps](https://snapcraft.io/docs/debug-snaps).
 
 ## Security overview
 
