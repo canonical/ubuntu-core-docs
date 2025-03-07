@@ -145,8 +145,10 @@ html_context = {
     # "sequential_nav": "both",
     # TODO: To enable listing contributors on individual pages, set to True
     "display_contributors": False,
-}
 
+    # Required for feedback button    
+    'github_issues': 'enabled',
+}
 # Project slug; see https://meta.discourse.org/t/what-is-category-slug/87897
 #
 # TODO: If your documentation is hosted on https://docs.ubuntu.com/,
@@ -195,6 +197,9 @@ linkcheck_ignore = [
 
 linkcheck_anchors_ignore_for_url = [r"https://github\.com/.*"]
 
+# give linkcheck multiple tries on failure
+# linkcheck_timeout = 30
+linkcheck_retries = 3
 
 ########################
 # Configuration extras #
@@ -246,10 +251,6 @@ html_css_files = [
 ]
 
 
-html_theme_options = {
-    "source_edit_link": "https://github.com/canonical/ubuntu-core-docs",
-}
-
 # Adds custom JavaScript files, located under 'html_static_path'
 
 # html_js_files = []
@@ -288,34 +289,13 @@ rst_prolog = """
    :class: align-center
 .. role:: h2
     :class: hclass2
+.. role:: woke-ignore
+    :class: woke-ignore
+.. role:: vale-ignore
+    :class: vale-ignore
 """
 
 # Workaround for https://github.com/canonical/canonical-sphinx/issues/34
 
 if "discourse_prefix" not in html_context and "discourse" in html_context:
     html_context["discourse_prefix"] = html_context["discourse"] + "/t/"
-
-#####################
-# PDF configuration #
-#####################
-
-latex_additional_files = [
-    "./.sphinx/fonts/Ubuntu-B.ttf",
-    "./.sphinx/fonts/Ubuntu-R.ttf",
-    "./.sphinx/fonts/Ubuntu-RI.ttf",
-    "./.sphinx/fonts/UbuntuMono-R.ttf",
-    "./.sphinx/fonts/UbuntuMono-RI.ttf",
-    "./.sphinx/fonts/UbuntuMono-B.ttf",
-    "./.sphinx/images/Canonical-logo-4x.png",
-    "./.sphinx/images/front-page-light.pdf",
-    "./.sphinx/images/normal-page-footer.pdf",
-]
-
-latex_engine = "xelatex"
-latex_show_pagerefs = True
-latex_show_urls = "footnote"
-
-with open(".sphinx/latex_elements_template.txt", "rt") as file:
-    latex_config = file.read()
-
-latex_elements = ast.literal_eval(latex_config.replace("$PROJECT", project))
