@@ -1,4 +1,5 @@
 # Leave a blank line at the end of this file to support concatenation
+
 ACLs
 AdGuard
 AIoT
@@ -10,9 +11,11 @@ AMQP
 AppAmor
 AppArmor
 armhf
+ARMv
 artifact
 artifacts
 Autocompletion
+automations
 backend
 backport
 backporting
@@ -47,6 +50,7 @@ btmon
 canonicalwebteam
 capitalize
 catalog
+categorizes
 cdimage
 center
 cgroup
@@ -54,16 +58,18 @@ cgroup
 changelog
 CIDR
 cjk
+CLA
+cla
 cli
 cmdline
 CMTP
 color
 conf
-conf’s
+conf's
 config
 configs
 configurability
-conf's
+conf’s
 CPUs
 crypto
 cryptographic
@@ -179,6 +185,7 @@ libtpms
 lifecycle
 localhost
 localhost
+MAAS
 macOS
 manpage
 MBIM
@@ -188,6 +195,7 @@ meshctl
 MiB
 MiBs
 Microk
+MicroK
 microSD
 mir
 mmcli
@@ -326,8 +334,8 @@ syscall
 sysfs
 systemd
 Systemd
-systemd’s
 systemd's
+systemd’s
 tcp
 TCP
 TCP
@@ -396,4 +404,3 @@ xz
 XzZg
 yaml
 yoursnapname
-
