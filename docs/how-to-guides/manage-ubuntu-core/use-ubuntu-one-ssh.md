@@ -7,13 +7,7 @@ Rather than requiring a password, the server is instead configured to authentica
 
 The process of creating and registering this key is described below.
 
-1. [Ubuntu One setup](#heading--setup)
-1. [Generate the SSH key pair](#heading--generate)
-1. [Upload the public SSH key](#heading--upload)
-
----
-
-<h2 id='heading--details'>Ubuntu One setup</h2>
+## Ubuntu One setup
 
 
 [Ubuntu One](https://login.ubuntu.com/) is a single sign-on service for Ubuntu and affiliated projects. If you already have an account, make sure you're logged in. If you don't have an account, go to [https://login.ubuntu.com/](https://login.ubuntu.com/) and select the "I don’t have an Ubuntu One account" option.
@@ -31,7 +25,7 @@ Ensure you read and accept the following:
 Now select _Create account_. You will then receive an email asking you to verify your account. Click the verification link in the email and complete the reCAPTCHA challenge that follows. The account is now ready to be used.
 
 
-<h2 id='heading--create'>Generate the SSH key pair</h2>
+## Generate the SSH key pair
 
 On Linux and macOS,  the OpenSSH client package is usually pre-installed and this provides both the _ssh_ command for connecting to servers and the _ssh-keygen_ command used to generate an SSH public/private key pair.
 
@@ -54,7 +48,7 @@ $ ls -1 ~/.ssh/id*
 ~/.ssh/id_ubuntucore.pub
 ```
 
-<h2 id='heading--upload'>Upload the public SSH key</h2>
+## Upload the public SSH key
 
 The contents of the _.pub_ file needs to be uploaded to the Ubuntu One account you want to associate with your Ubuntu Core device. 
 

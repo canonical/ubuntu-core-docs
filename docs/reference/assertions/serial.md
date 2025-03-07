@@ -41,7 +41,7 @@ The index is the tuple \<`brand-id`, `model`, `serial`\>, with `serial` being th
 
 This assertion must then be signed by the brand. See [Assertion format](/reference/assertions/index) for more details on fields common to most assertions.
 
-<h2 id='heading--example'>Example assertion</h2>
+## Example assertion
 
 This example was extracted from a kvm Ubuntu Core instance with `sudo snap known serial`:
 

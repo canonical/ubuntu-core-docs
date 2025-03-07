@@ -9,7 +9,7 @@ ubuntu-image snap ubuntu-core-20-amd64.model
 
 > See [Build your own Ubuntu Core image](/tutorials/build-your-first-image/index) for more details on the entire process.
 
-_ubuntu-image_ tool retrieves signed snaps with the given _snap-id_ in the model assertion from the store. To override these default snaps, first make sure the [model assertion](/reference/assertions/model.md$model-assertion-fields) has a grade of dangerous to allow non-store snaps to be included:
+_ubuntu-image_ tool retrieves signed snaps with the given _snap-id_ in the model assertion from the store. To override these default snaps, first make sure the [model assertion](/reference/assertions/model.md#model-assertion-fields) has a grade of dangerous to allow non-store snaps to be included:
 
 ```
 grade: dangerous
@@ -27,13 +27,9 @@ WARNING: "pc" installed from local snaps disconnected from a store cannot be ref
 Copying "./pc_20-0.4_amd64.snap" (pc)
 ```
 
-You can now use the image to boot either real or virtual hardware. From within a running session on a custom image, you can run the pre-installed snap:
+You can now use the image to boot either real or virtual hardware. From within a running session on a custom image, you can run the pre-installed snap, such as `htop` in our example.
 
-```bash
-htop
-```
-
-Use snap list to see which snaps are installed:
+Use `snap list` to see which snaps are installed:
 
 ```bash
 $ snap list

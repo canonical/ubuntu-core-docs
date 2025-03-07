@@ -7,17 +7,9 @@ Snap developers need to be aware of the scope their applications have from withi
 
 Security policies and store policies work together to allow developers to quickly update their applications, and to provide safety to end users, and this document describes the sandbox and how to configure and work with the security policies for snaps you publish.
 
-For more general details on what confinement entails, see [Snap confinement](https://snapcraft.io/docs/snap-confinement), and see below for implementation details:
+For more general details on what confinement entails, see [Snap confinement](https://snapcraft.io/docs/snap-confinement), and for help resolving issues that may arise from a snap's security policy, see [Debugging snaps](https://snapcraft.io/docs/debug-snaps).
 
-- [Security overview](#heading--walkthrough)
-- [Cryptography](#heading--cryptography)
-- [AppArmor, Seccomp and device permissions](#heading--permissions)
-- [Refresh awareness security policy](#heading--refresh)
-- [Interface security policies](#heading--interface)
-
-For help resolving issues that may arise from a snap's security policy, see [Debugging snaps](https://snapcraft.io/docs/debug-snaps).
-
-<h2 id='heading--walkthrough'>Security overview</h2>
+## Security overview
 
 Application developers should not need to know about, or understand, the low-level implementation details of how a security policy is enforced.
 
@@ -73,7 +65,7 @@ Under the hood, the application runner does the following:
 
 1. Executes the command under the command-specific AppArmor profile under a default nice value.
 
-<h2 id='heading--cryptography'>Cryptography</h2>
+## Cryptography
 
 The snap packaging system employs various cryptographic technologies to secure local and remote snap operations.
 
@@ -105,11 +97,11 @@ Salsa20 (NaCl crypto_secretbox)
 * **Enterprise Store nonce signing**</br> 
 Used as additional security for REST API access. RSA4096 is used to sign and verify the nonce.
 
-<h2 id='heading--permissions'>AppArmor, Seccomp and device permissions</h2>
+## AppArmor, Seccomp and device permissions
 
 When a snap is installed, its metadata is examined and is used to derive **AppArmor** profiles, **Seccomp** filters and device **cgroup** rules, alongside **traditional permissions**. This combination provides strong application confinement and isolation:
 
-- <h3 id='heading--apparmor'>AppArmor</h3>
+### AppArmor
 
    AppArmor profiles are generated for each command. These have the appropriate security label and command-specific AppArmor rules to mediate file access, application execution, Linux capabilities, mount, ptrace, IPC, signals, coarse-grained networking.
 
@@ -117,7 +109,7 @@ When a snap is installed, its metadata is examined and is used to derive **AppAr
 
   See [AppArmor violations](https://snapcraft.io/docs/debug-snaps#heading--apparmor) for help tracking AppArmor problems.
 
-- <h3 id='heading--seccomp'>Seccomp</h3>
+### Seccomp
 
    A seccomp filter is generated for each command in a snap to run under, enabling allowlist syscall filtering, which can then be extended through declared interfaces expressed in the metadata as `plugs` and `slots`.
    
@@ -125,7 +117,7 @@ When a snap is installed, its metadata is examined and is used to derive **AppAr
 
   See [Seccomp violations](https://snapcraft.io/docs/debug-snaps#heading--seccomp) for help tracking Seccomp problems.
 
-- <h3 id='heading--cgroup'>Device cgroup</h3>
+### Device cgroup
 
     udev rules are generated for each command to tag devices so they may be added/removed to the command's device cgroup. By default, however, no devices are tagged and the device cgroup is not used, with AppArmor used to mediate access.
     
@@ -133,7 +125,7 @@ When a snap is installed, its metadata is examined and is used to derive **AppAr
     
     Processes accessing devices not in the snap-specific device cgroup will be denied access with errno set to `EPERM`. Access violations are not logged.
 
-- <h3 id='heading--permissions'>Traditional permissions</h3>
+### Traditional permissions
 
     Traditional file permissions (owner, group, file ACLs and others) are also enforced with snaps.
     
@@ -141,7 +133,7 @@ When a snap is installed, its metadata is examined and is used to derive **AppAr
 
 Consequently, all snaps run under a default security policy which can be extended through the use of [interfaces](https://snapcraft.io/docs/snapcraft-interfaces). 
 
-<h2 id='heading--refresh'>Refresh awareness</h2>
+## Refresh awareness
 
 By default, a service running from a snap needs to be restarted whenever the snap is refreshed.
 
@@ -157,7 +149,7 @@ To help mitigate any potential issues when a restart is required, _snapd_ will c
 * if **systemd-initiated processes** are detected, their associated units are first stopped, the snap refreshed, and those units started again.
 * if other **snap-initiated processes** are detected, [refresh awareness](https://snapcraft.io/docs/refresh-awareness) is used to mediate the update.
 
-<h3 id='heading--refresh-policy'>Refresh security policy</h3>
+### Refresh security policy
 
 The snap daemon uses AppArmor and Seccomp to create a security policy that is linked to a specific snap revision. This governs what a snap can access on your system. AppArmor profiles and Seccomp filters are created for each command, and while AppArmor profiles can be changed and reloaded while a process is running, Seccomp filters cannot.
 
@@ -165,7 +157,7 @@ Snap security policy permits read and write access for the current revision, and
 
 Before _refresh awareness_ became available, if a refresh occurred while a snap was running, its AppArmor policy would be updated to allow `w` (write) on the new version and `r` (read) on the older versions, including the running version. The policy was applied immediately, which meant that write operations would start to fail for running processes.
 
-<h2 id='heading--interface'>Interface security policies</h3>
+## Interface security policies
 
 Interfaces are implemented as plugs and slots. A plug in one snap may connect to a slot in another and this provides access to the resources required.
 

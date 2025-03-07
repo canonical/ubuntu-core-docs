@@ -7,11 +7,11 @@ Each installed snap needs to be verified and have their respective AppArmor and 
 
 _Preseeding_ speeds up the seeding process by performing as many of these administrative tasks as possible in advance when an image is being created.
 
-<h2>Preseeding</h2>
+## Preseeding
 
 During deployment, _snapd_ still performs the _seeding_ process but it automatically skips any parts successfully completed during _pre-seeding_.
 
-<h3 id='heading--preseed-image'>Building a preseeded image</h3>
+### Building a preseeded image
 
 During the process of [Image creation](/how-to-guides/image-creation/index), preseeded images are created with the same `ubuntu-image` tool, or the `snap prepare-image` command, with an additional `--preseed` argument.
 
@@ -39,6 +39,7 @@ A custom AppArmor features directory may be specified with `--apparmor-features-
 
 On a new device, snaps are installed from the `ubuntu-seed` volume (see [Core elements](/explanation/core-elements/index)).  On a classic system, this set of snaps to install is defined in `/var/lib/snapd/seed/seed.yaml`.
 
-<h2>Single boot installation</h2>
+## Single boot installation
+
 During the installation of an Ubuntu Core system, the target device will undergo a reboot to finalize the installation process. If a system is preseeded, the installation can be completed without necessitating a system reboot. Note that this feature requires snapd version 2.62 and greater.
 
