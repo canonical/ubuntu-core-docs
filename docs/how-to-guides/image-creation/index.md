@@ -16,7 +16,7 @@ Create an image from the command line, optimise its boot speed, then change its 
 
 ## Board enablement
 
-Pre-built images are available for supported platforms, including Raspberry Pi, Intel NUCs and x86/KVM virtualisation, and these can be download and easily installed. See [Supported platforms](/reference/testing-platforms) for the current list and for download links to both the images and the model assertions they use.
+Pre-built images are available for testing a range of devices. See [Testing Platforms](/reference/testing-platforms) for further details.
 
 _Board enablement_, however, is the term we use for building an Ubuntu Core image for a new hardware platform, and there's a well established process for accomplishing this.
 
