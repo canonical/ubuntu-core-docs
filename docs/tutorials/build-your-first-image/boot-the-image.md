@@ -66,9 +66,7 @@ Select **Save** to apply those changes and for the connection to be attempted. Y
 
 A final configuration step asks for the email address of your account in the store. This can be safely ignored for now. Whenever your device boots, it will automatically connect to the network and requires no further configuration.
 
-Each time the device starts up, if a display connected it will show its various addresses and the account linked to the device. As we've built this Ubuntu Core image to include the AdGuard Home snap, we can now connect to this service via the published IP address and its configured port (3000 for setup):
-
-![Adguard](https://assets.ubuntu.com/v1/00814dcd-image.jpg)
+Each time the device starts up, if a display connected it will show its various addresses and the account linked to the device. As we've built this Ubuntu Core image to include the AdGuard Home snap, we can now connect to this service via the published IP address and its configured port (3000 for setup).
 
 Congratulations! You have successfully built your own image, installed it, and connected to Ubuntu Core on your Raspberry Pi.
 
