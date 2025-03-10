@@ -163,5 +163,4 @@ After finishing all your edits, the completed **my-model.json** text file should
 }
 ```
 
-After the file has been created, the next step is to sign it. See [Sign a model](/tutorials/build-your-first-image/sign-the-model) for further details.
-
+After the file has been created, the next step is to sign it. See [Sign the model](/tutorials/build-your-first-image/sign-the-model) for further details.
