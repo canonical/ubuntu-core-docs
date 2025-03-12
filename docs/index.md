@@ -2,24 +2,24 @@
 
 # Ubuntu Core documentation
 
-**Ubuntu Core** is a version of the Ubuntu operating system designed and engineered for deploying IoT and embedded systems.
+**Ubuntu Core is Ubuntu engineered for embedded and IoT systems.** Every element runs within a confined sandbox.
 
-In Ubuntu Core, every element of the system runs within a confined sandbox using **Snap packages**, which are used exclusively to create a transaction-based system. **Security and robustness** are the key features, alongside being **easy to install, easy to maintain, and easy to upgrade**.
+**It provides a deployment infrastructure for developers to deploy production images**, creating a minimal, secure, and transaction-based operating environment for your applications.**
 
-Ubuntu Core is ideal for embedded devices because it manages itself. Whether it’s running on a **PC-style** system hidden for media streaming, or an **embedded ARM** device handling garage door automation, Ubuntu Core remains **transparent, trustworthy and autonomous**.
+**Ubuntu Core reduces the time needed to flash and provision images in production lines**, ensuring they're secure while delivering the desired user-experience to your users.
 
-From Linux and maker space tinkerers, to the robotics, automotive and signage industries; from a single device, to a deployment of thousands: Ubuntu Core can handle it.
-
----
+**From Linux and maker space tinkerers, to the robotics, automotive and signage industries;** from a single device, to a deployment of thousands: Ubuntu Core can handle it.
 
 ## In this documentation
-
 | | |
 |--|--|
-|  [Tutorials](/tutorials/index)</br>  Get started - a hands-on introduction to Ubuntu Core for new users </br> |  [How-to guides](/how-to-guides/index) </br> Step-by-step guides covering key operations and common tasks |
+| **[Build your first image](tutorials/build-your-first-image/index)** \| [Create a model](tutorials/build-your-first-image/create-a-model) </br> [Sign a model](tutorials/build-your-first-image/sign-the-model) \| [Build the image](tutorials/build-your-first-image/build-the-image) </br> [Boot the image](tutorials/build-your-first-image/boot-the-image) \| [Install on a device](tutorials/try-pre-built-images/index) | [How-to guides](/how-to-guides/index) </br> Step-by-step guides covering key operations and common tasks |
 | [Explanation](/explanation/index) </br> Concepts - discussion and clarification of key topics  | [Reference](/reference/index) </br> Technical information - specifications, APIs, architecture |
 
----
+   * **Security:** [Full disk encryption](explanation/full-disk-encryption) | [Sandboxing](explanation/security-and-sandboxing) | [Use a recovery mode](how-to-guides/manage-ubuntu-core/use-a-recovery-mode)
+   * **Management:** [Update control](explanation/refresh-control) | [Remodelling](explanation/remodelling) | [Upgrade Ubuntu Core](how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core)
+   * **Stores:** [Store overview](explanation/stores/store-overview) | [Brand accounts](explanation/stores/brand-accounts) | [Dedicated snap stores](explanation/stores/dedicated-snap-store) | [Store scoping](explanation/stores/store-scoping)
+   * **Core elements:** [Introduction](explanation/core-elements/inside-ubuntu-core) | [Storage layout](explanation/core-elements/storage-layout) | [Snap in Ubuntu Core](explanation/core-elements/snaps-in-ubuntu-core)
 
 ## Project and community
 
