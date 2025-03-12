@@ -4,7 +4,7 @@
 
 **Ubuntu Core is Ubuntu engineered for embedded and IoT systems.** Every element runs within a confined sandbox.
 
-**It provides a deployment infrastructure for developers to deploy production images**, creating a minimal, secure, and transaction-based operating environment for your applications.**
+**It provides a deployment infrastructure for developers to deploy production images**, creating a minimal, secure, and transaction-based operating environment for your applications.
 
 **Ubuntu Core reduces the time needed to flash and provision images in production lines**, ensuring they're secure while delivering the desired user-experience to your users.
 
