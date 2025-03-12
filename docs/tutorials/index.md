@@ -14,7 +14,7 @@ Ubuntu Core has been designed to facilitate the creation, deployment, and  manag
 
 ## Install Ubuntu Core
 
-But pre-built test images are also available, for both x86-based PC-style hardware and ARM-based platforms. These testing images are ideal for exploration  and experimentation but they're not intended for deployment or for use at scale.
+Pre-built test images are also available, for both x86-based PC-style hardware and ARM-based platforms. These testing images are ideal for exploration  and experimentation but they're not intended for deployment or for use at scale.
 
 
 * [Install and try a pre-built image](/tutorials/try-pre-built-images/index)

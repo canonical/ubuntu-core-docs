@@ -1,9 +1,6 @@
 # Build the image
 
-Images are built from the recipe contained in the [model assertion](/tutorials/build-your-first-image/create-a-model) using [ubuntu-image](https://github.com/canonical/ubuntu-image), a tool to generate a bootable image. Creating a bootable device is a two-step process:
-
-- Compile the image
-- Write the image
+Images are built from the recipe contained in the [model assertion](/tutorials/build-your-first-image/create-a-model) using [ubuntu-image](https://github.com/canonical/ubuntu-image), a tool to generate a bootable image.
 
 ## Compile the image
 

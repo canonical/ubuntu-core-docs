@@ -2,12 +2,6 @@
 
 After a model has been [created or modified](create-a-model), it must be signed with a GPG key to become a _model assertion_. This ensures the model cannot be altered without the key and also links the created image to both the signed version of the model and your [Ubuntu One account](access-ubuntu-one).
 
-This is accomplished in three stages: 
-
-- Create a key
-- Register the key
-- Sign the model
-
 ## Create a key
 
 First make sure there are no keys already associated with your account by running the `snapcraft list-keys` command (you will only have a key if you've previously signed an assertion; if you already have a key, you can use that one):

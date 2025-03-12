@@ -24,7 +24,7 @@ Pre-built testing images are also available for a range of devices. See [Support
 
 **Minimum RAM**: 512MB
 
-It's far more likely that devices will include much more on-board RAM, which Ubuntu Core can take full advantage of.
+It's likely that devices will include much more on-board RAM, which Ubuntu Core can take full advantage of.
 
 ## Storage
 
