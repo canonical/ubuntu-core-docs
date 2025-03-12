@@ -24,28 +24,22 @@ The recommended sizes for each partition type and role are as follows:
 
   For example, the size of kernel.efi is around 52 MiBs. If we take a [refresh.retain=3](https://snapcraft.io/docs/managing-updates#control-updates-with-system-options-5) (the default for Ubuntu Core, and for classic/hybrid it is 2) and 10 MiBs for additional boot components, such as grub and u-boot, this would give a minimum size of around:
 
-[wrap="center"]
   52*4 + 10 = 418 MiBs
-[/wrap]
 
 - Here, the multiplication of the kernel.efi by 4 is due to the requirement of 3 snap files due to the specified refresh.retain, plus 1 for a temporary file while doing a refresh.
 
    Therefore the minimum system-boot required is:
 
-[wrap="center"]
 
-*system_boot*  = (*refresh.retain* + 1)*_kernel.efi_ or _.img_ +10
+   *system_boot*  = (*refresh.retain* + 1)*_kernel.efi_ or _.img_ +10
 
-[/wrap]
 
 * _system-save_: This partition stores device identity backup data and data to facilitate recovery or re-install. The size it needs depends on how much information our snaps need to store there. A minimum of 32 MiBs is needed for encryption to work.
 * _system-data_: This is the writable partition, and contains the snap files installed in the system and snaps data.
 
 ### Minimum size calculation
 
-[wrap="center"]
 *Min_Size* = *system_seed* + *system_save* + *system_boot* + (*refresh.retain*+ 1)* &Sigma; *snap_size_i*
-[/wrap]
 
 Where:
 
@@ -70,9 +64,7 @@ The following table presents minimum sizes for current and future Ubuntu C relea
 
 To calculate the minimal size for an Ubuntu Core image, we apply:
  
-[wrap="center"]
 *Min_Size* = *system_seed* + *system_save* + *system_boot* + 4* &Sigma;  *snap_size_i*
-[/wrap] 
 
 For example, let’s calculate the bare minimum storage for Ubuntu Core 24 using a refresh.retain of 2, the parameters from the table above and no additional snap. The values for system_seed and system_save are bare minimum requirements. 
  
