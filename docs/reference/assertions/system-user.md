@@ -40,7 +40,7 @@ The index is the tuple \<`brand-id`, `email`\>, with `series` being as specified
 
 - `serials` limits the scope of the _system-user_ assertion to devices with matching serials. This field can only be used with a `revision` of 1 or greater, and also limits the `models` field to accepting just a single model assertion. 
 
-- `password` must be encoded and salted, following the format specified by [crypt](http://manpages.ubuntu.com/manpages/bionic/en/man1/crypt.1.html)(3). You could use `mkpasswd`, for example: `mkpasswd -m sha512crypt`
+- `password` must be encoded and salted, following the format specified by [crypt](http://manpages.ubuntu.com/manpages/bionic/en/man1/crypt.1.html)(3). You could use `mkpasswd`, for example: `mkpasswd -m sha512`
 
 - `since` and `until` define a period between a UTC _from date_ (since) and a UTC _to date_ (until) during which a new [system user](/how-to-guides/manage-ubuntu-core/add-a-system-user) is permitted to be created. An exception to this rule is if `until-expiration` has been set in `user-presence` (see below), in which case a user is removed when the corresponding assertion expires.
 
