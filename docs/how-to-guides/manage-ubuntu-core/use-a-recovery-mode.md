@@ -24,7 +24,7 @@ To access the system mode selection menu, start or reboot the device with the �
 
 After the initial boot process completes, a status screen will appear showing “System mode selection triggered. Proceed to select one of the available systems and actions.”
 
-![uc22-factory-reset|690x249](upload://wSBcdxSvI9HMeTyomEItazHyWko.png) 
+![uc22-factory-reset|690x249](https://assets.ubuntu.com/v1/e67198a4-use-a-recovery-mode.png) 
 
 The menu system requires that you tab or cursor to highlight your chosen option. Ensure ‘OK’ is highlighted and press Enter to continue, after which you'll be presented first with the recovery chooser and the option to either run normally, enter recovering mode, or reinstall.
 
