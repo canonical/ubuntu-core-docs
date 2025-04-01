@@ -35,7 +35,7 @@ See [Assertion format](/reference/assertions/index.md#assertion-format) for deta
 
 The following is a typical account assertion:
 
-``` json
+```yaml
 type: account
 authority-id: canonical
 revision: 11
