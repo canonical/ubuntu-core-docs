@@ -52,6 +52,11 @@ Canonical's IoT Devices Field team maintains a [GitHub repository](https://githu
 - [risc64-icicle](https://github.com/canonical/iot-field-gadget-snap/tree/22-riscv64-icicle)
 - [risc64-nezha](https://github.com/canonical/iot-field-gadget-snap/tree/24-riscv64-nezha)
 
+The following gadget repositories contain the reference gadget snap definitions for _amd64_ (64 bit PC Gadget Snap) and the Raspberry Pi family of devices supported by Ubuntu Core:
+
+- [ 64-bit PC Gadget Snap](https://github.com/snapcore/pc-amd64-gadget)
+- [ Raspberry Pi "Universal" Gadget Snap](https://github.com/snapcore/pi-gadget)
+
 ### Template: gadget.yaml
 
 The following is an annotated gadget.yaml file that can be used as the basis for your own gadget snap:

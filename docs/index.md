@@ -2,13 +2,13 @@
 
 # Ubuntu Core documentation
 
-**Ubuntu Core is Ubuntu engineered for embedded and IoT systems.** Every element runs within a confined sandbox.
+**Ubuntu Core is Ubuntu engineered for embedded and IoT systems.** It's image-based and immutable, with every element confined within a separate sandbox.
 
 **It provides a deployment infrastructure for developers to deploy production images**, creating a minimal, secure, and transaction-based operating environment for your applications.
 
 **Ubuntu Core reduces the time needed to flash and provision images in production lines**, ensuring they're secure while delivering the desired user-experience to your users.
 
-**From Linux and maker space tinkerers, to the robotics, automotive and signage industries;** from a single device, to a deployment of thousands: Ubuntu Core can handle it.
+**From Linux and maker space tinkerers, to the robotics, automotive and signage industries;** from a single device, to a deployment of thousands. From a tiny _SoC_ to a fleet of full-powered PCs. Ubuntu Core can handle it.
 
 ## In this documentation
 | | |
