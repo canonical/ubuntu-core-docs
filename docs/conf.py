@@ -236,6 +236,7 @@ extensions = [
     "canonical_sphinx",
     "sphinxcontrib.cairosvgconverter",
     "sphinx_last_updated_by_git",
+    "sphinxext.rediraffe",
 ]
 
 # Excludes files or directories from processing
@@ -250,6 +251,9 @@ html_css_files = [
     "css/pdf.css",
 ]
 
+# Add redirects, so they can be updated here to land with docs being moved
+rediraffe_branch = "main"
+rediraffe_redirects = "redirects.txt"
 
 # Adds custom JavaScript files, located under 'html_static_path'
 
