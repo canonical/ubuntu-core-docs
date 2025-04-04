@@ -15,7 +15,7 @@
 
 # Old top level
 uc24 reference/release-notes/
-reference/docs-guidelines/
+reference/docs-guidelines/ contributing/
 
 # Tutorials
 
@@ -161,47 +161,53 @@ networkmanager/snap-configuration/wifi-powersave/ explanation/system-snaps/netwo
 networkmanager/explanation/ explanation/system-snaps/network-manager/
 networkmanager/networkmanager-and-netplan/ explanation/system-snaps/network-manager/how-to-guides/networkmanager-and-netplan/
 
+# Original mapping table
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+components/ explanation/core-elements/
+uc20/install-raspberry-pi/ tutorials/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager/
+install-nuc/ tutorials/try-pre-built-images/install-on-a-device/use-the-dd-command/
+install-on-a-raspberry-pi/ tutorials/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager/
+using-ubuntu-image/ how-to-guides/image-creation/use-ubuntu-image/
+using-ubuntu-core/ how-to-guides/using-ubuntu-core/
+getting-started/ tutorials/build-your-first-image/
+install/ tutorials/try-pre-built-images/
+install-raspberry-pi/ tutorials/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager/
+ubuntu-core-configuration/ how-to-guides/manage-ubuntu-core/set-system-options/
+uc20/system-time/ how-to-guides/manage-ubuntu-core/set-system-time/
+uc20/installation-process/ explanation/how-installation-works/
+uc20/full-disk-encryption/ explanation/full-disk-encryption/
+uc20/remodelling/ explanation/remodelling/
+uc20/inside/ explanation/core-elements/
+uc22/upgrade-to-uc22 how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core/
+kernel-options/ how-to-guides/manage-ubuntu-core/modify-kernel-options/
+brand-stores/ explanation/stores/dedicated-snap-store/
+quick-start/ tutorials/build-your-first-image/
+about-network-manager/ explanation/system-snaps/network-manager/
+uc20/storage-layout/ explanation/core-elements/storage-layout/
+bluetooth-management explanation/system-snaps/bluetooth/
+network-management-services/ explanation/system-snaps/network-manager/
+build-store/ explanation/stores/
+validations-and-refresh-control/ explanation/refresh-control/
+guides/intro/get-started/ tutorials/build-your-first-image/
+guides/build-device/board-enablement/ how-to-guides/image-creation/board-enablement/
+stacks/network/network-manager/docs/ explanation/system-snaps/network-manager/
+stacks/bluetooth/bluez/docs explanation/system-snaps/bluetooth/
+guides/go-to-production/simple/ tutorials/build-your-first-image/
+guides/go-to-production/advanced/ tutorials/build-your-first-image/
+guides/go-to-production/intro/ tutorials/build-your-first-image/
+guides/manage-devices/ how-to-guides/manage-ubuntu-core/
+image/custom-images/ how-to-guides/image-creation/
+build-store/refresh-control/ explanation/refresh-control.md
+guides/intro/security/ explanation/security-and-sandboxing/
+releases/uc20/ reference/release-notes/
+uc20/ reference/release-notes/
+uc20/installing/ tutorials/build-your-first-image/
+uc20/release-notes/ reference/release-notes/
+network-manager-release-notes/ explanation/system-snaps/network-manager/release-notes/
+ubuntu-core-20/ reference/release-notes/
+stores-and-developer-accounts/ explanation/stores/dedicated-snap-store/
+audio-management/access-from-other-snaps/ explanation/
+audio-management/ explanation/
+production/intro/ tutorials/
+production/simple/ tutorials/
+production/advance/ tutorials/
