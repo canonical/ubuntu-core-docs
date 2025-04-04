@@ -1,0 +1,213 @@
+# The redirects.txt file stores all the redirects for the published docs
+# If you change a filename, move or delete a file, you need a redirect here.
+# - Comment lines start with a hash (#) and are ignored
+# - Each redirect should appear on its own line
+
+# We are using the dirhtml builder, so files are treated as directories:
+# - A file is built like `filename/index.html`, not `filename.html`
+# - *Do* include a trailing slash at the end of the path
+# - *Do not* include a file extension or you'll get errors
+# - Paths don't need a slash in front of them
+
+# Example:
+# redirect/from/file/ redirect/to/file/
+
+
+# Old top level
+uc24 reference/release-notes/
+reference/docs-guidelines/ contributing/
+
+# Tutorials
+
+get-started/ tutorials/
+build-an-image/ tutorials/build-your-first-image/
+create-ubuntu-one/ tutorials/build-your-first-image/access-ubuntu-one/
+create-model-assertion/ tutorials/build-your-first-image/create-a-model/
+sign-model-assertion/ tutorials/build-your-first-image/sign-the-model/
+build-write-image/ tutorials/build-your-first-image/build-the-image/
+boot-an-image/ tutorials/build-your-first-image/boot-the-image/
+try-pre-built-images/ tutorials/try-pre-built-images/
+install-on-a-vm/ tutorials/try-pre-built-images/install-on-a-vm/
+install-on-a-device/ tutorials/try-pre-built-images/install-on-a-device/
+install-with-imager/ tutorials/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager/
+install-with-dd/ tutorials/try-pre-built-images/install-on-a-device/use-the-dd-command/
+
+# How-to
+
+# How-to / Image creation
+
+first-steps/ how-to-guides/using-ubuntu-core/
+image-building/ how-to-guides/image-creation/
+use-ubuntu-image/  how-to-guides/image-creation/use-ubuntu-image/
+custom-snaps/  how-to-guides/image-creation/add-custom-snaps/
+splash-screen/ how-to-guides/image-creation/add-a-splash-screen/
+console-conf/ how-to-guides/image-creation/add-console-conf/
+preseeding/ how-to-guides/image-creation/optimise-boot-speed/
+partition-sizes/ how-to-guides/image-creation/calculate-partition-sizes/
+gadget-building/ how-to-guides/image-creation/build-a-gadget-snap/
+kernel-building/ how-to-guides/image-creation/build-a-kernel-snap/
+board-enablement/ how-to-guides/image-creation/board-enablement/
+
+# How-to / Manage Ubuntu Core
+
+connect-with-ssh/ how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh/
+testing-with-qemu/ how-to-guides/manage-ubuntu-core/test-on-qemu/
+upgrade/ how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core/
+configure/ how-to-guides/manage-ubuntu-core/set-system-options/
+use-recovery-mode/ how-to-guides/manage-ubuntu-core/use-a-recovery-mode/
+system-user/ how-to-guides/manage-ubuntu-core/add-a-system-user/
+modify-kernel-options/ how-to-guides/manage-ubuntu-core/modify-kernel-options/
+recovery-system-api/ how-to-guides/manage-ubuntu-core/create-a-recovery-system-from-the-api/
+system-time/ how-to-guides/manage-ubuntu-core/set-system-time/
+troubleshooting/ how-to-guides/manage-ubuntu-core/troubleshooting/
+
+# How-to / Container deployment
+
+containers/ how-to-guides/container-deployment/
+docker-run/ how-to-guides/container-deployment/run-a-docker-container/
+docker-deploy/ how-to-guides/container-deployment/deploy-docker-from-a-snap/
+docker-snap-image/ how-to-guides/container-deployment/build-an-image-for-docker-deployment/
+docker-image/ how-to-guides/container-deployment/build-an-image-for-docker-deployment/
+
+# Reference
+
+system-requirements/ reference/system-requirements/
+supported-platforms/ reference/testing-platforms/
+gadget-snaps/ reference/gadget-snap-format/
+kernel-boot-parameters/ reference/kernel-boot-parameters/
+
+# Explanation
+
+remodelling/ explanation/remodelling/
+refresh-control/ explanation/refresh-control/
+recovery-modes/ explanation/recovery-modes/
+full-disk-encryption/ explanation/full-disk-encryption/
+preseed-performance/ explanation/preseed-performance/
+installation-process/ explanation/how-installation-works/
+docker-companion-snap/ explanation/docker-companion-snap/
+security-and-sandboxing/ explanation/security-and-sandboxing/
+
+# Explanation / Core elements
+
+elements/ explanation/core-elements
+snaps-in-ubuntu-core/ explanation/core-elements/snaps-in-ubuntu-core/
+storage-layout/ explanation/core-elements/storage-layout/
+
+# Explanation / Stores
+
+brand-accounts/ explanation/stores/brand-accounts/
+dedicated-snap-stores/ explanation/stores/dedicated-snap-store/
+store-scoping/ explanation/stores/store-scoping/
+store-overview/ explanation/stores/store-overview/
+
+# Explanation / System snaps
+
+# Explanation / System snaps / Bluez
+
+bluez/ explanation/system-snaps/bluetooth/
+bluez/install-configure/install/ explanation/system-snaps/bluetooth/
+bluez/check-installation/ explanation/system-snaps/bluetooth/
+bluez/reference/pairing/introduction/ explanation/system-snaps/bluetooth/pairing/
+bluez/reference/pairing/outbound-pairing/ explanation/system-snaps/bluetooth/pairing/
+bluez/reference/pairing/inbound-pairing/ explanation/system-snaps/bluetooth/pairing/
+bluez/reference/device-enablement/introduction/ explanation/system-snaps/bluetooth/pairing/
+bluez/reference/device-enablement/supported-linux-kernels/ explanation/system-snaps/bluetooth/kernel-configuration/
+bluez/reference/device-enablement/linux-kernel-configuration-options/ explanation/system-snaps/bluetooth/kernel-configuration/
+bluez/reference/commands explanation/system-snaps/bluetooth/commands/
+bluez/reference/dbus-api explanation/system-snaps/bluetooth/
+bluez/reference/sending-files explanation/system-snaps/bluetooth/
+bluez/reference/accessing-gatt-services explanation/system-snaps/bluetooth/
+bluez/reference/device-enablement/snapping-bluetooth-application explanation/system-snaps/bluetooth/bluetooth-snaps/
+bluez/release-notes explanation/system-snaps/bluetooth/
+bluez/report-a-bug explanation/system-snaps/bluetooth/
+
+# Explanation / System snaps / Modem Manager
+
+modemmanager/ explanation/system-snaps/modem-manager/
+modemmanager/install/ explanation/system-snaps/modem-manager/install-modem-manager/
+modemmanager/gathering-modem-information/ explanation/system-snaps/modem-manager/using-modem-manager/
+modemmanager/entering-sim-passwords/ explanation/system-snaps/modem-manager/using-modem-manager/
+modemmanager/configuring-cellular-connnections/ explanation/system-snaps/modem-manager/
+modemmanager/configuring-cellular-connections/ explanation/system-snaps/modem-manager/
+modemmanager/debug/ explanation/system-snaps/modem-manager/debug/
+modemmanager/available-commands explanation/system-snaps/modem-manager/using-modem-manager/
+modemmanager/dbus-api explanation/system-snaps/modem-manager/using-modem-manager/
+modemmanager/release-notes explanation/system-snaps/modem-manager/release-notes/
+
+# Explanation / System snaps / Network Manager
+
+networkmanager/ explanation/system-snaps/network-manager/
+networkmanager/tutorials/ explanation/system-snaps/network-manager/
+networkmanager/install/ explanation/system-snaps/network-manager/install-networkmanager/
+networkmanager/how-to/ explanation/system-snaps/network-manager/how-to-guides/
+networkmanager/exploring-network-status/ explanation/system-snaps/network-manager/how-to-guides/explore-network-status/
+networkmanager/configure-wifi-connections/ explanation/system-snaps/network-manager/how-to-guides/configure-wifi-connections/
+networkmanager/configure-wifi-access-points/ explanation/system-snaps/network-manager/how-to-guides/configure-wifi-access-points/
+networkmanager/configure-cellular-connections/ explanation/system-snaps/network-manager/how-to-guides/configure-cellular-connections/
+networkmanager/configure-shared-connections/ explanation/system-snaps/network-manager/how-to-guides/configure-shared-connections/
+networkmanager/configure-vpn/ explanation/system-snaps/network-manager/how-to-guides/configure-vpn-connections/
+networkmanager/edit-connections/ explanation/system-snaps/network-manager/how-to-guides/edit-connections/
+networkmanager/logging-messages/ explanation/system-snaps/network-manager/how-to-guides/message-logging/
+networkmanager/reference/ explanation/system-snaps/network-manager/
+networkmanager/networkmanager-available-commands/ explanation/system-snaps/network-manager/how-to-guides/explore-network-status/
+networkmanager/routing-tables/ explanation/system-snaps/network-manager/how-to-guides/routing-tables/
+networkmanager/release-notes/ explanation/system-snaps/network-manager/release-notes/
+networkmanager/report-a-bug/ explanation/system-snaps/network-manager/report-a-bug/
+networkmanager/snap-config/ explanation/system-snaps/network-manager/how-to-guides/configure-the-snap/default-renderer/
+networkmanager/snap-configuration/debug/ explanation/system-snaps/network-manager/how-to-guides/configure-the-snap/debug/
+networkmanager/snap-configuration/connectivity-check/ explanation/system-snaps/network-manager/how-to-guides/configure-the-snap/connectivity-check/
+networkmanager/snap-configuration/wake-on-wlan/ explanation/system-snaps/network-manager/how-to-guides/configure-the-snap/wake-on-wlan/
+networkmanager/snap-configuration/wifi-powersave/ explanation/system-snaps/network-manager/how-to-guides/configure-the-snap/wifi-powersave/
+networkmanager/explanation/ explanation/system-snaps/network-manager/
+networkmanager/networkmanager-and-netplan/ explanation/system-snaps/network-manager/how-to-guides/networkmanager-and-netplan/
+
+# Original mapping table
+
+components/ explanation/core-elements/
+uc20/install-raspberry-pi/ tutorials/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager/
+install-nuc/ tutorials/try-pre-built-images/install-on-a-device/use-the-dd-command/
+install-on-a-raspberry-pi/ tutorials/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager/
+using-ubuntu-image/ how-to-guides/image-creation/use-ubuntu-image/
+using-ubuntu-core/ how-to-guides/using-ubuntu-core/
+getting-started/ tutorials/build-your-first-image/
+install/ tutorials/try-pre-built-images/
+install-raspberry-pi/ tutorials/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager/
+ubuntu-core-configuration/ how-to-guides/manage-ubuntu-core/set-system-options/
+uc20/system-time/ how-to-guides/manage-ubuntu-core/set-system-time/
+uc20/installation-process/ explanation/how-installation-works/
+uc20/full-disk-encryption/ explanation/full-disk-encryption/
+uc20/remodelling/ explanation/remodelling/
+uc20/inside/ explanation/core-elements/
+uc22/upgrade-to-uc22 how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core/
+kernel-options/ how-to-guides/manage-ubuntu-core/modify-kernel-options/
+brand-stores/ explanation/stores/dedicated-snap-store/
+quick-start/ tutorials/build-your-first-image/
+about-network-manager/ explanation/system-snaps/network-manager/
+uc20/storage-layout/ explanation/core-elements/storage-layout/
+bluetooth-management explanation/system-snaps/bluetooth/
+network-management-services/ explanation/system-snaps/network-manager/
+build-store/ explanation/stores/
+validations-and-refresh-control/ explanation/refresh-control/
+guides/intro/get-started/ tutorials/build-your-first-image/
+guides/build-device/board-enablement/ how-to-guides/image-creation/board-enablement/
+stacks/network/network-manager/docs/ explanation/system-snaps/network-manager/
+stacks/bluetooth/bluez/docs explanation/system-snaps/bluetooth/
+guides/go-to-production/simple/ tutorials/build-your-first-image/
+guides/go-to-production/advanced/ tutorials/build-your-first-image/
+guides/go-to-production/intro/ tutorials/build-your-first-image/
+guides/manage-devices/ how-to-guides/manage-ubuntu-core/
+image/custom-images/ how-to-guides/image-creation/
+build-store/refresh-control/ explanation/refresh-control.md
+guides/intro/security/ explanation/security-and-sandboxing/
+releases/uc20/ reference/release-notes/
+uc20/ reference/release-notes/
+uc20/installing/ tutorials/build-your-first-image/
+uc20/release-notes/ reference/release-notes/
+network-manager-release-notes/ explanation/system-snaps/network-manager/release-notes/
+ubuntu-core-20/ reference/release-notes/
+stores-and-developer-accounts/ explanation/stores/dedicated-snap-store/
+audio-management/access-from-other-snaps/ explanation/
+audio-management/ explanation/
+production/intro/ tutorials/
+production/simple/ tutorials/
+production/advance/ tutorials/
