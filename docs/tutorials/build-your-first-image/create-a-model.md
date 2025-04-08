@@ -9,8 +9,6 @@ The model contains:
 
 See below for details on how to download and modify a model file to include your own selection of snaps.
 
----
-
 ## Download a model file
 
 The quickest way to create a new model assertion is to edit a model that already exists. Reference models for every supported Ubuntu Core device can be found in the [snapcore/models](https://github.com/snapcore/models) GitHub repository.

@@ -9,8 +9,6 @@ Below, we cover how to install a reference image of the latest version of Ubuntu
 
 At the end of this tutorial, you'll be able to connect to your PC, install and configure applications, safe in the knowledge that Ubuntu Core will automatically keep your device updated and secure.
 
----
-
 ```{tip}
  
 See [Supported platforms](/reference/testing-platforms) for a list of which  images are available for which platforms. 
