@@ -13,7 +13,7 @@ See [System user](/how-to-guides/manage-ubuntu-core/add-a-system-user) for furth
 
 The following fields can be used in a system-user assertion:
 
-``` yaml
+```yaml
 type:                   <system-user>
 format:                 <2> # sets the format being used for the assertion
 authority-id:           <authority account-id>
@@ -80,7 +80,7 @@ The following is a the JSON input for an example system-user assertion:
 
 The corresponding signed system-user assertion:
 
-``` yaml
+```yaml
 type: system-user
 authority-id: 324hfanjkfqASdFQWfnawefhu8Jauhdj
 brand-id: 324hfanjkfqASdFQWfnawefhu8Jauhdj

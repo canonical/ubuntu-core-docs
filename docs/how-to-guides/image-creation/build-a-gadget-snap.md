@@ -12,7 +12,8 @@ This page includes an overview of what a gadget snap includes, plus templates fo
 	- [Cross-building](#heading--building-crossbuilding)
 	- [Native building](#heading--building-native)
 	    
-> See [Gadget snaps](/reference/gadget-snap-format) for reference details on what gadget snaps can contain, and see [Types of snap](/explanation/core-elements/snaps-in-ubuntu-core.md#types-of-snap) for details on the other types of snap that make up an Ubuntu Core image. 
+
+See [Gadget snaps](/reference/gadget-snap-format) for reference details on what gadget snaps can contain, and see [Types of snap](/explanation/core-elements/snaps-in-ubuntu-core.md#types-of-snap) for details on the other types of snap that make up an Ubuntu Core image. 
 
 ## Inside a gadget snap
 

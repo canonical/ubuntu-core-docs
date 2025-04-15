@@ -1,15 +1,6 @@
 (how-to-guides-manage-ubuntu-core-troubleshooting)=
 # Troubleshooting
 
-[quote]
-:construction: **NOTE TO EDITORS** :construction:
-
-Some issues re-occur but the causes can be difficult to define or change over time. 
-
-This document is a work-in-progress and will/can be updated to link to other pages helping users with any issues they encounter and guiding them to any relevant forum posts. 
-
-[/quote]
-
 Ubuntu Core runs on, and can be built for, a diverse and constantly evolving set of [platforms and devices](/reference/system-requirements).
 
 The majority of our users and developers experience very few issues, but any technology this complex and diverse will likely encounter some issues and incompatibilities.

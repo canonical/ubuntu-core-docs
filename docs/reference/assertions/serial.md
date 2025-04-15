@@ -11,7 +11,7 @@ Each device also has a unique device identity and the ability to _prove that ide
 
 The following fields can be used in an serial assertion:
 
-``` text
+```yaml
 type:                 serial
 authority-id:         <authority account id>
 revision:             <int>
@@ -45,7 +45,7 @@ This assertion must then be signed by the brand. See [Assertion format](/referen
 
 This example was extracted from a kvm Ubuntu Core instance with `sudo snap known serial`:
 
-``` text
+```yaml
 type: serial
 authority-id: canonical
 brand-id: canonical

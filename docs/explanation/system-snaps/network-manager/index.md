@@ -20,8 +20,7 @@ Currently we provide support for the following high level features:
 
 ## Upstream documentation
 
-Existing documentation from the upstream project can be found [here](https://wiki.gnome.org/Projects/NetworkManager).
-
+Documentation for the upstream project can be found at [https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager).
 
 ```{toctree}
 :hidden:

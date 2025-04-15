@@ -9,7 +9,7 @@ Whenever a snap is installed, the account assertion linked to the owner of each 
 
 The following fields can be used in an account assertion:
 
-``` text
+```yaml
 type:              account
 authority-id:      <authority account id>
 revision:          <int>

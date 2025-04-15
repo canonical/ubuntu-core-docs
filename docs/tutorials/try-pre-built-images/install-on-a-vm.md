@@ -28,10 +28,6 @@ core22                        20230717         Ubuntu Core 22
 daily:24.04  noble,devel      20240129         Ubuntu 24.04 LTS
 ```
 
-```{note}
-**Ubuntu Core 24**: Multipass images for [Ubuntu Core 24](https://ubuntu.com/core/docs/uc24) are currently being tested. They are available from the `edge` version of the Multipass snap (`snap refresh multipass --edge`) and they'll  become available from all stable releases shortly.
-```
-
 ### Launch an image
 
 To create a new instance and boot your choice of Ubuntu Core image, type:

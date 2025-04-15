@@ -3,7 +3,7 @@
 
 Ubuntu Core is made up entirely of snap packages. To run Docker containers, you need to have the Docker Engine installed as a snap. 
 
-> This page assumes that you have installed Ubuntu Core via a [pre-built image](/tutorials/try-pre-built-images/index) and would like to install the Docker Engine and run containers from the command line. 
+This page assumes that you have installed Ubuntu Core via a [pre-built image](/tutorials/try-pre-built-images/index) and would like to install the Docker Engine and run containers from the command line. 
 
 ## Install Docker Engine
 After logging into the Ubuntu Core device, install the Docker Engine snap by running:
@@ -22,7 +22,10 @@ If the home interface hasn't been auto-connected (such as on Ubuntu Core 16), co
 sudo snap connect docker:home
 ```
 
->  :information_source: The `docker` command only has access to your home directory. All files such as `Dockerfile`, `docker-compose.yaml` or `.env` should be inside home.
+```{admonition} Docker file access
+:class: tip
+The `docker` command only has access to your home directory. All files such as `Dockerfile`, `docker-compose.yaml` or `.env` should be inside home.
+```
 
 ## Add credentials for registry
 

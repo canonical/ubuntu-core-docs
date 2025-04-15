@@ -11,7 +11,8 @@ Some systems, however, suppress _console-conf_ and its user creation.
 
 To create a system user on these systems, a [system-user assertion](/reference/assertions/system-user) needs to be embedded within a file called `auto-import.assert` that's added to the system via the root directory of a removable USB storage device. This process is covered below.
 
-```{caution}
+```{admonition} Managed and unmanaged systems
+:class: caution
 
 A **managed** system already has a user account whereas an **unmanaged** system does not. A system user cannot typically be added to a system that is already _managed_.
 ```

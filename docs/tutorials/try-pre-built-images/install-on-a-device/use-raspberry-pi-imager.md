@@ -8,8 +8,9 @@ Below, we cover how to install a pre-built image of the latest version of Ubuntu
 
 At the end of this tutorial, you'll be able to connect to your Raspberry Pi, install and configure applications, safe in the knowledge that Ubuntu Core will automatically keep your device updated and secure.
 
-```{tip}
- 
+```{admonition} Installation on other devices
+:class: tip
+
 Installation is very similar across each supported Ubuntu Core device. See [Supported platforms](/reference/testing-platforms) for a list of which images are available for which platforms. 
 ```
 
@@ -23,9 +24,7 @@ This tutorial is suitable for anyone with an interest in Ubuntu Core - no prior 
 - Connected screen and keyboard for installation.
 - An [Ubuntu SSO account with associated SSH keys](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh).
 
-```{tip}
 A pre-built Ubuntu Core image does not use a username and password to login to the system. It instead uses SSH and your public SSH key, which is uploaded to your Ubuntu One account. This is handled by the [console-conf](/how-to-guides/image-creation/add-console-conf) snap bundled in pre-built test images. SSH is otherwise not a requirement for Ubuntu Core images. See [Connect to Ubuntu Core with SSH](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh) for further details.
-```
 
 Alongside enough storage to hold the Ubuntu Core image, you will need a screen and keyboard connected to the Raspberry Pi. These are needed to navigate a few installation prompts, but neither are needed after setup has been completed.
 
@@ -81,10 +80,9 @@ Network access is a requirement for Ubuntu Core, at least initially, and you hav
 
 ### Wi-Fi
 
-```{caution}
-
+```{admonition} Kernel failure messages
+:class: caution
 There is currently a [Linux kernel bug](https://lore.kernel.org/all/d9c9336a-6314-4de9-aead-8b865bb30f05@gmx.net/) that outputs the above failure messages to the screen. These messages can be safely ignored. The bug causing the errors will be fixed in a future release.
-
 ```
 
 This is the most common option. If you have a device with Wi-Fi capabilities, such as a Raspberry Pi 3 or 4, it will appear as a separate network device called `wlan0` beneath any Ethernet devices.

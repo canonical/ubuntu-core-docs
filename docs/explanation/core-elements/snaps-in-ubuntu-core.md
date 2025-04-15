@@ -14,8 +14,7 @@ Whether it's an update to a single device, a specific subset of devices, or a de
 
 * **Unpredictable hardware and network conditions**:  in situations that can’t be easily modelled or predicted, any update system needs to have enough redundancy to handle roll-backs, network-free bootstrapping and autonomous re-provisioning
 
-> ⓘ  Note: For further details on how snaps work and how they're built, see 
-<a href=https://snapcraft.io/docs>Snap documentation</a>.
+ Note: For further details on how snaps work and how they're built, see the [Snap documentation](https://snapcraft.io/docs).
 
 ## Types of snap
 

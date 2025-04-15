@@ -7,7 +7,7 @@ The _validation_ [assertion](/reference/assertions/index)  declares that a certa
 
 The following fields can be used in a validation assertion:
 
-``` text
+```yaml
 type:                   validation
 authority-id:           <authority account-id>
 revision:               <int>
@@ -26,7 +26,6 @@ The index is the tuple \<`series`, `snap-id`, `approved-snap-id`, `approved-snap
 
 This assertion indicates that refreshing to revision number `revision` of snap `approved-snap-id`, for `series`, has been approved by `authority-id`, given that `snap-id` the snap that was gating the update also has `authority-id` as the owner.
 
-
 The `approved-snap-id` must be part of the [refresh-control](/explanation/refresh-control) list in the [snap-declaration assertion](/reference/assertions/snap-declaration) of `snap-id` for this to be enforced.
 
 This means the recommended revision for `approved-snap-id` in a system that has `snap-id` installed is the one in the `revision` header. There will be no automatic installation of newer revisions until a validation with a newer revision is released by the store. Note however that this does not forbid a forced update by the device owner.
@@ -39,7 +38,7 @@ See [Assertion format](/reference/assertions/index.md#assertion-format) for more
 
 The following is an example validation assertion:
 
-``` text
+```yaml
 type: validation
 authority-id: canonical
 revision: 1
