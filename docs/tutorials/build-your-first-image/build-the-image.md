@@ -30,8 +30,9 @@ Build successful
 ```
 You can safely ignore both of the above warnings, and the entire process should only take a few minutes (depending on your connectivity), with the creation of  a `pi.img` Ubuntu Core image file being the end result.
 
-```{tip}
- 
+```{admonition} Console-conf as a separate snap in Ubuntu Core 24+
+ :class: tip
+
 The _console-conf_ user-interface that configures the network and system user when a device first boots has migrated to an optional snap in Ubuntu Core 24 and later.
 
 This is covered in [Create a model assertion](/tutorials/build-your-first-image/create-a-model), but `ubuntu-image` can add `console-conf` at image build time with an additional `--snap console-conf ` argument. For more details on these changes, see [console-conf for device onboarding](/how-to-guides/image-creation/add-console-conf).
@@ -54,8 +55,3 @@ Next, make sure the microSD card is inserted to a connected microSD card reader 
 With the microSD card selected, select the final 'Write' button to commence the image writing process.
 
 When the process completes, you can safely remove the microSD card.
-
-```{tip}
-Developers used to writing raw bootable images to SD cards can still use the `dd` command.
-```
-

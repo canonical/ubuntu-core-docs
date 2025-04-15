@@ -21,8 +21,11 @@ Confirm passphrase: <passphrase>
 
 As shown above, you will be asked for a passphrase. You need to remember this as you'll be prompted to enter it whenever you use the key, including the very next step.
 
-```{tip}
+```{admonition} Key management
+:class: tip
+
 Rather than creating a key for every device, the same key is typically used across all models or model families.
+
 ```
 
 ## Register the key
@@ -74,7 +77,8 @@ You will again be asked for your key's passphrase.
 
 The resultant `my-model.model` file contains the signed model assertion and can now be used to build the image.
 
-```{tip}
+```{admonition} Signing failed error?
+:class: tip
 If you encounter a _gpg: signing failed_ error while signing your assertion from a non-desktop session, such as over SSH, run `export GPG_TTY=$(tty)` first.
 ```
 
