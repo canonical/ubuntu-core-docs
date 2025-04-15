@@ -3,14 +3,13 @@
 
 The _snap-revision_ [assertion](/reference/assertions/index) is a statement by the [store](/explanation/stores/store-overview) acknowledging the receipt of a snap build and labelling it with a snap [revision](https://snapcraft.io/docs/glossary#heading--revision). 
 
-
 Alongside [account](/reference/assertions/account), [snap-declaration](/reference/assertions/snap-declaration) and [account-key-assertion](/reference/assertions/account-key) assertions,  snap-revision_ is bundled within the composite `.assert` file that accompanies a snap downloaded with the `snap download <snap-name>` command.
 
 ## Snap-revision assertion fields
 
 The assertion format is as follows:
 
-``` text
+```yaml
 type:              snap-revision
 authority-id:      <authority account id>
 snap-sha3-384:     <sha3-384 digest as url-safe unpadded base64>
@@ -32,7 +31,7 @@ See [Assertion format](/reference/assertions/index.md#assertion-format) for more
 
 The following is an example `snap-revision` assertion:
 
-``` text
+```yaml
 type: snap-revision
 authority-id: canonical
 snap-sha3-384: F5gwZqB3EBPQ62fhu2CL65TPNdyLbxCVdsxEReYrnp5sNu2z2BXAjdk_BRfUKJgV
@@ -54,4 +53,3 @@ s+jQ5ij3fpMfWOzceHHLhIDm9Wj7sypD+63v4KDaXzQ+8dM/acMraNAJHRvCOr7bvFz9j7OEqr7y
 /6/QMZdkeYO94e1OPB5e+Dya95oCVqJhf05BAIKOn933EjGT3Vnm7HT+EzCvLUbbjMPlJ6ZyNnp/
 lE+8N8EQWmdLC+OwJRNHgucjvcaR
 ```
-

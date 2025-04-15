@@ -107,10 +107,10 @@ The first requires that the [snapcraft.yaml](https://snapcraft.io/docs/snapcraft
 
 The second is to modify an existing gadget snap directly, and this procedure is outlined below.
 
-```{tip}
+```{admonition} Splash screen requirements
+:class: tip
 Enabling the Ubuntu Core splash screen requires a modified kernel command line. See [Splash screen configuration](/how-to-guides/image-creation/add-a-splash-screen) for details.
 ```
-
 ## Modify an existing gadget snap
 
 When building your own [custom Ubuntu Core image](/how-to-guides/image-creation/add-custom-snaps), the gadget snap that you include can be  modified manually to include the kernel command line file.
@@ -173,4 +173,3 @@ Copying "pc_24-0.4_amd64.snap" (pc)
 ```
 
 The resultant image can now be installed on your device and will include your custom kernel command line options.
-

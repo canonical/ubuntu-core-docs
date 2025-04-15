@@ -14,7 +14,7 @@ The console-conf snap can be added to your own images in two different ways:
 
 The console-conf snap can be added to the model declaration just like any other snap. Add the following to the json definition for your model:
 
-```yaml
+```json
 {
     "name": "console-conf",
     "type": "app",

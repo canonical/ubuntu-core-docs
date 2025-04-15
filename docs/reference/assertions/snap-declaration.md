@@ -141,8 +141,7 @@ If this key evaluates to true, then this plug/slot combination is considered a v
 
 The following is an example `snap-declaration` assertion from the [modem-manager](https://snapcraft.io/modem-manager) snap:
 
-
-``` text
+```yaml
 type: snap-declaration
 format: 1
 authority-id: canonical
@@ -171,4 +170,3 @@ A8X9HXVGPmI2TGst36cBgjdd9f+jj9ZqISKs8jdHfPKEpOBdH4wo1rodXO1y/GxZeP2Z710qep4t
 8ynSRPi0l3boyM15D3IfnXMjLzUoace9vC6gltOHpW8GFPZvheQwknRvtfwRpZM2VsgaSw6cuz3+
 7K/m9/Ff04A86/gvRlzduXIjEvKJ
 ```
-

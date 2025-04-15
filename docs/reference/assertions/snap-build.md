@@ -8,7 +8,7 @@ Currently, the only usage of this assertion is to provide traceability between p
 
 The format is as follows:
 
-``` text
+```yaml
 type:              snap-build
 authority-id:      <authority account id>
 revision:          <int>
@@ -26,7 +26,7 @@ The index is the digest of the snap blob, `snap-sha3-384`. `grade` tells us whet
 
 An example for this assertion:
 
-``` text
+```yaml
 type: snap-build
 authority-id: ouMZ22pMaY5EVwoLozfjM4fR31bko4yj
 snap-sha3-384: UFLajZv9twDGKvqorGn7ddN_hMPuq0DNlh24VGblYQZSM7EzcLRKGdxdigi6DUti

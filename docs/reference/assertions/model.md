@@ -24,7 +24,7 @@ Model assertions for supported devices and systems can be found at [https://gith
 
 The following fields can be used in a model assertion:
 
-``` text
+```yaml
 type:                  model
 architecture           <debian architecture name>
 authority-id:          <authority account id>
@@ -106,11 +106,11 @@ The modes for which the component must be present can be specified as well. Synt
       <component-name-1>:
         presence: "optional"|"required"
         modes: [<mode-specifier>]               # list of modes, optional 
-	                                            # must be a subset of snap one
+                                                # must be a subset of snap one
                                                 # defaults to the same modes
                                                 # as the snap
       <component-name-2>: "required"|"optional" # presence, shortcut
-	                                            # syntax
+                                                # syntax
 ```
 
 ### Validation sets
@@ -124,7 +124,7 @@ The modes for which the component must be present can be specified as well. Synt
   * `prefer-enforce` initially enforces the validation-set before permitting it to be forgotten.
 
    The following is a sample _validation-sets_ declaration:
-   ```yaml
+   ```json
     "validation-sets": [
         {
            "account-id": <account-id>,
@@ -144,7 +144,7 @@ See [Assertion format](/reference/assertions/index.md#assertion-format) for deta
 
 The following is a JSON input for an example Ubuntu Core model assertion based on `ubuntu-core-22-amd64`:
 
-``` yaml
+```json
 {
     "type": "model",
     "series": "16",

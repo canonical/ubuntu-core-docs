@@ -6,7 +6,6 @@ Ubuntu One is a single sign-on service (SSO) for Ubuntu and its affiliated proje
 
 See below for details on how to create an account, login, and retrieve your developer account details.
 
----
 ## Create an Ubuntu One account
 
 You will need an [Ubuntu One account](https://snapcraft.io/account) with an uploaded public key of a locally generated SSH key pair. 

@@ -5,7 +5,10 @@ Ubuntu Core and its applications run within a confined and transaction-based env
 
 Application management, system configuration and update schedules in Ubuntu Core are managed by *snapd*, the snap packaging daemon. Snap features are explained comprehensively in the [Snap documentation](https://snapcraft.io/docs), while our [Ubuntu Core documentation](https://ubuntu.com/core/docs) handles the elements of the _snap_ ecosystem that are specifically applicable to Ubuntu Core.
 
-> While Ubuntu Core is primarily intended for developers to build custom images tailored for their application and targeted hardware, this page is a great place to start after you've just installed [pre-built Ubuntu Core images](/tutorials/try-pre-built-images/index) and want to learn a few of the basic principles quickly.
+```{admonition} Create your own images
+:class: tip
+While Ubuntu Core is primarily intended for developers to build custom images tailored for their application and targeted hardware, this page is a great place to start after you've just installed [pre-built Ubuntu Core images](/tutorials/try-pre-built-images/index) and want to learn a few of the basic principles quickly.
+```
 
 ## Quickstart project
 

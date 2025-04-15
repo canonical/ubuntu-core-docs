@@ -58,11 +58,10 @@ Two YAML keys are used to describe your target device:
              <key>: <value>  
    ```
    
-```{warning}
-Defaults only become available during snap installation.</br></br>
+```{admonition} Defaults only become available during snap installation.
+:class: warning
 
 Values in `defaults:` (other than `system:`) are not consumed and do not become available until either the [configure hook](https://snapcraft.io/docs/supported-snap-hooks#heading--the-configure-hook) or the [default-configure hook](https://snapcraft.io/docs/supported-snap-hooks#heading--default-configure) are run as part of the corresponding snap installation. `system:` values are set immediately.
-
 ```
 
 - **volumes** (YAML sub-section, required): the volumes layout, where each disk image is represented as a YAML sub-section.

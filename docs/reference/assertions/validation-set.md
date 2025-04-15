@@ -1,7 +1,6 @@
 (reference-assertions-validation-set)=
 # validation-set
 
-
 A validation set is an assertion that lists specific snaps that are either required to be installed together or are permitted to be installed together on a device or system.
 
 One or more validation sets can be used to ensure only specific snaps are installed, and optionally, only specific snaps at fixed revisions. They can help a set of interdependent snaps maintain their testing and certification integrity, as well as help orchestrate their updates. But they can equally be used to simplify dependency deployment and to help manage devices.
@@ -10,21 +9,21 @@ For more information on its usage with snaps, see the [Snapcraft documentation](
 
 The validation-set assertion format is as follows:
 
-``` text
-type:			validation-set
-authority-id: 	<authority account id>
-series: 		<list of series which should accept this assertion>
-account-id: 	<account id>
-name: 			<validation set name>
-revision: 		<int>
-sequence: 		<int>
+```yaml
+type:           validation-set
+authority-id:   <authority account id>
+series:         <list of series which should accept this assertion>
+account-id:     <account id>
+name:           <validation set name>
+revision:       <int>
+sequence:       <int>
 snaps:
-  - name: 	  <snap name>
-    id:		  <snap id>
+  - name:       <snap name>
+    id:         <snap id>
     presence: [required|optional|invalid]  # Optional, defaults to required.
     revision: <n> # The revision of the snap. Optional.
     
-timestamp:			<UTC datetime>
+timestamp:          <UTC datetime>
 sign-key-sha3-384:  <key id> # Encoded key id of signing key
 
 <signature>                 # Encoded signature
@@ -46,7 +45,7 @@ The above template validation set assertion needs to be populated with the detai
    
 An example of this type:
 
-``` text
+```yaml
 type: validation-set
 authority-id: example-account
 series: 16

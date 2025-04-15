@@ -13,7 +13,7 @@ The `make-system-user` snap can is used to create a composite assertion file whi
 
 The following fields can be used in an account-key user assertion:
 
-``` text
+```yaml
 type:                account-key
 authority-id:        <authority account id>
 revision:            <int>
@@ -44,7 +44,7 @@ See [Assertion format](/reference/assertions/index.md#assertion-format) for more
 
 The following is Canonical's public key for the store:
 
-``` text
+```yaml
 type: account-key
 authority-id: canonical
 revision: 2

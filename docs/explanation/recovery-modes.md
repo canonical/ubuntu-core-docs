@@ -20,7 +20,8 @@ After the re-initialisation process has completed, you will need to step through
 
 See [Installation steps](/tutorials/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager) for further details on how the installation will proceed.
 
-```{warning}
+```{admonition} Re-installation failure
+:class: caution
 
 Re-installation can fail if a device's TPM is assigned to a previous installation. To solve this issue, reset or clear the TPM assignment from the device's BIOS before selecting reinstall as a recovery mode.
 ```
@@ -46,4 +47,3 @@ In particular, the contents of the [ubuntu-save](/explanation/core-elements/stor
 This is a dangerous option and should only be performed when you are certain the data on a device data is either backed-up or unwanted.
 
 Additionally, the [install-device hook](/explanation/how-installation-works.md#the-install-device-hook) may optionally be executed with a factory-reset.
-

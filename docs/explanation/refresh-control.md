@@ -7,7 +7,8 @@ However, some projects can benefit from holding a deployed snap, or a set of sna
 
 A snap’s [revision](https://snapcraft.io/docs/glossary#heading--revision) is an automatic number assigned by the Snap Store to give each snap build a unique identity within its channel. Refresh control allows specific snaps to be kept at a specified revision, even when a new or different revision of a snap is released.
 
-```{tip}
+```{admonition} Refresh control with validation sets
+:class: tip
 Another possible refresh control solution is to use a _validation set_. A validation set can be used to ensure only specific snaps are installed, and optionally, only specific snaps at fixed revisions. See [Validation sets](https://snapcraft.io/docs/validation-sets) for further details.
 ```
 
@@ -232,8 +233,8 @@ Signing validations assertion for facundo-gated=5
 In this example, if `roadmr-gating` is installed on a device, `roadmr-gated` will only install or refresh to revision 2, and `facundo-gated` will only install or refresh to revision 5.
 
 
-```{caution}
-
+```{admonition} Installing new snaps after updated validation assertion
+:class: caution
 If a validation assertions is updated to include additional snaps, the new snaps will not be installed automatically. They will instead need to be installed locally through the _snap_ command or through the [snapd REST API](https://snapcraft.io/docs/snapd-api#heading--snaps-post).
 ```
 

@@ -25,9 +25,8 @@ Use of the Brand Account and its credentials should be strictly limited. Canonic
 
 When the Brand Account generates keys, they are only stored locally in ( ~/.snap/gnupg). These keys must be kept safe.
 
-```{caution}
-Enable two-factor authentication
-
+```{admonition} Enable two-factor authentication
+:class: caution
 We recommend enabling two-factor authentication on all Ubuntu SSO accounts, but especially the brand and administrator accounts described below. See [SSO two-factor authentication](https://help.ubuntu.com/community/SSO/2FactorAuthentication) for details.
 ```
 

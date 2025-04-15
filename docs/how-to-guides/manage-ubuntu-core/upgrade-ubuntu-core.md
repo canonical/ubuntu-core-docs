@@ -7,7 +7,9 @@ A device can be upgraded to a later Ubuntu Core release if it has:
 - **identical storage layout**: layouts are identical unless they've been manually reconfigured.
 - **consistent base and system snaps**: significant differences will cause an upgrade to fail.
 
-It is not currently possible to upgrade from releases earlier than UC20, or from either a UC20 reference image or a reference [model assertion](/reference/assertions/model), including those available on [https://cdimage.ubuntu.com/ubuntu-core/20](https://cdimage.ubuntu.com/ubuntu-core/20). However, reference model assertions can be easily modified to build a [custom image](/tutorials/build-your-first-image/index) that can be upgraded. 
+It is not currently possible to upgrade from releases earlier than UC20, or from either a UC20 reference image or a reference [model assertion](/reference/assertions/model), including those available on [https://cdimage.ubuntu.com/ubuntu-core/20](https://cdimage.ubuntu.com/ubuntu-core/20). 
+
+Reference model assertions can be easily modified to build a [custom image](/tutorials/build-your-first-image/index) that can be upgraded. 
 
 Upgrades are performed by [remodelling](/explanation/remodelling), which is the process of replacing one model assertion with another on a deployed system. For an upgrade from UC20 to UC22, for example, this means updating the base and system snaps in a UC20 model assertion with their UC22 counterparts.
 
