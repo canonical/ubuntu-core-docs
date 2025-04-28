@@ -16,6 +16,7 @@
 # Old top level
 uc24 reference/release-notes/
 reference/docs-guidelines/ contributing/
+how-to-guides/ how-to/
 
 # Tutorials
 
