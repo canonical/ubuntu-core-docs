@@ -41,6 +41,7 @@ first-steps/ how-to-guides/using-ubuntu-core/
 image-building/ how-to-guides/image-creation/
 use-ubuntu-image/  how-to-guides/image-creation/use-ubuntu-image/
 custom-snaps/  how-to-guides/image-creation/add-custom-snaps/
+custom-images/  how-to-guides/image-creation/add-custom-snaps/
 splash-screen/ how-to-guides/image-creation/add-a-splash-screen/
 console-conf/ how-to-guides/image-creation/add-console-conf/
 preseeding/ how-to-guides/image-creation/optimise-boot-speed/
