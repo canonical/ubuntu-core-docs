@@ -14,12 +14,17 @@ You can try Ubuntu Core without any specific hardware from within a virtual mach
 
 * [Install on a VM](install-on-a-vm): Try Ubuntu Core on on a local machine
 
-## Install on a device
+## Install on a generic device
 
 Ubuntu Core runs on a large range of hardware, and pre-built images are available for amd64 and Raspberry Pi reference platforms.
 
 - [Use Raspberry Pi imager](install-on-a-device/use-raspberry-pi-imager): install a pre-built Ubuntu Core image on a Raspberry Pi
 - [Use the dd command](install-on-a-device/use-the-dd-command): write an Ubuntu Core reference image to internal storage
+
+## Install on a specific device
+
+- [Install on a Renesas RZ/G2L](install-on-a-device/install-on-renesas): Create an image to run on a Renesas RZ/G2L <install-on-renesas>
+
 
 ```{toctree}
 :hidden:

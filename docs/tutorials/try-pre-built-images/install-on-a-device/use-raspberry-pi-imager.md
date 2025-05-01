@@ -1,6 +1,6 @@
 # Use Raspberry Pi Imager
 
-Ubuntu Core runs on a large range of hardware, and pre-built images are available for _amd64_ and Raspberry Pi reference platforms.
+Ubuntu Core runs on a large range of hardware, and pre-built images are available for _amd64_, Raspberry Pi, and other reference platforms.
 
 Installation on a reference platform is easy and a great way to quickly get started with Ubuntu Core, or to explore Ubuntu Core's features and evaluate its potential.
 

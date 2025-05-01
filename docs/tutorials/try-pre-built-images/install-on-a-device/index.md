@@ -9,6 +9,12 @@ We recommend first users try pre-built Ubuntu Core images on a Raspberry Pi or I
 - [Use Raspberry Pi imager](use-raspberry-pi-imager): install a pre-built Ubuntu Core image on a Raspberry Pi
 - [Use the dd command](use-the-dd-command): write an Ubuntu Core reference image to internal storage
 
+## Install on a specific device
+
+We also provide instructions for building and installing an Ubuntu Core image on a specific device.
+
+[Install on a Renesas RZ/G2L](install-on-renesas): Install a pre-built testing image on a [Renesas RZ/G2L](https://www.renesas.com/en/products/microcontrollers-microprocessors/rz-mpus/rzg2l-general-purpose-mpu-dual-core-arm-cortex-a55-cpus-and-single-core-cortex-m33-cpu-3d-graphics-and)
+
 
 ```{toctree}
 :hidden:
@@ -18,4 +24,4 @@ We recommend first users try pre-built Ubuntu Core images on a Raspberry Pi or I
 
 Use Raspberry Pi imager <use-raspberry-pi-imager>
 Use the dd command <use-the-dd-command>
-
+Install on a Renesas RZ/G2L <install-on-renesas>
