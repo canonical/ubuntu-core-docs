@@ -11,7 +11,7 @@ Renesas RZ/G2L installation is accomplished in two stages; with the first stage 
 ```{admonition} Early access support for Renesas RZ/G2L 
  :class: warning
 
-Support for Renesas RZ/G2L is devices is currently in an _early access_ stage, and should not be considered appropriate for production deployment.
+Support for the Renesas RZ/G2L is currently at an _early access_ stage, and should not be considered appropriate for production deployment.
 
 Work is underway to support building Ubuntu Core production images for these boards.
 
