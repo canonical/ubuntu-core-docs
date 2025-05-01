@@ -1,13 +1,17 @@
-# Install Ubuntu Core on a Renesas RZ/G2L
+# Install a pre-build Ubuntu Core image on a Renesas RZ/G2L
+
+Pre-built images are ideal for exploration and experimentation of Ubuntu Core, but they are not intended for deployment or use at scale. They include snaps to provide an onboarding and evaluation experience, alongside an SSH connection, and these are unlikely to be required in your own Ubuntu Core deployment.
+
+You can find more information about building Core images in the [Build your first image](/tutorials/build-your-first-image/index) tutorial.
 
 Ubuntu Core runs on a large range of hardware, and pre-built images are available for the [Renesas RZ/G2L](https://www.renesas.com/en/products/microcontrollers-microprocessors/rz-mpus/rzg2l-general-purpose-mpu-dual-core-arm-cortex-a55-cpus-and-single-core-cortex-m33-cpu-3d-graphics-and).
 
-Installation is accomplished in two stages; with the first stage preparing the board and installing the bootloader, and the second stage installing the Ubuntu Core image.
+Renesas RZ/G2L installation is accomplished in two stages; with the first stage preparing the board and installing the bootloader, and the second stage installing the Ubuntu Core image.
 
-```{admonition} Beta support for Renesas RZ/G2L 
+```{admonition} Early access support for Renesas RZ/G2L 
  :class: warning
 
-Support for Renesas RZ/G2L is currently in beta and should not be considered appropriate for production deployment.
+Support for Renesas RZ/G2L is devices is currently in an _early access_ stage, and should not be considered appropriate for production deployment.
 ```
 ## Requirements
 
@@ -38,7 +42,7 @@ Before the bootloader can be installed, the Renesas RZ/G2L BOOT / Power Mode DIP
 
 This configuration enables SCIF (Serial Communication Interface with FIFO).
 
-Now connect the microUSB cable between your board and the host PC. This will be used for both power and to transfer the bootloader with UART. 
+Now connect the microUSB cable between your board and the host PC, for data, and then the USB Type-C cable for power. 
 
 ## Flash the bootloader
 
@@ -54,7 +58,7 @@ On the host machine, download the following Renesas boot assets (zip) archive:
 Unzip the archive and locate the file called `Flash_Writer_SCIF_RZG2L_SMARC_DDR4_2GB.mot`, the Renesas Flash Writer tool. Transfer this file to your device with the following command, replacing `/dev/USB0` with the host PC serial port connected to your device:
 
 ```bash
-cat Flash_Writer_SCIF_RZG2L_SMARC_DDR4_2GB.mo > /dev/USB0
+cat Flash_Writer_SCIF_RZG2L_SMARC_DDR4_2GB.mot > /dev/USB0
 ```
 
 When the transfer has completed, you will see the prompt return to the terminal.
@@ -69,7 +73,7 @@ tty -F /dev/ttyUSB0 921600
 
 Reconnect to the device, and run `XLS2` to initiate the flash transfer. When asked for the address, enter `11E00` and `00000`. Now close the connection.
 
-Back on the host machine, type the following to transfer the first part of the bootloader from the zip archive we downloaded (`bl2_bp-smarc-rzg2l_pmic.srec`) to the device:
+Type the following to transfer the first part of the bootloader from the zip archive we downloaded (`bl2_bp-smarc-rzg2l_pmic.srec`) to the device:
 
 ```
 sudo su
@@ -78,7 +82,7 @@ cat bl2_bp-smarc-rzg2l_pmic.srec > dev/ttyUSB0
 
 After the prompt has returned to the terminal, reconnect to the device and run `XLS2` again. When asked, this time enter `0000` and `1D200` for the addresses and close the connection.
 
-Back on the host machine, type the following to transfer final part of the bootloader from the zip archive we downloaded (`fip-smarc-rzg2l_pmic.srec`) to the device:
+Type the following to transfer final part of the bootloader from the zip archive we downloaded (`fip-smarc-rzg2l_pmic.srec`) to the device:
 
 ```
 sudo su
@@ -121,7 +125,9 @@ Ensure the SW1 DIP switch on the module is _not_ set to boot from the SD card (S
 
 In addition to the above, the BOOT / Power Mode DIP switches must also be set to the QSPI boot mode. You can now power on the board.
 
-From this point, it can take around five minutes for the system to instantiate itself. You will see typical Linux output on the screen, periods where there's just a flashing cursor, and messages like _Installing the system, please wait for a reboot_.  When this process has finished, you will see the following:
+![RZ DIP switch configuration for Ubuntu Core](https://assets.ubuntu.com/v1/b3dd3513-dip-01.png)
+
+From this point, it can take around 30 minutes for the system to instantiate itself. You will see typical Linux output on the screen, periods where there's just a flashing cursor, and messages like _Installing the system, please wait for a reboot_.  When this process has finished, you will see the following:
 
 `Press enter to configure.`
 
@@ -139,7 +145,7 @@ Press **Enter** again and you will be taken to the network setup page:
 
 ### Configure a network connection
 
-Network access is a requirement for Ubuntu Core, at least initially, and you have a choice about whether to use a wired connection (Ethernet) or Wi-Fi, if your Raspberry Pi supports it.
+Network access is a requirement for Ubuntu Core, at least initially, and you have a choice about whether to use a wired connection (Ethernet) or Wi-Fi.
 
 #### Wi-Fi
 
@@ -217,7 +223,7 @@ You can now connect to your Ubuntu Core machine with the _ssh_ command and your 
 
 For example:
 
-```no-highlight
+```bash
 $ ssh user@10.0.2.15
 The authenticity of host '192.168.1.68 (192.168.1.68)' can't be established.
 ED25259 key fingerprint is SHA256:VD5KH7hM5RxQ15mM70zyJvgmg.
@@ -231,6 +237,6 @@ designed for appliances, firmware and fixed-function VMs.
 
 As shown above, the first time you connect to a new device you will be asked to accept its authenticity. You can check the _ECDSA_ key fingerprint against the finger print shown on the screen after a first reboot. ECDSA is the second one listed.
 
-Congratulations! You have successfully downloaded, installed, and connected to a pre-built Ubuntu Core image on your Raspberry Pi.
+Congratulations! You have successfully downloaded, installed, and connected to a pre-built Ubuntu Core image on your Renesas RZ/G2L.
 
 See [First steps with Ubuntu Core](/how-to-guides/using-ubuntu-core) for an introduction to using your new Ubuntu Core installation or learn how to [build your Ubuntu Core image](/tutorials/build-your-first-image/index).
