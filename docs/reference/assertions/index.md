@@ -12,6 +12,7 @@ These are the currently used assertion types:
 
 - **[account](/reference/assertions/account)**: links an account name to its identifier and other properties
 - **[account-key](/reference/assertions/account-key)**: holds the public part of a key belonging to the account
+- **[confdb-schema](/reference/assertions/confdb-schema)**: describes the access rules and data schema for the configuration of a set of snaps or a facet of the system
 - **[model](/reference/assertions/model)**: brand-specified properties for the device, used to drive the building of an Ubuntu Core image
 - **[repair](/reference/assertions/repair)**: a unique assertion used to restore a device as a last resort feature
 - **[serial](/reference/assertions/serial)**: binds the device identity to the device's key by carrying the public part
