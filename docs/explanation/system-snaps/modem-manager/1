@@ -52,8 +52,8 @@ nmap <leader>di <Plug>ToggleDitto      " Turn Ditto on and off
 
 " If you don't want the autocmds, you can also use an operator to check
 " specific parts of your text:
-" vmap <leader>d <Plug>Ditto	       " Call Ditto on visual selection
-" nmap <leader>d <Plug>Ditto	       " Call Ditto on operator movement
+" vmap <leader>d <Plug>Ditto          " Call Ditto on visual selection
+" nmap <leader>d <Plug>Ditto          " Call Ditto on operator movement
 
 nmap =d <Plug>DittoNext                " Jump to the next word
 nmap -d <Plug>DittoPrev                " Jump to the previous word

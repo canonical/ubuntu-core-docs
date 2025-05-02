@@ -57,7 +57,7 @@ devices will be targeted.
 
 The following is an example repair assertion used by the testing suite at Canonical:
 
-```json	
+```json
 {
   "headers": {
     "architectures": [
