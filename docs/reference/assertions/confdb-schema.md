@@ -8,7 +8,7 @@ The assertion is composed of two main elements: a `views` header and a storage s
 
 In a sense, this assertion provides two schemas: the rules in each view act as a schema describing the "public" configuration space that snaps interact with, while the body of the assertion describes the schema of the stored data.
 
-## Confdb-schema assertion fields
+## confdb-schema assertion fields
 
 The format of the confdb-schema assertion is as follows:
 
