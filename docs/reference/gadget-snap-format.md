@@ -45,7 +45,7 @@ In the near future, we expect to add a RISC-V reference gadget snap to this list
 
 Two YAML keys are used to describe your target device:
 
-- **defaults** (YAML sub-section, optional): default configuration options for the defined snaps, applied on installation:	
+- **defaults** (YAML sub-section, optional): default configuration options for the defined snaps, applied on installation:
    ```yaml
    defaults:
          <snap id>:
@@ -231,16 +231,16 @@ volumes:
         # The offset from the beginning of the image. Defaults to right after
         # prior structure item. (optional)
         offset: <bytes> | <bytes/2^20>M | <bytes/2^30>G
-	
-	# OffsetWrite describes a 32-bit address within the volume at which the
-	# offset of the current structure will be written. When this feature was
-	# first implemented, the position could be specified as a byte-offset
-	# relative to the start of any named structure in the volume. However,
-	# its scope has now been limited to only accept a structure with an
-	# offset of 0, which implies the offset will always be absolute. This
-	# should not cause any issues as the only known use case for this is to
-	# set an address in an MBR. Writes outside of the first structure
-	# now also blocked.
+
+        # OffsetWrite describes a 32-bit address within the volume at which the
+        # offset of the current structure will be written. When this feature was
+        # first implemented, the position could be specified as a byte-offset
+        # relative to the start of any named structure in the volume. However,
+        # its scope has now been limited to only accept a structure with an
+        # offset of 0, which implies the offset will always be absolute. This
+        # should not cause any issues as the only known use case for this is to
+        # set an address in an MBR. Writes outside of the first structure
+        # now also blocked.
         # (optional)
         offset-write: [<name>+]<bytes> |
                       [<name>+]<bytes/2^20>M |
