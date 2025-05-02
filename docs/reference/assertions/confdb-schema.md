@@ -65,7 +65,7 @@ type:         confdb-schema
 authority-id: acme
 account-id:   acme
 name:         sensors
-summary:      Configure and read parameters for a series of temperature sensors
+summary:      Configuration for a series of temperature sensors
 timestamp:    2025-04-02T19:31:32Z
 views:
   configure-sensors:
@@ -83,18 +83,14 @@ views:
       -
         request: sensor-1.min-activation
         storage: min-value.sensor-1
-      -
-        request: sensor-1.sample-rate
-        storage: sample-rate.sensor-1
+        access: read
   read-sensor-2-params:
     summary:  Read sensor-2’s configuration
     rules:
-      -
-        request: sensor-2.min-activation
-        storage: min-value.sensor-2
-      -
+       -
         request: sensor-2.sample-rate
         storage: sample-rate.sensor-2
+        access: read
 body-length: 552
 sign-key-sha3-384: 74KHeq1foV...
 
