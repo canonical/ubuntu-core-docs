@@ -8,7 +8,7 @@ Ubuntu Core runs on a large range of hardware, and pre-built images are availabl
 
 Renesas RZ/G2L installation is accomplished in two stages; with the first stage preparing the board and installing the bootloader, and the second stage installing the Ubuntu Core image.
 
-```{admonition} Early access support for Renesas RZ/G2L 
+```{admonition} Early access support for Renesas RZ/G2L
  :class: warning
 
 Support for the Renesas RZ/G2L is currently at an _early access_ stage, and should not be considered appropriate for production deployment.
@@ -45,33 +45,41 @@ Before the bootloader can be installed, the Renesas RZ/G2L BOOT / Power Mode DIP
 
 This configuration enables SCIF (Serial Communication Interface with FIFO).
 
-Now connect the microUSB cable between your board and the host PC, for data, and then the USB Type-C cable for power. 
+Now connect the microUSB cable between your board and the host PC, for data, and then the USB Type-C cable for power.
 
 ## Flash the bootloader
 
-Power on the device and press the red button for 2 seconds, a new serial port will appear on your host PC under `/dev/USB*` (such as `/dev/USB0`). Set the baud rate for this port to `115200` with the following command, replacing `/dev/USB0*` with the host serial port for your PC:
+Power on the device and press the red button for 2 seconds, a new serial port will appear on your host PC under `/dev/ttyUSB*` (such as `/dev/ttyUSB0`). Set the baud rate for this port to `115200` with the following command, replacing `/dev/ttyUSB*` with the host serial port for your PC:
 
 ```
-tty -F /dev/ttyUSB0 115200
+stty -F /dev/ttyUSB0 115200
+```
+
+If you connect with the UART, you will see a welcoming prompt from the board:
+```
+(C) Renesas Electronics Corp.
+-- Load Program to System RAM ---------------
+please send !
 ```
 
 On the host machine, download the following Renesas boot assets (zip) archive:
 [Renesas boot assets](https://people.canonical.com/~platform/images/renesas-iot/uc24/bootassets_core_rzg2l.zip)
 
-Unzip the archive and locate the file called `Flash_Writer_SCIF_RZG2L_SMARC_DDR4_2GB.mot`, the Renesas Flash Writer tool. Transfer this file to your device with the following command, replacing `/dev/USB0` with the host PC serial port connected to your device:
+Unzip the archive and locate the file called `Flash_Writer_SCIF_RZG2L_SMARC_DDR4_2GB.mot`, the Renesas Flash Writer tool. Transfer this file to your device with the following command, replacing `/dev/ttyUSB0` with the host PC serial port connected to your device:
 
 ```bash
-cat Flash_Writer_SCIF_RZG2L_SMARC_DDR4_2GB.mot > /dev/USB0
+sudo su
+cat Flash_Writer_SCIF_RZG2L_SMARC_DDR4_2GB.mot > /dev/ttyUSB0
 ```
 
-When the transfer has completed, you will see the prompt return to the terminal.
+When the transfer has completed, press Ctrl-C to return to you normal shell.
 
 We now need to open a serial console on the device itself, using a tool like [Minicom](https://help.ubuntu.com/community/Minicom) or `screen`.
 
 While connected to the device, run `SUP` to change the baud rate from 115200 to 921600. You will then need to disconnect and reset the baud rate for the serial port to 921600:
 
 ```
-tty -F /dev/ttyUSB0 921600
+stty -F /dev/ttyUSB0 921600
 ```
 
 Reconnect to the device, and run `XLS2` to initiate the flash transfer. When asked for the address, enter `11E00` and `00000`. Now close the connection.
@@ -80,7 +88,7 @@ Type the following to transfer the first part of the bootloader from the zip arc
 
 ```
 sudo su
-cat bl2_bp-smarc-rzg2l_pmic.srec > dev/ttyUSB0
+cat bl2_bp-smarc-rzg2l_pmic.srec > /dev/ttyUSB0
 ```
 
 After the prompt has returned to the terminal, reconnect to the device and run `XLS2` again. When asked, this time enter `0000` and `1D200` for the addresses and close the connection.
@@ -89,14 +97,14 @@ Type the following to transfer final part of the bootloader from the zip archive
 
 ```
 sudo su
-cat fip-smarc-rzg2l_pmic.srec > dev/ttyUSB0
+cat fip-smarc-rzg2l_pmic.srec > /dev/ttyUSB0
 ```
 
 When you regain control of the terminal, set the serial bitrate back to `115200`, power off the device, and change the DIP switches to `QSPI Boot Mode`, top right in the image above. The board is now preconfigured to accept the image.
 
 ## Write the Ubuntu Core image to the microSD card
 
-Next, download the Renesas RZ/G2L Ubuntu Core image: 
+Next, download the Renesas RZ/G2L Ubuntu Core image:
 [Renesas Ubuntu Core image](https://people.canonical.com/~platform/images/renesas-iot/uc24/ubuntu-core24-rzg2l.img.xz)
 
 We're going to use the Raspberry Pi Foundation's _Raspberry Pi Imager_ to write the Ubuntu Core image to the microSD card. Raspberry Pi Imager both downloads and safely installs an image to your microSD card.
@@ -117,6 +125,8 @@ After it's installed and running, you will see its main window showing buttons f
 3. Finally, select **Write**. A warning will state that all data on your selected device will be erased, so it's worth double checking your selection was correct. Select **Yes** if you're sure. You may then be asked for your password before the download, write and verification processes begin.
 
 When the process has finished, Raspberry Pi Imager will proclaim "Write Successful" and you can remove the card from the reader. It's now ready to be inserted into your device.
+
+If there's any errors during write, check your sd card. Optionally you might unpack the .xz archive and subsequently write the .img file with the Raspberry Pi imager.
 
 ## Boot Ubuntu Core for the first time
 
