@@ -118,31 +118,31 @@ After finishing all your edits, the completed **my-model.json** text file should
         {
             "name": "pi",
             "type": "gadget",
-            "default-channel": "24/edge",
+            "default-channel": "24/stable",
             "id": "YbGa9O3dAXl88YLI6Y1bGG74pwBxZyKg"
         },
         {
             "name": "pi-kernel",
             "type": "kernel",
-            "default-channel": "24/edge",
+            "default-channel": "24/stable",
             "id": "jeIuP6tfFrvAdic8DMWqHmoaoukAPNbJ"
         },
         {
             "name": "core24",
             "type": "base",
-            "default-channel": "latest/edge",
+            "default-channel": "latest/stable",
             "id": "dwTAh7MZZ01zyriOZErqd1JynQLiOGvM"
         },
         {
             "name": "snapd",
             "type": "snapd",
-            "default-channel": "latest/edge",
+            "default-channel": "latest/stable",
             "id": "PMrrV4ml8uWuEUDBT8dSGnKUYbevVhc4"
         },
         {
             "name": "console-conf",
             "type": "app",
-            "default-channel": "24/edge",
+            "default-channel": "24/stable",
             "id": "ASctKBEHzVt3f1pbZLoekCvcigRjtuqw"
         },
         {
