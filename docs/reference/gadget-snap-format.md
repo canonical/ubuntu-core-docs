@@ -89,6 +89,54 @@ Ubuntu Core typically uses the following storage partitions:
 
 The structure section lists entities with gadget data inside the image, most of which are partitions with a file system inside, with the exception of structures of type: bare, which can describe a region of data without a corresponding entry in the partition table.
 
+#### Volume-assignments
+
+The optional `volume-assignments` can be used to assign the same volume name to different devices, depending on whether a device is available to the system. The first available device in the list, from top to bottom, will get the assignment.
+
+They can be used, for example, to use the same gadget on multiple devices with differing volume configuration, such as using the same gadget for Raspberry 4 and Raspberry Pi 5 devices:
+
+```yaml
+  volume-assignments:
+  - assignment-name: rpi4b
+    assignment:
+      pi:
+        device: /dev/disk/by-path/platform-fe340000.mmc
+  - assignment-name: rpi5cm
+    assignment:
+      pi:
+        device: /dev/disk/by-path/platform-3f202000.mmc
+```
+
+The above example shows two potential storage device configurations for a volume called `pi`. The assignment names, such as `rpi4b` and `rpi5cm`, are only used for reference and in debugging output.
+
+#### eMMC support
+
+The `schema: emmc` option enables support for eMMC devices with updating boot slots.
+
+Two structure names are valid, `boot0` and `boot1`. These directly refer to the boot slots of the eMMC device, and allows updates to be specified for either slot with raw image content files that will be written to these slots during gadget install / refreshes:
+
+```yaml
+    my-emmc:
+      schema: emmc
+      structure:
+        - name: boot1
+          size: 1M
+          content:
+            - image: bootslot_1.img
+```
+
+Volumes using `schema: emmc` use the same `volume-assignments` syntax (see above) to assign different eMMC storage paths to a single primary volume name. The following shows this assignment for two different devices:
+
+
+```yaml
+  - assignment-name: rpi5cm
+    assignment:
+      pi:
+        device: /dev/disk/by-path/platform-3f202000.mmc
+      my-emmc:
+        device: /dev/disk/by-path/platform-3f202000.mmc
+```
+
 ### Dynamic kernel parameters
 
 There are two [system options](https://snapcraft.io/docs/system-options) that can be used to add new kernel boot parameters to a system that has been deployed and is running:
