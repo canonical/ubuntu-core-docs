@@ -10,7 +10,7 @@ The packages required to run console-conf are included in Ubuntu Core 22 images,
 
 The console-conf snap can be added to your own images in two different ways:
 
-### From within the model
+## From within the model
 
 The console-conf snap can be added to the model declaration just like any other snap. Add the following to the json definition for your model:
 
@@ -27,7 +27,7 @@ It's also included in the `ubuntu-core-24` [test image model declarations](https
 
 See [Create a model assertion](/tutorials/build-your-first-image/create-a-model) for more details.
 
-### Using the ubuntu-image command
+## Using the ubuntu-image command
 
 The [ubuntu-image](/) command is used to generate a bootable Ubuntu Core image from your source files. To build an image from the [ubuntu-core-24-amd64](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-amd64.model) model assertion for the pre-built images, for example, use the following command:
 
