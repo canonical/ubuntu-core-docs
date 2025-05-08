@@ -292,3 +292,20 @@ Type definitions can also take the form of a list of alternative types. When val
   }
 }
 ```
+
+### Ephemeral Data
+Paths to ephemeral data can be marked as such with a `ephemeral: true` field. This is supported by any schema type and does not apply any constraint to the data itself. It is only used by snapd to know whether a custodian might want to store it externally.
+
+```
+{
+  "schema": {
+    "name": "string",
+    "version": {
+      "type": "string",
+      "ephemeral": true
+    }
+  }
+}
+```
+
+The `ephemeral` field defaults to `false`, if omitted.
