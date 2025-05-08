@@ -28,7 +28,7 @@ The metric value can be set manually however when NetworkManager creates a conne
 * Ethernet is preferred over Wi-Fi
 * Wi-Fi is preferred over WWAN
 
-### Editing the routing tables
+## Editing the routing tables
 
 The routing table can be added or modified using the standard  `ip`  command which is available on Ubuntu Core. You can find more information on its [man page](https://linux.die.net/man/8/ip).
 
