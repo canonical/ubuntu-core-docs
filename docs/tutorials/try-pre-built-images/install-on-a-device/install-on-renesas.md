@@ -8,13 +8,12 @@ Ubuntu Core runs on a large range of hardware, and pre-built images are availabl
 
 Renesas RZ/G2L installation is accomplished in two stages; with the first stage preparing the board and installing the bootloader, and the second stage installing the Ubuntu Core image.
 
-```{admonition} Early access support for Renesas RZ/G2L
+```{admonition} Early access for Renesas RZ/G2L
  :class: warning
 
-Support for the Renesas RZ/G2L is currently at an _early access_ stage, and should not be considered appropriate for production deployment.
+Ubuntu Core images for Renesas RZ/G2L devices are currently at an _early access_ stage, and should not be considered appropriate for production deployment.
 
-Work is underway to support building Ubuntu Core production images for these boards.
-
+Work is underway to build Ubuntu Core production images for these boards.
 ```
 ## Requirements
 
