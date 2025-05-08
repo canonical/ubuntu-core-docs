@@ -49,10 +49,10 @@ sign-key-sha3-384:  <key id>                # Encoded key id of signing key
 
 The `views` header can have any number of views, each with a fine-grained set of rules and access controls tailored to a specific use case. Each view must contain a `rules` list with each rule describing how a particular configuration can be accessed from outside the system and where snapd should store and retrieve it:
 
-- **`storage`** (*required*)
-    A dotted path to a stored JSON value. Must not be prohibited by the storage schema declared in the body.
 - **`request`** (*optional*)
-    A dotted path describing how the snap or admin can access the value. If omitted, defaults to the storage path.
+    A dotted path describing how the configuration can be accessed. If omitted, defaults to the storage path. May contain placeholder path parts wrapped in curly brackets (see example) which match any request value. The placeholder value is mapped to an equally named placeholder in the storage path.
+- **`storage`** (*required*)
+    A dotted path to a stored JSON value. Must not be prohibited by the storage schema declared in the body. May contain placeholder path parts matching the ones in the request path.
 - **`access`** (*optional*)
     Access control for the given rule. Can be read-only, write-only or read-write. If omitted, defaults to read-write.
 - **`content`** (*optional*)
