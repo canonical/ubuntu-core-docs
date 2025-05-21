@@ -154,10 +154,10 @@ snap login
 snapcraft login
 ```
 
-See [Snapcraft overview](https://snapcraft.io/docs/snapcraft-overview) if _snapcraft_ is not installed. To retrieve the name of the key to sign the assertion with, use the `snapcraft keys` command:
+See [Snapcraft overview](https://snapcraft.io/docs/snapcraft-overview) if _snapcraft_ is not installed. To retrieve the name of the key to sign the assertion with, use the `snapcraft list-keys` command:
 
 ```bash
-$ snapcraft keys
+$ snapcraft list-keys
 Name         SHA3-384
 my-key-name  E-n0AOKPFjIyy4S_i9JxTT4tkuaZf7rP9D2mBNXjlgTGDjL8euFSlb87U0NPl
 ```
