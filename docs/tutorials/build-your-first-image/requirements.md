@@ -3,7 +3,7 @@
 In addition to having a basic understanding of Linux and running commands from the terminal, this tutorial requires the following:
 
 For the host system used to build the image:
-- [Ubuntu 22.04 LTS](https://releases.ubuntu.com/20.04/) or later installed
+- [Ubuntu 22.04 LTS](https://releases.ubuntu.com/22.04/) or later installed
 - MicroSD card reader
 - Internet connectivity
 - 10GB of free storage space
