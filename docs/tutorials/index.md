@@ -23,6 +23,12 @@ Pre-built test images are also available, for both x86-based PC-style hardware a
 
     Test a pre-built image within a VM, or by installing Ubuntu Core on either x86-based or ARM-based hardware.
 
+## Uninstall Ubuntu Core
+
+* [Uninstall Ubuntu Core](/tutorials/uninstall/index)
+
+    Learn how to remove Ubuntu Core from your device securely.
+
 ```{toctree}
 :hidden:
 :titlesonly:
@@ -31,3 +37,4 @@ Pre-built test images are also available, for both x86-based PC-style hardware a
 
 Build your first image <build-your-first-image/index>
 Try pre-built images <try-pre-built-images/index>
+Uninstall Ubuntu Core <uninstall/index>
