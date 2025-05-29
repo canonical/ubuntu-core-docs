@@ -65,7 +65,7 @@ This needs to be provided at the end of the process; we’ll come back to this.
 
 This section lists the snaps to be included in the image. **pi** (shown above), **pi-kernel**, **core24** and **snapd** are the four snaps required for a functioning Ubuntu Core device. The additional **console-conf** snap is required for Ubuntu Core 24 devices.
 
-[Console-conf](/how-to-guides/image-creation/add-console-conf) is the interactive setup utility that's used to configure the network and default user when the device is first booted. This is marked as optional, but for this tutorial we need this to be mandatory in our own image. To do this, delete the `"presence": "optional"` line (line 41) and delete the comma at the end of the preceding line.
+[Console-conf](/how-to-guides/image-creation/add-console-conf) is the interactive setup utility that's used to configure the network and the default user when the device is first booted. This is marked as optional, but for this tutorial, it needs to be mandatory to configure the device when it first boots. To do this, delete the `"presence": "optional"` line (line 41) and delete the comma at the end of the preceding line.
 
 Additional snaps are included using the same schema, with each snap requiring the following fields:
 - `name`: simply the snap name.

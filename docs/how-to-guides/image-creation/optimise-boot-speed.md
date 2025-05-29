@@ -33,7 +33,7 @@ or with ubuntu-image:
 sudo ubuntu-image snap --preseed --preseed-sign-key=<gpg-key-name> -i 8G --snap [...] <model-assertion>
 ```
 
-The `--preseed-sign-key` argument is optional and the default GPG key will be used if omitted. This is the brand GPG key.
+The `--preseed-sign-key` argument is optional and should be either the default GPG key or the key used to sign the model.
 
 A custom AppArmor features directory may be specified with `--apparmor-features-dir=...`. The target should be a snapshot of `sys/kernel/security/apparmor/features` from the target system. If not specified, the `sys/kernel/security/apparmor/features` from the host system will be used.
 

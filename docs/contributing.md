@@ -19,7 +19,7 @@ But even if you're an expert, we want the Academy to be place to  share knowledg
 The best way to get started is with our [task list](https://github.com/canonical/open-documentation-academy/issues) . Take a look, bookmark it, and see our [Getting started](https://discourse.ubuntu.com/t/getting-started/42769) guide for next steps.
 
 Stay in touch either through the task list, or through one of the following locations:
-- Our [discussion forum](https://discourse.ubuntu.com/c/open-documentation-academy) on the Ubuntu Community Hub.
+- Our [discussion forum](https://discourse.ubuntu.com/c/community/open-documentation-academy/166) on the Ubuntu Community Hub.
 - On [Matrix](https://matrix.to/#/#documentation:ubuntu.com) group for interactive chat.
 - And [follow us on Fosstodon](https://fosstodon.org/@CanonicalDocumentation) for the latest updates and events.
 
@@ -123,29 +123,6 @@ Consistency is vital in documentation, which is why we request contributors to f
 - Link check
 
 However, do not let this be a barrier to your contribution. You can still submit contributions to the best of your ability, and if something is inconsistent, we will fix it. We are targeting continuous improvement rather than delayed perfection.
-
-## Open Documentation Academy
-
-Our [Canonical Open Documentation Academy](https://discourse.ubuntu.com/t/about-the-open-documentation-academy/39615/3) is a great way to make your first open source documentation contributions to Ubuntu Core, snap and Snapcraft.
-
-The Academy is an initiative led by the documentation team at Canonical to provide help, advice, mentorship, and dozens of different tasks to get started on, within a friendly and encouraging environment. 
-
-A key aim of this initiative is to help lower the barrier into successful open-source software contribution, by making documentation into the gateway.
-
-But even if you're an expert, we want the Academy to be place to  share knowledge, a place to get involved with new developments, and somewhere you can ask for help on your own projects.
-
-The best way to get started is with our [task list](https://github.com/canonical/open-documentation-academy/issues) . Take a look, bookmark it, and see our [Getting started](https://discourse.ubuntu.com/t/getting-started/42769) guide for next steps.
-
-Get in touch either through the task list, or through one of the following locations:
-- Our [discussion forum](https://discourse.ubuntu.com/c/open-documentation-academy) on the Ubuntu Community Hub.
-- On [Matrix](https://matrix.to/#/#documentation:ubuntu.com) group for interactive chat.
-- And [follow us on Fosstodon](https://fosstodon.org/@CanonicalDocumentation) for the latest updates and events.
-
-If you’d like to ask us questions outside of our public forums, feel free to email us at [docsacademy@canonical.com](mailto:docsacademy@canonical.com).
-
-In addition to the above, we have a weekly **Documentation Office Hours** starting at 16:00 UTC every Friday. Everyone is welcome, and links and comments can be found on the [forum post](https://discourse.ubuntu.com/t/documentation-office-hours/42771).
-
-Finally, subscribe to our [Documentation event calendar](https://calendar.google.com/calendar/u/0?cid=Y19mYTY4YzE5YWEwY2Y4YWE1ZWNkNzMyNjZmNmM0ZDllOTRhNTIwNTNjODc1ZjM2ZmQ3Y2MwNTQ0MzliOTIzZjMzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). We’ll expand our Documentation Office Hours schedule and add other events throughout the year.
 
 ## Style and language
 

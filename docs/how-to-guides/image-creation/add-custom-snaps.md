@@ -15,32 +15,25 @@ _ubuntu-image_ tool retrieves signed snaps with the given _snap-id_ in the model
 grade: dangerous
 ```
 
-The `ubuntu-image` command will now build an image using locally sourced and built snaps, such as a custom gadget snap:
+The `ubuntu-image` command can now build an image using locally sourced and built snaps, such as a custom gadget snap:
 
 ```bash
-$ ubuntu-image snap my-model.model --snap ./pc_20-0.4_amd64.snap
-WARNING: proceeding to download snaps ignoring validations, this default will change in the future. For now use --validation=enforce for validations to be taken into account, pass instead --validation=ignore to preserve current behavior going forward
-Fetching snapd
-Fetching pc-kernel
-Fetching core20
-WARNING: "pc" installed from local snaps disconnected from a store cannot be refreshed subsequently!
-Copying "./pc_20-0.4_amd64.snap" (pc)
+ubuntu-image snap my-model.model --snap ./pc_20-0.4_amd64.snap
 ```
 
-You can now use the image to boot either real or virtual hardware. From within a running session on a custom image, you can run the pre-installed snap, such as `htop` in our example.
+It is also possible to pre-download the snaps included in a model assertion, and include them manually with the `--snap` flag. This uses the locally cached copies and can save download and build time, which is useful for testing.
 
-Use `snap list` to see which snaps are installed:
+You can now use the image to boot either real or virtual hardware. From within a running session on a custom image, you can run the pre-installed snap. Use `snap list` to see which snaps are installed:
 
 ```bash
 $ snap list
-Name       Version        Rev   Tracking       Publisher   Notes
-core20     20             634   latest/stable  canonical✓  base
-htop       3.0.2          1332  latest/stable  maxiberta   -
-pc         20-0.4         108   20/stable      canonical✓  gadget
-pc-kernel  5.4.0-54.60.1  642   20/stable      canonical✓  kernel
-snapd      2.47.1         9721  latest/stable  canonical✓  snapd
+Name       Version            Rev    Tracking       Publisher      Notes
+core20     20250429           2582   latest/stable  canonical✓     base
+pc         20-0.4             x1     -              -              gadget
+pc-kernel  5.4.0-214.234.1    2421   20/stable      canonical✓     kernel
+snapd      2.68.4             24505  latest/stable  canonical✓     snapd
+wormhole   0.16.0+2.g1bd72f3  509    latest/stable  snapcrafters✪  -
 ```
-
 
 The `snap model --assertion` command will show the read-only custom model assertion used to build the image:
 
@@ -53,7 +46,7 @@ brand-id: bJzr2XzZg6Qv6Z53HIeziXyxtn1XItIq
 model: ubuntu-core-20-amd64
 architecture: amd64
 base: core20
-grade: signed
+grade: dangerous
 snaps:
   -
     default-channel: 20/stable
