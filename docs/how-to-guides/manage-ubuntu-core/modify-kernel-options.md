@@ -1,7 +1,7 @@
 (how-to-guides-manage-ubuntu-core-modify-kernel-options)=
 # Modify kernel options
 
-When using the default GNU GRUB bootloader, kernel boot parameters can be customised without breaking the integrity of the TPM backed full disk encryption (requires snapd _2.50+_).
+When using the default GNU GRUB bootloader, kernel boot parameters can be customised without breaking the integrity of the TPM backed full disk encryption.
 
 Parameters can be modified either _statically_, by editing `cmdline` files, or _dynamically_, by  specific system settings (by dynamically we mean that snapd API can be used to set them, but the parameters do survive across reboots). Both of these methods are covered below.
 

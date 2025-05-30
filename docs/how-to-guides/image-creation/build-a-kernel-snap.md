@@ -518,9 +518,9 @@ plugs:
 
 ## Build the snap
 
-The build system must support [snap](https://snapcraft.io/docs/installing-snapd), and have both the [Snapcraft](https://snapcraft.io/docs/snapcraft-overview) build tool and the [LXD](https://canonical.com/lxd) virtualisation platform installed, all of which are provided by any Ubuntu release.
+The build system must support [snap](https://snapcraft.io/docs/installing-snapd), and have both the [Snapcraft](https://documentation.ubuntu.com/snapcraft/stable/how-to/setup/set-up-snapcraft/) build tool and the [LXD](https://canonical.com/lxd) virtualisation platform installed, all of which are provided by any Ubuntu release.
 
-Unlike broader snap packages, kernel snaps are typically built within the host environment using [snapcraft --destructive-mode](https://snapcraft.io/docs/build-options). This step can still be isolated from the host system by building the kernel with [LXD](https://linuxcontainers.org/lxd/introduction/). To do this, install LXD (if it's not already installed), instantiate an Ubuntu image (Ubuntu 20.04.4 LTS Focal Fossa), and create the kernel build there:
+Unlike broader snap packages, kernel snaps are typically built within the host environment using [snapcraft --destructive-mode](https://snapcraft.io/docs/build-options). This step can still be isolated from the host system by building the kernel with [LXD](https://linuxcontainers.org/lxd/introduction/), which also allows you to modify the LXD environment and to more easily rebuild the kernel snap. To do this, install LXD (if it's not already installed), instantiate an Ubuntu image and create the kernel build there:
 
 ```bash
 sudo snap install lxd

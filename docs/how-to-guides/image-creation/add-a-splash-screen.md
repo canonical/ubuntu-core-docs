@@ -52,7 +52,7 @@ The image will be scaled accordingly and images with a 2:1 aspect ratio work bes
 
 The most flexible way to change the appearance of the Ubuntu Core splash screen is to install a replacement [Plymouth](https://wiki.ubuntu.com/Plymouth) theme.
 
-While Plymouth itself supports a variety of different splash plugins, Ubuntu Core’s implementation only supports its [Scripts (script.so)]() plugin. This is the most flexible plugin as it provides its own feature-rich [scripting language](https://www.freedesktop.org/wiki/Software/Plymouth/Scripts/).  
+While Plymouth itself supports a variety of different splash plugins, Ubuntu Core’s implementation only supports its [Scripts](https://gitlab.freedesktop.org/plymouth/plymouth/-/tree/main/themes/script?ref_type=heads) plugin. This is the most flexible plugin as it provides its own feature-rich [scripting language](https://www.freedesktop.org/wiki/Software/Plymouth/Scripts/).  
 
 A new theme must be placed within a `/splash/plymouth/themes/vendor` directory in the root of the Gadget snap:
 

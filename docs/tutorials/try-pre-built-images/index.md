@@ -6,7 +6,7 @@ Pre-built images are ideal for exploration and experimentation, but they are not
 
 Ubuntu Core has instead been designed to facilitate creating, deploying, and managing secure custom images running on your hardware.
 
-See [Supported testing platforms](/reference/testing-platforms) for links to image downloads, ant to learn how to create your own custom image, read our [Build an image](/tutorials/build-your-first-image/index) guide.
+See [Supported testing platforms](/reference/testing-platforms) for links to image downloads, and to learn how to create your own custom image, read our [Build an image](/tutorials/build-your-first-image/index) guide.
 
 ## Install on a virtual machine
 

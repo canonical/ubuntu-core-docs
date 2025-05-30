@@ -33,7 +33,7 @@ The following are required by for the `system-user` assertion and by the creatio
 
 The snap daemon (_snapd_) can import these assertions through the `auto-import.assert` file on an external USB storage device. If those assertions are valid for the given system, a system user is created. After this, you can log into the device (locally or over SSH) using the username and password defined.
 
-### Inside model assertions
+### Model assertions
 
 Creating a valid system-user assertion is limited by the [model assertion](/reference/assertions/model) which contains store account ID defined as _brand-id_ and _authority-id,_ alongside the model name, _model_.
 

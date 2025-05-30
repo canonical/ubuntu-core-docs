@@ -1,8 +1,7 @@
 (how-to-guides-manage-ubuntu-core-set-system-options)=
 # Set system options
 
-
-Ubuntu Core supports a set of system-wide options that allow you to customise your snap and core environment. See [Configuration options](/) for which options are supported.
+Ubuntu Core supports a set of system-wide options that allow you to customise your snap and core environment. See [System options](https://snapcraft.io/docs/system-options) for which options are supported.
 
 As with [Configuration in snaps](https://snapcraft.io/docs/configuration-in-snaps), these options are changed with the `snap set` and `snap get` commands, but with a target of *system* instead of a specific snap:
 

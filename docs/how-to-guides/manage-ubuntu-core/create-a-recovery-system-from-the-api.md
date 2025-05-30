@@ -5,7 +5,7 @@ An [Ubuntu Core image](/tutorials/build-your-first-image/index) contains a recov
 
 One issue with this approach is that there may be snaps included in the recovery system that have since received security updates. This will have been updated automatically in the running system, but not in the image-based recovery system. 
 
-To resolve this, the recovery system [snapd REST API](https://snapcraft.io/docs/snapd-api#heading--systems-gethttps://snapcraft.io/docs/snapd-api#heading--systems-get) enables users to create new recovery systems with snaps that are constrained by a set of [validation-sets assertions](/reference/assertions/validation-set).
+To resolve this, the recovery system [snapd REST API](https://snapcraft.io/docs/snapd-api#heading--systems-get) enables users to create new recovery systems with snaps that are constrained by a set of [validation-sets assertions](/reference/assertions/validation-set).
 
 This is specifically useful for ensuring that a recovery system is built from a set of snaps with well known revisions.
 
@@ -65,10 +65,10 @@ curl -X POST --unix-socket /run/snapd.socket \
   -F 'test-system=true' \
   -F 'mark-default=true' \
   -F 'validation-sets=account-id/set-name=1' \
-  -F 'assertion=<validation-set.assert' \
-  -F 'assertion=<pc.assert' \
+  -F "assertion=$(cat validation-set.assert)" \
+  -F "assertion=$(cat pc.assert)" \
   -F 'snap=@pc.snap' \
-  -F 'assertion=<pc-kernel.assert' \
+  -F "assertion=$(cat pc-kernel.assert)" \
   -F 'snap=@pc-kernel.snap' \
   http://localhost/v2/systems
 ```
