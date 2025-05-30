@@ -3,7 +3,7 @@
 
 A device can be upgraded to a later Ubuntu Core release if it has:
 
-- **an assigned serial number**: from either a serial assertion or the Snap Store.
+- **an assigned serial number**: from either a [serial assertion](/reference/assertions/serial) or the Snap Store. 
 - **identical storage layout**: layouts are identical unless they've been manually reconfigured.
 - **consistent base and system snaps**: significant differences will cause an upgrade to fail.
 
@@ -143,26 +143,17 @@ The presence of a revision value permits an assertion to be updated to an update
 
 The updated model will need to be signed with the same key that the original model was signed with. See [Signing a model assertion](/tutorials/build-your-first-image/sign-the-model) for detailed instructions.
 
-Reference unsigned model assertions for both UC20 and UC22 can be found here: [https://github.com/snapcore/models](https://github.com/snapcore/models).
+Reference unsigned model assertions can be found here: [https://github.com/snapcore/models](https://github.com/snapcore/models).
 
 ## Perform the upgrade
 
 To manually upgrade a device running the original UC20 model assertion, first copy the signed and updated UC22 model assertion to the device. This can be accomplished in many ways, but _scp_ OpenSSH secure file copy is a good option:
 
 ```
-scp <uc22-model.model-assertion> <sso-account-name>@<device-ip>:/home/<sso-account-name>
+scp <new-model.model-assertion> <sso-account-name>@<device-ip>:/home/<sso-account-name>
 ```
 
-The final step is to run `sudo snap remodel <uc22-model.model-assertion>` on the device itself:
-
-```bash
-$ ssh <sso-account-name>@<device-ip>
-<ubuntu-core> $ sudo snap remodel my-uc22-model.model-assertion
-Download snap "pc-kernel" (991) from channel "22/beta"
-[...]
-```
-
-The process will take some time and will involve several device restarts before eventually completing. You can then reconnect and check it's been upgraded to UC22:
+The final step is to run `sudo snap remodel <new-model.model-assertion>` on the device itself. The process will take some time and will involve several device restarts before eventually completing. You can then reconnect and check the upgrade was successful:
 
 ```bash
 $ cat /etc/os-release
