@@ -15,6 +15,8 @@ We also provide instructions for building and installing an Ubuntu Core image on
 
 [Install on a Renesas RZ/G2L](install-on-renesas): Install a pre-built testing image on a [Renesas RZ/G2L](https://www.renesas.com/en/products/microcontrollers-microprocessors/rz-mpus/rzg2l-general-purpose-mpu-dual-core-arm-cortex-a55-cpus-and-single-core-cortex-m33-cpu-3d-graphics-and)
 
+[Install on a MediaTek Genio](install-on-mediatek): Install a pre-built testing image on a [MediaTek Genio](https://www.mediatek.com/products/iot/genio-iot)
+
 
 ```{toctree}
 :hidden:
@@ -25,3 +27,4 @@ We also provide instructions for building and installing an Ubuntu Core image on
 Use Raspberry Pi imager <use-raspberry-pi-imager>
 Use the dd command <use-the-dd-command>
 Install on a Renesas RZ/G2L <install-on-renesas>
+Install on a MediaTek Genio <install-on-mediatek>
