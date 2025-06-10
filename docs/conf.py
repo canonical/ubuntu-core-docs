@@ -1,7 +1,5 @@
 import datetime
 import ast
-import os
-import yaml
 
 # Configuration for the Sphinx documentation builder.
 # All configuration specific to your project should be done in this file.
@@ -151,24 +149,12 @@ html_context = {
     # Required for feedback button    
     'github_issues': 'enabled',
 }
-
-# TODO: To enable the edit button on pages, uncomment and change the link to a
-# public repository on GitHub or Launchpad. Any of the following link domains
-# are accepted:
-# - https://github.com/example-org/example"
-# - https://launchpad.net/example
-# - https://git.launchpad.net/example
-#
-# html_theme_options = {
-# 'source_edit_link': 'https://github.com/canonical/ubuntu-core-docs',
-# }
-
 # Project slug; see https://meta.discourse.org/t/what-is-category-slug/87897
 #
 # TODO: If your documentation is hosted on https://docs.ubuntu.com/,
 #       uncomment and update as needed.
 
-slug = 'core'
+# slug = ''
 
 
 # Template and asset locations
@@ -250,8 +236,7 @@ extensions = [
     "canonical_sphinx",
     "sphinxcontrib.cairosvgconverter",
     "sphinx_last_updated_by_git",
-    "sphinx.ext.intersphinx",
-    "sphinx_sitemap",
+    "sphinxext.rediraffe",
 ]
 
 # Excludes files or directories from processing
@@ -279,7 +264,6 @@ rediraffe_redirects = "redirects.txt"
 
 rst_epilog = """
 .. include:: /reuse/links.txt
-.. include:: /reuse/substitutions.txt
 """
 
 # Feedback button at the top; enabled by default
@@ -296,8 +280,8 @@ rst_epilog = """
 # NOTE: If set, adding ':manpage:' to an .rst file
 #       adds a link to the corresponding man section at the bottom of the page.
 
-# manpages_url = 'https://manpages.ubuntu.com/manpages/{codename}/en/' + \
-#     'man{section}/{page}.{section}.html'
+# manpages_url = f'https://manpages.ubuntu.com/manpages/{codename}/en/' + \
+#     f'man{section}/{page}.{section}.html'
 
 
 # Specifies a reST snippet to be prepended to each .rst file
@@ -315,24 +299,7 @@ rst_prolog = """
     :class: vale-ignore
 """
 
-# Sitemap configuration
-
-html_baseurl = 'https://documentation.ubuntu.com/core/'
-sitemap_url_scheme = "{link}"
-
 # Workaround for https://github.com/canonical/canonical-sphinx/issues/34
 
 if "discourse_prefix" not in html_context and "discourse" in html_context:
     html_context["discourse_prefix"] = html_context["discourse"] + "/t/"
-
-# Workaround for substitutions.yaml
-
-if os.path.exists('./reuse/substitutions.yaml'):
-    with open('./reuse/substitutions.yaml', 'r') as fd:
-        myst_substitutions = yaml.safe_load(fd.read())
-
-# Add configuration for intersphinx mapping
-
-intersphinx_mapping = {
-    'starter-pack': ('https://canonical-example-product-documentation.readthedocs-hosted.com/en/latest', None)
-}
