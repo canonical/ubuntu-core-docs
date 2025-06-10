@@ -49,13 +49,13 @@ The index is the tuple `< series`, `snap-id >`, and `snap-id` is a key with the 
 
 This assertion gives control on several aspects of the snap behaviour to the authority:
 
--   `refresh-control` gives a list of snaps that are gated when the one specified by `snap-id` is installed, so they are not automatically refreshed until they are "validated". Validation is performed by using [validation asserts](/core/docs/reference/assertions/validation), which specify the revision of the gated snap that should be installed if the gating snap has been installed.
+-   `refresh-control` gives a list of snaps that are gated when the one specified by `snap-id` is installed, so they are not automatically refreshed until they are "validated". Validation is performed by using [validation asserts](/reference/assertions/validation), which specify the revision of the gated snap that should be installed if the gating snap has been installed.
 
 -   `aliases` gives a list of the explicit aliases that we want to automatically enable when installing the snap. Aliases provide short names for applications contained in the snap, so we do not need to use the full command name `<snap-name>`.`<target-command>`. 
 
 -   `plugs` and `slots` define flags per interface. This lets define restrictions on how the snap plugs/slots used by the snap are handled. For instance, we can allow or deny connections with `allow-connection` and `deny-connection`. With `allow-auto-connection` or `deny-auto-connection` we let snapd know if it should automatically connect plugs/slots on snap installation.
 
-    See [Connection management](#connection-management) (below) for more details on  these restrictions, and see [snap-declaration store scoping](/) for more information on how auto-connections can be linked to a brand store.
+    See [Connection management](#connection-management) (below) for more details on  these restrictions, and see [snap-declaration store scoping](/explanation/stores/store-overview) for more information on how auto-connections can be linked to a brand store.
 
 See [Assertion format](/reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
 

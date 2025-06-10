@@ -20,7 +20,7 @@ This same process can be used to build Ubuntu Core images for various hardware a
 1. [Sign the model assertion](sign-the-model)
    1. [Create a key](sign-the-model.md#create-a-key)
    1. [Register the key](sign-the-model.md#register-the-key)
-   1. [Sign the model](sign-the-model.md#id1)
+   1. [Sign the model](sign-the-model.md#sign-the-model)
 1. [Build and write the image](build-the-image)
    1. [Compile the image](build-the-image.md#compile-the-image)
    1. [Write the image](build-the-image.md#write-the-image)

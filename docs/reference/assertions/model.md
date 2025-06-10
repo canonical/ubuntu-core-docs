@@ -63,7 +63,7 @@ The index for this assertion is the tuple \<`series`, `brand-id`, `model`\> and 
    * `prefer-encrypted`: do encrypt if the hardware supports it.
    * `encrypted`: ensure encryption is used and fail if the device does not support it.
 
-- `system-user-authority` is used to list a set of account IDs that are authorised to sign system user assertions for any image built with the assertion. See [Specifying system-user-authority](/how-to-guides/manage-ubuntu-core/add-a-system-user.md#-specifying-system-user-authority) for more details.
+- `system-user-authority` is used to list a set of account IDs that are authorised to sign system user assertions for any image built with the assertion. See [Specifying system-user-authority](/how-to-guides/manage-ubuntu-core/add-a-system-user.md#specifying-system-user-authority) for more details.
 
 - `timestamp` can be generated with the ` date -Iseconds --utc` command.
 
@@ -95,7 +95,7 @@ For "recovery" and "install" modes, "ephemeral" can be used. This will install t
 
 ### Components
 
-A [component](/) is part of a snap that has been declared as optional. Models need to specify which snap components should be included in an image as they are not installed by default. 
+A [component](https://snapcraft.io/docs/components) is part of a snap that has been declared as optional. Models need to specify which snap components should be included in an image as they are not installed by default. 
 
 They're added as a structured list with a single `presence` attribute for whether each component is required or options. If required, the component must be in the image seed.
 

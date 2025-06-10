@@ -3,17 +3,7 @@
 
 Gadget snaps define and manipulate device-specific configuration and system properties, such as partition layouts and default configuration options. Building a gadget snap enables these device-specific options to be set and integrated within an Ubuntu Core image.
 
-This page includes an overview of what a gadget snap includes, plus templates for building the gadget and the snap.
-
-- [Inside a gadget snap](#heading--inside)
-	- [Template: gadget.yaml](#heading--template-gadget), used to build the gadget
-	- [Template: snapcraft.yaml](#heading--template-snapcraft), used to build the snap
-- [Build the snap](#heading--building)
-	- [Cross-building](#heading--building-crossbuilding)
-	- [Native building](#heading--building-native)
-	    
-
-See [Gadget snaps](/reference/gadget-snap-format) for reference details on what gadget snaps can contain, and see [Types of snap](/explanation/core-elements/snaps-in-ubuntu-core.md#types-of-snap) for details on the other types of snap that make up an Ubuntu Core image. 
+This page includes an overview of what a gadget snap includes, plus templates for building the gadget and the snap. See [Gadget snaps](/reference/gadget-snap-format) for reference details on what gadget snaps can contain, and see [Types of snap](/explanation/core-elements/snaps-in-ubuntu-core.md#types-of-snap) for details on the other types of snap that make up an Ubuntu Core image. 
 
 ## Inside a gadget snap
 

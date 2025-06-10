@@ -17,7 +17,7 @@ Work is underway to build Ubuntu Core production images for these boards.
 ```
 ## Requirements
 
-In addition to having a basic understanding of Linux and running commands from the terminal and an [Ubuntu One](tutorials/build-your-first-image/access-ubuntu-one) account, you will need the following:
+In addition to having a basic understanding of Linux and running commands from the terminal and an [Ubuntu One](/tutorials/build-your-first-image/access-ubuntu-one) account, you will need the following:
 
 For the used to write the images:
 - [Ubuntu 24.04 LTS](https://releases.ubuntu.com/24.04/) or later installed

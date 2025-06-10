@@ -90,7 +90,7 @@ The output includes the _img_ file itself, alongside a _seed.manifest_ file. The
 
 Snaps can be optionally added at build time with the '--snap' argument.
 
-These additional snaps can include [custom snaps](/how-to-guides/image-creation/add-custom-snaps), locally-stored [offline snaps](/explanation/remodelling.md#offline-remodelling-with-offline), and snaps that can be downloaded directly from the store.
+These additional snaps can include [custom snaps](/how-to-guides/image-creation/add-custom-snaps), locally-stored [offline snaps](/explanation/remodelling.md#offline-remodelling), and snaps that can be downloaded directly from the store.
 
 - **Custom snaps** can only be added when a [model](/reference/assertions/model) has a `grade` attribute of `dangerous` 
 - Production-grade images cannot include custom snaps, and additional snaps must first be declared with a `presence` attribute of `optional` in the model.

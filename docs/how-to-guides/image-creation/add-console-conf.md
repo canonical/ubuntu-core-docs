@@ -29,7 +29,7 @@ See [Create a model assertion](/tutorials/build-your-first-image/create-a-model)
 
 ## Using the ubuntu-image command
 
-The [ubuntu-image](/) command is used to generate a bootable Ubuntu Core image from your source files. To build an image from the [ubuntu-core-24-amd64](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-amd64.model) model assertion for the pre-built images, for example, use the following command:
+The [ubuntu-image](/how-to-guides/image-creation/use-ubuntu-image) command is used to generate a bootable Ubuntu Core image from your source files. To build an image from the [ubuntu-core-24-amd64](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-amd64.model) model assertion for the pre-built images, for example, use the following command:
 
 ```bash
 ubuntu-image snap ubuntu-core-24-amd64.model

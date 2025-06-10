@@ -178,5 +178,5 @@ Interfaces can be declared either per-snap or per-command:
 - if declared per-snap, all the commands within the snap have the interface security policy added to each command’s security policy when the interface is connected
 - if declared per-command, only the commands within the snap that declare use of the interface have the specified interface security policy added to them
 
-An interface may either auto-connect upon install, or require the user to manually connect them. Interface connections and disconnections are performed via the  `snap connect`  and  `snap disconnect` commands. See [interfaces](/) for details.
+An interface may either auto-connect upon install, or require the user to manually connect them. Interface connections and disconnections are performed via the  `snap connect`  and  `snap disconnect` commands. See [interfaces](https://snapcraft.io/docs/interfaces) for details.
 
