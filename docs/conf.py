@@ -320,6 +320,11 @@ myst_heading_anchors = 3
 
 # Add configuration for intersphinx mapping
 
+## Sitemap configuration
+
+html_baseurl = 'https://documentation.ubuntu.com/core/'
+sitemap_url_scheme = "{link}"
+
 intersphinx_mapping = {
     'starter-pack': ('https://canonical-example-product-documentation.readthedocs-hosted.com/en/latest', None)
 }
