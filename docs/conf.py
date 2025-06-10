@@ -332,6 +332,10 @@ if os.path.exists('./reuse/substitutions.yaml'):
     with open('./reuse/substitutions.yaml', 'r') as fd:
         myst_substitutions = yaml.safe_load(fd.read())
 
+# Depth of heading anchors generated
+
+myst_heading_anchors = 3
+
 # Add configuration for intersphinx mapping
 
 intersphinx_mapping = {

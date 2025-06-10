@@ -115,7 +115,7 @@ In order to contribute, you will need to set up a [GitHub](https://github.com/) 
 
 The navigational structure, style, and content of our documentation follows the Diátaxis systematic framework for technical documentation. This categorizes the documentation into tutorials, how-to guides, reference material and explanatory text.
 
-Consistency is vital in documentation, which is why we request contributors to follow the {ref}`style-guide`. We also set up the following GitHub actions to run automatically on every pull request raised against our docs repository:
+Consistency is vital in documentation, which is why we request contributors to follow the [style-guide](https://docs.ubuntu.com/styleguide/en/). We also set up the following GitHub actions to run automatically on every pull request raised against our docs repository:
 
 - Inclusive language check
 - Spellcheck
