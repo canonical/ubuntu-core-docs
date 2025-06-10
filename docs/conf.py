@@ -1,7 +1,5 @@
 import datetime
 import ast
-import os
-import yaml
 
 # Configuration for the Sphinx documentation builder.
 # All configuration specific to your project should be done in this file.
@@ -151,24 +149,12 @@ html_context = {
     # Required for feedback button    
     'github_issues': 'enabled',
 }
-
-# TODO: To enable the edit button on pages, uncomment and change the link to a
-# public repository on GitHub or Launchpad. Any of the following link domains
-# are accepted:
-# - https://github.com/example-org/example"
-# - https://launchpad.net/example
-# - https://git.launchpad.net/example
-#
-# html_theme_options = {
-# 'source_edit_link': 'https://github.com/canonical/ubuntu-core-docs',
-# }
-
 # Project slug; see https://meta.discourse.org/t/what-is-category-slug/87897
 #
 # TODO: If your documentation is hosted on https://docs.ubuntu.com/,
 #       uncomment and update as needed.
 
-slug = 'core'
+# slug = ''
 
 
 # Template and asset locations
@@ -280,7 +266,6 @@ rediraffe_redirects = "redirects.txt"
 
 rst_epilog = """
 .. include:: /reuse/links.txt
-.. include:: /reuse/substitutions.txt
 """
 
 # Feedback button at the top; enabled by default
@@ -297,8 +282,8 @@ rst_epilog = """
 # NOTE: If set, adding ':manpage:' to an .rst file
 #       adds a link to the corresponding man section at the bottom of the page.
 
-# manpages_url = 'https://manpages.ubuntu.com/manpages/{codename}/en/' + \
-#     'man{section}/{page}.{section}.html'
+# manpages_url = f'https://manpages.ubuntu.com/manpages/{codename}/en/' + \
+#     f'man{section}/{page}.{section}.html'
 
 
 # Specifies a reST snippet to be prepended to each .rst file
@@ -315,11 +300,6 @@ rst_prolog = """
 .. role:: vale-ignore
     :class: vale-ignore
 """
-
-# Sitemap configuration
-
-html_baseurl = 'https://documentation.ubuntu.com/core/'
-sitemap_url_scheme = "{link}"
 
 # Workaround for https://github.com/canonical/canonical-sphinx/issues/34
 
