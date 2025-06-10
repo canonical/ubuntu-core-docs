@@ -63,7 +63,7 @@ See [Add customs snaps](/how-to-guides/image-creation/add-custom-snaps) for inst
 
 ## Device authentication
 
-When a device boots for the first time, it obtains a signed [serial assertion](/reference/assertions/serial) from a [Serial vault](/). Each device can then be authenticated with the dedicated Snap Store using the model assertion's _model name_ and an authentication token called a **macaroon**. 
+When a device boots for the first time, it obtains a signed [serial assertion](/reference/assertions/serial) from a [Serial vault](https://canonical-serial-vault.readthedocs-hosted.com/). Each device can then be authenticated with the dedicated Snap Store using the model assertion's _model name_ and an authentication token called a **macaroon**. 
 
 ![image](https://assets.ubuntu.com/v1/6a584f30-brand-store-4.png)
 

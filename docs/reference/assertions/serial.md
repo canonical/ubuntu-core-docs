@@ -30,7 +30,7 @@ BODY: map of hardware constraints/details  # expected to be YAML
 
 The index is the tuple \<`brand-id`, `model`, `serial`\>, with `serial` being the unique identifier for a device. `brand-id` and `model` must match those used by the device's [model assertion](/reference/assertions/model).
 
-- `serial` is crucial. In the context of the _model_, this this defines the unique identifier for a single device. The [brand](/explanation/stores/dedicated-snap-stores) should never assign the same serial to more than one device of the same model.
+- `serial` is crucial. In the context of the _model_, this this defines the unique identifier for a single device. The [brand](/explanation/stores/dedicated-snap-store) should never assign the same serial to more than one device of the same model.
 
 - `device-key` is also unique to each device, and takes the same format used by the key in the [account-key assertion](/reference/assertions/account-key).
 

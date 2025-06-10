@@ -11,7 +11,7 @@ This page attempts to guide users to either an appropriate solution to their iss
 
 Installing Ubuntu Core on a device with a TPM (such as an Intel NUC, or QEMU with emulated TPM) can sometimes result in a stalled installation and a **TPM is in DA Lockout Mode** error, as shown in the following example install log:
 
-```no-highlight
+```bash
 ubuntu snapd[15531]: handlers install.go:254:
    make system runnable
 ubuntu snapd[115531]: secboot_tpm.go:483: 

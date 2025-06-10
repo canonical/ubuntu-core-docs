@@ -28,7 +28,7 @@ The [systemd-bootchart](https://manpages.ubuntu.com/manpages/jammy/man1/systemd-
 _Bootchart_ collects metrics on CPU load, memory usage and process resources during a system boot. On Ubuntu Core, the sample collector will run until the system is seeded, stopping when when the `snapd.seeded.service` stops. It then renders these details as text and charts into an SVG-formatted image file.
 
 ![Ubuntu Core bootchart graphs](https://assets.ubuntu.com/v1/d39bae51-bootchart-graph.png)
-This feature is enabled either as a [Static boot option](/how-to-guides/manage-ubuntu-core/modify-kernel-option.md#static-boot-option-modifications) in the gadget snap, or as a [Dynamic parameter modification](/how-to-guides/manage-ubuntu-core/modify-kernel-option.md#dynamic-kernel-parameter-modifications) with the `snap set` command:
+This feature is enabled either as a [Static boot option](/how-to-guides/manage-ubuntu-core/modify-kernel-options.md#static-boot-option-modifications) in the gadget snap, or as a [Dynamic parameter modification](/how-to-guides/manage-ubuntu-core/modify-kernel-options.md#dynamic-kernel-parameter-modifications) with the `snap set` command:
 
 ```
 snap set system system.kernel.dangerous-cmdline-append="ubuntu_core.bootchart"

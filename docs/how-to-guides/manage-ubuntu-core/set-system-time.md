@@ -20,7 +20,7 @@ The system time value and update process is tightly coupled to the [boots proces
    - **on devices without an RTC**
       System time is taken from the modified file timestamp (mtime) of `/var/lib/systemd/timesync/clock` on the data partition (which may be encrypted). The timestamp for this file is updated periodically after a network connection has been established, and before the system reboots.
   
-   When the network becomes available, the device will begin to use NTP to periodically update the system time. See [Network time synchronisation](#heading--ntp) below for more details.
+   When the network becomes available, the device will begin to use NTP to periodically update the system time. See [Network time synchronisation](#network-time-synchronisation) below for more details.
 
 ## Current time
 

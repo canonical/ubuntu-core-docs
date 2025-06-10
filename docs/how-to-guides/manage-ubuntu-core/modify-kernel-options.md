@@ -16,7 +16,7 @@ In addition to parameters supported by the kernel, there are also *Ubuntu Core-s
 
 ## Dynamic kernel parameter modifications
 
-There are two [system options](https://snapcraft.io/docs/system-options) that can be used to add new kernel boot parameters  to a system that has been deployed and is running:
+There are two [system options](https://snapcraft.io/docs/system-options) that can be used to add new kernel boot parameters to a system that has been deployed and is running:
 
 1. [system.kernel.cmdline-append](https://snapcraft.io/docs/system-options#heading--kernel-cmdline-append)
 1. [system.kernel.dangerous-cmdline-append](https://snapcraft.io/docs/system-options#heading--kernel-dangerous-cmdline-append)
@@ -45,13 +45,13 @@ Static kernel boot-time options are formed from mode arguments set by _snapd_, a
 
 For example, the **run mode** kernel command line is:
 
-```no-highlight
+```bash
 snapd_recovery_mode=run console=ttyS0 console=tty1 panic=-1
 ```
 
 The **recovery mode** of a system labeled 20210512 would look like this:
 
-```no-highlight
+```bash
 snapd_recovery_mode=recover snapd_recovery_system=20210512 console=ttyS0 console=tty1 panic=-1
 ```
 
@@ -79,7 +79,7 @@ The legacy way of customizing statically the kernel command line is by adding on
 1. Add a `cmdline.full` file containing the full kernel command line to **replace** the built-in static command line entirely.
 
     For example, if `cmdline.full` file has the following contents:
-    ```no-highlight
+    ```yaml
     # my custom option
     custom.option=1
     # use only ttyS0
@@ -95,7 +95,7 @@ Both kernel command line extension methods also apply to install mode.
 
 The gadget snap can contain only one of `cmdline.full` or `cmdline.extra`; the presence of both files at the same time is treated as an error.
 
-Extending the kernel command line using drop-in files is also supported on systems using the full disk encryption. See [Full disk encryption](/) for more details.
+Extending the kernel command line using drop-in files is also supported on systems using the full disk encryption. See [Full disk encryption](/explanation/full-disk-encryption) for more details.
 
 ## Customising the kernel command line
 
@@ -146,7 +146,7 @@ created 0 fifos
 created 0 sockets
 ```
 
-The above command will create a new directory called `squashfs-root` containing the files and folders of the gadget snap. We can now create the required `cmdline.extra` or `cmdline.full` file ([see above](#heading--cmdline)) containing our kernel command line arguments:
+The above command will create a new directory called `squashfs-root` containing the files and folders of the gadget snap. We can now create the required `cmdline.extra` or `cmdline.full` file ([see above](#customising-the-kernel-command-line)) containing our kernel command line arguments:
 
 ```bash
 echo "option1=foo option2=bar" > squashfs-root/cmdline.extra

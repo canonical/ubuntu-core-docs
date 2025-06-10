@@ -16,7 +16,7 @@ The recommended sizes for each partition type and role are as follows:
 
 * _system-seed_: This partition contains the configuration for the first-stage recovery boot loader alongside at least one recovery system. A recovery system is a set of snaps (base, kernel, gadget and application snaps), together with model and snap assertions, from which a device can be recovered or reinstalled. Additionally, it contains boot-related bits, of negligible size when compared with the seed’s one.
 
-  If [remodelling](/) is to be used, this partition needs to store additional recovery systems that are created when doing a remodel. This requires, as a minimum, twice the size of the seed, which in turn depends on the snaps that have been included in the model assertion.
+  If [remodelling](/explanation/remodelling) is to be used, this partition needs to store additional recovery systems that are created when doing a remodel. This requires, as a minimum, twice the size of the seed, which in turn depends on the snaps that have been included in the model assertion.
 
   It will be possible to carefully remove older recovery systems after a remodel, which means there is no need for more space than 2 recovery systems.
 

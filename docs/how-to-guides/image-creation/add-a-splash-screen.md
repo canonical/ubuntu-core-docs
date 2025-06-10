@@ -62,7 +62,7 @@ $GADGET/splash/plymouth/themes/vendor/
 
 Pathnames specified in a custom Plymouth config file need to use the prefix `/run/mnt/gadget/splash/` rather than `/snap/gadget-snap/current/splash/` as the former is mounted in the _initramfs_ before Plymouth is starts, whereas the latter is not.
 
-It can also help to lower the kernel console logging verbosity by specifying `loglevel=3` (or lower) on the kernel command line. See [Customise the kernel command line](/reference/kernel-boot-parameter) for further details.
+It can also help to lower the kernel console logging verbosity by specifying `loglevel=3` (or lower) on the kernel command line. See [Customise the kernel command line](/reference/kernel-boot-parameters) for further details.
 
 A good custom Plymouth theme example for Ubuntu Core is its own default theme:
 [https://github.com/snapcore/core-splash](https://github.com/snapcore/core-splash)

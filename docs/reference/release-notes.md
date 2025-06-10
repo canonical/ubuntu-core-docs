@@ -8,7 +8,7 @@ This page outlines the release notes of Ubuntu Core, summarising new features, b
 
 ## Older releases
 
-* **[Ubuntu Core 22](#ubuntu-core-20-release-notes)** (15th June 2022)
+* **[Ubuntu Core 22](#ubuntu-core-22-release-notes)** (15th June 2022)
 
 ## Release policy and schedule
 

@@ -3,7 +3,7 @@
 
 The global [Snap Store](https://snapcraft.io/store) is the default source for all snaps, including those used by Ubuntu Core. It’s where the majority of snaps are published, where public, unlisted and private snaps can be shared with users and collaborators, and where developers can manage their releases across channels and tracks.
 
-But snaps can also be hosted, and published from a dedicated snap store, often called a [Brand store](/explanation/stores/dedicated-snap-stores) or IoT App Store. For a more in-depth look at dedicated snap stores, and how they're used with Ubuntu Core and IoT devices, see the [IoT App Store](https://ubuntu.com/core/services/guide/iot-app-store-intro) documentation.
+But snaps can also be hosted, and published from a dedicated snap store, often called a [Brand store](/explanation/stores/dedicated-snap-store) or IoT App Store. For a more in-depth look at dedicated snap stores, and how they're used with Ubuntu Core and IoT devices, see the [IoT App Store](https://ubuntu.com/core/services/guide/iot-app-store-intro) documentation.
 
 A store is managed and governed through a brand account and the authority it delegates to other associated accounts. This is outlined below.
 

@@ -3,7 +3,7 @@
 
 Ubuntu Core has been designed to operate without users, or with the [Ubuntu SSO](https://login.ubuntu.com/) user created by `console-conf`when the device first boots.
 
-Some systems suppress _console-conf_ and its user creation, and on those systems, the `system-user` [assertion](/reference/assertions/index) permits the creation of local system users on specific devices by their associated [Brand store](/explanation/stores/dedicated-snap-stores).
+Some systems suppress _console-conf_ and its user creation, and on those systems, the `system-user` [assertion](/reference/assertions/index) permits the creation of local system users on specific devices by their associated [Brand store](/explanation/stores/dedicated-snap-store).
 
 To create a system user on these systems,  the `system-user` [assertion](/reference/assertions/index), described on this page, needs to be embedded within a file called `auto-import.assert` that’s added to the system via the root directory of a removable USB storage device. For more details, see [System user](/how-to-guides/manage-ubuntu-core/add-a-system-user).
 

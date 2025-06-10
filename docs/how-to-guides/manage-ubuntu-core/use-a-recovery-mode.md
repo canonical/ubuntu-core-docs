@@ -5,11 +5,11 @@ Ubuntu Core is inherently robust. But if data corruption issues do occur, even o
 
 These recovery modes can be accessed in three different ways:
 
-- **[Boot into the system mode selection menu](#heading--chooser)** 
+- **[Boot into the system mode selection menu](#system-mode-selection-menu)**</br>
 Start or reboot the device with the ‘1’ key held on a connected keyboard
-- **[Snap reboot](#heading-reboot)**
+- **[Snap reboot](#recovery-modes-from-snap-reboot)**</br>
 Run `snap reboot` on the device with either `--recover` or `--install` arguments.
-- **[Snapd REST API](https://snapcraft.io/docs/snapd-api#heading--systems-get)**
+- **[Snapd REST API](https://snapcraft.io/docs/snapd-api#heading--systems-get)**</br>
 Use the REST API to call either the `recover`, `install`, `factory-reset` or `reboot` functions.
 
 Recovery modes are available on Ubuntu Core 20 and later.
