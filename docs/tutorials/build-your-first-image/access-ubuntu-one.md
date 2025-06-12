@@ -10,7 +10,9 @@ See below for details on how to create an account, login, and retrieve your deve
 
 You will need an [Ubuntu One account](https://snapcraft.io/account) with an uploaded public key of a locally generated SSH key pair. 
 
-See [Use Ubuntu One for SSH](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh) for instructions on how to create an account and register an SSH key. With this done, your Ubuntu One account is ready to use.
+See [Use Ubuntu One for SSH](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh) for instructions on how to create an account and register an SSH key.
+
+With your account created, ensure you first [login](https://snapcraft.io/login) and accept the _Terms and Conditions_. With this done, your Ubuntu One account is ready to use.
 
 You will now need to retrieve your developer account identifier. This is part of your Ubuntu One account and is used to link your account to any Ubuntu Core images you create.
 
