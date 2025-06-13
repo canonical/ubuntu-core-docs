@@ -115,22 +115,22 @@ A pre-built Ubuntu Core image does not use a username and password to login to t
    
       ```{tab} Genio 1200 EVK
    
-      ![Genio_1200_EVK ports](./images.tmp/hw_evk_g1200-evk_ports.png)
+      ![Genio_1200_EVK ports](https://assets.ubuntu.com/v1/f51f8293-hw_evk_g1200-evk_ports.png)
       ```
    
       ```{tab} Genio 700 EVK
    
-      ![Genio_700_EVK ports](./images.tmp/hw_evk_g700-evk_ports.png)
+      ![Genio_700_EVK ports](https://assets.ubuntu.com/v1/f708e209-hw_evk_g700-evk_ports.png)
       ```
    
       ```{tab} Genio 510 EVK
    
-      ![Genio_700_EVK ports](./images.tmp/hw_evk_g700-evk_ports.png)
+      ![Genio_700_EVK ports](https://assets.ubuntu.com/v1/f708e209-hw_evk_g700-evk_ports.png)
       ```
    
       ```{tab} Genio 350 EVK
    
-      ![Genio_350_EVK ports](./images.tmp/hw_evk_g350-evk_ports.png)
+      ![Genio_350_EVK ports](https://assets.ubuntu.com/v1/d227da4c-hw_evk_g350-evk_ports.png)
       ```
       ````
    3. Hold down "Download" button on device.
@@ -188,7 +188,7 @@ Ubuntu Core system.
 
 Press **Enter** again and you will be taken to the network setup page:
 
-![Network connections](./images.tmp/network-setup.png)
+![Network connections](https://assets.ubuntu.com/v1/6946deb8-network-setup.png)
 
 
 ## Configure a network connection
@@ -199,19 +199,19 @@ Network access is a requirement for Ubuntu Core, at least initially, and you hav
 
 If an Ethernet cable is connected to your device, a network connection will attempt to be automatically negotiated and, if this is successful, you will see an IP address for the device after the DHCPv4 entry in the _Network connections_ page. In this case, you don't need to do anything further:
 
-![Choose eth0](./images.tmp/network-setup-ethernet.png)
+![Choose eth0](https://assets.ubuntu.com/v1/bfbccb33-network-setup-ethernet.png)
 
 To configure an Ethernet connection manually, select the eth0 device and select _Edit IPv4_ from the small menu that appears. By default, the network device will be configured to use _Automatic (DHCP)_, which is why the connection attempts to automatically configure itself. Press **Enter** to reveal two further options, _Manual_ and _Disabled_:
 
-![Select Manual](./images.tmp/ethernet-manual.png)
+![Select Manual](https://assets.ubuntu.com/v1/b0dabd89-ethernet-manual.png)
 
 Selecting _Manual_ will allow you to configure your Ethernet connection manually by entering values for your subnet mask value (using CIDR `xx.xx.xx.xx/yy` notation), the static IP address of your device, the network gateway, and the name servers you wish to use:
 
-![Edit eth0 IPv4 configuration](./images.tmp/network-setup-manual1.png)
+![Edit eth0 IPv4 configuration](https://assets.ubuntu.com/v1/e2c285bc-network-setup-manual1.png)
 
 Due to the size limitation of the serial console, not all information is shown on this screen. When you have finished entering the Gateway information, you need to press the Down key to continue entering the "Name Servers" and optional "Search domain" information.
 
-![Edit eth0 IPv4 configuration Screen 2](./images.tmp/network-setup-manual2.png)
+![Edit eth0 IPv4 configuration Screen 2](https://assets.ubuntu.com/v1/427880ee-network-setup-manual2.png)
 
 Select **Save** to apply those changes and for the connection to be attempted. You can now proceed to the next step by pressing **Done**.
 
