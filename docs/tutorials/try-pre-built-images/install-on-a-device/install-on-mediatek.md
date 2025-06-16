@@ -4,21 +4,19 @@ Pre-built images are ideal for exploration and experimentation of Ubuntu Core, b
 
 You can find more information about building Core images in the [Build your first image](/tutorials/build-your-first-image/index) tutorial.
 
-Ubuntu Core runs on a large range of hardware, and pre-built images are available for the [MediaTek Genio](https://www.mediatek.com/products/iot/genio-iot).
-
-You can follow these steps to install pre-build Ubuntu Core image onto your MediaTek Genio devices.
+Ubuntu Core runs on a large range of hardware, and pre-built images are available for the [MediaTek Genio](https://www.mediatek.com/products/iot/genio-iot). The following steps will install such an image onto a MediaTek Genio device.
 
 ## Requirements
 
-In addition to having a basic understanding of Linux and running commands from the terminal and an [Ubuntu One](tutorials/build-your-first-image/access-ubuntu-one) account, you will need the following:
+In addition to having a basic understanding of Linux, including running commands from the terminal, you will need the following:
 
-For the used to write the images:
+To write an image:
 - [Ubuntu 24.04 LTS](https://releases.ubuntu.com/24.04/) or later installed
 - Internet connectivity
 - 10GB of free storage space
 - A microUSB cable for UART
-- Another microUSB cable for connect to flash interface
-  - You need a USB type-c cable if your device is MediaTek Genio 1200
+- Another microUSB cable to connect the flash interface
+  - You need a USB Type-C cable if your device is MediaTek Genio 1200
 - An [Ubuntu SSO account with associated SSH keys](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh).
 
 The target device:
@@ -27,33 +25,36 @@ The target device:
 
 A pre-built Ubuntu Core image does not use a username and password to login to the system. It instead uses SSH and your public SSH key, which is uploaded to your Ubuntu One account. This is handled by the console-conf snap bundled in pre-built test images. SSH is otherwise not a requirement for Ubuntu Core images. See Connect to Ubuntu Core with SSH for further details.
 
-## 1. Prepare genio-tools
+## Prepare genio-tools
    
-[genio-tool](https://gitlab.com/mediatek/aiot/bsp/genio-tools) is a set of tools to flash, control or configure MediaTek boards, and in particular the Genio evaluation kits. We need it to flash image to your MediaTek Genio device.
+[Genio tools](https://gitlab.com/mediatek/aiot/bsp/genio-tools) are a set of tools to flash, control or configure MediaTek boards, and in particular, Genio evaluation kits. Genio tools can be installed as follows:
 
-1. Install genio-tool from snap
-   ```
-   sudo snap install genio-tools
-   ```
-2. Enable udev rules
-   ```
-   eval "$(snap run genio-tools.udev-script)"
-   ```
+Install genio-tool from the snap:
 
-   ```{tip}
-   You may need to log out and log in as the current user to gain the new group permissions.
-   ```
+```
+sudo snap install genio-tools
+```
 
-## 2. Get image and boot firmware
+Enable udev rules:
 
-1. Download image
+```
+eval "$(snap run genio-tools.udev-script)"
+```
 
-   Download the MediaTek Genio Ubuntu Core image here: [genio-core-22-20250423-201.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-core-22/genio-core-22-20250423-201.tar.xz)
+```{admonition} New group permissions
+You may need to log out and log in as the current user to gain the new group permissions.
+```
 
-2. Download boot firmware
+## Ubuntu Core image
 
-   Boot firmware is a series of files used to boot the operating system.
-   According to your device model, you need to download boot firmware here:
+Download the MediaTek Genio Ubuntu Core image from the following location:</br>
+
+[genio-core-22-20250423-201.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-core-22/genio-core-22-20250423-201.tar.xz)
+
+## Boot firmware
+
+Boot firmware is a series of files used to boot the operating system. Choose your firmware according to your device model:
+
    |Device Model|Link|
    |---|---|
    |Genio 1200 EVK|[ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz](https://download.mediatek.com/iot/download/ubuntu/boot-firmware/v24.1/ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz)|
@@ -61,108 +62,111 @@ A pre-built Ubuntu Core image does not use a username and password to login to t
    |Genio 510 EVK|[ubuntu-boot-firmware-genio-510-evk-v24.1-ubuntu1.tar.gz](https://download.mediatek.com/iot/download/ubuntu/boot-firmware/v24.1/ubuntu-boot-firmware-genio-510-evk-v24.1-ubuntu1.tar.gz)|
    |Genio 350 EVK|[ubuntu-boot-firmware-genio-350-evk-v24.1-ubuntu1.tar.gz](https://download.mediatek.com/iot/download/ubuntu/boot-firmware/v24.1/ubuntu-boot-firmware-genio-350-evk-v24.1-ubuntu1.tar.gz)|
 
-3. Extract all files into one directory
+Extract all the files from the download archive, replacing the archive name (ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz) with the name of the file you specifically downloaded:
 
-   ```bash
-   tar -xf genio-core-22-20250423-201.tar.xz
-   tar -xf ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz --strip-components=1 -C genio-core-22-20250423-201
-   ```
-   ```{note}
-   Please replace `ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz` with the file name of the boot firmware you downloaded from the previous step.
-   ```
-   In this step, you will get a directory with these files:
-   ```
-   $ ls -l genio-core-22-20250423-201
-   total 522696
-   -rw-rw-r-- 1 ubuntu ubuntu    239360 Apr  8 02:24 bl2.img
-   -rw-rw-r-- 1 ubuntu ubuntu  33554432 Apr  8 02:24 bootassets.vfat
-   -rw-rw-r-- 1 ubuntu ubuntu   1929720 Apr  8 02:24 fip.bin
-   -rw-r--r-- 1 ubuntu ubuntu  33554432 Apr 23 09:55 firmware.vfat
-   -rw-rw-r-- 1 ubuntu ubuntu    264360 Apr  8 02:24 lk.bin
-   -rw-rw-r-- 1 ubuntu ubuntu      3261 Apr  8 02:24 snapshot.xml
-   -rw-rw-r-- 1 ubuntu ubuntu      3358 Apr  8 02:24 u-boot-initial-env
-   -rw-r--r-- 1 ubuntu ubuntu 465672276 Apr 23 09:56 ubuntu.img
-   -rw-r--r-- 1 ubuntu ubuntu      1031 Apr 23 09:48 ubuntu.json
-   ```
+```bash
+tar -xf genio-core-22-20250423-201.tar.xz
+tar -xf ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz --strip-components=1 -C genio-core-22-20250423-201
+```
 
-## 3. Flash system image
+The archive will include the following files:
 
-   1. Run this command to flash the system image:
+```
+$ ls -l genio-core-22-20250423-201
+total 522696
+-rw-rw-r-- 1 ubuntu ubuntu    239360 Apr  8 02:24 bl2.img
+-rw-rw-r-- 1 ubuntu ubuntu  33554432 Apr  8 02:24 bootassets.vfat
+-rw-rw-r-- 1 ubuntu ubuntu   1929720 Apr  8 02:24 fip.bin
+-rw-r--r-- 1 ubuntu ubuntu  33554432 Apr 23 09:55 firmware.vfat
+-rw-rw-r-- 1 ubuntu ubuntu    264360 Apr  8 02:24 lk.bin
+-rw-rw-r-- 1 ubuntu ubuntu      3261 Apr  8 02:24 snapshot.xml
+-rw-rw-r-- 1 ubuntu ubuntu      3358 Apr  8 02:24 u-boot-initial-env
+-rw-r--r-- 1 ubuntu ubuntu 465672276 Apr 23 09:56 ubuntu.img
+-rw-r--r-- 1 ubuntu ubuntu      1031 Apr 23 09:48 ubuntu.json
+```
 
-      ```
-      $ genio-tools.genio-flash -e ethaddr="02:00:00:12:34:56"
-      ```
-      ```{attention}
-      02:00:00:12:34:56 is just an example MAC address. If this is only for testing, you may replace the digits in the '12:34:56' portion with random hexadecimal digits. Please note that devices with identical MAC addresses on the same network will be unable to access the network properly.
-      ```
-   2. When you see this messages output from genio-tools:
-      ```
-      Genio Tools: v1.6.2
-      Ubuntu Image:
-              edition:  Ubuntu classic/core images
-              version:  22.04
-              codename: jammy
+## Flash the system image
+
+Run the following command to flash the system image:
+
+```bash
+genio-tools.genio-flash -e ethaddr="02:00:00:12:34:56"
+```
+
+```{attention}
+02:00:00:12:34:56 is just an example MAC address. If this is only for testing, you may replace the digits in the '12:34:56' portion with random hexadecimal digits. Please note that devices with identical MAC addresses on the same network will be unable to access the network properly.
+ ```
+
+Wait until you see the following output from genio-tools:
+
+```
+ Genio Tools: v1.6.2
+ Ubuntu Image:
+         edition:  Ubuntu classic/core images
+         version:  22.04
+         codename: jammy
+ 
+ ...
+ You can now manually reset the board into DOWNLOAD mode.
+ 
+ INFO:root:Continue flashing...
+ ```
+
+Now connect the USB Type-C cable between your host and the USB Type-C port labelled  _Image Download_ port on your device. Refer to the following images to locate the port:
+
+ ````{tabs}
+
+ ```{tab} Genio 1200 EVK
+
+ ![Genio_1200_EVK ports](https://assets.ubuntu.com/v1/f51f8293-hw_evk_g1200-evk_ports.png)
+ ```
+
+ ```{tab} Genio 700 EVK
+
+ ![Genio_700_EVK ports](https://assets.ubuntu.com/v1/f708e209-hw_evk_g700-evk_ports.png)
+ ```
+
+ ```{tab} Genio 510 EVK
+
+ ![Genio_700_EVK ports](https://assets.ubuntu.com/v1/f708e209-hw_evk_g700-evk_ports.png)
+ ```
+
+ ```{tab} Genio 350 EVK
+
+ ![Genio_350_EVK ports](https://assets.ubuntu.com/v1/d227da4c-hw_evk_g350-evk_ports.png)
+ ```
+ ````
+
+Next, hold the **Download** button on the device and press **Reset**.
+
+Wait until you see the following output from genio-tool before releasing the **Download** button:
+
       
-      ...
-      You can now manually reset the board into DOWNLOAD mode.
-      
-      INFO:root:Continue flashing...
-      ```
+```text
+Looking for MediaTek SoC matching USB device 0e8d:0003
+Opening /dev/ttyACM0 using baudrate=115200
+Connected to MediaTek SoC: hw_code[0x8195]
+Sending bootstrap to address: 0x201000
+Jumping to bootstrap at address 0x201000 in AArch64 mode
+erasing mmc0
+< waiting for any device >
+Erasing 'mmc0'
+```
 
-      Please connect your host to the "Image Download" port of the device with a USB cable. You can refer to the following image to find the Image Download port.
+The device will now start flashing the Ubuntu Core image. When this completes, genio-tools will output the following and exit:
+    
+```text
+...
+Finished. Total time: 2.449s
+Rebooting                                          OKAY [  0.002s]
+Finished. Total time: 0.252s
+```
 
-      ````{tabs}
-   
-      ```{tab} Genio 1200 EVK
-   
-      ![Genio_1200_EVK ports](./images.tmp/hw_evk_g1200-evk_ports.png)
-      ```
-   
-      ```{tab} Genio 700 EVK
-   
-      ![Genio_700_EVK ports](./images.tmp/hw_evk_g700-evk_ports.png)
-      ```
-   
-      ```{tab} Genio 510 EVK
-   
-      ![Genio_700_EVK ports](./images.tmp/hw_evk_g700-evk_ports.png)
-      ```
-   
-      ```{tab} Genio 350 EVK
-   
-      ![Genio_350_EVK ports](./images.tmp/hw_evk_g350-evk_ports.png)
-      ```
-      ````
-   3. Hold down "Download" button on device.
-
-   4. Press "Reset".
-
-   5. Release "Download" when this appears in genio-tools.
-      
-      ```text
-      Looking for MediaTek SoC matching USB device 0e8d:0003
-      Opening /dev/ttyACM0 using baudrate=115200
-      Connected to MediaTek SoC: hw_code[0x8195]
-      Sending bootstrap to address: 0x201000
-      Jumping to bootstrap at address 0x201000 in AArch64 mode
-      erasing mmc0
-      < waiting for any device >
-      Erasing 'mmc0'
-      ```
-
-   6. The device will start flashing. When flashing has been finished, genio-tools will output this and exit.
-      
-      ```text
-      ...
-      Finished. Total time: 2.449s
-      Rebooting                                          OKAY [  0.002s]
-      Finished. Total time: 0.252s
-      ```
 ## Boot Ubuntu Core for the first time
 
-You can now use a USB cable to connect to the UART0 port of the device. After that, you will have a new `ttyUSB*` (such as `/dev/ttyUSB0`) under the `/dev` directory.
+With the image flashed, connect the USB cable to the UART0 port of the device. This will create a new `ttyUSB*` device under the `/dev/` directory on your host system, such as `/dev/ttyUSB0`, which can be used to open a serial connection to your Genio.
 
-The baudrate of the serial console is 921600. You can use your favorite serial console client to communicate with the new `ttyUSB0` device. For example, 
+The baud rate for the serial connection is 921600, and you can use your preferred serial console client to communicate with the new `ttyUSB*` device. For example, 
 
 ```bash
 tio -b 921600 /dev/ttyUSB0
@@ -174,8 +178,8 @@ You might see typical Linux output on the screen, periods where there's just a f
 
 Press **Enter**.
 
-```{tip}
-If you did not see any message in your serial console for several seconds, it may be because the system has already finished booting. You can just press Enter.
+```{admonition} Missing messages
+If after a few seconds you see no message in your serial console, it may be because the system has already finished booting. You can just press Enter.
 ```
 
 And then you will see a prompt that reads:
@@ -188,8 +192,7 @@ Ubuntu Core system.
 
 Press **Enter** again and you will be taken to the network setup page:
 
-![Network connections](./images.tmp/network-setup.png)
-
+![Network connections](https://assets.ubuntu.com/v1/6946deb8-network-setup.png)
 
 ## Configure a network connection
 
@@ -199,19 +202,19 @@ Network access is a requirement for Ubuntu Core, at least initially, and you hav
 
 If an Ethernet cable is connected to your device, a network connection will attempt to be automatically negotiated and, if this is successful, you will see an IP address for the device after the DHCPv4 entry in the _Network connections_ page. In this case, you don't need to do anything further:
 
-![Choose eth0](./images.tmp/network-setup-ethernet.png)
+![Choose eth0](https://assets.ubuntu.com/v1/bfbccb33-network-setup-ethernet.png)
 
 To configure an Ethernet connection manually, select the eth0 device and select _Edit IPv4_ from the small menu that appears. By default, the network device will be configured to use _Automatic (DHCP)_, which is why the connection attempts to automatically configure itself. Press **Enter** to reveal two further options, _Manual_ and _Disabled_:
 
-![Select Manual](./images.tmp/ethernet-manual.png)
+![Select Manual](https://assets.ubuntu.com/v1/b0dabd89-ethernet-manual.png)
 
 Selecting _Manual_ will allow you to configure your Ethernet connection manually by entering values for your subnet mask value (using CIDR `xx.xx.xx.xx/yy` notation), the static IP address of your device, the network gateway, and the name servers you wish to use:
 
-![Edit eth0 IPv4 configuration](./images.tmp/network-setup-manual1.png)
+![Edit eth0 IPv4 configuration](https://assets.ubuntu.com/v1/e2c285bc-network-setup-manual1.png)
 
 Due to the size limitation of the serial console, not all information is shown on this screen. When you have finished entering the Gateway information, you need to press the Down key to continue entering the "Name Servers" and optional "Search domain" information.
 
-![Edit eth0 IPv4 configuration Screen 2](./images.tmp/network-setup-manual2.png)
+![Edit eth0 IPv4 configuration Screen 2](https://assets.ubuntu.com/v1/427880ee-network-setup-manual2.png)
 
 Select **Save** to apply those changes and for the connection to be attempted. You can now proceed to the next step by pressing **Done**.
 
