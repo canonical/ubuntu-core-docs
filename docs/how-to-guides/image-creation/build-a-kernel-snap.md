@@ -525,7 +525,7 @@ Unlike broader snap packages, kernel snaps are typically built within the host e
 ```bash
 sudo snap install lxd
 sudo lxd init --auto
-sudo lxc launch ubuntu:22.04 focal
+sudo lxc launch ubuntu:22.04 jammy
 sudo lxc shell focal
 snap install snapcraft --classic
 ```
