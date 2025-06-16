@@ -17,7 +17,7 @@ description: |
   devices and connections, attempting to keep active network connectivity
   when available. It manages ethernet, Wi-Fi, mobile broadband (WWAN) and
   PPPoE devices, provides VPN integration with a variety of different
-  VPN serivces.
+  VPN services.
   Please find the source code for this track at:
     https://code.launchpad.net/~snappy-hwe-team/snappy-hwe-snaps/+git/network-manager/+ref/snap-1.10
 commands:
