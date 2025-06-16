@@ -16,12 +16,15 @@ Ubuntu Core has been designed to facilitate the creation, deployment, and  manag
 
 ## Install Ubuntu Core
 
-Pre-built test images are also available, for both x86-based PC-style hardware and ARM-based platforms. These testing images are ideal for exploration  and experimentation but they're not intended for deployment or for use at scale.
+Pre-built test images are also available for Renesas GZ/G2l and MediaTek Genio devices, alongside x86-based PC-style hardware and ARM-based platforms.
+
+
+. These testing images are ideal for exploration  and experimentation but they're not intended for deployment or for use at scale.
 
 
 * [Install and try a pre-built image](/tutorials/try-pre-built-images/index)
 
-    Test a pre-built image within a VM, or by installing Ubuntu Core on either x86-based or ARM-based hardware.
+    Test a pre-built image within a VM, or by installing Ubuntu Core on specific hardware.
 
 ```{toctree}
 :hidden:
