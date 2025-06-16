@@ -57,7 +57,7 @@ name: <platform>-kernel
 # The version is largely human readable, but should be meaningful.
 # A good place to get the version string from would be the kernel part
 adopt-info: kernel
-# Kernels should be built based on the release of Ubuntu Core being targetted,
+# Kernels should be built based on the release of Ubuntu Core being targeted,
 # but do not otherwise require a base as all other snaps do. As such, only a
 # build-base is required, and should be something like core18|core20|core22 etc.
 build-base: <base>
@@ -236,7 +236,7 @@ parts:
     # Generally, the defaults the kernel plugin selects will be fine for most
     # use-cases, as the default configuration is a generic configuration which
     # attempts to target the broadest collection of hardware.
-    # For a list of all available otions, see the kernel plugin documentation:
+    # For a list of all available options, see the kernel plugin documentation:
     # TODO: change link to the plugin documentation. For now, the source works.
     # https://github.com/canonical/snapcraft/blob/main/snapcraft/parts/plugins/kernel_plugin.py
     override-build: |
@@ -255,8 +255,8 @@ parts:
   # target hardware (this is true of most ARM or RISC-V hardware, for instance).
   # In such a case, the board's upstream kernel should be used (frequently these
   # sources can be found in that manufacturer's BSP), or (if that manufacturer
-  # has been dilligent and kind), kernel support may already exist in a more
-  # recent version of the upstream kernel avaialble from https://github.com/torvalds/linux.
+  # has been diligent and kind), kernel support may already exist in a more
+  # recent version of the upstream kernel available from https://github.com/torvalds/linux.
   # In either case, additional patches will almost certainly be required in
   # order to gain some key functionality Ubuntu Core (and snaps more generally)
   # expect. It may one day be the case that no additional patches are required
@@ -503,7 +503,7 @@ parts:
 # kernel-module-control: https://snapcraft.io/docs/kernel-module-control-interface
 #   kernel-module-control gives broad sweeping control over any and all kernel
 #   modules which can be loaded or unloaded.
-# kernel-module-load should always be preferred as it is a more targetted interface.
+# kernel-module-load should always be preferred as it is a more targeted interface.
 # In order for this interface to autoconnect, a support ticket must be filed or
 # a forum post made.
 plugs:
