@@ -1,6 +1,6 @@
 # Try pre-built images
 
-Ubuntu Core runs on a variety of hardware, and pre-built images are available for _amd64_ and _ARM_ platforms (among others). These images can also be installed on a virtual machine.
+Ubuntu Core runs on a variety of hardware, and pre-built images are available for various platforms. Generic images can also be installed on a virtual machine.
 
 Pre-built images are ideal for exploration and experimentation, but they are not intended for deployment or use at scale. They include snaps to provide an onboarding and evaluation experience, alongside an SSH connection, and these are unlikely to be required in your own Ubuntu Core deployment. 
 
@@ -23,7 +23,10 @@ Ubuntu Core runs on a large range of hardware, and pre-built images are availabl
 
 ## Install on a specific device
 
-- [Install on a Renesas RZ/G2L](install-on-a-device/install-on-renesas): Create an image to run on a Renesas RZ/G2L <install-on-renesas>
+Pre-built test images are also available for Renesas GZ/G2L and MediaTek Genio devices.
+
+- [Install on a Renesas RZ/G2L](install-on-a-device/install-on-renesas): Install a pre-built image on a Renesas RZ/G2L device <install-on-renesas>
+- [Install on a MediaTek Genio](install-on-a-device/install-on-mediatek): Install a pre-built image on a MediaTek Genio device <install-on-mediatek>
 
 
 ```{toctree}
