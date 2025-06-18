@@ -217,7 +217,7 @@ snap known --remote model series=16 brand-id=canonical model=pi3
 
 ## Image building
 
-Images are built from a model assertion using [ubuntu-image](https://github.com/CanonicalLtd/ubuntu-image), a tool to generate a bootable image. It can be installed on a [snap-supporting Linux system](https://snapcraft.io/docs/installing-snapd) as follows:
+Images are built from a model assertion using [ubuntu-image](https://github.com/canonical/ubuntu-image), a tool to generate a bootable image. It can be installed on a [snap-supporting Linux system](https://snapcraft.io/docs/installing-snapd) as follows:
 
 ```bash
 snap install ubuntu-image --classic
@@ -226,17 +226,16 @@ snap install ubuntu-image --classic
 You can now build your image using the following command:
 
 ```bash
-sudo ubuntu-image \
+ubuntu-image \
 -c stable \        # available channels are: edge/beta/candidate/stable
 --image-size 4G \
---extra-snaps <gadget snap file name, e.g. roseapple-pi_16.04-1_armhf.snap> \
---extra-snaps <kernel snap file name, e.g. roseapple-pi-kernel_3.10.37-1_armhf.snap> \
---extra-snaps <add more preinstalled snaps here, names from the store or local paths> \
--o <image output file name, e.g. roseapple-pi-20161107-0.img> \
+--snap <gadget snap file name, e.g. roseapple-pi_16.04-1_armhf.snap> \
+--snap <kernel snap file name, e.g. roseapple-pi-kernel_3.10.37-1_armhf.snap> \
+--snap <add more preinstalled snaps here, names from the store or local paths> \
 <model file name, e.g. roseapple.model>
 ```
 
-Note: The `--extra-snaps` argument takes either a snap name accessible from the store or a local path to a built snap.
+Note: The `--snap` argument takes either a snap name accessible from the store or a local path to a built snap.
 
 Your image is ready, you can use a tool like `dd` to write the image to an SD Card and boot your board.
 
@@ -251,12 +250,11 @@ curl -H "Accept: application/x.ubuntu.assertion" "https://assertions.ubuntu.com/
 ```
 
 ```bash
-sudo ubuntu-image \
+ubuntu-image \
 -c stable \
 --image-size 4G \
---extra-snaps pi2-kernel \
---extra-snaps pi3 \
---extra-snaps nextcloud \
--o pi3-20161107-0.img \
+--snap pi2-kernel \
+--snap pi3 \
+--snap nextcloud \
 pi3.model
 ```

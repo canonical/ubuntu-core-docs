@@ -88,7 +88,7 @@ The output includes the _img_ file itself, alongside a _seed.manifest_ file. The
 
 ## Additional snaps
 
-Snaps can be optionally added at build time with the '--snap' argument.
+Snaps can be optionally added at build time with the `--snap` argument.
 
 These additional snaps can include [custom snaps](/how-to-guides/image-creation/add-custom-snaps), locally-stored [offline snaps](/explanation/remodelling.md#offline-remodelling), and snaps that can be downloaded directly from the store.
 
@@ -102,9 +102,9 @@ The size of a generated disk image can optionally be controlled with the `--imag
 
 The value is the size in bytes, with allowable suffixes M for MiB and G for GiB and if this size is smaller than the minimum calculated size of the volume, a warning is issued and the option is ignored.
 
-An extended syntax is supported for [Gadget snaps](/how-to-guides/image-creation/build-a-gadget-snap) that specify multiple volumes (i.e. disk images). In that case, a single SIZE argument is used for all the defined volumes, with the same rules for ignoring values that are too small. You can specify the image size for a single volume using an indexing prefix on the SIZE parameter, where the index is either a volume name or an integer index starting at zero. For example, to set the image size only on the second volume, which might be called sdcard in gadget.yaml, use: --image-size 1:8G (the number 1 index indicates the second volume; volumes are 0-indexed). Or use --image-size sdcard:8G.
+An extended syntax is supported for [Gadget snaps](/how-to-guides/image-creation/build-a-gadget-snap) that specify multiple volumes (i.e. disk images). In that case, a single SIZE argument is used for all the defined volumes, with the same rules for ignoring values that are too small. You can specify the image size for a single volume using an indexing prefix on the SIZE parameter, where the index is either a volume name or an integer index starting at zero. For example, to set the image size only on the second volume, which might be called sdcard in gadget.yaml, use: `--image-size 1:8G` (the number 1 index indicates the second volume; volumes are 0-indexed). Or use `--image-size sdcard:8G`.
 
-You can also specify multiple volume sizes by separating them with commas, and you can mix and match integer indices and volume-name indices. Thus, if gadget.yaml names three volumes, and you want to set all three to different sizes, you can use --image-size 0:2G,sdcard:8G,eMMC:4G.
+You can also specify multiple volume sizes by separating them with commas, and you can mix and match integer indices and volume-name indices. Thus, if gadget.yaml names three volumes, and you want to set all three to different sizes, you can use `--image-size 0:2G,sdcard:8G,eMMC:4G`.
 
 ## Testing an image
 
@@ -120,7 +120,7 @@ ssh <username>@localhost -p 8022
 
 You are now connected to the Ubuntu Core virtual machine, from where you can configure and install whatever apps you need. 
 
-To list which snaps are installed, for example, type 'snap list' and to view the model assertion used to build the image, type `snap model --assertion`:
+To list which snaps are installed, for example, type `snap list` and to view the model assertion used to build the image, type `snap model --assertion`:
 
 ```bash
 $ snap model --assertion
