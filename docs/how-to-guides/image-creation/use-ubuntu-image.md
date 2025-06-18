@@ -96,6 +96,12 @@ These additional snaps can include [custom snaps](/how-to-guides/image-creation/
 - Production-grade images cannot include custom snaps, and additional snaps must first be declared with a `presence` attribute of `optional` in the model.
 - **Offline snaps** must include locally cached assertions. Using offline locally stored snaps can speed up the image creation process.
 
+## Extra assertions
+
+Arbitrary assertions, such as [system-user assertions](/reference/assertions/system-user/), can be included in the final image using the '--assertion' argument pointing to a file containing one or more assertions. This can help you, for example, in creating a system user or choosing a snap store proxy without the added manual configuration after the installation is complete.
+
+It is possible to add assertions of any kind except for `snap-declaration`, `snap-revision`, `model`, `serial` and `validation-set`.
+
 ## Image size
 
 The size of a generated disk image can optionally be controlled with the `--image-size` argument.
