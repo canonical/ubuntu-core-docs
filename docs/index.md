@@ -17,7 +17,7 @@
 | [Explanation](/explanation/index) </br> Concepts - discussion and clarification of key topics  | [Reference](/reference/index) </br> Technical information - specifications, APIs, architecture |
 
    * **Stores:** {ref}`explanation-stores-store-overview` | [Brand accounts](explanation/stores/brand-accounts) | [Dedicated snap stores](explanation/stores/dedicated-snap-store) | [Store scoping](explanation/stores/store-scoping)
-   * **Security:** [Full disk encryption](explanation/full-disk-encryption) | [Sandboxing](explanation/security-and-sandboxing) | [Use a recovery mode](how-to-guides/manage-ubuntu-core/use-a-recovery-mode)
+   * **Security:** [Full disk encryption](explanation/full-disk-encryption) | [Sandboxing](explanation/security-and-sandboxing) | {ref}`how-to-guides-manage-ubuntu-core-use-a-recovery-mode`
    * **Management:** [Update control](explanation/refresh-control) | [Remodelling](explanation/remodelling) | [Upgrade Ubuntu Core](how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core)
    * **Core elements:** [Introduction](explanation/core-elements/inside-ubuntu-core) | [Storage layout](explanation/core-elements/storage-layout) | [Snap in Ubuntu Core](explanation/core-elements/snaps-in-ubuntu-core)
 
