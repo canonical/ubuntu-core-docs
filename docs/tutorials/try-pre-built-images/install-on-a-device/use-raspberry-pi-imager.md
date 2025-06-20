@@ -42,15 +42,17 @@ Download and install Raspberry Pi Imager from one of the following locations:
 
 After it's installed and running, you will see its main window showing buttons for the three step download and write process:
 
-![Raspberry Pi Imager](https://assets.ubuntu.com/v1/7f4829d7-7f4829d76af46a7e658117b72cba3bc04611c798.jpeg)
+![Raspberry Pi Imager](https://assets.ubuntu.com/v1/617104fd-raspberry-pi-imager.png)
 
-1. Select **Choose OS** and a pop-up list appears. Scroll down and select **Other general-purpose OS** followed by **Ubuntu**. Now scroll to the bottom of the Ubuntu list and select **Ubuntu Core 24 (64-bit)**. 
+1. Select **Choose Device** and a Raspberry Pi devices list appears. Now select your Raspberry Pi device from the list.
+
+2. Select **Choose OS** and a pop-up list appears. Scroll down and select **Other general-purpose OS** followed by **Ubuntu**. Now scroll to the bottom of the Ubuntu list and select **Ubuntu Core 24 (64-bit)**. 
 
    You can alternatively download the image manually ([ubuntu-core-24-arm64+raspi.img.xz](https://cdimage.ubuntu.com/ubuntu-core/24/stable/current/ubuntu-core-24-arm64+raspi.img.xz)) and instead choose **Use custom** from bottom of the **Choose OS** menu. In the file requester that appears, select the image you just downloaded. The _xz_ file can be selected without being decompressed first.
 
-2. Select **Choose Storage** and insert your microSD if you haven't already. Now select the device from the list.
+3. Select **Choose Storage** and insert your microSD if you haven't already. Now select the device from the list.
 
-3. Finally, select **Write**. A warning will state that all data on your selected device will be erased, so it's worth double checking your selection was correct. Select **Yes** if you're sure. You may then be asked for your password before the download, write and verification processes begin.
+4. Finally, select **Next**. A warning will state that all data on your selected device will be erased, so it's worth double checking your selection was correct. Select **Yes** if you're sure. You may then be asked for your password before the download, write and verification processes begin.
 
 When the process has finished, Raspberry Pi Imager will proclaim "Write Successful" and you can remove the card from the reader. It's now ready to be inserted into your Raspberry Pi.
 
