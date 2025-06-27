@@ -16,9 +16,9 @@ Note that only devices explicitly configured within Netplan configuration files,
 
 From _core20_ onwards, network-manager been modified to use a YAML backend that's based on _libnetplan_ functionality.
 
-The YAML backend replaces the keyfile format used by Network Manager with `/etc/Netplan/*.yaml`.
+The YAML backend replaces the keyfile format used by Network Manager with `/etc/netplan/*.yaml`.
 
-The default configuration, for example, can be output by running the `cat sudo cat /etc/netplan/00-snapd-config.yaml` to produce show following output:
+The default configuration, for example, can be output by running the `sudo cat /etc/netplan/00-snapd-config.yaml` to produce show following output:
 
 ```yaml
 # This is the network config written by 'console-conf'
@@ -29,9 +29,9 @@ network:
   version: 2
 ```
 
-On boot the Netplan.io generator processes all of the YAML files and renders them into the corresponding a Network Manager configuration in `/run/NetworkManager/system-connections`. The usual `Netplan generate/try/apply` can be used to re-generate this configuration after the YAML was modified.
+On boot the netplan.io generator processes all of the YAML files and renders them into the corresponding a Network Manager configuration in `/run/NetworkManager/system-connections`. The usual `netplan generate/try/apply` can be used to re-generate this configuration after the YAML was modified.
 
-If a connection profile is modified or created from within Network Manager, such as updating a Wi-Fi password with `nmcli`, Network Manager will create an ephemeral keyfile that will be immediately converted to Netplan YAML and stored in `/etc/Netplan`. Network Manager automatically calls `Netplan generate` to re-process the current YAML configuration to render Network Manager connection profiles in `/run/NetworkManager/system-connections`.
+If a connection profile is modified or created from within Network Manager, such as updating a Wi-Fi password with `nmcli`, Network Manager will create an ephemeral keyfile that will be immediately converted to Netplan YAML and stored in `/etc/netplan`. Network Manager automatically calls `netplan generate` to re-process the current YAML configuration to render Network Manager connection profiles in `/run/NetworkManager/system-connections`.
 
 The system wide network configuration can be read with `sudo netplan get`:
 
