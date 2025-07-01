@@ -359,7 +359,7 @@ There are typically two methods for building a gadget snap, _native building_ an
 
 ### Requirements
 
-The build system must support [snap](https://snapcraft.io/docs/installing-snapd), and have both the [Snapcraft](https://snapcraft.io/docs/snapcraft-overview) build tool and the [LXD](https://canonical.com/lxd) virtualisation platform installed, all of which are provided by any Ubuntu release.
+The build system must support [snap](https://snapcraft.io/docs/installing-snapd), and have both the [Snapcraft](https://snapcraft.io/docs/snapcraft-overview) build tool and the [LXD](https://canonical.com/lxd/install) virtualisation platform installed, all of which are provided by any Ubuntu release. Ensure your user has been added to the `lxd` group and you've initialized LXD with `lxd init` before proceeding. See [Set up Snapcraft](https://documentation.ubuntu.com/snapcraft/stable/how-to/setup/set-up-snapcraft/#install-lxd) for further details.
 
 ### Native building
 
@@ -384,7 +384,7 @@ git checkout 22-amd64-pc
 
 With the correct git branch selected, `snap/snapcraft.yaml` now contains everything required to build the PC gadget snap.
 
-This example embeds the pre-built [Canonical reference PC gadget](https://github.com/snapcore/pc-gadget) as a base from the *snapcraft.yaml*. To build the gadget, run the the _snapcraft_ command:
+This example embeds the pre-built [Canonical reference PC gadget](https://github.com/snapcore/pc-gadget) as a base from the *snapcraft.yaml*. To build the gadget, run the _snapcraft_ command:
 
 ```bash
 $ snapcraft
