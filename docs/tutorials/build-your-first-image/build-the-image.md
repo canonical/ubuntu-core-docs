@@ -7,16 +7,17 @@ Images are built from the recipe contained in the [model assertion](/tutorials/b
 First, install the `ubuntu-image` command from its snap:
 
 ```
-sudo snap install ubuntu-image --classic
+sudo snap install ubuntu-image --classic --edge
 ```
 
-The `ubuntu-image` command requires two arguments; `snap` to indicate we're building a snap-based Ubuntu Core image, and the filename of our previously-signed model assertion to build an image:
+The `ubuntu-image` command requires three arguments; `snap` to indicate we're building a snap-based Ubuntu Core image, `--allow-snapd-kernel-mismatch` to ignore a difference in the versions of snapd we're using, and finally, the filename of our previously-signed model assertion to build an image:
 
 ```bash
-$ ubuntu-image snap my-model.model
+$ ubuntu-image snap --allow-snapd-kernel-mismatch my-model.model 
 [0] prepare_image
 WARNING: proceeding to download snaps ignoring validations, this default will change in the future. For now use --validation=enforce for validations to be taken into account, pass instead --validation=ignore to preserve current behavior going forward
 WARNING: the kernel for the specified UC20+ model does not carry assertion max formats information, assuming possibly incorrectly the kernel revision can use the same formats as snapd
+WARNING: snapd 2.68+ is not compatible with a kernel containing snapd prior to 2.68
 [1] load_gadget_yaml
 [2] set_artifact_names
 [3] populate_rootfs_contents
@@ -28,7 +29,7 @@ WARNING: the kernel for the specified UC20+ model does not carry assertion max f
 [9] generate_snap_manifest
 Build successful
 ```
-You can safely ignore both of the above warnings, and the entire process should only take a few minutes (depending on your connectivity), with the creation of  a `pi.img` Ubuntu Core image file being the end result.
+You can safely ignore the warnings, and the entire process should only take a few minutes (depending on your connectivity), with the creation of  a `pi.img` Ubuntu Core image file being the end result.
 
 ```{admonition} Console-conf as a separate snap in Ubuntu Core 24+
  :class: tip
