@@ -443,7 +443,7 @@ parts:
   # part used instead. This will most commonly happen on non-x86_64 platforms.
   initrd:
     after: [firmware, kernel]
-    # The initrd plugin handles the work of running ubuntu-core-initramfs
+    # The initrd plugin handles the work of running ubuntu-core-initramfs.
     plugin: initrd
     # Set this to true if:
     #  * the gadget bootloader is GRUB
@@ -459,6 +459,11 @@ parts:
     #    https://github.com/canonical/iot-field-gadget-snap/blob/main/u-boot/boot.scr.in
     #  * the  IoT Field example gadget on the 22-arm64-odroid-hc4 branch uses separate files:
     #    https://github.com/canonical/iot-field-gadget-snap/blob/22-arm64-odroid-hc4/u-boot/boot.scr
+    #
+    # Missing snapcraft support?
+    # If snapcraft does not include support for the initrd plugin, a pre-built snapcraft snap with
+    # the initrd plugin included can be downloaded from here:
+    # https://launchpad.net/~ondrak/+snap/snapcraft-kernel-initrd-split
     initrd-build-efi-image: true
     # NOTE: any modules required for booting the target hardware (like those
     # required to mount the root filesystem, such as squashfs or mmc drivers)
@@ -533,7 +538,7 @@ snap install snapcraft --classic
 With _snapcraft.yaml_ complete, and the kernel source either cloned locally or linked to from the snapcraft.yaml, the `snapcraft` command will build the kernel. As mentioned earlier, it's often more convenient to build the kernel within the host environment, using `--destructive-mode`:
 
 ```bash
-# snapcraft --destructive-mode --target-arch=arm64
+# snapcraft --destructive-mode --build-for=arm64
 [...]
 Snapped kernal-snap-name_arm64.snap
 ```
