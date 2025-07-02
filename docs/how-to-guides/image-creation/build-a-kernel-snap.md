@@ -538,7 +538,7 @@ snap install snapcraft --classic
 With _snapcraft.yaml_ complete, and the kernel source either cloned locally or linked to from the snapcraft.yaml, the `snapcraft` command will build the kernel. As mentioned earlier, it's often more convenient to build the kernel within the host environment, using `--destructive-mode`:
 
 ```bash
-# snapcraft --destructive-mode --target-arch=arm64
+# snapcraft --destructive-mode --build-for=arm64
 [...]
 Snapped kernal-snap-name_arm64.snap
 ```
