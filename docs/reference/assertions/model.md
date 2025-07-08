@@ -63,7 +63,7 @@ The index for this assertion is the tuple \<`series`, `brand-id`, `model`\> and 
    * `prefer-encrypted`: do encrypt if the hardware supports it.
    * `encrypted`: ensure encryption is used and fail if the device does not support it.
 
-- `system-user-authority` is used to list a set of account IDs that are authorised to sign system user assertions for any image built with the assertion. See [Specifying system-user-authority](/how-to-guides/manage-ubuntu-core/add-a-system-user.md#specifying-system-user-authority) for more details.
+- `system-user-authority` is used to list a set of account IDs that are authorised to sign system user assertions for any image built with the assertion. See {ref}`specifying-system-user-authority` for more details.
 
 - `timestamp` can be generated with the ` date -Iseconds --utc` command.
 
