@@ -41,6 +41,7 @@ Thinking about using Ubuntu Core for your next project? [Get in touch!](https://
 :titlesonly:
 :maxdepth: 2
 :glob:
+:force:
 
 Tutorials <tutorials/index>
 How-to guides <how-to-guides/index>
