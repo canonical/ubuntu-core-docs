@@ -22,7 +22,6 @@ We also provide instructions for building and installing an Ubuntu Core image on
 :titlesonly:
 :maxdepth: 2
 :glob:
-:force:
 
 Use Raspberry Pi imager <use-raspberry-pi-imager>
 Use the dd command <use-the-dd-command>
