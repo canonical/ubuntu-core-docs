@@ -101,7 +101,7 @@ They're added as a structured list with a single `presence` attribute for whethe
 
 The modes for which the component must be present can be specified as well. Syntax is as follows:
 
-```yaml
+```text
     components:                                 # optional
       <component-name-1>:
         presence: "optional"|"required"
@@ -124,7 +124,7 @@ The modes for which the component must be present can be specified as well. Synt
   * `prefer-enforce` initially enforces the validation-set before permitting it to be forgotten.
 
    The following is a sample _validation-sets_ declaration:
-   ```json
+   ```text
     "validation-sets": [
         {
            "account-id": <account-id>,
