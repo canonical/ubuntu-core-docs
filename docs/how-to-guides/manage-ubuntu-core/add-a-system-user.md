@@ -63,6 +63,8 @@ When a model assertion lacks a `system-user-authority` field, the system-user as
 - a key registered to the store account specified by the `brand-id` field (_bJzr2XzZg6Qv6Z53dsjhg20975Skjs_  in our example)
 - the key that's part of the [account-key](/reference/assertions/account-key) assertion when the system-user assertion is submitted to the device
 
+
+(specifying-system-user-authority)=
 #### Specifying system-user-authority
 
 The optional `system-user-authority` field can be added to a model assertion to list a set of account IDs that are authorised to sign system-user assertions for any image built with the assertion:

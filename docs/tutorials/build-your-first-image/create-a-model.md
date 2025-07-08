@@ -60,7 +60,6 @@ This needs to be provided at the end of the process; we’ll come back to this.
             "default-channel": "24/stable",
             "id": "YbGa9O3dAXl88YLI6Y1bGG74pwBxZyKg"
         },
-       ...
 ```
 
 This section lists the snaps to be included in the image. **pi** (shown above), **pi-kernel**, **core24** and **snapd** are the four snaps required for a functioning Ubuntu Core device. The additional **console-conf** snap is required for Ubuntu Core 24 devices.

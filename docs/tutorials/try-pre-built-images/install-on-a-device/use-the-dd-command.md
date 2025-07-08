@@ -167,7 +167,7 @@ Each time the device starts up, if a display connected it will show its various 
 
 You can now connect to your Ubuntu Core machine with the _ssh_ command and your username followed by the IP address of your device:
 
-```no-highlight
+```text
 $ ssh account@10.0.2.15
 The authenticity of host '10.0.2.15 (10.0.2.15)' can't be established.
 ECDSA key fingerprint is SHA256:EiZUZG50l1Dvr1/aR940EX/lKW4qLfkRiMaMFwuzuf8
