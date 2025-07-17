@@ -161,8 +161,8 @@ html_context = {
 
 # Template and asset locations
 
-html_static_path = [".sphinx/_static"]
-templates_path = [".sphinx/_templates"]
+html_static_path = ["_static"]
+templates_path = ["_templates"]
 
 
 #############
@@ -253,6 +253,7 @@ exclude_patterns = [
 
 html_css_files = [
     "css/pdf.css",
+    "css/cookie-banner.css",
 ]
 
 # Add redirects, so they can be updated here to land with docs being moved
@@ -262,7 +263,9 @@ rediraffe_redirects = "redirects.txt"
 # Adds custom JavaScript files, located under 'html_static_path'
 
 # html_js_files = []
-
+html_js_files = [
+    "js/bundle.js"
+]
 
 # Specifies a reST snippet to be appended to each .rst file
 

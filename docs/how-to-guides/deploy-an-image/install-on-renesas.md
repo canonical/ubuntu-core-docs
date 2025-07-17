@@ -236,7 +236,7 @@ You can now connect to your Ubuntu Core machine with the _ssh_ command and your 
 
 For example:
 
-```bash
+```text
 $ ssh user@10.0.2.15
 The authenticity of host '192.168.1.68 (192.168.1.68)' can't be established.
 ED25259 key fingerprint is SHA256:VD5KH7hM5RxQ15mM70zyJvgmg.
