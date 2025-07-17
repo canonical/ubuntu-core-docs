@@ -35,6 +35,7 @@ Ubuntu Core has been developed specifically to leverage the power of snap packag
 :glob:
 
 Using Ubuntu Core <using-ubuntu-core>
-Create images <image-creation/index>
+Create an image <image-creation/index>
+Deploy an image <deploy-an-image/index>
 Manage Ubuntu Core <manage-ubuntu-core/index>
-Deploy containers <container-deployment/index>
+Work with containers <container-deployment/index>

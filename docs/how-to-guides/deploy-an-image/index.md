@@ -1,4 +1,4 @@
-# Install on a device
+# Deploy an image
 
 We create pre-built Ubuntu Core images for several testing platforms. These images are a way to explore Ubuntu Core. Canonical produces official images for the [following platforms](https://ubuntu.com/core/docs/supported-platforms).
 
@@ -23,7 +23,5 @@ We also provide instructions for building and installing an Ubuntu Core image on
 :maxdepth: 2
 :glob:
 
-Use Raspberry Pi imager <use-raspberry-pi-imager>
-Use the dd command <use-the-dd-command>
 Install on a Renesas RZ/G2L <install-on-renesas>
 Install on a MediaTek Genio <install-on-mediatek>

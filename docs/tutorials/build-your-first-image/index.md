@@ -6,6 +6,8 @@ This same process can be used to build Ubuntu Core images for various hardware a
 
 ## Step-by-step guide
 
+
+
 1. [Requirements](requirements)
 1. [Create an Ubuntu One account](access-ubuntu-one)
    1. [Create the account online](access-ubuntu-one.md#create-an-ubuntu-one-account)
