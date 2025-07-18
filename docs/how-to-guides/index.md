@@ -14,6 +14,13 @@ Any device running Ubuntu Core is instantiated from an image. This image contain
 
 - [Create images](image-creation/index)
 
+## Deploy an image
+
+Pre-built image install guides for testing specific platforms, including devices from MediaTek and Renesas.
+
+- [Install on a Renesas RZ/G2L](deploy-an-image/install-on-renesas/): Install a pre-built image on a Renesas RZ/G2L device
+- [Install on a MediaTek Genio](deploy-an-image/install-on-mediatek/): Install a pre-built image on a MediaTek Genio device
+
 ## Manage Ubuntu Core
 
 Maintain and manage your Ubuntu Core systems, including recovery modes, system users, configuration options and kernel options.
@@ -35,6 +42,7 @@ Ubuntu Core has been developed specifically to leverage the power of snap packag
 :glob:
 
 Using Ubuntu Core <using-ubuntu-core>
-Create images <image-creation/index>
+Create an image <image-creation/index>
+Deploy an image <deploy-an-image/index>
 Manage Ubuntu Core <manage-ubuntu-core/index>
-Deploy containers <container-deployment/index>
+Work with containers <container-deployment/index>

@@ -12,6 +12,13 @@
 # Example:
 # redirect/from/file/ redirect/to/file/
 
+# RTD reconfiguration
+
+tutorials/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager/ tutorials/try-pre-built-images/use-raspberry-pi-imager/
+tutorials/try-pre-built-images/install-on-a-device/use-the-dd-command/ tutorials/try-pre-built-images/use-the-dd-command/
+tutorials/try-pre-built-images/install-on-a-device/ how-to-guides/deploy-an-image/
+tutorials/try-pre-built-images/install-on-a-device/install-on-renesas/ how-to-guides/deploy-an-image/install-on-renesas/ 
+tutorials/try-pre-built-images/install-on-a-device/install-on-mediatek/ how-to-guides/deploy-an-image/install-on-mediatek/
 
 # Old top level
 uc24 reference/release-notes/
