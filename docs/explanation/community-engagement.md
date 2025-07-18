@@ -47,8 +47,7 @@ Both documentation and engineering teams agree to shoulder responsibilities impl
 
 ## Get in touch
 
-You can find the Ubuntu Core team on both the Ubuntu Discourse forum and the Snapcraft forum:
-- https://discourse.ubuntu.com/c/ubuntu-core-docs
+You can find the Ubuntu Core team on the Snapcraft forum:
 - https://forum.snapcraft.io/c/snapd
 
 For interactive discussions, the team can also be found on Matrix.org:
