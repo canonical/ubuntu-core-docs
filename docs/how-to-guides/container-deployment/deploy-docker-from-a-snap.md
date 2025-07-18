@@ -183,7 +183,7 @@ Verify that everything is working and setup correctly by looking into the follow
 - Docker containers: `docker ps`
 
 You should be able to access the RabbitMQ's management dashboard via a web browser.
-By default, it is available at http://localhost:15672 (username/password: `guest`).
+By default, it is available at `http://localhost:15672` (username/password: `guest`).
 
 ![RabbitMQ Management Dashboard|800x397](https://assets.ubuntu.com/v1/616d2ae4-deploy-docker-from-a-snap.png)
 
