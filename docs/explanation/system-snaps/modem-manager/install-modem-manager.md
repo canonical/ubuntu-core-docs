@@ -22,7 +22,7 @@ Active: active (running) since Fri 2020-07-10 08:34:43 UTC; 2min 20s ago Main PI
 Tasks: 3 (limit: 569) 
 CGroup: /system.slice/snap.modem-manager.modemmanager.service └─2047 /snap/modem-manager/414/usr/sbin/ModemManager --filter-policy=STRICT --log-level=INFO
 ```
-Now you have ModemManager successfully installed. In the next sections we will briefly explain how to use part of ModemManager's features, using  *mmcli*  command line interface to interact with the service. For a complete reference on what can be done with ModemManager, take a look at [ *mmcli*  man page](https://www.freedesktop.org/software/ModemManager/man/latest/mmcli.8.html) and to [ModemManager's D-Bus interface](https://www.freedesktop.org/software/ModemManager/api/latest/). It is also possible to use  *dbus-send*  to directly access the D-Bus interface if desired.
+Now you have ModemManager successfully installed. In the next sections we will briefly explain how to use part of ModemManager's features, using  *mmcli*  command line interface to interact with the service. For a complete reference on what can be done with ModemManager, take a look at [ *mmcli*  man page](https://www.freedesktop.org/software/ModemManager/man/latest/mmcli.1.html) and to [ModemManager's D-Bus interface](https://www.freedesktop.org/software/ModemManager/api/latest/). It is also possible to use  *dbus-send*  to directly access the D-Bus interface if desired.
 
 Finally, note that to run both  *mmcli*  and  *dbus-send*  we need root permissions, so we use  *sudo*  with them.
 
