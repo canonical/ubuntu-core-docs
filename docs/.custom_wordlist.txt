@@ -1,6 +1,7 @@
 # Leave a blank line at the end of this file to support concatenation
 
 ACLs
+adapter
 AdGuard
 AIoT
 al
@@ -25,6 +26,7 @@ backticks
 BBtext
 BCM
 behavior
+bitrate
 bJzr
 BLE
 bluetooth
@@ -66,6 +68,7 @@ CMTP
 color
 conf
 conf's
+confdb
 config
 configs
 configurability
@@ -74,7 +77,9 @@ CPUs
 crypto
 cryptographic
 cryptographically
+Ctrl
 customizing
+data's
 dbus
 decrypt
 decrypting
@@ -104,6 +109,8 @@ errno
 errno
 eth
 ethernet
+EVK
+evk
 fd
 FDE
 Fi
@@ -116,6 +123,8 @@ freefont
 gapped
 gapped
 gatt
+Genio
+genio
 GiB
 github
 gnupg
@@ -128,6 +137,7 @@ GTK
 gtk
 GUID
 gyre
+gz
 hard
 hc
 hc
@@ -191,12 +201,16 @@ manpage
 MBIM
 mbim
 mbimcli
+MediaTek
 meshctl
 MiB
 MiBs
+microHDMI
 Microk
 MicroK
 microSD
+microUSB
+Minicom
 mir
 mmcli
 ModemManager
@@ -256,6 +270,7 @@ Powersave
 powersaving
 pppd
 PPPoE
+preconfigured
 prem
 preseed
 Preseed
@@ -272,6 +287,7 @@ qmi
 QMI
 qmicli
 QMU
+QSPI
 Qv
 RabbitMQ
 RabbitMQ's
@@ -284,6 +300,7 @@ recompressed
 reinstantiated
 rekey
 renderer
+Renesas
 reproducibility
 RFCOMM
 rfkill
@@ -295,9 +312,13 @@ Roseapple
 rpi
 RSA
 RTC
+RZ
 sandboxing
+schemas
+SCIF
 SCO
 scp
+sd
 sdcard
 SDP
 sdptool
@@ -318,6 +339,7 @@ snapcraft
 snapctl
 snapd
 snapd's
+SoC
 SPI
 Squashfs
 SSD
