@@ -1,4 +1,4 @@
-# Install a pre-build Ubuntu Core image on a Renesas RZ/G2L
+# Install a pre-built Ubuntu Core image on a Renesas RZ/G2L
 
 Pre-built images are ideal for exploration and experimentation of Ubuntu Core, but they are not intended for deployment or use at scale. They include snaps to provide an onboarding and evaluation experience, alongside an SSH connection, and these are unlikely to be required in your own Ubuntu Core deployment.
 
