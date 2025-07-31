@@ -112,7 +112,7 @@ sign-key-sha3-384: 74KHeq1foV...
         }
       },
       "sample-rate": {
-        "keys": "$sensor-name",
+        "keys": "${sensor-name}",
         "values": {
           "choices": [
             100,
@@ -132,7 +132,7 @@ pq2emmvcElyUfJhfCXw391X5UC8rMGeHm4vUKfFDRGCeplyFFmVaiyIZ4d39NQr38wI5r9yLJB1W
 ```
 
 As can be seen in the example, the schema is expressed as a set of nested JSON objects with types and constraints. All keys are optional such that a partial or empty configuration is considered valid and values can be any JSON value, except `null`.
-There are seven predefined types: `map`, `array`, `string`, `int`, `number`, `bool` and `any`. In addition to those types, user-defined types can also be introduced and later referred to with a ``$`` prefix. We'll describe these types and their constraints in detail below.
+There are seven predefined types: `map`, `array`, `string`, `int`, `number`, `bool` and `any`. In addition to those types, user-defined types can also be introduced and later referred to by wrapping the name with ``${...}``. We'll describe these types and their constraints in detail below.
 
 Typically, a type will look like:
 
@@ -274,7 +274,7 @@ Type definitions can also take the form of a list of alternative types. When val
 ```
 
 ### Aliases
-`aliases` is a special field in the top level map where user-defined types can be composed from the predefined types and their constraints. This field must be a map associating new type names to their type definitions. Type definitions can then use these aliases by prefixing them with a `$` character.
+`aliases` is a special field in the top level map where user-defined types can be composed from the predefined types and their constraints. This field must be a map associating new type names to their type definitions. Type definitions can then use these aliases by wrapping them with `${...}`.
 
 ```
 {
@@ -288,7 +288,7 @@ Type definitions can also take the form of a list of alternative types. When val
   },
   "schema": {
     "name": "string",
-    "version": "$version_str"
+    "version": "${version_str}"
   }
 }
 ```
