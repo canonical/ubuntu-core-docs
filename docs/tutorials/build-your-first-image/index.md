@@ -66,14 +66,30 @@ Learn how to sign a model with a GPG key to make it into a _model assertion_.
 
 * [Create a key](sign-the-model.md#create-a-key)
 
+  Use `snapcraft` to create a key that will be used across all models or model families.
+
 * [Register the key](sign-the-model.md#register-the-key)
+
+  Upload the key and register it with your Ubuntu One account by using `register-key` command. After creating the key, update the timestamp in `my-model.json`.
 
 * [Sign the model](sign-the-model.md#sign-the-model)
 
+  Use the `snap sign` command to update the JSON file with the key name.
 
-1. [Build and write the image](build-the-image)
-   1. [Compile the image](build-the-image.md#compile-the-image)
-   1. [Write the image](build-the-image.md#write-the-image)
+## Build and write the image
+
+Using [ubuntu-image](https://github.com/canonical/ubuntu-image), generate a bootable image from the recipe contained in the [model assertion](/tutorials/build-your-first-image/create-a-model).
+
+* [Compile the image](build-the-image.md#compile-the-image)
+
+  Install the `ubuntu-image` command and use the arguments `snap`, `--allow-snapd-kernel-mismatch` and the file name of the previously signed model assertion to build an image.
+
+* [Write the image](build-the-image.md#write-the-image)
+
+  Install Raspberry Pi Imager and use it to write the image on a microSD card.
+
+
+
 1. [Boot the image](boot-the-image)
    1. [Boot Ubuntu Core](boot-the-image.md#boot-ubuntu-core)
    1. [Configure a network connection](boot-the-image.md#configure-a-network-connection)
