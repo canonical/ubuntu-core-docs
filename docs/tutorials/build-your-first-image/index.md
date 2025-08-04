@@ -88,12 +88,21 @@ Using [ubuntu-image](https://github.com/canonical/ubuntu-image), generate a boot
 
   Install Raspberry Pi Imager and use it to write the image on a microSD card.
 
+## Boot the image
 
+Now that you have a custom image for a Raspberry Pi on a microSD card, the device can now be booted and configured.
 
-1. [Boot the image](boot-the-image)
-   1. [Boot Ubuntu Core](boot-the-image.md#boot-ubuntu-core)
-   1. [Configure a network connection](boot-the-image.md#configure-a-network-connection)
-   1. [Connect to the device](boot-the-image.md#connect-to-the-device)
+* [Boot Ubuntu Core](boot-the-image.md#boot-ubuntu-core)
+
+  Insert the microSD card into the powered-off Raspberry Pi and turn it on to boot up your image.
+
+* [Configure a network connection](boot-the-image.md#configure-a-network-connection)
+
+  Choose a wired connection (Ethernet) or Wi-Fi to setup Ubuntu Core.
+
+* [Connect to the device](boot-the-image.md#connect-to-the-device)
+
+  Connect to the AdGuard Home snap of the Ubuntu Core via the published IP address and its configured port (3000 for setup).
 
 ```{toctree}
 :hidden:
