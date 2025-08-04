@@ -24,7 +24,7 @@ snap set wpe-webkit-mir-kiosk url=https://ubuntu.com/core
 
 The first command installs [ubuntu-frame](https://snapcraft.io/ubuntu-frame). This provides the graphical display for developers deploying embedded applications with a GUI. The next snap, [wpe-webkit-mir-kiosk](https://snapcraft.io/wpe-webkit-mir-kiosk), installs an open-source web viewer and we use `snap set` to configure this with the web address we'd like to show. 
 
-All of this initial configuration could be done during the image build to control the complete user experience from the first boot. To learn how to create your own custom image, see our [Build an image](/tutorials/build-your-first-image/index) guide.
+All of this initial configuration could be done during the image build to control the complete user experience from the first boot. To learn how to create your own custom image, see our {ref}`Build an image <ref-index-build-your-first-image>` guide.
 
 ## Interfaces
 
