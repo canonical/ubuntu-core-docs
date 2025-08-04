@@ -38,29 +38,39 @@ A _model assertion_ is a signed recipe that describes the components that compri
 
 * [Download a model assertion](create-a-model.md#download-a-model-file)
 
+  Download the 64-bit reference model for the Raspberry Pi: [ubuntu-core-24-pi-arm64.json](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-pi-arm64.json), save it locally with the `wget` command.
+
 * [Edit the model assertion](create-a-model.md#edit-the-model-file)
+
+  Edit `my-model.json` using a text editor.
 
 * [authority-id and brand-id](create-a-model.md#authority-id-and-brand-id)
 
+  Replace "canonical" in `my-model.json` with your developer and brand ID.
+
 * [timestamp](create-a-model.md#timestamp)
+
+  Provide the timestamp at the end of the process.
 
 * [snaps](create-a-model.md#snaps)
 
+  Add the snaps **pi**, **pi-kernel**, **core24** and **snapd** that are required for a functioning Ubuntu Core device.
+
 * [A complete model assertion](create-a-model.md#complete-model-example)
 
+  Review `my-model.json` after finishing the edits above.
+
+## Sign the model assertion
+
+Learn how to sign a model with a GPG key to make it into a _model assertion_.
+
+* [Create a key](sign-the-model.md#create-a-key)
+
+* [Register the key](sign-the-model.md#register-the-key)
+
+* [Sign the model](sign-the-model.md#sign-the-model)
 
 
-1. [Create the model assertion](create-a-model)
-   1. [Download a model assertion](create-a-model.md#download-a-model-file)
-   1. [Edit the model assertion](create-a-model.md#edit-the-model-file)
-   1. [authority-id and brand-id](create-a-model.md#authority-id-and-brand-id)
-   1. [timestamp](create-a-model.md#timestamp)
-   1. [snaps](create-a-model.md#snaps)
-   1. [A complete model assertion](create-a-model.md#complete-model-example)
-1. [Sign the model assertion](sign-the-model)
-   1. [Create a key](sign-the-model.md#create-a-key)
-   1. [Register the key](sign-the-model.md#register-the-key)
-   1. [Sign the model](sign-the-model.md#sign-the-model)
 1. [Build and write the image](build-the-image)
    1. [Compile the image](build-the-image.md#compile-the-image)
    1. [Write the image](build-the-image.md#write-the-image)
