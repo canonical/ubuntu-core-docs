@@ -35,8 +35,8 @@ The [gadget snap](/reference/gadget-snap-format) is responsible for defining and
 The [base snap](https://snapcraft.io/docs/base-snaps) provides the run-time environment with a minimal set of libraries that are common to most applications. Base snaps mirror Ubuntu LTS releases and include core20, built from Ubuntu 20.04 LTS, core18 based on Ubuntu 18.04 LTS, and core, based on Ubuntu 16.04 LTS. One of them, selected with the model assertion, also serves as the root file system for the Ubuntu Core system.
 For historical reasons the core snap has a different specific type: core.
 1. **snapd**: The snap daemon</br>
-The core16, core18 and core20+ base snaps do not include the snap daemon (core, however, does). Instead, they package the daemon as an upgradeable snap of this type.
-  The core16 base snap is supported inline with the wider [Ubuntu release cycle](https://ubuntu.com/about/release-cycle) and cannot run the latest versions of the daemon.
+Since core18, base snaps do not include the snap daemon. Instead, the snapd daemon is packaged as a separate upgradeable snap.
+  The core base snap used in Ubuntu Core 16 includes the snapd daemon, which therefore cannot be separately upgraded and is supported inline with the wider [Ubuntu release cycle](https://ubuntu.com/about/release-cycle).
 1. **app**: Applications, daemons and tools</br>
 Packages applications, pulled from multiple upstream sources using diverse build systems. The snapd daemon is itself installed as a snap (except with an old core, where it's included).
 
