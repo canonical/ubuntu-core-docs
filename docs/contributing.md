@@ -140,11 +140,11 @@ Some general tips:
 - verify links and examples
 
 We (mostly) adhere to the [Ubuntu style guide](https://docs.ubuntu.com/styleguide/en). In particular:
-- we use British English (en-GB), for example:
-  -   the _ise_ suffix in preference to _ize_ (_capitalise_ rather than _capitalize_)
-  - _our_ instead of _or_ (as in _colour_ and _color_)
-  - license as a verb, licence as a noun
-  - catalogue rather than catalog
+- we use US English (en-US), for example:
+  - the _ize_ suffix in preference to _ise_ (_capitalize_ rather than _capitalise_)
+  - _or_ instead of _our_ (as in _color_ and _colour_)
+  - license as both a verb and a noun
+  - catalog rather than catalogue
 - dates take the format _1 January 2013_, _1-2 January 2013_ and _1 January - 2 February 2013_
 
 ## Diátaxis
