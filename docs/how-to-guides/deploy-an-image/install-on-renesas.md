@@ -132,11 +132,7 @@ If there's any errors during write, check your sd card. Optionally you might unp
 
 With the device powered off, insert the microSD card.
 
-Ensure the SW1 DIP switch on the module is _not_ set to boot from the SD card (SW1-1 ON, SW1-2 OFF). It should look like this:
-
-![Renesas DIP switch for SD cards](https://assets.ubuntu.com/v1/502b1636-dip-02.png)
-
-In addition to the above, the BOOT / Power Mode DIP switches must also be set to the QSPI boot mode. You can now power on the board.
+The BOOT / Power Mode DIP switches must also be set to the QSPI boot mode. You can now power on the board.
 
 ![RZ DIP switch configuration for Ubuntu Core](https://assets.ubuntu.com/v1/b3dd3513-dip-01.png)
 
