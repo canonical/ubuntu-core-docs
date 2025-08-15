@@ -3,62 +3,17 @@
 
 Board enablement is the process of constructing a complete Ubuntu Core image for an unsupported device. This process typically involves the following steps, each of which is outlined in greater detail below.
 
-This process has been tested and performed on a _Roseapple Pi_. You can find the complete example source in [this repository](https://github.com/kubiko/roseapple-pi-ubuntuCore-build), but the same process should be applicable to other hardware.
+Examples given are for a _Roseapple Pi_.
 
 ## Create the kernel snap
 
 The kernel snap contains the Linux kernel for the device.
 
-Ubuntu Core kernels are based on the `multiv7_defconfig` Linux kernel build target plus some mandatory Ubuntu configs (see the `snapcraft.yaml` example below).
+Ubuntu Core kernels are based on the `multiv7_defconfig` Linux kernel build target plus some mandatory Ubuntu configs.
 
 You can find reference kernels here: <https://github.com/snapcore/sample-kernels>
 
-Once you have a kernel ready for Ubuntu Core, the recommended way to build a kernel is with [snapcraft](https://snapcraft.io/docs/snapcraft-overview). Preferably host the `snapcraft.yaml` for the kernel in your device build tree, independent of the kernel tree.
-
-### Kernel snapcraft.yaml example
-
-[Source](https://github.com/kubiko/roseapple-pi-ubuntuCore-build/blob/master/builder/kernel/snapcraft.yaml)
-
-```yaml
-name: roseapple-pi-kernel
-version: 3.10.37-1
-summary: A roseapple kernel built from source
-description: This is the reference kernel from xapp-le branch Ubuntu-Snappy-Core
-type: kernel
-architectures: [ armhf ]
-
-parts:
-    kernel:
-        plugin: kernel
-        source: https://github.com/kubiko/kernel-roseapple-pi.git
-        source-branch: Ubuntu-Snappy-Core
-        source-type: git
-        kdefconfig: [snappy-actduino_bubble_gum_linux_defconfig]
-        kconfigs:
-            - CONFIG_LOCALVERSION="-roseapple"
-            - CONFIG_DEBUG_INFO=n
-            - CONFIG_SQUASHFS=m
-            - CONFIG_DEVPTS_MULTIPLE_INSTANCES=y
-            - CONFIG_RTL8192U=m
-            - CONFIG_BT_BCM=m
-            - CONFIG_MAC80211_LEDS=y
-            - CONFIG_RFKILL_LEDS=y
-            - CONFIG_ATH_COMMON=y
-            - CONFIG_ATH_CARDS=y
-            - CONFIG_ATH9K_HW=y
-            - CONFIG_ATH9K_COMMON=y
-            - CONFIG_ATH9K_BTCOEX_SUPPORT=y
-            - CONFIG_ATH9K_HTC=y
-            - CONFIG_ATH9K_HTC_DEBUGFS=y
-            - CONFIG_LEDS_TRIGGERS=y
-
-        kernel-initrd-modules:
-            - squashfs
-        kernel-image-target: zImage
-        kernel-device-trees:
-            - actduino_bubble_gum_sdboot_linux
-        build-packages: [bc, kmod, cpio]
-```
+For more information, see [build a kernel snap](/how-to-guides/image-creation/build-a-kernel-snap).
 
 ## The gadget snap
 
