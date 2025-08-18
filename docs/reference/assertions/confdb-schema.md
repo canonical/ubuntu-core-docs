@@ -111,7 +111,7 @@ sign-key-sha3-384: 74KHeq1foV...
     },
     "schema": {
       "min-value": {
-        "keys": "$sensor-name",
+        "keys": "${sensor-name}",
         "values": {
           "max": 5600,
           "min": -273.15,
