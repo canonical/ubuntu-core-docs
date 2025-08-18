@@ -56,7 +56,7 @@ The `views` header can have any number of views, each with a fine-grained set of
 - **`access`** (*optional*)
     Access control for the given rule. Can be read-only, write-only or read-write. If omitted, defaults to read-write.
 - **`content`** (*optional*)
-    Describes a nested rule that will be created with the parent's rule `request` and `storage` paths as prefixes. Semantically equal to creating a parallel rule with the same prefix. The `access` value is not inherited.
+    Describes a nested rule that will be created with the parent's rule `request` and `storage` paths as prefixes. The `access` value is inherited from the parent and cannot be overridden.
    
 An example of this assertion is:
 
