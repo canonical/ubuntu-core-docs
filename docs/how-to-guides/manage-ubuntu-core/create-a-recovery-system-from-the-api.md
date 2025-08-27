@@ -79,7 +79,7 @@ In this example, “validation-set.assert”, “pc.assert”, “pc-kernel.asse
 
 Recovery systems can be removed by using the remove API. Note that the “current” system, the default recovery system, and the last recovery system cannot be removed.
 
-Example POST to /v2/system/<label>:
+Example POST to /v2/system/\<label\>:
 
 ```json
 {
