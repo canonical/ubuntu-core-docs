@@ -1,5 +1,5 @@
 (reference-gadget-snap-format)=
-# Graham is ace
+# Gadget snap format
 
 The gadget snap is responsible for defining and configuring system properties specific to one or more devices.
 
