@@ -1,4 +1,4 @@
-(explanation-core-elements-storage-layout)=
+(storage-layout)=
 # Storage layout
 
 Storage layouts for Ubuntu Core have been designed to support [recovery modes](/how-to-guides/manage-ubuntu-core/use-a-recovery-mode), and the following partitions are used:

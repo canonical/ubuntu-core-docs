@@ -1,4 +1,4 @@
-(how-to-guides-manage-ubuntu-core-use-a-recovery-mode)=
+(use-a-recovery-mode)=
 # Use a recovery mode
 
 Ubuntu Core is inherently robust. But if data corruption issues do occur, even on boot or data partitions, it can still access a recovery mode to help repair, restore or reinstall an impaired device.

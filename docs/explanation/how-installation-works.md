@@ -21,6 +21,7 @@ The first three (1-3) are also described in the [recovery mode](/explanation/rec
 1.  snapd proceeds to reboot into **run mode**.
 1.  From run mode, snapd  bootstraps itself and proceeds to _seeding_, installing and activating all the snaps marked for **run mode** use in the recovery system.
 
+ (the-install-device-hook)=
 ## The install-device hook
 
 A [gadget](/reference/gadget-snap-format) can optionally define an _install-device hook_ . This is invoked from **install mode** before rebooting into **run mode**, between steps 4 and 5 above, and also after a [factory reset](/explanation/recovery-modes.md#factory-reset), to perform early hardware and firmware configuration.
