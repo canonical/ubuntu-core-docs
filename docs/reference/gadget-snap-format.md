@@ -10,7 +10,7 @@ The gadget metadata and content defines:
 -  Interface connections configured in the `connections:` section are executed on the device’s first boot only. Later changes to this section -- that is, changes added to the device at run time through gadget refreshes -- are not applied.
 -   Optional hooks that are invoked to control and customise the behaviour over the device lifecycle, e.g. installation, initialisation and establishing device identity, factory reset.
 
-See [Building a gadget snap](/how-to-guides/image-creation/build-a-gadget-snap) for details on how a gadget snap can be built. For store deployment, gadget snaps must be produced by the device [brand](https://snapcraft.io/docs/glossary#heading--brand-store), as defined in the [model assertion](/reference/assertions/model), or a reference gadget must be used. It is perfectly possible for different models to share a gadget snap.
+See [Building a kernel snap](/how-to-guides/image-creation/build-a-kernel-snap) for details on how a Kernel snap can be built. For store deployment, kernel snaps must be produced by the device [brand](https://snapcraft.io/docs/glossary#heading--brand-store), as defined in the [model assertion](/reference/assertions/model), or a reference gadget must be used. It is perfectly possible for different models to share a gadget snap.
 
 ## Setup files
 
