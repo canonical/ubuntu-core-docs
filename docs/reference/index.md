@@ -1,3 +1,4 @@
+(reference-index)=
 # Reference
 
 Our *Reference section* is for when you need to know which options can be used, what functions the API supports, which rescue modes are supported and the contents of *gadget.yaml* .

@@ -13,8 +13,8 @@
 ## In this documentation
 | | |
 |--|--|
-|  [Tutorials](/tutorials/index)</br>  Get started - a hands-on introduction to Ubuntu Core for new users </br> |  [How-to guides](/how-to-guides/index) </br>     Step-by-step guides covering key operations and common tasks |
-| [Explanation](/explanation/index) </br> Concepts - discussion and clarification of key topics  | [Reference](/reference/index) </br> Technical information - specifications, APIs, architecture |
+|  {ref}`tutorials-index`</br>  Get started - a hands-on introduction to Ubuntu Core for new users </br> |  {ref}`how-to-guides-index` </br>     Step-by-step guides covering key operations and common tasks |
+| {ref}`explanation-index` </br> Concepts - discussion and clarification of key topics  | {ref}`reference-index` </br> Technical information - specifications, APIs, architecture |
 
    * **Stores:** {ref}`explanation-stores-store-overview` | [Brand accounts](explanation/stores/brand-accounts) | [Dedicated snap stores](explanation/stores/dedicated-snap-store) | [Store scoping](explanation/stores/store-scoping)
    * **Security:** [Full disk encryption](explanation/full-disk-encryption) | [Sandboxing](explanation/security-and-sandboxing) | {ref}`how-to-guides-manage-ubuntu-core-use-a-recovery-mode`
