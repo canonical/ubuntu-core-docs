@@ -12,7 +12,7 @@ $ cat /proc/cmdline
 snapd_recovery_mode=run console=ttyS0,115200n8 console=tty1 panic=-1
 ```
 
-In addition to parameters supported by the kernel, there are also *Ubuntu Core-specific* [kernel boot parameters](/reference/kernel-boot-parameters).
+In addition to parameters supported by the kernel, there are also *Ubuntu Core-specific* {ref}`reference-kernel-boot-parameters`.
 
 ## Dynamic kernel parameter modifications
 
