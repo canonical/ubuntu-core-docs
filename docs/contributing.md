@@ -7,7 +7,7 @@ The navigational structure, style, and content of our documentation follows the 
 Documentation consistency is vital, which is why we're listing some guidelines below, but don't let this formality put you off  - just start writing and editing. If something is inconsistent, we'll fix it.
 
 As [Voltaire](https://en.wikipedia.org/wiki/Voltaire) wrote, "_Perfect is the enemy of good_," and we'd rather have documentation we can fix than non-existent documentation we can't.
-
+ okie 
 ## Open Documentation Academy
 
 The [Open Documentation Academy](https://discourse.ubuntu.com/t/about-the-open-documentation-academy/39615/) is an initiative led by the documentation team at Canonical to provide help, advice, mentorship, and dozens of different tasks to get started on, within a friendly and encouraging environment. 
