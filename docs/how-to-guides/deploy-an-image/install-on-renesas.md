@@ -219,4 +219,4 @@ As shown above, the first time you connect to a new device you will be asked to 
 
 Congratulations! You have successfully downloaded, installed, and connected to a pre-built Ubuntu Core image on your Renesas RZ/G2L.
 
-See [First steps with Ubuntu Core](/how-to-guides/using-ubuntu-core) for an introduction to using your new Ubuntu Core installation or learn how to [build your Ubuntu Core image](/tutorials/build-your-first-image/index).
+See {ref}`ref-index-build-your-first-image` for an introduction to using your new Ubuntu Core installation or learn how to {ref}`ref-index-build-your-first-image`.
