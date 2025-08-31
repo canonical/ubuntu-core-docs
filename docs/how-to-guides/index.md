@@ -12,7 +12,7 @@ While Ubuntu Core is primarily intended for developers to build custom images ta
 
 Any device running Ubuntu Core is instantiated from an image. This image contains little more than the kernel, an init process, and a few essential tools. On all but the earliest releases of Ubuntu Core, even the snapd daemon that manages snaps is itself installed via its own snap.
 
-- {ref}`create-image`
+- {ref}`Create an image <create-image>`
 
 ## Deploy an image
 
