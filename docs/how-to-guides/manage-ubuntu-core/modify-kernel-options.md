@@ -65,9 +65,9 @@ The recommended way to add static parameters is by using the `kernel-cmdline` st
 
 ### Files for modification
 
-The legacy way of customizing statically the kernel command line is by adding one of two possible files to the top level of the filesystem in the [Gadget snap](/reference/gadget-snap-format):
+The legacy way of customizing statically the kernel command line is by adding one of two possible files to the top level of the filesystem in the {ref}`reference-gadget-snap-format`:
 
- 1. Add a `cmdline.extra` file containing the extra kernel command line arguments, such as  ` custom.option=1`. 
+1. Add a `cmdline.extra` file containing the extra kernel command line arguments, such as  ` custom.option=1`. 
 
     These arguments are automatically appended to the command line:
 
