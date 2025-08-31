@@ -84,7 +84,7 @@ wpe-webkit-mir-kiosk  2.38.5          104    22/stable      glancr      -
 
 The above shows the standard (and initial) set of snaps in a default Ubuntu Core installation alongside those we installed for the above kiosk.
 
-The default state for an Ubuntu Core image, including which snaps it includes, is defined by its [model assertion](/reference/assertions/model). You can view the one being used on the current system with the `snap known model` command, or use `snap known serial` to show the device serial number:
+The default state for an Ubuntu Core image, including which snaps it includes, is defined by its {ref}`reference-assertions-model`. You can view the one being used on the current system with the `snap known model` command, or use `snap known serial` to show the device serial number:
 
 ```bash
 $ snap known serial
