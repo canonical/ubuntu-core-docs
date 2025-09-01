@@ -10,14 +10,14 @@ The model assertion contains:
 * Other required or optional snaps that implement the device functionality.
 * Additional options for the defined device, such as grade, and the store it is connected to.
 
-The essential snaps can be refreshed during the device lifecycle to provide minor updates. However, when these snaps must be upgraded, or when one or more of the above elements change, a new model assertion can be deployed to the device. The updated model assertion is authenticated and linked through its serial assertion to the store. The image is upgraded based on the delta compared to the previous model. This process is called remodelling.
+The essential snaps can be updated during the device lifecycle as long as their own base stays aligned with that of the model. However, when these snaps must be upgraded, or when one or more of the other above elements change, a new model assertion can be deployed to the device. The updated model assertion is authenticated and linked through its serial assertion to the store. The image is upgraded based on the delta compared to the previous model. This process is called remodelling.
 
 The updated model must be signed with the same key as the original model, and its `revision` field must be incremented. See [model assertion](/reference/assertions/model) for further details.
 
 One example of remodelling is [Upgrading Ubuntu Core](/how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core.md).
 ## Remodelling viability
 
-The remodelling process is triggered by either updating the model assertion, running the `snap remodel` command, or from the [snapd the REST API](https://snapcraft.io/docs/snapd-api) (the last two require _snapd 2.61_ or later). Remodelling triggers the generation of a new recovery system, which means care needs to be taken to ensure the [ubuntu-seed](/explanation/core-elements/storage-layout.md#the-ubuntu-seed-partition) partition is sized accordingly. The process also ensures the newly created recovery system is valid. Therefore, the previous recovery system can be safely removed after remodelling has completed. An [API call](/how-to-guides/manage-ubuntu-core/create-a-recovery-system-from-the-api) is available to perform this removal.
+The remodelling process is triggered by either running the `snap remodel` command, or via the [snapd's REST API](https://snapcraft.io/docs/snapd-api). Both methods need an updated model assertion as input, and require _snapd 2.61_ or later. Remodelling triggers the generation of a new recovery system, which means care needs to be taken to ensure the [ubuntu-seed](/explanation/core-elements/storage-layout.md#the-ubuntu-seed-partition) partition is sized accordingly. The process also ensures the newly created recovery system is valid. Therefore, the previous recovery system can be safely removed after remodelling has completed. An [API call](/how-to-guides/manage-ubuntu-core/create-a-recovery-system-from-the-api.md/#removing-api-usage) is available to perform this removal.
 
 Remodelling is the responsibility of the snap daemon (_snapd_) running on the device. It both mediates the update process and the re-registration of the device after the update (if required). But the complexity and viability of the remodelling process is dependent on several factors outside of snapd’s control.
 
@@ -53,8 +53,8 @@ In the new model definition, the gadget snap can be kept identical to the previo
 * modification of the gadget snap name and associated ID
 * modification of the channel
 
-If the gadget snap is modified, the new gadget snap base must be aligned with the base defined in the updated [model assertion](/reference/assertions/model).
-If the default settings defined in the gadget are updated, they won't be applied when the remodelling process is performed. See [gadget snap](/reference/gadget-snap-format) for further information.
+If the [model base](/reference/assertions/model.md/#model-assertion-fields) changes, the gadget snap must be modified, and its base must match that of the new model.
+The gadget's default settings are not applied when remodelling, these are used only when the device is [(re)installed](/explanation/recovery-modes.md/#install-mode). See [gadget snap](/reference/gadget-snap-format.md/#the-gadget-yaml-file) for further information.
 
 ### Kernel snap
 
@@ -64,7 +64,7 @@ The kernel snap can also be kept as-is, or modified with any combination of the 
 * modification of the channel
 
 The build-base of the new kernel snap should be aligned with the base defined in the updated [model assertion](/reference/assertions/model).
-Ubuntu Core only supports kernel snaps built from LTS releases. Refer to [Release Notes](/reference/release-notes) for details on Ubuntu Core versioning.
+Ubuntu Core only supports kernel snaps built from LTS releases. Refer to [Release Notes](/reference/release-notes.md/#release-policy-and-schedule) for details on Ubuntu Core versioning.
 
 ## Snap removal
 

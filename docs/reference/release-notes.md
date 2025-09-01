@@ -14,7 +14,7 @@ This page outlines the release notes of Ubuntu Core, summarising new features, b
 
 A new version of Ubuntu Core is released every two years, built on the foundations of a Ubuntu LTS release. Each Ubuntu Core release is considered an LTS release. Minor updates are delivered continuously through new versions of snapd, and other [essential snaps](/explanation/core-elements/snaps-in-ubuntu-core) composing the system (gadget, base and kernel snaps).
 
-Ubuntu Core images for a particular version are built by aligning the tracks of the essential snaps that make up the system, as specified in the [model assertion](/reference/assertions/model). The kernel snap's track is aligned with that of the base snap. Supported kernel tracks for a given Ubuntu Core release should follow this pattern: `<version>[-<suffix>]`.
+A [base](/explanation/core-elements/snaps-in-ubuntu-core.md/#types-of-snap) snap is released with each Ubuntu Core version, named `core<version>`. This base snap is used to build Ubuntu Core images for a particular version, as specified in the [model assertion](/reference/assertions/model). The gadget and kernel snap's tracks are aligned with that of the base snap. Supported kernel tracks for a given Ubuntu Core release should follow this pattern: `<version>[-<suffix>]`.
 
 For example, when building an Ubuntu Core 24 image, the model uses the `core24` base snap. A kernel snap, in general from the `stable` risk-level, should be picked from the following options:
 
