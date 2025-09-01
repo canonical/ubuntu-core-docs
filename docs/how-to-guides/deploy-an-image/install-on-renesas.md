@@ -132,11 +132,7 @@ If there's any errors during write, check your sd card. Optionally you might unp
 
 With the device powered off, insert the microSD card.
 
-Ensure the SW1 DIP switch on the module is _not_ set to boot from the SD card (SW1-1 ON, SW1-2 OFF). It should look like this:
-
-![Renesas DIP switch for SD cards](https://assets.ubuntu.com/v1/502b1636-dip-02.png)
-
-In addition to the above, the BOOT / Power Mode DIP switches must also be set to the QSPI boot mode. You can now power on the board.
+The BOOT / Power Mode DIP switches must also be set to the QSPI boot mode. You can now power on the board.
 
 ![RZ DIP switch configuration for Ubuntu Core](https://assets.ubuntu.com/v1/b3dd3513-dip-01.png)
 
@@ -158,36 +154,7 @@ Press **Enter** again and you will be taken to the network setup page:
 
 ### Configure a network connection
 
-Network access is a requirement for Ubuntu Core, at least initially, and you have a choice about whether to use a wired connection (Ethernet) or Wi-Fi.
-
-#### Wi-Fi
-
-```{admonition} Kernel failure messages
-:class: caution
-There is currently a [Linux kernel bug](https://lore.kernel.org/all/d9c9336a-6314-4de9-aead-8b865bb30f05@gmx.net/) that outputs the above failure messages to the screen. These messages can be safely ignored. The bug causing the errors will be fixed in a future release.
-```
-
-This is the most common option. If you have a device with Wi-Fi capabilities, it will appear as a separate network device beneath any Ethernet devices.
-
-![Choose wlan0](https://assets.ubuntu.com/v1/3765991b-3765991b629df12859941fe22c7c2fa90a693289.png)
-
-To configure Wi-Fi, press the cursor up key until the wireless device (such as _wlan0_) is selected and press **Enter**. You will see a small menu and you need to select **Edit Wi-Fi**.
-
-![Edit Wi-Fi](https://assets.ubuntu.com/v1/f4889452-f4889452487e4f2eb052ad7410d078a8c0bddd06.png)
-
-After selecting _Edit Wi-Fi_, you will see the network interface configuration panel for Wi-Fi. If you know the name of the Wi-Fi network you wish to connect to, it can be entered directly, or cursor down to _Choose a visible network_ and select a network from a list of those that have been detected.
-
-![Enter password](https://assets.ubuntu.com/v1/04bb9874-bf6ddac76e5fdc34bfdcf353e035c4e1d679d5a4_2_690x385.png)
-
-Finally, enter the Wi-Fi password and select **Save** to complete the configuration. You will be returned to the previous menu and your device will attempt to connect to the network. If successful, you will see its IP address to the right of DHCPv4.
-
-![DHCP](https://assets.ubuntu.com/v1/9a7c81a5-9a7c81a5d6b5202dcb8f222649339a761dd40c45.png)
-
-For advanced network configuration, such as setting a static IP address, select the wireless device again, and choose edit IPv4 from the menu.
-
-When you've finished configuring your network settings, select **Done** and press enter on the _Network connections_ page to move on to the final step.
-
-#### Ethernet
+Network access is a requirement for Ubuntu Core.
 
 If an Ethernet cable is connected to your device, a network connection will attempt to be automatically negotiated and, if this is successful, you will see an IP address for the device after the DHCPv4 entry in the _Network connections_ page. In this case, you don't need to do anything further:
 

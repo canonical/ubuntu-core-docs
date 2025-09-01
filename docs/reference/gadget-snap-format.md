@@ -3,6 +3,7 @@
 
 The gadget snap is responsible for defining and configuring system properties specific to one or more devices.
 
+
 The gadget metadata and content defines:
 -   The layout of the volumes that comprise the device storage and image
 -   Configuration for the bootloader to use. The gadget also ships the bootloader itself and other boot assets.
