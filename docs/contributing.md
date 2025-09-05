@@ -33,9 +33,9 @@ Finally, subscribe to our [Documentation event calendar](https://calendar.google
 
 Everyone involved with CODA needs to follow the words and spirit of the [Ubuntu Code of Conduct v2.0](https://ubuntu.com/community/ethos/code-of-conduct).
 
-Most of the projects that participate in CODA require that a contributor has signed a Contributor licence agreement, or CLA. Such an agreement will typically grant permission for the project to use a contribution while the contributor retains the copyright and the rights to modify their own work, or use it in other projects.
+Most of the projects that participate in CODA require that a contributor has signed a Contributor license agreement, or CLA. Such an agreement will typically grant permission for the project to use a contribution while the contributor retains the copyright and the rights to modify their own work, or use it in other projects.
 
-The [Canonical contributor licence agreement](https://ubuntu.com/legal/contributors) is one such CLA. This needs to be signed before a contribution can be considered for inclusion within one of Canonical's projects. Many GitHub repositories for Canonical projects will automatically check whether a contributor has signed the CLA when a contribution is made.
+The [Canonical contributor license agreement](https://ubuntu.com/legal/contributors) is one such CLA. This needs to be signed before a contribution can be considered for inclusion within one of Canonical's projects. Many GitHub repositories for Canonical projects will automatically check whether a contributor has signed the CLA when a contribution is made.
 
 The cla issue label is used to help identify which tasks require a contributor to have signed a CLA.
 
@@ -140,11 +140,11 @@ Some general tips:
 - verify links and examples
 
 We (mostly) adhere to the [Ubuntu style guide](https://docs.ubuntu.com/styleguide/en). In particular:
-- we use British English (en-GB), for example:
-  -   the _ise_ suffix in preference to _ize_ (_capitalise_ rather than _capitalize_)
-  - _our_ instead of _or_ (as in _colour_ and _color_)
-  - license as a verb, licence as a noun
-  - catalogue rather than catalog
+- we use US English (en-US), for example:
+  - the _ize_ suffix in preference to _ise_ (_capitalize_ rather than _capitalise_)
+  - _or_ instead of _our_ (as in _color_ and _colour_)
+  - license as both a verb and a noun
+  - catalog rather than catalogue
 - dates take the format _1 January 2013_, _1-2 January 2013_ and _1 January - 2 February 2013_
 
 ## Diátaxis
@@ -170,7 +170,7 @@ Documentation is written in [MyST](https://mystmd.org/) [Markdown](https://darin
 ## Subheading within a document
 ### Subheading of a subheading
 ```
-Headings and subheadings need to use _sentence case_, which means the first letter is typically the only one capitalised, unless the title includes names, product names or acronyms.
+Headings and subheadings need to use _sentence case_, which means the first letter is typically the only one capitalized, unless the title includes names, product names or acronyms.
 
 ### Lists
 
@@ -178,8 +178,8 @@ For a bullet list, use the following syntax:
 
 ```markdown
 We (mostly) adhere to the Ubuntu style guide, for example:
-- we use British English (en-GB):
-  - the _ise_ suffix in preference to _ize_ 
+- we use US English (en-US):
+  - the _ize_ suffix in preference to _ise_ 
 ```
 And for a numbered list, precede each item with `1.` (the numbering then becomes automatic, and it's easier to insert new items):
 
