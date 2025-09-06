@@ -23,13 +23,13 @@ views:
     summary:  <description of view>
     rules:
       -
-        request: <dotted request path>      # optional, defaults to storage
-        storage: <dotted storage path>
+        request: <request path>             # optional, defaults to storage
+        storage: <storage path>
         access:  <read|write|read-write>    # optional, defaults to read-write
         content:                            # optional, shorthand for a new nested rule
             -
-              request: <dotted path suffix> 
-              storage: <dotted path suffix> 
+              request: <path suffix>
+              storage: <path suffix>
             ...
         ...
   ...
@@ -50,13 +50,13 @@ sign-key-sha3-384:  <key id>                # Encoded key id of signing key
 The `views` header can have any number of views, each with a fine-grained set of rules and access controls tailored to a specific use case. Each view must contain a `rules` list with each rule describing how a particular configuration can be accessed from outside the system and where snapd should store and retrieve it:
 
 - **`request`** (*optional*)
-    A dotted path describing how the configuration can be accessed. If omitted, defaults to the storage path. May contain placeholder path parts wrapped in curly brackets (see example) which match any request value. The placeholder value is mapped to an equally named placeholder in the storage path.
+    A path describing how the configuration can be accessed. The path parts are separated by dots or square brackets, corresponding to maps or arrays being accessed. If omitted, defaults to the storage path. May contain placeholder path parts wrapped in curly brackets (see example) which match any request value. The placeholder value is mapped to an equally named placeholder in the storage path.
 - **`storage`** (*required*)
-    A dotted path to a stored JSON value. Must not be prohibited by the storage schema declared in the body. May contain placeholder path parts matching the ones in the request path.
+    A path to a stored JSON value, following the same syntax as the `request` path. Must not be prohibited by the storage schema declared in the body. May contain placeholder path parts matching the ones in the request path.
 - **`access`** (*optional*)
     Access control for the given rule. Can be read-only, write-only or read-write. If omitted, defaults to read-write.
 - **`content`** (*optional*)
-    Describes a nested rule that will be created with the parent's rule `request` and `storage` paths as prefixes. Semantically equal to creating a parallel rule with the same prefix. The `access` value is not inherited.
+    Describes a nested rule that will be created with the parent's rule `request` and `storage` paths as prefixes. The `access` value is inherited from the parent and cannot be overridden.
    
 An example of this assertion is:
 
@@ -77,15 +77,22 @@ views:
       -
         request: {sensor}.sample-rate
         storage: sample-rate.{sensor}
+      -
+        request: {sensor}.calibration-offsets[{n}]
+        storage: calibration-offsets.{sensor}[{n}]
   read-sensor-1-params:
-    summary:  Read sensor-1’s configuration
+    summary:  Read sensor-1’s parameters
     rules:
       -
         request: sensor-1.min-activation
         storage: min-value.sensor-1
         access: read
+      -
+        request: sensor-1.calibration-offsets[{n}]
+        storage: calibration-offsets[{n}].sensor-1
+        access: read
   read-sensor-2-params:
-    summary:  Read sensor-2’s configuration
+    summary:  Read sensor-2’s parameters
     rules:
        -
         request: sensor-2.sample-rate
@@ -104,7 +111,7 @@ sign-key-sha3-384: 74KHeq1foV...
     },
     "schema": {
       "min-value": {
-        "keys": "$sensor-name",
+        "keys": "${sensor-name}",
         "values": {
           "max": 5600,
           "min": -273.15,
@@ -120,6 +127,13 @@ sign-key-sha3-384: 74KHeq1foV...
             800
           ],
           "type": "int"
+        }
+      },
+      "calibration-offsets": {
+        "keys": "${sensor-name}",
+        "values": {
+          "type": "array",
+          "values": "number"
         }
       }
     }
