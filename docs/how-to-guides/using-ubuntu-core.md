@@ -148,5 +148,5 @@ The snap command includes comprehensive help output. To see this, type `snap hel
 
 For more information on how to work with snaps, including how to make data snapshots, how to install specific revisions, see the [Snap Documentation ](https://snapcraft.io/docs/). 
 
-To learn how to create your own custom image, see our [Build an image](/tutorials/build-your-first-image/index) guide.
+To learn how to create your own custom image, see our {ref}`ref-index-build-your-first-image` guide.
 
