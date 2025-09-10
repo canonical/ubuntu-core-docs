@@ -10,9 +10,8 @@ The model assertion contains:
 * Other required or optional snaps that implement the device functionality.
 * Additional options for the defined device, such as grade, and the store it is connected to.
 
-The essential snaps can be updated during the device lifecycle as long as their own base stays aligned with that of the model. However, when these snaps must be upgraded, or when one or more of the other above elements change, a new model assertion can be deployed to the device. The updated model assertion is authenticated and linked through its serial assertion to the store. The image is upgraded based on the delta compared to the previous model. This process is called remodelling.
+The snaps declared in the model assertion can be [updated](/explanation/refresh-control) during the device lifecycle. However, when the system must be [upgraded](/how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core.md), or when one or more of the above elements change, a new model assertion can be deployed to the device. The updated model assertion is authenticated and linked through its serial assertion to the store. The image is upgraded based on the delta compared to the previous model. This process is called remodelling.
 
-One example of remodelling is [Upgrading Ubuntu Core](/how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core.md).
 ## Remodelling viability
 
 The remodelling process (requires _snapd 2.61_ or later) is triggered by either via the [snapd's REST API](https://snapcraft.io/docs/snapd-api), or running the following command on the device.
