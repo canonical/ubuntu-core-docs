@@ -54,6 +54,22 @@ The most flexible way to change the appearance of the Ubuntu Core splash screen 
 
 While Plymouth itself supports a variety of different splash plugins, Ubuntu Core’s implementation only supports its [Scripts](https://gitlab.freedesktop.org/plymouth/plymouth/-/tree/main/themes/script?ref_type=heads) plugin. This is the most flexible plugin as it provides its own feature-rich [scripting language](https://www.freedesktop.org/wiki/Software/Plymouth/Scripts/).  
 
+## Create a custom Plymouth theme
+
+For developers new to Plymouth, follow these steps to create and install a custom theme for Ubuntu Core:
+
+### Theme structure overview
+
+A Plymouth theme consists of:
+
+- A `.plymouth` configuration file (e.g., `vendor.plymouth`) that defines the theme’s metadata and script file.
+- A `.script` file (e.g., `vendor.script`) written in Plymouth’s scripting language to control the splash screen’s visuals.
+- Optional image or font files for logos, backgrounds, or text.
+
+**Example Resources**: Explore a large collection of Plymouth themes for inspiration at [adi1090x/plymouth-themes](https://github.com/adi1090x/plymouth-themes). These themes, ported from Android boot animations, include examples like `angular` and `colorful_loop` that demonstrate scripting techniques.
+
+### Create the theme files
+
 A new theme must be placed within a `/splash/plymouth/themes/vendor` directory in the root of the Gadget snap:
 
 ```
@@ -61,6 +77,18 @@ $GADGET/splash/plymouth/themes/vendor/
 ```
 
 Pathnames specified in a custom Plymouth config file need to use the prefix `/run/mnt/gadget/splash/` rather than `/snap/gadget-snap/current/splash/` as the former is mounted in the _initramfs_ before Plymouth is starts, whereas the latter is not.
+
+```
+[Plymouth Theme]
+Name=Vendor Theme
+Description=A custom splash screen for Ubuntu Core
+ModuleName=script
+
+[script]
+ImageDir=/run/mnt/gadget/splash/plymouth/themes/vendor
+ScriptFile=/run/mnt/gadget/splash/plymouth/themes/vendor/vendor.script
+```
+
 
 It can also help to lower the kernel console logging verbosity by specifying `loglevel=3` (or lower) on the kernel command line. See [Customise the kernel command line](/reference/kernel-boot-parameters) for further details.
 
@@ -70,4 +98,9 @@ A good custom Plymouth theme example for Ubuntu Core is its own default theme:
 Note that the configuration file inside the `vendor/` directory must be named `vendor.plymouth`. Configuration inside will point to the script file.
 
 See [Building a gadget snap](/how-to-guides/image-creation/build-a-gadget-snap) for details on how to create a custom gadget snap.
+
+### Troubleshooting
+
+- **Theme not displaying**: Verify the `vendor.plymouth` file points to the correct .script file and that all files are in the `/run/mnt/gadget/splash/plymouth/themes/vendor/` path.
+
 
