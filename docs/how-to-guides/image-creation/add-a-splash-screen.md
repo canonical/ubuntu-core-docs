@@ -54,12 +54,11 @@ The most flexible way to change the appearance of the Ubuntu Core splash screen 
 
 While Plymouth itself supports a variety of different splash plugins, Ubuntu Core’s implementation only supports its [Scripts](https://gitlab.freedesktop.org/plymouth/plymouth/-/tree/main/themes/script?ref_type=heads) plugin. This is the most flexible plugin as it provides its own feature-rich [scripting language](https://www.freedesktop.org/wiki/Software/Plymouth/Scripts/).  
 
-
-## Step-by-Step Guide to Creating a Custom Plymouth Theme
+## Create a custom Plymouth theme
 
 For developers new to Plymouth, follow these steps to create and install a custom theme for Ubuntu Core:
 
-### 1. Understand Plymouth Theme Structure
+### Theme structure overview
 
 A Plymouth theme consists of:
 
@@ -69,7 +68,7 @@ A Plymouth theme consists of:
 
 **Example Resources**: Explore a large collection of Plymouth themes for inspiration at [adi1090x/plymouth-themes](https://github.com/adi1090x/plymouth-themes). These themes, ported from Android boot animations, include examples like `angular` and `colorful_loop` that demonstrate scripting techniques.
 
-### 2. Create the Theme Files
+### Create the theme files
 
 A new theme must be placed within a `/splash/plymouth/themes/vendor` directory in the root of the Gadget snap:
 
