@@ -12,11 +12,33 @@ This page outlines the release notes of Ubuntu Core, summarising new features, b
 
 ## Release policy and schedule
 
-A new version of Ubuntu Core is released every two years, and each release is considered an LTS release. Minor updates are delivered continuously through new versions of snapd.
+A new version of Ubuntu Core is released every two years, built on the foundations of a Ubuntu LTS release. Each Ubuntu Core release is considered an LTS release. Minor updates are delivered continuously through new versions of snapd, and other [essential snaps](/explanation/core-elements/snaps-in-ubuntu-core) composing the system (gadget, base and kernel snaps).
 
-To upgrade an Ubuntu Core image from one version to another, see [Upgrade Ubuntu Core](/how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core.md).
+A [base](/explanation/core-elements/snaps-in-ubuntu-core.md/#types-of-snap) snap is released with each Ubuntu Core version, named `core<version>`. This base snap is used to build Ubuntu Core images for a particular version, as specified in the [model assertion](/reference/assertions/model). The gadget and kernel snap's tracks are aligned with that of the base snap. Supported kernel tracks for a given Ubuntu Core release should follow this pattern: `<version>[-<suffix>]`.
 
-When Ubuntu Core is running, its snap packages update automatically. To manually control or modify this process, see [Refresh control](/explanation/refresh-control).
+For example, when building an Ubuntu Core 24 image, the model uses the `core24` base snap. A kernel snap, in general from the `stable` risk-level, should be picked from the following options:
+
+```{terminal}
+   :input: snap info pc-kernel | grep "^ *24[/|-]" | grep stable
+   :user: ubuntu
+   :host: machine-amd64
+
+snap info pc-kernel | grep "^ *24[/|-]" | grep stable
+  24-rt-hwe-edge/stable:    6.14.0-1010.10~24.04.1      2025-08-14 (2736) 377MB -
+  24-rt-hwe/stable:         6.14.0-1010.10~24.04.1      2025-08-14 (2736) 377MB -
+  24-rt/stable:             6.8.1-1030.31               2025-08-18 (2760) 360MB -
+  24-hwe-edge/stable:       --
+  24-hwe/stable:            6.14.0-28.28~24.04.1        2025-08-18 (2674) 372MB -
+  24/stable:                6.8.0-64.67                 2025-08-20 (2575) 319MB -
+```
+
+Other [risks levels](https://snapcraft.io/docs/channels) are available for testing. However, kernel snaps based on interim (non-LTS) releases are not supported in Ubuntu Core images.
+
+## Update mechanisms in Ubuntu Core
+
+When Ubuntu Core is running, its snap packages update (aka refresh) automatically. To manually control or modify this process, see [Refresh control](/explanation/refresh-control). Essential snaps, such as the base and kernel snaps, can be refreshed assuming the updated version is built from the same build-base used in the original model definition. When refreshing the base or kernel snaps, the system will automatically reboot to apply the freshly installed snap. When refreshing the gadget snap, a reboot occurs if the [boot-assets](https://snapcraft.io/docs/gadget-boot-assets) are modified.
+
+To upgrade an Ubuntu Core image from one version to another, see [Upgrade Ubuntu Core](/how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core.md). This process is known as [remodelling](/explanation/remodelling).
 
 The snap daemon, snapd, manages snap package updates and Ubuntu Core functionality. For the snapd release plan and a complete list of changes, please refer to the [snapd roadmap](https://snapcraft.io/docs/snapd-roadmap). Feel free to provide your test feedback on the [forum](https://forum.snapcraft.io/c/snapd/5), or directly in [Launchpad](https://bugs.launchpad.net/snapd/+filebug).
 
