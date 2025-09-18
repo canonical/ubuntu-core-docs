@@ -73,7 +73,7 @@ Learn how to sign a model with a GPG key to make it into a _model assertion_.
 
   Upload the key and register it with your Ubuntu One account by using `register-key` command. After creating the key, update the timestamp in `my-model.json`.
 
-* [Sign the model](sign-the-model.md#sign-the-model)
+* [Sign the model](sign-the-model.md#id1)
 
   Use the `snap sign` command to update the JSON file with the key name.
 
