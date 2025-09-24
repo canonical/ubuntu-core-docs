@@ -24,7 +24,7 @@ The recommended sizes for each partition type and role are as follows:
 
   For example, the size of kernel.efi is around 52 MiBs. If we take a [refresh.retain=3](https://snapcraft.io/docs/managing-updates#control-updates-with-system-options-5) (the default for Ubuntu Core, and for classic/hybrid it is 2) and 10 MiBs for additional boot components, such as grub and u-boot, this would give a minimum size of around:
 
-  52*4 + 10 = 418 MiBs
+  52*4 + 10 = 218 MiBs
 
 - Here, the multiplication of the kernel.efi by 4 is due to the requirement of 3 snap files due to the specified refresh.retain, plus 1 for a temporary file while doing a refresh.
 
