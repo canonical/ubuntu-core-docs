@@ -26,7 +26,7 @@ The recommended sizes for each partition type and role are as follows:
 
   52*4 + 10 = 218 MiBs
 
-- Here, the multiplication of the kernel.efi by 4 is due to the requirement of 3 snap files due to the specified refresh.retain, plus 1 for a temporary file while doing a refresh.
+  Here, the multiplication of the kernel.efi by 4 is due to the requirement of 3 snap files due to the specified refresh.retain, plus 1 for a temporary file while doing a refresh.
 
    Therefore the minimum system-boot required is:
 
