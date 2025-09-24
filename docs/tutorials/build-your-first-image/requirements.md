@@ -16,4 +16,4 @@ The target device:
 
 The above requirements are specific to this tutorial.
 
-Other host distributions can be used, and other [target devices](/reference/testing-platforms) are supported. 
+Other host distributions can be used, and other {ref}`reference-testing-platforms` are supported. 
