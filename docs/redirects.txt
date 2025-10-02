@@ -170,6 +170,12 @@ networkmanager/snap-configuration/wifi-powersave/ explanation/system-snaps/netwo
 networkmanager/explanation/ explanation/system-snaps/network-manager/
 networkmanager/networkmanager-and-netplan/ explanation/system-snaps/network-manager/how-to-guides/networkmanager-and-netplan/
 
+# Explanation / System snaps / Console-conf
+
+consoleconf/ explanation/system-snaps/console-conf/
+consoleconf/model/ explanation/system-snaps/console-conf/model/
+consoleconf/usage/ explanation/system-snaps/console-conf/usage/
+
 # Original mapping table
 
 components/ explanation/core-elements/
