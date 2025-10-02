@@ -120,8 +120,6 @@ bluez/reference/pairing/introduction/ explanation/system-snaps/bluetooth/pairing
 bluez/reference/pairing/outbound-pairing/ explanation/system-snaps/bluetooth/pairing/
 bluez/reference/pairing/inbound-pairing/ explanation/system-snaps/bluetooth/pairing/
 bluez/reference/device-enablement/introduction/ explanation/system-snaps/bluetooth/pairing/
-bluez/reference/device-enablement/supported-linux-kernels/ explanation/system-snaps/bluetooth/kernel-configuration/
-bluez/reference/device-enablement/linux-kernel-configuration-options/ explanation/system-snaps/bluetooth/kernel-configuration/
 bluez/reference/commands explanation/system-snaps/bluetooth/commands/
 bluez/reference/dbus-api explanation/system-snaps/bluetooth/
 bluez/reference/sending-files explanation/system-snaps/bluetooth/
