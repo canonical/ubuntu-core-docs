@@ -9,6 +9,7 @@ There are several system snaps that can be used to connect to a local or wide ar
 - [Bluetooth manager](bluetooth/index)
 - [Modem Manager](modem-manager/index)
 - [Network Manager](network-manager/index)
+- [Upower](upower/index)
 
 ```{toctree}
 :hidden:
@@ -19,3 +20,4 @@ There are several system snaps that can be used to connect to a local or wide ar
 Bluetooth manager <bluetooth/index>
 Modem Manager <modem-manager/index>
 Network Manager <network-manager/index>
+Upower <network-manager/index>
