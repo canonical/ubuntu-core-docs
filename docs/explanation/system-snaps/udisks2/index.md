@@ -14,11 +14,7 @@ The tools carried by the snap allows the user to:
 
 ## What Udisks2 Offers
 
-The upstream udisks2 provides interfaces to enumerate and perform operations on disks and storage devices. Any snap with the udisks2 interface plug can access the udisksd daemon via the name `org.freedesktop.UDisks2` on the system message bus.
-
-In addition to the D-Bus API, a library, libudisks2 can be used by snaps to help facilitate this communication. This library can be used from C/C++ and any high-level language with GObjectIntrospection support such as Javascript and Python. 
-
-udisks is only indirectly involved in what devices and objects are shown in the user interface.
+The upstream udisks2 provides interfaces to enumerate and perform operations on disks and storage devices. Any snap with the `udisks2:dbus` interface plug can access the udisksd daemon via the name [org.freedesktop.UDisks2](https://storaged.org/doc/udisks2-api/latest/ch03.html) on the system message bus.
 
 ## Upstream documentation
 

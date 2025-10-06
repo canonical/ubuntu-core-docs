@@ -1,7 +1,6 @@
 (explanation-system-snaps-udisks2-reference-release-notes)=
 # Release Notes
 
-
 You can check with the following command which version you have currently installed:
 
 ```
@@ -37,5 +36,3 @@ channels:
 The detailed changelog for each revision can be consulted in the sources for each track:
 
 * For track 24, [here](https://git.launchpad.net/ubuntu/+source/udisks2/tree/debian/changelog?h=applied/ubuntu/noble-updates)
-* For track 22, [here](https://git.launchpad.net/ubuntu/+source/udisks2/tree/debian/changelog?h=applied/jammy/noble-updates)
-
