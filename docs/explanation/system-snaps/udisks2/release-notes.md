@@ -19,10 +19,6 @@ description: |
   https://git.launchpad.net/ubuntu/+source/udisks2
 snap-id: KTyDAsgNZg4u9UBJ63MHn6q12fmUjOfn
 channels:
-  22/stable:        –                                   
-  22/candidate:     –                                   
-  22/beta:          2.9.4-1ubuntu2 2025-05-06 (109) 9MB -
-  22/edge:          2.9.4-1-dev    2025-09-10 (122) 9MB -
   latest/stable:    2.6.4-2        2017-07-17 (100) 3MB -
   latest/candidate: 2.6.4-2        2017-06-09 (100) 3MB -
   latest/beta:      2.6.4-2        2017-06-07 (100) 3MB -

@@ -170,6 +170,15 @@ networkmanager/snap-configuration/wifi-powersave/ explanation/system-snaps/netwo
 networkmanager/explanation/ explanation/system-snaps/network-manager/
 networkmanager/networkmanager-and-netplan/ explanation/system-snaps/network-manager/how-to-guides/networkmanager-and-netplan/
 
+# Explanation / System snaps / Udisks2
+
+udisks2/ explanation/system-snaps/udisks2/
+udisks2/install/ explanation/system-snaps/udisks2/install-udisks2/
+udisks2/reference/ explanation/system-snaps/udisks2/
+udisks2/release-notes/ explanation/system-snaps/udisks2/release-notes/
+udisks2/report-a-bug/ explanation/system-snaps/udisks2/report-a-bug/
+udisks2/explanation/ explanation/system-snaps/udisks2/
+
 # Original mapping table
 
 components/ explanation/core-elements/

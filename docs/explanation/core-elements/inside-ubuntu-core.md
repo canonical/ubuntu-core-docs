@@ -43,7 +43,7 @@ The following components make up Ubuntu Core:
 
 - **application snaps** define the functionality of an embedded device and are confined with all their dependencies to their own sandbox. Interfaces to other applications or to the system must be explicitly defined.
 
-- **system snaps** are considered critical to the function of the system, and include the snaps for _network-manager_, _modem-manager_ and _bluez_.
+- **system snaps** are considered critical to the function of the system, and include the snaps for _network-manager_, _modem-manager_, _bluez_ and _udisks2_.
 
   Related to system snaps, but in a less critical category, are snaps that enable device capabilities like audio, power and disk storage, alongside Docker container orchestration and virtualisation capabilities, including Microk8s and LXD.
 
