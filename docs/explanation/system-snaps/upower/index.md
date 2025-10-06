@@ -1,7 +1,7 @@
 (explanation-system-snaps-upower-index)=
 # Upower
 
-UPower is an abstraction for enumerating power devices, listening to device events and querying history and statistics. Any application or service on the system can access the `org.freedesktop.UPower` service via the system message bus, as long as they connect using the appropriate interface to the upower snap.
+UPower is an abstraction for enumerating power devices, listening to device events and querying history and statistics. Any application or service on the system can access the [org.freedesktop.UPower](https://upower.freedesktop.org/docs/ref-dbus.html) service via the system message bus, as long as they connect using the [dbus interface](https://snapcraft.io/docs/dbus-interface) to the upower snap.
 
 UPower is also useful to control the latency of different operations on your computer, which enables you to save significant amounts of power.
 

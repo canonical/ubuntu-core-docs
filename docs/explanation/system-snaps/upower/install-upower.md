@@ -19,17 +19,16 @@ All necessary plugs and slots will be automatically connected within the install
 Once the installation has successfully finished the Upower service is running in the background. You can check its current status with
 
 ```bash
-systemctl status snap.upower.upowerd
+snap services upower
 ```
 
 Now you have Upower successfully installed.
 
 ## Tracks and channels
 
-The upower snap has currently 2 tracks, the track name will refer to the version of the base snap used.
+The upower snap has currently 1 track, the track name will refer to the version of the base snap used.
 
-* **24**: Contains upstream 1.90.2 and has a core24 base. This is the one installed by default if the channel is not specified when running `snap install` 
-* **22**: Contains upstream 0.99.17 and has a core22 base, this does however not have stable release and should not be used.
+* **24**: Contains upstream 1.90.2 and has a core24 base. This is the default channel.
 
 All these tracks are available with the usual risks: stable, candidate, beta, and edge, but only the stable version should be used for production devices. The meaning of the other risk levels is internal to the development team of the upower snap.
 
