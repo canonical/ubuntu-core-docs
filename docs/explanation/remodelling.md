@@ -16,6 +16,8 @@ The snaps declared in the model assertion can be [updated](/explanation/refresh-
 
 The remodelling process (requires _snapd 2.61_ or later) is triggered by either via the [snapd's REST API](https://snapcraft.io/docs/snapd-api), or running the following command on the device.
 
+Remodelling can never downgrade the system's base snap. For example, remodelling from `core22` to `core20` is not supported.
+
 ```bash
 sudo snap remodel <new-model.assert>
 ```
@@ -66,6 +68,11 @@ In the new model definition, the gadget snap can be kept identical to the previo
 If the [model base](/reference/assertions/model.md/#model-assertion-fields) changes, the gadget snap must be modified, and its base must match that of the new model.
 The gadget's default settings are not applied when remodelling, these are used only when the device is [(re)installed](/explanation/recovery-modes.md/#install-mode). See [gadget snap](/reference/gadget-snap-format.md/#the-gadget-yaml-file) for further information.
 
+Restrictions and limitations specific to the gadget:
+
+* Remodelling will never repartition the disk. Thus, the current partitions' size and starting offsets must fall within the ranges permitted by the new gadget.
+* The current bootloader must match the bootloader defined by the new gadget.
+
 ### Kernel snap
 
 The kernel snap can also be kept as-is, or modified with any combination of the following items:
@@ -115,4 +122,3 @@ This impacts models using new channels and updated validation sets:
 -  Validation sets
 
    If a model includes a [validation set](https://snapcraft.io/docs/validation-sets) that constrains any snaps in the model to specific revisions, an offline remodel requires that either the correct revision of the snap is provided with the `--snap` flag, or it must already be installed. An offline remodel will fail if the remodelling process cannot find a revision that is required by any of the new model’s validation sets.
-
