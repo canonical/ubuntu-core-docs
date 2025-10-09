@@ -9,6 +9,7 @@ There are several system snaps that can be used to connect to a local or wide ar
 - [Bluetooth manager](bluetooth/index)
 - [Modem Manager](modem-manager/index)
 - [Network Manager](network-manager/index)
+- [Udisks2](udisks2/index)
 
 ## Configuration
 
@@ -25,4 +26,5 @@ The console-conf snap help with device configuration for development images.
 Bluetooth manager <bluetooth/index>
 Modem Manager <modem-manager/index>
 Network Manager <network-manager/index>
+Udisks2 <udisks2/index>
 Console-conf <console-conf/index>
