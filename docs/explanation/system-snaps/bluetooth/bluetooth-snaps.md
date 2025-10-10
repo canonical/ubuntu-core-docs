@@ -11,15 +11,11 @@ There are two Bluetooth related interfaces available on Ubuntu Core:
 
 ## Contents of snapcraft.yaml
 
-The bluetoothd service run from the bluez snap provides a D-Bus API that can be
-used by other snap applications, by connecting to the `bluez:service` slot for the
-*bluez* interface which is provided by the bluez snap.
+The bluez snap runs the bluetoothd service. This service provides a D-Bus API that can be accessed by other application snaps by connecting to the `bluez:service` slot for the *bluez* interface provided by the bluez snap.
 
-For this, the application snap must connect to the *bluez* slot by defining a
-plug. An example snippet from the *snapcraft.yaml* of an application doing this
-could be:
+For this, the application snap must connect to the *bluez* slot by defining a plug, such as in the following *snapcraft.yaml* snippet:
 
-```
+```yaml
 plugs:
   client:
       interface: bluez
@@ -30,7 +26,4 @@ apps:
     plugs: [client]
 ``` 
 
-Note that if by any chance an application needs to talk directly to the kernel
-bluetooth stack, then the *bluetooth-control* interface will suit these needs
-better than the *bluez* one. In this case, there would be no need to install th
-bluez snap.
+If an application requires direct access to the kernel bluetooth stack, the *bluetooth-control* interface should be used instead. Installation of the *bluez* snap is then not required.
