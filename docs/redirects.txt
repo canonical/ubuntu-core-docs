@@ -170,6 +170,14 @@ networkmanager/snap-configuration/wifi-powersave/ explanation/system-snaps/netwo
 networkmanager/explanation/ explanation/system-snaps/network-manager/
 networkmanager/networkmanager-and-netplan/ explanation/system-snaps/network-manager/how-to-guides/networkmanager-and-netplan/
 
+# Explanation / System snaps / Upower
+
+upower/ explanation/system-snaps/upower/
+upower/install/ explanation/system-snaps/upower/install-upower/
+upower/reference/ explanation/system-snaps/upower/
+upower/release-notes/ explanation/system-snaps/upower/release-notes/
+upower/report-a-bug/ explanation/system-snaps/upower/report-a-bug/
+upower/explanation/ explanation/system-snaps/upower/
 # Explanation / System snaps / Udisks2
 
 udisks2/ explanation/system-snaps/udisks2/
