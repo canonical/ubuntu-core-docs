@@ -29,7 +29,7 @@ Within the bluetoothctl utility we can register such an agent with a specific IO
 If no agent is registered with BlueZ and a pairing operation happens, BlueZ will try to pair with the remote device without further user interaction.
 
 The agent has to be registered explicitly by typing:
-```bash
+```text
 $ sudo bluetoothctl 
 [bluetooth]# agent on 
 Agent registered
@@ -39,11 +39,11 @@ The pairing section will walk you through the pairing procedure with a keyboard.
 ## Inbound pairing
 
 In this scenario it is the remote device that is active in the pairing procedure. It will search, discover and initiate pairing. The only thing that an Ubuntu Core device has to make sure of is to be discoverable and pairable, as this will allow the remote device to discover and initiate a connection with it.
-```bash
+```text
 bluetoothctl [bluetooth]# discoverable on Changing discoverable on succeeded [bluetooth]# pairable on Changing pairable on succeeded
 ```
 At this stage the Ubuntu Core device is ready to be discovered. It is important to register the pairing agent so that the authentication process can be completed. Type:
-```bash
+```text
 $ bluetoothctl [bluetooth]# agent on 
 Agent registered 
 [bluetooth]# default-agent 
@@ -52,14 +52,14 @@ Default agent request successful
 At this stage the Ubuntu Core device is ready to be discovered. Take your remote Bluetooth device and start the discovering process. After a short while you should see the Ubuntu Core device on the list of found devices. Initiate the pairing.
 
 Notice that bluetoothctl will display the pairing confirmation coming from the agent:
-```
+```text
 [CHG] Device 00:1A:7D:DA:71:08 Connected: yes 
 Request confirmation 
 [agent] Confirm passkey 687331 (yes/no):
 ```
 
 The agent will require you to type yes or no depending on if you like to allow the devices to connect or not. Type yes here
-```
+```text
 [agent] Confirm passkey 687331 (yes/no): yes 
 [CHG] Device 00:1A:7D:DA:71:08 Connected: no
 ```
@@ -68,21 +68,21 @@ At this stage the devices are paired and can be connected.
 ## Outbound pairing
 
 Having the  *bluez*  snap installed start the  *bluetoothctl*  tool which is a command-line interface to BlueZ.
-```bash
-sudo bluetoothctl
+```text
+$ sudo bluetoothctl
 ```
 You should see the output similar to the following:
-```bash
+```text
 sudo bluez.bluetoothctl [NEW] Controller 00:1A:7D:DA:71:08 core16 [default] [NEW] Device 00:25:56:D1:36:6B ubuntu-0 [bluetooth]#
 ```
 The "[NEW] Controller" line displays the information about your Bluetooth chip. The "[NEW] Device" line displays the information about already known devices such as previously paired ones. Note that there might be multiple or no lines starting with [NEW] Device, as it depends on what happened prior. The last line is the  *bluetoothctl*  prompt.
 
 Since the pairing procedure will involve authentication by PIN, it is required to register with an authentication agent. The agent handles the PIN prompt. In order to do it type:
-```
+```text
 [bluetooth]# agent on
 ```
 You should see the output like below that indicates that the agent has been successfully registered.
-```
+```text
 Agent registered 
 [bluetooth]# default-agent 
 Default agent request successful 
@@ -91,16 +91,16 @@ Default agent request successful
 Note that having the agent registered while performing pairing with a device that does not require user confirmation to the pairing attempt will have no negative impact and is safe to do so.
 
 At this point, you can proceed with scanning for remote Bluetooth devices. To do this type:
-```
+```text
 [bluetooth]# scan on
 ```
 First you will see the confirmation that the discovery has been started
-```
+```text
 Discovery started
 [CHG] Controller 00:1A:7D:DA:71:08 Discovering: yes
 ```
 Which is then followed with found device events that look like:
-```
+```text
 [NEW] Device 08:3E:8E:E6:79:47 annapurna 
 [NEW] Device 00:25:56:D1:36:6B ubuntu-0 .... 
 [NEW] Device <bluetooth address> <name>
@@ -110,19 +110,19 @@ The device discovery process will be stopped automatically the moment a pairing 
 At this stage, the remote device has been discovered and is known, therefore it is now possible to pair with it. The target device is identified by its address, so make sure that you specify the correct one.
 
 Note that after a certain amount of time the device discovery results are invalidated. When this happens you see output like the following:
-```
+```text
 [DEL] Device 00:25:56:D1:36:6B ubuntu-0
 ```
 If you still want to pair with this device then simply redo the device discovery step. Do  *scan on*  once again.
 
 Now do the device pairing:
-```
+```text
 [bluetooth]# pair 00:25:56:D1:36:6B
 ```
 Both of the devices will try to establish a link and as it has been already described it might require authentication. This guide walks you through pairing with a keyboard, therefore, there will be PIN prompt unless you have skipped the agent registration. In that case the pairing will fail.
 
 You should see output like the following:
-```
+```text
 Attempting to pair with 00:25:56:D1:36:6B 
 [CHG] Device 00:25:56:D1:36:6B Connected: yes
 Request confirmation 
@@ -130,7 +130,7 @@ Request confirmation
 ```
 Type  *yes*  or  *no*  depending on if you want the link to be established. Type  *yes*  here
 
-```
+```text
 [agent] Confirm passkey 687331 (yes/no): yes 
 [CHG] Device 00:25:56:D1:36:6B UUIDs: 00001104-0000-1000-8000-00805f9b34fb 
 [CHG] Device 00:25:56:D1:36:6B UUIDs: 00001105-0000-1000-8000-00805f9b34fb 
