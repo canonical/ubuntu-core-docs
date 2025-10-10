@@ -11,6 +11,10 @@ Before building a kernel snap, we highly recommend building a working kernel fir
 
 See [Kernel snaps](https://snapcraft.io/docs/the-kernel-snap) for reference details on what gadget snaps can contain, and see [Types of snap](/explanation/core-elements/snaps-in-ubuntu-core.md#types-of-snap) for details on the other types of snap that make up an Ubuntu Core image. 
 
+```{important}
+Building a kernel snap is useful for prototyping but its maintenance and support becomes your responsibility.
+```
+
 ## Inside a kernel snap
 
 A kernel snap contain the Linux kernel image and its associated modules, alongside a _RAM disk image_ for system initialisation and optional firmware and device tree files.
