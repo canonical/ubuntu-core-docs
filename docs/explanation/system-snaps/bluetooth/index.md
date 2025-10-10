@@ -32,12 +32,12 @@ On Ubuntu Core there are two
 [interfaces](snapcraft.io/docs/supported-interfaces) that define permissions
 for the Bluetooth stack:
 
- * bluetooth-control, that allows managing the kernel Bluetooth stack. The slot
-   side of it is provided by the system, while the bluez snap connects with a
-   plug to it.
- * bluez, that allows running and using the bluez service. The bluez snap
-   installs the slot side of this interface, while plugs can be connected to it
-   to be able to interact with the service by using the bluez dbus interface.
+ * **bluetooth-control**: allows managing the kernel Bluetooth stack. The slot
+   side is provided by the system. The bluez snap connects to this from its own
+   plug.
+ * **bluez**: allows running and using the bluez service. The bluez snap
+   installs the slot side of this interface which can then be used by a corresponding 
+   snap application plug to interact with the service via the bluez D-Bus interface.
 
 ## bluez snap tracks
 
