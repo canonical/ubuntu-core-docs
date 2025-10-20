@@ -9,7 +9,7 @@ As shown above, `console-conf` is a text-based menu system that uses a connected
 
 Some systems, however, suppress _console-conf_ and its user creation.
 
-To create a system user on these systems, a [system-user assertion](/reference/assertions/system-user) needs to be embedded within a file called `auto-import.assert` that's added to the system via the root directory of a removable USB storage device that must be formatted with a widely supported filesystem such as ext4, FAT32, or any other filesystem supported by the device Linux kernel. This process is covered below.
+To create a system user on these systems, you must create and sign a [system-user assertion](/reference/assertions/system-user). This assertion can then be injected into the [ubuntu-seed](/explanation/core-elements/inside-ubuntu-core.md/#volume-layouts) partition using the [`ubuntu-image` utility](/how-to-guides/image-creation/use-ubuntu-image.md/#extra-assertions). Alternatively, it can be embedded within a file called `auto-import.assert` that's added to the system via the root directory of a removable USB storage device that must be formatted with a widely supported filesystem such as ext4, FAT32, or any other filesystem supported by the device Linux kernel. This process is covered below.
 
 ```{admonition} Managed and unmanaged systems
 :class: caution
