@@ -43,6 +43,7 @@ Remodelling <remodelling>
 Preseed performance <preseed-performance>
 Docker companion snap <docker-companion-snap>
 Full disk encryption <full-disk-encryption>
+Full disk encryption with OP-TEE <full-disk-encryption-op-tee>
 Recovery modes <recovery-modes>
 Security and sandboxing <security-and-sandboxing>
 Core elements <core-elements/index>
