@@ -1,6 +1,5 @@
 # Explanation
 
-
 Our explanatory and conceptual guides are written to provide a better understanding of how Ubuntu Core works and how it can be used and configured. They enable you to expand your knowledge and become better at Ubuntu Core.
 
 ## Operations
@@ -40,6 +39,7 @@ Community engagement <community-engagement>
 How installation works <how-installation-works>
 Refresh control <refresh-control>
 Remodelling <remodelling>
+Remodel essential snap changes <remodel-essential-snaps>
 Preseed performance <preseed-performance>
 Docker companion snap <docker-companion-snap>
 Full disk encryption <full-disk-encryption>
