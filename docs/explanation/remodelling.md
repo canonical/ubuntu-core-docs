@@ -58,6 +58,8 @@ If a [validation set](https://snapcraft.io/docs/validation-sets) has been define
 
 To ensure the remodelling process completes successfully when a device's model name changes, a specific configuration is required in the [Serial Vault](https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/register-a-new-device-model-name/), under the `Sub-Store Models` tab, to specify the allowed migration path from the old to new model name.
 
+For details on how changes to the base, kernel, gadget and snapd snaps are managed, see [Remodel essential snaps](remodel-essential-snaps).
+
 ### Gadget snap
 
 In the new model definition, the gadget snap can be kept identical to the previous model, or modified with any combination of the following items:

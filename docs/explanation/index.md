@@ -39,7 +39,7 @@ Community engagement <community-engagement>
 How installation works <how-installation-works>
 Refresh control <refresh-control>
 Remodelling <remodelling>
-Remodel essential snap changes <remodel-essential-snaps>
+Remodel essential snaps <remodel-essential-snaps>
 Preseed performance <preseed-performance>
 Docker companion snap <docker-companion-snap>
 Full disk encryption <full-disk-encryption>
