@@ -26,6 +26,7 @@ Configuration and security options.
 
 System requirements <system-requirements>
 Testing platforms <testing-platforms>
+Support duration <support-duration>
 Release notes <release-notes>
 Gadget snap format <gadget-snap-format>
 Kernel boot parameters <kernel-boot-parameters>
