@@ -7,11 +7,11 @@ for Ubuntu and open source](https://ubuntu.com/security/esm) for further details
 
 ## Version-specific support
 
-|  | Release date | End of standard support | End of [ESM](https://ubuntu.com/security/esm) support | Architecture support | Default snapd version  | [Snapcraft track for support](https://documentation.ubuntu.com/snapcraft/stable/reference/bases/) |
+|  | Release date | End of standard support | End of ESM support | Architecture support | SnapD version in release  | Snapcraft track for support |
 | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
 | Ubuntu Core 18 | Jan 2019 | Jan 2029 | \- | amd64, arm64, i386, armhf | 2.52 | 7.x |
 | Ubuntu Core 20 | Feb 2021 | Feb 2031 | \- | amd64, arm64, armhf | 2.58 | 8.x |
 | Ubuntu Core 22 | Jun 2022 | Jun 2032 | Jun 2034 | amd64, arm64, armhf | 2.59 | 8.x |
-| Ubuntu Core 24 | Jun 2024 | Jun 2034 | Jun 2036 | amd64, arm64 | latest | 8.x |
+| Ubuntu Core 24 | Jun 2024 | Jun 2034 | Jun 2036 | amd64, arm64 | 2.63 | 8.x |
 
-See [Testing platforms](testing-platforms) for image download links.
+See [Testing platforms](testing-platforms) for image download links, and for more details on Snapcraft support, see [Snapcraft bases](https://documentation.ubuntu.com/snapcraft/stable/reference/bases/).
