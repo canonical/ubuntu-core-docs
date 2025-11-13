@@ -7,7 +7,7 @@ for Ubuntu and open source](https://ubuntu.com/security/esm) for further details
 
 ## Version-specific support
 
-|  | Release date | End of standard support | End of Legacy Support | Architecture support | SnapD version in release  | [Snapcraft track for support](https://documentation.ubuntu.com/snapcraft/stable/reference/bases/) | SnapD version in Legacy Support |
+|  | Release date | End of standard support | End of Legacy Support | Architecture support | SnapD version in release  | Snapcraft track for support | SnapD version in Legacy Support |
 | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
 | Ubuntu Core 16 | Jun 2016 | Jun 2026 | Jun 2028 | amd64, arm64, i386, armhf | 2.52 | 7.x | 2.61.4 |
 | Ubuntu Core 18 | Jan 2019 | Jan 2029 | Jun 2030 | amd64, arm64, i386, armhf | 2.52 | 7.x |  |
