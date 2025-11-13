@@ -12,6 +12,7 @@ Run Ubuntu Core within a container, access a session using SSH and upgrade an ol
 
 While Ubuntu Core is a self-healing operating system, it can also boot into, or activate, various recovery modes. 
 
+- [Updating gadget boot assets](gadget-boot-assets)
 - [Create a recovery system from the API](create-a-recovery-system-from-the-api)
 - [Use a recovery mode](use-a-recovery-mode)
 - [Troubleshooting](troubleshooting)
@@ -39,6 +40,7 @@ Set system options <set-system-options>
 Use a recovery mode <use-a-recovery-mode>
 Add a system user <add-a-system-user>
 Modify kernel options <modify-kernel-options>
+Updating boot assets <gadget-boot-assets>
 Create a recovery system from the API <create-a-recovery-system-from-the-api>
 Set system time <set-system-time>
 Troubleshooting <troubleshooting>
