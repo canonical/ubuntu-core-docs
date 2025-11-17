@@ -1,6 +1,7 @@
 # Ubuntu Core support duration
 
-The support period for Ubuntu Core follows the [Long Term Support](https://ubuntu.com/about/release-cycle) (LTS) model adopted by all major releases of Ubuntu, with 10 years of Ubuntu Core support as standard.
+
+Ubuntu Core receives 10 years of support by default, following the [Long Term Support](https://ubuntu.com/about/release-cycle) (LTS) model adopted by all major releases of Ubuntu.
 
 An optional _Legacy Support_ duration can be added to provide an additional 2 years of support, resulting in 12 years of coverage overall for newer releases.
 
@@ -14,4 +15,4 @@ An optional _Legacy Support_ duration can be added to provide an additional 2 ye
 | Ubuntu Core 22 | Jun 2022 | Jun 2032 | Jun 2034 | amd64, arm64, armhf | 2.59 | 8.x |  |
 | Ubuntu Core 24 | Jun 2024 | Jun 2034 | Jun 2036 | amd64, arm64, armhf | latest | 8.x |  |
 
-See [Testing platforms](testing-platforms) for download links to device-specific images that can help with image building, and for more details on Snapcraft support, see [Snapcraft bases](https://documentation.ubuntu.com/snapcraft/stable/reference/bases/).
+See [Snapcraft bases](https://documentation.ubuntu.com/snapcraft/stable/reference/bases/) for more details on Snapcraft support.
