@@ -34,12 +34,7 @@ Its size and complexity corresponds to the size and complexity of the un-snapped
 
 The `snap` directory includes the [snapcraft.yaml](https://snapcraft.io/docs/snapcraft-schema) that was used to build the kernel snap.
 
-Canonical’s IoT Devices Field team maintains a [GitHub repository](https://github.com/canonical/iot-field-kernel-snap/tree/main) that includes template files in its main branch, and example kernel implementations for the following architectures in its branches:
-
-* [22-amd64-pc](https://github.com/canonical/iot-field-kernel-snap/tree/22-amd64-pc)
-* [24-risc64-nezha](https://github.com/canonical/iot-field-kernel-snap/tree/24-riscv64-nezha)
-* [24-riscv64-visionfive2](https://github.com/canonical/iot-field-kernel-snap/tree/24-riscv64-visionfive2)
-* [22-orange-pi-5plus](https://github.com/canonical/iot-field-kernel-snap/tree/22-arm64-orange-pi-5plus)
+Canonical’s IoT Devices Field team maintains a [GitHub repository](https://github.com/canonical/iot-field-kernel-snap/tree/main) that includes template files in its main branch, and example kernel implementations for specific core releases as branches.
 
 ### Template: snapcraft.yaml
 
