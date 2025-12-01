@@ -15,5 +15,5 @@ A Legacy add-on can be optionally purchased to cover an additional 5 years of se
 | Ubuntu Core 24 | Jun 2024 | Jun 2034 | Jun 2039 | amd64, arm64, armhf | - |
 
 ```{note}
-Supported Ubuntu Core components include the snap daemon (SnapD), the [kernel snap](https://ubuntu.com/kernel/lifecycle) and the [base](https://documentation.ubuntu.com/snapcraft/stable/reference/bases/#base-snap-reference) for each respective release. See [Inside Ubuntu Core](/explanation/core-elements/inside-ubuntu-core) for details on how Ubuntu Core is composed.
+Supported Ubuntu Core components include the snap daemon (SnapD), the [kernel snap](https://ubuntu.com/kernel/lifecycle) and the [base](https://documentation.ubuntu.com/snapcraft/stable/reference/bases/#base-snap-reference) for each respective release. See [Inside Ubuntu Core](/explanation/core-elements/inside-ubuntu-core) for details on how Ubuntu Core is composed, and the [Ubuntu Pro service description](https://canonical.com/legal/ubuntu-pro#ubuntu-pro-service-description) for Pro support coverage.
 ```
