@@ -43,4 +43,5 @@ Modify kernel options <modify-kernel-options>
 Updating boot assets <gadget-boot-assets>
 Create a recovery system from the API <create-a-recovery-system-from-the-api>
 Set system time <set-system-time>
+Debug install modes <seed-debug>
 Troubleshooting <troubleshooting>
