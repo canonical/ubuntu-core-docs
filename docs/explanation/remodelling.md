@@ -105,7 +105,7 @@ snap remodel --snap kernel.snap --assertion kernel.assert \
 --snap pc.snap --assertion pc.assert my-new-model
 ```
 
-This works even when a new base has been installed, such as `core22` on a `core20` system, for instance. 
+This works even when a new base has been installed, such as `core22` on a `core20` system.
 
 If a snap or assertion is not available locally, either referenced directly from the command line or cached on the system in `/var/lib/snapd/snaps`, then the remodel procedure will fail unless the `--offline` flag is added to the `snap remodel` command.
 
