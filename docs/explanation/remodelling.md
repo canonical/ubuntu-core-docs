@@ -14,7 +14,7 @@ The snaps declared in the model assertion can be [updated](/explanation/refresh-
 
 ## Remodelling viability
 
-The remodelling process (requires _snapd 2.61_ or later) is triggered by either via the [snapd's REST API](https://snapcraft.io/docs/snapd-api), or running the following command on the device.
+After a model assertion has been updated, the remodelling process is triggered from either the [snapd's REST API](https://snapcraft.io/docs/snapd-api), or by running the `snap remodel` command.
 
 Remodelling can never downgrade the system's base snap. For example, remodelling from `core22` to `core20` is not supported.
 
