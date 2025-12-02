@@ -14,7 +14,6 @@ The following fields can be used in an serial assertion:
 ```yaml
 type:                 serial
 authority-id:         <authority account id>
-revision:             <int>
 brand-id:             <account id>
 model :               <model id>
 serial:               <unique id for the device>

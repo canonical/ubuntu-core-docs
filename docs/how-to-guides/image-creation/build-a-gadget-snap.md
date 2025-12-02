@@ -34,14 +34,10 @@ The filesystem for a typical gadget snap looks like the following:
     └── boot.scr.in
 ```
 
-Canonical's IoT Devices Field team maintains a [GitHub repository](https://github.com/canonical/iot-field-gadget-snap/tree/main) that includes template files in its main branch, and example gadget implementations for the following architectures in its branches:
+Canonical's IoT Devices Field team maintains a [GitHub repository](https://github.com/canonical/iot-field-gadget-snap/tree/main) that includes template files in its main branch alongside branches that include example gadget implementations for some Core releases, including:
 
-- [arm64-odroid-hc4](https://github.com/canonical/iot-field-gadget-snap/tree/22-arm64-odroid-hc4)
-- [arm64-orange-pi-5plus](https://github.com/canonical/iot-field-gadget-snap/tree/22-arm64-orange-pi-5plus)
-- [amd64-pc](https://github.com/canonical/iot-field-gadget-snap/tree/22-amd64-pc)
-- [amd64-pc-classic](https://github.com/canonical/iot-field-gadget-snap/tree/22-amd64-pc-classic)
-- [risc64-icicle](https://github.com/canonical/iot-field-gadget-snap/tree/22-riscv64-icicle)
-- [risc64-nezha](https://github.com/canonical/iot-field-gadget-snap/tree/24-riscv64-nezha)
+* [ARM64 Orange Pi 5+](https://github.com/canonical/iot-field-gadget-snap/tree/22/orangepi-5plus)
+* [RISC-V64 Nezha](https://github.com/canonical/iot-field-gadget-snap/tree/24/nezha)
 
 The following gadget repositories contain the reference gadget snap definitions for _amd64_ (64 bit PC Gadget Snap) and the Raspberry Pi family of devices supported by Ubuntu Core:
 

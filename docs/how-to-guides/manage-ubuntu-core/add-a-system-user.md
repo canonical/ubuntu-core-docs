@@ -140,7 +140,7 @@ These details then need to be added to the following `system-user` template and 
 The password hash must be of the form "$integer-id$salt$hash" and can be generated with the following `mkpasswd` command:
 
 ```bash
-mkpasswd -m sha-512 -S <8CHARSALT> -s
+mkpasswd -m  sha512crypt -S <8CHARSALT> -s
 ```
 
 You will be asked for the password and the output can be inserted into the `system-user` template.
@@ -172,7 +172,7 @@ The contents of the `system-user` template needs to be signed. This is accomplis
 snap sign -k my-key-name system-user.json --chain > auto-import.assert
 ```
 
-After asking for the passphrase for _my-key-name_, the above command will generate output similar to the following:
+The above command will prompt for a passphrase for _my-key-name_.
 
 The `system-user` data can be alternatively piped directly into the `snap sign` command. The additional `--chain` argument will output the `account` and `account-key` assertions alongside the newly signed `system-user` assertion.
 
