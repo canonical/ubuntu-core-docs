@@ -61,8 +61,7 @@ If you connect with the UART, you will see a welcoming prompt from the board:
 please send !
 ```
 
-On the host machine, download the following Renesas boot assets (zip) archive:
-[Renesas boot assets](https://people.canonical.com/~platform/images/renesas-iot/uc24/bootassets_core_rzg2l.zip)
+On the host machine, download the following Renesas boot assets (zip) archive from [the official website](https://ubuntu.com/download/renesas-iot). Please note each board has a separate bootassets tarball. The G2L/G2LC/G2UL boards also have an alternative SKU that support Secure Boot, if you are interested in this feature please make sure to select the bootassets tarball with the `-secure` suffix.
 
 Unzip the archive and locate the file called `Flash_Writer_SCIF_RZG2L_SMARC_DDR4_2GB.mot`, the Renesas Flash Writer tool. Transfer this file to your device with the following command, replacing `/dev/ttyUSB0` with the host PC serial port connected to your device:
 
@@ -103,8 +102,7 @@ When you regain control of the terminal, set the serial bitrate back to `115200`
 
 ## Write the Ubuntu Core image to the microSD card
 
-Next, download the Renesas RZ/G2L Ubuntu Core image:
-[Renesas Ubuntu Core image](https://people.canonical.com/~platform/images/renesas-iot/uc24/ubuntu-core24-rzg2l.img.xz)
+Next, download the latest Renesas RZ/G2L Ubuntu Core image from [the official webpage](https://ubuntu.com/download/renesas-iot).
 
 We're going to use the Raspberry Pi Foundation's _Raspberry Pi Imager_ to write the Ubuntu Core image to the microSD card. Raspberry Pi Imager both downloads and safely installs an image to your microSD card.
 
