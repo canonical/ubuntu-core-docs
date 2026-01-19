@@ -17,6 +17,15 @@ On Ubuntu Core 22 and later, when using the default GNU GRUB bootloader, kernel 
 
 The splash screen can be customised in two different ways, either by including a new logo or image file, or by completely replacing the Plymouth theme used to generate the splash screen.
 
+**NOTE:** Because custom splash screens need to be authenticated before being loaded, they cannot be used very early in boot. There will be a short time where a default splash screen will be used. This is needed for example in case a recovery key needs to be entered, which can only happen before a custom splash screen can be loaded.
+
+If you wish to hide the default splash, you may adjust a delay before the splash screen is shown. This can be done with a [kernel boot parameter](/reference/kernel-boot-parameters). For example, to delay
+the splash for 5 seconds:
+
+```yaml
+plymouth.splash-delay=5
+```
+
 ### New vendor logo or image
 
 ![Ubuntu Core vendor splash screen,  50%](https://assets.ubuntu.com/v1/3410143e-core-splash_02.png) 
