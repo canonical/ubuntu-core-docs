@@ -35,17 +35,18 @@ There are many different components in an Ubuntu Core deployment that keep every
 :maxdepth: 2
 :glob:
 
-Community engagement <community-engagement>
-How installation works <how-installation-works>
+Recovery modes <recovery-modes>
 Refresh control <refresh-control>
 Remodelling <remodelling>
 Remodel essential snaps <remodel-essential-snaps>
+How installation works <how-installation-works>
 Preseed performance <preseed-performance>
 Docker companion snap <docker-companion-snap>
 Full disk encryption <full-disk-encryption>
 Full disk encryption with OP-TEE <full-disk-encryption-op-tee>
-Recovery modes <recovery-modes>
+CVE remediation <cve-remediation>
 Security and sandboxing <security-and-sandboxing>
+Community engagement <community-engagement>
 Core elements <core-elements/index>
 Stores <stores/index>
 System snaps <system-snaps/index>
