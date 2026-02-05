@@ -3,3 +3,4 @@ sphinxcontrib-svg2pdfconverter[CairoSVG]
 sphinx-last-updated-by-git
 sphinxext-rediraffe
 sphinx-sitemap
+myst-parser==4.0.1
