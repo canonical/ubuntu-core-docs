@@ -21,6 +21,12 @@ summary:      <description of schema>
 views:
   <view name>:
     summary:  <description of view>
+    parameters:
+      -
+        <parameter>:
+          summary: <description of filter parameter>                        # optional
+          presence: <optional|required|required-on-write|required-on-read>  # defaults to optional
+        ...
     rules:
       -
         request: <request path>             # optional, defaults to storage
@@ -53,10 +59,15 @@ The `views` header can have any number of views, each with a fine-grained set of
     A path describing how the configuration can be accessed. The path parts are separated by dots or square brackets, corresponding to maps or arrays being accessed. If omitted, defaults to the storage path. May contain placeholder path parts wrapped in curly brackets (see example) which match any request value. The placeholder value is mapped to an equally named placeholder in the storage path.
 - **`storage`** (*required*)
     A path to a stored JSON value, following the same syntax as the `request` path. Must not be prohibited by the storage schema declared in the body. May contain placeholder path parts matching the ones in the request path.
+    Storage paths parts can be succeeded by field filters with the syntax `[.field={param}]` where `.field` is a field in the map and `{param}` is a parameter that the user can constrain to filter subsequent data.
 - **`access`** (*optional*)
     Access control for the given rule. Can be read-only, write-only or read-write. If omitted, defaults to read-write.
 - **`content`** (*optional*)
     Describes a nested rule that will be created with the parent's rule `request` and `storage` paths as prefixes. The `access` value is inherited from the parent and cannot be overridden.
+
+Views can contain a `parameters` list to declare parameters names that can be used to constrain field filters. Parameters used in field filters must be declared, unlike path placeholders which can be used to filter without being declared as filtering parameters. Each parameter map can have two fields:
+- **`summary`** (optional) Provides context on how the parameter may be used to filter data.
+- **`presence`** (optional) Determines whether the parameter must be constrained by the user or not and, if it must, whether it's required for reading, writing or both. Defaults to `optional`, in which case the parameter may be unconstrained.
    
 An example of this assertion is:
 
