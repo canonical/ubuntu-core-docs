@@ -75,76 +75,93 @@ An example of this assertion is:
 type:         confdb-schema
 authority-id: acme
 account-id:   acme
-name:         sensors
-summary:      Configuration for a series of temperature sensors
+name:         robot
+summary:      Configure a robot's sensors and actuators
 timestamp:    2025-04-02T19:31:32Z
 views:
-  configure-sensors:
-    summary:  Configure sensor parameters
+  accelerometer-admin:
+    summary: Control the accelerometer parameters
     rules:
       -
-        request: {sensor}.min-activation
-        storage: min-value.{sensor}
-      -
-        request: {sensor}.sample-rate
-        storage: sample-rate.{sensor}
-      -
-        request: {sensor}.calibration-offsets[{n}]
-        storage: calibration-offsets.{sensor}[{n}]
-  read-sensor-1-params:
-    summary:  Read sensor-1’s parameters
+        request: accelerometers.{sensor}
+        storage: sensors.accelerometers.{sensor}
+        content:
+          -
+            storage: sample-rate
+          -
+            storage: low-pass-filter-cutoff
+
+  actuator-admin:
+    summary: Control actuator movement parameters
+    parameters:
+      mode:
+        presence: optional
+        summary: "Query actuator state based on mode (\"auto\" or \"manual\")"
+
     rules:
       -
-        request: sensor-1.min-activation
-        storage: min-value.sensor-1
-        access: read
-      -
-        request: sensor-1.calibration-offsets[{n}]
-        storage: calibration-offsets[{n}].sensor-1
-        access: read
-  read-sensor-2-params:
-    summary:  Read sensor-2’s parameters
-    rules:
-       -
-        request: sensor-2.sample-rate
-        storage: sample-rate.sensor-2
-        access: read
+        request: actuators.{act}
+        storage: actuators.{act}[.mode={mode}]
+        content:
+          -
+            storage: mode
+          -
+            storage: manual-speed
+          -
+            storage: auto-max-speed
+
 body-length: 552
 sign-key-sha3-384: 74KHeq1foV...
 
 {
   "storage": {
     "aliases": {
-      "sensor-name": {
-        "pattern": "^sensor-[a-zA-Z\\d]+$",
+      "gadget-name": {
         "type": "string"
+        "pattern": "^[a-z](?:-?[a-z0-9])*$",
       }
     },
     "schema": {
-      "min-value": {
-        "keys": "${sensor-name}",
+      "actuators": {
+        "keys": "${gadget-name}",
         "values": {
-          "max": 5600,
-          "min": -273.15,
-          "type": "number"
+          "schema": {
+            "auto-max-speed": {
+              "type": "number",
+              "min": 0.1
+            },
+            "manual-speed": {
+              "type": "number",
+              "min": 0.1
+            },
+            "mode": {
+              "type": "string",
+              "choices": [
+                "manual",
+                "auto"
+              ]
+            }
+          }
         }
       },
-      "sample-rate": {
-        "keys": "${sensor-name}",
-        "values": {
-          "choices": [
-            100,
-            500,
-            800
-          ],
-          "type": "int"
-        }
-      },
-      "calibration-offsets": {
-        "keys": "${sensor-name}",
-        "values": {
-          "type": "array",
-          "values": "number"
+      "sensors": {
+        "schema": {
+          "accelerometers": {
+            "keys": "${gadget-name}",
+            "values": {
+              "schema": {
+                "low-pass-filter-cutoff": "number",
+                "sample-rate": {
+                  "type": "int",
+                  "choices": [
+                    100,
+                    500,
+                    800
+                  ]
+                }
+              }
+            }
+          }
         }
       }
     }
