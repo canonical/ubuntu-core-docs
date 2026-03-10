@@ -21,6 +21,12 @@ summary:      <description of schema>
 views:
   <view name>:
     summary:  <description of view>
+    parameters:
+      -
+        <parameter>:
+          summary: <description of filter parameter>                        # optional
+          presence: <optional|required|required-on-write|required-on-read>  # defaults to optional
+        ...
     rules:
       -
         request: <request path>             # optional, defaults to storage
@@ -53,10 +59,15 @@ The `views` header can have any number of views, each with a fine-grained set of
     A path describing how the configuration can be accessed. The path parts are separated by dots or square brackets, corresponding to maps or arrays being accessed. If omitted, defaults to the storage path. May contain placeholder path parts wrapped in curly brackets (see example) which match any request value. The placeholder value is mapped to an equally named placeholder in the storage path.
 - **`storage`** (*required*)
     A path to a stored JSON value, following the same syntax as the `request` path. Must not be prohibited by the storage schema declared in the body. May contain placeholder path parts matching the ones in the request path.
+    Storage paths parts can be succeeded by field filters with the syntax `[.field={param}]` where `.field` is a field in the map and `{param}` is a parameter that the user can constrain to filter subsequent data.
 - **`access`** (*optional*)
     Access control for the given rule. Can be read-only, write-only or read-write. If omitted, defaults to read-write.
 - **`content`** (*optional*)
     Describes a nested rule that will be created with the parent's rule `request` and `storage` paths as prefixes. The `access` value is inherited from the parent and cannot be overridden.
+
+Views can contain a `parameters` list to declare parameters names that can be used to constrain field filters. Parameters used in field filters must be declared, unlike path placeholders which can be used to filter without being declared as filtering parameters. Each parameter map can have two fields:
+- **`summary`** (optional) Provides context on how the parameter may be used to filter data.
+- **`presence`** (optional) Determines whether the parameter must be constrained by the user or not and, if it must, whether it's required for reading, writing or both. Defaults to `optional`, in which case the parameter may be unconstrained.
    
 An example of this assertion is:
 
@@ -64,76 +75,93 @@ An example of this assertion is:
 type:         confdb-schema
 authority-id: acme
 account-id:   acme
-name:         sensors
-summary:      Configuration for a series of temperature sensors
+name:         robot
+summary:      Configure a robot's sensors and actuators
 timestamp:    2025-04-02T19:31:32Z
 views:
-  configure-sensors:
-    summary:  Configure sensor parameters
+  accelerometer-admin:
+    summary: Control the accelerometer parameters
     rules:
       -
-        request: {sensor}.min-activation
-        storage: min-value.{sensor}
-      -
-        request: {sensor}.sample-rate
-        storage: sample-rate.{sensor}
-      -
-        request: {sensor}.calibration-offsets[{n}]
-        storage: calibration-offsets.{sensor}[{n}]
-  read-sensor-1-params:
-    summary:  Read sensor-1’s parameters
+        request: accelerometers.{sensor}
+        storage: sensors.accelerometers.{sensor}
+        content:
+          -
+            storage: sample-rate
+          -
+            storage: low-pass-filter-cutoff
+
+  actuator-admin:
+    summary: Control actuator movement parameters
+    parameters:
+      mode:
+        presence: optional
+        summary: "Query actuator state based on mode (\"auto\" or \"manual\")"
+
     rules:
       -
-        request: sensor-1.min-activation
-        storage: min-value.sensor-1
-        access: read
-      -
-        request: sensor-1.calibration-offsets[{n}]
-        storage: calibration-offsets[{n}].sensor-1
-        access: read
-  read-sensor-2-params:
-    summary:  Read sensor-2’s parameters
-    rules:
-       -
-        request: sensor-2.sample-rate
-        storage: sample-rate.sensor-2
-        access: read
+        request: actuators.{act}
+        storage: actuators.{act}[.mode={mode}]
+        content:
+          -
+            storage: mode
+          -
+            storage: manual-speed
+          -
+            storage: auto-max-speed
+
 body-length: 552
 sign-key-sha3-384: 74KHeq1foV...
 
 {
   "storage": {
     "aliases": {
-      "sensor-name": {
-        "pattern": "^sensor-[a-zA-Z\\d]+$",
+      "gadget-name": {
         "type": "string"
+        "pattern": "^[a-z](?:-?[a-z0-9])*$",
       }
     },
     "schema": {
-      "min-value": {
-        "keys": "${sensor-name}",
+      "actuators": {
+        "keys": "${gadget-name}",
         "values": {
-          "max": 5600,
-          "min": -273.15,
-          "type": "number"
+          "schema": {
+            "auto-max-speed": {
+              "type": "number",
+              "min": 0.1
+            },
+            "manual-speed": {
+              "type": "number",
+              "min": 0.1
+            },
+            "mode": {
+              "type": "string",
+              "choices": [
+                "manual",
+                "auto"
+              ]
+            }
+          }
         }
       },
-      "sample-rate": {
-        "keys": "${sensor-name}",
-        "values": {
-          "choices": [
-            100,
-            500,
-            800
-          ],
-          "type": "int"
-        }
-      },
-      "calibration-offsets": {
-        "keys": "${sensor-name}",
-        "values": {
-          "type": "array",
-          "values": "number"
+      "sensors": {
+        "schema": {
+          "accelerometers": {
+            "keys": "${gadget-name}",
+            "values": {
+              "schema": {
+                "low-pass-filter-cutoff": "number",
+                "sample-rate": {
+                  "type": "int",
+                  "choices": [
+                    100,
+                    500,
+                    800
+                  ]
+                }
+              }
+            }
+          }
         }
       }
     }
