@@ -430,3 +430,29 @@ snapctl set -s registration.proposed-serial="DEVICE-SERIAL"
 snapctl set registration.body='mac: "00:00:00:00:ff:00"'
 ```
 
+## prepare-serial hook
+
+The optional `prepare-serial` hook will be called on the gadget at the start of the device initialisation process, after the gadget snap has been installed and if secure registration is required.
+
+This hook can be used to provide the necessary device attestation information which is passed back to the device service by setting the `registration.body` to the appropriate stanza suitable for method of secure registration being used.
+
+### prepare-serial options
+
+```bash
+#!/bin/sh
+
+# Get the request-id for registration
+REQUEST_ID="$(snapctl get registration.request-id)"
+
+# Sign request_id with HW ID private key
+
+# set hardware identity attestation information
+snapctl set registration.body="{\"hardware-id-key-sha3-384\": \"${HASH}\",
+                                \"signature-hash-algorithm\": \"${SIG_HASH}\",
+                                \"request-id-signature\": \"${SIGNATURE}\"
+}"
+```
+
+
+
+
