@@ -351,3 +351,24 @@ Paths to ephemeral data can be marked as such with a `ephemeral: true` field. Th
 ```
 
 The `ephemeral` field defaults to `false`, if omitted.
+
+### Secret data
+*Note: secret data is only available from snapd 2.76+*
+
+Data that should only be readable by admins should be marked with a `"visibility": "secret"` field. Snapd will filter out any data and its descendants marked as such when returning data requested by non-admins.
+
+All schema types support secrets except for the following:
+- No secrets may be defined inside alias types
+- All top-level entries of an alternative definition must have uniform visibility (i.e. either all alternatives are secret or all alternatives are non-secret).
+
+```
+{
+  "schema": {
+    "name": "string",
+    "password": {
+      "type": "string",
+      "visibility": "secret"
+    }
+  }
+}
+```
