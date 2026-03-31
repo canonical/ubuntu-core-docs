@@ -137,7 +137,7 @@ New features for this release include:
 
 Previous updates to Ubuntu Core have added:
 
-* [Raspberry Pi support](/tutorials/try-pre-built-images/use-raspberry-pi-imager) (both ARMv7 and ARM v8)
+* {ref}`Raspberry Pi support <ref-use-raspberry-pi-imager_use-raspberry-pi-imager>` (both ARMv7 and ARM v8)
 * Full-disk encryption via {ref}`TPM integration <explanation-full-disk-encryption>`
    _Currently x86-only with ARM to follow.  TPM integration works with existing CA_
 * New {ref}`recovery and reinstall <explanation-recovery-modes>` modes
