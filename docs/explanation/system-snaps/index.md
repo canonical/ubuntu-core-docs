@@ -28,6 +28,6 @@ The console-conf snap help with device configuration for development images.
 Bluetooth manager <bluetooth/index>
 Modem Manager <modem-manager/index>
 Network Manager <network-manager/index>
-Upower <network-manager/index>
+Upower <upower/index>
 Udisks2 <udisks2/index>
 Console-conf <console-conf/index>
