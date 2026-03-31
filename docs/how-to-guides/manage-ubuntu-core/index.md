@@ -1,3 +1,4 @@
+(ref-index_manage-ubuntu-core)=
 # Manage-Ubuntu-Core
 
 ## Access and upgrades

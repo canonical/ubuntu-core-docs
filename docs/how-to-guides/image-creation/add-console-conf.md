@@ -1,3 +1,4 @@
+(ref-add-console-conf_add-console-conf)=
 # Add console-conf
 
 Console-conf is a text-based user-interface that can be optionally included in an Ubuntu Core image to provide interactive network and user configuration.

@@ -19,6 +19,7 @@ The definitive layout of the generated image used to install Ubuntu Core, and th
 A device image for both Ubuntu Core 20 and Ubuntu Core 22 devices must only contain _bootloader-specific_ partitions and **ubuntu-seed**,  such that a recovery system in it can be booted into install mode.  Installation will create and size the other missing partitions.
 
 See [How installation works](/explanation/how-installation-works) for more details on how an installation proceeds.
+(ref-storage-layout_the-ubuntu-seed-partition)=
 ## The ubuntu-seed partition
 
 **role**: system-seed; *read-only*, *ext4* or typically *vfat*
@@ -44,12 +45,14 @@ In all cases, **ubuntu-seed**  will contain the following directories:
 
 For [remodelling](/explanation/remodelling) to function, the seed partition needs to be large enough to hold two recovery systems.
 
+(ref-storage-layout_the-ubuntu-boot-partition)=
 ## The ubuntu-boot partition
 
 **role**: system-boot; *read-only*, *ext4* or *vfat*
 
 Contains the second-stage/run bootloader and unpacked kernel(s) only, which are used to boot the system.
 
+(ref-storage-layout_the-ubuntu-save-partition)=
 ## The ubuntu-save partition
 
 **role**: system-save; *writable*, *ext4*
@@ -64,6 +67,7 @@ This data might include certificates, data blobs, or configuration files, to hel
 
 Device provisioning needs to consider space requirements and snap developers need to understand the consequences of storing persistent data to _ubuntu-save_.
 
+(ref-storage-layout_the-ubuntu-data-partition)=
 ## The ubuntu-data partition
 
 **role**: system-data; *writable*, *ext4*

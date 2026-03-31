@@ -14,6 +14,7 @@ snapd_recovery_mode=run console=ttyS0,115200n8 console=tty1 panic=-1
 
 In addition to parameters supported by the kernel, there are also *Ubuntu Core-specific* [kernel boot parameters](/reference/kernel-boot-parameters).
 
+(ref-modify-kernel-options_dynamic-kernel-parameter-modifications)=
 ## Dynamic kernel parameter modifications
 
 There are two [system options](https://snapcraft.io/docs/system-options) that can be used to add new kernel boot parameters to a system that has been deployed and is running:
@@ -39,6 +40,7 @@ To remove a dynamically set kernel command, use the `snap unset` command:
 snap unset system system.kernel.dangerous-cmdline-append
 ```
 
+(ref-modify-kernel-options_static-boot-option-modifications)=
 ## Static boot option modifications
 
 Static kernel boot-time options are formed from mode arguments set by _snapd_, a static element declared in the bootloader configuration script, and optional extra arguments.
@@ -97,6 +99,7 @@ The gadget snap can contain only one of `cmdline.full` or `cmdline.extra`; the p
 
 Extending the kernel command line using drop-in files is also supported on systems using the full disk encryption. See [Full disk encryption](/explanation/full-disk-encryption) for more details.
 
+(ref-modify-kernel-options_customising-the-kernel-command-line)=
 ## Customising the kernel command line
 
 If setting the parameters in `gadget.yaml`, you will just need to edit that file in your sources and build the gadget as usual with `snapcraft`.

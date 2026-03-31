@@ -1,3 +1,4 @@
+(ref-networkmanager-and-netplan_networkmanager-and-netplan)=
 # NetworkManager and Netplan
 
 Ubuntu Core's default Netplan configuration defers networking to _networkd_.

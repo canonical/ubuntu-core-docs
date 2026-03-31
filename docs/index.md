@@ -1,5 +1,6 @@
 (index)=
 
+(ref-index_ubuntu-core-documentation)=
 # Ubuntu Core documentation
 
 **Ubuntu Core is Ubuntu engineered for embedded and IoT systems.** It's image-based and immutable, with every element confined within a separate sandbox.

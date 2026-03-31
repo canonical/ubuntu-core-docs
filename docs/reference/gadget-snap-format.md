@@ -46,6 +46,7 @@ In addition to the above, the IoT Devices Field team maintains a GitHub reposito
 
 In the near future, we expect to add a RISC-V reference gadget snap to this list.
 
+(ref-gadget-snap-format_the-gadget-yaml-file)=
 ## The gadget.yaml file
 
 Two YAML keys are used to describe your target device:
@@ -388,6 +389,7 @@ connections:
     slot: system:system-files           
 ```
 
+(ref-gadget-snap-format_prepare-device-hook)=
 ##  prepare-device hook
 
 The optional `prepare-device` hook will be called on the gadget at the start of the device initialisation process, after the gadget snap has been installed.

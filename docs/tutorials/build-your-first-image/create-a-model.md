@@ -1,3 +1,4 @@
+(ref-create-a-model_create-a-model)=
 # Create a model
 
 At the heart of custom Ubuntu Core image creation is the _model assertion_. An assertion is a signed recipe that describes the components that comprise a complete image. An assertion is provided as JSON in a text file which is signed by a GPG key associated with the publisher's Ubuntu One account.
@@ -9,6 +10,7 @@ The model contains:
 
 See below for details on how to download and modify a model file to include your own selection of snaps.
 
+(ref-create-a-model_download-a-model-file)=
 ## Download a model file
 
 The quickest way to create a new model assertion is to edit a model that already exists. Reference models for every supported Ubuntu Core device can be found in the [snapcore/models](https://github.com/snapcore/models) GitHub repository.
@@ -21,6 +23,7 @@ Download and save the file locally with the following _wget_ command. We've call
 wget -O my-model.json https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-pi-arm64.json
 ```
 
+(ref-create-a-model_edit-the-model-file)=
 ## Edit the model file
 
 We now need to edit `my-model.json` using a text editor:
@@ -32,6 +35,7 @@ nano my-model.json
 The following fields in `my-model.json` need to be changed:
 
 
+(ref-create-a-model_authority-id-and-brand-id)=
 ###  "authority-id" and "brand-id"
 
 ```json
@@ -41,6 +45,7 @@ The following fields in `my-model.json` need to be changed:
 
 These properties define the authority responsible for the image. Change both instances of the string "canonical" to your developer id, retrieved with the `snapcraft whoami` command. ("xSfWKGdLoQBoQx88", in our example output). This links the image to your Ubuntu One account and ensures that only *you* can push image updates to devices using your model.
 
+(ref-create-a-model_timestamp)=
 ### timestamp
 
 
@@ -50,6 +55,7 @@ These properties define the authority responsible for the image. Change both ins
 
 This needs to be provided at the end of the process; we’ll come back to this.
 
+(ref-create-a-model_snaps)=
 ###  snaps
 
 ```json
@@ -98,6 +104,7 @@ Snaps do not have dependencies, but they do require the presence of the [base sn
 
 The `snap-id` for a snap is in the output of the `snap info <snap-name>` command.
 
+(ref-create-a-model_complete-model-example)=
 ### Complete model example
 
 After finishing all your edits, the completed **my-model.json** text file should now contain the following:

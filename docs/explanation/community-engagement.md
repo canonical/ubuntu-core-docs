@@ -1,3 +1,4 @@
+(ref-community-engagement_community-engagement)=
 # Community engagement
 
 Ubuntu Core is an open source project hosted by Canonical. We warmly welcome community contributions, suggestions, fixes and constructive feedback.

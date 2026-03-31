@@ -10,6 +10,7 @@ The following recovery functions are currently available:
 
 See [Using recovery modes](/how-to-guides/manage-ubuntu-core/use-a-recovery-mode) for details on how these modes are accessed.
 
+(ref-recovery-modes_install-mode)=
 ## Install mode
 
 With **install mode**, all existing user and system data on the device will be removed and the device will be initialised from the system version image dated and listed in the reinstall text.
@@ -26,10 +27,12 @@ See [Installation steps](/tutorials/try-pre-built-images/install-on-a-device/use
 Re-installation can fail if a device's TPM is assigned to a previous installation. To solve this issue, reset or clear the TPM assignment from the device's BIOS before selecting reinstall as a recovery mode.
 ```
 
+(ref-recovery-modes_run-mode)=
 ## Run mode
 
 When booting in **run mode**, the device will attempt to boot normally, with no further option to recover or reinstall the system unless the recovery process is reinstantiated.
 
+(ref-recovery-modes_recover-mode)=
 ## Recover mode
 
 In **recovery mode**, the device operates as it would from a pristine initial installation, including its snaps, via a temporary file system.
@@ -38,6 +41,7 @@ Most importantly, however, the running system data is untouched. This allows you
 
 Rebooting from recovery mode will return the system to run mode.
 
+(ref-recovery-modes_factory-reset)=
 ## Factory reset
 
 The **factory reset** option will erase all system data and reset the device to its original _fresh from the factory_ state. This means that not everything is removed. 

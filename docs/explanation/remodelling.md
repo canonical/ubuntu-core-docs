@@ -91,6 +91,7 @@ The remodelling process does not automatically remove snaps which are no longer 
 
 The general practice is that either the operator who invoked `snap remodel` command, or the management agent which started the remodel process, is responsible for requesting removal of said snaps. If snap data is no longer needed, the remove request should include the `purge` option to remove all data associated with the removed snap.
 
+(ref-remodelling_offline-remodelling)=
 ## Offline remodelling
 
 A network connection is not required if there is local access to:

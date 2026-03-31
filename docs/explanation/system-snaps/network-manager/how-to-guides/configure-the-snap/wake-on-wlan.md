@@ -49,6 +49,7 @@ Example:
 ```bash
 snap set network-manager wifi.wake-on-wlan-password=MyPassword
 ```
+(ref-wake-on-wlan_per-connection-configuration)=
 ## Per connection configuration
 
 To configure WoWLAN per connection you have to use the  *nmcli*  utility which comes with the NetworkManager snap. It allows you to configure the same two options as the snap accepts. However, the  *wifi.wake-on-wlan*  option takes a numeric value instead of a textual one.

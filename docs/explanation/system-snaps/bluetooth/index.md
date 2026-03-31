@@ -1,3 +1,4 @@
+(ref-index_bluetooth)=
 # Bluetooth
 
 Bluetooth is a standard for wireless communication on short distances. It

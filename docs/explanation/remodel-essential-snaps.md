@@ -1,3 +1,4 @@
+(ref-remodel-essential-snaps_remodel-essential-snaps)=
 # Remodel essential snaps
 
 [Remodeling](remodelling) is the process of swapping from one [model assertion](/reference/assertions/model) to another on an Ubuntu Core system.

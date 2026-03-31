@@ -1,3 +1,4 @@
+(ref-release-notes_release-notes)=
 # Release notes
 
 This page outlines the release notes of Ubuntu Core, summarising new features, bug fixes and changes in each version.
@@ -10,6 +11,7 @@ This page outlines the release notes of Ubuntu Core, summarising new features, b
 
 * **[Ubuntu Core 22](#ubuntu-core-22-release-notes)** (15th June 2022)
 
+(ref-release-notes_release-policy-and-schedule)=
 ## Release policy and schedule
 
 A new version of Ubuntu Core is released every two years, built on the foundations of a Ubuntu LTS release. Each Ubuntu Core release is considered an LTS release. Minor updates are delivered continuously through new versions of snapd, and other [essential snaps](/explanation/core-elements/snaps-in-ubuntu-core) composing the system (gadget, base and kernel snaps).
@@ -44,6 +46,7 @@ The snap daemon, snapd, manages snap package updates and Ubuntu Core functionali
 
 To ensure you receive latest security updates and bug fixes, ensure you upgrade to a new release of snapd shortly after it is released.
 
+(ref-release-notes_ubuntu-core-24-release-notes)=
 ## Ubuntu Core 24 release notes
 
 Released: 4th June 2024.
@@ -114,6 +117,7 @@ This release adds many other new features, including:
 - [Configurable splash screen](/how-to-guides/image-creation/add-a-splash-screen)
 - [Offline device upgrades and remodelling](/explanation/remodelling.md#offline-remodelling)
 
+(ref-release-notes_ubuntu-core-22-release-notes)=
 ## Ubuntu Core 22 release notes
 
 Released: 15th June 2022.

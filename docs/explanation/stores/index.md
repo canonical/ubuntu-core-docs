@@ -1,3 +1,4 @@
+(ref-index_stores)=
 # Stores
 
 A store hosts and provides both the snap packages themselves and signed assertions required to securely maintain and update an Ubuntu Core device.

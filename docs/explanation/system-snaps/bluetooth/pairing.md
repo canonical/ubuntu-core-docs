@@ -36,6 +36,7 @@ Agent registered
 ```
 The pairing section will walk you through the pairing procedure with a keyboard. It will require passcode authentication.
 
+(ref-pairing_inbound-pairing)=
 ## Inbound pairing
 
 In this scenario it is the remote device that is active in the pairing procedure. It will search, discover and initiate pairing. The only thing that an Ubuntu Core device has to make sure of is to be discoverable and pairable, as this will allow the remote device to discover and initiate a connection with it.
@@ -65,6 +66,7 @@ The agent will require you to type yes or no depending on if you like to allow t
 ```
 At this stage the devices are paired and can be connected.
 
+(ref-pairing_outbound-pairing)=
 ## Outbound pairing
 
 Having the  *bluez*  snap installed start the  *bluetoothctl*  tool which is a command-line interface to BlueZ.

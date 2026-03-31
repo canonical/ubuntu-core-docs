@@ -18,6 +18,7 @@ The following factors affect how a device is encrypted:
 
 For a non-standard (non-UEFI+TPM platform) FDE platform, such as a Raspberry Pi or other ARM devices, implementation is board-specific and will typically involve creating custom gadget and kernel snaps. UC20/UC22, however, do provide a helper mechanism, via a hook interface, to ensure the integrity of any subsequently executed or accessed data. See the [full-disk-encryption hook interface](https://snapcraft.io/docs/uc20-fde-hooks) for further details.
 
+(ref-full-disk-encryption_storage-layouts)=
 ## Storage layouts
 
 The layout of the generated image used to install Ubuntu Core, and the resultant storage on the device, is described by the [gadget snap](https://snapcraft.io/docs/gadget-snap) and its associated `gadget.yaml`.
@@ -44,6 +45,7 @@ If an encrypted drive is detected, but the TPM does not contain a valid key, the
 
 For more information on how Ubuntu Core uses these partitions, what they contain, and how they boot, see [Storage layout](/explanation/core-elements/storage-layout).
 
+(ref-full-disk-encryption_disabling-encryption)=
 ## Disabling encryption
 
 It is sometimes desirable to install Ubuntu Core without encryption, even when the device hardware supports it.
@@ -56,6 +58,7 @@ This option is provided by the “storage-safety” setting in the [model assert
 
 See [Add custom snaps](/how-to-guides/image-creation/add-custom-snaps) for further details on building an image from a model assertion.
 
+(ref-full-disk-encryption_model-grade)=
 ## Model grade
 
 The `grade` option in the model assertion is used to set the constraints for the device. It can be one of the following:

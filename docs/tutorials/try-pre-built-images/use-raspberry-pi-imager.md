@@ -1,3 +1,4 @@
+(ref-use-raspberry-pi-imager_use-raspberry-pi-imager)=
 # Use Raspberry Pi Imager
 
 Ubuntu Core runs on a large range of hardware, and pre-built images are available for _amd64_, Raspberry Pi, and other reference platforms.

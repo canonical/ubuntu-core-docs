@@ -20,6 +20,7 @@ For more details on using a model assertion to create an image, see [Custom imag
 
 Model assertions for supported devices and systems can be found at [https://github.com/snapcore/models/tree/master](https://github.com/snapcore/models/tree/master).
 
+(ref-model_model-assertion-fields)=
 ## Model assertion fields
 
 The following fields can be used in a model assertion:

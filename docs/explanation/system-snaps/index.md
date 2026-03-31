@@ -1,3 +1,4 @@
+(ref-index_system-snaps)=
 # System snaps
 
 System snaps provide additional device functionality, usually associated with connectivity. They're managed and maintained by separate projects outside of the central Ubuntu Core.

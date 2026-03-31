@@ -1,9 +1,11 @@
+(ref-inside-ubuntu-core_inside-ubuntu-core)=
 # Inside Ubuntu Core
 
 The kernel, boot assets, runtime environment, applications and device enablement capabilities are all delivered as snaps that are controlled by _snapd_ (the snap daemon), which is itself packaged as a snap.
 
 See below for how these elements combine in Ubuntu Core:
 
+(ref-inside-ubuntu-core_volume-layouts)=
 ## Volume layouts
 
 The storage layout of the generated image used to install Ubuntu Core, and the resultant storage on the device after installation, is described by the [gadget snap](/reference/gadget-snap-format) and its associated `gadget.yaml` file.
@@ -36,6 +38,7 @@ The system boot process:
 1. *snap-bootstrap* on kernel and base snap upgrades will also handle updating bootloader environment variables to implement A/B or try-boot functionality.
 1. *snap-bootstrap* then finally may do some additional setup of the root filesystem such as copying some default files for ephemeral system modes such as recover.
 
+(ref-inside-ubuntu-core_ubuntu-core-snaps)=
 ## Ubuntu Core snaps 
 
 The following components make up Ubuntu Core:

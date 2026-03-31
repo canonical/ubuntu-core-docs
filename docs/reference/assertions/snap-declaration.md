@@ -59,6 +59,7 @@ This assertion gives control on several aspects of the snap behaviour to the aut
 
 See [Assertion format](/reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
 
+(ref-snap-declaration_connection-management)=
 ## Connection management
 
 The overall structure of the snap-declaration has two top-level keys, plugs and slots, which affect the plugs and slots of the snap respectively. Beneath these keys are the names of interfaces, and for each interface key is an map which has 6 possible keys:

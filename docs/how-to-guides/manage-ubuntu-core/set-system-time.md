@@ -62,6 +62,7 @@ $ timedatectl | grep zone
                 Time zone: America/Chicago (CDT, -0500)
 ```
 
+(ref-set-system-time_network-time-synchronisation)=
 ## Network time synchronisation
 
 By default, _timesyncd_ is configured to use the Network Time Protocol (NTP) for network time synchronisation as soon as the network becomes available.

@@ -5,6 +5,7 @@
 We recommend migrating to the next LTS or upgrading to Ubuntu Pro. [Learn more about your options](https://ubuntu.com/20-04).
 ```
 
+(ref-dedicated-snap-store_dedicated-snap-store)=
 # Dedicated snap store
 
 A _dedicated snap store_ (formerly known as a _Brand store_) allows vendors running Ubuntu Core and snap-based devices to control exactly what snaps are available and when. 

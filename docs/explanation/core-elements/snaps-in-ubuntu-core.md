@@ -1,3 +1,4 @@
+(ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core)=
 # Snaps in Ubuntu Core
 
 Ubuntu Core is built from *snaps*, a secure, confined, dependency-free, cross-platform Linux packaging format.
@@ -16,6 +17,7 @@ Whether it's an update to a single device, a specific subset of devices, or a de
 
  Note: For further details on how snaps work and how they're built, see the [Snap documentation](https://snapcraft.io/docs).
 
+(ref-snaps-in-ubuntu-core_types-of-snap)=
 ## Types of snap
 
 The snap packaging ecosystem consists of the following parts:

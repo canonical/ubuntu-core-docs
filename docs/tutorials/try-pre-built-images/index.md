@@ -1,3 +1,4 @@
+(ref-index_try-pre-built-images)=
 # Try pre-built images
 
 Ubuntu Core runs on a variety of hardware, and pre-built images are available for various platforms. Generic images can also be installed on a virtual machine.

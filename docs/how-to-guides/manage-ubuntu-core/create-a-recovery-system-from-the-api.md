@@ -75,6 +75,7 @@ curl -X POST --unix-socket /run/snapd.socket \
 
 In this example, “validation-set.assert”, “pc.assert”, “pc-kernel.assert”, “pc.snap”, and “pc-kernel.snap” are all files on the local system. Note that the “assertion” field expects the literal string contents to be the value of the field. The “snap” field is processed as an HTTP form file upload.
 
+(ref-create-a-recovery-system-from-the-api_removing-api-usage)=
 ## Removing API Usage
 
 Recovery systems can be removed by using the remove API. Note that the “current” system, the default recovery system, and the last recovery system cannot be removed.
