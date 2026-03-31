@@ -34,7 +34,7 @@ We recommend enabling two-factor authentication on all Ubuntu SSO accounts, but 
 
 Roles are a vital part of the device and snap management lifecycle. They enable accounts other than the master brand account to control various aspects of the deployment process, and for those aspects to be safeguarded from the key and registry functions that maintain the integrity of the brand account.
 
-As with the brand account, roles are assigned to a regular Ubuntu SSO account by a project administrator via [ https://snapcraft.io/admin]( https://snapcraft.io/admin):
+As with the brand account, roles are assigned to a regular Ubuntu SSO account by a project administrator via [https://snapcraft.io/admin](https://snapcraft.io/admin):
 
 ![Ubuntu Core brand account add new member](https://assets.ubuntu.com/v1/a2ea6a4d-core-store.png)
 
