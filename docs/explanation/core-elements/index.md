@@ -1,7 +1,7 @@
 (ref-index_core-elements)=
 # Core elements
 
-Ubuntu Core is built from the same artefacts as the corresponding Ubuntu LTS release, such as [Ubuntu 24.04 LTS (Noble Numbat)](https://releases.ubuntu.com/24.04/) and [Ubuntu 22.04 LTS (Jammy Jellyfish)](https://releases.ubuntu.com/22.04/) for `core24` and `core22` respectively.
+Ubuntu Core is built from the same artifacts as the corresponding Ubuntu LTS release, such as [Ubuntu 24.04 LTS (Noble Numbat)](https://releases.ubuntu.com/24.04/) and [Ubuntu 22.04 LTS (Jammy Jellyfish)](https://releases.ubuntu.com/22.04/) for `core24` and `core22` respectively.
 
 Understanding how these elements come together is key to getting the most out of the system.
 

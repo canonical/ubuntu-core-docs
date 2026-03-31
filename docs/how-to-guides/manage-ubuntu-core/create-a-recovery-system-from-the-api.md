@@ -52,7 +52,7 @@ The “offline” field is used to force snapd to create a recovery system witho
 
 ### Form-based
 
-Similar to {ref}`offline remodelling <ref-remodelling_offline-remodelling>` API, an offline/form-based recovery system API variant enables users to create recovery systems from a set of snaps and assertions that are provided locally.
+Similar to {ref}`offline remodeling <ref-remodelling_offline-remodeling>` API, an offline/form-based recovery system API variant enables users to create recovery systems from a set of snaps and assertions that are provided locally.
 
 When using the offline API, snaps and assertions must either be provided via the API, or they must already be installed on the system. The API will not reach out to the store to fetch any missing snaps or assertions.
 

@@ -89,7 +89,7 @@ Snapd uses them via [gopkg.in/macaroon.v1](https://github.com/go-macaroon/macaro
 * **Digital signatures for [assertions](https://ubuntu.com/core/docs/reference/assertions)**</br>
 The key ID of the signing key is encoded with SHA3-384, and the assertion is signed with either 4096-bit RSA or 8192-bit RSA
 * **Hashing of artifacts**</br>
-The store generates many hashes of an uploaded artefact using SHA3-384, SHA256 and SHA512 to ensure the uniqueness and integrity of the artefact.
+The store generates many hashes of an uploaded artifact using SHA3-384, SHA256 and SHA512 to ensure the uniqueness and integrity of the artifact.
 * **Macaroons for authorisation and authentication**</br>
 HMAC SHA256, NaCl crypto_secretbox
 * **Macaroons encryption of 3rd party caveats**</br>

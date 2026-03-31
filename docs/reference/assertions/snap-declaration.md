@@ -47,7 +47,7 @@ sign-key-sha3-384: <key id> # Encoded key id of signing key
 
 The index is the tuple `< series`, `snap-id >`, and `snap-id` is a key with the same format as the account ids.
 
-This assertion gives control on several aspects of the snap behaviour to the authority:
+This assertion gives control on several aspects of the snap behavior to the authority:
 
 -   `refresh-control` gives a list of snaps that are gated when the one specified by `snap-id` is installed, so they are not automatically refreshed until they are "validated". Validation is performed by using {ref}`validation asserts <reference-assertions-validation>`, which specify the revision of the gated snap that should be installed if the gating snap has been installed.
 
@@ -73,7 +73,7 @@ The overall structure of the snap-declaration has two top-level keys, plugs and 
 
 Each of these keys can either have a static value of true/false in the assertion or can be a more complex object/list which then is “evaluated” by snapd on a device to determine the actual value, be it true or false. If there is no such a rule in the snap-declaration for an interface plug/slot that a snap is using, then the base-declaration from inside snapd is used to populate rules, more on that below.
 
-The `deny-*` variant of keys are almost never used in snap-declarations and are instead mainly used in the base-declaration inside snapd to express more complex default behaviours, for example some interfaces should auto-connect only on classic but not on Core or vice versa, and having `deny-*` keys makes this simpler/easier to express, but when granting snap-declarations for brand store users, `allow-*` keys are almost always used so this document only covers allow-* keys below.
+The `deny-*` variant of keys are almost never used in snap-declarations and are instead mainly used in the base-declaration inside snapd to express more complex default behaviors, for example some interfaces should auto-connect only on classic but not on Core or vice versa, and having `deny-*` keys makes this simpler/easier to express, but when granting snap-declarations for brand store users, `allow-*` keys are almost always used so this document only covers allow-* keys below.
 
 ### allow-installation
 

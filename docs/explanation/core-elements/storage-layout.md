@@ -43,7 +43,7 @@ In all cases, **ubuntu-seed**  will contain the following directories:
 
 -   A snaps directory which operates as a pool of snaps shared across all recovery systems. The assertions in a recovery system will define and reference which of these will be used by the system.
 
-For {ref}`remodelling <explanation-remodelling>` to function, the seed partition needs to be large enough to hold two recovery systems.
+For {ref}`remodeling <explanation-remodeling>` to function, the seed partition needs to be large enough to hold two recovery systems.
 
 (ref-storage-layout_the-ubuntu-boot-partition)=
 ## The ubuntu-boot partition

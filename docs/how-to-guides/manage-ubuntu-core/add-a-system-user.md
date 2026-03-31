@@ -67,7 +67,7 @@ When a model assertion lacks a `system-user-authority` field, the system-user as
 (specifying-system-user-authority)=
 #### Specifying system-user-authority
 
-The optional `system-user-authority` field can be added to a model assertion to list a set of account IDs that are authorised to sign system-user assertions for any image built with the assertion:
+The optional `system-user-authority` field can be added to a model assertion to list a set of account IDs that are authorized to sign system-user assertions for any image built with the assertion:
 
 ```yaml
 {

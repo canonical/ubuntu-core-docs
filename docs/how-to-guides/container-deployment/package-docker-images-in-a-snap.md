@@ -13,7 +13,7 @@ Downloading Docker images from an online registry during the installation is a c
 
 Consequently, bundling the Docker image inside a snap is useful for both existing and locally built images.
 
-Snaps are signed, which means the entire package, including the Docker image, is a verifiable artefact that can be pulled from an online or on-prem store, built into Ubuntu Core images, or passed around as standalone snaps.
+Snaps are signed, which means the entire package, including the Docker image, is a verifiable artifact that can be pulled from an online or on-prem store, built into Ubuntu Core images, or passed around as standalone snaps.
 
 Building a snap that contains and uses an existing image involves a few steps. 
 

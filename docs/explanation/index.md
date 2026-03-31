@@ -9,7 +9,7 @@ Understanding how certain operations work in Ubuntu Core is key to getting the m
 
 - {ref}`How installation works <explanation-how-installation-works>`
 - {ref}`Refresh control <explanation-refresh-control>`
-- {ref}`Remodelling <explanation-remodelling>`
+- {ref}`Remodeling <explanation-remodeling>`
 - {ref}`Preseed performance <explanation-preseed-performance>`
 - {ref}`Recovery modes <explanation-recovery-modes>`
 - {ref}`Docker companion snap <explanation-docker-companion-snap>`
@@ -38,7 +38,7 @@ There are many different components in an Ubuntu Core deployment that keep every
 
 Recovery modes <recovery-modes>
 Refresh control <refresh-control>
-Remodelling <remodelling>
+Remodeling <remodeling>
 Remodel essential snaps <remodel-essential-snaps>
 How installation works <how-installation-works>
 Preseed performance <preseed-performance>

@@ -40,7 +40,7 @@ Other [risks levels](https://snapcraft.io/docs/channels) are available for testi
 
 When Ubuntu Core is running, its snap packages update (aka refresh) automatically. To manually control or modify this process, see {ref}`Refresh control <explanation-refresh-control>`. Essential snaps, such as the base and kernel snaps, can be refreshed assuming the updated version is built from the same build-base used in the original model definition. When refreshing the base or kernel snaps, the system will automatically reboot to apply the freshly installed snap. When refreshing the gadget snap, a reboot occurs if the [boot-assets](https://snapcraft.io/docs/gadget-boot-assets) are modified.
 
-To upgrade an Ubuntu Core image from one version to another, see {ref}`Upgrade Ubuntu Core <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>`. This process is known as {ref}`remodelling <explanation-remodelling>`.
+To upgrade an Ubuntu Core image from one version to another, see {ref}`Upgrade Ubuntu Core <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>`. This process is known as {ref}`remodeling <explanation-remodeling>`.
 
 The snap daemon, snapd, manages snap package updates and Ubuntu Core functionality. For the snapd release plan and a complete list of changes, please refer to the [snapd roadmap](https://snapcraft.io/docs/snapd-roadmap). Feel free to provide your test feedback on the [forum](https://forum.snapcraft.io/c/snapd/5), or directly in [Launchpad](https://bugs.launchpad.net/snapd/+filebug).
 
@@ -64,7 +64,7 @@ New features for this release include:
 - New ROS integration for robotics developers
 - New documentation and documentation structure
 
-In addition to the above, Ubuntu Core 24 bundles both the latest Linux Kernel  6.8 and *systemd* 2.55 and includes all the latest features of _snapd_, including {ref}`Dynamic kernel boot parameters <how-to-guides-manage-ubuntu-core-modify-kernel-options>`, [Quota group limits for Journal log](https://snapcraft.io/docs/quota-groups#heading--journal) and {ref}`Offline remodelling <ref-remodelling_offline-remodelling>`.
+In addition to the above, Ubuntu Core 24 bundles both the latest Linux Kernel  6.8 and *systemd* 2.55 and includes all the latest features of _snapd_, including {ref}`Dynamic kernel boot parameters <how-to-guides-manage-ubuntu-core-modify-kernel-options>`, [Quota group limits for Journal log](https://snapcraft.io/docs/quota-groups#heading--journal) and {ref}`Offline remodeling <ref-remodelling_offline-remodeling>`.
 
 Support for Ubuntu Core has also been added to {ref}`Multipass <tutorials-get-started-try-pre-built-images-install-on-a-vm>`, for single-command deployment.
 
@@ -84,7 +84,7 @@ Access to Nvidia drivers will be available by Q4 this year due to Nvidia's licen
 
 Ubuntu Core 24 offers a new integration with [Landscape](https://ubuntu.com/landscape), Canonical’s systems management tool, to enable efficient device management, security and updates.
 
-This new integration offers centralised control of OTA updates, auditing, access control, and compliance across devices. Landscape supports both well-connected and air-gapped environments. It comes with features like canary releases, remote device remodelling, and system monitoring to streamline device management tasks.
+This new integration offers centralized control of OTA updates, auditing, access control, and compliance across devices. Landscape supports both well-connected and air-gapped environments. It comes with features like canary releases, remote device remodeling, and system monitoring to streamline device management tasks.
 
 Landscape is available for Core customers. Users with an Ubuntu Pro subscription can also use Landscape to manage up to 5 machines for free. To learn more visit the [Landscape Client snap package](https://ubuntu.com/landscape/docs/how-to-configure-the-landscape-client-snap) documentation.
 
@@ -115,7 +115,7 @@ This release adds many other new features, including:
 - {ref}`Dynamic kernel parameter modification <how-to-guides-manage-ubuntu-core-modify-kernel-options>`
 - {ref}`Optional console-conf for device onboarding <ref-add-console-conf_add-console-conf>`
 - {ref}`Configurable splash screen <how-to-guides-image-creation-add-a-splash-screen>`
-- {ref}`Offline device upgrades and remodelling <ref-remodelling_offline-remodelling>`
+- {ref}`Offline device upgrades and remodeling <ref-remodelling_offline-remodeling>`
 
 (ref-release-notes_ubuntu-core-22-release-notes)=
 ## Ubuntu Core 22 release notes

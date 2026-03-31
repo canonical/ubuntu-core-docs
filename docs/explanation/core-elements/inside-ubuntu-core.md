@@ -66,7 +66,7 @@ After installation, which happens on first boot, the layout will be similar to w
 
 ## The REST API
 
-Ubuntu Core exposes a built-in [REST API](https://snapcraft.io/docs/snapd-api) for secure device command and control. Authenticated and authorised clients can perform software management and configuration tasks on their Ubuntu Core devices remotely. Devices running Ubuntu Core can be configured remotely via the REST API.
+Ubuntu Core exposes a built-in [REST API](https://snapcraft.io/docs/snapd-api) for secure device command and control. Authenticated and authorized clients can perform software management and configuration tasks on their Ubuntu Core devices remotely. Devices running Ubuntu Core can be configured remotely via the REST API.
 
 ![core-partition-layout (1)|628x168](https://assets.ubuntu.com/v1/e9bba730-uc-diag-01.png) 
 
