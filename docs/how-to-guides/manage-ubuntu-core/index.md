@@ -18,9 +18,9 @@ While Ubuntu Core is a self-healing operating system, it can also boot into, or 
 - {ref}`Use a recovery mode <how-to-guides-manage-ubuntu-core-use-a-recovery-mode>`
 - {ref}`Troubleshooting <how-to-guides-manage-ubuntu-core-troubleshooting>`
 
-## Customise the system
+## Customize the system
 
-Customise Ubuntu Core images and the running environment.
+Customize Ubuntu Core images and the running environment.
 
 - {ref}`Add a system user <how-to-guides-manage-ubuntu-core-add-a-system-user>`
 - {ref}`Modify kernel options <how-to-guides-manage-ubuntu-core-modify-kernel-options>`

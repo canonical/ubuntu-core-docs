@@ -26,7 +26,7 @@ Gating is especially useful when a device manufacturer needs to mediate  release
 
 ## Preliminary setup
 
-The mechanism of defining refresh control behaviour involves:
+The mechanism of defining refresh control behavior involves:
 
 * setting the list of controlled snaps (by snap ID) in the gating snap. After the Canonical Store team does this initial setup, the gating snap’s snap-declaration assertion contains a refresh-control section that lists the gated snap IDs (see below)
 * The gating snap publisher signing and issuing validation assertions that include:

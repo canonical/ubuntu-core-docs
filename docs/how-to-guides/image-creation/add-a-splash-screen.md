@@ -13,9 +13,9 @@ quiet splash
 
 On Ubuntu Core 22 and later, when using the default GNU GRUB bootloader, kernel boot parameters can be configured either in the {ref}`Gadget snap <reference-gadget-snap-format>`, or through [system options](https://snapcraft.io/docs/system-options). See {ref}`Modifying kernel boot parameters <how-to-guides-manage-ubuntu-core-modify-kernel-options>` for further details on each process.
 
-## Customised splash screen
+## Customized splash screen
 
-The splash screen can be customised in two different ways, either by including a new logo or image file, or by completely replacing the Plymouth theme used to generate the splash screen.
+The splash screen can be customized in two different ways, either by including a new logo or image file, or by completely replacing the Plymouth theme used to generate the splash screen.
 
 ### New vendor logo or image
 
@@ -90,7 +90,7 @@ ScriptFile=/run/mnt/gadget/splash/plymouth/themes/vendor/vendor.script
 ```
 
 
-It can also help to lower the kernel console logging verbosity by specifying `loglevel=3` (or lower) on the kernel command line. See {ref}`Customise the kernel command line <reference-kernel-boot-parameters>` for further details.
+It can also help to lower the kernel console logging verbosity by specifying `loglevel=3` (or lower) on the kernel command line. See {ref}`Customize the kernel command line <reference-kernel-boot-parameters>` for further details.
 
 A good custom Plymouth theme example for Ubuntu Core is its own default theme:
 [https://github.com/snapcore/core-splash](https://github.com/snapcore/core-splash)

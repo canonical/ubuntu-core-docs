@@ -3,7 +3,7 @@
 
 Any device running Ubuntu Core is instantiated from an image. This image contains the kernel, an _init_ process, and a few essential tools.
 
-Customising and adding to Ubuntu Core images is a fundamental part of how Ubuntu Core operates, whether that's on an established platform, or by creating an image for a new platform.
+Customizing and adding to Ubuntu Core images is a fundamental part of how Ubuntu Core operates, whether that's on an established platform, or by creating an image for a new platform.
 
 ## Modify and create images
 

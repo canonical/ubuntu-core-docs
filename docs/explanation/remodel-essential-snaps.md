@@ -1,7 +1,7 @@
 (ref-remodel-essential-snaps_remodel-essential-snaps)=
 # Remodel essential snaps
 
-{ref}`Remodeling <explanation-remodelling>` is the process of swapping from one {ref}`model assertion <reference-assertions-model>` to another on an Ubuntu Core system.
+{ref}`Remodeling <explanation-remodeling>` is the process of swapping from one {ref}`model assertion <reference-assertions-model>` to another on an Ubuntu Core system.
 
 The model defines the set of _essential snaps_ that make up the system, including the base snap, the gadget, the kernel, and snapd itself (see {ref}`Snaps in Ubuntu Core <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>` for more information).
 
@@ -83,7 +83,7 @@ The {ref}`gadget snap <reference-gadget-snap-format>` is not verified during a r
 
 Once the aforementioned data in the `modeenv` file or the bootloader environment is set, a reboot is initiated. On reboot, the bootloader is configured to coordinate with snapd to test the kernel. Similarly, snap-bootstrap, a program that is run early in the boot process, helps orchestrate the testing of the new base snap.
 
-Once started, snapd will confirm that the boot was successful. A successful boot will result in the continuation of the remodel process. A failed boot will result in the cancellation of the remodel. Any changes up to that point will be undone.
+Once started, snapd will confirm that the boot was successful. A successful boot will result in the continuation of the remodel process. A failed boot will result in the cancelation of the remodel. Any changes up to that point will be undone.
 
 During a remodel, snapd performs these reboots to switch essential snaps sequentially.
 

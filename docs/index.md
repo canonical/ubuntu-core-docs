@@ -19,7 +19,7 @@
 
    * **Stores:** {ref}`explanation-stores-store-overview` | {ref}`Brand accounts <explanation-stores-brand-accounts>` | {ref}`Dedicated snap stores <ref-dedicated-snap-store_dedicated-snap-store>` | {ref}`Store scoping <explanation-stores-store-scoping>`
    * **Security:** {ref}`Full disk encryption <explanation-full-disk-encryption>` | {ref}`Sandboxing <explanation-security-and-sandboxing>` | {ref}`how-to-guides-manage-ubuntu-core-use-a-recovery-mode`
-   * **Management:** {ref}`Update control <explanation-refresh-control>` | {ref}`Remodelling <explanation-remodelling>` | {ref}`Upgrade Ubuntu Core <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>`
+   * **Management:** {ref}`Update control <explanation-refresh-control>` | {ref}`Remodeling <explanation-remodeling>` | {ref}`Upgrade Ubuntu Core <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>`
    * **Core elements:** {ref}`Introduction <ref-inside-ubuntu-core_inside-ubuntu-core>` | {ref}`Storage layout <explanation-core-elements-storage-layout>` | {ref}`Snap in Ubuntu Core <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>`
 
 ## Project and community

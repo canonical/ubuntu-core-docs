@@ -1,7 +1,7 @@
 (how-to-guides-manage-ubuntu-core-modify-kernel-options)=
 # Modify kernel options
 
-When using the default GNU GRUB bootloader, kernel boot parameters can be customised without breaking the integrity of the TPM backed full disk encryption.
+When using the default GNU GRUB bootloader, kernel boot parameters can be customized without breaking the integrity of the TPM backed full disk encryption.
 
 Parameters can be modified either _statically_, by editing `cmdline` files, or _dynamically_, by  specific system settings (by dynamically we mean that snapd API can be used to set them, but the parameters do survive across reboots). Both of these methods are covered below.
 
@@ -100,7 +100,7 @@ The gadget snap can contain only one of `cmdline.full` or `cmdline.extra`; the p
 Extending the kernel command line using drop-in files is also supported on systems using the full disk encryption. See {ref}`Full disk encryption <explanation-full-disk-encryption>` for more details.
 
 (ref-modify-kernel-options_customising-the-kernel-command-line)=
-## Customising the kernel command line
+## Customizing the kernel command line
 
 If setting the parameters in `gadget.yaml`, you will just need to edit that file in your sources and build the gadget as usual with `snapcraft`.
 

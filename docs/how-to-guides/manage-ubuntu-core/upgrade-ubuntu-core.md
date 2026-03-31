@@ -11,7 +11,7 @@ It is not currently possible to upgrade from releases earlier than UC20, or from
 
 Reference model assertions can be easily modified to build a {ref}`custom image <ref-index-build-your-first-image>` that can be upgraded. 
 
-Upgrades are performed by {ref}`remodelling <explanation-remodelling>`, which is the process of replacing one model assertion with another on a deployed system. For an upgrade from UC20 to UC22, for example, this means updating the base and system snaps in a UC20 model assertion with their UC22 counterparts.
+Upgrades are performed by {ref}`remodeling <explanation-remodeling>`, which is the process of replacing one model assertion with another on a deployed system. For an upgrade from UC20 to UC22, for example, this means updating the base and system snaps in a UC20 model assertion with their UC22 counterparts.
 
 ## Prerequisites
 

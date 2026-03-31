@@ -32,7 +32,7 @@ This ensures that snapd can interface with the TA during installation and subseq
 
 ## Migrating from `fde-setup` Hooks
 
-Earlier OP-TEE deployments used kernel `fde-setup` hooks to interface with OP-TEE. The easiest migration path is to {ref}`remodel <explanation-remodelling>` the device onto a kernel snap that omits those hooks and allows snapd to talk to the TA directly.
+Earlier OP-TEE deployments used kernel `fde-setup` hooks to interface with OP-TEE. The easiest migration path is to {ref}`remodel <explanation-remodeling>` the device onto a kernel snap that omits those hooks and allows snapd to talk to the TA directly.
 
 1. Create a kernel snap that no longer ships the `fde-setup` hook.  
 2. Remodel the system to refresh the kernel and reboot. On the first boot after the remodel, snapd detects that no hook is present, reseals the encryption keys through OP-TEE, and stores the new sealed keys.

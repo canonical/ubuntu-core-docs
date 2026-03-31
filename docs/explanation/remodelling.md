@@ -1,5 +1,5 @@
-(explanation-remodelling)=
-# Remodelling
+(explanation-remodeling)=
+# Remodeling
 
 The set of snaps that make up a device, and govern its capabilities, are controlled by the {ref}`model assertion <reference-assertions-model>`, alongside the snap assertions in a given recovery system.
 
@@ -10,34 +10,34 @@ The model assertion contains:
 * Other required or optional snaps that implement the device functionality.
 * Additional options for the defined device, such as grade, and the store it is connected to.
 
-The snaps declared in the model assertion can be {ref}`updated <explanation-refresh-control>` during the device lifecycle. However, when the system must be {ref}`upgraded <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>`, or when one or more of the above elements change, a new model assertion can be deployed to the device. The updated model assertion is authenticated and linked through its serial assertion to the store. The image is upgraded based on the delta compared to the previous model. This process is called remodelling.
+The snaps declared in the model assertion can be {ref}`updated <explanation-refresh-control>` during the device lifecycle. However, when the system must be {ref}`upgraded <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>`, or when one or more of the above elements change, a new model assertion can be deployed to the device. The updated model assertion is authenticated and linked through its serial assertion to the store. The image is upgraded based on the delta compared to the previous model. This process is called remodeling.
 
-## Remodelling viability
+## Remodeling viability
 
-After a model assertion has been updated, the remodelling process is triggered from either the [snapd's REST API](https://snapcraft.io/docs/snapd-api), or by running the `snap remodel` command.
+After a model assertion has been updated, the remodeling process is triggered from either the [snapd's REST API](https://snapcraft.io/docs/snapd-api), or by running the `snap remodel` command.
 
-Remodelling can never downgrade the system's base snap. For example, remodelling from `core22` to `core20` is not supported.
+Remodeling can never downgrade the system's base snap. For example, remodeling from `core22` to `core20` is not supported.
 
 ```bash
 sudo snap remodel <new-model.assert>
 ```
 
-Both methods need an updated {ref}`model assertion <reference-assertions-model>` as input. Its `revision` field must be incremented, and it must be signed using a key registered to the same brand that signed the original model. If it differs from the key used to sign the original model, an account-key assertion must be registered on the device before proceeding with the remodelling.
+Both methods need an updated {ref}`model assertion <reference-assertions-model>` as input. Its `revision` field must be incremented, and it must be signed using a key registered to the same brand that signed the original model. If it differs from the key used to sign the original model, an account-key assertion must be registered on the device before proceeding with the remodeling.
 
 ```bash
 snap known account-key --remote public-key-sha3-384=<digest> > key.assert
 snap ack key.assert
 ```
 
-Remodelling triggers the generation of a new recovery system, which means care needs to be taken to ensure the {ref}`ubuntu-seed <ref-storage-layout_the-ubuntu-seed-partition>` partition is sized accordingly. The process also ensures the newly created recovery system is valid. Therefore, the previous recovery system can be safely removed after remodelling has completed. An {ref}`API call <ref-create-a-recovery-system-from-the-api_removing-api-usage>` is available to perform this removal.
+Remodeling triggers the generation of a new recovery system, which means care needs to be taken to ensure the {ref}`ubuntu-seed <ref-storage-layout_the-ubuntu-seed-partition>` partition is sized accordingly. The process also ensures the newly created recovery system is valid. Therefore, the previous recovery system can be safely removed after remodeling has completed. An {ref}`API call <ref-create-a-recovery-system-from-the-api_removing-api-usage>` is available to perform this removal.
 
-Remodelling is the responsibility of the snap daemon (_snapd_) running on the device. It both mediates the update process and the re-registration of the device after the update (if required). But the complexity and viability of the remodelling process is dependent on several factors outside of snapd’s control.
+Remodeling is the responsibility of the snap daemon (_snapd_) running on the device. It both mediates the update process and the re-registration of the device after the update (if required). But the complexity and viability of the remodeling process is dependent on several factors outside of snapd’s control.
 
-At its simplest, a device can be successfully remodelled when using the same model name and the same dedicated Snap Store but with a new model revision where the only difference is an added or removed snap, or changed snap track or channel. The device also needs to have a {ref}`Serial assertion <reference-assertions-serial>`.
+At its simplest, a device can be successfully remodeled when using the same model name and the same dedicated Snap Store but with a new model revision where the only difference is an added or removed snap, or changed snap track or channel. The device also needs to have a {ref}`Serial assertion <reference-assertions-serial>`.
 
 But if the dedicated Snap Store needs to change, even under the same brand scope, this requires the acquisition of a new serial assertion, and the success or failure of such a process will depend on the context.
 
-With a dedicated Snap Store, the following types of remodelling contexts are possible:
+With a dedicated Snap Store, the following types of remodeling contexts are possible:
 - **same brand/model -> same dedicated Snap Store**
 Works as a simple contextual carrier for the new model.
 - **same brand/model -> different dedicated Snap Store**
@@ -45,7 +45,7 @@ Keeps access to the device state kept on the remodel change, creates a store tha
 
 ## Compatibility
 
-The below permutations of the remodelling contexts are all valid:
+The below permutations of the remodeling contexts are all valid:
 
 | brand | store | model name | + snaps | - snaps |
 | :-- | :-- | :-- | :-- | :-- | 
@@ -54,9 +54,9 @@ The below permutations of the remodelling contexts are all valid:
 | same | different | same | yes | yes | 
 | same | different | different | yes | yes | 
 
-If a [validation set](https://snapcraft.io/docs/validation-sets) has been defined for the old model and the new model, or just the new model, the snaps installed during the remodelling process must follow the validation set rules.
+If a [validation set](https://snapcraft.io/docs/validation-sets) has been defined for the old model and the new model, or just the new model, the snaps installed during the remodeling process must follow the validation set rules.
 
-To ensure the remodelling process completes successfully when a device's model name changes, a specific configuration is required in the [Serial Vault](https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/register-a-new-device-model-name/), under the `Sub-Store Models` tab, to specify the allowed migration path from the old to new model name.
+To ensure the remodeling process completes successfully when a device's model name changes, a specific configuration is required in the [Serial Vault](https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/register-a-new-device-model-name/), under the `Sub-Store Models` tab, to specify the allowed migration path from the old to new model name.
 
 For details on how changes to the base, kernel, gadget and snapd snaps are managed, see {ref}`Remodel essential snaps <ref-remodel-essential-snaps_remodel-essential-snaps>`.
 
@@ -68,11 +68,11 @@ In the new model definition, the gadget snap can be kept identical to the previo
 * modification of the channel
 
 If the {ref}`model base <ref-model_model-assertion-fields>` changes, the gadget snap must be modified, and its base must match that of the new model.
-The gadget's default settings are not applied when remodelling, these are used only when the device is {ref}`(re)installed <ref-recovery-modes_install-mode>`. See {ref}`gadget snap <ref-gadget-snap-format_the-gadget-yaml-file>` for further information.
+The gadget's default settings are not applied when remodeling, these are used only when the device is {ref}`(re)installed <ref-recovery-modes_install-mode>`. See {ref}`gadget snap <ref-gadget-snap-format_the-gadget-yaml-file>` for further information.
 
 Restrictions and limitations specific to the gadget:
 
-* Remodelling will never repartition the disk. Thus, the current partitions' size and starting offsets must fall within the ranges permitted by the new gadget.
+* Remodeling will never repartition the disk. Thus, the current partitions' size and starting offsets must fall within the ranges permitted by the new gadget.
 * The current bootloader must match the bootloader defined by the new gadget.
 
 ### Kernel snap
@@ -87,12 +87,12 @@ Ubuntu Core only supports kernel snaps built from LTS releases. Refer to {ref}`R
 
 ## Snap removal
 
-The remodelling process does not automatically remove snaps which are no longer marked as `required` or `optional` in the new model assertion. Those snaps stay in the system and keep receiving updates, but since they are no longer required by the model, it is possible to remove them.
+The remodeling process does not automatically remove snaps which are no longer marked as `required` or `optional` in the new model assertion. Those snaps stay in the system and keep receiving updates, but since they are no longer required by the model, it is possible to remove them.
 
 The general practice is that either the operator who invoked `snap remodel` command, or the management agent which started the remodel process, is responsible for requesting removal of said snaps. If snap data is no longer needed, the remove request should include the `purge` option to remove all data associated with the removed snap.
 
-(ref-remodelling_offline-remodelling)=
-## Offline remodelling
+(ref-remodelling_offline-remodeling)=
+## Offline remodeling
 
 A network connection is not required if there is local access to:
 
@@ -124,4 +124,4 @@ This impacts models using new channels and updated validation sets:
 
 -  Validation sets
 
-   If a model includes a [validation set](https://snapcraft.io/docs/validation-sets) that constrains any snaps in the model to specific revisions, an offline remodel requires that either the correct revision of the snap is provided with the `--snap` flag, or it must already be installed. An offline remodel will fail if the remodelling process cannot find a revision that is required by any of the new model’s validation sets.
+   If a model includes a [validation set](https://snapcraft.io/docs/validation-sets) that constrains any snaps in the model to specific revisions, an offline remodel requires that either the correct revision of the snap is provided with the `--snap` flag, or it must already be installed. An offline remodel will fail if the remodeling process cannot find a revision that is required by any of the new model’s validation sets.
