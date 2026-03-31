@@ -19,7 +19,7 @@ Unlike with a factory reset (see below), install mode will erase the contents of
 
 After the re-initialisation process has completed, you will need to step through the installation process of network configuration and account credentials again.
 
-See [Installation steps](/tutorials/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager) for further details on how the installation will proceed.
+See [Installation steps](/tutorials/try-pre-built-images/use-raspberry-pi-imager) for further details on how the installation will proceed.
 
 ```{admonition} Re-installation failure
 :class: caution
