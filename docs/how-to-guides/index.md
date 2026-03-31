@@ -7,32 +7,32 @@ If you have a specific goal, but are already familiar with Ubuntu Core, our _How
 
 While Ubuntu Core is primarily intended for developers to build custom images tailored for their application and targeted hardware, this page is a great place to start after you’ve just installed pre-built Ubuntu Core images and want to learn a few of the basic principles quickly.
 
-- [Using Ubuntu Core](using-ubuntu-core)
+- {ref}`Using Ubuntu Core <how-to-guides-using-ubuntu-core>`
 
 ## Image creation
 
 Any device running Ubuntu Core is instantiated from an image. This image contains little more than the kernel, an init process, and a few essential tools. On all but the earliest releases of Ubuntu Core, even the snapd daemon that manages snaps is itself installed via its own snap.
 
-- [Create images](image-creation/index)
+- {ref}`Create images <ref-index_image-creation>`
 
 ## Deploy an image
 
 Pre-built image install guides for testing specific platforms, including devices from MediaTek and Renesas.
 
-- [Install on a Renesas RZ/G2L](deploy-an-image/install-on-renesas/): Install a pre-built image on a Renesas RZ/G2L device
-- [Install on a MediaTek Genio](deploy-an-image/install-on-mediatek/): Install a pre-built image on a MediaTek Genio device
+- {ref}`Install on a Renesas RZ/G2L <ref-install-on-renesas_install-a-pre-built-ubuntu-core-image-on-a-renesas-rz-g2l>`: Install a pre-built image on a Renesas RZ/G2L device
+- {ref}`Install on a MediaTek Genio <ref-install-on-mediatek_install-a-pre-built-ubuntu-core-image-on-a-mediatek-genio-device>`: Install a pre-built image on a MediaTek Genio device
 
 ## Manage Ubuntu Core
 
 Maintain and manage your Ubuntu Core systems, including recovery modes, system users, configuration options and kernel options.
 
-- [Manage Ubuntu Core](manage-ubuntu-core/index)
+- {ref}`Manage Ubuntu Core <ref-index_manage-ubuntu-core>`
 
 ## Container deployment
 
 Ubuntu Core has been developed specifically to leverage the power of snap packages, with their autonomous upgrades and confined sandbox. But it can also be used to run and deploy Docker container images, either from the command line or embedded within an Ubuntu Core image.
 
-- [Deploy containers](container-deployment/index)
+- {ref}`Deploy containers <ref-index_container-deployment>`
 
 
 

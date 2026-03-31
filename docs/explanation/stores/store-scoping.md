@@ -1,7 +1,7 @@
 (explanation-stores-store-scoping)=
 # Store scoping
 
-_Store scoping_ is the inclusion of a [dedicated snap store](dedicated-snap-store) _`on-store`_ constraint linked to an [auto-connection](https://snapcraft.io/docs/auto-connection-mechanism) in the [snap-declaration assertion](/reference/assertions/snap-declaration), a file used to describe various snap properties.
+_Store scoping_ is the inclusion of a {ref}`dedicated snap store <ref-dedicated-snap-store_dedicated-snap-store>` _`on-store`_ constraint linked to an [auto-connection](https://snapcraft.io/docs/auto-connection-mechanism) in the {ref}`snap-declaration assertion <reference-assertions-snap-declaration>`, a file used to describe various snap properties.
 
 Linking an auto-connection grant to a dedicated snap store limits the scope of an interface. This then safeguards against malicious attacks that might otherwise allow auto-connections to be made outside a dedicated snap store when a snap is installed on a generic device.
 ## Declaration syntax
@@ -25,7 +25,7 @@ timestamp: 2022-01-26T11:15:49.885580Z
 sign-key-sha3-384: some-account-key
 ```
 
-With the release of [snapd](https://snapcraft.io/docs/glossary#heading--snapd)  version _2.36_ in 2018, the snap-declaration assertion was updated to include a [dedicated snap store](dedicated-snap-store) definition for each granted interface:
+With the release of [snapd](https://snapcraft.io/docs/glossary#heading--snapd)  version _2.36_ in 2018, the snap-declaration assertion was updated to include a {ref}`dedicated snap store <ref-dedicated-snap-store_dedicated-snap-store>` definition for each granted interface:
 
 ```yaml
 type: snap-declaration

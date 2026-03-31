@@ -3,7 +3,7 @@
 
 Pre-built images are ideal for exploration and experimentation of Ubuntu Core, but they are not intended for deployment or use at scale. They include snaps to provide an onboarding and evaluation experience, alongside an SSH connection, and these are unlikely to be required in your own Ubuntu Core deployment.
 
-You can find more information about building Core images in the [Build your first image](/tutorials/build-your-first-image/index) tutorial.
+You can find more information about building Core images in the {ref}`Build your first image <ref-index-build-your-first-image>` tutorial.
 
 Ubuntu Core runs on a large range of hardware, and pre-built images are available for the [MediaTek Genio](https://www.mediatek.com/products/iot/genio-iot). The following steps will install such an image onto a MediaTek Genio device.
 
@@ -18,7 +18,7 @@ To write an image:
 - A microUSB cable for UART
 - Another microUSB cable to connect the flash interface
   - You need a USB Type-C cable if your device is MediaTek Genio 1200
-- An [Ubuntu SSO account with associated SSH keys](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh).
+- An {ref}`Ubuntu SSO account with associated SSH keys <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>`.
 
 The target device:
 - A [MediaTek Genio](https://www.mediatek.com/products/iot/genio-iot) device
@@ -288,4 +288,4 @@ As shown above, the first time you connect to a new device you will be asked to 
 
 Congratulations! You have successfully downloaded, installed, and connected to a pre-built Ubuntu Core image on your MediaTek Genio.
 
-See [First steps with Ubuntu Core](/how-to-guides/using-ubuntu-core) for an introduction to using your new Ubuntu Core installation or learn how to [build your Ubuntu Core image](/tutorials/build-your-first-image/index).
+See {ref}`First steps with Ubuntu Core <how-to-guides-using-ubuntu-core>` for an introduction to using your new Ubuntu Core installation or learn how to {ref}`build your Ubuntu Core image <ref-index-build-your-first-image>`.

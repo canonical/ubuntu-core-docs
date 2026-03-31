@@ -7,11 +7,11 @@ Documentation of the D-Bus API is provided by the [NetworkManager upstream](http
 
 ## Configuration options
 
-- [Check connectivity](connectivity-check.md)
-- [Debug the snap](debug.md)
-- [Default renderer](default-renderer.md)
-- [Wake on WLAN](wake-on-wlan.md)
-- [Wi-Fi powersave](wifi-powersave.md)
+- {ref}`Check connectivity <explanation-system-snaps-network-manager-reference-snap-configuration-connectivity-check>`
+- {ref}`Debug the snap <explanation-system-snaps-network-manager-reference-snap-configuration-debug>`
+- {ref}`Default renderer <explanation-system-snaps-network-manager-reference-snap-configuration-default-renderer>`
+- {ref}`Wake on WLAN <explanation-system-snaps-network-manager-reference-snap-configuration-wake-on-wlan>`
+- {ref}`Wi-Fi powersave <ref-wifi-powersave_wi-fi-powersave>`
 
 
 ```{toctree}

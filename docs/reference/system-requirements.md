@@ -16,7 +16,7 @@ Ubuntu Core supports various 64-bit architectures and 32-bit Arm.
 
 For specific platforms, see our list of [Ubuntu certified devices](https://ubuntu.com/certified/iot).
 
-Pre-built testing images are also available for a range of devices. See [Supported testing platforms](/reference/testing-platforms) for further details.
+Pre-built testing images are also available for a range of devices. See {ref}`Supported testing platforms <reference-testing-platforms>` for further details.
 
 [Get in touch](https://ubuntu.com/core/contact-us?product=core-overview) to discuss more constrained or specific requirements.
 
@@ -44,5 +44,5 @@ Otherwise, the full disk encryption implementation in Ubuntu Core is generic and
 
 For a non-standard (non-UEFI+TPM platform) FDE platform, such as a Raspberry Pi or other ARM devices, implementation is board-specific and will typically involve creating custom gadget and kernel snaps. UC20/UC22, however, do provide a helper mechanism, via a hook interface, to ensure the integrity of any subsequently executed or accessed data. 
 
-See [Full disk encryption](/explanation/full-disk-encryption) for further details.
+See {ref}`Full disk encryption <explanation-full-disk-encryption>` for further details.
 

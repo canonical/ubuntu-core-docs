@@ -20,7 +20,7 @@ To allow users to enable or disable WoWLAN, the snap provides two configuration 
 
 Both options can be set via the configuration API snaps provide. See [Managing snap configuration](https://snapcraft.io/docs/configuration-in-snaps) for more details.
 
-Both configuration options will affect all wireless network devices. If you want to change it just for a single wireless connection take a look at [Per connection configuration](#per-connection-configuration) below.
+Both configuration options will affect all wireless network devices. If you want to change it just for a single wireless connection take a look at {ref}`Per connection configuration <ref-wake-on-wlan_per-connection-configuration>` below.
 
 ## wifi.wake-on-wlan
 

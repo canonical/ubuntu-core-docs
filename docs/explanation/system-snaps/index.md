@@ -7,17 +7,17 @@ System snaps provide additional device functionality, usually associated with co
 
 There are several system snaps that can be used to connect to a local or wide area network, as well as local devices over Bluetooth.
 
-- [Bluetooth manager](bluetooth/index)
-- [Modem Manager](modem-manager/index)
-- [Network Manager](network-manager/index)
-- [Upower](upower/index)
-- [Udisks2](udisks2/index)
+- {ref}`Bluetooth manager <ref-index_bluetooth>`
+- {ref}`Modem Manager <explanation-system-snaps-modem-manager-index>`
+- {ref}`Network Manager <explanation-system-snaps-network-manager-index>`
+- {ref}`Upower <explanation-system-snaps-upower-index>`
+- {ref}`Udisks2 <explanation-system-snaps-udisks2-index>`
 
 ## Configuration
 
 The console-conf snap help with device configuration for development images.
 
-- [Console-conf](console-conf/index)
+- {ref}`Console-conf <ref-index_console-conf>`
 
 ```{toctree}
 :hidden:

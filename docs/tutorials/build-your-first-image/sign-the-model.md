@@ -1,7 +1,7 @@
 (ref-sign-the-model_sign-the-model)=
 #  Sign the model
 
-After a model has been [created or modified](create-a-model), it must be signed with a GPG key to become a _model assertion_. This ensures the model cannot be altered without the key and also links the created image to both the signed version of the model and your [Ubuntu One account](access-ubuntu-one).
+After a model has been {ref}`created or modified <ref-create-a-model_create-a-model>`, it must be signed with a GPG key to become a _model assertion_. This ensures the model cannot be altered without the key and also links the created image to both the signed version of the model and your {ref}`Ubuntu One account <ref-access-ubuntu-one_access-ubuntu-one>`.
 
 (ref-sign-the-model_create-a-key)=
 ## Create a key

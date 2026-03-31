@@ -3,8 +3,8 @@
 
 VPN support requires both the use of `core22` and network-manager from a `22/*` channel. Currently, two types of VPN are supported:
 
-- [OpenVPN](#openvpn)
-- [WireGuard](#wireguard)
+- {ref}`OpenVPN <ref-configure-vpn-connections_openvpn>`
+- {ref}`WireGuard <ref-configure-vpn-connections_wireguard>`
 
 (ref-configure-vpn-connections_openvpn)=
 ## OpenVPN

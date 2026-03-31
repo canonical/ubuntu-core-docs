@@ -1,7 +1,7 @@
 (reference-assertions-validation)=
 # validation
 
-The _validation_ [assertion](/reference/assertions/index)  declares that a certain [revision](https://snapcraft.io/docs/glossary#heading--revision) for a _snap that is gated by another snap_ has been validated for a given [series](https://snapcraft.io/docs/glossary#heading--series). It is closely related to the [snap-declaration](/reference/assertions/snap-declaration) assertion.
+The _validation_ {ref}`assertion <ref-index_assertions>`  declares that a certain [revision](https://snapcraft.io/docs/glossary#heading--revision) for a _snap that is gated by another snap_ has been validated for a given [series](https://snapcraft.io/docs/glossary#heading--series). It is closely related to the {ref}`snap-declaration <reference-assertions-snap-declaration>` assertion.
 
 ## Validation assertion fields
 
@@ -26,13 +26,13 @@ The index is the tuple \<`series`, `snap-id`, `approved-snap-id`, `approved-snap
 
 This assertion indicates that refreshing to revision number `revision` of snap `approved-snap-id`, for `series`, has been approved by `authority-id`, given that `snap-id` the snap that was gating the update also has `authority-id` as the owner.
 
-The `approved-snap-id` must be part of the [refresh-control](/explanation/refresh-control) list in the [snap-declaration assertion](/reference/assertions/snap-declaration) of `snap-id` for this to be enforced.
+The `approved-snap-id` must be part of the {ref}`refresh-control <explanation-refresh-control>` list in the {ref}`snap-declaration assertion <reference-assertions-snap-declaration>` of `snap-id` for this to be enforced.
 
 This means the recommended revision for `approved-snap-id` in a system that has `snap-id` installed is the one in the `revision` header. There will be no automatic installation of newer revisions until a validation with a newer revision is released by the store. Note however that this does not forbid a forced update by the device owner.
 
 The validation can be revoked by using the optional flag `revoked`.
 
-See [Assertion format](/reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
+See {ref}`Assertion format <ref-index_assertion-format>` for more details on fields common to most assertions.
 
 ## Example assertion
 

@@ -1,6 +1,6 @@
 # Boot the image
 
-After [building and writing](/tutorials/build-your-first-image/build-the-image) a custom image for a Raspberry Pi, the device can now be booted and configured.
+After {ref}`building and writing <ref-build-the-image_build-the-image>` a custom image for a Raspberry Pi, the device can now be booted and configured.
 
 (ref-boot-the-image_boot-ubuntu-core)=
 ## Boot Ubuntu Core
@@ -73,5 +73,5 @@ Each time the device starts up, if a display connected it will show its various 
 
 Congratulations! You have successfully built your own image, installed it, and connected to Ubuntu Core on your Raspberry Pi.
 
-See [First steps with Ubuntu Core](/how-to-guides/using-ubuntu-core) for an introduction to using Ubuntu Core.
+See {ref}`First steps with Ubuntu Core <how-to-guides-using-ubuntu-core>` for an introduction to using Ubuntu Core.
 

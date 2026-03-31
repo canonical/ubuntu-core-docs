@@ -1,16 +1,16 @@
 (explanation-how-installation-works)=
 # How installation works
 
-The Ubuntu Core install image is composed from the kernel, gadget, base, snapd and app snaps (see [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu-core) for further details). The resultant image typically contains the following:
+The Ubuntu Core install image is composed from the kernel, gadget, base, snapd and app snaps (see {ref}`Snaps in Ubuntu Core <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>` for further details). The resultant image typically contains the following:
 
 ![Core install image partition](https://assets.ubuntu.com/v1/108d3dba-core-install-image-partition.png) 
 
-Any device booting an Ubuntu Core installation image will create or use the partitions defined by its [Storage layout](/explanation/core-elements/storage-layout) and proceed through the following installation steps. 
+Any device booting an Ubuntu Core installation image will create or use the partitions defined by its {ref}`Storage layout <explanation-core-elements-storage-layout>` and proceed through the following installation steps. 
 
-The first three (1-3) are also described in the [recovery mode](/explanation/recovery-modes) boot process:
+The first three (1-3) are also described in the {ref}`recovery mode <explanation-recovery-modes>` boot process:
 
 1. Boot through the bootloader, its assets, and boot configuration in `ubuntu-seed`.
-1. Bootloader loads the kernel from a designated [recovery system](/explanation/recovery-modes).
+1. Bootloader loads the kernel from a designated {ref}`recovery system <explanation-recovery-modes>`.
 1. Kernel initialises the system and runs the snaps from that system in **install mode**. At this point, the system is running from tmpfs in an ephemeral state with all snaps from the recovery system model marked for use in install mode (as indicated by the modes field values), including the _snapd_ snap, the gadget snap, the kernel snap and the base snap (usually the _core20_ snap).
 1. The snapd snap proceeds to install the actual run mode system by:
    - creating all missing partitions.
@@ -24,7 +24,7 @@ The first three (1-3) are also described in the [recovery mode](/explanation/rec
 (ref-how-installation-works_the-install-device-hook)=
 ## The install-device hook
 
-A [gadget](/reference/gadget-snap-format) can optionally define an _install-device hook_ . This is invoked from **install mode** before rebooting into **run mode**, between steps 4 and 5 above, and also after a [factory reset](/explanation/recovery-modes.md#factory-reset), to perform early hardware and firmware configuration.
+A {ref}`gadget <reference-gadget-snap-format>` can optionally define an _install-device hook_ . This is invoked from **install mode** before rebooting into **run mode**, between steps 4 and 5 above, and also after a {ref}`factory reset <ref-recovery-modes_factory-reset>`, to perform early hardware and firmware configuration.
 
 The [snapctl system-mode](https://snapcraft.io/docs/using-snapctl#heading--system-mode) command can be run during execution of the hook to detect which mode the install-device hook has been executed under.
 
@@ -49,7 +49,7 @@ The factory image hint is set by adding `--factory-image` to the _ubuntu-image_ 
 ubuntu-image snap my-model.model --factory-image
 ```
 
-See [Building the image](/tutorials/build-your-first-image/index) for details on how images are built.
+See {ref}`Building the image <ref-index-build-your-first-image>` for details on how images are built.
 
 The factory image hint is cleared directly before rebooting into **run mode**. 
 

@@ -1,7 +1,7 @@
 (ref-build-the-image_build-the-image)=
 # Build the image
 
-Images are built from the recipe contained in the [model assertion](/tutorials/build-your-first-image/create-a-model) using [ubuntu-image](https://github.com/canonical/ubuntu-image), a tool to generate a bootable image.
+Images are built from the recipe contained in the {ref}`model assertion <ref-create-a-model_create-a-model>` using [ubuntu-image](https://github.com/canonical/ubuntu-image), a tool to generate a bootable image.
 
 (ref-build-the-image_compile-the-image)=
 ## Compile the image
@@ -38,7 +38,7 @@ You can safely ignore the warnings, and the entire process should only take a fe
 
 The _console-conf_ user-interface that configures the network and system user when a device first boots has migrated to an optional snap in Ubuntu Core 24 and later.
 
-This is covered in [Create a model assertion](/tutorials/build-your-first-image/create-a-model), but `ubuntu-image` can add `console-conf` at image build time with an additional `--snap console-conf ` argument. For more details on these changes, see [console-conf for device onboarding](/how-to-guides/image-creation/add-console-conf).
+This is covered in {ref}`Create a model assertion <ref-create-a-model_create-a-model>`, but `ubuntu-image` can add `console-conf` at image build time with an additional `--snap console-conf ` argument. For more details on these changes, see {ref}`console-conf for device onboarding <ref-add-console-conf_add-console-conf>`.
 ```
 
 (ref-build-the-image_write-the-image)=

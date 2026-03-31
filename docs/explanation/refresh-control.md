@@ -40,7 +40,7 @@ Establishing the relationship between a gating and gated snap is required only o
 
 ## Setting up the signing key
 
-Gating involves pushing [validation assertions](/reference/assertions/validation) signed by the publisher, indicating their authorisation to restrict updates of snaps. To do this, several GPG keys must be generated and published to the store. If a store key already exists, it can be used. If not, one must be generated and registered.
+Gating involves pushing {ref}`validation assertions <reference-assertions-validation>` signed by the publisher, indicating their authorisation to restrict updates of snaps. To do this, several GPG keys must be generated and published to the store. If a store key already exists, it can be used. If not, one must be generated and registered.
 
 1.  `snapcraft create-key` to create a key. (by default it's named "default" but a key name can be given to create a custom one so e.g. each snap is signed with its own key). Do not forget the passphrase used to secure the key or misplace the key files.
 

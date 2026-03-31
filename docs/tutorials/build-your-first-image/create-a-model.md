@@ -5,7 +5,7 @@ At the heart of custom Ubuntu Core image creation is the _model assertion_. An a
 
 The model contains:
 * identification information, such as the developer-id and model name.
-* which [essential snaps](/explanation/core-elements/snaps-in-ubuntu-core) make up the device system.
+* which {ref}`essential snaps <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>` make up the device system.
 * other required or optional snaps that implement the device application functionality.
 
 See below for details on how to download and modify a model file to include your own selection of snaps.
@@ -70,11 +70,11 @@ This needs to be provided at the end of the process; we’ll come back to this.
 
 This section lists the snaps to be included in the image. **pi** (shown above), **pi-kernel**, **core24** and **snapd** are the four snaps required for a functioning Ubuntu Core device. The additional **console-conf** snap is required for Ubuntu Core 24 devices.
 
-[Console-conf](/how-to-guides/image-creation/add-console-conf) is the interactive setup utility that's used to configure the network and the default user when the device is first booted. This is marked as optional, but for this tutorial, it needs to be mandatory to configure the device when it first boots. To do this, delete the `"presence": "optional"` line (line 41) and delete the comma at the end of the preceding line.
+{ref}`Console-conf <ref-add-console-conf_add-console-conf>` is the interactive setup utility that's used to configure the network and the default user when the device is first booted. This is marked as optional, but for this tutorial, it needs to be mandatory to configure the device when it first boots. To do this, delete the `"presence": "optional"` line (line 41) and delete the comma at the end of the preceding line.
 
 Additional snaps are included using the same schema, with each snap requiring the following fields:
 - `name`: simply the snap name.
-- `type`: the [type of snap](/explanation/core-elements/snaps-in-ubuntu-core.md#types-of-snap). This is `app` for standard application snaps.
+- `type`: the {ref}`type of snap <ref-snaps-in-ubuntu-core_types-of-snap>`. This is `app` for standard application snaps.
 - `default-channel`: the [channel](https://snapcraft.io/docs/channels) to install the snap from.
 - `id`: a unique snap identifier associated with every published snap. This is `snap-id` in the output from `snap info <snap-name>`.
 
@@ -167,4 +167,4 @@ After finishing all your edits, the completed **my-model.json** text file should
 }
 ```
 
-After the file has been created, the next step is to sign it. See [Sign the model](/tutorials/build-your-first-image/sign-the-model) for further details.
+After the file has been created, the next step is to sign it. See {ref}`Sign the model <ref-sign-the-model_sign-the-model>` for further details.

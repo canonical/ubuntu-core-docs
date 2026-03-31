@@ -3,9 +3,9 @@
 
 Kernel boot parameters are used to enable, disable or configure kernel-specific features when the system boots. 
 
-On Ubuntu Core, when using the default GNU GRUB bootloader, kernel boot parameters can be configured either in the [Gadget snap](/reference/gadget-snap-format), or through [system options](https://snapcraft.io/docs/system-options). See [Modifying kernel boot parameters](/how-to-guides/manage-ubuntu-core/modify-kernel-options) for further details on each process. It is still possible to use this kernel parameters if not using GRUB, although the way to modify them will depend then on system.
+On Ubuntu Core, when using the default GNU GRUB bootloader, kernel boot parameters can be configured either in the {ref}`Gadget snap <reference-gadget-snap-format>`, or through [system options](https://snapcraft.io/docs/system-options). See {ref}`Modifying kernel boot parameters <how-to-guides-manage-ubuntu-core-modify-kernel-options>` for further details on each process. It is still possible to use this kernel parameters if not using GRUB, although the way to modify them will depend then on system.
 
-Alongside parameters supported by the kernel, such as `splash` to display the [Splash screen configuration](/how-to-guides/image-creation/add-a-splash-screen), Ubuntu Core supports the following additional kernel parameters that permit special access to the system.
+Alongside parameters supported by the kernel, such as `splash` to display the {ref}`Splash screen configuration <how-to-guides-image-creation-add-a-splash-screen>`, Ubuntu Core supports the following additional kernel parameters that permit special access to the system.
 
 ## snapd.debug
 
@@ -28,14 +28,14 @@ The [systemd-bootchart](https://manpages.ubuntu.com/manpages/jammy/man1/systemd-
 _Bootchart_ collects metrics on CPU load, memory usage and process resources during a system boot. On Ubuntu Core, the sample collector will run until the system is seeded, stopping when when the `snapd.seeded.service` stops. It then renders these details as text and charts into an SVG-formatted image file.
 
 ![Ubuntu Core bootchart graphs](https://assets.ubuntu.com/v1/d39bae51-bootchart-graph.png)
-This feature is enabled either as a [Static boot option](/how-to-guides/manage-ubuntu-core/modify-kernel-options.md#static-boot-option-modifications) in the gadget snap, or as a [Dynamic parameter modification](/how-to-guides/manage-ubuntu-core/modify-kernel-options.md#dynamic-kernel-parameter-modifications) with the `snap set` command:
+This feature is enabled either as a {ref}`Static boot option <ref-modify-kernel-options_static-boot-option-modifications>` in the gadget snap, or as a {ref}`Dynamic parameter modification <ref-modify-kernel-options_dynamic-kernel-parameter-modifications>` with the `snap set` command:
 
 ```
 snap set system system.kernel.dangerous-cmdline-append="ubuntu_core.bootchart"
 sudo reboot
 ```
 
-Generated bootcharts are stored in the [ubuntu-data](/explanation/full-disk-encryption.md#storage-layouts) partition, under `/var/log/debug/boot<N>/` , where `<N>` is the boot number since _bootcharts_ was enabled. If a chart has also been collected by the initramfs, it's same folder.
+Generated bootcharts are stored in the {ref}`ubuntu-data <ref-full-disk-encryption_storage-layouts>` partition, under `/var/log/debug/boot<N>/` , where `<N>` is the boot number since _bootcharts_ was enabled. If a chart has also been collected by the initramfs, it's same folder.
 
  The file names will include the date and time of the boot:
 

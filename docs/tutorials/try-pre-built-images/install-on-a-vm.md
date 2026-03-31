@@ -3,7 +3,7 @@
 
 You can try Ubuntu Core without any specific hardware from within a virtual machine using [Multipass](https://multipass.run/) on Windows, Mac and Linux. Multipass has integrated support for the latest Ubuntu Core images and can launch and run virtual machines from a single command.
 
-> If you need to test your own Ubuntu Core images, see [Test Ubuntu Core with QEMU](/how-to-guides/manage-ubuntu-core/test-on-qemu). QEMU, is more configurable than Multipass and can boot either a supported image or a custom image, with or without TPM emulation and full disk encryption. 
+> If you need to test your own Ubuntu Core images, see {ref}`Test Ubuntu Core with QEMU <how-to-guides-manage-ubuntu-core-test-on-qemu>`. QEMU, is more configurable than Multipass and can boot either a supported image or a custom image, with or without TPM emulation and full disk encryption. 
 
 ## Boot Ubuntu Core with Multipass
 
@@ -52,5 +52,5 @@ You can connect to a running instance of Ubuntu Core by opening a shell environm
 multipass shell mycore22
 ```
 
-You are now operating within the Ubuntu Core environment. See [First steps with Ubuntu Core](/how-to-guides/using-ubuntu-core) for suggestions on what to try.
+You are now operating within the Ubuntu Core environment. See {ref}`First steps with Ubuntu Core <how-to-guides-using-ubuntu-core>` for suggestions on what to try.
 

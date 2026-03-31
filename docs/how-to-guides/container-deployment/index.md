@@ -9,8 +9,8 @@ However, Ubuntu Core can also be used to run and deploy Docker container images,
 
 Install and run Docker from within the Ubuntu Core environment. Build a snap which embeds the container images you wish to deploy from a device.
 
-- [Run a Docker container](/how-to-guides/container-deployment/run-a-docker-container)
-- [Deploy Docker containers from a snap](/how-to-guides/container-deployment/deploy-docker-from-a-snap)
+- {ref}`Run a Docker container <how-to-guides-container-deployment-run-a-docker-container>`
+- {ref}`Deploy Docker containers from a snap <how-to-guides-container-deployment-deploy-docker-from-a-snap>`
 
 ## Packaging Docker
 
@@ -19,8 +19,8 @@ How Docker images can be bundled inside snaps to be deployed together with other
 Ship containerised applications with Ubuntu Core by building a custom image that can then be used to create bootable media and can automate deployment of a production system.
 
 
-- [Package Docker images in a snap](/how-to-guides/container-deployment/package-docker-images-in-a-snap)
-- [Build an image for Docker deployment](build-an-image-for-docker-deployment)
+- {ref}`Package Docker images in a snap <how-to-guides-container-deployment-package-docker-images-in-a-snap>`
+- {ref}`Build an image for Docker deployment <how-to-guides-container-deployment-build-an-image-for-docker-deployment>`
 
 
 ```{toctree}

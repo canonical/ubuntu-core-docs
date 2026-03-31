@@ -5,13 +5,13 @@ By default, Ubuntu Core does not display a splash screen when a device is bootin
 
 ![Ubuntu Core Splash](https://assets.ubuntu.com/v1/72b8914b-core-splash_01.png) 
 
-Ubuntu Core’s splash screen is based on Ubuntu’s [Plymouth-based splash screen](https://wiki.ubuntu.com/Plymouth#Splash_Theme) implementation. It’s enabled by adding `quiet splash` as a [kernel boot parameter](/reference/kernel-boot-parameters):
+Ubuntu Core’s splash screen is based on Ubuntu’s [Plymouth-based splash screen](https://wiki.ubuntu.com/Plymouth#Splash_Theme) implementation. It’s enabled by adding `quiet splash` as a {ref}`kernel boot parameter <reference-kernel-boot-parameters>`:
 
 ```yaml
 quiet splash
 ```
 
-On Ubuntu Core 22 and later, when using the default GNU GRUB bootloader, kernel boot parameters can be configured either in the [Gadget snap](/reference/gadget-snap-format), or through [system options](https://snapcraft.io/docs/system-options). See [Modifying kernel boot parameters](/how-to-guides/manage-ubuntu-core/modify-kernel-options) for further details on each process.
+On Ubuntu Core 22 and later, when using the default GNU GRUB bootloader, kernel boot parameters can be configured either in the {ref}`Gadget snap <reference-gadget-snap-format>`, or through [system options](https://snapcraft.io/docs/system-options). See {ref}`Modifying kernel boot parameters <how-to-guides-manage-ubuntu-core-modify-kernel-options>` for further details on each process.
 
 ## Customised splash screen
 
@@ -21,7 +21,7 @@ The splash screen can be customised in two different ways, either by including a
 
 ![Ubuntu Core vendor splash screen,  50%](https://assets.ubuntu.com/v1/3410143e-core-splash_02.png) 
 
-A PNG-formatted vendor logo, or any other PNG-formatted image, can be placed within a new `/splash` directory in the root of the [Gadget snap](/reference/gadget-snap-format). The image file must be called `vendor-logo.png`:
+A PNG-formatted vendor logo, or any other PNG-formatted image, can be placed within a new `/splash` directory in the root of the {ref}`Gadget snap <reference-gadget-snap-format>`. The image file must be called `vendor-logo.png`:
 
 ```yaml
 .
@@ -90,14 +90,14 @@ ScriptFile=/run/mnt/gadget/splash/plymouth/themes/vendor/vendor.script
 ```
 
 
-It can also help to lower the kernel console logging verbosity by specifying `loglevel=3` (or lower) on the kernel command line. See [Customise the kernel command line](/reference/kernel-boot-parameters) for further details.
+It can also help to lower the kernel console logging verbosity by specifying `loglevel=3` (or lower) on the kernel command line. See {ref}`Customise the kernel command line <reference-kernel-boot-parameters>` for further details.
 
 A good custom Plymouth theme example for Ubuntu Core is its own default theme:
 [https://github.com/snapcore/core-splash](https://github.com/snapcore/core-splash)
 
 Note that the configuration file inside the `vendor/` directory must be named `vendor.plymouth`. Configuration inside will point to the script file.
 
-See [Building a gadget snap](/how-to-guides/image-creation/build-a-gadget-snap) for details on how to create a custom gadget snap.
+See {ref}`Building a gadget snap <how-to-guides-image-creation-build-a-gadget-snap>` for details on how to create a custom gadget snap.
 
 ### Troubleshooting
 

@@ -5,7 +5,7 @@ Console-conf is a text-based user-interface that can be optionally included in a
 
 ![Network connections](https://assets.ubuntu.com/v1/2017b744-8db3caab6834b5307574a8b6d7d6bb1f4a08230f_2_690x434.png)
 
-All pre-built testing images include console-conf, enabling those images to be configuration on first boot by connecting a device to a display and keyboard. User configuration requires an Ubuntu One account and registered SSH key. See [Use Ubuntu One for SSH ](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh) for details.
+All pre-built testing images include console-conf, enabling those images to be configuration on first boot by connecting a device to a display and keyboard. User configuration requires an Ubuntu One account and registered SSH key. See {ref}`Use Ubuntu One for SSH  <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>` for details.
 
 The packages required to run console-conf are included in Ubuntu Core 22 images, but from Ubuntu Core 24 onwards, the console-conf has migrated to an [optional snap](https://snapcraft.io/console-conf).
 
@@ -26,11 +26,11 @@ The console-conf snap can be added to the model declaration just like any other 
 
 It's also included in the `ubuntu-core-24` [test image model declarations](https://github.com/snapcore/models), although it's marked at `optional` in these. Removing the `"presence": "optional"` line will trigger its inclusion when building your own versions of these models.
 
-See [Create a model assertion](/tutorials/build-your-first-image/create-a-model) for more details.
+See {ref}`Create a model assertion <ref-create-a-model_create-a-model>` for more details.
 
 ## Using the ubuntu-image command
 
-The [ubuntu-image](/how-to-guides/image-creation/use-ubuntu-image) command is used to generate a bootable Ubuntu Core image from your source files. To build an image from the [ubuntu-core-24-amd64](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-amd64.model) model assertion for the pre-built images, for example, use the following command:
+The {ref}`ubuntu-image <how-to-guides-image-creation-use-ubuntu-image>` command is used to generate a bootable Ubuntu Core image from your source files. To build an image from the [ubuntu-core-24-amd64](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-amd64.model) model assertion for the pre-built images, for example, use the following command:
 
 ```bash
 ubuntu-image snap ubuntu-core-24-amd64.model

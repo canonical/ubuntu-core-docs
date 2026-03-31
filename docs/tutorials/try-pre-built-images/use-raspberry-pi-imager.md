@@ -12,7 +12,7 @@ At the end of this tutorial, you'll be able to connect to your Raspberry Pi, ins
 ```{admonition} Installation on other devices
 :class: tip
 
-Installation is very similar across each supported Ubuntu Core device. See [Supported platforms](/reference/testing-platforms) for a list of which images are available for which platforms. 
+Installation is very similar across each supported Ubuntu Core device. See {ref}`Supported platforms <reference-testing-platforms>` for a list of which images are available for which platforms. 
 ```
 
 ## Requirements
@@ -23,15 +23,15 @@ This tutorial is suitable for anyone with an interest in Ubuntu Core - no prior 
 - A macOS, Windows or Linux computer with a microSD card reader.
 - 4GB+ microSD card (this will be erased, so make sure it's backed up).
 - Connected screen and keyboard for installation.
-- An [Ubuntu SSO account with associated SSH keys](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh).
+- An {ref}`Ubuntu SSO account with associated SSH keys <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>`.
 
-A pre-built Ubuntu Core image does not use a username and password to login to the system. It instead uses SSH and your public SSH key, which is uploaded to your Ubuntu One account. This is handled by the [console-conf](/how-to-guides/image-creation/add-console-conf) snap bundled in pre-built test images. SSH is otherwise not a requirement for Ubuntu Core images. See [Connect to Ubuntu Core with SSH](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh) for further details.
+A pre-built Ubuntu Core image does not use a username and password to login to the system. It instead uses SSH and your public SSH key, which is uploaded to your Ubuntu One account. This is handled by the {ref}`console-conf <ref-add-console-conf_add-console-conf>` snap bundled in pre-built test images. SSH is otherwise not a requirement for Ubuntu Core images. See {ref}`Connect to Ubuntu Core with SSH <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>` for further details.
 
 Alongside enough storage to hold the Ubuntu Core image, you will need a screen and keyboard connected to the Raspberry Pi. These are needed to navigate a few installation prompts, but neither are needed after setup has been completed.
 
 After Ubuntu Core is up and running, if you want to access your device remotely, you'll need an SSH client for your operating system. Linux and macOS both have clients built-in, whereas Windows users can use [Ubuntu on WSL](https://ubuntu.com/wsl).
 
-Both SSH and the network configuration become optional when [building a custom image](/tutorials/build-your-first-image/index).
+Both SSH and the network configuration become optional when {ref}`building a custom image <ref-index-build-your-first-image>`.
 
 ## Write the image to a microSD card
 
@@ -173,5 +173,5 @@ As shown above, the first time you connect to a new device you will be asked to 
 
 Congratulations! You have successfully downloaded, installed, and connected to a pre-built Ubuntu Core image on your Raspberry Pi.
 
-See [First steps with Ubuntu Core](/how-to-guides/using-ubuntu-core) for an introduction to using your new Ubuntu Core installation or learn how to [build your Ubuntu Core image](/tutorials/build-your-first-image/index).
+See {ref}`First steps with Ubuntu Core <how-to-guides-using-ubuntu-core>` for an introduction to using your new Ubuntu Core installation or learn how to {ref}`build your Ubuntu Core image <ref-index-build-your-first-image>`.
 

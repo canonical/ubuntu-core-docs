@@ -1,7 +1,7 @@
 (reference-assertions-snap-declaration)=
 # snap-declaration
 
-The _snap-declaration_ [assertion](/reference/assertions/index) defines several important properties of a snap, including its snap-id, the official name, the publisher. However, it's mainly used to control what plugs or slots a snap is allowed to use, and if a snap is allowed to use a plug/slot, what other slots/plugs should connect to that plug/slot on this snap.
+The _snap-declaration_ {ref}`assertion <ref-index_assertions>` defines several important properties of a snap, including its snap-id, the official name, the publisher. However, it's mainly used to control what plugs or slots a snap is allowed to use, and if a snap is allowed to use a plug/slot, what other slots/plugs should connect to that plug/slot on this snap.
 
 This assertion is downloaded with the snap when installing a snap from a store and includes  details on the actions to take when performing the installation.
 
@@ -49,15 +49,15 @@ The index is the tuple `< series`, `snap-id >`, and `snap-id` is a key with the 
 
 This assertion gives control on several aspects of the snap behaviour to the authority:
 
--   `refresh-control` gives a list of snaps that are gated when the one specified by `snap-id` is installed, so they are not automatically refreshed until they are "validated". Validation is performed by using [validation asserts](/reference/assertions/validation), which specify the revision of the gated snap that should be installed if the gating snap has been installed.
+-   `refresh-control` gives a list of snaps that are gated when the one specified by `snap-id` is installed, so they are not automatically refreshed until they are "validated". Validation is performed by using {ref}`validation asserts <reference-assertions-validation>`, which specify the revision of the gated snap that should be installed if the gating snap has been installed.
 
 -   `aliases` gives a list of the explicit aliases that we want to automatically enable when installing the snap. Aliases provide short names for applications contained in the snap, so we do not need to use the full command name `<snap-name>`.`<target-command>`. 
 
 -   `plugs` and `slots` define flags per interface. This lets define restrictions on how the snap plugs/slots used by the snap are handled. For instance, we can allow or deny connections with `allow-connection` and `deny-connection`. With `allow-auto-connection` or `deny-auto-connection` we let snapd know if it should automatically connect plugs/slots on snap installation.
 
-    See [Connection management](#connection-management) (below) for more details on  these restrictions, and see [snap-declaration store scoping](/explanation/stores/store-overview) for more information on how auto-connections can be linked to a brand store.
+    See {ref}`Connection management <ref-snap-declaration_connection-management>` (below) for more details on  these restrictions, and see {ref}`snap-declaration store scoping <explanation-stores-store-overview>` for more information on how auto-connections can be linked to a brand store.
 
-See [Assertion format](/reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
+See {ref}`Assertion format <ref-index_assertion-format>` for more details on fields common to most assertions.
 
 (ref-snap-declaration_connection-management)=
 ## Connection management
@@ -89,7 +89,7 @@ The allow-installation key is the first key that is evaluated when the snap is b
 
 If a snap does not plug snapd-control then this rule does not apply, but if the snap does declare a snapd-control plug and there are no other rules for this snap about snapd-control then snap installation will fail. To allow installation of such a snap, the snap-declaration must be edited such that allow-installation evaluates to true. 
 
-Snap interfaces which have allow-installation set to false for their plugs in the base-declaration are said to be “super-privileged” meaning they cannot be used at all without a [snap-declaration assertion](/reference/assertions/snap-declaration).
+Snap interfaces which have allow-installation set to false for their plugs in the base-declaration are said to be “super-privileged” meaning they cannot be used at all without a {ref}`snap-declaration assertion <reference-assertions-snap-declaration>`.
 
 ### allow-connection
 
@@ -136,7 +136,7 @@ plugs:
 
 The`allow-auto-connection` key is the final key to consider when snapd is considering automatic connection of interface plugs and slots. 
 
-If this key evaluates to true, then this plug/slot combination is considered a valid candidate for automatic connection. This is the most common key used when granting [snap-declaration assertions](/reference/assertions/snap-declaration) since many interfaces are not super-privileged, so they do not need `allow-installation` set in the assertion and they also do not have any `allow-connection` rules in the base-declaration, so the only thing that needs to be setup is `allow-auto-connection`.
+If this key evaluates to true, then this plug/slot combination is considered a valid candidate for automatic connection. This is the most common key used when granting {ref}`snap-declaration assertions <reference-assertions-snap-declaration>` since many interfaces are not super-privileged, so they do not need `allow-installation` set in the assertion and they also do not have any `allow-connection` rules in the base-declaration, so the only thing that needs to be setup is `allow-auto-connection`.
 
 ## Example snap-declaration assertion
 

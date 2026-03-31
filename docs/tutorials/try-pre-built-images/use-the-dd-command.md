@@ -9,7 +9,7 @@ Below, we cover how to install a reference image of the latest version of Ubuntu
 
 At the end of this tutorial, you'll be able to connect to your PC, install and configure applications, safe in the knowledge that Ubuntu Core will automatically keep your device updated and secure.
 
-See [Supported platforms](/reference/testing-platforms) for a list of which  images are available for which platforms. 
+See {ref}`Supported platforms <reference-testing-platforms>` for a list of which  images are available for which platforms. 
 
 ## Requirements
 
@@ -19,9 +19,9 @@ This tutorial is suitable for anyone with an interest in Ubuntu Core - no prior 
 - A secondary Windows, macOS, or Linux computer to flash an image.
 - 6GB+ USB  flash drive (this will also be erased, so make sure it's backed up).
 - Connected screen and keyboard for installation.
-- An [Ubuntu SSO account with associated SSH keys](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh).
+- An {ref}`Ubuntu SSO account with associated SSH keys <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>`.
 
-Pre-built Ubuntu Core images do not use a username and password to login to the system. Instead, they uses SSH with SSH keys uploaded to your Ubuntu One account using the console-conf snap. SSH is not a requirement for other Ubuntu Core images. See [Connect to Ubuntu Core with SSH](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh) for further details.
+Pre-built Ubuntu Core images do not use a username and password to login to the system. Instead, they uses SSH with SSH keys uploaded to your Ubuntu One account using the console-conf snap. SSH is not a requirement for other Ubuntu Core images. See {ref}`Connect to Ubuntu Core with SSH <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>` for further details.
 
 Unlike installing Ubuntu Core on an IoT device, such as [Installing Ubuntu Core a Raspberry Pi](/tutorials/try-pre-built-images/install-on-a-device/use-raspberry-pi-imager), NUC or PC installations require the Ubuntu Core image to be written directly to internal storage. This cannot be done from an operating system running on the same storage, and needs to be performed from an external storage device.
 
@@ -180,5 +180,5 @@ designed for appliances, firmware and fixed-function VMs.
 
 As shown above, the first time you connect to a new device you will be asked to accept its authenticity. You can check the _ECDSA_ key fingerprint against the finger print shown on the screen after a first reboot. ECDSA is the second one listed.
 
-Congratulations! You have successfully downloaded, installed, and connected to Ubuntu Core on your PC.  See [First steps with Ubuntu Core](/how-to-guides/using-ubuntu-core) for an introduction to using your new Ubuntu Core installation.
+Congratulations! You have successfully downloaded, installed, and connected to Ubuntu Core on your PC.  See {ref}`First steps with Ubuntu Core <how-to-guides-using-ubuntu-core>` for an introduction to using your new Ubuntu Core installation.
 
