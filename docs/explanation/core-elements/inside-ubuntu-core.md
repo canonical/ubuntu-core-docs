@@ -1,12 +1,14 @@
+(ref-inside-ubuntu-core_inside-ubuntu-core)=
 # Inside Ubuntu Core
 
 The kernel, boot assets, runtime environment, applications and device enablement capabilities are all delivered as snaps that are controlled by _snapd_ (the snap daemon), which is itself packaged as a snap.
 
 See below for how these elements combine in Ubuntu Core:
 
+(ref-inside-ubuntu-core_volume-layouts)=
 ## Volume layouts
 
-The storage layout of the generated image used to install Ubuntu Core, and the resultant storage on the device after installation, is described by the [gadget snap](/reference/gadget-snap-format) and its associated `gadget.yaml` file.
+The storage layout of the generated image used to install Ubuntu Core, and the resultant storage on the device after installation, is described by the {ref}`gadget snap <reference-gadget-snap-format>` and its associated `gadget.yaml` file.
 
 Ubuntu Core typically uses the following storage partitions:
 
@@ -29,13 +31,14 @@ The system boot process:
 *snap-bootstrap* is the main executable that is run during the early _initramfs_ booting stage of UC2x. It has the following responsibilities:
 
 1. Mounting selected partitions from the disk that UC2x is on. Partitions include _data_, system-boot, seed, and if present, save (optional on unencrypted devices).
-1. As part of mounting those partitions, *snap-bootstrap* may perform the necessary steps to unlock any encrypted partitions such as ubuntu-data and ubuntu-save (see [Full disk encryption](/explanation/full-disk-encryption)).
+1. As part of mounting those partitions, *snap-bootstrap* may perform the necessary steps to unlock any encrypted partitions such as ubuntu-data and ubuntu-save (see {ref}`Full disk encryption <explanation-full-disk-encryption>`).
 1. After unlocking and mounting all such partitions, *snap-bootstrap* then chooses which [base snap](https://snapcraft.io/docs/base-snaps) is to be used for the root filesystem of userspace (the root filesystem of the initramfs is just a static set of files built into the initramfs and is not the final root filesystem), and mounts this base snap file.
 1. *snap-bootstrap* then chooses which kernel snap is to be used to mount and find additional kernel modules that are not compiled into the kernel or shipped as modules inside the initramfs or otherwise loaded as DTBs, etc.
 1. *snap-bootstrap* will then mount the ubuntu-data partition such that either the writable components of the root filesystem come from this actual partition, or if the mode the system is booting into is an ephemeral system such as install or recover, will mount a temporary filesystem for this.
 1. *snap-bootstrap* on kernel and base snap upgrades will also handle updating bootloader environment variables to implement A/B or try-boot functionality.
 1. *snap-bootstrap* then finally may do some additional setup of the root filesystem such as copying some default files for ephemeral system modes such as recover.
 
+(ref-inside-ubuntu-core_ubuntu-core-snaps)=
 ## Ubuntu Core snaps 
 
 The following components make up Ubuntu Core:
@@ -47,7 +50,7 @@ The following components make up Ubuntu Core:
 
   Related to system snaps, but in a less critical category, are snaps that enable device capabilities like audio, power and disk storage, alongside Docker container orchestration and virtualisation capabilities, including Microk8s and LXD.
 
-- **boot assets**  come from the [gadget snap](/reference/gadget-snap-format) and include board-specific binaries and data, such as bootloader, device tree, configuration files, and cloud-init configuration for edge virtualisation use cases. The gadget snap is typically issued and signed by board OEM/ODMs.
+- **boot assets**  come from the {ref}`gadget snap <reference-gadget-snap-format>` and include board-specific binaries and data, such as bootloader, device tree, configuration files, and cloud-init configuration for edge virtualisation use cases. The gadget snap is typically issued and signed by board OEM/ODMs.
 
 - **base snap** holds the execution environment inside which applications run. It also serves as the root file system for Ubuntu Core images. Core snaps include basic Ubuntu 2x.04 LTS packages.
 
@@ -67,7 +70,7 @@ Ubuntu Core exposes a built-in [REST API](https://snapcraft.io/docs/snapd-api) f
 
 ![core-partition-layout (1)|628x168](https://assets.ubuntu.com/v1/e9bba730-uc-diag-01.png) 
 
-See also [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu-core) for a general overview.
+See also {ref}`Snaps in Ubuntu Core <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>` for a general overview.
 
 
 

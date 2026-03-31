@@ -1,7 +1,9 @@
+(ref-sign-the-model_sign-the-model)=
 #  Sign the model
 
-After a model has been [created or modified](create-a-model), it must be signed with a GPG key to become a _model assertion_. This ensures the model cannot be altered without the key and also links the created image to both the signed version of the model and your [Ubuntu One account](access-ubuntu-one).
+After a model has been {ref}`created or modified <ref-create-a-model_create-a-model>`, it must be signed with a GPG key to become a _model assertion_. This ensures the model cannot be altered without the key and also links the created image to both the signed version of the model and your {ref}`Ubuntu One account <ref-access-ubuntu-one_access-ubuntu-one>`.
 
+(ref-sign-the-model_create-a-key)=
 ## Create a key
 
 First make sure there are no keys already associated with your account by running the `snapcraft list-keys` command (you will only have a key if you've previously signed an assertion; if you already have a key, you can use that one):
@@ -28,6 +30,7 @@ Rather than creating a key for every device, the same key is typically used acro
 
 ```
 
+(ref-sign-the-model_register-the-key)=
 ## Register the key
 
 We now need to upload the key and register it with your Ubuntu One account. This is accomplished with register-key:

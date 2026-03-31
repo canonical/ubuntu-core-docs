@@ -1,3 +1,4 @@
+(ref-index_image-creation)=
 # Image creation
 
 Any device running Ubuntu Core is instantiated from an image. This image contains the kernel, an _init_ process, and a few essential tools.
@@ -8,22 +9,22 @@ Customising and adding to Ubuntu Core images is a fundamental part of how Ubuntu
 
 Create an image from the command line, optimise its boot speed, then change its configuration.
 
-- [Use ubuntu-image](use-ubuntu-image)
-- [Optimise boot speed](optimise-boot-speed)
-- [Add custom snaps](add-custom-snaps)
-- [Add a splash screen](add-a-splash-screen)
-- [Add console-conf](add-console-conf)
+- {ref}`Use ubuntu-image <how-to-guides-image-creation-use-ubuntu-image>`
+- {ref}`Optimise boot speed <how-to-guides-image-creation-optimise-boot-speed>`
+- {ref}`Add custom snaps <how-to-guides-image-creation-add-custom-snaps>`
+- {ref}`Add a splash screen <how-to-guides-image-creation-add-a-splash-screen>`
+- {ref}`Add console-conf <ref-add-console-conf_add-console-conf>`
 
 ## Board enablement
 
-Pre-built images are available for testing a range of devices. See [Testing Platforms](/reference/testing-platforms) for further details.
+Pre-built images are available for testing a range of devices. See {ref}`Testing Platforms <reference-testing-platforms>` for further details.
 
 _Board enablement_, however, is the term we use for building an Ubuntu Core image for a new hardware platform, and there's a well established process for accomplishing this.
 
-- [Board enablement](board-enablement)
-- [Calculate partition sizes](calculate-partition-sizes)
-- [Build a gadget snap](build-a-gadget-snap)
-- [Build a kernel snap](build-a-kernel-snap)
+- {ref}`Board enablement <how-to-guides-image-creation-board-enablement>`
+- {ref}`Calculate partition sizes <how-to-guides-image-creation-calculate-partition-sizes>`
+- {ref}`Build a gadget snap <how-to-guides-image-creation-build-a-gadget-snap>`
+- {ref}`Build a kernel snap <how-to-guides-image-creation-build-a-kernel-snap>`
 
 
 

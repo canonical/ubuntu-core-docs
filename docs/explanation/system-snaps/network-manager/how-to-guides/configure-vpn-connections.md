@@ -3,9 +3,10 @@
 
 VPN support requires both the use of `core22` and network-manager from a `22/*` channel. Currently, two types of VPN are supported:
 
-- [OpenVPN](#openvpn)
-- [WireGuard](#wireguard)
+- {ref}`OpenVPN <ref-configure-vpn-connections_openvpn>`
+- {ref}`WireGuard <ref-configure-vpn-connections_wireguard>`
 
+(ref-configure-vpn-connections_openvpn)=
 ## OpenVPN
 
 Network Manager supports two methods to create an OpenVPN connection:
@@ -46,6 +47,7 @@ nmcli c add connection.id vpntest connection.type vpn \
     +vpn.data verify-x509-name=name:access.is
 ```
 
+(ref-configure-vpn-connections_wireguard)=
 ## WireGuard
 
 The recommended way to configure a WireGuard connection is to place a configuration file in a folder readable by the network-manager snap, such as SNAP_DATA or SNAP_COMMON folders, and to import the configuration with a command similar to the following:

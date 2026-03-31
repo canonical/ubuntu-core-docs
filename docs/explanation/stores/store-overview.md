@@ -9,7 +9,7 @@ See [Releasing to the Snap Store](https://snapcraft.io/docs/releasing-to-the-sna
 
 For larger projects and ISVs, it is often a requirement to publish snaps using a brand account to a brand-specific dedicated Snap Store.
 
-A [Dedicated Snap Store](/explanation/stores/dedicated-snap-store) allows vendors running Ubuntu Core and snap-based devices to control exactly what snaps are available, and when. It can inherit selected packages from other snap stores, and host a set of snaps specific to a brand and device models, and be either open to all developers or a specific list.
+A {ref}`Dedicated Snap Store <ref-dedicated-snap-store_dedicated-snap-store>` allows vendors running Ubuntu Core and snap-based devices to control exactly what snaps are available, and when. It can inherit selected packages from other snap stores, and host a set of snaps specific to a brand and device models, and be either open to all developers or a specific list.
 
 Here is an overview of how to create a brand account and define collaborators.
 

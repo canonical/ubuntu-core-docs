@@ -1,8 +1,9 @@
+(ref-index_assertions)=
 # Assertions
 
 An assertion is a digitally signed document that either verifies the validity of a process, as attested by the signer, or carries policy information, as formulated by the signer.  
 
-[Snapcraft](https://snapcraft.io/docs/snapcraft), [snapd](https://snapcraft.io/docs/glossary#heading--snapd), the [Snap Store](https://snapcraft.io/store) and [Brand stores](/explanation/stores/dedicated-snap-store) all use assertions to handle a variety of functions and processes, including authentication, policy setting, identification and validation.
+[Snapcraft](https://snapcraft.io/docs/snapcraft), [snapd](https://snapcraft.io/docs/glossary#heading--snapd), the [Snap Store](https://snapcraft.io/store) and {ref}`Brand stores <ref-dedicated-snap-store_dedicated-snap-store>` all use assertions to handle a variety of functions and processes, including authentication, policy setting, identification and validation.
 
 Assertions are text-based and take a context-dependent format that always includes one or more headers, an optional body, and the encoded signature.
 
@@ -10,22 +11,23 @@ Assertions are text-based and take a context-dependent format that always includ
 
 These are the currently used assertion types:
 
-- **[account](/reference/assertions/account)**: links an account name to its identifier and other properties
-- **[account-key](/reference/assertions/account-key)**: holds the public part of a key belonging to the account
-- **[confdb-schema](/reference/assertions/confdb-schema)**: describes the access rules and data schema for the configuration of a set of snaps or a facet of the system
-- **[model](/reference/assertions/model)**: brand-specified properties for the device, used to drive the building of an Ubuntu Core image
-- **[repair](/reference/assertions/repair)**: a unique assertion used to restore a device as a last resort feature
-- **[serial](/reference/assertions/serial)**: binds the device identity to the device's key by carrying the public part
-- **[snap-build](/reference/assertions/snap-build)**: the basic properties of a snap at the time it was built by the developer
-- **[snap-declaration](/reference/assertions/snap-declaration)**:  defines various snap properties, such as `snap-id`, its name, and the publisher, plus policy related to accessing privileged interfaces
-- **[snap-resource-pair](/reference/assertions/snap-resource-pair)**: links a snap revision to a component revision
-- **[snap-resource-revision](/reference/assertions/snap-resource-revision)**: store acknowledgement on receipt of a component build labelled with a revision
-- **[snap-revision](/reference/assertions/snap-revision)**: store acknowledgement on receipt of a snap build labelled with a revision
-- **[store](/reference/assertions/store)**: defines the configuration needed to connect a device to a store
-- **[system-user](/reference/assertions/system-user)**: usually brand authorisation to create local system users on specified devices
-- **[validation](/reference/assertions/validation)**: validates a specific snap revision for a given series
-- **[validation-set](/reference/assertions/validation-set)**: a group of snaps that are either installed or permitted to be installed together
+- **{ref}`account <reference-assertions-account>`**: links an account name to its identifier and other properties
+- **{ref}`account-key <reference-assertions-account-key>`**: holds the public part of a key belonging to the account
+- **{ref}`confdb-schema <reference-assertions-confdb-schema>`**: describes the access rules and data schema for the configuration of a set of snaps or a facet of the system
+- **{ref}`model <reference-assertions-model>`**: brand-specified properties for the device, used to drive the building of an Ubuntu Core image
+- **{ref}`repair <reference-assertions-repair>`**: a unique assertion used to restore a device as a last resort feature
+- **{ref}`serial <reference-assertions-serial>`**: binds the device identity to the device's key by carrying the public part
+- **{ref}`snap-build <reference-assertions-snap-build>`**: the basic properties of a snap at the time it was built by the developer
+- **{ref}`snap-declaration <reference-assertions-snap-declaration>`**:  defines various snap properties, such as `snap-id`, its name, and the publisher, plus policy related to accessing privileged interfaces
+- **{ref}`snap-resource-pair <reference-assertions-snap-resource-pair>`**: links a snap revision to a component revision
+- **{ref}`snap-resource-revision <reference-assertions-snap-resource-revision>`**: store acknowledgement on receipt of a component build labelled with a revision
+- **{ref}`snap-revision <reference-assertions-snap-revision>`**: store acknowledgement on receipt of a snap build labelled with a revision
+- **{ref}`store <reference-assertions-store>`**: defines the configuration needed to connect a device to a store
+- **{ref}`system-user <reference-assertions-system-user>`**: usually brand authorisation to create local system users on specified devices
+- **{ref}`validation <reference-assertions-validation>`**: validates a specific snap revision for a given series
+- **{ref}`validation-set <reference-assertions-validation-set>`**: a group of snaps that are either installed or permitted to be installed together
 
+(ref-index_assertion-format)=
 ## Assertion format
 
 The typical format of an assertion, with common headers, is as follows:

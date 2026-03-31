@@ -1,7 +1,7 @@
 (explanation-system-snaps-udisks2-install-udisks2)=
 # Install Udisks2
 
-The Udisks2 snap is currently available from the Snap Store. At can be installed on any system that supports snaps but is only recommended on [Ubuntu Core](/index) at the moment.
+The Udisks2 snap is currently available from the Snap Store. At can be installed on any system that supports snaps but is only recommended on {ref}`Ubuntu Core <ref-index_ubuntu-core-documentation>` at the moment.
 
 You can install the snap with the following command (replace 24 with the ubuntu core version you use):
 ```bash

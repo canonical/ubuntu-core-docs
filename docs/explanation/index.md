@@ -1,3 +1,4 @@
+(ref-index_explanation)=
 # Explanation
 
 Our explanatory and conceptual guides are written to provide a better understanding of how Ubuntu Core works and how it can be used and configured. They enable you to expand your knowledge and become better at Ubuntu Core.
@@ -6,27 +7,27 @@ Our explanatory and conceptual guides are written to provide a better understand
 
 Understanding how certain operations work in Ubuntu Core is key to getting the most out of the system.
 
-- [How installation works](how-installation-works)
-- [Refresh control](refresh-control)
-- [Remodelling](remodelling)
-- [Preseed performance](preseed-performance)
-- [Recovery modes](recovery-modes)
-- [Docker companion snap](docker-companion-snap)
+- {ref}`How installation works <explanation-how-installation-works>`
+- {ref}`Refresh control <explanation-refresh-control>`
+- {ref}`Remodelling <explanation-remodelling>`
+- {ref}`Preseed performance <explanation-preseed-performance>`
+- {ref}`Recovery modes <explanation-recovery-modes>`
+- {ref}`Docker companion snap <explanation-docker-companion-snap>`
 
 ## Security
 
 A devices data and runtime environment is secure and isolated from other applications and devices.
 
-- [Security and sandboxing](security-and-sandboxing)
-- [Full disk encryption](full-disk-encryption)
+- {ref}`Security and sandboxing <explanation-security-and-sandboxing>`
+- {ref}`Full disk encryption <explanation-full-disk-encryption>`
 
 ## Inside Ubuntu Core
 
 There are many different components in an Ubuntu Core deployment that keep every system updated and secure.
 
-- [Core elements](core-elements/index)
-- [Stores](stores/index)
-- [System snaps](system-snaps/index)
+- {ref}`Core elements <ref-index_core-elements>`
+- {ref}`Stores <ref-index_stores>`
+- {ref}`System snaps <ref-index_system-snaps>`
 
 
 ```{toctree}

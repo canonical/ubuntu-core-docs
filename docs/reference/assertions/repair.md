@@ -1,7 +1,7 @@
 (reference-assertions-repair)=
 # repair
 
-A _repair assertion_ is a unique type of [assertion](/reference/assertions/index) that is designed to be a **last resort feature** to repair unresponsive Ubuntu Core devices. Such devices are connected to a network but are otherwise beyond what can be fixed with a regular snapd refresh.
+A _repair assertion_ is a unique type of {ref}`assertion <ref-index_assertions>` that is designed to be a **last resort feature** to repair unresponsive Ubuntu Core devices. Such devices are connected to a network but are otherwise beyond what can be fixed with a regular snapd refresh.
 
 Repair assertions:
 - can only be issued by Canonical

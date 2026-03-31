@@ -1,7 +1,8 @@
 # Boot the image
 
-After [building and writing](/tutorials/build-your-first-image/build-the-image) a custom image for a Raspberry Pi, the device can now be booted and configured.
+After {ref}`building and writing <ref-build-the-image_build-the-image>` a custom image for a Raspberry Pi, the device can now be booted and configured.
 
+(ref-boot-the-image_boot-ubuntu-core)=
 ## Boot Ubuntu Core
 
 Insert the microSD card into your powered-off Raspberry Pi and power-on the device. For this setup phase, you will also need to have a keyboard and screen connected.
@@ -18,6 +19,7 @@ Press **Enter** again and you will be taken to the network setup page:
 
 ![Network menu](https://assets.ubuntu.com/v1/8db3caab-image.png)
 
+(ref-boot-the-image_configure-a-network-connection)=
 ###  Configure a network connection
 
 Network access is a requirement to setup Ubuntu Core, and you have a choice about whether to use a wired connection (Ethernet) or Wi-Fi, if your Raspberry Pi supports it.
@@ -62,6 +64,7 @@ Selecting _Manual_ will allow you to configure your Ethernet connection manually
 
 Select **Save** to apply those changes and for the connection to be attempted. You can now proceed to the next step by pressing **Done**.
 
+(ref-boot-the-image_connect-to-the-device)=
 ## Connect to the device
 
 A final configuration step asks for the email address of your account in the store. This can be safely ignored for now. Whenever your device boots, it will automatically connect to the network and requires no further configuration.
@@ -70,5 +73,5 @@ Each time the device starts up, if a display connected it will show its various 
 
 Congratulations! You have successfully built your own image, installed it, and connected to Ubuntu Core on your Raspberry Pi.
 
-See [First steps with Ubuntu Core](/how-to-guides/using-ubuntu-core) for an introduction to using Ubuntu Core.
+See {ref}`First steps with Ubuntu Core <how-to-guides-using-ubuntu-core>` for an introduction to using Ubuntu Core.
 

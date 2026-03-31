@@ -27,4 +27,3 @@ Documentation for the upstream project can be found at [https://storaged.org/doc
 :glob:
 
 *
-*/index

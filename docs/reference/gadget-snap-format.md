@@ -11,7 +11,7 @@ The gadget metadata and content defines:
 -   Interface connections configured in the `connections:` section are executed on the device’s first boot only. Later changes to this section -- that is, changes added to the device at run time through gadget refreshes -- are not applied.
 -   Optional hooks that are invoked to control and customise the behaviour over the device lifecycle, e.g. installation, initialisation and establishing device identity, factory reset.
 
-See [Building a gadget snap](/how-to-guides/image-creation/build-a-gadget-snap) for details on how a gadget snap can be built. For store deployment, gadget snaps must be produced by the device [brand](https://snapcraft.io/docs/glossary#heading--brand-store), as defined in the [model assertion](/reference/assertions/model), or a reference gadget must be used. It is perfectly possible for different models to share a gadget snap.
+See {ref}`Building a gadget snap <how-to-guides-image-creation-build-a-gadget-snap>` for details on how a gadget snap can be built. For store deployment, gadget snaps must be produced by the device [brand](https://snapcraft.io/docs/glossary#heading--brand-store), as defined in the {ref}`model assertion <reference-assertions-model>`, or a reference gadget must be used. It is perfectly possible for different models to share a gadget snap.
 
 ## Setup files
 
@@ -46,6 +46,7 @@ In addition to the above, the IoT Devices Field team maintains a GitHub reposito
 
 In the near future, we expect to add a RISC-V reference gadget snap to this list.
 
+(ref-gadget-snap-format_the-gadget-yaml-file)=
 ## The gadget.yaml file
 
 Two YAML keys are used to describe your target device:
@@ -162,7 +163,7 @@ kernel-cmdline:
 
 The `*` character can be used as a wildcard to accept any parameter argument. It can not be used to limit an argument's scope. For example, `kernel-parameter-2=*` is acceptable, but `kernel-parameter-2=a*` is not.
 
-See [Modifying kernel boot parameters](/how-to-guides/manage-ubuntu-core/modify-kernel-options) for more details on defining kernel boot parameters.
+See {ref}`Modifying kernel boot parameters <how-to-guides-manage-ubuntu-core-modify-kernel-options>` for more details on defining kernel boot parameters.
 
 ### Static kernel parameters
 
@@ -388,6 +389,7 @@ connections:
     slot: system:system-files           
 ```
 
+(ref-gadget-snap-format_prepare-device-hook)=
 ##  prepare-device hook
 
 The optional `prepare-device` hook will be called on the gadget at the start of the device initialisation process, after the gadget snap has been installed.

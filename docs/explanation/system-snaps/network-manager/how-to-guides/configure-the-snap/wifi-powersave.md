@@ -1,3 +1,4 @@
+(ref-wifi-powersave_wi-fi-powersave)=
 # Wi-Fi powersave
 
 Wi-Fi Powersave is a feature that allows a device to suspend its radio activity after a fixed period of inactivity. The device remains idle for a fixed time, usually about 100ms, and once it is reached it wakes up to check if the infrastructure has any packets queued up for it.

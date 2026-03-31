@@ -1,3 +1,4 @@
+(ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core)=
 # Snaps in Ubuntu Core
 
 Ubuntu Core is built from *snaps*, a secure, confined, dependency-free, cross-platform Linux packaging format.
@@ -16,6 +17,7 @@ Whether it's an update to a single device, a specific subset of devices, or a de
 
  Note: For further details on how snaps work and how they're built, see the [Snap documentation](https://snapcraft.io/docs).
 
+(ref-snaps-in-ubuntu-core_types-of-snap)=
 ## Types of snap
 
 The snap packaging ecosystem consists of the following parts:
@@ -28,9 +30,9 @@ The snap packaging ecosystem consists of the following parts:
 Developers can publish snaps to the Snap Store or to their own private Brand Store. They take sole responsibility for update cadence and quality. While snaps are commonly known as an application packaging format, Ubuntu Core is built from several different types of snap:
 
 1. **kernel**: Contains the Linux kernel for a device</br>
-The [kernel snap](https://snapcraft.io/docs/kernel-snap) is selected with the [model assertion](/reference/assertions/model) describing the device which is produced and signed before the image is built. Once the image is built, the kernel snap may be updated at any time. Note that the only way to change to a different kernel snap (i.e. different name/ID) is to [remodel](/explanation/remodelling).
+The [kernel snap](https://snapcraft.io/docs/kernel-snap) is selected with the {ref}`model assertion <reference-assertions-model>` describing the device which is produced and signed before the image is built. Once the image is built, the kernel snap may be updated at any time. Note that the only way to change to a different kernel snap (i.e. different name/ID) is to {ref}`remodel <explanation-remodelling>`.
 1. **gadget**: Defines device properties</br>
-The [gadget snap](/reference/gadget-snap-format) is responsible for defining and manipulating the system properties and configuration which are specific to one or more devices that will usually look similar to one another from an implementation perspective. It is also responsible for shipping the device bootloader and bootloader assets. It is selected with the [model assertion](/reference/assertions/model).
+The {ref}`gadget snap <reference-gadget-snap-format>` is responsible for defining and manipulating the system properties and configuration which are specific to one or more devices that will usually look similar to one another from an implementation perspective. It is also responsible for shipping the device bootloader and bootloader assets. It is selected with the {ref}`model assertion <reference-assertions-model>`.
 1. **base**: The runtime environment</br>
 The [base snap](https://snapcraft.io/docs/base-snaps) provides the run-time environment with a minimal set of libraries that are common to most applications. Base snaps mirror Ubuntu LTS releases and include core20, built from Ubuntu 20.04 LTS, core18 based on Ubuntu 18.04 LTS, and core, based on Ubuntu 16.04 LTS. One of them, selected with the model assertion, also serves as the root file system for the Ubuntu Core system.
 For historical reasons the core snap has a different specific type: core.

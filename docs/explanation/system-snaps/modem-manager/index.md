@@ -3,9 +3,9 @@
 
 The modem-manager snap is based on [upstream ModemManager](https://www.freedesktop.org/wiki/Software/ModemManager/), which is a D-Bus-activated daemon which controls mobile broadband (2G/3G/4G) devices and connections. ModemManager is able to prepare and configure a wide variety of modems and setup connections with them.
 
-The modem-manager snap should be used in most cases jointly with the [network-manager](/explanation/system-snaps/network-manager/index) snap. NetworkManager can be used to set cellular connection settings and to start and stop the connection.
+The modem-manager snap should be used in most cases jointly with the {ref}`network-manager <explanation-system-snaps-network-manager-index>` snap. NetworkManager can be used to set cellular connection settings and to start and stop the connection.
 
-The recommended way of using a modem in [Ubuntu Core](/index) is described in [NetworkManager documentation](../network-manager/index). This documentation serves as further reference in case more control on the cellular modem is needed. It is important to note that many of the things explained are automatically performed when using NetworkManager.
+The recommended way of using a modem in {ref}`Ubuntu Core <ref-index_ubuntu-core-documentation>` is described in {ref}`NetworkManager documentation <explanation-system-snaps-network-manager-index>`. This documentation serves as further reference in case more control on the cellular modem is needed. It is important to note that many of the things explained are automatically performed when using NetworkManager.
 
 ## What ModemManager Offers
 

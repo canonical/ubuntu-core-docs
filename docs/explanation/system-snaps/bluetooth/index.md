@@ -1,3 +1,4 @@
+(ref-index_bluetooth)=
 # Bluetooth
 
 Bluetooth is a standard for wireless communication on short distances. It
@@ -29,7 +30,7 @@ You can find more information about this on the BlueZ upstream homepage [here](h
 ## Bluetooth interfaces
 
 On Ubuntu Core there are two
-[interfaces](snapcraft.io/docs/supported-interfaces) that define permissions
+[interfaces](https://snapcraft.io/docs/reference/interfaces/) that define permissions
 for the Bluetooth stack:
 
  * **bluetooth-control**: allows managing the kernel Bluetooth stack. The slot

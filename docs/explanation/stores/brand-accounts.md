@@ -3,7 +3,7 @@
 
 The global [Snap Store](https://snapcraft.io/store) is the default source for all snaps, including those used by Ubuntu Core. It’s where the majority of snaps are published, where public, unlisted and private snaps can be shared with users and collaborators, and where developers can manage their releases across channels and tracks.
 
-But snaps can also be hosted, and published from a dedicated snap store, often called a [Brand store](/explanation/stores/dedicated-snap-store) or IoT App Store. For a more in-depth look at dedicated snap stores, and how they're used with Ubuntu Core and IoT devices, see the [IoT App Store](https://ubuntu.com/core/services/guide/iot-app-store-intro) documentation.
+But snaps can also be hosted, and published from a dedicated snap store, often called a {ref}`Brand store <ref-dedicated-snap-store_dedicated-snap-store>` or IoT App Store. For a more in-depth look at dedicated snap stores, and how they're used with Ubuntu Core and IoT devices, see the [IoT App Store](https://ubuntu.com/core/services/guide/iot-app-store-intro) documentation.
 
 A store is managed and governed through a brand account and the authority it delegates to other associated accounts. This is outlined below.
 
@@ -19,7 +19,7 @@ The brand account can be used to:
 * Sign Model Assertions used to build images that point at a dedicated snap store.
 * Register kernel and gadget snap names.
 
-The kernel and gadget snaps are special snaps that can only be registered by the brand account, which also must also be given a publisher role in the base store. Similarly, kernel and gadget snap names must be registered by the brand account (or by Canonical). See [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu-core) for more details on the snaps used to build Ubuntu Core.
+The kernel and gadget snaps are special snaps that can only be registered by the brand account, which also must also be given a publisher role in the base store. Similarly, kernel and gadget snap names must be registered by the brand account (or by Canonical). See {ref}`Snaps in Ubuntu Core <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>` for more details on the snaps used to build Ubuntu Core.
 
 Use of the Brand Account and its credentials should be strictly limited. Canonical recommends that the Brand Account not be assigned any Roles that are not strictly needed. Do not make the Brand Account a store Administrator, a Reviewer or a Viewer.
 
@@ -34,7 +34,7 @@ We recommend enabling two-factor authentication on all Ubuntu SSO accounts, but 
 
 Roles are a vital part of the device and snap management lifecycle. They enable accounts other than the master brand account to control various aspects of the deployment process, and for those aspects to be safeguarded from the key and registry functions that maintain the integrity of the brand account.
 
-As with the brand account, roles are assigned to a regular Ubuntu SSO account by a project administrator via [ https://snapcraft.io/admin]( https://snapcraft.io/admin):
+As with the brand account, roles are assigned to a regular Ubuntu SSO account by a project administrator via [https://snapcraft.io/admin](https://snapcraft.io/admin):
 
 ![Ubuntu Core brand account add new member](https://assets.ubuntu.com/v1/a2ea6a4d-core-store.png)
 

@@ -5,9 +5,9 @@ Ubuntu Core is inherently robust. But if data corruption issues do occur, even o
 
 These recovery modes can be accessed in three different ways:
 
-- **[Boot into the system mode selection menu](#system-mode-selection-menu)**</br>
+- **{ref}`Boot into the system mode selection menu <ref-use-a-recovery-mode_system-mode-selection-menu>`**</br>
 Start or reboot the device with the ‘1’ key held on a connected keyboard
-- **[Snap reboot](#recovery-modes-from-snap-reboot)**</br>
+- **{ref}`Snap reboot <ref-use-a-recovery-mode_recovery-modes-from-snap-reboot>`**</br>
 Run `snap reboot` on the device with either `--recover` or `--install` arguments.
 - **[Snapd REST API](https://snapcraft.io/docs/snapd-api#heading--systems-get)**</br>
 Use the REST API to call either the `recover`, `install`, `factory-reset` or `reboot` functions.
@@ -16,8 +16,9 @@ Recovery modes are available on Ubuntu Core 20 and later.
 
 Device manufacturers may choose to implement alternative methods to access recovery functionality. These will be specific to those devices.
 
-See [Recovery modes](/explanation/recovery-modes) for more details on each supported recovery mode, what they do, and how they can be used.
+See {ref}`Recovery modes <explanation-recovery-modes>` for more details on each supported recovery mode, what they do, and how they can be used.
 
+(ref-use-a-recovery-mode_system-mode-selection-menu)=
 ## System mode selection menu
 
 To access the system mode selection menu, start or reboot the device with the ‘1’ key held on a connected keyboard. If the chooser fails to launch, try pressing _1_ repeatedly from boot. It needs to be captured by Ubuntu Core boot process.
@@ -30,6 +31,7 @@ The menu system requires that you tab or cursor to highlight your chosen option.
 
 Selecting an option followed by ‘Confirm’ will reboot the device into the selected mode (see below).
 
+(ref-use-a-recovery-mode_recovery-modes-from-snap-reboot)=
 ## Recovery modes from snap reboot
 
 Alongside using `sudo snap reboot` to reboot the system, the following  arguments can be added to select a recovery mode with or without an additional system label for the target system:
@@ -61,9 +63,10 @@ The system is going down for reboot at Wed 2020-11-25 13:25:51 UTC!
 Reboot into "20201117" "recover" mode.
 ```
 
+(ref-use-a-recovery-mode_using-recovery-keys)=
 ## Using recovery keys
 
-When using [Full Disk Encryption](/explanation/full-disk-encryption), a device's Trusted Platform Module (TPM) seals the encryption keys necessary to decrypt and boot the device. 
+When using {ref}`Full Disk Encryption <explanation-full-disk-encryption>`, a device's Trusted Platform Module (TPM) seals the encryption keys necessary to decrypt and boot the device. 
 
 These keys can be retrieved with the `snap recovery --show-keys` command:
 

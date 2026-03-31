@@ -1,5 +1,6 @@
 (index)=
 
+(ref-index_ubuntu-core-documentation)=
 # Ubuntu Core documentation
 
 **Ubuntu Core is Ubuntu engineered for embedded and IoT systems.** It's image-based and immutable, with every element confined within a separate sandbox.
@@ -13,19 +14,19 @@
 ## In this documentation
 | | |
 |--|--|
-|  [Tutorials](/tutorials/index)</br>  Get started - a hands-on introduction to Ubuntu Core for new users </br> |  [How-to guides](/how-to-guides/index) </br>     Step-by-step guides covering key operations and common tasks |
-| [Explanation](/explanation/index) </br> Concepts - discussion and clarification of key topics  | [Reference](/reference/index) </br> Technical information - specifications, APIs, architecture |
+|  {ref}`Tutorials <tutorials-index>`</br>  Get started - a hands-on introduction to Ubuntu Core for new users </br> |  {ref}`How-to guides <ref-index_how-to-guides>` </br>     Step-by-step guides covering key operations and common tasks |
+| {ref}`Explanation <ref-index_explanation>` </br> Concepts - discussion and clarification of key topics  | {ref}`Reference <ref-index_reference>` </br> Technical information - specifications, APIs, architecture |
 
-   * **Stores:** {ref}`explanation-stores-store-overview` | [Brand accounts](explanation/stores/brand-accounts) | [Dedicated snap stores](explanation/stores/dedicated-snap-store) | [Store scoping](explanation/stores/store-scoping)
-   * **Security:** [Full disk encryption](explanation/full-disk-encryption) | [Sandboxing](explanation/security-and-sandboxing) | {ref}`how-to-guides-manage-ubuntu-core-use-a-recovery-mode`
-   * **Management:** [Update control](explanation/refresh-control) | [Remodelling](explanation/remodelling) | [Upgrade Ubuntu Core](how-to-guides/manage-ubuntu-core/upgrade-ubuntu-core)
-   * **Core elements:** [Introduction](explanation/core-elements/inside-ubuntu-core) | [Storage layout](explanation/core-elements/storage-layout) | [Snap in Ubuntu Core](explanation/core-elements/snaps-in-ubuntu-core)
+   * **Stores:** {ref}`explanation-stores-store-overview` | {ref}`Brand accounts <explanation-stores-brand-accounts>` | {ref}`Dedicated snap stores <ref-dedicated-snap-store_dedicated-snap-store>` | {ref}`Store scoping <explanation-stores-store-scoping>`
+   * **Security:** {ref}`Full disk encryption <explanation-full-disk-encryption>` | {ref}`Sandboxing <explanation-security-and-sandboxing>` | {ref}`how-to-guides-manage-ubuntu-core-use-a-recovery-mode`
+   * **Management:** {ref}`Update control <explanation-refresh-control>` | {ref}`Remodelling <explanation-remodelling>` | {ref}`Upgrade Ubuntu Core <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>`
+   * **Core elements:** {ref}`Introduction <ref-inside-ubuntu-core_inside-ubuntu-core>` | {ref}`Storage layout <explanation-core-elements-storage-layout>` | {ref}`Snap in Ubuntu Core <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>`
 
 ## Project and community
 
 Ubuntu Core is a member of the Ubuntu family. It's an open source project that welcomes community projects, contributions, suggestions, fixes and constructive feedback. 
 
-* [Community engagement commitment](explanation/community-engagement)
+* {ref}`Community engagement commitment <ref-community-engagement_community-engagement>`
 * [Our Code of Conduct](https://ubuntu.com/community/ethos/code-of-conduct)
 * [How to get support](https://ubuntu.com/support/community-support)
 * [Join the Discourse forum](https://forum.snapcraft.io/c/device/10)

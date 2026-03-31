@@ -28,4 +28,3 @@ Documentation for the upstream project can be found at [https://upower.freedeskt
 :glob:
 
 *
-*/index

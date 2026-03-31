@@ -3,11 +3,11 @@
 
 Ubuntu Core has been designed to operate without users, or with the [Ubuntu SSO](https://login.ubuntu.com/) user created by `console-conf`when the device first boots.
 
-Some systems suppress _console-conf_ and its user creation, and on those systems, the `system-user` [assertion](/reference/assertions/index) permits the creation of local system users on specific devices by their associated [Brand store](/explanation/stores/dedicated-snap-store).
+Some systems suppress _console-conf_ and its user creation, and on those systems, the `system-user` {ref}`assertion <ref-index_assertions>` permits the creation of local system users on specific devices by their associated {ref}`Brand store <ref-dedicated-snap-store_dedicated-snap-store>`.
 
-To create a system user on these systems,  the `system-user` [assertion](/reference/assertions/index), described on this page, needs to be embedded within a file called `auto-import.assert` that’s added to the system via the root directory of a removable USB storage device. For more details, see [System user](/how-to-guides/manage-ubuntu-core/add-a-system-user).
+To create a system user on these systems,  the `system-user` {ref}`assertion <ref-index_assertions>`, described on this page, needs to be embedded within a file called `auto-import.assert` that’s added to the system via the root directory of a removable USB storage device. For more details, see {ref}`System user <how-to-guides-manage-ubuntu-core-add-a-system-user>`.
 
-See [System user](/how-to-guides/manage-ubuntu-core/add-a-system-user) for further details on creating a system user.
+See {ref}`System user <how-to-guides-manage-ubuntu-core-add-a-system-user>` for further details on creating a system user.
 
 ## System-user assertion fields
 
@@ -36,13 +36,13 @@ sign-key-sha3-384:      <key id> # Encoded key id of signing key
 <signature>             # Encoded signature
 ```
 
-The index is the tuple \<`brand-id`, `email`\>, with `series` being as specified by the [model assertion](/reference/assertions/model). These assertions must be signed by the brand. The fields are then typically used in the following order:
+The index is the tuple \<`brand-id`, `email`\>, with `series` being as specified by the {ref}`model assertion <reference-assertions-model>`. These assertions must be signed by the brand. The fields are then typically used in the following order:
 
 - `serials` limits the scope of the _system-user_ assertion to devices with matching serials. This field can only be used with a `revision` of 1 or greater, and also limits the `models` field to accepting just a single model assertion. 
 
 - `password` must be encoded and salted, following the format specified by [crypt](http://manpages.ubuntu.com/manpages/bionic/en/man1/crypt.1.html)(3). You could use `mkpasswd`, for example: `mkpasswd -m sha512crypt`
 
-- `since` and `until` define a period between a UTC _from date_ (since) and a UTC _to date_ (until) during which a new [system user](/how-to-guides/manage-ubuntu-core/add-a-system-user) is permitted to be created. An exception to this rule is if `until-expiration` has been set in `user-presence` (see below), in which case a user is removed when the corresponding assertion expires.
+- `since` and `until` define a period between a UTC _from date_ (since) and a UTC _to date_ (until) during which a new {ref}`system user <how-to-guides-manage-ubuntu-core-add-a-system-user>` is permitted to be created. An exception to this rule is if `until-expiration` has been set in `user-presence` (see below), in which case a user is removed when the corresponding assertion expires.
 
    Using `since` and `util` requires a `password` to be embedded within the assertion.
 
@@ -50,7 +50,7 @@ The index is the tuple \<`brand-id`, `email`\>, with `series` being as specified
 
 - `user-presence` (optional) when set to `until-expiration` means users created through the system-user assertion are valid until the expiration of the actual assertion. Requires that `    "format": "2",` is also set.
 
-See [Assertion format](/reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
+See {ref}`Assertion format <ref-index_assertion-format>` for more details on fields common to most assertions.
 
 The simple addition of such assertions to a device assertion database should not be enough to trigger the user creation. This must be initiated explicitly (via `snap create-user`, or in the context of the auto-import mechanism for assertions from removable devices, which requires physical access to the device).
 

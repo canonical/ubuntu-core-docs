@@ -1,3 +1,4 @@
+(ref-contributing_contribute-to-our-docs)=
 # Contribute to our docs
 
 **We warmly welcome community contributions, suggestions, fixes and constructive feedback.**
@@ -257,7 +258,7 @@ The `visible text` is what will appear in the documentation. The `url` is either
 To link to `https://forum.snapcraft.io/t/snapcraft-overview/8940`, for example, you would use the following:
 
 ```markdown
-For more details, see [Snapcraft overview](/).
+For more details, see {ref}`Snapcraft overview <ref-index_ubuntu-core-documentation>`.
 ```
 
 ### Comments

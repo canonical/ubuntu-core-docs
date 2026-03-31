@@ -1,11 +1,11 @@
 (reference-assertions-serial)=
 # serial
 
-The _serial_ [assertion](/reference/assertions/index) is a statement that binds a device identity to the device's public key.
+The _serial_ {ref}`assertion <ref-index_assertions>` is a statement that binds a device identity to the device's public key.
 
-Every Ubuntu Core device belongs to a particular model, as defined by its [model assertion](/reference/assertions/model).
+Every Ubuntu Core device belongs to a particular model, as defined by its {ref}`model assertion <reference-assertions-model>`.
 
-Each device also has a unique device identity and the ability to _prove that identity_ with cryptographic keys. The precise implementation of this cryptography may vary from device to device, based on the hardware and software capabilities, which is described as part of the [gadget snap](/reference/gadget-snap-format).
+Each device also has a unique device identity and the ability to _prove that identity_ with cryptographic keys. The precise implementation of this cryptography may vary from device to device, based on the hardware and software capabilities, which is described as part of the {ref}`gadget snap <reference-gadget-snap-format>`.
 
 ## Fields
 
@@ -27,18 +27,18 @@ BODY: map of hardware constraints/details  # expected to be YAML
 <signature>                 # Encoded signature
 ```
 
-The index is the tuple \<`brand-id`, `model`, `serial`\>, with `serial` being the unique identifier for a device. `brand-id` and `model` must match those used by the device's [model assertion](/reference/assertions/model).
+The index is the tuple \<`brand-id`, `model`, `serial`\>, with `serial` being the unique identifier for a device. `brand-id` and `model` must match those used by the device's {ref}`model assertion <reference-assertions-model>`.
 
-- `serial` is crucial. In the context of the _model_, this defines the unique identifier for a single device. The [brand](/explanation/stores/dedicated-snap-store) should never assign the same serial to more than one device of the same model.
+- `serial` is crucial. In the context of the _model_, this defines the unique identifier for a single device. The {ref}`brand <ref-dedicated-snap-store_dedicated-snap-store>` should never assign the same serial to more than one device of the same model.
 
-- `device-key` is also unique to each device, and takes the same format used by the key in the [account-key assertion](/reference/assertions/account-key).
+- `device-key` is also unique to each device, and takes the same format used by the key in the {ref}`account-key assertion <reference-assertions-account-key>`.
 
   The device key might change over time, in a controlled fashion, but at any given time there is only one device key per device.
 - `device-key-sha3-384` is the digest of the public key and should also be provided. 
 
 - `BODY` (optional) contains device details in YAML format.
 
-This assertion must then be signed by the brand. See [Assertion format](/reference/assertions/index) for more details on fields common to most assertions.
+This assertion must then be signed by the brand. See {ref}`Assertion format <ref-index_assertions>` for more details on fields common to most assertions.
 
 ## Example assertion
 
