@@ -35,11 +35,11 @@ The target device:
 - [AMD Kria](https://www.amd.com/en/products/system-on-modules/kria.html)
 - Power adapter that comes with it
 
-A pre-built Ubuntu Core image does not use a username and password to login to the system. It instead uses SSH and your public SSH key, which is uploaded to your Ubuntu One account. This is handled by the console-conf snap bundled in pre-built test images. SSH is otherwise not a requirement for Ubuntu Core images. See [Connect to Ubuntu Core with SSH](https://documentation.ubuntu.com/core/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh/) for further details.
+A pre-built Ubuntu Core image does not use a username and password to login to the system. It instead uses SSH and your public SSH key, which is uploaded to your Ubuntu One account. This is handled by the console-conf snap bundled in pre-built test images. SSH is otherwise not a requirement for Ubuntu Core images. See {ref}`Connect to Ubuntu Core with SSH <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>` for further details.
 
 ## Prepare the device
 
-Make sure to have latest [BOOT FW](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/3020685316/Kria+SOM+Boot+Firmware+Update#Boot-Firmware-Downloads) installed for your [AMD Kria](https://www.amd.com/en/products/system-on-modules/kria.html) SOM, following the instructions explained.
+Make sure the latest [boot firmware](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/3020685316/Kria+SOM+Boot+Firmware+Update#Boot-Firmware-Downloads) is installed on the [AMD Kria](https://www.amd.com/en/products/system-on-modules/kria.html) SOM, following the instructions provided in the boot firmware link.
 
 ## Write the Ubuntu Core image to the microSD card
 
@@ -66,7 +66,7 @@ After it's installed and running, you will see its main window showing buttons f
 
 When the process has finished, Raspberry Pi Imager will proclaim "Write Successful" and you can remove the card from the reader. It's now ready to be inserted into your device.
 
-If there's any errors during write, check your sd card. Optionally you might unpack the .xz archive and subsequently write the .img file with the Raspberry Pi imager.
+If there are any errors during write, check your SD card. Optionally you might unpack the .xz archive and subsequently write the .img file with the Raspberry Pi imager.
 
 ## Boot Ubuntu Core for the first time
 
@@ -151,8 +151,8 @@ This Ubuntu Core machine is a tiny, transactional edition of Ubuntu,
 designed for appliances, firmware and fixed-function VMs.
 ```
 
-As shown above, the first time you connect to a new device you will be asked to accept its authenticity. You can check the _ECDSA_ key fingerprint against the finger print shown on the screen after a first reboot. ECDSA is the second one listed.
+As shown above, the first time you connect to a new device you will be asked to accept its authenticity. You can check the _ECDSA_ key fingerprint against the fingerprint shown on the screen after a first reboot. ECDSA is the second one listed.
 
 Congratulations! You have successfully downloaded, installed, and connected to a pre-built Ubuntu Core image on your AMD Kria.
 
-See [First steps with Ubuntu Core](/how-to-guides/using-ubuntu-core) for an introduction to using your new Ubuntu Core installation or learn how to [build your Ubuntu Core image](/tutorials/build-your-first-image/index).
+See {ref}`First steps with Ubuntu Core <how-to-guides-using-ubuntu-core>` for an introduction to using your new Ubuntu Core installation or learn how to {ref}`build your Ubuntu Core image <ref-index-build-your-first-image>`.
