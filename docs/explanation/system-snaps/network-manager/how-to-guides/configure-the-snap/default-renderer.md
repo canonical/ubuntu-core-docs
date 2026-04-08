@@ -8,5 +8,5 @@ The NetworkManager snap provides a configuration option,  `defaultrenderer` , to
 $ snap set network-manager defaultrenderer=false
 ```
 
-For the core16 snap, there is an option called  `ethernet.enable`  that does basically the same. See the [NetworkManager and netplan](/explanation/system-snaps/network-manager/how-to-guides/networkmanager-and-netplan) section for more details.
+For the core16 snap, there is an option called  `ethernet.enable`  that does basically the same. See the {ref}`NetworkManager and netplan <ref-networkmanager-and-netplan_networkmanager-and-netplan>` section for more details.
 

@@ -1,3 +1,4 @@
+(ref-index_console-conf)=
 # console-conf
 
 The console-conf snap is used for the initial configuration of users and

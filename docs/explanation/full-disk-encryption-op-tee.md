@@ -1,6 +1,6 @@
 # Full disk encryption with OP-TEE
 
-OP-TEE is an open source Trusted Execution Environment (TEE) for Arm systems. It provides a _secure world_ that runs alongside the normal operating system. Trusted Applications (TAs) run inside that secure world, while normal-world software calls into them through standard TEE APIs. For [Full disk encryption](full-disk-encryption) (FDE), OP-TEE protects disk-unlock keys. All cryptographic operations happen inside the secure world and _plaintext_ keys are never written to disk.
+OP-TEE is an open source Trusted Execution Environment (TEE) for Arm systems. It provides a _secure world_ that runs alongside the normal operating system. Trusted Applications (TAs) run inside that secure world, while normal-world software calls into them through standard TEE APIs. For {ref}`Full disk encryption <explanation-full-disk-encryption>` (FDE), OP-TEE protects disk-unlock keys. All cryptographic operations happen inside the secure world and _plaintext_ keys are never written to disk.
 
 ## How Snapd uses OP-TEE
 
@@ -32,7 +32,7 @@ This ensures that snapd can interface with the TA during installation and subseq
 
 ## Migrating from `fde-setup` Hooks
 
-Earlier OP-TEE deployments used kernel `fde-setup` hooks to interface with OP-TEE. The easiest migration path is to [remodel](remodelling) the device onto a kernel snap that omits those hooks and allows snapd to talk to the TA directly.
+Earlier OP-TEE deployments used kernel `fde-setup` hooks to interface with OP-TEE. The easiest migration path is to {ref}`remodel <explanation-remodeling>` the device onto a kernel snap that omits those hooks and allows snapd to talk to the TA directly.
 
 1. Create a kernel snap that no longer ships the `fde-setup` hook.  
 2. Remodel the system to refresh the kernel and reboot. On the first boot after the remodel, snapd detects that no hook is present, reseals the encryption keys through OP-TEE, and stores the new sealed keys.

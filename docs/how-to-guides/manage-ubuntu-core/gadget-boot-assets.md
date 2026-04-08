@@ -22,7 +22,7 @@ volumes:
 ```
 The `edition` property identifies the version of assets for a particular `structure`.
 
-Updates are performed when the `edition` value is higher than the value in the currently installed gadget snap. If this is the case, *snapd* next attempts to analyse the currently written assets so that only those that differ are updated.
+Updates are performed when the `edition` value is higher than the value in the currently installed gadget snap. If this is the case, *snapd* next attempts to analyze the currently written assets so that only those that differ are updated.
 
 ### Backup and rollback
 
@@ -32,7 +32,7 @@ A rollback is only performed when the process of writing updated boot assets fai
 
 ## Volume and structures
 
-Snapd analyses the `volumes` declaration in `gadget.yaml` to map its members against partitions on the main block device used by the system.
+Snapd analyzes the `volumes` declaration in `gadget.yaml` to map its members against partitions on the main block device used by the system.
 
 > :information_source:  The main block device is the one with `/writable` partition on it.
 

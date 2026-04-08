@@ -1,8 +1,9 @@
+(ref-install-on-renesas_install-a-pre-built-ubuntu-core-image-on-a-renesas-rz-g2l)=
 # Install a pre-built Ubuntu Core image on a Renesas RZ/G2L
 
 Pre-built images are ideal for exploration and experimentation of Ubuntu Core, but they are not intended for deployment or use at scale. They include snaps to provide an onboarding and evaluation experience, alongside an SSH connection, and these are unlikely to be required in your own Ubuntu Core deployment.
 
-You can find more information about building Core images in the [Build your first image](/tutorials/build-your-first-image/index) tutorial.
+You can find more information about building Core images in the {ref}`Build your first image <ref-index-build-your-first-image>` tutorial.
 
 Ubuntu Core runs on a large range of hardware, and pre-built images are available for the [Renesas RZ/G2L](https://www.renesas.com/en/products/microcontrollers-microprocessors/rz-mpus/rzg2l-general-purpose-mpu-dual-core-arm-cortex-a55-cpus-and-single-core-cortex-m33-cpu-3d-graphics-and).
 
@@ -26,7 +27,7 @@ For the used to write the images:
 - A microSD card reader
 - 4GB+ microSD card
 - microUSB cable for UART
-- An [Ubuntu SSO account with associated SSH keys](/how-to-guides/manage-ubuntu-core/use-ubuntu-one-ssh).
+- An {ref}`Ubuntu SSO account with associated SSH keys <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>`.
 
 The target device:
 - [Renesas RZ/G2L](https://www.renesas.com/en/products/microcontrollers-microprocessors/rz-mpus/rzg2l-general-purpose-mpu-dual-core-arm-cortex-a55-cpus-and-single-core-cortex-m33-cpu-3d-graphics-and)
@@ -217,4 +218,4 @@ As shown above, the first time you connect to a new device you will be asked to 
 
 Congratulations! You have successfully downloaded, installed, and connected to a pre-built Ubuntu Core image on your Renesas RZ/G2L.
 
-See [First steps with Ubuntu Core](/how-to-guides/using-ubuntu-core) for an introduction to using your new Ubuntu Core installation or learn how to [build your Ubuntu Core image](/tutorials/build-your-first-image/index).
+See {ref}`First steps with Ubuntu Core <how-to-guides-using-ubuntu-core>` for an introduction to using your new Ubuntu Core installation or learn how to {ref}`build your Ubuntu Core image <ref-index-build-your-first-image>`.

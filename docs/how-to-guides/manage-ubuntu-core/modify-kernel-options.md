@@ -1,7 +1,7 @@
 (how-to-guides-manage-ubuntu-core-modify-kernel-options)=
 # Modify kernel options
 
-When using the default GNU GRUB bootloader, kernel boot parameters can be customised without breaking the integrity of the TPM backed full disk encryption.
+When using the default GNU GRUB bootloader, kernel boot parameters can be customized without breaking the integrity of the TPM backed full disk encryption.
 
 Parameters can be modified either _statically_, by editing `cmdline` files, or _dynamically_, by  specific system settings (by dynamically we mean that snapd API can be used to set them, but the parameters do survive across reboots). Both of these methods are covered below.
 
@@ -12,8 +12,9 @@ $ cat /proc/cmdline
 snapd_recovery_mode=run console=ttyS0,115200n8 console=tty1 panic=-1
 ```
 
-In addition to parameters supported by the kernel, there are also *Ubuntu Core-specific* [kernel boot parameters](/reference/kernel-boot-parameters).
+In addition to parameters supported by the kernel, there are also *Ubuntu Core-specific* {ref}`kernel boot parameters <reference-kernel-boot-parameters>`.
 
+(ref-modify-kernel-options_dynamic-kernel-parameter-modifications)=
 ## Dynamic kernel parameter modifications
 
 There are two [system options](https://snapcraft.io/docs/system-options) that can be used to add new kernel boot parameters to a system that has been deployed and is running:
@@ -39,6 +40,7 @@ To remove a dynamically set kernel command, use the `snap unset` command:
 snap unset system system.kernel.dangerous-cmdline-append
 ```
 
+(ref-modify-kernel-options_static-boot-option-modifications)=
 ## Static boot option modifications
 
 Static kernel boot-time options are formed from mode arguments set by _snapd_, a static element declared in the bootloader configuration script, and optional extra arguments.
@@ -95,9 +97,10 @@ Both kernel command line extension methods also apply to install mode.
 
 The gadget snap can contain only one of `cmdline.full` or `cmdline.extra`; the presence of both files at the same time is treated as an error.
 
-Extending the kernel command line using drop-in files is also supported on systems using the full disk encryption. See [Full disk encryption](/explanation/full-disk-encryption) for more details.
+Extending the kernel command line using drop-in files is also supported on systems using the full disk encryption. See {ref}`Full disk encryption <explanation-full-disk-encryption>` for more details.
 
-## Customising the kernel command line
+(ref-modify-kernel-options_customising-the-kernel-command-line)=
+## Customizing the kernel command line
 
 If setting the parameters in `gadget.yaml`, you will just need to edit that file in your sources and build the gadget as usual with `snapcraft`.
 
@@ -109,11 +112,11 @@ The second is to modify an existing gadget snap directly, and this procedure is 
 
 ```{admonition} Splash screen requirements
 :class: tip
-Enabling the Ubuntu Core splash screen requires a modified kernel command line. See [Splash screen configuration](/how-to-guides/image-creation/add-a-splash-screen) for details.
+Enabling the Ubuntu Core splash screen requires a modified kernel command line. See {ref}`Splash screen configuration <how-to-guides-image-creation-add-a-splash-screen>` for details.
 ```
 ## Modify an existing gadget snap
 
-When building your own [custom Ubuntu Core image](/how-to-guides/image-creation/add-custom-snaps), the gadget snap that you include can be  modified manually to include the kernel command line file.
+When building your own {ref}`custom Ubuntu Core image <how-to-guides-image-creation-add-custom-snaps>`, the gadget snap that you include can be  modified manually to include the kernel command line file.
 
 To do this, first retrieve the gadget snap you wish to use in the image. The following command, for example, will download the PC gadget snap with a base of [core24](https://snapcraft.io/docs/base-snaps):
 
@@ -146,7 +149,7 @@ created 0 fifos
 created 0 sockets
 ```
 
-The above command will create a new directory called `squashfs-root` containing the files and folders of the gadget snap. We can now create the required `cmdline.extra` or `cmdline.full` file ([see above](#customising-the-kernel-command-line)) containing our kernel command line arguments:
+The above command will create a new directory called `squashfs-root` containing the files and folders of the gadget snap. We can now create the required `cmdline.extra` or `cmdline.full` file ({ref}`see above <ref-modify-kernel-options_customising-the-kernel-command-line>`) containing our kernel command line arguments:
 
 ```bash
 echo "option1=foo option2=bar" > squashfs-root/cmdline.extra
@@ -158,7 +161,7 @@ With the _cmdline.extra_ or _cmdline.full_ file created, the gadget snap can be 
 snap pack squashfs-root
 ```
 
-The final step is to build a new Ubuntu Core image with the modified gadget snap. This requires a [model assertion](/reference/assertions/model) with `grade: dangerous` set (as we are using local snaps for the build - this would not be necessary if we have uploaded the gadget to the store) and the `ubuntu-image` command to compile the image. See [Custom images](/how-to-guides/image-creation/add-custom-snaps) for more details.
+The final step is to build a new Ubuntu Core image with the modified gadget snap. This requires a {ref}`model assertion <reference-assertions-model>` with `grade: dangerous` set (as we are using local snaps for the build - this would not be necessary if we have uploaded the gadget to the store) and the `ubuntu-image` command to compile the image. See {ref}`Custom images <how-to-guides-image-creation-add-custom-snaps>` for more details.
 
 You can then build the image with the new gadget snap using _ubuntu-image_:
 

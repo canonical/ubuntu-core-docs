@@ -1,10 +1,11 @@
+(ref-networkmanager-and-netplan_networkmanager-and-netplan)=
 # NetworkManager and Netplan
 
 Ubuntu Core's default Netplan configuration defers networking to _networkd_.
 
 When [Network Manager](https://help.ubuntu.com/community/NetworkManager) is installed (`snap install network-manager`), a new Netplan configuration replaces networkd with _network-manager_, taking control of all networking devices.
 
-This behaviour can be controlled with the `defaultrenderer` snap option. By default, this is set to `true` to allow network-manger to control networking. If set to `false`, network-manager reverts the default Netplan configuration, giving control of network devices back to networkd.
+This behavior can be controlled with the `defaultrenderer` snap option. By default, this is set to `true` to allow network-manger to control networking. If set to `false`, network-manager reverts the default Netplan configuration, giving control of network devices back to networkd.
 
 ```bash
 snap set network-manager defaultrenderer=false

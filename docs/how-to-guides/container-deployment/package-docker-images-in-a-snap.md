@@ -1,7 +1,7 @@
 (how-to-guides-container-deployment-package-docker-images-in-a-snap)=
 # Package Docker images in a snap
 
-Docker containers can be deployed on Ubuntu Core from [the command-line](run-a-docker-container), or via a [Docker companion snap](/explanation/docker-companion-snap).
+Docker containers can be deployed on Ubuntu Core from {ref}`the command-line <how-to-guides-container-deployment-run-a-docker-container>`, or via a {ref}`Docker companion snap <explanation-docker-companion-snap>`.
 
 This guide explains how Docker images can be bundled inside snaps to be deployed together with other resources within the package.
 
@@ -13,7 +13,7 @@ Downloading Docker images from an online registry during the installation is a c
 
 Consequently, bundling the Docker image inside a snap is useful for both existing and locally built images.
 
-Snaps are signed, which means the entire package, including the Docker image, is a verifiable artefact that can be pulled from an online or on-prem store, built into Ubuntu Core images, or passed around as standalone snaps.
+Snaps are signed, which means the entire package, including the Docker image, is a verifiable artifact that can be pulled from an online or on-prem store, built into Ubuntu Core images, or passed around as standalone snaps.
 
 Building a snap that contains and uses an existing image involves a few steps. 
 
@@ -68,7 +68,7 @@ Refer below for a complete example.
 
 ## Example: RabbitMQ Docker companion snap
 
-Let's take the snap created in the [Docker companion snap](deploy-docker-from-a-snap) guide.
+Let's take the snap created in the {ref}`Docker companion snap <how-to-guides-container-deployment-deploy-docker-from-a-snap>` guide.
 
 With that snap, the Docker image was pulled from DockerHub on first startup and after every refresh (upgrade/downgrade). This is because the image wasn't available locally.
 

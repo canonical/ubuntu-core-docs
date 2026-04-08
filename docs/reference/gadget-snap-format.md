@@ -8,10 +8,10 @@ The gadget metadata and content defines:
 -   The layout of the volumes that comprise the device storage and image
 -   Configuration for the bootloader to use. The gadget also ships the bootloader itself and other boot assets.
 -   Default configuration options to use when snaps are installed.
--  Interface connections configured in the `connections:` section are executed on the device’s first boot only. Later changes to this section -- that is, changes added to the device at run time through gadget refreshes -- are not applied.
--   Optional hooks that are invoked to control and customise the behaviour over the device lifecycle, e.g. installation, initialisation and establishing device identity, factory reset.
+-   Interface connections configured in the `connections:` section are executed on the device’s first boot only. Later changes to this section -- that is, changes added to the device at run time through gadget refreshes -- are not applied.
+-   Optional hooks that are invoked to control and customize the behavior over the device lifecycle, e.g. installation, initialisation and establishing device identity, factory reset.
 
-See [Building a gadget snap](/how-to-guides/image-creation/build-a-gadget-snap) for details on how a gadget snap can be built. For store deployment, gadget snaps must be produced by the device [brand](https://snapcraft.io/docs/glossary#heading--brand-store), as defined in the [model assertion](/reference/assertions/model), or a reference gadget must be used. It is perfectly possible for different models to share a gadget snap.
+See {ref}`Building a gadget snap <how-to-guides-image-creation-build-a-gadget-snap>` for details on how a gadget snap can be built. For store deployment, gadget snaps must be produced by the device [brand](https://snapcraft.io/docs/glossary#heading--brand-store), as defined in the {ref}`model assertion <reference-assertions-model>`, or a reference gadget must be used. It is perfectly possible for different models to share a gadget snap.
 
 ## Setup files
 
@@ -19,17 +19,21 @@ In addition to traditional snap metadata, the gadget snap also holds some setup 
 
 - **meta/snap.yaml**: traditional snap details, with `type: gadget` explicitly defined.
 - **meta/gadget.yaml**: gadget-specific information. See below.
-- **grub.conf**:  required grub configuration when using this bootloader.
-- **u-boot.conf**: required U-Boot configuration when using this bootloader.
+- **grub.conf**:  marker file that declares that the gadget needs the grub bootloader and that files in the seed and boot partitions are used to store grub environment.
+- **uboot.conf**: marker file that declares that the gadget needs the U-Boot bootloader and that files in the seed and boot partitions are used to store U-Boot environment. (Note: this is not needed when using a system-boot-state partition.)
 - **cloud.conf**: optional [cloud-init](https://cloudinit.readthedocs.io/en/latest/) configuration; cloud-init is disabled if missing. </br>Using cloud-init is _not recommended_ for production devices, and should only be included for testing and development purposes.
 
 ## Example gadget snaps
 
 The following gadget repositories contain the gadget snap definitions for _amd64_ (64 bit PC Gadget Snap) and the Raspberry Pi family of devices supported by Ubuntu Core:
 
-- [ 64-bit PC Gadget Snap](https://github.com/snapcore/pc-amd64-gadget)
-- [ Raspberry Pi "Universal" Gadget Snap](https://github.com/snapcore/pi-gadget)
-- [i386](<https://github.com/snapcore/pc-i386-gadget>)
+- [PC Gadget Snap](https://github.com/snapcore/pc-gadget)
+- [Raspberry Pi Gadget Snap](https://github.com/snapcore/pi-gadget)
+
+For U-Boot devices example gadgets can be found in:
+
+- [U-Boot with environment in configuration files](https://github.com/canonical/optee-uc-fde/tree/master/snaps/test-qemu-optee-gadget)
+- [U-Boot with environment in partition](https://github.com/canonical/optee-uc-fde/tree/master/snaps/test-qemu-ubootpart-gadget)
 
 In addition to the above, the IoT Devices Field team maintains a GitHub repository with source code branches that contain templates for the following device architectures:
 
@@ -42,6 +46,7 @@ In addition to the above, the IoT Devices Field team maintains a GitHub reposito
 
 In the near future, we expect to add a RISC-V reference gadget snap to this list.
 
+(ref-gadget-snap-format_the-gadget-yaml-file)=
 ## The gadget.yaml file
 
 Two YAML keys are used to describe your target device:
@@ -158,7 +163,7 @@ kernel-cmdline:
 
 The `*` character can be used as a wildcard to accept any parameter argument. It can not be used to limit an argument's scope. For example, `kernel-parameter-2=*` is acceptable, but `kernel-parameter-2=a*` is not.
 
-See [Modifying kernel boot parameters](/how-to-guides/manage-ubuntu-core/modify-kernel-options) for more details on defining kernel boot parameters.
+See {ref}`Modifying kernel boot parameters <how-to-guides-manage-ubuntu-core-modify-kernel-options>` for more details on defining kernel boot parameters.
 
 ### Static kernel parameters
 
@@ -258,6 +263,8 @@ volumes:
         #                 set of snaps: base, kernel, gadget and application snaps
         #   system-boot - Partition holding the boot assets.
         #   system-data - Partition holding the main operating system data.
+        #   system-boot-state - Partition holding boot state, being U-Boot environment the only
+        #                       use case at the moment.
         #   system-boot-image - Partition holding kernel images for the Little Kernel bootloader.
         #   system-boot-select - Partition holding state for snapd Little Kernel support.
         #   system-save - Partition for Ubuntu Core to store backup data relative to device
@@ -382,6 +389,7 @@ connections:
     slot: system:system-files           
 ```
 
+(ref-gadget-snap-format_prepare-device-hook)=
 ##  prepare-device hook
 
 The optional `prepare-device` hook will be called on the gadget at the start of the device initialisation process, after the gadget snap has been installed.

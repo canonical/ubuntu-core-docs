@@ -1,13 +1,13 @@
 (reference-assertions-account-key)=
 # account-key
 
-The *account-key* [assertion](/reference/assertions/index) holds a public key belonging to an [account](/reference/assertions/account).
+The *account-key* {ref}`assertion <ref-index_assertions>` holds a public key belonging to an {ref}`account <reference-assertions-account>`.
 
-This assertion is used to transmit key information between the [store](/explanation/stores/store-overview) and _snapd_, enabling the latter to validate assertions signed by the key owner.
+This assertion is used to transmit key information between the {ref}`store <explanation-stores-store-overview>` and _snapd_, enabling the latter to validate assertions signed by the key owner.
 
-Alongside [account](/reference/assertions/account), [snap-declaration](/reference/assertions/snap-declaration) and [snap-revision](/reference/assertions/snap-revision) assertions,  _account-key_ is bundled within the composite `.assert` file that accompanies a snap downloaded with the `snap download <snap-name>` command.
+Alongside {ref}`account <reference-assertions-account>`, {ref}`snap-declaration <reference-assertions-snap-declaration>` and {ref}`snap-revision <reference-assertions-snap-revision>` assertions,  _account-key_ is bundled within the composite `.assert` file that accompanies a snap downloaded with the `snap download <snap-name>` command.
 
-The `make-system-user` snap can is used to create a composite assertion file which includes all of the required assertions needed to trigger automatic creation of a user account via an inserted USB drive containing this file. See [make-system-user](/how-to-guides/manage-ubuntu-core/add-a-system-user) for more details.
+The `make-system-user` snap can is used to create a composite assertion file which includes all of the required assertions needed to trigger automatic creation of a user account via an inserted USB drive containing this file. See {ref}`make-system-user <how-to-guides-manage-ubuntu-core-add-a-system-user>` for more details.
 
 ## Account-key assertion fields
 
@@ -38,7 +38,7 @@ The index for this assertion is `public-key-sha3-384`. The key is valid in the t
 
 In addition to the signature validation that's performed for all assertions, it's essential for the account-key assertion that the digest of the public key matches the assertion body.
 
-See [Assertion format](/reference/assertions/index.md#assertion-format) for more details on fields common to most assertions.
+See {ref}`Assertion format <ref-index_assertion-format>` for more details on fields common to most assertions.
 
 ## Example assertion
 

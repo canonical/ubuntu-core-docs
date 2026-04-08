@@ -9,7 +9,7 @@ As shown above, `console-conf` is a text-based menu system that uses a connected
 
 Some systems, however, suppress _console-conf_ and its user creation.
 
-To create a system user on these systems, you must create and sign a [system-user assertion](/reference/assertions/system-user). This assertion can then be injected into the [ubuntu-seed](/explanation/core-elements/inside-ubuntu-core.md/#volume-layouts) partition using the [`ubuntu-image` utility](/how-to-guides/image-creation/use-ubuntu-image.md/#extra-assertions). Alternatively, it can be embedded within a file called `auto-import.assert` that's added to the system via the root directory of a removable USB storage device that must be formatted with a widely supported filesystem such as ext4, FAT32, or any other filesystem supported by the device Linux kernel. This process is covered below.
+To create a system user on these systems, you must create and sign a {ref}`system-user assertion <reference-assertions-system-user>`. This assertion can then be injected into the {ref}`ubuntu-seed <ref-inside-ubuntu-core_volume-layouts>` partition using the {ref}``ubuntu-image` utility <ref-use-ubuntu-image_extra-assertions>`. Alternatively, it can be embedded within a file called `auto-import.assert` that's added to the system via the root directory of a removable USB storage device that must be formatted with a widely supported filesystem such as ext4, FAT32, or any other filesystem supported by the device Linux kernel. This process is covered below.
 
 ```{admonition} Managed and unmanaged systems
 :class: caution
@@ -21,9 +21,9 @@ A **managed** system already has a user account whereas an **unmanaged** system 
 
 The `auto-import.assert` file contains the following assertions:
 
-- [system-user](/reference/assertions/system-user)
-- [account](/reference/assertions/account)
-- [account-key](/reference/assertions/account-key)
+- {ref}`system-user <reference-assertions-system-user>`
+- {ref}`account <reference-assertions-account>`
+- {ref}`account-key <reference-assertions-account-key>`
 
 A `system-user` assertion for the new user needs to be created, as described below, but both `account` and `account-key` assertions are output automatically as part of the `auto-import.assert` creation process.
 
@@ -35,9 +35,9 @@ The snap daemon (_snapd_) can import these assertions through the `auto-import.a
 
 ### Model assertions
 
-Creating a valid system-user assertion is limited by the [model assertion](/reference/assertions/model) which contains store account ID defined as _brand-id_ and _authority-id,_ alongside the model name, _model_.
+Creating a valid system-user assertion is limited by the {ref}`model assertion <reference-assertions-model>` which contains store account ID defined as _brand-id_ and _authority-id,_ alongside the model name, _model_.
 
-If your device is built from an image created from your own [Custom model assertion](/how-to-guides/image-creation/add-custom-snaps), then you should already have access to these values. 
+If your device is built from an image created from your own {ref}`Custom model assertion <how-to-guides-image-creation-add-custom-snaps>`, then you should already have access to these values. 
 
 The following is an example a custom model assertion showing `bJzr2XzZg6Qv6Z53dsjhg20975Skjs` as the account ID and `mymodel` as the model name:
 
@@ -61,13 +61,13 @@ Another source of the store account ID is the _Snap account-id_ from [https://da
 
 When a model assertion lacks a `system-user-authority` field, the system-user assertion can only be signed by:
 - a key registered to the store account specified by the `brand-id` field (_bJzr2XzZg6Qv6Z53dsjhg20975Skjs_  in our example)
-- the key that's part of the [account-key](/reference/assertions/account-key) assertion when the system-user assertion is submitted to the device
+- the key that's part of the {ref}`account-key <reference-assertions-account-key>` assertion when the system-user assertion is submitted to the device
 
 
 (specifying-system-user-authority)=
 #### Specifying system-user-authority
 
-The optional `system-user-authority` field can be added to a model assertion to list a set of account IDs that are authorised to sign system-user assertions for any image built with the assertion:
+The optional `system-user-authority` field can be added to a model assertion to list a set of account IDs that are authorized to sign system-user assertions for any image built with the assertion:
 
 ```yaml
 {
@@ -145,7 +145,7 @@ mkpasswd -m  sha512crypt -S <8CHARSALT> -s
 
 You will be asked for the password and the output can be inserted into the `system-user` template.
 
-For further details on system-user fields, including `since` and `until`, see the [System-user assertion](/reference/assertions/system-user) documentation.
+For further details on system-user fields, including `since` and `until`, see the {ref}`System-user assertion <reference-assertions-system-user>` documentation.
 
 ## Generating auto-import.assert
 
@@ -164,7 +164,7 @@ Name         SHA3-384
 my-key-name  E-n0AOKPFjIyy4S_i9JxTT4tkuaZf7rP9D2mBNXjlgTGDjL8euFSlb87U0NPl
 ```
 
-See [Signing a model assertion](/tutorials/build-your-first-image/sign-the-model) for details on creating and uploading keys.
+See {ref}`Signing a model assertion <ref-sign-the-model_sign-the-model>` for details on creating and uploading keys.
 
 The contents of the `system-user` template needs to be signed. This is accomplished with the `snap` command, which can also generate the accompanying `account` and `account-key` assertions at the same time:
 

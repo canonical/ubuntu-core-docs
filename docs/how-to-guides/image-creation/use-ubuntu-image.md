@@ -9,7 +9,7 @@ sudo snap install ubuntu-image --classic
 
 The `ubuntu-image` command requires only a path to a model assertion to build an image.
 
-If you want to include your own core snaps, such as a custom gadget snap, see [Building an image with custom snaps](/how-to-guides/image-creation/add-custom-snaps) for details on how the model assertion and _ubuntu-image_ command need to be modified.
+If you want to include your own core snaps, such as a custom gadget snap, see {ref}`Building an image with custom snaps <how-to-guides-image-creation-add-custom-snaps>` for details on how the model assertion and _ubuntu-image_ command need to be modified.
 
 ## Inside a model
 
@@ -64,15 +64,15 @@ The input model for defining and signing such a document is provided as JSON tex
 }
 ```
 
-The above example shows an unsigned reference model for [Raspberry Pi/arm64](http://cdimage.ubuntu.com/ubuntu-core/24/stable/current/ubuntu-core-24-arm64.model-assertion). To see how this can be modified and signed, see [Add custom snaps](add-custom-snaps).
+The above example shows an unsigned reference model for [Raspberry Pi/arm64](http://cdimage.ubuntu.com/ubuntu-core/24/stable/current/ubuntu-core-24-arm64.model-assertion). To see how this can be modified and signed, see {ref}`Add custom snaps <how-to-guides-image-creation-add-custom-snaps>`.
 
 The model includes details such as the store to use (`brand-id` and `authority-id`), the model name (`ubuntu-core-24-pi-arm64`) and the hardware architecture (`arm64`). Any snaps installed on the device will respect this selected architecture.
 
-As outlined in [Snaps in Ubuntu Core](/explanation/core-elements/snaps-in-ubuntu-core), there are four principle types of snap that combine to create the Ubuntu Core environment. These are **kernel**, **gadget**, **base** and **snapd**, and all four need to be referenced within a model assertion.
+As outlined in {ref}`Snaps in Ubuntu Core <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>`, there are four principle types of snap that combine to create the Ubuntu Core environment. These are **kernel**, **gadget**, **base** and **snapd**, and all four need to be referenced within a model assertion.
 
 ```{tip}
  
-The _console-conf_ user-interface that configures the network and system user when a device first boots, has migrated to an optional snap in Ubuntu Core 24 and later. See [console-conf for device onboarding](/how-to-guides/image-creation/add-console-conf) for further details.
+The _console-conf_ user-interface that configures the network and system user when a device first boots, has migrated to an optional snap in Ubuntu Core 24 and later. See {ref}`console-conf for device onboarding <ref-add-console-conf_add-console-conf>` for further details.
 ```
 
 ## Building with ubuntu-image
@@ -90,15 +90,16 @@ The output includes the _img_ file itself, alongside a _seed.manifest_ file. The
 
 Snaps can be optionally added at build time with the `--snap` argument.
 
-These additional snaps can include [custom snaps](/how-to-guides/image-creation/add-custom-snaps), locally-stored [offline snaps](/explanation/remodelling.md#offline-remodelling), and snaps that can be downloaded directly from the store.
+These additional snaps can include {ref}`custom snaps <how-to-guides-image-creation-add-custom-snaps>`, locally-stored {ref}`offline snaps <ref-remodelling_offline-remodeling>`, and snaps that can be downloaded directly from the store.
 
-- **Custom snaps** can only be added when a [model](/reference/assertions/model) has a `grade` attribute of `dangerous` 
+- **Custom snaps** can only be added when a {ref}`model <reference-assertions-model>` has a `grade` attribute of `dangerous` 
 - Production-grade images cannot include custom snaps, and additional snaps must first be declared with a `presence` attribute of `optional` in the model.
 - **Offline snaps** must include locally cached assertions. Using offline locally stored snaps can speed up the image creation process.
 
+(ref-use-ubuntu-image_extra-assertions)=
 ## Extra assertions
 
-Arbitrary assertions, such as [system-user assertions](/reference/assertions/system-user/), can be included in the final image using the `--assertion` argument pointing to a file containing one or more assertions. This can help you, for example, in creating a system user or choosing a snap store proxy without the added manual configuration after the installation is complete.
+Arbitrary assertions, such as {ref}`system-user assertions <reference-assertions-system-user>`, can be included in the final image using the `--assertion` argument pointing to a file containing one or more assertions. This can help you, for example, in creating a system user or choosing a snap store proxy without the added manual configuration after the installation is complete.
 
 ```{note}
 
@@ -113,13 +114,13 @@ The size of a generated disk image can optionally be controlled with the `--imag
 
 The value is the size in bytes, with allowable suffixes M for MiB and G for GiB and if this size is smaller than the minimum calculated size of the volume, a warning is issued and the option is ignored.
 
-An extended syntax is supported for [Gadget snaps](/how-to-guides/image-creation/build-a-gadget-snap) that specify multiple volumes (i.e. disk images). In that case, a single SIZE argument is used for all the defined volumes, with the same rules for ignoring values that are too small. You can specify the image size for a single volume using an indexing prefix on the SIZE parameter, where the index is either a volume name or an integer index starting at zero. For example, to set the image size only on the second volume, which might be called sdcard in gadget.yaml, use: `--image-size 1:8G` (the number 1 index indicates the second volume; volumes are 0-indexed). Or use `--image-size sdcard:8G`.
+An extended syntax is supported for {ref}`Gadget snaps <how-to-guides-image-creation-build-a-gadget-snap>` that specify multiple volumes (i.e. disk images). In that case, a single SIZE argument is used for all the defined volumes, with the same rules for ignoring values that are too small. You can specify the image size for a single volume using an indexing prefix on the SIZE parameter, where the index is either a volume name or an integer index starting at zero. For example, to set the image size only on the second volume, which might be called sdcard in gadget.yaml, use: `--image-size 1:8G` (the number 1 index indicates the second volume; volumes are 0-indexed). Or use `--image-size sdcard:8G`.
 
 You can also specify multiple volume sizes by separating them with commas, and you can mix and match integer indices and volume-name indices. Thus, if gadget.yaml names three volumes, and you want to set all three to different sizes, you can use `--image-size 0:2G,sdcard:8G,eMMC:4G`.
 
 ## Testing an image
 
-Rather than immediately booting an image on native hardware, it's good practice to boot an image first with QEMU ([https://www.qemu.org/](https://www.qemu.org)). See [Testing Ubuntu Core with QEMU](/how-to-guides/manage-ubuntu-core/test-on-qemu) for further details.
+Rather than immediately booting an image on native hardware, it's good practice to boot an image first with QEMU ([https://www.qemu.org/](https://www.qemu.org)). See {ref}`Testing Ubuntu Core with QEMU <how-to-guides-manage-ubuntu-core-test-on-qemu>` for further details.
 
 After a successful boot, Ubuntu Core initialisation will ask for both networking parameters and an Ubuntu One account (see <a href="https://snapcraft.io/account" class="uri">https://snapcraft.io/account</a>). 
 
@@ -156,5 +157,5 @@ grade:     signed
 serial:    1194d330-d27b-4230-a16f-ab0d23665010
 ```
 
-See the [Snap documentation](https://snapcraft.io/docs) for more details on working with snaps. To build a custom image that includes your own selection of snaps, take a look at [Add custom snaps](add-custom-snaps).
+See the [Snap documentation](https://snapcraft.io/docs) for more details on working with snaps. To build a custom image that includes your own selection of snaps, take a look at {ref}`Add custom snaps <how-to-guides-image-creation-add-custom-snaps>`.
 

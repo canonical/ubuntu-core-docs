@@ -2,7 +2,7 @@
 
 When developing an Ubuntu Core image, it's not always easy to investigate what might cause an installation to fail.
 
-However, it is possible to modify such an image's [gadget snap](/how-to-guides/image-creation/build-a-gadget-snap) to provide an install mode debug shell without affecting the device's overall configuration.  This is useful if you're debugging an actual `install-device` hook, for instance, and you want a real shell to run things in rather than just modifying your hook and re-flashing and waiting. The process is outlined below.
+However, it is possible to modify such an image's {ref}`gadget snap <how-to-guides-image-creation-build-a-gadget-snap>` to provide an install mode debug shell without affecting the device's overall configuration.  This is useful if you're debugging an actual `install-device` hook, for instance, and you want a real shell to run things in rather than just modifying your hook and re-flashing and waiting. The process is outlined below.
 
 ## Gadget snap modifications
 
@@ -67,7 +67,7 @@ The above should be placed in _cmdline.full_ rather than _cmdline.extra_ because
 
 If you're on ARM, or not using Grub, the above arguments need to be transferred to the kernel command line for your boot-loader.
 
-See [Modify kernel options](/how-to-guides/manage-ubuntu-core/modify-kernel-options) for details on how to incorporate the above files into a gadget snap.
+See {ref}`Modify kernel options <how-to-guides-manage-ubuntu-core-modify-kernel-options>` for details on how to incorporate the above files into a gadget snap.
 
 ## Booting up your device
 

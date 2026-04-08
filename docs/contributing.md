@@ -1,3 +1,4 @@
+(ref-contributing_contribute-to-our-docs)=
 # Contribute to our docs
 
 **We warmly welcome community contributions, suggestions, fixes and constructive feedback.**
@@ -144,7 +145,7 @@ We (mostly) adhere to the [Ubuntu style guide](https://docs.ubuntu.com/styleguid
   - the _ize_ suffix in preference to _ise_ (_capitalize_ rather than _capitalise_)
   - _or_ instead of _our_ (as in _color_ and _colour_)
   - license as both a verb and a noun
-  - catalog rather than catalogue
+  - catalog rather than catalog
 - dates take the format _1 January 2013_, _1-2 January 2013_ and _1 January - 2 February 2013_
 
 ## Diátaxis
@@ -257,7 +258,7 @@ The `visible text` is what will appear in the documentation. The `url` is either
 To link to `https://forum.snapcraft.io/t/snapcraft-overview/8940`, for example, you would use the following:
 
 ```markdown
-For more details, see [Snapcraft overview](/).
+For more details, see {ref}`Snapcraft overview <ref-index_ubuntu-core-documentation>`.
 ```
 
 ### Comments

@@ -16,10 +16,11 @@ The model assertion is central to both the creation of the device image and the 
 * allows first boot verification of the system seed before its snaps are turned into an installed system.
 * conveys model information, through registration from either the factory or in the field, which is used for cross-checking and registration affecting options, such as which account can issue a serial assertion for the device.
 
-For more details on using a model assertion to create an image, see [Custom images](/how-to-guides/image-creation/add-custom-snaps).
+For more details on using a model assertion to create an image, see {ref}`Custom images <how-to-guides-image-creation-add-custom-snaps>`.
 
 Model assertions for supported devices and systems can be found at [https://github.com/snapcore/models/tree/master](https://github.com/snapcore/models/tree/master).
 
+(ref-model_model-assertion-fields)=
 ## Model assertion fields
 
 The following fields can be used in a model assertion:
@@ -52,18 +53,18 @@ The index for this assertion is the tuple \<`series`, `brand-id`, `model`\> and 
 
 - `series` allows the brand to define which release of the platform the device uses. “rolling” is the name of the development series that bridges stable series, which have names like “16” or “18”.
 
-- `authority-id` and `brand-id` fields define the authority signing the assertion. Reference assertions are signed by Canonical and non-reference assertions are signed by their [brand store](/explanation/stores/store-overview). For a custom model assertion, this needs to be the developer ID.
+- `authority-id` and `brand-id` fields define the authority signing the assertion. Reference assertions are signed by Canonical and non-reference assertions are signed by their {ref}`brand store <explanation-stores-store-overview>`. For a custom model assertion, this needs to be the developer ID.
 
  - `model` is a string that identifies a set of devices as desired by the brand.
 
 - `architecture` is the Debian architecture name, such as `amd64`.
 
-- `storage-safety` is used to request that Ubuntu Core installs with or without [full disk encryption](/explanation/full-disk-encryption). It can be omitted or one of either:
+- `storage-safety` is used to request that Ubuntu Core installs with or without {ref}`full disk encryption <explanation-full-disk-encryption>`. It can be omitted or one of either:
    * `prefer-unencrypted`: do not encrypt by default, even if the device supports encryption.
    * `prefer-encrypted`: do encrypt if the hardware supports it.
    * `encrypted`: ensure encryption is used and fail if the device does not support it.
 
-- `system-user-authority` is used to list a set of account IDs that are authorised to sign system user assertions for any image built with the assertion. See {ref}`specifying-system-user-authority` for more details.
+- `system-user-authority` is used to list a set of account IDs that are authorized to sign system user assertions for any image built with the assertion. See {ref}`specifying-system-user-authority` for more details.
 
 - `timestamp` can be generated with the ` date -Iseconds --utc` command.
 
@@ -85,12 +86,12 @@ Using _dangerous_ does weaken security, and as a result, this grade is meant onl
   * `name` *(mandatory)*: name of the snap. Cross-checked at image build time but ignored later.
   * `type` *(mandatory)*: type of the snap, needs to be either: `base|gadget|kernel|app|core`. *app* is the default.
   * `id` *(optional)*: id of the snap if assigned by a store. Must be omitted for local snaps.
-  * `modes` *(optional)*: a list with [recovery modes](/how-to-guides/manage-ubuntu-core/use-a-recovery-mode) (verbs, “run”) or mode aliases for which the snap needs to be installed ("ephemeral", for _recover_ and _install_ modes).
+  * `modes` *(optional)*: a list with {ref}`recovery modes <how-to-guides-manage-ubuntu-core-use-a-recovery-mode>` (verbs, “run”) or mode aliases for which the snap needs to be installed ("ephemeral", for _recover_ and _install_ modes).
 Default is *[run]* which should not be used for types `kernel|gadget` and for the snap indicated by the “base” header.
 For "recovery" and "install" modes, "ephemeral" can be used. This will install the snaps only while the system is in an ephemeral state (running from tmpfs). They will not be installed on *ubuntu-data* unless explicitly declared, such as with `[run, ephemeral]`, although those snaps will still reside on *ubuntu-seed*.
   * `presence` *(optional)*:  set to mark a snap whose absence will not fail installation or recovery. Can be either _optional_ or _required_ but defaults to _required_. 
     * A _required_ snap cannot be removed from the system.    
-    * An _optional_ snap is not added to the [ubuntu-seed](/explanation/core-elements/storage-layout) partition when the image is created with [ubuntu-image](/how-to-guides/image-creation/use-ubuntu-image) unless the `--snap` option is used to add the snap explicitly. Optional snaps can be used to adapt the same base model for different hardware configurations, deployment objectives, and for use with a dynamic modelling agent. 
+    * An _optional_ snap is not added to the {ref}`ubuntu-seed <explanation-core-elements-storage-layout>` partition when the image is created with {ref}`ubuntu-image <how-to-guides-image-creation-use-ubuntu-image>` unless the `--snap` option is used to add the snap explicitly. Optional snaps can be used to adapt the same base model for different hardware configurations, deployment objectives, and for use with a dynamic modelling agent. 
   * `default-channel` *(optional)*: initial tracking channel for the snap, default is “latest/stable”.
 
 ### Components
@@ -138,7 +139,7 @@ The modes for which the component must be present can be specified as well. Synt
 
 ---
 
-See [Assertion format](/reference/assertions/index.md#assertion-format) for details on fields common to most assertions.
+See {ref}`Assertion format <ref-index_assertion-format>` for details on fields common to most assertions.
 
 ## Example assertion
 

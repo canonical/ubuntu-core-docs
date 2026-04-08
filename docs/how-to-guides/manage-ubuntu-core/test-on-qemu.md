@@ -6,7 +6,7 @@ You can test Ubuntu Core without specific hardware from within a virtual machine
 - Multipass has integrated support for the latest Ubuntu Core images and is quicker to get started with
 - QEMU is more configurable and can boot either a supported image or a custom image, with or without TPM emulation and full disk encryption.
 
-Using QEMU is covered below. For details on using Multipass, see [Test Ubuntu Core with Multipass](/tutorials/try-pre-built-images/install-on-a-vm).
+Using QEMU is covered below. For details on using Multipass, see {ref}`Test Ubuntu Core with Multipass <tutorials-get-started-try-pre-built-images-install-on-a-vm>`.
 
 ## Test QEMU
 
@@ -26,7 +26,7 @@ To ensure compatibility with the required UEFI features in Ubuntu Core, also ins
 sudo apt install ovmf
 ```
 
-Download the preferred Ubuntu Core image for your device platform. See [Testing platforms](/reference/testing-platforms) for links to images.
+Download the preferred Ubuntu Core image for your device platform. See {ref}`Testing platforms <reference-testing-platforms>` for links to images.
 
 By default, images are compressed with _xz_ and can be expanded from the Linux command line with the following command:
 
@@ -176,5 +176,5 @@ ssh -i <path-to-private-key> <sso-username>@localhost -p 8022
 
 In addition to SSH access, QEMU will start a VNC-shared console which can be accessed at `vnc://localhost:5900` on the system. Some configurations may also forward port 80 to 8090 for any web server application you wish to install in the VM.
 
-For a brief introduction on how to get started with Ubuntu Core, see [Using Ubuntu Core](/how-to-guides/using-ubuntu-core).
+For a brief introduction on how to get started with Ubuntu Core, see {ref}`Using Ubuntu Core <how-to-guides-using-ubuntu-core>`.
 

@@ -7,7 +7,7 @@ Regardless of how system time is set, it always moves forward monotonically and 
 
 ## System time update process
 
-The system time value and update process is tightly coupled to the [boots process](/explanation/core-elements/inside-ubuntu-core) and device capabilities. From a fresh boot of the device, the process for setting the time is as follows:
+The system time value and update process is tightly coupled to the {ref}`boots process <ref-inside-ubuntu-core_inside-ubuntu-core>` and device capabilities. From a fresh boot of the device, the process for setting the time is as follows:
 
 1. **initrd**
    When the device boots, _initrd_ first moves system time forward to match the time _initrd_ was built.
@@ -20,7 +20,7 @@ The system time value and update process is tightly coupled to the [boots proces
    - **on devices without an RTC**
       System time is taken from the modified file timestamp (mtime) of `/var/lib/systemd/timesync/clock` on the data partition (which may be encrypted). The timestamp for this file is updated periodically after a network connection has been established, and before the system reboots.
   
-   When the network becomes available, the device will begin to use NTP to periodically update the system time. See [Network time synchronisation](#network-time-synchronisation) below for more details.
+   When the network becomes available, the device will begin to use NTP to periodically update the system time. See {ref}`Network time synchronisation <ref-set-system-time_network-time-synchronisation>` below for more details.
 
 ## Current time
 
@@ -62,6 +62,7 @@ $ timedatectl | grep zone
                 Time zone: America/Chicago (CDT, -0500)
 ```
 
+(ref-set-system-time_network-time-synchronisation)=
 ## Network time synchronisation
 
 By default, _timesyncd_ is configured to use the Network Time Protocol (NTP) for network time synchronisation as soon as the network becomes available.

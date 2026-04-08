@@ -1,7 +1,7 @@
 (reference-assertions-snap-resource-pair)=
 # snap-resource-pair
 
-The `snap-resource-pair` assertion is one of two assertions used by [components](https://snapcraft.io/docs/components), the other being [snap-resource-revision](/reference/assertions/snap-resource-revision).
+The `snap-resource-pair` assertion is one of two assertions used by [components](https://snapcraft.io/docs/components), the other being {ref}`snap-resource-revision <reference-assertions-snap-resource-revision>`.
 
 This assertion defines the relationship between a [snap revision](https://snapcraft.io/docs/revisions) and a component revision. This assertion states that the given snap revision and component revision may be installed alongside each other.
 

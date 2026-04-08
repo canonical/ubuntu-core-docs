@@ -1,7 +1,7 @@
 (reference-assertions-account)=
 # account
 
-The _account_  [assertion](/reference/assertions/index) ties the name for an account in the snap universe to its [store](/explanation/stores/store-overview) identifier and provides the authority's confidence in the name's validity. It is generated on user creation by the store where it's maintained while the account exists.
+The _account_  {ref}`assertion <ref-index_assertions>` ties the name for an account in the snap universe to its {ref}`store <explanation-stores-store-overview>` identifier and provides the authority's confidence in the name's validity. It is generated on user creation by the store where it's maintained while the account exists.
 
 Whenever a snap is installed, the account assertion linked to the owner of each snap is added to the system. To list account assertions present on a system, use the `snap known account` command.
 
@@ -29,7 +29,7 @@ The index for this assertion is the `account-id` and the fields are typically us
 - `display-name` is a human-friendly name for the account-d, while username is an optional username associated with the account.
 - `timestamp` contains the UTC formatted date and time that
 
-See [Assertion format](/reference/assertions/index.md#assertion-format) for details on fields common to most assertions.
+See {ref}`Assertion format <ref-index_assertion-format>` for details on fields common to most assertions.
 
 ## Example assertion
 

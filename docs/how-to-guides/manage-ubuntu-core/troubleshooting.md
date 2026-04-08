@@ -1,7 +1,7 @@
 (how-to-guides-manage-ubuntu-core-troubleshooting)=
 # Troubleshooting
 
-Ubuntu Core runs on, and can be built for, a diverse and constantly evolving set of [platforms and devices](/reference/system-requirements).
+Ubuntu Core runs on, and can be built for, a diverse and constantly evolving set of {ref}`platforms and devices <reference-system-requirements>`.
 
 The majority of our users and developers experience very few issues, but any technology this complex and diverse will likely encounter some issues and incompatibilities.
 
@@ -48,7 +48,7 @@ Now reboot the problematic system and re-attempt the Ubuntu Core installation, w
 
 ## Console-conf shows no-ip
 
-During a [snap refresh](/explanation/refresh-control), _console-conf_ may display an `no-ip` message.
+During a {ref}`snap refresh <explanation-refresh-control>`, _console-conf_ may display an `no-ip` message.
 
 Despite the _no-ip_ message, you should still be able to connect to the device using SSH if you actually know the IP.
 
@@ -58,7 +58,7 @@ The solution to the _no-ip_ error is to simply wait for any updates to complete.
 
 ## Ubuntu Core boot asking for recovery key
 
-When using [Full Disk Encryption](/explanation/full-disk-encryption), a device’s Trusted Platform Module (TPM) stores the encryption keys necessary to decrypt and boot the device.
+When using {ref}`Full Disk Encryption <explanation-full-disk-encryption>`, a device’s Trusted Platform Module (TPM) stores the encryption keys necessary to decrypt and boot the device.
 
 If an encrypted drive is detected, but the TPM does not contain a valid key, the Ubuntu Core boot process will prompt for a recovery key. 
 
@@ -68,5 +68,5 @@ If an encrypted drive is detected, but the TPM does not contain a valid key, the
 
 To progress from this point, you will need to enter a  previously retrieved recovery key for the device.
 
-See [Using recovery keys](/how-to-guides/manage-ubuntu-core/use-a-recovery-mode) for further details.
+See {ref}`Using recovery keys <how-to-guides-manage-ubuntu-core-use-a-recovery-mode>` for further details.
 
