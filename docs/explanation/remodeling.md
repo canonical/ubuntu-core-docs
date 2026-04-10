@@ -41,7 +41,7 @@ With a dedicated Snap Store, the following types of remodeling contexts are poss
 - **same brand/model -> same dedicated Snap Store**
 Works as a simple contextual carrier for the new model.
 - **same brand/model -> different dedicated Snap Store**
-Keeps access to the device state kept on the remodel change, creates a store that uses that state, and then refers to the new dedicated Snap Store. Requires a new serial in the [Serial Vault](https://ubuntu.com/core/services/guide/serial-vault-overview) and the creation of a new  {ref}`Serial assertion <reference-assertions-serial>`.
+Keeps access to the device state kept on the remodel change, creates a store that uses that state, and then refers to the new dedicated Snap Store. Requires a new serial in the Model Service or the [Serial Vault](https://ubuntu.com/core/services/guide/serial-vault-overview) and the creation of a new {ref}`Serial assertion <reference-assertions-serial>`.
 
 ## Compatibility
 

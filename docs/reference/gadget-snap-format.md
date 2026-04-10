@@ -400,7 +400,7 @@ The device initialisation process is, for example, responsible for setting the s
 
 The `prepare-device` hook can for example redirect this exchange and dynamically set options relevant to it.
 
-One must ensure that `registration.proposed-serial`  is set to a _unique value_  across all devices of the brand and model and that it does not contain a `/`. It is going to be used as the "serial number" (a string, not necessarily a number) part of the identification in case the device service supports setting it or **requires** it, as is the case with the *serial-vault*. **Important:** Ensure the `-s` option is used with `set` when setting the serial.
+One must ensure that `registration.proposed-serial`  is set to a _unique value_  across all devices of the brand and model and that it does not contain a `/`. It is going to be used as the "serial number" (a string, not necessarily a number) part of the identification in case the device service supports setting it or **requires** it, as is the case with the *Model Service* or *Serial Vault*. **Important:** Ensure the `-s` option is used with `set` when setting the serial.
 
 ### prepare-device options
 
