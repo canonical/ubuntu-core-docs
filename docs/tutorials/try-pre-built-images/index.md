@@ -1,26 +1,37 @@
+---
+myst:
+  html_meta:
+    description: Try pre-built Ubuntu Core images. These tutorials guide you through installing and exploring pre-built images on virtual machines and physical hardware, ideal for evaluating the system and getting familiar with its capabilities.
+---
+
 (ref-index_try-pre-built-images)=
 # Try pre-built images
 
-Ubuntu Core runs on a variety of hardware, and pre-built images are available for various platforms. Generic images can also be installed on a virtual machine.
+These tutorials guide you through installing and exploring pre-built Ubuntu Core images. Pre-built images are the quickest way to evaluate Ubuntu Core without any build configuration or hardware-specific customization.
 
-Pre-built images are ideal for exploration and experimentation, but they are not intended for deployment or use at scale. They include snaps to provide an onboarding and evaluation experience, alongside an SSH connection, and these are unlikely to be required in your own Ubuntu Core deployment. 
+Pre-built images are ideal for exploration and experimentation, but they are not intended for deployment or use at scale. They include extra snaps for onboarding and evaluation that you'll likely want to remove in production. To learn how to create custom images optimized for your hardware, see {ref}`Build an image <ref-index-build-your-first-image>`.
 
-Ubuntu Core has instead been designed to facilitate creating, deploying, and managing secure custom images running on your hardware.
+## Try on a virtual machine
 
-See {ref}`Supported testing platforms <reference-testing-platforms>` for links to image downloads, and to learn how to create your own custom image, read our {ref}`Build an image <ref-index-build-your-first-image>` guide.
+Start by exploring Ubuntu Core in a virtual machine using Multipass. This is the fastest way to get Ubuntu Core running—no dedicated hardware required. You'll have a working system in minutes.
 
-## Install on a virtual machine
+- {ref}`Install on a VM <tutorials-get-started-try-pre-built-images-install-on-a-vm>`
 
-You can try Ubuntu Core without any specific hardware from within a virtual machine using Multipass on Windows, Mac and Linux.
+  Run Ubuntu Core locally on Windows, Mac, or Linux using Multipass.
 
-* {ref}`Install on a VM <tutorials-get-started-try-pre-built-images-install-on-a-vm>`: Try Ubuntu Core on on a local machine
+## Install on hardware
 
-## Install on a generic device
+Once you're comfortable with Ubuntu Core, install it on physical hardware. Pre-built images are available for Raspberry Pi and amd64 platforms. Choose the installation method that matches your hardware and preference.
 
-Ubuntu Core runs on a large range of hardware, and pre-built images are available for amd64 and Raspberry Pi reference platforms.
+- {ref}`Use Raspberry Pi imager <ref-use-raspberry-pi-imager_use-raspberry-pi-imager>`
 
-- {ref}`Use Raspberry Pi imager <ref-use-raspberry-pi-imager_use-raspberry-pi-imager>`: install a pre-built Ubuntu Core image on a Raspberry Pi
-- {ref}`Use the dd command <tutorials-get-started-try-pre-built-images-install-on-a-device-use-the-dd-command>`: write an Ubuntu Core reference image to internal storage
+  Install on Raspberry Pi using the graphical Imager tool.
+
+- {ref}`Use the dd command <tutorials-get-started-try-pre-built-images-install-on-a-device-use-the-dd-command>`
+
+  Write an Ubuntu Core image directly to internal storage using command-line tools.
+
+**What's next:** After exploring pre-built images, see {ref}`Build an image <ref-index-build-your-first-image>` to learn how to create custom images tailored to your specific hardware and application needs.
 
 
 ```{toctree}

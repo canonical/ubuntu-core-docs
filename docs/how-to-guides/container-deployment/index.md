@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: How to deploy and manage Docker containers on Ubuntu Core. These guides cover installing Docker, running containers, packaging container images in snaps, and building custom images for container deployment.
+---
+
 (ref-index_container-deployment)=
 # Container deployment
 

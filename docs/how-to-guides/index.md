@@ -1,38 +1,45 @@
+---
+myst:
+  html_meta:
+    description: Learn how to build, deploy, and manage Ubuntu Core images and devices. These how-to guides provide practical instructions for common tasks and workflows in Ubuntu Core, organized by the operational lifecycle.
+---
+
 (ref-index_how-to-guides)=
 # How-to guides
 
-If you have a specific goal, but are already familiar with Ubuntu Core, our _How-to_ guides have more in-depth detail than our tutorials and can be applied to a broader set of applications. They'll help you achieve an end result but may require you to understand and adapt the steps to fit your specific requirements.
+These guides provide practical instructions for common tasks and workflows in Ubuntu Core, organized by the operational lifecycle.
 
-## How to use Ubuntu Core
+## Getting started
 
-While Ubuntu Core is primarily intended for developers to build custom images tailored for their application and targeted hardware, this page is a great place to start after you’ve just installed pre-built Ubuntu Core images and want to learn a few of the basic principles quickly.
+Start here if you've just installed Ubuntu Core and want to learn the fundamentals. These guides introduce basic principles and common operations you'll use every day.
 
 - {ref}`Using Ubuntu Core <how-to-guides-using-ubuntu-core>`
 
-## Image creation
+  An overview of core concepts, system configuration, and essential workflows for day-to-day use.
 
-Any device running Ubuntu Core is instantiated from an image. This image contains little more than the kernel, an init process, and a few essential tools. On all but the earliest releases of Ubuntu Core, even the snapd daemon that manages snaps is itself installed via its own snap.
+## Building and deploying images
 
-- {ref}`Create images <ref-index_image-creation>`
+Create tailored Ubuntu Core images for your hardware, then deploy them to your target devices. These guides cover custom snaps, kernel modifications, and installation on specific hardware platforms.
 
-## Deploy an image
+- {ref}`Image creation <ref-index_image-creation>`
 
-Pre-built image install guides for testing specific platforms, including devices from MediaTek and Renesas.
+  Build custom images with selected snaps, kernel configurations, and system customizations.
 
-- {ref}`Install on a Renesas RZ/G2L <ref-install-on-renesas_install-a-pre-built-ubuntu-core-image-on-a-renesas-rz-g2l>`: Install a pre-built image on a Renesas RZ/G2L device
-- {ref}`Install on a MediaTek Genio <ref-install-on-mediatek_install-a-pre-built-ubuntu-core-image-on-a-mediatek-genio-device>`: Install a pre-built image on a MediaTek Genio device
+- {ref}`Deploy an image <ref-index_container-deployment>`
 
-## Manage Ubuntu Core
+  Installation guides for specific platforms including Renesas RZ/G2L, MediaTek Genio, and AMD Kria devices.
 
-Maintain and manage your Ubuntu Core systems, including recovery modes, system users, configuration options and kernel options.
+## Operating and extending
+
+Manage your running Ubuntu Core systems throughout their lifecycle, and extend them with containerized workloads. These guides cover recovery modes, system users, updates, remodeling, and Docker container deployment.
 
 - {ref}`Manage Ubuntu Core <ref-index_manage-ubuntu-core>`
 
-## Container deployment
+  System administration, troubleshooting, recovery modes, and day-to-day operational tasks.
 
-Ubuntu Core has been developed specifically to leverage the power of snap packages, with their autonomous upgrades and confined sandbox. But it can also be used to run and deploy Docker container images, either from the command line or embedded within an Ubuntu Core image.
+- {ref}`Container deployment <ref-index_container-deployment>`
 
-- {ref}`Deploy containers <ref-index_container-deployment>`
+  Deploy and manage Docker containers alongside or within Ubuntu Core images.
 
 
 
