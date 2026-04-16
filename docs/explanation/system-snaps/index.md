@@ -12,6 +12,7 @@ There are several system snaps that can be used to connect to a local or wide ar
 - {ref}`Network Manager <explanation-system-snaps-network-manager-index>`
 - {ref}`Upower <explanation-system-snaps-upower-index>`
 - {ref}`Udisks2 <explanation-system-snaps-udisks2-index>`
+- [Ubuntu Frame](https://canonical.com/mir/docs/developer-guide)
 
 ## Configuration
 
