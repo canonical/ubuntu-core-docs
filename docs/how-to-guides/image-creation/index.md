@@ -1,30 +1,53 @@
+---
+myst:
+  html_meta:
+    description: How-to guides on building and customizing Ubuntu Core images for your hardware and requirements. Whether you're making small modifications to existing images or enabling Ubuntu Core on entirely new hardware platforms, you'll find step-by-step instructions here.
+---
+
 (ref-index_image-creation)=
 # Image creation
 
-Any device running Ubuntu Core is instantiated from an image. This image contains the kernel, an _init_ process, and a few essential tools.
+These guides show how to build and customize Ubuntu Core images for your hardware and requirements. Whether you're making small modifications to existing images or enabling Ubuntu Core on entirely new hardware platforms, you'll find step-by-step instructions here.
 
-Customizing and adding to Ubuntu Core images is a fundamental part of how Ubuntu Core operates, whether that's on an established platform, or by creating an image for a new platform.
+## Quick customization
 
-## Modify and create images
-
-Create an image from the command line, optimise its boot speed, then change its configuration.
+Start here if you have an existing hardware platform and want to customize the Ubuntu Core image. These guides cover using the `ubuntu-image` tool, adding custom snaps, configuring console-conf, and optimizing boot performance.
 
 - {ref}`Use ubuntu-image <how-to-guides-image-creation-use-ubuntu-image>`
-- {ref}`Optimise boot speed <how-to-guides-image-creation-optimise-boot-speed>`
+
+  Build Ubuntu Core images from model assertions using the command-line tool.
+
 - {ref}`Add custom snaps <how-to-guides-image-creation-add-custom-snaps>`
-- {ref}`Add a splash screen <how-to-guides-image-creation-add-a-splash-screen>`
+
+  Include additional applications and services in your image.
+
 - {ref}`Add console-conf <ref-add-console-conf_add-console-conf>`
 
-## Board enablement
+  Enable interactive onboarding and device configuration.
 
-Pre-built images are available for testing a range of devices. See {ref}`Testing Platforms <reference-testing-platforms>` for further details.
+- {ref}`Optimise boot speed <how-to-guides-image-creation-optimise-boot-speed>` and {ref}`Add a splash screen <how-to-guides-image-creation-add-a-splash-screen>`
 
-_Board enablement_, however, is the term we use for building an Ubuntu Core image for a new hardware platform, and there's a well established process for accomplishing this.
+  Improve the user experience with faster boot times and custom visuals.
+
+## Board enablement: New hardware platforms
+
+If you're bringing Ubuntu Core to new hardware, these guides walk through the complete process of platform enablement. This includes building custom kernel and gadget snaps, calculating partition layouts, and handling platform-specific configuration.
 
 - {ref}`Board enablement <how-to-guides-image-creation-board-enablement>`
-- {ref}`Calculate partition sizes <how-to-guides-image-creation-calculate-partition-sizes>`
+
+  Overview of the platform enablement process and how to get started.
+
 - {ref}`Build a gadget snap <how-to-guides-image-creation-build-a-gadget-snap>`
+
+  Create the hardware-specific gadget snap defining system properties and layout.
+
 - {ref}`Build a kernel snap <how-to-guides-image-creation-build-a-kernel-snap>`
+
+  Build a custom kernel snap for your target architecture.
+
+- {ref}`Calculate partition sizes <how-to-guides-image-creation-calculate-partition-sizes>`
+
+  Plan and calculate the partition scheme for your hardware.
 
 
 

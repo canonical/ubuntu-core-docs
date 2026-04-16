@@ -1,7 +1,13 @@
+---
+myst:
+  html_meta:
+    description: Build your first Ubuntu Core image. This tutorial guides you through creating, configuring, and testing a custom image with your own selection of snaps, and installing it on a Raspberry Pi.
+---
+
 (ref-index-build-your-first-image)=
 # Build your first image
 
-This tutorial will guide you through the steps required to **create your own Ubuntu Core image**, with **your own selection of snaps**, and **install it on a Raspberry Pi**.  
+This tutorial will guide you through the steps required to create your own Ubuntu Core image, with your own selection of snaps, and install it on a Raspberry Pi.  
 
 This same process can be used to build Ubuntu Core images for various hardware and devices.
 

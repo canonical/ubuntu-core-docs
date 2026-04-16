@@ -1,27 +1,25 @@
+---
+myst:
+  html_meta:
+    description: Getting started with Ubuntu Core. These tutorials guide you from exploring Ubuntu Core to building and deploying your own custom images.
+---
+
 (tutorials-index)=
 # Tutorials
 
-This section of our documentation contains step-by-step tutorials to help outline what Ubuntu Core is capable of while helping you achieve specific aims, such as installing Ubuntu Core or building a custom image for your device.
+These step-by-step tutorials guide you from exploring Ubuntu Core to building and deploying your own custom images.
 
-After you get Ubuntu Core up and running, take a look at our {ref}`First steps using Ubuntu Core <how-to-guides-using-ubuntu-core>` guide.
+## Try Ubuntu Core first
 
-## Build an image
-
-Ubuntu Core has been designed to facilitate the creation, deployment, and  management of secure custom images running on your own hardware. 
-
-
-* {ref}`Build your first Ubuntu Core image <ref-index-build-your-first-image>`:
-
-  A step-by-step guide to building and testing your own image with your own selection of applications.
-
-## Try Ubuntu Core
-
-These testing images are ideal for exploration  and experimentation but they're not intended for deployment or for use at scale.
-
+Start by exploring Ubuntu Core with pre-built images. These images are ideal for evaluating the system, understanding its capabilities, and getting familiar with the basic concepts, all without any build configuration or hardware-specific customization.
 
 * {ref}`Install and try a pre-built image <ref-index_try-pre-built-images>`
 
-    Test a pre-built image within a VM, or by installing Ubuntu Core on specific hardware.
+## Build your own image
+
+Once you're familiar with Ubuntu Core, take the next step by building a custom image tailored to your hardware and requirements. This tutorial walks you through creating, configuring, and testing an image with your own selection of applications.
+
+* {ref}`Build your first Ubuntu Core image <ref-index-build-your-first-image>`
 
 ```{toctree}
 :hidden:

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Manage your running Ubuntu Core systems throughout their lifecycle, and extend them with containerized workloads. These guides cover recovery modes, system users, updates, remodeling, and Docker container deployment.
+---
+
 (ref-index_manage-ubuntu-core)=
 # Manage-Ubuntu-Core
 
