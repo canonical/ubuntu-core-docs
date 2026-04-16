@@ -9,6 +9,8 @@ We also provide instructions for building and installing an Ubuntu Core image on
 - {ref}`Install on a Renesas RZ/G2L <ref-install-on-renesas_install-a-pre-built-ubuntu-core-image-on-a-renesas-rz-g2l>`: Install a pre-built testing image on a [Renesas RZ/G2L](https://www.renesas.com/en/products/microcontrollers-microprocessors/rz-mpus/rzg2l-general-purpose-mpu-dual-core-arm-cortex-a55-cpus-and-single-core-cortex-m33-cpu-3d-graphics-and)
 - {ref}`Install on a MediaTek Genio <ref-install-on-mediatek_install-a-pre-built-ubuntu-core-image-on-a-mediatek-genio-device>`: Install a pre-built testing image on a [MediaTek Genio](https://www.mediatek.com/products/iot/genio-iot)
 
+- {ref}`Install on an AMD Kria <ref-install-on-amd_install-a-pre-built-ubuntu-core-image-on-an-amd-kria>`: Install a pre-built testing image on an [AMD Kria](https://www.amd.com/en/products/system-on-modules/kria.html)
+
 ## Image writing
 
 For generic devices, we recommend users try pre-built Ubuntu Core images on a Raspberry Pi or Intel NUC, as these range of devices are easy to use and widely accessible.
@@ -25,3 +27,4 @@ For generic devices, we recommend users try pre-built Ubuntu Core images on a Ra
 
 Install on a Renesas RZ/G2L <install-on-renesas>
 Install on a MediaTek Genio <install-on-mediatek>
+Install on an AMD Kria <install-on-amd>

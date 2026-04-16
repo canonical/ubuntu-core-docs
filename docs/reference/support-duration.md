@@ -16,6 +16,8 @@ A Legacy add-on can be optionally purchased to cover an additional 5 years of se
 
 * For additional information applicable to customers under a Maintenance Agreement, please contact your designated Sales Director.
 
+Devices running the original `core` base from before November 2017 must update for their certificates to remain valid.
+
 ```{note}
 Supported Ubuntu Core components include the snap daemon (SnapD), the [kernel snap](https://ubuntu.com/kernel/lifecycle) and the [base](https://documentation.ubuntu.com/snapcraft/stable/reference/bases/#base-snap-reference) for each respective release. See {ref}`Inside Ubuntu Core <ref-inside-ubuntu-core_inside-ubuntu-core>` for details on how Ubuntu Core is composed, and the [Ubuntu Pro service description](https://canonical.com/legal/ubuntu-pro#ubuntu-pro-service-description) for Pro support coverage.
 ```
