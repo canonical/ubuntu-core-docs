@@ -24,6 +24,8 @@ We also provide instructions for building and installing an Ubuntu Core image on
   
   Install a pre-built testing image on an [AMD Kria](https://www.amd.com/en/products/system-on-modules/kria.html)
 
+- {ref}`Install on an AMD Kria <ref-install-on-amd_install-a-pre-built-ubuntu-core-image-on-an-amd-kria>`: Install a pre-built testing image on an [AMD Kria](https://www.amd.com/en/products/system-on-modules/kria.html)
+
 ## Image writing
 
 For generic devices, we recommend users try pre-built Ubuntu Core images on a Raspberry Pi or Intel NUC, as these range of devices are easy to use and widely accessible.
