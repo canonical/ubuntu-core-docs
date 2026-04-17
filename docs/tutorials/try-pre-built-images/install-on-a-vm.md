@@ -1,13 +1,13 @@
 (tutorials-get-started-try-pre-built-images-install-on-a-vm)=
 # Install on a VM
 
-You can try Ubuntu Core without any specific hardware from within a virtual machine using [Multipass](https://multipass.run/) on Windows, Mac and Linux. Multipass has integrated support for the latest Ubuntu Core images and can launch and run virtual machines from a single command.
+You can try Ubuntu Core without any specific hardware from within a virtual machine using [Multipass](https://canonical.com/multipass) on Windows, Mac and Linux. Multipass has integrated support for the latest Ubuntu Core images and can launch and run virtual machines from a single command.
 
 > If you need to test your own Ubuntu Core images, see {ref}`Test Ubuntu Core with QEMU <how-to-guides-manage-ubuntu-core-test-on-qemu>`. QEMU, is more configurable than Multipass and can boot either a supported image or a custom image, with or without TPM emulation and full disk encryption. 
 
 ## Boot Ubuntu Core with Multipass
 
-If you don't yet have Multipass installed, see [Install Multipass](https://multipass.run/docs/install-multipass). If it's installed, the following command will output its current state:
+If you don't yet have Multipass installed, see [Install Multipass](https://canonical.com/multipass/install). If it's installed, the following command will output its current state:
 
 ```bash
 multipass info
