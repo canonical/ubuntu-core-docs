@@ -35,7 +35,7 @@ Dedicated Snap Stores have their roles and administration controlled by a _Brand
 
 The Brand account grants roles and privileges to the dedicated Snap Store, and is itself derived from a nominated  {ref}`Ubuntu SSO account <ref-access-ubuntu-one_access-ubuntu-one>`. It's strongly recommended that the Ubuntu SSO account is used only for Brand activities and that its use is strictly limited and controlled.
 
-![Dedicated Snap Store SSU](https://assets.ubuntu.com/v1/90807b1f-brand-store-1.png)
+![Dedicated Snap Store SSU](/images/brand-store-1.png)
 
 There are several activities that must be done under the authority of this Brand SSO account, including:
 
@@ -46,7 +46,7 @@ There are several activities that must be done under the authority of this Brand
 
 These activities are central to managing a dedicated Snap Store, its images and devices and are therefore considered brand activities.
 
-![image](https://assets.ubuntu.com/v1/83399278-brand-store-2.png)
+![image](/images/brand-store-2.png)
 
 While it is *technically* possible to use different Ubuntu SSO accounts to administer dedicated Snap Store actions, a single Brand account simplifies access and security oversight and is the strongly recommended approach.
 
@@ -58,7 +58,7 @@ Dedicated Snap Stores, Ubuntu Core, Snapcraft, snapd and the Snap Store all use 
 
 The {ref}`model assertion <reference-assertions-model>`, for example, contains the fundamental definition of a snap-based device, including its core base and the snaps it bundles. It is signed by a key from a Brand account, which means it can be authenticated and its integrity relied upon.
 
-![image](https://assets.ubuntu.com/v1/c683de7a-brand-store-3.png)
+![image](/images/brand-store-3.png)
 
 See {ref}`Add customs snaps <how-to-guides-image-creation-add-custom-snaps>` for instructions on how to use a model assertion to create an Ubuntu Core image.
 
@@ -66,7 +66,7 @@ See {ref}`Add customs snaps <how-to-guides-image-creation-add-custom-snaps>` for
 
 When a device boots for the first time, it obtains a signed {ref}`serial assertion <reference-assertions-serial>` from a [Model Service](https://ubuntu.com/internet-of-things/appstore/docs/how-to/configure-model-service/) or [Serial vault](https://canonical-serial-vault.readthedocs-hosted.com/). Each device can then be authenticated with the dedicated Snap Store using the model assertion's _model name_ and an authentication token called a **macaroon**. 
 
-![image](https://assets.ubuntu.com/v1/6a584f30-brand-store-4.png)
+![image](/images/brand-store-4.png)
 
 The macaroon is provided by the Canonical **Authentication Service**, via the Store API, and requires that a device has the following:
 
@@ -76,7 +76,7 @@ The macaroon is provided by the Canonical **Authentication Service**, via the St
 1. **Gadget snap with prepare-device hook pointing at the Model Service or Serial Vault** 
   The system needs a {ref}`gadget snap <reference-gadget-snap-format>` that has a {ref}`prepare-device hook <ref-gadget-snap-format_prepare-device-hook>` script that points the device to the Model Service or Serial Vault. The hook script sets a few snapd variables, including the Model Service or Serial Vault URL and device’s serial number.
 
-![image](https://assets.ubuntu.com/v1/0d9651a1-brand-store-5.png)
+![image](/images/brand-store-5.png)
 
 See [Serial vault overview](https://ubuntu.com/core/services/guide/serial-vault-overview) for further Serial vault details, and our [IoT guide](https://ubuntu.com/core/services/guide) for more details on using devices with a dedicated Snap Store.
 

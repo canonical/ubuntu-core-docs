@@ -126,15 +126,15 @@ The modes for which the component must be present can be specified as well. Synt
 
    The following is a sample _validation-sets_ declaration:
    ```text
-    "validation-sets": [
+       "validation-sets": [
         {
            "account-id": <account-id>,
             "name": <name of validation-set>,
             "sequence": <sequence>,
-            "mode": <"enforce"|"prefer-enforce" >,
-        },
-    ],
-    ```
+            "mode": <"enforce"|"prefer-enforce" >
+        }
+    ], 
+   ```
     For more information, see [Validation sets](https://snapcraft.io/docs/validation-sets) and [`core-20.json`](https://github.com/snapcore/snapd/blob/master/tests/main/prepare-image-validation-sets/asserts/core-20.json) for a test model assertion defining a validation set.
 
 ---
