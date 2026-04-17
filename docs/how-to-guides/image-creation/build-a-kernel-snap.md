@@ -2,7 +2,7 @@
 # Build a kernel snap
 
 The [kernel snap](https://snapcraft.io/docs/reference/development/yaml-schemas/the-kernel-snap/)
-one of the essential snaps that need to be specified in the {ref}`model assertion <reference-assertions-model>`
+is one of the essential snaps that need to be specified in the {ref}`model assertion <reference-assertions-model>`
 when building a {ref}`custom image <how-to-guides-image-creation-add-custom-snaps>`.
 The snap can be updated but it cannot be swapped for a different kernel snap.
 
@@ -192,7 +192,7 @@ If you already have a known-working kernel, you may well be just a short bit of
 repackaging to end up with a kernel snap for your hardware platform!
 
 You can find more examples of kernel snaps maintained
-by the Devices Field Engineering team at their [GitHub repository](https://github.com/canonical/iot-field-kernel-snap).
+by the Devices Field Engineering team at their [GitHub repository](https://github.com/canonical/iot-field-kernel-snap/tree/main/snap).
 The `main` branch provides several `snapcraft.yaml` snippets which explain
 several different kinds of ways kernel snaps can be constructed.
 
@@ -205,13 +205,11 @@ installed, all of which are provided by any Ubuntu release.
 
 ### Important considerations
 
-One notable feature of the kernel and initrd plugins is their approach to
-cross-compiling and cross-building. Depending on the build host, some additional
-steps may be required for cross-building a kernel snap to function correctly.
+Depending on the build host, some additional steps may be required for
+cross-building a kernel snap build to succeed.
 
-The build host must be properly configured to support installing
-cross-architecture packages as well as executing binaries built for a different
-architecture.
+The build host must be properly configured to support installing packages and
+executing binaries for a non-native architecture.
 
 #### Package support
 
@@ -225,24 +223,25 @@ following steps may suffice:
 3. informing dpkg that a foreign architecture is allowed, and
 4. installing the correct libc interpreter
 
-For instance, the below will add support for cross-building arm64 kernel snaps:
+For instance, the below will add support for cross-building arm64 kernel snaps
+on an amd64 host:
 
 ```bash
 { echo 'Types: deb'; \
-      echo 'URIs: http://ports.ubuntu.com/ubuntu-ports'; \
-      echo 'Suites: jammy jammy-updates jammy-backports'; \
-      echo 'Components: main universe restricted multiverse'; \
-      echo 'Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg'; \
-      echo 'Architectures: arm64'; } >> /etc/apt/sources.list.d/cross.sources
+  echo 'URIs: http://ports.ubuntu.com/ubuntu-ports'; \
+  echo 'Suites: jammy jammy-updates jammy-backports'; \
+  echo 'Components: main universe restricted multiverse'; \
+  echo 'Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg'; \
+  echo 'Architectures: arm64'; } >> /etc/apt/sources.list.d/cross.sources
 
-      sed -i 's/deb h/deb [arch=amd64] h/' /etc/apt/sources.list
+ sed -i 's/deb h/deb [arch=amd64] h/' /etc/apt/sources.list
 
-      dpkg --add-architecture arm64
+ dpkg --add-architecture arm64
 
-      apt update
-      apt install libc6-arm64-cross
+ apt update
+ apt install libc6-arm64-cross
 
-      ln -sf /usr/aarch64-linux-gnu/ld-linux-aarch64.so.1 /lib
+ ln -sf /usr/aarch64-linux-gnu/ld-linux-aarch64.so.1 /lib
 ```
 
 It's important that these changes be made within the *build environment*;
