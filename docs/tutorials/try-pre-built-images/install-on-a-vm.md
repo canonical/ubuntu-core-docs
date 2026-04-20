@@ -21,11 +21,12 @@ The output will include Ubuntu Core images alongside standard Ubuntu images:
 
 ```text
 Image       Aliases           Version          Description
-core20                        20230119         Ubuntu Core 20
+core24                        20240603         Ubuntu Core 24
 core22                        20230717         Ubuntu Core 22
-20.04        ocal             20240129.1       Ubuntu 20.04 LTS
+core20                        20230119         Ubuntu Core 20
+24.04        noble, lts       20260321         Ubuntu 24.04 LTS
 22.04        ammy,lts         20240126         Ubuntu 22.04 LTS
-daily:24.04  noble,devel      20240129         Ubuntu 24.04 LTS
+20.04        ocal             20240129.1       Ubuntu 20.04 LTS
 ```
 
 ### Launch an image
@@ -36,10 +37,10 @@ To create a new instance and boot your choice of Ubuntu Core image, type:
 multipass launch <image-name> -n <instance-name>
 ```
 
-For example, the following command will launch and boot core22 with an instance name of `mycore22`:
+For example, the following command will launch and boot core24 with an instance name of `mycore24`:
 
 ```bash
-multipass launch core22 -n mycore22
+multipass launch core24 -n mycore24
 ```
 
 The image is downloaded and locally cached when it's launched for the first time.
@@ -49,7 +50,7 @@ The image is downloaded and locally cached when it's launched for the first time
 You can connect to a running instance of Ubuntu Core by opening a shell environment on that running instance:
 
 ```bash
-multipass shell mycore22
+multipass shell mycore24
 ```
 
 You are now operating within the Ubuntu Core environment. See {ref}`First steps with Ubuntu Core <how-to-guides-using-ubuntu-core>` for suggestions on what to try.
