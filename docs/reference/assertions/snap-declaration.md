@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Snap-declaration assertion reference. Controls snap permissions, interfaces, and auto-connection policies.
+---
+
 (reference-assertions-snap-declaration)=
 # snap-declaration
 

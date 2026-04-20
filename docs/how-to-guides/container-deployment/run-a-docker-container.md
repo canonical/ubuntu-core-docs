@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Run Docker containers on Ubuntu Core. Install Docker Engine snap and execute containerized applications with proper interface permissions.
+---
+
 (how-to-guides-container-deployment-run-a-docker-container)=
 # Run a Docker container
 

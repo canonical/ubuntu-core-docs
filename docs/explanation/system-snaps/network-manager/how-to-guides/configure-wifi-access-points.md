@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Configure Wi-Fi access points on Ubuntu Core. Create Wi-Fi hotspots with NetworkManager on Ubuntu Core devices.
+---
+
 (explanation-system-snaps-network-manager-how-to-guides-configure-wifi-access-points)=
 # Configure Wi-Fi access points
 

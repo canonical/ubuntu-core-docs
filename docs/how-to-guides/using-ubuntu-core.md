@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Manage applications and configurations in Ubuntu Core. Learn snap interfaces and build IoT applications using confined environment best practices.
+---
+
 (how-to-guides-using-ubuntu-core)=
 # Using Ubuntu Core
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Hardware-identity assertion reference. Binds devices to unique hardware identity keys for device registration.
+---
+
 (reference-assertions-hardware-identity)=
 # hardware-identity
 

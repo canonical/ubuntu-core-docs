@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Learn about brand accounts for Ubuntu Core. Manage dedicated snap stores with signing keys and device models.
+---
+
 (explanation-stores-brand-accounts)=
 # Brand accounts
 

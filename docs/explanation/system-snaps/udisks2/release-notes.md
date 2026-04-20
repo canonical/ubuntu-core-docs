@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Udisks2 release notes for Ubuntu Core. Version information and changelog for disk management snap.
+---
+
 (explanation-system-snaps-udisks2-reference-release-notes)=
 # Release Notes
 

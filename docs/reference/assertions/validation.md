@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Validation assertion reference. Approve specific snap revisions for installation with snap gating mechanism.
+---
+
 (reference-assertions-validation)=
 # validation
 

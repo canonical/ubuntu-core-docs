@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Configure cellular connections on Ubuntu Core. Set up mobile broadband with modem-manager snap.
+---
+
 (explanation-system-snaps-network-manager-how-to-guides-configure-cellular-connections)=
 # Configure cellular connections
 

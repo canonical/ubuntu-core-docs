@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Use ubuntu-image tool to build Ubuntu Core images. Compile bootable images from model assertions with optional custom snaps.
+---
+
 (how-to-guides-image-creation-use-ubuntu-image)=
 # Use ubuntu-image
 

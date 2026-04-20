@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Add system users to Ubuntu Core devices. Create users via system-user assertions for device access without console-conf.
+---
+
 (how-to-guides-manage-ubuntu-core-add-a-system-user)=
 # Add a system user
 

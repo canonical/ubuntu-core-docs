@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Check tutorial requirements for building Ubuntu Core images. Prerequisites for host system and Raspberry Pi hardware setup.
+---
+
 (ref-requirements_requirements)=
 # Requirements
 

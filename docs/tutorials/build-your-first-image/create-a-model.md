@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Create a model assertion for Ubuntu Core images. Download and customize model files with your selected snaps.
+---
+
 (ref-create-a-model_create-a-model)=
 # Create a model
 

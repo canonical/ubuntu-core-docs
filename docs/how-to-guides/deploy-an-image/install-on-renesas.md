@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Install Ubuntu Core on Renesas RZ/G2L boards. Flash bootloaders and images through two-stage serial configuration process.
+---
+
 (ref-install-on-renesas_install-a-pre-built-ubuntu-core-image-on-a-renesas-rz-g2l)=
 # Install a pre-built Ubuntu Core image on a Renesas RZ/G2L
 

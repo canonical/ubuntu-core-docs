@@ -1,6 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Install NetworkManager snap on Ubuntu Core. Manage network devices and connections with NetworkManager snap.
+---
+
 (explanation-system-snaps-network-manager-install-networkmanager)=
 # Install NetworkManager
-
 
 The NetworkManager snap is currently available from the Snap Store. At can be installed on any system that supports snaps but is only recommended on {ref}`Ubuntu Core <ref-index_ubuntu-core-documentation>` at the moment.
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Snap-resource-revision assertion reference. Version metadata and integrity verification for snap components.
+---
+
 (reference-assertions-snap-resource-revision)=
 # snap-resource-revision
 

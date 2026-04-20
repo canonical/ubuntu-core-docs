@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: Ubuntu Core support duration. Long-term support timelines and versioning for Ubuntu Core releases.
+---
+
+=(ref-support-duration_support-duration)=
 # Ubuntu Core support duration
 
 Ubuntu Core follows our [Long Term Support](https://ubuntu.com/about/release-cycle) (LTS) model. Each release includes 10 years of security maintenance. 

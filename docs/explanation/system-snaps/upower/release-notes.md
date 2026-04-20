@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Upower release notes for Ubuntu Core. Version information and changelog for power management snap.
+---
+
 (explanation-system-snaps-upower-reference-release-notes)=
 # Release Notes
 

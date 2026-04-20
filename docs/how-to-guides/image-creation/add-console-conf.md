@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Add console-conf to Ubuntu Core images. Include interactive device onboarding interface for network and user setup configuration.
+---
+
 (ref-add-console-conf_add-console-conf)=
 # Add console-conf
 

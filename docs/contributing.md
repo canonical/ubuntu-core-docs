@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Contribute to Ubuntu Core documentation. Learn how to write, improve, and submit contributions through the Open Documentation Academy.
+---
+
 (ref-contributing_contribute-to-our-docs)=
 # Contribute to our docs
 

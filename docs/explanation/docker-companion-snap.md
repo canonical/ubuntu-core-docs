@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Learn about Docker companion snaps on Ubuntu Core. Deploy containerized applications with transactional updates.
+---
+
 (explanation-docker-companion-snap)=
 # Docker companion snap
 

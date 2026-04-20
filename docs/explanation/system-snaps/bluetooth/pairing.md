@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Learn Bluetooth device pairing on Ubuntu Core. Understand authentication and key exchange for secure connections.
+---
+
 # Device pairing
 
 This section teaches how to pair two Bluetooth devices using  *bluetoothctl*  - the command-line interface to BlueZ.

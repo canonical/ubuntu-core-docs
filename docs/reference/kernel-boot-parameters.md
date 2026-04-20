@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Kernel boot parameters for Ubuntu Core. Reference for configuring kernel-specific features and debugging.
+---
+
 (reference-kernel-boot-parameters)=
 # Kernel boot parameters
 

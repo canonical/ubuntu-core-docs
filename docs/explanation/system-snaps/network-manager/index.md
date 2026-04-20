@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: NetworkManager on Ubuntu Core. Manage Ethernet, Wi-Fi, mobile broadband, and VPN connections.
+---
+
 (explanation-system-snaps-network-manager-index)=
 # Network-Manager
 

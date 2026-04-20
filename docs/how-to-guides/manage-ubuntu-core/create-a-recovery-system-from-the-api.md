@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Create recovery systems via snapd API on Ubuntu Core. Use validation sets to constrain snap revisions in recovery systems.
+---
+
 (how-to-guides-manage-ubuntu-core-create-a-recovery-system-from-the-api)=
 # Create a recovery system from the API
 

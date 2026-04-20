@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Install Ubuntu Core on PC using dd command. Deploy pre-built images to NUC and generic PC hardware from USB.
+---
+
 (tutorials-get-started-try-pre-built-images-install-on-a-device-use-the-dd-command)=
 # Use the dd command
 

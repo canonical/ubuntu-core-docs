@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Boot and configure your custom Ubuntu Core image. Set up networking and administrator account on Raspberry Pi.
+---
+
 # Boot the image
 
 After {ref}`building and writing <ref-build-the-image_build-the-image>` a custom image for a Raspberry Pi, the device can now be booted and configured.

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Calculate partition sizes for Ubuntu Core storage layout. Use formulas to optimize partition allocation based on snap sizes and retention.
+---
+
 (how-to-guides-image-creation-calculate-partition-sizes)=
 # Calculate partition sizes
 

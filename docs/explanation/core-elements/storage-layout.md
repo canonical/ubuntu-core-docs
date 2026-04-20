@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Understand Ubuntu Core storage layout. Learn about ubuntu-seed, ubuntu-boot, ubuntu-save, and ubuntu-data partitions.
+---
+
 (explanation-core-elements-storage-layout)=
 # Storage layout
 

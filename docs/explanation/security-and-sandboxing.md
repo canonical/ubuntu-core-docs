@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Understand Ubuntu Core security and sandboxing. Learn about snap confinement, interfaces, and security policies.
+---
+
 (explanation-security-and-sandboxing)=
 # Security and sandboxing
 

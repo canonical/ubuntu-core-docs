@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Upower on Ubuntu Core. Monitor power devices and battery statistics for power management.
+---
+
 (explanation-system-snaps-upower-index)=
 # Upower
 

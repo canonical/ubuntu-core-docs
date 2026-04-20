@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Sign your Ubuntu Core model assertion with GPG keys to create verifiable model files linked to your account.
+---
+
 (ref-sign-the-model_sign-the-model)=
 #  Sign the model
 

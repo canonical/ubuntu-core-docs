@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Learn about Ubuntu Core components and architecture. Understand how kernel, boot assets, runtime, and snaps work together.
+---
+
 (ref-inside-ubuntu-core_inside-ubuntu-core)=
 # Inside Ubuntu Core
 

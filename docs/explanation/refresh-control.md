@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Control snap refreshes on Ubuntu Core. Use gating snaps to validate snap revisions before installation.
+---
+
 (explanation-refresh-control)=
 # Refresh control
 

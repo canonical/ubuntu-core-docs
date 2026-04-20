@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Understand how Ubuntu Core installation works. Learn the six-step installation process and snap provisioning mechanism.
+---
+
 (explanation-how-installation-works)=
 # How installation works
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Edit network connections on Ubuntu Core. Use nmcli to modify and manage connection settings.
+---
+
 (explanation-system-snaps-network-manager-how-to-guides-edit-connections)=
 # Edit connections
 

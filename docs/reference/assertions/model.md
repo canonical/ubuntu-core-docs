@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Model assertion reference. Defines device specifications including kernel snap, gadget snap, and base snap.
+---
+
 (reference-assertions-model)=
 # model
 

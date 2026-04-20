@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Modify kernel boot parameters on Ubuntu Core. Customize kernel options dynamically via snapd API or statically in gadget snap.
+---
+
 (how-to-guides-manage-ubuntu-core-modify-kernel-options)=
 # Modify kernel options
 

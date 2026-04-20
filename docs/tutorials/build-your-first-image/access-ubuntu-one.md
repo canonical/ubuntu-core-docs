@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Set up your Ubuntu One account for Ubuntu Core development. Create developer credentials and register SSH keys.
+---
+
 (ref-access-ubuntu-one_access-ubuntu-one)=
 # Access Ubuntu One
 

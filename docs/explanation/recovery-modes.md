@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Understand Ubuntu Core recovery modes. Learn about install, run, recover, and factory reset functions for device management.
+---
+
 (explanation-recovery-modes)=
 # Recovery modes
 

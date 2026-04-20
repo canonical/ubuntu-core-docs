@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Build Ubuntu Core image for Docker deployment. Create custom images with Docker and companion snaps with proper interfaces.
+---
+
 (how-to-guides-container-deployment-build-an-image-for-docker-deployment)=
 # Build an image for Docker deployment
 

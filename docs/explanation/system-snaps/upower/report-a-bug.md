@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Report Upower bugs on Ubuntu Core. File issues with system logs and power management information.
+---
+
 (explanation-system-snaps-upower-reference-report-a-bug)=
 # Report a Bug
 

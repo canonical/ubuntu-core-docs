@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Build your custom Ubuntu Core image using the ubuntu-image tool. Compile bootable images from signed model assertions.
+---
+
 (ref-build-the-image_build-the-image)=
 # Build the image
 

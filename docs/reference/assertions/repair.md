@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Repair assertion reference. Last-resort recovery mechanism to restore unresponsive Ubuntu Core devices.
+---
+
 (reference-assertions-repair)=
 # repair
 

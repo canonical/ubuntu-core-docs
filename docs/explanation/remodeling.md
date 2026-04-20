@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Understand remodeling on Ubuntu Core. Deploy new model assertions to update system snaps while preserving data.
+---
+
 (explanation-remodeling)=
 # Remodeling
 

@@ -1,6 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Install Upower snap on Ubuntu Core. Monitor power devices and battery statistics on Ubuntu Core systems.
+---
+
 (explanation-system-snaps-upower-install-upower)=
 # Install Upower
-
 
 The Upower snap is currently available from the Snap Store. At can be installed on any system that supports snaps but is only recommended on {ref}`Ubuntu Core <ref-index_ubuntu-core-documentation>` at the moment.
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Build a kernel snap for Ubuntu Core. Package Linux kernel, modules, firmware, and device trees for custom hardware platforms.
+---
+
 (how-to-guides-image-creation-build-a-kernel-snap)=
 # Build a kernel snap
 

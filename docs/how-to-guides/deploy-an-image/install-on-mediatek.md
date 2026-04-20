@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Install Ubuntu Core on MediaTek Genio devices. Flash system images with genio-tools and configure MAC addresses.
+---
+
 (ref-install-on-mediatek_install-a-pre-built-ubuntu-core-image-on-a-mediatek-genio-device)=
 # Install a pre-built Ubuntu Core image on a MediaTek Genio Device
 

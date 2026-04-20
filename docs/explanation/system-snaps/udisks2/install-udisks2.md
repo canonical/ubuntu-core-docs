@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Install Udisks2 snap on Ubuntu Core. Access and manage disk storage devices with udisksd daemon.
+---
+
 (explanation-system-snaps-udisks2-install-udisks2)=
 # Install Udisks2
 

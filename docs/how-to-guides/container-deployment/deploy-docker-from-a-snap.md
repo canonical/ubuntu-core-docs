@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Deploy Docker from a snap on Ubuntu Core. Create companion snaps that manage containerized applications as services.
+---
+
 (how-to-guides-container-deployment-deploy-docker-from-a-snap)=
 # Deploy Docker from a snap
 
