@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Add splash screen to Ubuntu Core images. Enable and customize boot-time splash screens with kernel parameters and Plymouth themes.
+---
+
 (how-to-guides-image-creation-add-a-splash-screen)=
 # Add a splash screen
 

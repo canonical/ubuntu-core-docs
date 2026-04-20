@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Report NetworkManager bugs on Ubuntu Core. File issues with diagnostic logs and system information.
+---
+
 (explanation-system-snaps-network-manager-reference-report-a-bug)=
 # Report a Bug
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Understand remodeling essential snaps. Learn the process of swapping kernel and base snaps with rollback capability.
+---
+
 (ref-remodel-essential-snaps_remodel-essential-snaps)=
 # Remodel essential snaps
 

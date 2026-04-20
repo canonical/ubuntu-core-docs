@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Ubuntu Core system requirements. Minimum hardware specifications for architectures, RAM, storage, and encryption.
+---
+
 (reference-system-requirements)=
 # System requirements
 

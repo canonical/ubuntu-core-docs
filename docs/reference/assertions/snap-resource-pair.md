@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Snap-resource-pair assertion reference. Defines compatibility between snap revisions and component revisions.
+---
+
 (reference-assertions-snap-resource-pair)=
 # snap-resource-pair
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Engage with the Ubuntu Core community. Learn about contributing to snapd, kernel snaps, gadget snaps, and documentation.
+---
+
 (ref-community-engagement_community-engagement)=
 # Community engagement
 

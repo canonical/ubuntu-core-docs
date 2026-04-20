@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Install Ubuntu Core in a virtual machine with Multipass. Try pre-built images without dedicated hardware requirements.
+---
+
 (tutorials-get-started-try-pre-built-images-install-on-a-vm)=
 # Install on a VM
 

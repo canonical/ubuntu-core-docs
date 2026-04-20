@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Troubleshoot common Ubuntu Core issues. Find solutions for TPM, installation, and configuration problems.
+---
+
 (how-to-guides-manage-ubuntu-core-troubleshooting)=
 # Troubleshooting
 

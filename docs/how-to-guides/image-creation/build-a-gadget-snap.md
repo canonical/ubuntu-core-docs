@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Build a gadget snap for Ubuntu Core. Define device-specific system properties, partitions, and boot configurations for custom images.
+---
+
 (how-to-guides-image-creation-build-a-gadget-snap)=
 # Build a gadget snap
 

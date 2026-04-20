@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Package Docker images in a snap for Ubuntu Core. Bundle Docker images for air-gapped deployment without registry access.
+---
+
 (how-to-guides-container-deployment-package-docker-images-in-a-snap)=
 # Package Docker images in a snap
 

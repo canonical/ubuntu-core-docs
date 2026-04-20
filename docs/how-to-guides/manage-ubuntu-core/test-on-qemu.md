@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Test Ubuntu Core on QEMU virtual machines. Deploy and test images with KVM, OVMF, and optional TPM emulation.
+---
+
 (how-to-guides-manage-ubuntu-core-test-on-qemu)=
 # Test on QEMU
 

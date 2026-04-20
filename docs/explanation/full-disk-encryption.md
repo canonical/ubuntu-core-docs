@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Learn about full disk encryption on Ubuntu Core. Protect device data using TPM 2.0 and UEFI Secure Boot.
+---
+
 (explanation-full-disk-encryption)=
 # Full disk encryption
 

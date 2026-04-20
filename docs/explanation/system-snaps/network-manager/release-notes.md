@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: NetworkManager release notes for Ubuntu Core. Check versions and changelog for network management snap.
+---
+
 (explanation-system-snaps-network-manager-reference-release-notes)=
 # Release Notes
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Upgrade Ubuntu Core devices to later releases. Remodel devices with updated model assertions for system upgrades.
+---
+
 (how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core)=
 # Upgrade Ubuntu Core
 

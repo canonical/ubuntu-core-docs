@@ -1,10 +1,8 @@
-(explanation-stores-dedicated-snap-stores)=
-
-```{admonition} Ubuntu 20.04 LTS is moving out of standard support in May 2025.
-:class: tip
-We recommend migrating to the next LTS or upgrading to Ubuntu Pro. [Learn more about your options](https://ubuntu.com/20-04).
-```
-
+---
+myst:
+  html_meta:
+    description: Understand dedicated snap stores. Control available snaps and releases with brand accounts and store scoping.
+---
 (ref-dedicated-snap-store_dedicated-snap-store)=
 # Dedicated snap store
 

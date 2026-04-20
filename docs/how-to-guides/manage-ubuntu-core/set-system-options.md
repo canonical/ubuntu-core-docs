@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Set system options on Ubuntu Core devices. Manage configuration using snap set and snap get commands.
+---
+
 (how-to-guides-manage-ubuntu-core-set-system-options)=
 # Set system options
 

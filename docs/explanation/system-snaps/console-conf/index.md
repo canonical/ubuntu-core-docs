@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: console-conf snap for Ubuntu Core. Initial user and network configuration interface for Ubuntu Core devices.
+---
+
 (ref-index_console-conf)=
 # console-conf
 

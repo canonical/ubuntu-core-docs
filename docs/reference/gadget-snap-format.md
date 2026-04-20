@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Gadget snap format reference. Complete guide to gadget snap properties, volumes, and configuration.
+---
+
 (reference-gadget-snap-format)=
 # Gadget snap format
 

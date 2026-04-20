@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Understand store scoping for Ubuntu Core. Link auto-connection grants to dedicated snap stores with assertions.
+---
+
 (explanation-stores-store-scoping)=
 # Store scoping
 

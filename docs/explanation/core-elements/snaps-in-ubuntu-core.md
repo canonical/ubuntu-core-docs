@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Explore how snaps work in Ubuntu Core. Learn about kernel snaps, gadget snaps, base snaps, and app snaps.
+---
+
 (ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core)=
 # Snaps in Ubuntu Core
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: System-user assertion reference. Create local system users on specific devices when console-conf is disabled.
+---
+
 (reference-assertions-system-user)=
 # system-user
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Confdb-schema assertion reference. Define granular access and constraints for configuration databases.
+---
+
 (reference-assertions-confdb-schema)=
 # confdb-schema
 

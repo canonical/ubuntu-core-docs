@@ -9,7 +9,13 @@ Alongside {ref}`account <reference-assertions-account>`, {ref}`snap-declaration 
 
 The `make-system-user` snap can is used to create a composite assertion file which includes all of the required assertions needed to trigger automatic creation of a user account via an inserted USB drive containing this file. See {ref}`make-system-user <how-to-guides-manage-ubuntu-core-add-a-system-user>` for more details.
 
-## Account-key assertion fields
+#---
+myst:
+  html_meta:
+    description: Account-key assertion reference. Holds public keys for account authentication and assertion validation.
+---
+
+# Account-key assertion fields
 
 The following fields can be used in an account-key user assertion:
 

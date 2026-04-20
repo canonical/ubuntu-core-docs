@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: System snaps for Ubuntu Core. Extend functionality with Bluetooth, networking, modem, disk, and power management snaps.
+---
+
 (ref-index_system-snaps)=
 # System snaps
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Include console-conf in model assertions. Add device configuration UI to Ubuntu Core model definitions.
+---
+
 # Including console-conf in a model assertion
 
 [Model

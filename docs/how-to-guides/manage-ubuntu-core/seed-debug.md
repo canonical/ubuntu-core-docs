@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Enable seed debug mode on Ubuntu Core. Add debug shell during installation for troubleshooting image failures.
+---
+
 # Debug install mode
 
 When developing an Ubuntu Core image, it's not always easy to investigate what might cause an installation to fail.

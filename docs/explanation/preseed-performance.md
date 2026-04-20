@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Optimize Ubuntu Core first boot with preseeding. Accelerate snap installation and setup during image creation.
+---
+
 (explanation-preseed-performance)=
 # Preseed performance
 

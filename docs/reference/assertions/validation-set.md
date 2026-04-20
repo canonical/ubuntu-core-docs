@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Validation-set assertion reference. List required, optional, and forbidden snaps for device configurations.
+---
+
 (reference-assertions-validation-set)=
 # validation-set
 

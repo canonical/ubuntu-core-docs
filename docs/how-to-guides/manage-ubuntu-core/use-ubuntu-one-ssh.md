@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Use Ubuntu One for SSH access to Ubuntu Core. Set up SSH authentication with Ubuntu One account credentials.
+---
+
 (how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh)=
 # Use Ubuntu One SSH
 

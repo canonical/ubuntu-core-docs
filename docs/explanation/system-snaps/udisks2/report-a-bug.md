@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Report Udisks2 bugs on Ubuntu Core. File issues with system logs and diagnostic information.
+---
+
 (explanation-system-snaps-udisks2-reference-report-a-bug)=
 # Report a Bug
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Snap-revision assertion reference. Assigns revision numbers to snap builds and validates snap integrity.
+---
+
 (reference-assertions-snap-revision)=
 # snap-revision
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Bluetooth on Ubuntu Core. Learn about BlueZ stack, configuration, and device pairing on Ubuntu Core systems.
+---
+
 (ref-index_bluetooth)=
 # Bluetooth
 

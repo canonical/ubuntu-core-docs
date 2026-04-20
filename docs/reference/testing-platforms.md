@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Ubuntu Core testing platforms. Supported devices and images for testing and development on various hardware.
+---
+
 (reference-testing-platforms)=
 # Testing platforms
 

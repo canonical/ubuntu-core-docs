@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Use console-conf on Ubuntu Core. Configure networking and create administrator accounts on first boot.
+---
+
 # Using console-conf
 
 Ubuntu Core images that include console-conf will start a text-mode application when the

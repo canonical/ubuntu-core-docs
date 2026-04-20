@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Serial assertion reference. Unique device identifier binding device to its brand, model, and public key.
+---
+
 (reference-assertions-serial)=
 # serial
 

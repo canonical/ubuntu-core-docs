@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Account assertion reference. Ties snap account names to store identifiers for authentication and authorization.
+---
+
 (reference-assertions-account)=
 # account
 

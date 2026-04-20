@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Snap-build assertion reference. Defines snap build properties and provides traceability for snap builds.
+---
+
 (reference-assertions-snap-build)=
 # snap-build
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Store assertion reference. Configure device connections to snap stores and manage trust relationships.
+---
+
 (reference-assertions-store)=
 # store
 

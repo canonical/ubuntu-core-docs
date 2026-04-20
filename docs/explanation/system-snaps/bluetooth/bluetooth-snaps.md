@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Add Bluetooth to snaps on Ubuntu Core. Configure snap plugs for bluez and bluetooth-control interface access.
+---
+
 # Add Bluetooth to snaps
 
 This section will show what are the necessary bits in the  *snapcraft.yaml*  while snapping an application that uses Bluetooth.

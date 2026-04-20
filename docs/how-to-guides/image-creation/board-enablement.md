@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Enable Ubuntu Core on new hardware boards. Create kernel and gadget snaps needed to support unsupported device platforms.
+---
+
 (how-to-guides-image-creation-board-enablement)=
 # Board enablement
 

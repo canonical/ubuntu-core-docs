@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Install Ubuntu Core on AMD Kria SOMs. Deploy pre-built images using Raspberry Pi Imager and configure with console-conf.
+---
+
 (ref-install-on-amd_install-a-pre-built-ubuntu-core-image-on-an-amd-kria)=
 # Install a pre-built Ubuntu Core image on an AMD Kria
 

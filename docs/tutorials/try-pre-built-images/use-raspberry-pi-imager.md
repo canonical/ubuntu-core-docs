@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Install Ubuntu Core on Raspberry Pi using Raspberry Pi Imager. Write pre-built images to microSD cards easily and quickly.
+---
+
 (ref-use-raspberry-pi-imager_use-raspberry-pi-imager)=
 # Use Raspberry Pi Imager
 

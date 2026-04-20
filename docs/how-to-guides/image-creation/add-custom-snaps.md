@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Add custom snaps to Ubuntu Core images. Build images with locally-sourced snaps using model assertions and ubuntu-image tool.
+---
+
 (how-to-guides-image-creation-add-custom-snaps)=
 # Add custom snaps
 

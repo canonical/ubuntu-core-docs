@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Use recovery modes on Ubuntu Core devices. Access recovery options for device repair, restoration, or reinstallation.
+---
+
 (how-to-guides-manage-ubuntu-core-use-a-recovery-mode)=
 # Use a recovery mode
 

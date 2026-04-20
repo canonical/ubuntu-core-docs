@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Udisks2 on Ubuntu Core. Access and manipulate disks and storage devices with udisksd daemon.
+---
+
 (explanation-system-snaps-udisks2-index)=
 # Udisks2
 

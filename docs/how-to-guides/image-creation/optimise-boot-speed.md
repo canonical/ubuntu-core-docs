@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Optimize Ubuntu Core boot speed. Use preseeding to pre-compute snap installations and security profiles during image creation.
+---
+
 (how-to-guides-image-creation-optimise-boot-speed)=
 # Optimise boot speed
 

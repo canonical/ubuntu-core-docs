@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Overview of Ubuntu Core snap stores. Learn about account registration, snap publishing, and store management.
+---
+
 (explanation-stores-store-overview)=
 # Store overview
 

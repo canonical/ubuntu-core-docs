@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Ubuntu Core release notes. Latest features, updates, and release information for Ubuntu Core versions.
+---
+
 (ref-release-notes_release-notes)=
 # Release notes
 

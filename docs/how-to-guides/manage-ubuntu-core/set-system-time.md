@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Set system time on Ubuntu Core. Configure NTP synchronization and time management across Ubuntu Core 20+ devices.
+---
+
 (how-to-guides-manage-ubuntu-core-set-system-time)=
 # Set system time
 

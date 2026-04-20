@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Assertions reference guide. Complete documentation of all assertion types used by snapd and the Snap Store.
+---
+
 (ref-index_assertions)=
 # Assertions
 

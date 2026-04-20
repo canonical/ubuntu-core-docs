@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Modem Manager on Ubuntu Core. Manage mobile broadband devices and cellular connections with ModemManager snap.
+---
+
 (explanation-system-snaps-modem-manager-index)=
 # Modem Manager
 
