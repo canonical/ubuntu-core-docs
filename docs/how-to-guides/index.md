@@ -17,7 +17,7 @@ Start here if you've just installed Ubuntu Core and want to learn the fundamenta
 
   An overview of core concepts, system configuration, and essential workflows for day-to-day use.
 
-## Building and deploying images
+## Build and deploy custom images
 
 Create tailored Ubuntu Core images for your hardware, then deploy them to your target devices. These guides cover custom snaps, kernel modifications, and installation on specific hardware platforms.
 
@@ -25,7 +25,7 @@ Create tailored Ubuntu Core images for your hardware, then deploy them to your t
 
   Build custom images with selected snaps, kernel configurations, and system customizations.
 
-- {ref}`Deploy an image <ref-index_container-deployment>`
+- {ref}`Deploy to target hardware <ref-index_how-to-deploy-an-image>`
 
   Installation guides for specific platforms including Renesas RZ/G2L, MediaTek Genio, and AMD Kria devices.
 
