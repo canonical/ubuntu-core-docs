@@ -17,35 +17,38 @@ It is designed for embedded Linux developers, IoT device manufacturers, cloud-ba
 
 ## In this documentation
 
-### Getting started
+### Orientation
 
-Learn how to install and explore Ubuntu Core, then perform basic operations on your system.
+Start by exploring Ubuntu Core with pre-built images and learning the fundamentals. These resources introduce the system, basic concepts, and common operations you'll use every day.
 
-* **Quick exploration**: {ref}`Try pre-built images <ref-index_try-pre-built-images>` • {ref}`Using Ubuntu Core <how-to-guides-using-ubuntu-core>`
-* **Installation**: {ref}`Install on AMD <ref-install-on-amd_install-a-pre-built-ubuntu-core-image-on-an-amd-kria>` • {ref}`Install on MediaTek <ref-install-on-mediatek_install-a-pre-built-ubuntu-core-image-on-a-mediatek-genio-device>` • {ref}`Install on Renesas <ref-install-on-renesas_install-a-pre-built-ubuntu-core-image-on-a-renesas-rz-g2l>`
+* **Image installation**: {ref}`Try pre-built images <ref-index_try-pre-built-images>`
+* **Learn the basics**: {ref}`Using Ubuntu Core <how-to-guides-using-ubuntu-core>`
 
-### Building custom images
+### Build and deploy custom images
 
-Create tailored Ubuntu Core images for your hardware and requirements. Understand the components and configuration options available.
+Create tailored Ubuntu Core images for your specific hardware and requirements, then deploy them to your target devices.
 
 * **Getting started**: {ref}`Build your first Ubuntu Core image <ref-index-build-your-first-image>` • {ref}`Image creation guides <ref-index_image-creation>`
-* **Customization**: {ref}`Add custom snaps <how-to-guides-image-creation-add-custom-snaps>` • {ref}`Build a gadget snap <how-to-guides-image-creation-build-a-gadget-snap>` • {ref}`Build a kernel snap <how-to-guides-image-creation-build-a-kernel-snap>` • {ref}`Add console conf <ref-add-console-conf_add-console-conf>`
+* **Customization**: {ref}`Add custom snaps <how-to-guides-image-creation-add-custom-snaps>` • {ref}`Build a gadget snap <how-to-guides-image-creation-build-a-gadget-snap>` • {ref}`Build a kernel snap <how-to-guides-image-creation-build-a-kernel-snap>` • {ref}`Add console conf <ref-add-console-conf_add-console-conf>` • {ref}`Optimise boot speed <how-to-guides-image-creation-optimise-boot-speed>`
+* **Deploy to hardware**: {ref}`Install on AMD Kria <ref-install-on-amd_install-a-pre-built-ubuntu-core-image-on-an-amd-kria>` • {ref}`Install on MediaTek Genio <ref-install-on-mediatek_install-a-pre-built-ubuntu-core-image-on-a-mediatek-genio-device>` • {ref}`Install on Renesas RZ/G2L <ref-install-on-renesas_install-a-pre-built-ubuntu-core-image-on-a-renesas-rz-g2l>`
 * **Snap stores**: {ref}`Store overview <explanation-stores-store-overview>` • {ref}`Brand accounts <explanation-stores-brand-accounts>` • {ref}`Store scoping <explanation-stores-store-scoping>`
 
-### Manage your system
+### Device management
 
-Manage your devices throughout their lifecycle. Keep systems updated, recover from issues, and optimize performance.
+Manage your running Ubuntu Core systems throughout their lifecycle. Keep systems updated, recover from issues, extend with containers, and optimize performance.
 
-* **Lifecycle management**: {ref}`Update control <explanation-refresh-control>` • {ref}`Remodeling <explanation-remodeling>` • {ref}`Upgrade Ubuntu Core <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>`
-* **Operations**: {ref}`Add a system user <how-to-guides-manage-ubuntu-core-add-a-system-user>` • {ref}`Recovery modes <explanation-recovery-modes>` • {ref}`Container deployment <ref-index_container-deployment>`
+* **System administration**: {ref}`Add a system user <how-to-guides-manage-ubuntu-core-add-a-system-user>` • {ref}`Set system options <how-to-guides-manage-ubuntu-core-set-system-options>` • {ref}`Connect with SSH <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>`
+* **Recovery and updates**: {ref}`Recovery modes <explanation-recovery-modes>` • {ref}`Update control <explanation-refresh-control>` • {ref}`Remodeling <explanation-remodeling>` • {ref}`Upgrade Ubuntu Core <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>`
+* **Container deployment**: {ref}`Container deployment <ref-index_container-deployment>`
+* **Performance**: {ref}`Preseed performance <explanation-preseed-performance>`
 
-### Architecture and internals
+### System architecture
 
-Understand the core concepts and design of Ubuntu Core. Learn how the system keeps itself secure and up-to-date.
+Understand the core concepts, design decisions, and technical internals of Ubuntu Core. Learn how the system maintains security, reliability, and enables rapid updates.
 
 * **Core elements**: {ref}`Inside Ubuntu Core <ref-inside-ubuntu-core_inside-ubuntu-core>` • {ref}`Storage layout <explanation-core-elements-storage-layout>` • {ref}`Snaps in Ubuntu Core <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>` • {ref}`System snaps <ref-index_system-snaps>`
-* **Deployment**: {ref}`How installation works <explanation-how-installation-works>` • {ref}`System requirements <reference-system-requirements>`
-* **Security and reliability**: {ref}`Full disk encryption <explanation-full-disk-encryption>` • {ref}`Sandboxing <explanation-security-and-sandboxing>` • {ref}`CVE remediation <explanation-cve-remediation>`
+* **Deployment internals**: {ref}`How installation works <explanation-how-installation-works>` • {ref}`System requirements <reference-system-requirements>`
+* **Security**: {ref}`Full disk encryption <explanation-full-disk-encryption>` • {ref}`Sandboxing <explanation-security-and-sandboxing>` • {ref}`CVE remediation <explanation-cve-remediation>`
 
 ## How this documentation is organised
 
