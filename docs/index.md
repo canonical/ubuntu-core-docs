@@ -84,5 +84,11 @@ Tutorials <tutorials/index>
 How-to guides <how-to-guides/index>
 Reference <reference/index>
 Explanation <explanation/index>
-How to contribute <contributing>
+```
 
+```{toctree}
+:hidden:
+:maxdepth: 2
+
+Contributing <contributing/index.md>
+```
