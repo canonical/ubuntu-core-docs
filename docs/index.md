@@ -17,29 +17,30 @@ It is designed for embedded Linux developers, IoT device manufacturers, cloud-ba
 
 ## In this documentation
 
-### Orientation
+### First steps
 
 Start by exploring Ubuntu Core with pre-built images and learning the fundamentals. These resources introduce the system, basic concepts, and common operations you'll use every day.
 
 * **Image installation**: {ref}`Try pre-built images <ref-index_try-pre-built-images>`
 * **Learn the basics**: {ref}`Using Ubuntu Core <how-to-guides-using-ubuntu-core>`
 
-### Build and deploy custom images
+### Image building
 
 Create tailored Ubuntu Core images for your specific hardware and requirements, then deploy them to your target devices.
 
-* **Getting started**: {ref}`Build your first Ubuntu Core image <ref-index-build-your-first-image>` • {ref}`Image creation guides <ref-index_image-creation>`
-* **Customization**: {ref}`Add custom snaps <how-to-guides-image-creation-add-custom-snaps>` • {ref}`Build a gadget snap <how-to-guides-image-creation-build-a-gadget-snap>` • {ref}`Build a kernel snap <how-to-guides-image-creation-build-a-kernel-snap>` • {ref}`Add console conf <ref-add-console-conf_add-console-conf>` • {ref}`Optimise boot speed <how-to-guides-image-creation-optimise-boot-speed>`
+* **Getting started**: {ref}`Build your first Ubuntu Core image <ref-index-build-your-first-image>` • {ref}`Image creation guides <ref-index_image-creation>` • {ref}`Use ubuntu-image <how-to-guides-image-creation-use-ubuntu-image>`
+* **Customization**: {ref}`Add custom snaps <how-to-guides-image-creation-add-custom-snaps>` • {ref}`Build a gadget snap <how-to-guides-image-creation-build-a-gadget-snap>` • {ref}`Build a kernel snap <how-to-guides-image-creation-build-a-kernel-snap>` • {ref}`Add console conf <ref-add-console-conf_add-console-conf>` • {ref}`Optimise boot speed <how-to-guides-image-creation-optimise-boot-speed>` • {ref}`Add a splash screen <how-to-guides-image-creation-add-a-splash-screen>` • {ref}`Calculate partition sizes <how-to-guides-image-creation-calculate-partition-sizes>`
+* **New hardware**: {ref}`Board enablement <how-to-guides-image-creation-board-enablement>`
 * **Deploy to hardware**: {ref}`Install on AMD Kria <ref-install-on-amd_install-a-pre-built-ubuntu-core-image-on-an-amd-kria>` • {ref}`Install on MediaTek Genio <ref-install-on-mediatek_install-a-pre-built-ubuntu-core-image-on-a-mediatek-genio-device>` • {ref}`Install on Renesas RZ/G2L <ref-install-on-renesas_install-a-pre-built-ubuntu-core-image-on-a-renesas-rz-g2l>`
-* **Snap stores**: {ref}`Store overview <explanation-stores-store-overview>` • {ref}`Brand accounts <explanation-stores-brand-accounts>` • {ref}`Store scoping <explanation-stores-store-scoping>`
+* **Snap stores**: {ref}`Store overview <explanation-stores-store-overview>` • {ref}`Brand accounts <explanation-stores-brand-accounts>` • {ref}`Dedicated snap store <ref-dedicated-snap-store_dedicated-snap-store>` • {ref}`Store scoping <explanation-stores-store-scoping>`
 
 ### Device management
 
 Manage your running Ubuntu Core systems throughout their lifecycle. Keep systems updated, recover from issues, extend with containers, and optimize performance.
 
-* **System administration**: {ref}`Add a system user <how-to-guides-manage-ubuntu-core-add-a-system-user>` • {ref}`Set system options <how-to-guides-manage-ubuntu-core-set-system-options>` • {ref}`Connect with SSH <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>`
-* **Recovery and updates**: {ref}`Recovery modes <explanation-recovery-modes>` • {ref}`Update control <explanation-refresh-control>` • {ref}`Remodeling <explanation-remodeling>` • {ref}`Upgrade Ubuntu Core <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>`
-* **Container deployment**: {ref}`Container deployment <ref-index_container-deployment>`
+* **System administration**: {ref}`Add a system user <how-to-guides-manage-ubuntu-core-add-a-system-user>` • {ref}`Set system options <how-to-guides-manage-ubuntu-core-set-system-options>` • {ref}`Connect with SSH <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>` • {ref}`Modify kernel options <how-to-guides-manage-ubuntu-core-modify-kernel-options>` • {ref}`Set system time <how-to-guides-manage-ubuntu-core-set-system-time>` • {ref}`Test on QEMU <how-to-guides-manage-ubuntu-core-test-on-qemu>`
+* **Recovery and updates**: {ref}`Recovery modes <explanation-recovery-modes>` • {ref}`Use a recovery mode <how-to-guides-manage-ubuntu-core-use-a-recovery-mode>` • {ref}`Update control <explanation-refresh-control>` • {ref}`Remodeling <explanation-remodeling>` • {ref}`Remodel essential snaps <ref-remodel-essential-snaps_remodel-essential-snaps>` • {ref}`Upgrade Ubuntu Core <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>` • {ref}`Troubleshooting <how-to-guides-manage-ubuntu-core-troubleshooting>`
+* **Container deployment**: {ref}`Container deployment <ref-index_container-deployment>` • {ref}`Docker companion snap <explanation-docker-companion-snap>`
 * **Performance**: {ref}`Preseed performance <explanation-preseed-performance>`
 
 ### System architecture
@@ -48,7 +49,8 @@ Understand the core concepts, design decisions, and technical internals of Ubunt
 
 * **Core elements**: {ref}`Inside Ubuntu Core <ref-inside-ubuntu-core_inside-ubuntu-core>` • {ref}`Storage layout <explanation-core-elements-storage-layout>` • {ref}`Snaps in Ubuntu Core <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>` • {ref}`System snaps <ref-index_system-snaps>`
 * **Deployment internals**: {ref}`How installation works <explanation-how-installation-works>` • {ref}`System requirements <reference-system-requirements>`
-* **Security**: {ref}`Full disk encryption <explanation-full-disk-encryption>` • {ref}`Sandboxing <explanation-security-and-sandboxing>` • {ref}`CVE remediation <explanation-cve-remediation>`
+* **Security**: {ref}`Full disk encryption <explanation-full-disk-encryption>` • {ref}`Full disk encryption with OP-TEE <ref-explanation-full-disk-encryption>` • {ref}`Sandboxing <explanation-security-and-sandboxing>` • {ref}`CVE remediation <explanation-cve-remediation>`
+* **Reference**: {ref}`Gadget snap format <reference-gadget-snap-format>` • {ref}`Assertions <ref-index_assertions>` • {ref}`Testing platforms <reference-testing-platforms>` • {ref}`Release notes <ref-release-notes_release-notes>`
 
 ## How this documentation is organised
 
