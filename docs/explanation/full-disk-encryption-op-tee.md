@@ -4,6 +4,7 @@ myst:
     description: Understand OP-TEE full disk encryption on Ubuntu Core. Learn how Trusted Execution Environment protects disk keys.
 ---
 
+(ref-explanation-full-disk-encryption)=
 # Full disk encryption with OP-TEE
 
 OP-TEE is an open source Trusted Execution Environment (TEE) for Arm systems. It provides a _secure world_ that runs alongside the normal operating system. Trusted Applications (TAs) run inside that secure world, while normal-world software calls into them through standard TEE APIs. For {ref}`Full disk encryption <explanation-full-disk-encryption>` (FDE), OP-TEE protects disk-unlock keys. All cryptographic operations happen inside the secure world and _plaintext_ keys are never written to disk.
