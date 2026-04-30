@@ -43,11 +43,11 @@ Understand how Ubuntu Core systems evolve over time. These topics cover installa
 
 ## Security
 
-Learn how Ubuntu Core maintains security and resilience. These topics explain the confinement model, encryption, and mechanisms for protecting data and maintaining system integrity.
+Learn how Ubuntu Core maintains security and resilience. These topics explain the confinement model, encryption, device onboarding, and mechanisms for protecting data and maintaining system integrity.
 
-- {ref}`Security and sandboxing <explanation-security-and-sandboxing>`, {ref}`Full disk encryption <explanation-full-disk-encryption>`, and {ref}`CVE remediation <explanation-cve-remediation>`
+- {ref}`Security and sandboxing <explanation-security-and-sandboxing>`, {ref}`Full disk encryption <explanation-full-disk-encryption>`, {ref}`Secure device onboarding <explanation-secure-device-onboarding>`, and {ref}`CVE remediation <explanation-cve-remediation>`
 
-  Application isolation and permission models, data protection mechanisms, and how vulnerabilities are addressed in Ubuntu Core.
+  Application isolation and permission models, data protection mechanisms, cryptographic device identity establishment, and how vulnerabilities are addressed in Ubuntu Core.
 
 
 ```{toctree}
@@ -65,6 +65,7 @@ Preseed performance <preseed-performance>
 Docker companion snap <docker-companion-snap>
 Full disk encryption <full-disk-encryption>
 Full disk encryption with OP-TEE <full-disk-encryption-op-tee>
+Secure device onboarding <secure-device-onboarding>
 CVE remediation <cve-remediation>
 Security and sandboxing <security-and-sandboxing>
 Community engagement <community-engagement>
