@@ -56,7 +56,7 @@ username: <username>
 id: xSfWKGdLoQBoQx88
 permissions: package_access, package_manage, package_metrics, package_push, package_register, package_release, package_update
 channels: no restrictions
-expires: 2024-04-17T10:25:13.675Z 
+expires: 2028-04-17T10:25:13.675Z 
 ```
 
 In the output above, the example **id** is `xSfWKGdLoQBoQx88` -- we'll use this ID for subsequent examples, but you should obviously use your own ID from now on.

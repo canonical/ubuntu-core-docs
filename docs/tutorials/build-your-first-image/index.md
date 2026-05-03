@@ -45,7 +45,7 @@ A _model assertion_ is a signed recipe that describes the components that compri
 
 * {ref}`Download a model assertion <ref-create-a-model_download-a-model-file>`
 
-  Download the 64-bit reference model for the Raspberry Pi: [ubuntu-core-24-pi-arm64.json](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-pi-arm64.json), save it locally with the `wget` command.
+  Download the 64-bit reference model for the Raspberry Pi.
 
 * {ref}`Edit the model assertion <ref-create-a-model_edit-the-model-file>`
 
@@ -61,7 +61,7 @@ A _model assertion_ is a signed recipe that describes the components that compri
 
 * {ref}`snaps <ref-create-a-model_snaps>`
 
-  Add the snaps **pi**, **pi-kernel**, **core24** and **snapd** that are required for a functioning Ubuntu Core device.
+  Add the snaps **pi**, **pi-kernel**, **core base snap** and **snapd** that are required for a functioning Ubuntu Core device.
 
 * {ref}`A complete model assertion <ref-create-a-model_complete-model-example>`
 
