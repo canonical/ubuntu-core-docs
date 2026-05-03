@@ -61,12 +61,12 @@ From the live desktop that now appears, we need to do three things:
 
 1. **Download Ubuntu Core**
     Ubuntu Core images are hosted at:
-    [https://cdimage.ubuntu.com/ubuntu-core/24/stable/current/](https://cdimage.ubuntu.com/ubuntu-core/24/stable/current/)
+    [https://cdimage.ubuntu.com/ubuntu-core/26/stable/current/](https://cdimage.ubuntu.com/ubuntu-core/26/stable/current/)
 
     Images are compressed with *XZ* and have a corresponding `.xz` file extension.
 
     Use Firefox to download the following amd64 image for your device:
-    [ubuntu-core-24-amd64.img.xz](https://cdimage.ubuntu.com/ubuntu-core/24/stable/current/ubuntu-core-24-amd64.img.xz) **(450MB)** 
+    [ubuntu-core-26-amd64.img.xz](https://cdimage.ubuntu.com/ubuntu-core/26/stable/current/ubuntu-core-26-amd64.img.xz) **(450MB)** 
 
 1. **Discover the internal storage device name**
    This is usually `/dev/sda` but it's important to first make sure. One of the easiest ways is to open _GPartEd_ and use the drop-down menu in the top-right to select the correct device. You'll see storage space and layout below. Make a note of the device name.
@@ -75,7 +75,7 @@ From the live desktop that now appears, we need to do three things:
    Open the terminal application and enter the following command, adjusting the paths to the Ubuntu Core download and the internal storage device accordingly:
 
    ```bash
-   xzcat ~/Downloads/ubuntu-core-24-amd64.img.xz | \
+   xzcat ~/Downloads/ubuntu-core-26-amd64.img.xz | \
    sudo dd of=/dev/<target disk device> bs=32M status=progress; sync
    ```
 **Your internal storage will be irrevocably overwritten**. Please make sure anything you wish to keep is backed-up before you start. After the write process has completed, you can safely restart and reboot your machine, which will then trigger the Ubuntu Core installation process.
