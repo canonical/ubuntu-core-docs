@@ -18,7 +18,7 @@ Secure device onboarding solves this with public-key cryptography.
 - Each device gets a unique hardware identity key pair during manufacturing.
 - The public part of this key is registered with the model service as a hardware-identity assertion.
 - When registering, the device proves it owns the private key by signing a challenge (nonce) from the model service.
-- There's no shared secret to compromise, and each compromised device only affects that device—not the whole batch.
+- There's no shared secret to compromise, and each compromised device only affects that device. Not the whole batch.
 
 Using this functionality, the model service can verify a device's identity before issuing it with a serial assertion that is subsequently used for any future interaction with remote Canonical services. 
 
