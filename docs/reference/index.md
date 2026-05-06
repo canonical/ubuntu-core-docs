@@ -53,4 +53,5 @@ Support duration <support-duration>
 Release notes <release-notes>
 Gadget snap format <gadget-snap-format>
 Kernel boot parameters <kernel-boot-parameters>
+Software bill of materials <software-bill-of-materials>
 Assertions <assertions/index>

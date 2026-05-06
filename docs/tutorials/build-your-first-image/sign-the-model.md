@@ -65,14 +65,14 @@ $ snapcraft list-keys
 As mentioned earlier, the timestamp in the model assertion must be set to a time and date _after_ the creation of our key. This means we need to edit `my-model.json` to update the timestamp with the current time.
 
 ```json
-    "timestamp": "2022-04-04T10:40:41+00:00",
+    "timestamp": "2026-05-07T10:40:41+00:00",
 ```
 
 This is a UTC-formatted time and date value, used to denote the assertion's creation time. It needs to be replaced with the current time and  date, which can be generated with the following command:
 
 ```bash
 $ date -Iseconds --utc
-2023-09-29T09:29:09+00:00
+2026-05-07T09:29:09+00:00
 ```
 
 ## Sign the model

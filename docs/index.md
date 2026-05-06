@@ -78,6 +78,11 @@ Thinking about using Ubuntu Core for your next project? [Get in touch](https://u
 
 ```{toctree}
 :hidden:
+:maxdepth: 2
+```
+
+```{toctree}
+:hidden:
 :titlesonly:
 :maxdepth: 2
 :glob:

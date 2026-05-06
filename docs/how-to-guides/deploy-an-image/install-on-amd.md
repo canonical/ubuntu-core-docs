@@ -9,7 +9,7 @@ myst:
 
 Pre-built images are ideal for the exploration and experimentation of Ubuntu Core, but they are not intended for deployment or use at scale. They include snaps to provide an onboarding and evaluation experience, alongside an SSH connection, and these are unlikely to be required in your own Ubuntu Core deployment.
 
-You can find more information about building Core images in the [Build your first image](/tutorials/build-your-first-image/index) tutorial.
+You can find more information about building Core images in the {ref}`Build your first image <ref-index-build-your-first-image>` tutorial.
 
 Ubuntu Core runs on a wide range of hardware, and pre-built images are available for the [AMD Kria SOMs](https://www.amd.com/en/products/system-on-modules/kria.html).
 
