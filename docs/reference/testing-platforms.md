@@ -53,7 +53,7 @@ Ubuntu community members also work with, and produce, images for other platforms
 [22-pi-armhf-model]:  https://github.com/canonical/models/blob/master/ubuntu-core-22-pi-armhf.json
 [22-amd64-model]:     https://github.com/canonical/models/blob/master/xinyi-classic-22-amd64.json
 [22-pi-arm64-model]:  https://github.com/canonical/models/blob/master/ubuntu-core-22-pi-arm64.json
-[20-pi-armhf-model]:  https://github.com/canonical/models/blob/master/ubuntu-core-22-pi-armhf.json
+[20-pi-armhf-model]:  https://github.com/canonical/models/blob/master/ubuntu-core-20-pi-armhf.json
 [20-amd64-model]:     https://github.com/canonical/models/blob/master/ubuntu-core-20-amd64.json
 [20-pi-arm64-model]:  https://github.com/canonical/models/blob/master/ubuntu-core-20-pi-arm64.json
 
