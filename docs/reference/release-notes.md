@@ -53,7 +53,7 @@ The snap daemon, snapd, manages snap package updates and Ubuntu Core functionali
 
 To ensure you receive latest security updates and bug fixes, ensure you upgrade to a new release of snapd shortly after it is released.
 
-(release-notes=cloud-init)=
+(release-notes-cloud-init)=
 ## Bundled Python changes for Ubuntu Core 26
 
 Core base snaps (e.g. core22, core24) provide a run-time environment with a minimal set of libraries that are common to many applications.

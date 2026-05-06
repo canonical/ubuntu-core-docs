@@ -20,6 +20,7 @@ A Legacy add-on can be optionally purchased to cover an additional 5 years of se
 | Ubuntu Core 20 | Feb 2021 | Feb 2030 | Jun 2035 | amd64, arm64 | - |
 | Ubuntu Core 22 | Jun 2022 | Jun 2032 | Jun 2037 | amd64, arm64 | - |
 | Ubuntu Core 24 | Jun 2024 | Jun 2034 | Jun 2039 | amd64, arm64, armhf | - |
+| Ubuntu Core 26 | May 2026 | May 2036 | May 2041 | amd64, arm64, armhf | - |
 
 * For additional information applicable to customers under a Maintenance Agreement, please contact your designated Sales Director.
 
