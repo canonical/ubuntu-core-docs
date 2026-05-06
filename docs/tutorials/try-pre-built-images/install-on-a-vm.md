@@ -75,6 +75,13 @@ Create a new instance of Ubuntu Core with enough resources to run the model, typ
 ```bash
 multipass launch core26 -n aibox --cpus 4 --memory 10GB --disk 16GB 
 ```
+To open a shell running within the new instance, type:
+
+```
+multipass shell aibox
+```
+
+The Ubuntu Core instance will initially update itself, and may restart automatically.
 
 > **Note:**
 > Inference snaps use snap components for runtime and model weights. `gemma4` requires snapd 2.68 or newer.
