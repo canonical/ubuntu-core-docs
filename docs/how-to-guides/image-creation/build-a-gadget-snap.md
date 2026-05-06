@@ -9,7 +9,7 @@ myst:
 
 Gadget snaps define and manipulate device-specific configuration and system properties, such as partition layouts and default configuration options. Building a gadget snap enables these device-specific options to be set and integrated within an Ubuntu Core image.
 
-This page includes an overview of what a gadget snap includes, plus templates for building the gadget and the snap. See {ref}`Gadget snaps <reference-gadget-snap-format>` for reference details on what gadget snaps can contain, and see {ref}`Types of snap <ref-snaps-in-ubuntu-core_types-of-snap>` for details on the other types of snap that make up an Ubuntu Core image. 
+This page includes an overview of what a gadget snap includes, plus templates for building the gadget and the snap. See {ref}`Gadget snaps <reference-gadget-snap-format>` for reference details on what gadget snaps can contain, and see {ref}`Types of snap <ref-snaps-in-ubuntu-core_types-of-snap>` for details on the other types of snap that make up an Ubuntu Core image.
 
 ## Inside a gadget snap
 
@@ -47,8 +47,8 @@ Canonical's IoT Devices Field team maintains a [GitHub repository](https://githu
 
 The following gadget repositories contain the reference gadget snap definitions for _amd64_ (64 bit PC Gadget Snap) and the Raspberry Pi family of devices supported by Ubuntu Core:
 
-- [ 64-bit PC Gadget Snap](https://github.com/snapcore/pc-amd64-gadget)
-- [ Raspberry Pi "Universal" Gadget Snap](https://github.com/snapcore/pi-gadget)
+- [64-bit PC Gadget Snap](https://github.com/canonical/pc-gadget)
+- [Raspberry Pi "Universal" Gadget Snap](https://github.com/canonical/pi-gadget)
 
 ### Template: gadget.yaml
 
@@ -161,7 +161,7 @@ confinement: strict
 # The summary should be short and simple.
 summary: An Ubuntu Core gadget for the <platform>
 # Always include license information.
-# Valid licenses: https://github.com/snapcore/snapd/blob/master/spdx/licenses.go
+# Valid licenses: https://github.com/canonical/snapd/blob/master/spdx/licenses.go
 license: "CC-BY-SA-4.0 AND ..."
 # This repository is upstream for this gadget. Optionally include your contact
 # information.
@@ -228,7 +228,7 @@ parts:
       - grub-efi-<arch>:${CRAFT_ARCH_BUILD_FOR}
     override-build: |
       craftctl default
-      
+
       # Set the version of the snap from the GRUB package
       craftctl set version=$(find "${CRAFT_PART_BUILD}/../stage_packages/" \
                               -name grub-efi-${CRAFT_ARCH_BUILD_FOR}_*.deb \
@@ -386,7 +386,7 @@ git checkout 22-amd64-pc
 
 With the correct git branch selected, `snap/snapcraft.yaml` now contains everything required to build the PC gadget snap.
 
-This example embeds the pre-built [Canonical reference PC gadget](https://github.com/snapcore/pc-gadget) as a base from the *snapcraft.yaml*. To build the gadget, run the _snapcraft_ command:
+This example embeds the pre-built [Canonical reference PC gadget](https://github.com/canonical/pc-gadget) as a base from the *snapcraft.yaml*. To build the gadget, run the _snapcraft_ command:
 
 ```bash
 $ snapcraft
@@ -440,4 +440,3 @@ Created snap package virt_22-1_riscv64.snap
 ```
 
 See [Architectures](https://snapcraft.io/docs/architectures) for more details on defining architectures and [Image building](https://ubuntu.com/core/docs/board-enablement#heading--image-building) for instructions on how to build a bootable image that includes the gadget snap.
-

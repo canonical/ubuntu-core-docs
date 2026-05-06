@@ -77,13 +77,13 @@ The model includes details such as the store to use (`brand-id` and `authority-i
 As outlined in {ref}`Snaps in Ubuntu Core <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>`, there are four principle types of snap that combine to create the Ubuntu Core environment. These are **kernel**, **gadget**, **base** and **snapd**, and all four need to be referenced within a model assertion.
 
 ```{tip}
- 
+
 The _console-conf_ user-interface that configures the network and system user when a device first boots, has migrated to an optional snap in Ubuntu Core 24 and later. See {ref}`console-conf for device onboarding <ref-add-console-conf_add-console-conf>` for further details.
 ```
 
 ## Building with ubuntu-image
 
-The following will build an _amd64_ image using the [ubuntu-core-24-amd64.model](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-24-amd64.model) reference model:
+The following will build an _amd64_ image using the [ubuntu-core-24-amd64.model](https://raw.githubusercontent.com/canonical/models/master/ubuntu-core-24-amd64.model) reference model:
 
 
 ```bash
@@ -98,7 +98,7 @@ Snaps can be optionally added at build time with the `--snap` argument.
 
 These additional snaps can include {ref}`custom snaps <how-to-guides-image-creation-add-custom-snaps>`, locally-stored {ref}`offline snaps <ref-remodelling_offline-remodeling>`, and snaps that can be downloaded directly from the store.
 
-- **Custom snaps** can only be added when a {ref}`model <reference-assertions-model>` has a `grade` attribute of `dangerous` 
+- **Custom snaps** can only be added when a {ref}`model <reference-assertions-model>` has a `grade` attribute of `dangerous`
 - Production-grade images cannot include custom snaps, and additional snaps must first be declared with a `presence` attribute of `optional` in the model.
 - **Offline snaps** must include locally cached assertions. Using offline locally stored snaps can speed up the image creation process.
 
@@ -128,7 +128,7 @@ You can also specify multiple volume sizes by separating them with commas, and y
 
 Rather than immediately booting an image on native hardware, it's good practice to boot an image first with QEMU ([https://www.qemu.org/](https://www.qemu.org)). See {ref}`Testing Ubuntu Core with QEMU <how-to-guides-manage-ubuntu-core-test-on-qemu>` for further details.
 
-After a successful boot, Ubuntu Core initialisation will ask for both networking parameters and an Ubuntu One account (see <a href="https://snapcraft.io/account" class="uri">https://snapcraft.io/account</a>). 
+After a successful boot, Ubuntu Core initialisation will ask for both networking parameters and an Ubuntu One account (see <a href="https://snapcraft.io/account" class="uri">https://snapcraft.io/account</a>).
 
 When the initialisation process has finished, and rebooted, you can SSH to the device using either the physical device network address,  or localhost port 8022 for the above QEMU example command:
 
@@ -136,20 +136,20 @@ When the initialisation process has finished, and rebooted, you can SSH to the d
 ssh <username>@localhost -p 8022
 ```
 
-You are now connected to the Ubuntu Core virtual machine, from where you can configure and install whatever apps you need. 
+You are now connected to the Ubuntu Core virtual machine, from where you can configure and install whatever apps you need.
 
 To list which snaps are installed, for example, type `snap list` and to view the model assertion used to build the image, type `snap model --assertion`:
 
 ```bash
 $ snap model --assertion
-type: model                                                                                                                                                
-authority-id: canonical                                                                                                                                    
-series: 16                                                                                                                                                 
-brand-id: canonical                                                                                                                                        
-model: ubuntu-core-24-amd64                                                                                                                                
-architecture: amd64                                                                                                                                        
-base: core24                                                                                                                                               
-grade: signed                                                                                                                                              
+type: model
+authority-id: canonical
+series: 16
+brand-id: canonical
+model: ubuntu-core-24-amd64
+architecture: amd64
+base: core24
+grade: signed
 [...]
 ```
 
@@ -164,4 +164,3 @@ serial:    1194d330-d27b-4230-a16f-ab0d23665010
 ```
 
 See the [Snap documentation](https://snapcraft.io/docs) for more details on working with snaps. To build a custom image that includes your own selection of snaps, take a look at {ref}`Add custom snaps <how-to-guides-image-creation-add-custom-snaps>`.
-

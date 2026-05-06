@@ -17,13 +17,13 @@ The kernel snap contains the Linux kernel for the device.
 
 Ubuntu Core kernels are based on the `multiv7_defconfig` Linux kernel build target plus some mandatory Ubuntu configs.
 
-You can find reference kernels here: <https://github.com/snapcore/sample-kernels>
+You can find reference kernels here: <https://github.com/canonical/sample-kernels>
 
 For more information, see {ref}`build a kernel snap <how-to-guides-image-creation-build-a-kernel-snap>`.
 
 ## The gadget snap
 
-The {ref}`gadget snap <reference-gadget-snap-format>` is an essential part of Ubuntu Core. It's responsible for defining and manipulating device-specific system properties and configuration, as well as the boot and file system layout which is used for image building. 
+The {ref}`gadget snap <reference-gadget-snap-format>` is an essential part of Ubuntu Core. It's responsible for defining and manipulating device-specific system properties and configuration, as well as the boot and file system layout which is used for image building.
 
 You will need to create two files in the `meta` directory of this snap:
 
@@ -113,7 +113,7 @@ See {ref}`Model assertion <reference-assertions-model>` for more details on what
 
 Before signing the model, you need to have a valid key registered with your store account. Make sure the `snapcraft` and `snap` commands know about you by logging in using the email address attached to your account.
 
-```bash  
+```bash
 snapcraft login
 snap login you@yourdomain.com
 ```
@@ -183,7 +183,7 @@ Images are built from a model assertion using [ubuntu-image](https://github.com/
 ```bash
 snap install ubuntu-image --classic
 ```
-    
+
 You can now build your image using the following command:
 
 ```bash

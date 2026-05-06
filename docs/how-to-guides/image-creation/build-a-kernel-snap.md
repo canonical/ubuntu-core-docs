@@ -11,11 +11,11 @@ The kernel snap one of the essential snaps that need to be specified in the {ref
 
 Canonical publishes several reference kernel snaps, alongside kernel snaps for certified public clouds and general purpose computing images for popular physical devices, such as 64-bit x86, Raspberry Pi and RISC-V.
 
-A custom Linux kernel build allows for device-specific architectures, configuration and modifications, and manually building the kernel snap has the same advantages and requirements. 
+A custom Linux kernel build allows for device-specific architectures, configuration and modifications, and manually building the kernel snap has the same advantages and requirements.
 
 Before building a kernel snap, we highly recommend building a working kernel first before migrating this to a kernel snap. The same configuration options and dependencies will be required.
 
-See [Kernel snaps](https://snapcraft.io/docs/the-kernel-snap) for reference details on what gadget snaps can contain, and see {ref}`Types of snap <ref-snaps-in-ubuntu-core_types-of-snap>` for details on the other types of snap that make up an Ubuntu Core image. 
+See [Kernel snaps](https://snapcraft.io/docs/the-kernel-snap) for reference details on what gadget snaps can contain, and see {ref}`Types of snap <ref-snaps-in-ubuntu-core_types-of-snap>` for details on the other types of snap that make up an Ubuntu Core image.
 
 ```{important}
 Building a kernel snap is useful for prototyping but its maintenance and support becomes your responsibility.
@@ -76,7 +76,7 @@ confinement: strict
 # The summary should be short and simple.
 summary: An Ubuntu Core kernel for the <platform>
 # Always include license information.
-# Valid licenses: https://github.com/snapcore/snapd/blob/master/spdx/licenses.go
+# Valid licenses: https://github.com/canonical/snapd/blob/master/spdx/licenses.go
 license: "CC-BY-SA-4.0 AND GPL-2.0 AND ..."
 # This repository is upstream for this kernel. Optionally include your contact
 # information.
@@ -112,7 +112,7 @@ platforms:
   # If <name> is one of amd64|arm64|armhf|ppc64el|riscv64|s390x, build-{on,for} are implicit
   <name>:
     build-on:  [<arch>]
-    build-for: [<arch>] 
+    build-for: [<arch>]
 
 # Any additional repositories required.
 # For instance, if you are building on AMD64 for ARM64,
@@ -556,4 +556,3 @@ $ lxc file pull path/to/kernal-snap-name_arm64.snap .
 ```
 
 The kernel snap has now been built and is ready to be integrated into an Ubuntu Core image. See {ref}`Custom images <how-to-guides-image-creation-add-custom-snaps>` for further details.
-
