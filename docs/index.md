@@ -80,7 +80,7 @@ Thinking about using Ubuntu Core for your next project? [Get in touch](https://u
 :hidden:
 :maxdepth: 2
 
-Ubuntu Core 26 <uc26-release-notes>
+Latest: Ubuntu Core 26 <uc26-release-notes>
 ```
 
 ```{toctree}
