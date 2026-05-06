@@ -84,7 +84,7 @@ multipass shell aibox
 The Ubuntu Core instance will initially update itself, and may restart automatically.
 
 > **Note:**
-> Inference snaps use snap components for runtime and model weights. `gemma4` requires snapd 2.68 or newer.
+> Inference snaps use snap components for runtime and model weights. `gemma4` requires snapd 2.68 or newer, which should be installed automatically when the instance updates.
 >
 > Check your version with:
 >
