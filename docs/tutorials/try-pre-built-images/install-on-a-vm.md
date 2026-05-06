@@ -154,7 +154,7 @@ IPv4:           10.100.120.150
 Release:        Ubuntu Core 26
 ```
 
-Open the following address in a browser on your host machine, replacing `<instance-ip>` with the IPv4 address from `multipass info`:
+Now open the instance IPv4 address on port `8337` in a web browser on your host machine.
 
 ```text
 http://<instance-ip>:8337
