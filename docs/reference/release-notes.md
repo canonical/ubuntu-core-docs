@@ -11,10 +11,11 @@ This page outlines the release notes of Ubuntu Core, summarising new features, b
 
 ## Latest stable release
 
-* **{ref}`Ubuntu Core 24 <ref-release-notes_ubuntu-core-24-release-notes>`** (4th June 2024)
+* **{ref}`Ubuntu Core 26 <ref-release-notes_ubuntu-core-26-release-notes>`** (7th May 2026)
 
 ## Older releases
 
+* **{ref}`Ubuntu Core 24 <ref-release-notes_ubuntu-core-24-release-notes>`** (4th June 2024)
 * **{ref}`Ubuntu Core 22 <ref-release-notes_ubuntu-core-22-release-notes>`** (15th June 2022)
 
 (ref-release-notes_release-policy-and-schedule)=
@@ -51,6 +52,63 @@ To upgrade an Ubuntu Core image from one version to another, see {ref}`Upgrade U
 The snap daemon, snapd, manages snap package updates and Ubuntu Core functionality. For the snapd release plan and a complete list of changes, please refer to the [snapd roadmap](https://snapcraft.io/docs/snapd-roadmap). Feel free to provide your test feedback on the [forum](https://forum.snapcraft.io/c/snapd/5), or directly in [Launchpad](https://bugs.launchpad.net/snapd/+filebug).
 
 To ensure you receive latest security updates and bug fixes, ensure you upgrade to a new release of snapd shortly after it is released.
+
+(ref-release-notes_ubuntu-core-26-release-notes)=
+## Ubuntu Core 26 release notes
+
+Released: 7th May 2026.
+
+Ubuntu Core 26 (UC26) is the latest Ubuntu Core release, and is built on the foundations of [Ubuntu 26.04 LTS (Resolute Raccoon)](https://releases.ubuntu.com/26.04/).
+
+With up to 15 years of security maintenance, our strictly-confined OS enables developers to {ref}`build <ref-index-build-your-first-image>` and {ref}`deploy <ref-index_how-to-deploy-an-image>` production-grade images for embedded devices on various architectures.
+
+Ubuntu Core 26 includes system-level improvements in boot performance, OTA update sizes (reduced by up to 90%), and image composition through Chisel.
+
+New features for this release include:
+
+* Boot and update time improvements
+* Chisel-based build system for minimal images
+* CRA (Coordinated Remediation and Assurance) compliance support
+* Livepatch support for kernel patching
+* Components general availability
+* Enhanced API documentation with automatic endpoint discovery
+* Python removal from core base snaps (improved security and reduced image size)
+
+For complete details, see the {ref}`dedicated Ubuntu Core 26 release notes <ref-uc26>`.
+
+(release-notes-cloud-init)=
+### Bundled Python changes for Ubuntu Core 26
+
+Core base snaps (e.g. core22, core24) provide a run-time environment with a minimal set of libraries that are common to many applications.
+
+Core base snaps up to and including core24 bundle the Python interpreter alongside a selection of Python libraries. But from core26 onwards, Python packages will no longer be included. This change does not affect earlier core base snaps.
+
+The majority of application snaps that need Python already stage Python independently. These snaps will not need to be modified.
+
+If your snap relies on the Python interpreter provided by the core snap, and you are switching or planning to use the new core26 base and later versions, you will need to add the Python plugin to your snap.
+
+### Why are we making this change?
+
+We continuously simplify core base snaps to remove unnecessary dependencies, improve maintainability, reduce attack surface, and keep the runtime environment minimal and predictable. In this context, core bases historically shipped some Python dependencies.
+
+However, the recommended approach for snap creators has always been to use the [Python plugin](https://documentation.ubuntu.com/snapcraft/stable/how-to/integrations/craft-a-python-app/) and bundle their own Python runtime inside their application snaps, including only the packages and dependencies they require. As a result, the Python interpreter and libraries provided by core snaps are often unused.
+
+For this reason, starting with **core26**, the Python environment in the core base snap won't be available at runtime.
+
+This change better reflects how snaps are built and used today, where snap developers retain full control over their Python versions and dependencies. It also allows for the core base to be simplified. Over time, this will also allow for a reduction in the overall size of the core snaps.
+
+### How to manage the Python environment in your snap
+
+Developers publishing snaps with Python-based parts can continue to use the **Snapcraft Python plugin**, which allows you to bundle the exact Python version and dependencies your application requires. Detailed guidance is available in the How-to Guide
+[Craft a Python app ](https://documentation.ubuntu.com/snapcraft/stable/how-to/integrations/craft-a-python-app/)
+
+For projects that use Poetry or uv, developers should consider using the separate Snapcraft plugins built for these dependency management tools. A full list of available plugins and their usage is available in the [Plugin Reference](https://documentation.ubuntu.com/snapcraft/stable/reference/plugins/).
+
+### Impact on cloud-init
+
+This change does **not** affect cloud-init usage, which will remain present and fully supported in this release.
+
+However, since not every user requires cloud-init, a new track will be available for **core26**. This track will include cloud-init and the Python environment it needs.
 
 (ref-release-notes_ubuntu-core-24-release-notes)=
 ## Ubuntu Core 24 release notes
