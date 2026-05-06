@@ -24,7 +24,7 @@ page before you begin contributing.
 
 - {ref}`Find an issue to work on <finding-issues>`
 - {ref}`Pick your workflow <choose-workflow>`
-- Work on the issue ({ref}`get help <get-help>` if you need it!)
+- Work on the issue, and leave a comment on it if you need help.
 - {ref}`Test your contribution <doc-testing>`
 - {ref}`Submit it for review <submit-work>`
 
@@ -183,6 +183,7 @@ You can also use these commands for different purposes:
 
 Run `make` by itself to see a list of all available commands.
 
+(writing-guidance)=
 ### Writing guidance
 
 Once your environment is set up and you have got your local copy running without

@@ -11,7 +11,7 @@ myst:
 
 Run Ubuntu Core within a container, access a session using SSH and upgrade an older version of Ubuntu Core to a newer one.
 
-- {ref}`Test on QEMU <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>`
+- {ref}`Test on QEMU <how-to-guides-manage-ubuntu-core-test-on-qemu>`
 - {ref}`Use Ubuntu One SSH <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>`
 - {ref}`Upgrade Ubuntu Core <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>`
 

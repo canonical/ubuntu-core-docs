@@ -11,7 +11,7 @@ This page outlines the release notes of Ubuntu Core, summarising new features, b
 
 ## Latest stable release
 
-* **{ref}`Ubuntu Core 26 <ref-release-notes_ubuntu-core-24-release-notes>`** (7th May 2026)
+* **{ref}`Ubuntu Core 26 <ref-release-notes_ubuntu-core-26-release-notes>`** (7th May 2026)
 
 ## Older releases
 
