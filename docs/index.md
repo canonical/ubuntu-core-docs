@@ -79,8 +79,6 @@ Thinking about using Ubuntu Core for your next project? [Get in touch](https://u
 ```{toctree}
 :hidden:
 :maxdepth: 2
-
-Latest: Ubuntu Core 26 <uc26>
 ```
 
 ```{toctree}
