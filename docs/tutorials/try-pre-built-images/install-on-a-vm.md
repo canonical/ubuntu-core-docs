@@ -138,7 +138,7 @@ By default, WebUI may listen only on the Ubuntu Core instance's local loopback a
 sudo gemma4 set http.host=0.0.0.0 webui.http.host=0.0.0.0 --assume-yes
 ```
 
-From a terminal on your host machine, find the instance IP address:
+From a terminal on your host machine, outside Multipass, find the instance IP address:
 
 ```bash
 multipass info aibox
