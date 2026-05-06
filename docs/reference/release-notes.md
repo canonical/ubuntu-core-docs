@@ -53,8 +53,31 @@ The snap daemon, snapd, manages snap package updates and Ubuntu Core functionali
 
 To ensure you receive latest security updates and bug fixes, ensure you upgrade to a new release of snapd shortly after it is released.
 
+(ref-release-notes_ubuntu-core-26-release-notes)=
+## Ubuntu Core 26 release notes
+
+Released: 7th May 2026.
+
+Ubuntu Core 26 (UC26) is the latest Ubuntu Core release, and is built on the foundations of [Ubuntu 26.04 LTS (Resolute Raccoon)](https://releases.ubuntu.com/26.04/).
+
+With up to 15 years of security maintenance, our strictly-confined OS enables developers to {ref}`build <ref-index-build-your-first-image>` and {ref}`deploy <ref-index_how-to-deploy-an-image>` production-grade images for embedded devices on various architectures.
+
+Ubuntu Core 26 includes system-level improvements in boot performance, OTA update sizes (reduced by up to 90%), and image composition through Chisel.
+
+New features for this release include:
+
+* Boot and update time improvements
+* Chisel-based build system for minimal images
+* CRA (Coordinated Remediation and Assurance) compliance support
+* Livepatch support for kernel patching
+* Components general availability
+* Enhanced API documentation with automatic endpoint discovery
+* Python removal from core base snaps (improved security and reduced image size)
+
+For complete details, see the {ref}`dedicated Ubuntu Core 26 release notes <ref-uc26>`.
+
 (release-notes-cloud-init)=
-## Bundled Python changes for Ubuntu Core 26
+### Bundled Python changes for Ubuntu Core 26
 
 Core base snaps (e.g. core22, core24) provide a run-time environment with a minimal set of libraries that are common to many applications.
 
