@@ -143,7 +143,7 @@ After finishing all your edits, the completed **my-model.json** text file should
             "name": "core26",
             "type": "base",
             "default-channel": "latest/stable",
-            "id": "dwTAh7MZZ01zyriOZErqd1JynQLiOGvM"
+            "id": "cUqM61hRuZAJYmIS898Ux66VY61gBbZf"
         },
         {
             "name": "snapd",
