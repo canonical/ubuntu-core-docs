@@ -19,14 +19,14 @@ See below for details on how to download and modify a model file to include your
 (ref-create-a-model_download-a-model-file)=
 ## Download a model file
 
-The quickest way to create a new model assertion is to edit a model that already exists. Reference models for every supported Ubuntu Core device can be found in the [snapcore/models](https://github.com/snapcore/models) GitHub repository.
+The quickest way to create a new model assertion is to edit a model that already exists. Reference models for every supported Ubuntu Core device can be found in the [canonical/models](https://github.com/canonical/models) GitHub repository.
 
-For this project, we're going to modify the 64-bit reference model for the Raspberry Pi: [ubuntu-core-26-pi-arm64.json](https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-26-pi-arm64.json).
+For this project, we're going to modify the 64-bit reference model for the Raspberry Pi: [ubuntu-core-26-pi-arm64.json](https://raw.githubusercontent.com/canonical/models/master/ubuntu-core-26-pi-arm64.json).
 
 Download and save the file locally with the following _wget_ command. We've called the file `my-model.json`:
 
 ```bash
-wget -O my-model.json https://raw.githubusercontent.com/snapcore/models/master/ubuntu-core-26-pi-arm64.json
+wget -O my-model.json https://raw.githubusercontent.com/canonical/models/master/ubuntu-core-26-pi-arm64.json
 ```
 
 (ref-create-a-model_edit-the-model-file)=

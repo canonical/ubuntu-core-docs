@@ -9,7 +9,7 @@ myst:
 
 By default, Ubuntu Core does not display a splash screen when a device is booting or shutting down. However, on Ubuntu Core 22 (and later), a splash screen can be enabled, either to display the built-in Ubuntu Core branding, or to display custom vendor branding or imagery.
 
-![Ubuntu Core Splash](https://assets.ubuntu.com/v1/72b8914b-core-splash_01.png) 
+![Ubuntu Core Splash](https://assets.ubuntu.com/v1/72b8914b-core-splash_01.png)
 
 Ubuntu Core’s splash screen is based on Ubuntu’s [Plymouth-based splash screen](https://wiki.ubuntu.com/Plymouth#Splash_Theme) implementation. It’s enabled by adding `quiet splash` as a {ref}`kernel boot parameter <reference-kernel-boot-parameters>`:
 
@@ -25,7 +25,7 @@ The splash screen can be customized in two different ways, either by including a
 
 ### New vendor logo or image
 
-![Ubuntu Core vendor splash screen,  50%](https://assets.ubuntu.com/v1/3410143e-core-splash_02.png) 
+![Ubuntu Core vendor splash screen,  50%](https://assets.ubuntu.com/v1/3410143e-core-splash_02.png)
 
 A PNG-formatted vendor logo, or any other PNG-formatted image, can be placed within a new `/splash` directory in the root of the {ref}`Gadget snap <reference-gadget-snap-format>`. The image file must be called `vendor-logo.png`:
 
@@ -58,7 +58,7 @@ The image will be scaled accordingly and images with a 2:1 aspect ratio work bes
 
 The most flexible way to change the appearance of the Ubuntu Core splash screen is to install a replacement [Plymouth](https://wiki.ubuntu.com/Plymouth) theme.
 
-While Plymouth itself supports a variety of different splash plugins, Ubuntu Core’s implementation only supports its [Scripts](https://gitlab.freedesktop.org/plymouth/plymouth/-/tree/main/themes/script?ref_type=heads) plugin. This is the most flexible plugin as it provides its own feature-rich [scripting language](https://www.freedesktop.org/wiki/Software/Plymouth/Scripts/).  
+While Plymouth itself supports a variety of different splash plugins, Ubuntu Core’s implementation only supports its [Scripts](https://gitlab.freedesktop.org/plymouth/plymouth/-/tree/main/themes/script?ref_type=heads) plugin. This is the most flexible plugin as it provides its own feature-rich [scripting language](https://www.freedesktop.org/wiki/Software/Plymouth/Scripts/).
 
 ## Create a custom Plymouth theme
 
@@ -99,7 +99,7 @@ ScriptFile=/run/mnt/gadget/splash/plymouth/themes/vendor/vendor.script
 It can also help to lower the kernel console logging verbosity by specifying `loglevel=3` (or lower) on the kernel command line. See {ref}`Customize the kernel command line <reference-kernel-boot-parameters>` for further details.
 
 A good custom Plymouth theme example for Ubuntu Core is its own default theme:
-[https://github.com/snapcore/core-splash](https://github.com/snapcore/core-splash)
+[https://github.com/canonical/core-splash](https://github.com/canonical/core-splash)
 
 Note that the configuration file inside the `vendor/` directory must be named `vendor.plymouth`. Configuration inside will point to the script file.
 
@@ -108,5 +108,3 @@ See {ref}`Building a gadget snap <how-to-guides-image-creation-build-a-gadget-sn
 ### Troubleshooting
 
 - **Theme not displaying**: Verify the `vendor.plymouth` file points to the correct .script file and that all files are in the `/run/mnt/gadget/splash/plymouth/themes/vendor/` path.
-
-

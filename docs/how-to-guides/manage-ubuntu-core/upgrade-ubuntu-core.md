@@ -9,13 +9,13 @@ myst:
 
 A device can be upgraded to a later Ubuntu Core release if it has:
 
-- **an assigned serial number**: from either a {ref}`serial assertion <reference-assertions-serial>` or the Snap Store. 
+- **an assigned serial number**: from either a {ref}`serial assertion <reference-assertions-serial>` or the Snap Store.
 - **identical storage layout**: layouts are identical unless they've been manually reconfigured.
 - **consistent base and system snaps**: significant differences will cause an upgrade to fail.
 
-It is not currently possible to upgrade from releases earlier than UC20, or from either a UC20 reference image or a reference {ref}`model assertion <reference-assertions-model>`, including those available on [https://cdimage.ubuntu.com/ubuntu-core/20](https://cdimage.ubuntu.com/ubuntu-core/20). 
+It is not currently possible to upgrade from releases earlier than UC20, or from either a UC20 reference image or a reference {ref}`model assertion <reference-assertions-model>`, including those available on [https://cdimage.ubuntu.com/ubuntu-core/20](https://cdimage.ubuntu.com/ubuntu-core/20).
 
-Reference model assertions can be easily modified to build a {ref}`custom image <ref-index-build-your-first-image>` that can be upgraded. 
+Reference model assertions can be easily modified to build a {ref}`custom image <ref-index-build-your-first-image>` that can be upgraded.
 
 Upgrades are performed by {ref}`remodeling <explanation-remodeling>`, which is the process of replacing one model assertion with another on a deployed system. For an upgrade from UC20 to UC22, for example, this means updating the base and system snaps in a UC20 model assertion with their UC22 counterparts.
 
@@ -149,7 +149,7 @@ The presence of a revision value permits an assertion to be updated to an update
 
 The updated model will need to be signed with the same key that the original model was signed with. See {ref}`Signing a model assertion <ref-sign-the-model_sign-the-model>` for detailed instructions.
 
-Reference unsigned model assertions can be found here: [https://github.com/snapcore/models](https://github.com/snapcore/models).
+Reference unsigned model assertions can be found here: [https://github.com/canonical/models](https://github.com/canonical/models).
 
 ## Perform the upgrade
 
@@ -181,4 +181,3 @@ model   ubuntu-core-22-amd64
 grade   signed
 serial  810d53c7-a741-9351-0a7e2b96095b
 ```
-

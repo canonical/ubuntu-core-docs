@@ -19,9 +19,9 @@ We're committed to:
 
 Ubuntu Core does not have a its own code repository.  It is instead built entirely from {ref}`snap packages <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>` and managed by the snap daemon, snapd. As a result, the source code for the project is split across several locations, alongside any other snap packages that may be installed:
 
-- **[snapd](https://github.com/snapcore/snapd)** is the background service that manages and maintains snaps, and provides the `snap` command line tool.
-- **[gadget snaps](https://github.com/search?q=org%3Asnapcore+gadget&type=repositories)** define and configures system properties specific to one or more devices.
-- **[kernel snaps](https://github.com/snapcore/sample-kernels)** define the Linux kernel to run on each system.
+- **[snapd](https://github.com/canonical/snapd)** is the background service that manages and maintains snaps, and provides the `snap` command line tool.
+- **[gadget snaps](https://github.com/search?q=org%3Acanonical+gadget&type=repositories)** define and configures system properties specific to one or more devices.
+- **[kernel snaps](https://github.com/canonical/sample-kernels)** define the Linux kernel to run on each system.
 - **[base snaps](https://snapcraft.io/docs/base-snaps)** provide the run-time environment and a minimal set of libraries.
 
 In addition to the above, our [Documentation](https://ubuntu.com/core/docs) is hosted and built from [https://github.com/canonical/ubuntu-core-docs](https://github.com/canonical/ubuntu-core-docs). See {ref}`How to contribute <ref-contributing_contribute-to-our-docs>` for further details.

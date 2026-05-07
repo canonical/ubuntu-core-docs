@@ -24,7 +24,7 @@ The model assertion is central to both the creation of the device image and the 
 
 For more details on using a model assertion to create an image, see {ref}`Custom images <how-to-guides-image-creation-add-custom-snaps>`.
 
-Model assertions for supported devices and systems can be found at [https://github.com/snapcore/models/tree/master](https://github.com/snapcore/models/tree/master).
+Model assertions for supported devices and systems can be found at [https://github.com/canonical/models/tree/master](https://github.com/canonical/models/tree/master).
 
 (ref-model_model-assertion-fields)=
 ## Model assertion fields
@@ -95,14 +95,14 @@ Using _dangerous_ does weaken security, and as a result, this grade is meant onl
   * `modes` *(optional)*: a list with {ref}`recovery modes <how-to-guides-manage-ubuntu-core-use-a-recovery-mode>` (verbs, “run”) or mode aliases for which the snap needs to be installed ("ephemeral", for _recover_ and _install_ modes).
 Default is *[run]* which should not be used for types `kernel|gadget` and for the snap indicated by the “base” header.
 For "recovery" and "install" modes, "ephemeral" can be used. This will install the snaps only while the system is in an ephemeral state (running from tmpfs). They will not be installed on *ubuntu-data* unless explicitly declared, such as with `[run, ephemeral]`, although those snaps will still reside on *ubuntu-seed*.
-  * `presence` *(optional)*:  set to mark a snap whose absence will not fail installation or recovery. Can be either _optional_ or _required_ but defaults to _required_. 
-    * A _required_ snap cannot be removed from the system.    
-    * An _optional_ snap is not added to the {ref}`ubuntu-seed <explanation-core-elements-storage-layout>` partition when the image is created with {ref}`ubuntu-image <how-to-guides-image-creation-use-ubuntu-image>` unless the `--snap` option is used to add the snap explicitly. Optional snaps can be used to adapt the same base model for different hardware configurations, deployment objectives, and for use with a dynamic modelling agent. 
+  * `presence` *(optional)*:  set to mark a snap whose absence will not fail installation or recovery. Can be either _optional_ or _required_ but defaults to _required_.
+    * A _required_ snap cannot be removed from the system.
+    * An _optional_ snap is not added to the {ref}`ubuntu-seed <explanation-core-elements-storage-layout>` partition when the image is created with {ref}`ubuntu-image <how-to-guides-image-creation-use-ubuntu-image>` unless the `--snap` option is used to add the snap explicitly. Optional snaps can be used to adapt the same base model for different hardware configurations, deployment objectives, and for use with a dynamic modelling agent.
   * `default-channel` *(optional)*: initial tracking channel for the snap, default is “latest/stable”.
 
 ### Components
 
-A [component](https://snapcraft.io/docs/components) is part of a snap that has been declared as optional. Models need to specify which snap components should be included in an image as they are not installed by default. 
+A [component](https://snapcraft.io/docs/components) is part of a snap that has been declared as optional. Models need to specify which snap components should be included in an image as they are not installed by default.
 
 They're added as a structured list with a single `presence` attribute for whether each component is required or options. If required, the component must be in the image seed.
 
@@ -112,7 +112,7 @@ The modes for which the component must be present can be specified as well. Synt
     components:                                 # optional
       <component-name-1>:
         presence: "optional"|"required"
-        modes: [<mode-specifier>]               # list of modes, optional 
+        modes: [<mode-specifier>]               # list of modes, optional
                                                 # must be a subset of snap one
                                                 # defaults to the same modes
                                                 # as the snap
@@ -139,9 +139,9 @@ The modes for which the component must be present can be specified as well. Synt
             "sequence": <sequence>,
             "mode": <"enforce"|"prefer-enforce" >
         }
-    ], 
+    ],
    ```
-    For more information, see [Validation sets](https://snapcraft.io/docs/validation-sets) and [`core-20.json`](https://github.com/snapcore/snapd/blob/master/tests/main/prepare-image-validation-sets/asserts/core-20.json) for a test model assertion defining a validation set.
+    For more information, see [Validation sets](https://snapcraft.io/docs/validation-sets) and [`core-20.json`](https://github.com/canonical/snapd/blob/master/tests/main/prepare-image-validation-sets/asserts/core-20.json) for a test model assertion defining a validation set.
 
 ---
 
@@ -190,4 +190,3 @@ The following is a JSON input for an example Ubuntu Core model assertion based o
     ]
 }
 ```
-

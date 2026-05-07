@@ -33,8 +33,8 @@ In addition to traditional snap metadata, the gadget snap also holds some setup 
 
 The following gadget repositories contain the gadget snap definitions for _amd64_ (64 bit PC Gadget Snap) and the Raspberry Pi family of devices supported by Ubuntu Core:
 
-- [PC Gadget Snap](https://github.com/snapcore/pc-gadget)
-- [Raspberry Pi Gadget Snap](https://github.com/snapcore/pi-gadget)
+- [PC Gadget Snap](https://github.com/canonical/pc-gadget)
+- [Raspberry Pi Gadget Snap](https://github.com/canonical/pi-gadget)
 
 For U-Boot devices example gadgets can be found in:
 
@@ -67,9 +67,9 @@ Two YAML keys are used to describe your target device:
    ```yaml
    defaults:
          system:
-             <key>: <value>  
+             <key>: <value>
    ```
-   
+
 ```{admonition} Defaults only become available during snap installation.
 :class: warning
 
@@ -156,7 +156,7 @@ There are two [system options](https://snapcraft.io/docs/system-options) that ca
 1. [system.kernel.cmdline-append](https://snapcraft.io/docs/system-options#heading--kernel-cmdline-append)
 2. [system.kernel.dangerous-cmdline-append](https://snapcraft.io/docs/system-options#heading--kernel-dangerous-cmdline-append)
 
-The second setting can be run (dangerously) without any prior configuration, but the first setting will permit **only** boot parameters verified against an *allow list* defined within the gadget snap. 
+The second setting can be run (dangerously) without any prior configuration, but the first setting will permit **only** boot parameters verified against an *allow list* defined within the gadget snap.
 
 The _allow list_ defines both parameters and their possible arguments, and takes takes following format:
 
@@ -241,7 +241,7 @@ volumes:
 
     # 2-digit hex code for MBR disk ID or GUID for GPT disk id. (optional)
     id: <id>
-                  
+
     # Bootloader in the volume. Required in one volume. (required/optional)
     bootloader: grub | u-boot
 
@@ -264,7 +264,7 @@ volumes:
         # Role defines a special role for this item in the image. (optional)
         # Must be either unset, or one of:
         #   mbr - Master Boot Record of the image.
-        #   system-seed - Partition holding first-stage/recovery boot loader and at 
+        #   system-seed - Partition holding first-stage/recovery boot loader and at
         #                 least one recovery system containing the following
         #                 set of snaps: base, kernel, gadget and application snaps
         #   system-boot - Partition holding the boot assets.
@@ -309,7 +309,7 @@ volumes:
                       [<name>+]<bytes/2^30>G
 
         # Filesystem type. Defaults to none. (optional)
-        filesystem: none | fat16 |  vfat | ext4 
+        filesystem: none | fat16 |  vfat | ext4
 
         # Filesystem label. Defaults to name of structure item. (optional)
         filesystem-label: <label>
@@ -325,7 +325,7 @@ volumes:
 
             # Dump image (relative to gadget base directory) of the raw data
             # as-is into the structure at offset. If offset is omitted it
-            # defaults to right after the prior content item. 
+            # defaults to right after the prior content item.
             - image: <filename>                                 # (required)
               offset: <bytes> | <bytes/2^20>M | <bytes/2^30>G   # (optional)
               offset-write: (see respective item above)         # (optional)
@@ -336,9 +336,9 @@ volumes:
             # update only if the new edition is higher than the old edition.
             edition: uint32
             # This field takes a list of files to be preserved.
-            # No support for preserving inside images. 
+            # No support for preserving inside images.
             # i.e. update will overwrite the whole image in this case.
-            preserve: 
+            preserve:
               - <filename>
 ```
 
@@ -392,7 +392,7 @@ connections:
   - plug: LVkazk0JLrL0ivuHRlv3wp3bK1nAgwtN:network-manager
     slot: RmBXKl6HO6YOC2DE4G2q1JzWImC04EUy:service
   - plug: LVkazk0JLrL0ivuHRlv3wp3bK1nAgwtN:shell-config-files
-    slot: system:system-files           
+    slot: system:system-files
 ```
 
 (ref-gadget-snap-format_prepare-device-hook)=
@@ -432,15 +432,15 @@ snapctl set device-service.access=offline
 # this can end up being ignored
 #
 # this might need to be obtained dynamically. as the expected value must be a JSON string
-# one must be careful with proper shell quotation especially if using command 
+# one must be careful with proper shell quotation especially if using command
 # substitution, e.g.:
-#   snapctl set -s registration.proposed-serial='"'"$(get-serial-number)"'"' 
+#   snapctl set -s registration.proposed-serial='"'"$(get-serial-number)"'"'
 snapctl set -s registration.proposed-serial="DEVICE-SERIAL"
 
 # optionally pass details of the device as the body of registration request,
 # the body is text, typically YAML;
 
-# this might need to be obtained dynamically 
+# this might need to be obtained dynamically
 snapctl set registration.body='mac: "00:00:00:00:ff:00"'
 ```
 
@@ -466,7 +466,3 @@ snapctl set registration.body="{\"hardware-id-key-sha3-384\": \"${HASH}\",
                                 \"request-id-signature\": \"${SIGNATURE}\"
 }"
 ```
-
-
-
-
