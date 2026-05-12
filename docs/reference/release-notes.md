@@ -11,7 +11,7 @@ This page outlines the release notes of Ubuntu Core, summarising new features, b
 
 ## Latest stable release
 
-* **{ref}`Ubuntu Core 26 <ref-release-notes_ubuntu-core-26-release-notes>`** (12th May 2026)
+* **{ref}`Ubuntu Core 26 <ref-release-notes_ubuntu-core-26-release-notes>`** (14th May 2026)
 
 ## Older releases
 
@@ -56,7 +56,7 @@ To ensure you receive latest security updates and bug fixes, ensure you upgrade 
 (ref-release-notes_ubuntu-core-26-release-notes)=
 ## Ubuntu Core 26 release notes
 
-Released: 12th May 2026.
+Released: 14th May 2026.
 
 Ubuntu Core 26 (UC26) is the latest Ubuntu Core release, and is built on the foundations of [Ubuntu 26.04 LTS (Resolute Raccoon)](https://releases.ubuntu.com/26.04/).
 
