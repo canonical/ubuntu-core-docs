@@ -109,7 +109,7 @@ parts:
       "${CRAFT_STAGE}/trim-firmware" "${CRAFT_PRIME}"
     prime:
       - -lib/modules/*/kernel/fs/9p/
-      - -kernel.img*
+      - -vmlinuz*
 
   firmware:
     after: [kernel]
