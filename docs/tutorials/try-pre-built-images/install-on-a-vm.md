@@ -27,12 +27,6 @@ snap install multipass --edge
 For **Core 26** support, Multipass must be installed from its edge channel.
 ```
 
-```{important} 
-For **Core 26** support, install the _edge_ version of Multipass: `snap install multipass --edge`</br>
-Or, if Multipass is already installed: `snap refresh multipass --edge`
-```
-
-
 ### List available images
 
 To list which images Multipass currently has available, type `multipass find`.
