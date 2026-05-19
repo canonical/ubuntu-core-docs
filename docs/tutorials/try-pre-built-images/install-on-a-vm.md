@@ -16,17 +16,16 @@ If you need to test your own Ubuntu Core images, see {ref}`Test Ubuntu Core with
 
 ## Boot Ubuntu Core with Multipass
 
-If you don't yet have Multipass installed, see [Install Multipass](https://canonical.com/multipass/install). If it's installed, the following command will output its current state:
+To access the latest Ubuntu Core images, install [Multipass](https://canonical.com/multipass/install) from its _edge_ channel:
+
 
 ```bash
-multipass info
+snap install multipass --edge
 ```
 
 ```{important} 
-For **Core 26** support, install the _edge_ version of Multipass: `snap install multipass --edge`</br>
-Or, if Multipass is already installed: `snap refresh multipass --edge`
+For **Core 26** support, Multipass must be installed from its edge channel.
 ```
-
 
 ### List available images
 
@@ -35,14 +34,17 @@ To list which images Multipass currently has available, type `multipass find`.
 The output will include Ubuntu Core images alongside standard Ubuntu images:
 
 ```text
-Image       Aliases           Version          Description
-core26                        20260403         Ubuntu Core 26
-core24                        20240603         Ubuntu Core 24
-core22                        20230717         Ubuntu Core 22
-core20                        20230119         Ubuntu Core 20
-24.04        noble, lts       20260321         Ubuntu 24.04 LTS
-22.04        jammy,lts        20240126         Ubuntu 22.04 LTS
-20.04        focal            20240129.1       Ubuntu 20.04 LTS
+Image         Aliases             Version          Description
+22.04         jammy               20260320         Ubuntu 22.04 LTS
+24.04         noble               20260321         Ubuntu 24.04 LTS
+25.10         questing            20260428         Ubuntu 25.10
+26.04         resolute,lts,ubuntu 20260421         Ubuntu 26.04 LTS
+core:core16                       current          Ubuntu Core 16
+core:core18                       current          Ubuntu Core 18
+core:core20                       current          Ubuntu Core 20
+core:core22                       current          Ubuntu Core 22
+core:core24                       current          Ubuntu Core 24
+core:core26                       current          Ubuntu Core 26
 ```
 
 ### Launch an image
@@ -56,7 +58,7 @@ multipass launch <image-name> -n <instance-name>
 For example, the following command will launch and boot core26 with an instance name of `mycore26`:
 
 ```bash
-multipass launch core26 -n mycore26
+multipass launch core:core26 -n mycore26
 ```
 
 The image is downloaded and locally cached when it's launched for the first time.
@@ -80,7 +82,7 @@ The following example installs the `gemma4` inference snap and allows you to run
 Create a new instance of Ubuntu Core with enough resources to run the model, type:
 
 ```bash
-multipass launch core26 -n aibox --cpus 4 --memory 10GB --disk 16GB 
+multipass launch core:core26 -n aibox --cpus 4 --memory 10GB --disk 16GB 
 ```
 To open a shell running within the new instance, type:
 
