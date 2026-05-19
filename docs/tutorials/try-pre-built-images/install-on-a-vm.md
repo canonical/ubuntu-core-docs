@@ -9,9 +9,10 @@ myst:
 
 You can try Ubuntu Core without any specific hardware from within a virtual machine using [Multipass](https://canonical.com/multipass) on Windows, Mac and Linux. Multipass has integrated support for the latest Ubuntu Core images and can launch and run virtual machines from a single command.
 
+
 For deployment in the field, you would normally build a custom Ubuntu Core image that includes your required snaps, configuration, permissions and update policy. Pre-built images are useful for exploration, but a product image should be described by your own model assertion and built for your target device.
 
-> If you need to test your own Ubuntu Core images, see {ref}`Test Ubuntu Core with QEMU <how-to-guides-manage-ubuntu-core-test-on-qemu>`. QEMU, is more configurable than Multipass and can boot either a supported image or a custom image, with or without TPM emulation and full disk encryption. 
+If you need to test your own Ubuntu Core images, see {ref}`Test Ubuntu Core with QEMU <how-to-guides-manage-ubuntu-core-test-on-qemu>`. QEMU, is more configurable than Multipass and can boot either a supported image or a custom image, with or without TPM emulation and full disk encryption. 
 
 ## Boot Ubuntu Core with Multipass
 
@@ -20,6 +21,12 @@ If you don't yet have Multipass installed, see [Install Multipass](https://canon
 ```bash
 multipass info
 ```
+
+```{important} 
+For **Core 26** support, install the _edge_ version of Multipass: `snap install multipass --edge`</br>
+Or, if Multipass is already installed: `snap refresh multipass --edge`
+```
+
 
 ### List available images
 
@@ -34,8 +41,8 @@ core24                        20240603         Ubuntu Core 24
 core22                        20230717         Ubuntu Core 22
 core20                        20230119         Ubuntu Core 20
 24.04        noble, lts       20260321         Ubuntu 24.04 LTS
-22.04        ammy,lts         20240126         Ubuntu 22.04 LTS
-20.04        ocal             20240129.1       Ubuntu 20.04 LTS
+22.04        jammy,lts        20240126         Ubuntu 22.04 LTS
+20.04        focal            20240129.1       Ubuntu 20.04 LTS
 ```
 
 ### Launch an image
