@@ -24,8 +24,8 @@ Before building a kernel snap, we highly recommend building a working kernel
 first before migrating to a kernel snap. The same configuration options and
 dependencies will be required.
 
-See [Kernel snaps](https://snapcraft.io/docs/the-kernel-snap) for reference
-details on the composition of a kernel snap, and see {ref}`Types of snap <ref-snaps-in-ubuntu-core_types-of-snap>`
+See [Kernel snaps](https://snapcraft.io/docs/reference/development/yaml-schemas/the-kernel-snap/)
+for reference details on the composition of a kernel snap, and see {ref}`Types of snap <ref-snaps-in-ubuntu-core_types-of-snap>`
 for details on the other types of snap that make up an Ubuntu Core image.
 
 ```{important}
@@ -34,7 +34,7 @@ Building a kernel snap is useful for prototyping but its maintenance and support
 
 ## Inside a kernel snap
 
-A kernel snap contain the Linux kernel image and its associated modules,
+A kernel snap contains the Linux kernel image and its associated modules,
 alongside a _RAM disk image_ as well as firmware and, on non-x86_64 platforms,
 device tree files.
 
@@ -55,14 +55,17 @@ kernel modules.
 ```
 
 When a system is using the GRUB bootloader, the kernel and initrd must be
-bundled as a UKI and named `kernel.efi`.
+bundled as a [Unified Kernel Image](https://uapi-group.org/specifications/specs/unified_kernel_image/)
+(UKI) and named `kernel.efi`.
 
 The `snap` directory includes the [snapcraft.yaml](https://snapcraft.io/docs/snapcraft-schema)
 that was used to build the kernel snap.
 
 Canonical’s IoT Devices Field team maintains a [GitHub repository](https://github.com/canonical/iot-field-kernel-snap/tree/main)
-that includes template files in its main branch, and example kernel
-implementations for specific core releases as branches.
+that includes template files in its main branch alongside several
+`snapcraft.yaml` snippets which explain several different ways kernel snaps
+can be constructed, as well as example kernel implementations for specific core
+releases as branches.
 
 ### Crafting the snap
 
@@ -74,7 +77,7 @@ Refer to their documentation to understand the available options and features.
 The most basic kernel snap would be repackaging an available debian package
 from the archive into a snap. This allows you to control the flavour (generic,
 lowlatency, etc.) as well as the overall size of the snap by filtering out
-unecessary kernel modules.
+unnecessary kernel modules.
 
 A minimal `snapcraft.yaml` that accomplishes this may look like:
 
@@ -125,7 +128,7 @@ parts:
     after: [firmware, kernel]
     plugin: initrd
     initrd-build-efi-image: true
-    initrd-modules: [nls_iso8859-1.ko]
+    initrd-modules: [nls_iso8859-1]
 ```
 
 Take special note of the `prime:` key for the `kernel` part: the 9p filesystem
@@ -197,14 +200,9 @@ parts:
 If you already have a known-working kernel, you may well be just a short bit of
 repackaging to end up with a kernel snap for your hardware platform!
 
-You can find more examples of kernel snaps maintained
-by the Devices Field Engineering team at their [GitHub repository](https://github.com/canonical/iot-field-kernel-snap/tree/main/snap).
-The `main` branch provides several `snapcraft.yaml` snippets which explain
-several different kinds of ways kernel snaps can be constructed.
-
 ## Build the snap
 
-The build system must support [snap](https://snapcraft.io/docs/installing-snapd),
+The build system must support [snapd](https://snapcraft.io/docs/installing-snapd),
 and have both the [Snapcraft](https://documentation.ubuntu.com/snapcraft/stable/how-to/setup/set-up-snapcraft/)
 build tool and the [LXD](https://canonical.com/lxd) virtualisation platform
 installed, all of which are provided by any Ubuntu release.
@@ -297,7 +295,7 @@ Once the prerequisites have been handled, one can finally build the snap!
 ```bash
 # snapcraft --build-for=arm64
 [...]
-Snapped kernal-snap-name_kernel-snap-version_arm64.snap
+Snapped kernel-snap-name_kernel-snap-version_arm64.snap
 ```
 
 The kernel snap has now been built and is ready to be used in an Ubuntu Core
