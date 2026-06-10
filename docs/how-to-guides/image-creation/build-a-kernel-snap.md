@@ -69,8 +69,10 @@ releases as branches.
 
 ### Crafting the snap
 
-Snapcraft provides [kernel]() and [initrd]() plugins for creating kernel snaps.
-Refer to their documentation to understand the available options and features.
+Snapcraft provides [kernel](https://documentation.ubuntu.com/snapcraft/stable/common/craft-parts/reference/plugins/kernel_plugin/)
+and [initrd](https://documentation.ubuntu.com/snapcraft/stable/common/craft-parts/reference/plugins/initrd_plugin/)
+plugins for creating kernel snaps. Refer to their documentation to understand
+the available options and features.
 
 #### The minimal case
 
