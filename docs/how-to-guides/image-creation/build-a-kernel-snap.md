@@ -192,9 +192,9 @@ parts:
       - usr/bin/fde-setup
       - usr/lib/${CRAFT_ARCH_TRIPLET_BUILD_FOR}/libteec.so*
     initrd-firmware:
-      - firmware/imx/sdma/sdma-imx7d.bin
-      - firmware/regulatory.db
-      - firmware/regulatory.db.p7s
+      - imx/sdma/sdma-imx7d.bin
+      - regulatory.db
+      - regulatory.db.p7s
     prime:
       - -initrd.img*
 ```
