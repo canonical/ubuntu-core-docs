@@ -28,6 +28,10 @@ The following guides provide device-specific installation instructions. Each gui
   
   Deploy Ubuntu Core on an [AMD Kria](https://www.amd.com/en/products/system-on-modules/kria.html)
 
+- {ref}`Install on NVIDIA Jetson <ref-install-on-jetson_install-a-pre-built-ubuntu-core-image-on-a-nvidia-jetson-device>`
+
+  Deploy Ubuntu Core on an [NVIDIA Jetson Orin](https://developer.nvidia.com/embedded/jetson-modules)
+
 ## Generic image writing
 
 For generic devices not listed above (such as Raspberry Pi or Intel NUC), use these image writing methods to deploy your Ubuntu Core image to storage media.
@@ -49,3 +53,4 @@ For generic devices not listed above (such as Raspberry Pi or Intel NUC), use th
 Install on a Renesas RZ/G2L <install-on-renesas>
 Install on a MediaTek Genio <install-on-mediatek>
 Install on an AMD Kria <install-on-amd>
+Install on an NVIDIA Jetson <install-on-jetson>
