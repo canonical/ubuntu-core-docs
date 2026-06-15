@@ -11,6 +11,10 @@ Ubuntu Core includes access to the Canonical's [Snap Store](https://snapcraft.io
 
 See [Releasing to the Snap Store](https://snapcraft.io/docs/releasing-to-the-snap-store) for more details on how to publish and distribute snaps to devices from the Snap Store.
 
+## Enterprise Store
+
+The [Enterprise Store](https://ubuntu.com/enterprise-store) is an on-premise edge proxy that creates a local cache of downloaded files. This speeds up subsequent downloads, and allows organizations to use snaps in air-gapped or restricted networking environments.
+
 ## Dedicated Snap Stores
 
 For larger projects and ISVs, it is often a requirement to publish snaps using a brand account to a brand-specific dedicated Snap Store.
