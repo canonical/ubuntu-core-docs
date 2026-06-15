@@ -21,6 +21,10 @@ graphics and CUDA on Ubuntu Core devices.
 
 ## Ubuntu Core 24+
 
+```{note}
+This guide requires snapd 2.67 or later, which introduced stable support for snap components. Existing devices may need to refresh snapd to enable full components support.
+```
+
 The general implementation is similar across Core releases, using the respective
 versions of the mentioned snaps. This section will make references to Ubuntu Core
 24 specific snaps.
@@ -172,9 +176,9 @@ This approach is deprecated and unsupported. Please refer to the previous sectio
 
 ### Requirements
 
-- snapd 2.59+
-- pc-kernel 22/stable (rev. 1258+)
-- ubuntu-frame
+- **snapd** 2.59+
+- **pc-kernel** 22/stable (rev. 1258+)
+- **ubuntu-frame**
 - [nvidia-assemble](https://github.com/canonical/nvidia-assemble) 22/stable (rev. 62+)
 - [nvidia-core22](https://github.com/canonical/nvidia-core22) latest/stable (rev. 14+)
 
