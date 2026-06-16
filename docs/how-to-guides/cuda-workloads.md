@@ -15,10 +15,6 @@ NVIDIA GPU as the DRI device, which means that one can use integrated Intel
 graphics (or, indeed, no graphics at all) and still use the CUDA cores available
 to them.
 
-At this time, using an NVIDIA GPU as the DRI device is being actively worked on.
-It is not clear if there are any conflicts between using an NVIDIA GPU for both
-graphics and CUDA on Ubuntu Core devices.
-
 ## Ubuntu Core 24+
 
 ```{note}
