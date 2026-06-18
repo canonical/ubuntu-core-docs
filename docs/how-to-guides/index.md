@@ -54,3 +54,4 @@ Create an image <image-creation/index>
 Deploy an image <deploy-an-image/index>
 Manage Ubuntu Core <manage-ubuntu-core/index>
 Work with containers <container-deployment/index>
+Run CUDA workloads <cuda-workloads>
