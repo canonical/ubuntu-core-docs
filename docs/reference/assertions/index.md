@@ -7,7 +7,7 @@ myst:
 (ref-index_assertions)=
 # Assertions
 
-An assertion is a digitally signed document that either verifies the validity of a process, as attested by the signer, or carries policy information, as formulated by the signer.  
+An assertion is a digitally signed document that either verifies the validity of a process, as attested by the signer, or carries policy information, as formulated by the signer.
 
 [Snapcraft](https://snapcraft.io/docs/snapcraft), [snapd](https://snapcraft.io/docs/glossary#heading--snapd), the [Snap Store](https://snapcraft.io/store) and {ref}`Brand stores <ref-dedicated-snap-store_dedicated-snap-store>` all use assertions to handle a variety of functions and processes, including authentication, policy setting, identification and validation.
 
@@ -19,6 +19,7 @@ These are the currently used assertion types:
 
 - **{ref}`account <reference-assertions-account>`**: links an account name to its identifier and other properties
 - **{ref}`account-key <reference-assertions-account-key>`**: holds the public part of a key belonging to the account
+- **{ref}`confdb-control <reference-assertions-confdb-control>`**: delegates control of confdb views to operators
 - **{ref}`confdb-schema <reference-assertions-confdb-schema>`**: describes the access rules and data schema for the configuration of a set of snaps or a facet of the system
 - **{ref}`model <reference-assertions-model>`**: brand-specified properties for the device, used to drive the building of an Ubuntu Core image
 - **{ref}`repair <reference-assertions-repair>`**: a unique assertion used to restore a device as a last resort feature
@@ -89,7 +90,7 @@ Fetching assertions for "gnome-calculator"
 Install the snap with:
    snap ack gnome-calculator_544.assert
    snap install gnome-calculator_544.snap
-$ cat gnome-calculator_544.assert 
+$ cat gnome-calculator_544.assert
 type: account-key
 authority-id: canonical
 revision: 2
