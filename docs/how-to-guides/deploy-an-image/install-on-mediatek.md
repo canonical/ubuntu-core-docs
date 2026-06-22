@@ -22,8 +22,7 @@ To write an image:
 - Internet connectivity
 - 10GB of free storage space
 - A microUSB cable for UART
-- Another microUSB cable to connect the flash interface
-  - You need a USB Type-C cable if your device is MediaTek Genio 1200
+- Another microUSB cable (For 350/510/700) or Type-C cable (For 720/520/1200) to connect the flash interface
 - An {ref}`Ubuntu SSO account with associated SSH keys <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>`.
 
 The target device:
@@ -56,10 +55,57 @@ You may need to log out and log in as the current user to gain the new group per
 
 Download the MediaTek Genio Ubuntu Core image from the following location:</br>
 
-[genio-core-22-20250423-201.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-core-22/genio-core-22-20250423-201.tar.xz)
+
+ ````{tabs}
+ ```{tab} Ubuntu Core 24
+ [genio-core-noble-emmc-20260526-44.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-core-24/genio-core-noble-emmc-20260526-44.tar.xz)
+ ```
+
+ ```{tab} Ubuntu Core 22
+ [genio-core-22-20250423-201.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-core-22/genio-core-22-20250423-201.tar.xz)
+ ```
+ ````
+
 
 ## Boot firmware
 
+`````{tabs}
+````{tab} Ubuntu Core 24
+Boot firmware is a series of files used to boot the operating system. Choose your firmware according to your device model:
+
+   |Device Model|Link|
+   |---|---|
+   |Genio 720 EVK|[genio-g720-evk-boot-assets-20260506-50.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g720-evk-boot-assets-20260506-50.tar.xz)|
+   |Genio 520 EVK|[genio-g520-evk-boot-assets-20260506-50.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g520-evk-boot-assets-20260506-50.tar.xz)|
+   |Genio 1200 EVK|[genio-g1200-evk-boot-assets-20260506-50.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g1200-evk-boot-assets-20260506-50.tar.xz)|
+   |Genio 700 EVK|[genio-g700-boot-assets-20260506-50.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g700-boot-assets-20260506-50.tar.xz)|
+   |Genio 510 EVK|[genio-g510-boot-assets-20260506-50.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g510-boot-assets-20260506-50.tar.xz)|
+   |Genio 350 EVK|[genio-g350-boot-assets-20260506-50.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g350-boot-assets-20260506-50.tar.xz)|
+
+Extract all the files from the download archive, replacing the archive name (genio-g720-evk-boot-assets-20260506-50.tar.xz) with the name of the file you specifically downloaded:
+
+```bash
+tar -xf genio-core-noble-emmc-20260526-44.tar.xz
+tar -xf genio-g720-evk-boot-assets-20260506-50.tar.xz --strip-components=1 -C genio-core-noble-emmc-20260526-44
+```
+
+The archive will include the following files:
+
+```bash
+$ ls -l genio-core-noble-emmc-20260526-44
+total 644376
+-rw-r--r-- 1 ubuntu ubuntu    457968 May  6 13:18 bl2.img
+-rw-r--r-- 1 ubuntu ubuntu  33554432 May  6 13:18 bootassets.vfat
+-rw-r--r-- 1 ubuntu ubuntu   1985005 May  6 13:18 fip.bin
+-rw-r--r-- 1 ubuntu ubuntu  33554432 May  6 13:18 firmware.vfat
+-rwxr-xr-x 1 ubuntu ubuntu    486568 May  6 13:18 lk.bin
+-rw-r--r-- 1 ubuntu ubuntu      3353 May  6 13:18 u-boot-initial-env
+-rw-rw-r-- 1 ubuntu ubuntu 589789452 May 26 16:17 ubuntu.img
+-rw-rw-r-- 1 ubuntu ubuntu      1049 May 26 16:17 ubuntu.json
+```
+````
+
+````{tab} Ubuntu Core 22
 Boot firmware is a series of files used to boot the operating system. Choose your firmware according to your device model:
 
    |Device Model|Link|
@@ -78,7 +124,7 @@ tar -xf ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz --strip-compone
 
 The archive will include the following files:
 
-```
+```bash
 $ ls -l genio-core-22-20250423-201
 total 522696
 -rw-rw-r-- 1 ubuntu ubuntu    239360 Apr  8 02:24 bl2.img
@@ -91,6 +137,9 @@ total 522696
 -rw-r--r-- 1 ubuntu ubuntu 465672276 Apr 23 09:56 ubuntu.img
 -rw-r--r-- 1 ubuntu ubuntu      1031 Apr 23 09:48 ubuntu.json
 ```
+````
+
+`````
 
 ## Flash the system image
 
@@ -107,11 +156,9 @@ genio-tools.genio-flash -e ethaddr="02:00:00:12:34:56"
 Wait until you see the following output from genio-tools:
 
 ```
- Genio Tools: v1.6.2
+ Genio Tools: v1.7.0
  Ubuntu Image:
          edition:  Ubuntu classic/core images
-         version:  22.04
-         codename: jammy
  
  ...
  You can now manually reset the board into DOWNLOAD mode.
@@ -123,19 +170,19 @@ Now connect the USB Type-C cable between your host and the USB Type-C port label
 
  ````{tabs}
 
+ ```{tab} Genio 720/520 EVK
+
+ ![Genio_720_520_EVK ports](./g720-g520-ports.png)
+ ```
+
  ```{tab} Genio 1200 EVK
 
- ![Genio_1200_EVK ports](https://assets.ubuntu.com/v1/f51f8293-hw_evk_g1200-evk_ports.png)
+ ![Genio_1200_EVK ports](./g1200-ports.jpg)
  ```
 
- ```{tab} Genio 700 EVK
+ ```{tab} Genio 700/510 EVK
 
- ![Genio_700_EVK ports](https://assets.ubuntu.com/v1/f708e209-hw_evk_g700-evk_ports.png)
- ```
-
- ```{tab} Genio 510 EVK
-
- ![Genio_700_EVK ports](https://assets.ubuntu.com/v1/f708e209-hw_evk_g700-evk_ports.png)
+ ![Genio_700_510_EVK ports](./g700-g510-ports.png)
  ```
 
  ```{tab} Genio 350 EVK
@@ -279,7 +326,7 @@ You can now connect to your Ubuntu Core machine with the _ssh_ command and your 
 For example:
 
 ```text
-$ ssh user@10.0.2.15
+$ ssh user@192.168.1.68
 The authenticity of host "192.168.1.68 (192.168.1.68)" can't be established.
 ED25259 key fingerprint is SHA256:VD5KH7hM5RxQ15mM70zyJvgmg.
 This key is not known by any other names
