@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Account-key assertion reference. Holds public keys for account authentication and assertion validation.
+---
+
 (reference-assertions-account-key)=
 # account-key
 
@@ -7,15 +13,9 @@ This assertion is used to transmit key information between the {ref}`store <expl
 
 Alongside {ref}`account <reference-assertions-account>`, {ref}`snap-declaration <reference-assertions-snap-declaration>` and {ref}`snap-revision <reference-assertions-snap-revision>` assertions,  _account-key_ is bundled within the composite `.assert` file that accompanies a snap downloaded with the `snap download <snap-name>` command.
 
-The `make-system-user` snap can is used to create a composite assertion file which includes all of the required assertions needed to trigger automatic creation of a user account via an inserted USB drive containing this file. See {ref}`make-system-user <how-to-guides-manage-ubuntu-core-add-a-system-user>` for more details.
+The `make-system-user` snap is used to create a composite assertion file which includes all of the required assertions needed to trigger automatic creation of a user account via an inserted USB drive containing this file. See {ref}`make-system-user <how-to-guides-manage-ubuntu-core-add-a-system-user>` for more details.
 
-#---
-myst:
-  html_meta:
-    description: Account-key assertion reference. Holds public keys for account authentication and assertion validation.
----
-
-# Account-key assertion fields
+## Account-key assertion fields
 
 The following fields can be used in an account-key user assertion:
 
