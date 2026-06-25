@@ -82,14 +82,20 @@ Boot firmware is a series of files used to boot the operating system. Choose you
    |Genio 510 EVK|[genio-g510-boot-assets-20260506-50.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g510-boot-assets-20260506-50.tar.xz)|
    |Genio 350 EVK|[genio-g350-boot-assets-20260506-50.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g350-boot-assets-20260506-50.tar.xz)|
 
-Extract all the files from the download archive, replacing the archive name (genio-g720-evk-boot-assets-20260506-50.tar.xz) with the name of the file you specifically downloaded:
+Extract all the files from the download archive, replacing the archive name (genio-g720-evk-boot-assets-20260506-50.tar.xz) with the name of the file you specifically downloaded.
+
+First, extract the Ubuntu Core image archive:
 
 ```bash
 tar -xf genio-core-noble-emmc-20260526-44.tar.xz
+```
+
+Next, extract the downloaded boot assets into the same directory:
+```bash
 tar -xf genio-g720-evk-boot-assets-20260506-50.tar.xz --strip-components=1 -C genio-core-noble-emmc-20260526-44
 ```
 
-The archive will include the following files:
+Once extracted, the target directory should contain the following files:
 
 ```bash
 $ ls -l genio-core-noble-emmc-20260526-44
@@ -117,12 +123,19 @@ Boot firmware is a series of files used to boot the operating system. Choose you
 
 Extract all the files from the download archive, replacing the archive name (ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz) with the name of the file you specifically downloaded:
 
+First, extract the Ubuntu Core image archive:
+
 ```bash
 tar -xf genio-core-22-20250423-201.tar.xz
+```
+
+Next, extract the downloaded boot assets into the same directory:
+
+```bash
 tar -xf ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz --strip-components=1 -C genio-core-22-20250423-201
 ```
 
-The archive will include the following files:
+Once extracted, the target directory should contain the following files:
 
 ```bash
 $ ls -l genio-core-22-20250423-201
@@ -328,7 +341,7 @@ For example:
 ```text
 $ ssh user@192.168.1.68
 The authenticity of host "192.168.1.68 (192.168.1.68)" can't be established.
-ED25259 key fingerprint is SHA256:VD5KH7hM5RxQ15mM70zyJvgmg.
+ED25519 key fingerprint is SHA256:VD5KH7hM5RxQ15mM70zyJvgmg.
 This key is not known by any other names
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '192.168.1.68' (ED25259) to the list of known hosts.
