@@ -48,22 +48,22 @@ Unlike most assertion types, confdb-control has no `authority-id` header. That h
 
 Each delegation in `groups` grants one or more operators control over a set of confdb views, limited to a specific set of allowed authentication methods.
 
-### Operators
+#### Operators
 
 A list of the account IDs being delegated to.
 
-### Authentications
+#### Authentications
 
 Operators manage the device by sending it signed confdb request messages, and the `authentications` field limits which keys may sign those messages on an operator's behalf. Two methods are supported:
 
 - **`operator-key`**
-    Messages must be signed with the operator's own private key.
+    Messages must be signed with the operator's own private key(s).
 - **`store`**
-    Messages may be signed on behalf of the operator by the Snap Store.
+    The operator delegates signing authority to the Snap Store, which signs messages using its own key(s).
 
 Multiple methods can be listed, in which case a message signed by any of them is accepted.
 
-### Views
+#### Views
 
 A list of confdb views, each in the form `<account-id>/<confdb-schema>/<view>`. These paths refer to views defined in {ref}`confdb-schema assertions <reference-assertions-confdb-schema>` and can span multiple schemas. The access level available to operators for each view is determined by the view's own `access` definition in the confdb-schema assertion.
 
