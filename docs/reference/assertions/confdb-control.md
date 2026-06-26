@@ -44,7 +44,7 @@ sign-key-sha3-384: <key id>   # Encoded key id of signing key
 Unlike most assertion types, confdb-control has no `authority-id` header. That header normally names the account on whose authority an assertion is made, but here the device is its own authority and signs the assertion with its own device key.
 
 (reference-assertions-confdb-control-groups)=
-## Groups
+### Groups
 
 Each delegation in `groups` grants one or more operators control over a set of confdb views, limited to a specific set of allowed authentication methods.
 
@@ -65,11 +65,11 @@ Multiple methods can be listed, in which case a message signed by any of them is
 
 ### Views
 
-A list of confdb view paths, each in the form `<account-id>/<confdb-schema>/<view>`. These paths refer to views defined in {ref}`confdb-schema assertions <reference-assertions-confdb-schema>` and can span multiple schemas. The access level available to operators for each view is determined by the view's own `access` definition in the confdb-schema assertion.
+A list of confdb views, each in the form `<account-id>/<confdb-schema>/<view>`. These paths refer to views defined in {ref}`confdb-schema assertions <reference-assertions-confdb-schema>` and can span multiple schemas. The access level available to operators for each view is determined by the view's own `access` definition in the confdb-schema assertion.
 
 ## Managing delegations
 
-Any change to the assertion, whether delegating control to a new operator or revoking an existing delegation, is made through the [`POST /v2/confdb`](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/AuthenticationRequired/postConfdbControl) snapd API endpoint rather than by editing the assertion directly. Each change increments the assertion's revision, which snapd re-signs and acknowledges automatically. Modifying the assertion requires root privileges. Other users can view it but cannot change it.
+Any change to the assertion, whether delegating control to a new operator or revoking an existing delegation, is made through the [`POST /v2/confdb`](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/AuthenticationRequired/postConfdbControl) snapd API endpoint rather than by editing the assertion directly. Each change increments the assertion's revision, which snapd re-signs and acknowledges automatically. Modifying the assertion requires root privileges.
 
 The endpoint provides two actions. Delegating grants an operator control over a set of views under a chosen set of authentication methods. Undelegating withdraws an operator's control, either over specific views and authentication methods or, if none are given, entirely.
 
