@@ -207,3 +207,35 @@ Previous updates to Ubuntu Core have added:
 * New {ref}`recovery and reinstall <explanation-recovery-modes>` modes
 * A {ref}`recovery mode menu and chooser <explanation-recovery-modes>`
 
+## Base snap ChangeLog
+
+Each release of the base snap includes a ChangeLog at
+`/usr/share/doc/ChangeLog` that summarises the package updates bundled in
+that release, along with the aggregated updates from previous releases.
+In the examples below, replace `<base>` with the name of
+your base snap (for example, `core24`). Note that `core26` does not
+currently include a ChangeLog.
+
+### When the snap is already installed
+
+If the base snap is already installed on the system, the ChangeLog is available
+at `/snap/<base>/current/usr/share/doc/ChangeLog`.
+
+You can list all installed revisions with `snap list --all <base>`. To inspect
+a specific revision that is not the active one, replace `current` with the
+revision number (e.g. `/snap/<base>/<revision>/usr/share/doc/ChangeLog`).
+
+### Via `snap download`
+
+You can download a snap without installing it, then extract the
+ChangeLog from the squashfs image:
+
+```bash
+# Download the snap
+snap download <base>
+
+# Extract the ChangeLog into a local directory
+unsquashfs -d <base>-unpacked <base>_*.snap usr/share/doc/ChangeLog
+```
+
+The ChangeLog is then available at `<base>-unpacked/usr/share/doc/ChangeLog`.
