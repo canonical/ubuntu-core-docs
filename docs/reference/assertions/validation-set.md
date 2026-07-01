@@ -26,9 +26,13 @@ sequence:       <int>
 snaps:
   - name:       <snap name>
     id:         <snap id>
-    presence: [required|optional|invalid]  # Optional, defaults to required.
-    revision: <n> # The revision of the snap. Optional.
-    
+    presence:   [required|optional|invalid] # Optional, defaults to required.
+    revision:   <n> # The revision of the snap. Optional.
+    components: # Optional.
+      <component name>: # Can also map to a "presence" string instead
+        presence: [required|optional|invalid]
+        revision: <n> # Optional.
+
 timestamp:          <UTC datetime>
 sign-key-sha3-384:  <key id> # Encoded key id of signing key
 
@@ -48,6 +52,10 @@ The above template validation set assertion needs to be populated with the detai
    Defaults to _required_.
 - **`revision`** (*optional*)
    Specifies which revision of the snap needs to be installed.
+- **`components`** (*optional*)
+   A map of component constraints for the snap. Each key is a component name and the value is either a string shorthand for the presence (e.g., `optional`) or a map with the following fields:
+   - **`presence`** (*required*): Can be `required`, `optional`, or `invalid`.
+   - **`revision`** (*optional*): Specifies the revision of the component to be installed. A component with `presence: invalid` cannot specify a `revision`. Non-`invalid` components must specify a `revision` if their snap does and cannot do so if their snap doesn't.
    
 An example of this type:
 
@@ -62,6 +70,12 @@ snaps:
   -
     id: buPKUD3TKqCOgLEjjHx5kSiCpIs5cMuQ
     name: hello-world
+    revision: 99
+    components:
+      my-component:
+        presence: required
+        revision: 10
+      other-component: invalid
 timestamp: 2021-12-14T13:56:22Z
 sign-key-sha3-384: b-mO5Wolu7bgpmXmRyICa3b2Vvcpi-uX5AIenSiwTi_6RKhTAOqwe4W3vNtb6O2y
 
