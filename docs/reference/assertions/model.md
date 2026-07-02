@@ -57,7 +57,9 @@ validation-sets        <list[dict]>   # Optional, see below for details
 
 The index for this assertion is the tuple \<`series`, `brand-id`, `model`\> and the fields are typically used in the following order:
 
-- `series` allows the brand to define which release of the platform the device uses. “rolling” is the name of the development series that bridges stable series, which have names like “16” or “18”.
+- `series` indicates which release series of the platform the device uses. It is included in the assertion index to allow assertion formats to vary from series to series. This lets a snap-based system to have a clear expectation of that assertion's structure and content.
+
+  The current model series accepted by snapd is `16`, corresponding to the year of the original release. This is because there has not yet been a need to break backwards compatibility.
 
 - `authority-id` and `brand-id` fields define the authority signing the assertion. Reference assertions are signed by Canonical and non-reference assertions are signed by their {ref}`brand store <explanation-stores-store-overview>`. For a custom model assertion, this needs to be the developer ID.
 
