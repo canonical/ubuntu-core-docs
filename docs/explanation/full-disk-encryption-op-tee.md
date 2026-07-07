@@ -13,7 +13,7 @@ OP-TEE is an open source Trusted Execution Environment (TEE) for Arm systems. It
 
 Snapd (the snap daemon) integrates with a Canonical-provided [OP-TEE TA](https://github.com/canonical/optee-uc-fde) that knows how to seal and unseal LUKS keys inside the secure world.
 
-During installation, snapd decides how to seal the LUKS disk keys. It first looks for a kernel [`fde-setup` hook](https://snapcraft.io/docs/uc20-fde-hooks#heading--fde-setup), then for the dedicated OP-TEE TA, and finally falls back to TPM-backed sealing. The selection is automatic and requires no user input.
+During installation, snapd decides how to seal the LUKS disk keys. It first looks for a kernel [`fde-setup` hook](https://forum.snapcraft.io/t/uc20-uc22-full-disk-encryption-hook-interface/24439#heading--fde-setup), then for the dedicated OP-TEE TA, and finally falls back to TPM-backed sealing. The selection is automatic and requires no user input.
 
 When OP-TEE is selected, snapd asks the TA to seal the disk key. The TA performs the encryption inside the secure world and hands back the sealed key. The encrypted key is stored on disk so that it can be used to decrypt the LUKS partition later. Note that only the TA can decrypt the sealed key, so storing the sealed key is safe.
 

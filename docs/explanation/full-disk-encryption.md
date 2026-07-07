@@ -22,7 +22,7 @@ The following factors affect how a device is encrypted:
 - {ref}`Disabling encryption <ref-full-disk-encryption_disabling-encryption>`: an optional parameter that can disable encryption
 - {ref}`Model grade <ref-full-disk-encryption_model-grade>`: interacts with _storage-safety_ to set the device constraints 
 
-For a non-standard (non-UEFI+TPM platform) FDE platform, such as a Raspberry Pi or other ARM devices, implementation is board-specific and will typically involve creating custom gadget and kernel snaps. UC20/UC22, however, do provide a helper mechanism, via a hook interface, to ensure the integrity of any subsequently executed or accessed data. See the [full-disk-encryption hook interface](https://snapcraft.io/docs/uc20-fde-hooks) for further details.
+For a non-standard (non-UEFI+TPM platform) FDE platform, such as a Raspberry Pi or other ARM devices, implementation is board-specific and will typically involve creating custom gadget and kernel snaps. UC20/UC22, however, do provide a helper mechanism, via a hook interface, to ensure the integrity of any subsequently executed or accessed data. See the [full-disk-encryption hook interface](https://forum.snapcraft.io/t/uc20-uc22-full-disk-encryption-hook-interface/24439) for further details.
 
 (ref-full-disk-encryption_storage-layouts)=
 ## Storage layouts
