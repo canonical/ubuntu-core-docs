@@ -62,7 +62,7 @@ See {ref}`Add customs snaps <how-to-guides-image-creation-add-custom-snaps>` for
 
 ## Device authentication
 
-When a device boots for the first time, it obtains a signed {ref}`serial assertion <reference-assertions-serial>` from a [Model Service](https://ubuntu.com/internet-of-things/appstore/docs/how-to/configure-model-service/) or [Serial vault](https://canonical-serial-vault.readthedocs-hosted.com/). Each device can then be authenticated with the dedicated Snap Store using the model assertion's _model name_ and an authentication token called a **macaroon**. 
+When a device boots for the first time, it obtains a signed {ref}`serial assertion <reference-assertions-serial>` from a [Model Service](https://documentation.ubuntu.com/dedicated-snap-store/how-to/configure-model-service/) or [Serial vault](https://canonical-serial-vault.readthedocs-hosted.com/). Each device can then be authenticated with the dedicated Snap Store using the model assertion's _model name_ and an authentication token called a **macaroon**. 
 
 ![image](/images/brand-store-4.png)
 
