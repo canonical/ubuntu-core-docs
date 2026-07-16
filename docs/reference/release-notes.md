@@ -68,7 +68,7 @@ New features for this release include:
 
 * Boot and update time improvements
 * Chisel-based build system for minimal images
-* CRA (Coordinated Remediation and Assurance) compliance support
+* CRA (EU Cyber Resilience Act) compliance support
 * Livepatch support for kernel patching
 * Components general availability
 * Enhanced API documentation with automatic endpoint discovery
