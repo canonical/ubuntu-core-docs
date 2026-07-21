@@ -1,7 +1,7 @@
 (explanation-system-snaps-network-manager-how-to-guides-configure-vpn-connections)=
 # Configure VPN connections
 
-VPN support requires both the use of `core22` and network-manager from a `22/*` channel. Currently, two types of VPN are supported:
+VPN support requires network-manager installed from the track that matches your Ubuntu Core base — for example `22/stable` on Core 22 or `24/stable` on Core 24. Using a mismatched track (such as the Core 22 track on a Core 24 system) can prevent VPN connections from being created. See {ref}`Install NetworkManager <explanation-system-snaps-network-manager-install-networkmanager>` for track details. Currently, two types of VPN are supported:
 
 - {ref}`OpenVPN <ref-configure-vpn-connections_openvpn>`
 - {ref}`WireGuard <ref-configure-vpn-connections_wireguard>`
