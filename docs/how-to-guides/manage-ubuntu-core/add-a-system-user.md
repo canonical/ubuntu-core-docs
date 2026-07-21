@@ -17,6 +17,11 @@ Some systems, however, suppress _console-conf_ and its user creation.
 
 To create a system user on these systems, you must create and sign a {ref}`system-user assertion <reference-assertions-system-user>`. This assertion can then be injected into the {ref}`ubuntu-seed <ref-inside-ubuntu-core_volume-layouts>` partition using the {ref}`ubuntu-image utility <ref-use-ubuntu-image_extra-assertions>`. Alternatively, it can be embedded within a file called `auto-import.assert` that's added to the system via the root directory of a removable USB storage device that must be formatted with a widely supported filesystem such as ext4, FAT32, or any other filesystem supported by the device Linux kernel. This process is covered below.
 
+```{note}
+
+When using `ubuntu-image` to seed a `system-user` assertion, the model must have `grade: dangerous`. The seeded assertion must use public key authentication and must not contain a password. Password-based `system-user` assertions are only suitable for the removable-media `auto-import.assert` workflow described below.
+```
+
 ```{admonition} Managed and unmanaged systems
 :class: caution
 
@@ -193,4 +198,3 @@ Simply copy `auto-import.assert` to the root directory of a USB drive, insert it
 If you can log in with the username and password, the system user has been created.
 
 You can also use the `snap known system-user` command. If there is a system user, the signed assertion is output.
-
