@@ -23,16 +23,16 @@ Changing the  **debug**  configuration option has immediate effect and also affe
 
 **Example:**  Enable debug feature
 ```bash
-$ snap set modem-manager debug.enable=true
+snap set modem-manager debug.enable=true
 ```
 **Example:**  Disable debug feature.
 ```bash
-$ snap set modem-manager debug.enable=false
+snap set modem-manager debug.enable=false
 ```
 ## Viewing logs
 
 The debug information, when enabled, will be available in the journal and can be viewed with:
 ```bash
-$ journalctl --no-pager -u snap.modem-manager.modemmanager.service
+journalctl --no-pager -u snap.modem-manager.modemmanager.service
 ```
 
