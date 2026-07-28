@@ -15,17 +15,13 @@ NVIDIA GPU as the DRI device, which means that one can use integrated Intel
 graphics (or, indeed, no graphics at all) and still use the CUDA cores available
 to them.
 
-## Ubuntu Core 24+
+## Ubuntu Core 24
 
 ```{note}
 This guide requires snapd 2.67 or later, which introduced stable support for snap components. Existing devices may need to refresh snapd to enable full components support.
 ```
 
-The general implementation is similar across Core releases, using the respective
-versions of the mentioned snaps. This section will make references to Ubuntu Core
-24 specific snaps.
-
-On Ubuntu Core 24+, most of the setup for kernel drivers and libraries is already
+On Ubuntu Core 24, most of the setup for kernel drivers and libraries is already
 taken care of as part of the distribution.
 Completion of the setup is a responsibility of the device owner, who must install
 the NVIDIA kernel drivers and userspace libraries, and of the application

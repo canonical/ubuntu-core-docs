@@ -12,10 +12,10 @@ After a model has been {ref}`created or modified <ref-create-a-model_create-a-mo
 (ref-sign-the-model_create-a-key)=
 ## Create a key
 
-First make sure there are no keys already associated with your account by running the `snapcraft list-keys` command (you will only have a key if you've previously signed an assertion; if you already have a key, you can use that one):
+First make sure there are no keys already associated with your account by running the `snapcraft keys` command (you will only have a key if you've previously signed an assertion; if you already have a key, you can use that one):
 
 ```bash
-$ snapcraft list-keys
+$ snapcraft keys
 No keys have been registered. See 'snapcraft register-key --help' to register a key.
 ```
 
@@ -52,10 +52,10 @@ Registering key ...
 Done. The key "my-model-key" (<key fingerprint>) may be used to sign your assertions.
 ```
 
-Regardless of whether you're logged in with snapcraft, you will be asked for your account and password details. You'll also need to unlock the key with your passphrase, and when the process is complete, the `snapcraft list-keys` command will now list the registered key:
+Regardless of whether you're logged in with snapcraft, you will be asked for your account and password details. You'll also need to unlock the key with your passphrase, and when the process is complete, the `snapcraft keys` command will now list the registered key:
 
 ```bash
-$ snapcraft list-keys
+$ snapcraft keys
     Name          SHA3-384 fingerprint
 *   my-model-key  <key fingerprint>
 ```

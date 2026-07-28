@@ -53,7 +53,7 @@ Gating involves pushing {ref}`validation assertions <reference-assertions-valida
         $ snapcraft create-key my-key
         Passphrase:
         Confirm passphrase:
-        $ snapcraft list-keys
+        $ snapcraft keys
             Name          SHA3-384 fingerprint
         -   my-key       mfomTtPB1cE3IFs51NtdnFoPlQwJxFgxOMU_q0mPkH7M2gKB-4m28d99XrVjA53B  (not registered)
 

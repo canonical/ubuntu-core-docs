@@ -38,7 +38,11 @@ The installation speed will depend on your network connection and the speed of y
 
 You can see which of these are being used with the `snap connections` command:
 
-```bash
+```{terminal}
+   :input: snap connections
+   :user: ubuntu
+   :host: ubuntu-core
+
 Interface                 Plug                                  Slot                         Notes
 content[graphics-core22]  ubuntu-frame:graphics-core22          mesa-core22:graphics-core22  -
 content[graphics-core22]  wpe-webkit-mir-kiosk:graphics-core22  mesa-core22:graphics-core22  -
@@ -66,18 +70,23 @@ Press the tab key to auto-complete partially typed connections and other _snap_ 
 
 To see a summary of system changes, such as interface disconnection and re-connection, plus updates, use the `snap changes` command:
 
-```bash
-$ snap changes
+```{terminal}
+   :input: snap changes
+   :user: ubuntu
+   :host: ubuntu-core
+
 ID   Status  Spawn               Ready               Summary
 7    Done    today at 10:35 UTC  today at 10:35 UTC  Disconnect : from wpe-webkit-mir-kiosk:network
 8    Done    today at 10:36 UTC  today at 10:36 UTC  Connect wpe-webkit-mir-kiosk:network to snapd:network
-
 ```
 
 You can list which snaps are installed on your Ubuntu Core system with `snap list`:
 
-```bash
-$ snap list
+```{terminal}
+   :input: snap list
+   :user: ubuntu
+   :host: ubuntu-core
+
 Name                  Version         Rev    Tracking       Publisher   Notes
 core22                20240111        1125   latest/stable  canonical✓  base
 mesa-core22           23.0.4          234    latest/stable  canonical✓  -
@@ -92,8 +101,11 @@ The above shows the standard (and initial) set of snaps in a default Ubuntu Core
 
 The default state for an Ubuntu Core image, including which snaps it includes, is defined by its {ref}`model assertion <reference-assertions-model>`. You can view the one being used on the current system with the `snap known model` command, or use `snap known serial` to show the device serial number:
 
-```bash
-$ snap known serial
+```{terminal}
+   :input: snap known serial
+   :user: ubuntu
+   :host: ubuntu-core
+
 type: serial
 authority-id: canonical
 brand-id: canonical
@@ -126,8 +138,11 @@ Open the IP address of your device in a web browser on the same network and you'
 
 In common with other server applications, NextCloud runs various services in the background. Snapped services like these can be viewed with the `snap services` command:
 
-```bash
-$ snap services
+```{terminal}
+   :input: snap services
+   :user: ubuntu
+   :host: ubuntu-core
+
 Service                               Startup  Current   Notes
 nextcloud.apache                      enabled  active    -
 nextcloud.logrotate                   enabled  inactive  timer-activated
