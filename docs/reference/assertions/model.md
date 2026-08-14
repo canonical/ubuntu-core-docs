@@ -106,7 +106,9 @@ A [component](https://snapcraft.io/docs/components) is an optional part of a sna
 
 Components are declared inside the relevant entry in the model's `snaps` list. Each component is listed by name under a `components` map, with a `presence` value of either `required` or `optional`. If a component is required, it must be present in the image seed.
 
-The `presence` value can be provided as a string shortcut or as a map. The following example adds optional NVIDIA components to the `pc-kernel` snap entry:
+The `presence` value can be provided as a string shortcut or as a map. The map form can also specify the modes for which a component must be present. Component modes must be a subset of the modes specified for the snap and default to the snap's modes.
+
+The following example adds optional NVIDIA components to the `pc-kernel` snap entry, with one component limited to `run` mode:
 
 ```json
 {
@@ -116,7 +118,8 @@ The `presence` value can be provided as a string shortcut or as a map. The follo
     "id": "pYVQrBcKmBa0mZ4CCN7ExT6jH8rY1hza",
     "components": {
         "nvidia-590-uda-ko": {
-            "presence": "optional"
+            "presence": "optional",
+            "modes": ["run"]
         },
         "nvidia-590-uda-user": "optional"
     }
