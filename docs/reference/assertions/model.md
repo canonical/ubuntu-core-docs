@@ -38,7 +38,6 @@ authority-id:          <authority account id>
 base:                  <string>
 brand-id               <account id>
 classic                <true|false>   # Optional
-components:            <list[dict]>   # Optional, see below for details
 display-name           <descriptive string>
 grade:                 <string>
 model                  <model id>
@@ -98,26 +97,30 @@ For "recovery" and "install" modes, "ephemeral" can be used. This will install t
   * `presence` *(optional)*:  set to mark a snap whose absence will not fail installation or recovery. Can be either _optional_ or _required_ but defaults to _required_.
     * A _required_ snap cannot be removed from the system.
     * An _optional_ snap is not added to the {ref}`ubuntu-seed <explanation-core-elements-storage-layout>` partition when the image is created with {ref}`ubuntu-image <how-to-guides-image-creation-use-ubuntu-image>` unless the `--snap` option is used to add the snap explicitly. Optional snaps can be used to adapt the same base model for different hardware configurations, deployment objectives, and for use with a dynamic modelling agent.
+  * `components` *(optional)*: snap components to include in the image. See the following Components section for details.
   * `default-channel` *(optional)*: initial tracking channel for the snap, default is “latest/stable”.
 
 ### Components
 
-A [component](https://snapcraft.io/docs/components) is part of a snap that has been declared as optional. Models need to specify which snap components should be included in an image as they are not installed by default.
+A [component](https://snapcraft.io/docs/components) is an optional part of a snap. Model assertions specify which snap components should be included in an image, as components are not installed by default.
 
-They're added as a structured list with a single `presence` attribute for whether each component is required or options. If required, the component must be in the image seed.
+Components are declared inside the relevant entry in the model's `snaps` list. Each component is listed by name under a `components` map, with a `presence` value of either `required` or `optional`. If a component is required, it must be present in the image seed.
 
-The modes for which the component must be present can be specified as well. Syntax is as follows:
+The `presence` value can be provided as a string shortcut or as a map. The following example adds optional NVIDIA components to the `pc-kernel` snap entry:
 
-```text
-    components:                                 # optional
-      <component-name-1>:
-        presence: "optional"|"required"
-        modes: [<mode-specifier>]               # list of modes, optional
-                                                # must be a subset of snap one
-                                                # defaults to the same modes
-                                                # as the snap
-      <component-name-2>: "required"|"optional" # presence, shortcut
-                                                # syntax
+```json
+{
+    "name": "pc-kernel",
+    "type": "kernel",
+    "default-channel": "26.04/beta",
+    "id": "pYVQrBcKmBa0mZ4CCN7ExT6jH8rY1hza",
+    "components": {
+        "nvidia-590-uda-ko": {
+            "presence": "optional"
+        },
+        "nvidia-590-uda-user": "optional"
+    }
+}
 ```
 
 ### Validation sets
