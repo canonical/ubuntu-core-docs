@@ -9,7 +9,7 @@ myst:
 
 Ubuntu Core includes access to the Canonical's [Snap Store](https://snapcraft.io/store) by default. This allows any developer to easily release and support apps for multiple architectures, on multiple release channels, from daily builds to stable releases.
 
-See [Releasing to the Snap Store](https://snapcraft.io/docs/releasing-to-the-snap-store) for more details on how to publish and distribute snaps to devices from the Snap Store.
+See [Publish a snap](https://documentation.ubuntu.com/snapcraft/latest/how-to/publishing/publish-a-snap/) for more details on how to publish and distribute snaps to devices from the Snap Store.
 
 ## Enterprise Store
 
@@ -41,7 +41,7 @@ Snaps can be registered using the `snapcraft` tool or via the web. Snaps should 
 -   execute `snapcraft login` and authenticate using the brand/umbrella account
 -   once authenticated register the snap name(s) with `snapcraft register   yoursnapname`
 
-For more details on this process, see [Registering your app name](https://snapcraft.io/docs/registering-your-app-name).
+For more details on this process, see [Register a snap](https://documentation.ubuntu.com/snapcraft/latest/how-to/publishing/register-a-snap/).
 
 ### Registering snaps via the web
 

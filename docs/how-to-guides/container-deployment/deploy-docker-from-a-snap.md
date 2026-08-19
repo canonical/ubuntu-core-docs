@@ -169,7 +169,7 @@ This speeds up the build and is safe because building this snap makes no changes
 ```shell
 sudo snap install --dangerous ./rabbitmq-docker-guide_demo_amd64.snap
 ```
-The [`--dangerous`](https://snapcraft.io/docs/install-modes#heading--dangerous) flag is set because this is a locally built, unsigned snap.
+The [`--dangerous`](https://snapcraft.io/docs/install-modes#dangerous-mode) flag is set because this is a locally built, unsigned snap.
 
 Connect the following [interfacess](https://snapcraft.io/docs/interfaces):
 ```shell

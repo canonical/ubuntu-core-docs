@@ -45,7 +45,7 @@ Other [risks levels](https://snapcraft.io/docs/channels) are available for testi
 
 ## Update mechanisms in Ubuntu Core
 
-When Ubuntu Core is running, its snap packages update (aka refresh) automatically. To manually control or modify this process, see {ref}`Refresh control <explanation-refresh-control>`. Essential snaps, such as the base and kernel snaps, can be refreshed assuming the updated version is built from the same build-base used in the original model definition. When refreshing the base or kernel snaps, the system will automatically reboot to apply the freshly installed snap. When refreshing the gadget snap, a reboot occurs if the [boot-assets](https://snapcraft.io/docs/gadget-boot-assets) are modified.
+When Ubuntu Core is running, its snap packages update (aka refresh) automatically. To manually control or modify this process, see {ref}`Refresh control <explanation-refresh-control>`. Essential snaps, such as the base and kernel snaps, can be refreshed assuming the updated version is built from the same build-base used in the original model definition. When refreshing the base or kernel snaps, the system will automatically reboot to apply the freshly installed snap. When refreshing the gadget snap, a reboot occurs if the {ref}`boot assets <interfaces-gadget-boot-assets>` are modified.
 
 To upgrade an Ubuntu Core image from one version to another, see {ref}`Upgrade Ubuntu Core <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>`. This process is known as {ref}`remodeling <explanation-remodeling>`.
 

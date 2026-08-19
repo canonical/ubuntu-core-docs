@@ -194,7 +194,7 @@ The parameters from `append` will be added to the default command line. The para
 
 The `meta/gadget.yaml` file contains the basic metadata for gadget-specific functionality, including a detailed specification of which structure items compose an image. The latter is used both by snapd and by ubuntu-image when creating images for these devices.
 
-A gadget snap's boot assets can also be automatically updated when the snap is refreshed. See [Updating gadget boot assets](https://snapcraft.io/docs/gadget-boot-assets) for further details.
+A gadget snap's boot assets can also be automatically updated when the snap is refreshed. See {ref}`Updating gadget boot assets <interfaces-gadget-boot-assets>` for further details.
 
 The following specification defines what is supported in `gadget.yaml`:
 
