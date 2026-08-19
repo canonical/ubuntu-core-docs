@@ -136,7 +136,7 @@ The following is an annotated snapcraft.yaml file that can be used as the basis 
 ```yaml
 # A template snapcraft.yaml
 # For a full specification of the snapcraft.yaml, please see:
-# https://snapcraft.io/docs/snapcraft-yaml-reference
+# https://documentation.ubuntu.com/snapcraft/stable/reference/snapcraft-yaml/
 
 # Do not feel obligated to perfectly adhere to this style, but strive to include
 # as much metadata as possible.
@@ -186,7 +186,7 @@ description: |
 
 # If you want the gadget.yaml to refer to assets provided by the kernel
 # instead of this snap, use this key. See:
-# https://snapcraft.io/docs/snapcraft-top-level-metadata
+# https://documentation.ubuntu.com/snapcraft/stable/reference/snapcraft-yaml/#top-level-keys
 assumes: [kernel-assets]
 
 # At a minimum the snap should build natively.

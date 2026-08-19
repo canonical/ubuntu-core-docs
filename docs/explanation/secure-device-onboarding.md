@@ -160,11 +160,11 @@ Your gadget snap acts as the bridge between snapd and your specific hardware. It
 
 ### Prepare-device hook
 
-This hook sets up the hardware identity key pair during installation. For details on implementation—including how to work with TPMs, HSMs, and detect factory mode—see the [snapd prepare-device hook documentation](https://snapcraft.io/docs/the-prepare-device-hook).
+This hook sets up the hardware identity key pair during installation. For details on implementation—including how to work with TPMs, HSMs, and detect factory mode—see the [snapd prepare-device hook documentation](https://snapcraft.io/docs/reference/development/yaml-schemas/the-gadget-snap/#prepare-device-hook).
 
 ### Prepare-serial-request hook
 
-This hook runs during device registration to sign the nonce with the hardware identity private key, proving the request is genuine. For implementation details and the expected input/output format, see the [snapd prepare-serial-request hook documentation](https://snapcraft.io/docs/the-prepare-serial-request-hook).
+This hook runs during device registration to sign the nonce with the hardware identity private key, proving the request is genuine. For implementation details and the expected input/output format, see the [snapd prepare-serial-request hook documentation](https://snapcraft.io/docs/reference/development/yaml-schemas/the-gadget-snap/#prepare-serial-hook).
 
 ## Remodeling considerations
 

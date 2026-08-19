@@ -81,7 +81,7 @@ If a customer has devices already flashed and sitting on shelves with a snapd ve
 
 If a customer has devices on shelves flashed with a version of snapd _older_ than 2.36, they should also update autonomously, with snapd updating first before migrating the assertions to the newer formats. This assumes refreshing is correctly in place.
 
-Lastly, if a customer has **existing** snaps that require **new** auto-connections in newer revisions, they should consider defining the [assumes attribute](https://snapcraft.io/docs/snapcraft-top-level-metadata#heading--assumes) in their snapcraft.yaml file. 
+Lastly, if a customer has **existing** snaps that require **new** auto-connections in newer revisions, they should consider defining the [assumes attribute](https://documentation.ubuntu.com/snapcraft/stable/reference/snapcraft-yaml/#assumes) in their snapcraft.yaml file.
 
 Pre-existing auto-connections in a pre store-scoped snap-declaration should not be affected because of the assertion format handling.
 
