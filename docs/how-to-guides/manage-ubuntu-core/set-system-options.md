@@ -66,4 +66,4 @@ $ snap get -d system
 }
 ```
 
-See [Gadget snaps](https://snapcraft.io/docs/gadget-snap#heading--gadget) for details on how to create a default set of configuration values for a device.
+See [Gadget snaps](https://snapcraft.io/docs/reference/development/yaml-schemas/the-gadget-snap/#the-gadget-yaml-file) for details on how to create a default set of configuration values for a device.

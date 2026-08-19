@@ -55,7 +55,7 @@ opengl                    wpe-webkit-mir-kiosk:opengl           :opengl         
 wayland                   wpe-webkit-mir-kiosk:wayland          ubuntu-frame:wayland         -
 ```
 
-Each line in the above output describes how an [interface](https://snapcraft.io/docs/supported-interfaces) is used to connect an application to a system resource. This is accomplished through a system of [plugs and slots](https://snapcraft.io/docs/interface-management#heading--slots-plugs) which connect a consumer (plug) to a provider (slot). The [network](https://snapcraft.io/docs/network-interface) interface, for example, connects the system network provider slot (`:network`) to the application consumer plug (`wpe-webkit-mir-kiosk:network`) to provide the web view with network access.
+Each line in the above output describes how an [interface](https://snapcraft.io/docs/supported-interfaces) is used to connect an application to a system resource. This is accomplished through a system of [plugs and slots](https://snapcraft.io/docs/how-to-guides/manage-snaps/connect-interfaces/#plugs-and-slots) which connect a consumer (plug) to a provider (slot). The [network](https://snapcraft.io/docs/network-interface) interface, for example, connects the system network provider slot (`:network`) to the application consumer plug (`wpe-webkit-mir-kiosk:network`) to provide the web view with network access.
 
 The `snap connect` and `snap disconnect` commands are used to remove and activate an interface connection. To disable and then re-enable network access to `wpe-webkit-mir-kiosk`, for instance, you'd type:
 

@@ -48,7 +48,7 @@ BUG_REPORT_URL="https://bugs.launchpad.net/snappy/"
 
 The model assertion defines which {ref}`system snaps <ref-inside-ubuntu-core_ubuntu-core-snaps>` make up the device's operating system, including the gadget snap, kernel snap and the base snap with the (read-only) root filesystem.
 
-On an Ubuntu Core 20 system, _kernel_ and _gadget_ snaps are installed from a `20` [track](https://snapcraft.io/docs/channels#heading--tracks), with the [base snap](https://snapcraft.io/docs/base-snaps) being `core20`. The _snapd_ snap remains unchanged, as it's always at the latest version available.
+On an Ubuntu Core 20 system, _kernel_ and _gadget_ snaps are installed from a `20` [track](https://snapcraft.io/docs/explanation/how-snaps-work/channels-and-tracks/#tracks), with the [base snap](https://snapcraft.io/docs/base-snaps) being `core20`. The _snapd_ snap remains unchanged, as it's always at the latest version available.
 
 The following is a complete unsigned reference model for an amd64 Ubuntu Core 20 image:
 

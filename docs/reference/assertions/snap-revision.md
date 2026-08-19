@@ -7,7 +7,7 @@ myst:
 (reference-assertions-snap-revision)=
 # snap-revision
 
-The _snap-revision_ {ref}`assertion <ref-index_assertions>` is a statement by the {ref}`store <explanation-stores-store-overview>` acknowledging the receipt of a snap build and labelling it with a snap [revision](https://snapcraft.io/docs/glossary#heading--revision). 
+The _snap-revision_ {ref}`assertion <ref-index_assertions>` is a statement by the {ref}`store <explanation-stores-store-overview>` acknowledging the receipt of a snap build and labelling it with a snap [revision](https://snapcraft.io/docs/reference/glossary/#revision).
 
 Alongside {ref}`account <reference-assertions-account>`, {ref}`snap-declaration <reference-assertions-snap-declaration>` and {ref}`account-key-assertion <reference-assertions-account-key>` assertions,  snap-revision_ is bundled within the composite `.assert` file that accompanies a snap downloaded with the `snap download <snap-name>` command.
 

@@ -31,7 +31,7 @@ timestamp: 2022-01-26T11:15:49.885580Z
 sign-key-sha3-384: some-account-key
 ```
 
-With the release of [snapd](https://snapcraft.io/docs/glossary#heading--snapd)  version _2.36_ in 2018, the snap-declaration assertion was updated to include a {ref}`dedicated snap store <ref-dedicated-snap-store_dedicated-snap-store>` definition for each granted interface:
+With the release of [snapd](https://snapcraft.io/docs/reference/glossary/#snapd)  version _2.36_ in 2018, the snap-declaration assertion was updated to include a {ref}`dedicated snap store <ref-dedicated-snap-store_dedicated-snap-store>` definition for each granted interface:
 
 ```yaml
 type: snap-declaration

@@ -15,7 +15,7 @@ These recovery modes can be accessed in three different ways:
 Start or reboot the device with the ‘1’ key held on a connected keyboard
 - **{ref}`Snap reboot <ref-use-a-recovery-mode_recovery-modes-from-snap-reboot>`**</br>
 Run `snap reboot` on the device with either `--recover` or `--install` arguments.
-- **[Snapd REST API](https://snapcraft.io/docs/snapd-api#heading--systems-get)**</br>
+- **[Snapd REST API](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/OpenAccess/getSystems)**</br>
 Use the REST API to call either the `recover`, `install`, `factory-reset` or `reboot` functions.
 
 Recovery modes are available on Ubuntu Core 20 and later.

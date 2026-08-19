@@ -25,14 +25,14 @@ In addition to parameters supported by the kernel, there are also *Ubuntu Core-s
 
 There are two [system options](https://snapcraft.io/docs/system-options) that can be used to add new kernel boot parameters to a system that has been deployed and is running:
 
-1. [system.kernel.cmdline-append](https://snapcraft.io/docs/system-options#heading--kernel-cmdline-append)
-1. [system.kernel.dangerous-cmdline-append](https://snapcraft.io/docs/system-options#heading--kernel-dangerous-cmdline-append)
+1. [system.kernel.cmdline-append](https://snapcraft.io/docs/reference/administration/system-options/#system-system-kernel-cmdline-append)
+1. [system.kernel.dangerous-cmdline-append](https://snapcraft.io/docs/reference/administration/system-options/#system-system-kernel-dangerous-cmdline-append)
 
-The first setting will permit **only** boot parameters verified against an _allow list_ in the gadget snap. See [gadget.yaml](https://snapcraft.io/docs/the-gadget-snap#heading--gadget) for further details.
+The first setting will permit **only** boot parameters verified against an _allow list_ in the gadget snap. See [gadget.yaml](https://snapcraft.io/docs/reference/development/yaml-schemas/the-gadget-snap/#dynamic-kernel-parameters) for further details.
 
 The second option is valid only for dangerous grade [models](https://ubuntu.com/core/docs/reference/assertions/model) and permits any parameter to be added.
 
-System options can be set either through the [snapd API](https://snapcraft.io/docs/snapd-api#heading--snaps-name-conf), or with the `snap set` command:
+System options can be set either through the [snapd API](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/Asynchronous/setSnapConfig), or with the `snap set` command:
 
 ```bash
 snap set system system.kernel.dangerous-cmdline-append="core.bootchart"
@@ -69,7 +69,7 @@ Below we describe how to add additional static parameters (static with the meani
 
 ### Adding static parameters from the gadget
 
-The recommended way to add static parameters is by using the `kernel-cmdline` stanza as described in [gadget.yaml](https://snapcraft.io/docs/the-gadget-snap#heading--gadget). This allows to add new parameters by using the `append` list or removing some of the default Ubuntu Core parameters by putting them in the `remove` list. As already explained, a list of the allowed dynamic parameters can be set from there too.
+The recommended way to add static parameters is by using the `kernel-cmdline` stanza as described in [gadget.yaml](https://snapcraft.io/docs/reference/development/yaml-schemas/the-gadget-snap/#static-kernel-parameters). This allows to add new parameters by using the `append` list or removing some of the default Ubuntu Core parameters by putting them in the `remove` list. As already explained, a list of the allowed dynamic parameters can be set from there too.
 
 ### Files for modification
 

@@ -11,7 +11,7 @@ An {ref}`Ubuntu Core image <ref-index-build-your-first-image>` contains a recove
 
 One issue with this approach is that there may be snaps included in the recovery system that have since received security updates. This will have been updated automatically in the running system, but not in the image-based recovery system. 
 
-To resolve this, the recovery system [snapd REST API](https://snapcraft.io/docs/snapd-api#heading--systems-get) enables users to create new recovery systems with snaps that are constrained by a set of {ref}`validation-sets assertions <reference-assertions-validation-set>`.
+To resolve this, the recovery system [snapd REST API](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/OpenAccess/getSystems) enables users to create new recovery systems with snaps that are constrained by a set of {ref}`validation-sets assertions <reference-assertions-validation-set>`.
 
 This is specifically useful for ensuring that a recovery system is built from a set of snaps with well known revisions.
 

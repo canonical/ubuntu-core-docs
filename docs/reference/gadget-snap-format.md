@@ -17,7 +17,7 @@ The gadget metadata and content defines:
 -   Interface connections configured in the `connections:` section are executed on the device’s first boot only. Later changes to this section -- that is, changes added to the device at run time through gadget refreshes -- are not applied.
 -   Optional hooks that are invoked to control and customize the behavior over the device lifecycle, e.g. installation, initialisation and establishing device identity, factory reset.
 
-See {ref}`Building a gadget snap <how-to-guides-image-creation-build-a-gadget-snap>` for details on how a gadget snap can be built. For store deployment, gadget snaps must be produced by the device [brand](https://snapcraft.io/docs/glossary#heading--brand-store), as defined in the {ref}`model assertion <reference-assertions-model>`, or a reference gadget must be used. It is perfectly possible for different models to share a gadget snap.
+See {ref}`Building a gadget snap <how-to-guides-image-creation-build-a-gadget-snap>` for details on how a gadget snap can be built. For store deployment, gadget snaps must be produced by the device [brand](https://snapcraft.io/docs/reference/glossary/#brand-store), as defined in the {ref}`model assertion <reference-assertions-model>`, or a reference gadget must be used. It is perfectly possible for different models to share a gadget snap.
 
 ## Setup files
 
@@ -153,8 +153,8 @@ Volumes using `schema: emmc` use the same `volume-assignments` syntax (see above
 
 There are two [system options](https://snapcraft.io/docs/system-options) that can be used to add new kernel boot parameters to a system that has been deployed and is running:
 
-1. [system.kernel.cmdline-append](https://snapcraft.io/docs/system-options#heading--kernel-cmdline-append)
-2. [system.kernel.dangerous-cmdline-append](https://snapcraft.io/docs/system-options#heading--kernel-dangerous-cmdline-append)
+1. [system.kernel.cmdline-append](https://snapcraft.io/docs/reference/administration/system-options/#system-system-kernel-cmdline-append)
+2. [system.kernel.dangerous-cmdline-append](https://snapcraft.io/docs/reference/administration/system-options/#system-system-kernel-dangerous-cmdline-append)
 
 The second setting can be run (dangerously) without any prior configuration, but the first setting will permit **only** boot parameters verified against an *allow list* defined within the gadget snap.
 
