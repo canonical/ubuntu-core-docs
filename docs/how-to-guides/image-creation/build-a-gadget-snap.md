@@ -361,11 +361,11 @@ There are typically two methods for building a gadget snap, _native building_ an
 
 ### Requirements
 
-The build system must support [snap](https://snapcraft.io/docs/installing-snapd), and have both the [Snapcraft](https://snapcraft.io/docs/snapcraft-overview) build tool and the [LXD](https://canonical.com/lxd/install) virtualisation platform installed, all of which are provided by any Ubuntu release. Ensure your user has been added to the `lxd` group and you've initialized LXD with `lxd init` before proceeding. See [Set up Snapcraft](https://documentation.ubuntu.com/snapcraft/stable/how-to/setup/set-up-snapcraft/#install-lxd) for further details.
+The build system must support [snap](https://snapcraft.io/docs/installing-snapd), and have both the [Snapcraft](https://snapcraft.io/docs/snapcraft-overview) build tool and the [LXD](https://canonical.com/lxd/install) virtualisation platform installed, all of which are provided by any Ubuntu release. Ensure your user has been added to the `lxd` group and you've initialized LXD with `lxd init` before proceeding. See [Set up Snapcraft](https://documentation.ubuntu.com/snapcraft/stable/how-to/set-up-snapcraft/#install-lxd) for further details.
 
 ### Native building
 
-This method builds a gadget snap on the same hardware that the gadget is intended for. The following example will build the [22-amd64-pc](https://github.com/canonical/iot-field-gadget-snap/tree/22-amd64-pc) gadget snap on an x86 generic PC.
+This method builds a gadget snap on the same hardware that the gadget is intended for. The following example will build the [amd64 PC gadget](https://github.com/canonical/iot-field-gadget-snap/tree/22/pc) from the `22` branch on an x86 generic PC.
 
 #### Checkout the branch
 
@@ -375,11 +375,12 @@ With the requirements met, open a terminal and clone the repository:
 git clone https://github.com/canonical/iot-field-gadget-snap.git
 ```
 
-Next,`cd` into the directory and _checkout_ the `22-amd-pc` branch:
+Next, `cd` into the directory, check out the `22` branch, and enter the `pc` directory:
 
 ```
 cd iot-field-gadget-snap
-git checkout 22-amd64-pc
+git checkout 22
+cd pc
 ```
 
 #### Build with Snapcraft
@@ -394,7 +395,7 @@ Generated snap metadata
 Created snap package amd64-gadget_0.1_amd64.snap
 ```
 
-See [Image building](https://ubuntu.com/core/docs/board-enablement#heading--image-building) for instructions on how to build a bootable image that includes the gadget snap.
+See [Image building](https://documentation.ubuntu.com/core/how-to-guides/image-creation/board-enablement/#image-building) for instructions on how to build a bootable image that includes the gadget snap.
 
 ### Cross-building
 
@@ -402,7 +403,7 @@ Cross-building allows a gadget snap to be built on an architecture different fro
 
 Snapcraft uses LXD, or [optionally Multipass](https://snapcraft.io/docs/build-options), to isolate the host system from the build system. Crucially, both LXD and Multipass also allow for the _build_ architecture to differ from the _host_ architecture. This is handled by the `architecture` stanza in the `snapcraft.yaml` file for the gadget snap.
 
-The following example will build the [22-riscv-pc](https://github.com/canonical/iot-field-gadget-snap/tree/22-amd64-pc) gadget snap on an x86 PC.
+The following example will build the [22-riscv64-virt](https://github.com/canonical/iot-field-gadget-snap/tree/22-riscv64-virt) gadget snap on an x86 PC.
 
 #### Checkout the branch
 
@@ -439,4 +440,4 @@ Generated snap metadata
 Created snap package virt_22-1_riscv64.snap
 ```
 
-See [Architectures](https://snapcraft.io/docs/architectures) for more details on defining architectures and [Image building](https://ubuntu.com/core/docs/board-enablement#heading--image-building) for instructions on how to build a bootable image that includes the gadget snap.
+See [Architectures](https://snapcraft.io/docs/architectures) for more details on defining architectures and [Image building](https://documentation.ubuntu.com/core/how-to-guides/image-creation/board-enablement/#image-building) for instructions on how to build a bootable image that includes the gadget snap.

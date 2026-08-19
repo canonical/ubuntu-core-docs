@@ -43,12 +43,12 @@ For U-Boot devices example gadgets can be found in:
 
 In addition to the above, the IoT Devices Field team maintains a GitHub repository with source code branches that contain templates for the following device architectures:
 
-- [arm64-odroid-hc4](https://github.com/canonical/iot-field-gadget-snap/tree/22-arm64-odroid-hc4)
-- [arm64-orange-pi-5plus](https://github.com/canonical/iot-field-gadget-snap/tree/22-arm64-orange-pi-5plus)
-- [amd64-pc](https://github.com/canonical/iot-field-gadget-snap/tree/22-amd64-pc)
-- [amd64-pc-classic](https://github.com/canonical/iot-field-gadget-snap/tree/22-amd64-pc-classic)
-- [risc64-icicle](https://github.com/canonical/iot-field-gadget-snap/tree/22-riscv64-icicle)
-- [risc64-nezha](https://github.com/canonical/iot-field-gadget-snap/tree/24-riscv64-nezha)
+- [arm64-odroid-hc4](https://github.com/canonical/iot-field-gadget-snap/tree/22/odroid-hc4)
+- [arm64-orange-pi-5plus](https://github.com/canonical/iot-field-gadget-snap/tree/22/orangepi-5plus)
+- [amd64-pc](https://github.com/canonical/iot-field-gadget-snap/tree/22/pc)
+- [amd64-pc-classic](https://github.com/canonical/iot-field-gadget-snap/tree/22/pc-classic)
+- [risc64-icicle](https://github.com/canonical/iot-field-gadget-snap/tree/22/polarfire-icicle)
+- [risc64-nezha](https://github.com/canonical/iot-field-gadget-snap/tree/24/nezha)
 
 In the near future, we expect to add a RISC-V reference gadget snap to this list.
 

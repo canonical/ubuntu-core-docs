@@ -205,7 +205,7 @@ repackaging to end up with a kernel snap for your hardware platform!
 ## Build the snap
 
 The build system must support [snapd](https://snapcraft.io/docs/installing-snapd),
-and have both the [Snapcraft](https://documentation.ubuntu.com/snapcraft/stable/how-to/setup/set-up-snapcraft/)
+and have both the [Snapcraft](https://documentation.ubuntu.com/snapcraft/stable/how-to/set-up-snapcraft/)
 build tool and the [LXD](https://canonical.com/lxd) virtualisation platform
 installed, all of which are provided by any Ubuntu release.
 
