@@ -48,8 +48,8 @@ In addition to the above, the IoT Devices Field team maintains a GitHub reposito
 - [arm64-orange-pi-5plus](https://github.com/canonical/iot-field-gadget-snap/tree/22/orangepi-5plus)
 - [amd64-pc](https://github.com/canonical/iot-field-gadget-snap/tree/22/pc)
 - [amd64-pc-classic](https://github.com/canonical/iot-field-gadget-snap/tree/22/pc-classic)
-- [risc64-icicle](https://github.com/canonical/iot-field-gadget-snap/tree/22/polarfire-icicle)
-- [risc64-nezha](https://github.com/canonical/iot-field-gadget-snap/tree/24/nezha)
+- [riscv64-icicle](https://github.com/canonical/iot-field-gadget-snap/tree/22/polarfire-icicle)
+- [riscv64-nezha](https://github.com/canonical/iot-field-gadget-snap/tree/24/nezha)
 
 In the near future, we expect to add a RISC-V reference gadget snap to this list.
 

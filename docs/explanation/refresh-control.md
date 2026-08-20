@@ -241,7 +241,7 @@ In this example, if `roadmr-gating` is installed on a device, `roadmr-gated` wil
 
 ```{admonition} Installing new snaps after updated validation assertion
 :class: caution
-If a validation assertions is updated to include additional snaps, the new snaps will not be installed automatically. They will instead need to be installed locally through the _snap_ command or through the [snapd REST API](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/Asynchronous/manageSnaps).
+If a validation assertion is updated to include additional snaps, the new snaps will not be installed automatically. They will instead need to be installed locally through the _snap_ command or through the [snapd REST API](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/Asynchronous/manageSnaps).
 ```
 
 ## Revoking assertion validity
