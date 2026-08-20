@@ -395,7 +395,7 @@ Generated snap metadata
 Created snap package amd64-gadget_0.1_amd64.snap
 ```
 
-See [Image building](https://documentation.ubuntu.com/core/how-to-guides/image-creation/board-enablement/#image-building) for instructions on how to build a bootable image that includes the gadget snap.
+See {ref}`Image building <how-to-guides-image-creation-board-enablement-image-building>` for instructions on how to build a bootable image that includes the gadget snap.
 
 ### Cross-building
 
@@ -440,4 +440,4 @@ Generated snap metadata
 Created snap package virt_22-1_riscv64.snap
 ```
 
-See [Architectures](https://snapcraft.io/docs/architectures) for more details on defining architectures and [Image building](https://documentation.ubuntu.com/core/how-to-guides/image-creation/board-enablement/#image-building) for instructions on how to build a bootable image that includes the gadget snap.
+See [Architectures](https://snapcraft.io/docs/architectures) for more details on defining architectures and {ref}`Image building <how-to-guides-image-creation-board-enablement-image-building>` for instructions on how to build a bootable image that includes the gadget snap.

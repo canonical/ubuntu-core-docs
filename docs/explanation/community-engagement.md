@@ -24,7 +24,7 @@ Ubuntu Core does not have a its own code repository.  It is instead built entire
 - **[kernel snaps](https://github.com/canonical/sample-kernels)** define the Linux kernel to run on each system.
 - **[base snaps](https://snapcraft.io/docs/base-snaps)** provide the run-time environment and a minimal set of libraries.
 
-In addition to the above, our [Documentation](https://ubuntu.com/core/docs) is hosted and built from [https://github.com/canonical/ubuntu-core-docs](https://github.com/canonical/ubuntu-core-docs). See {ref}`How to contribute <ref-contributing_contribute-to-our-docs>` for further details.
+In addition to the above, our {ref}`Documentation <ref-index_ubuntu-core-documentation>` is hosted and built from [https://github.com/canonical/ubuntu-core-docs](https://github.com/canonical/ubuntu-core-docs). See {ref}`How to contribute <ref-contributing_contribute-to-our-docs>` for further details.
 
 ## Contributions
 

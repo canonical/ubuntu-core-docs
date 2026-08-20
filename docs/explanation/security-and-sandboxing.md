@@ -79,7 +79,7 @@ Locally, these are handled by the snap daemon, *snapd*, while remote connections
 
 ### Snapd (snap daemon) cryptography
 
-* **Digital signatures for [assertions](https://ubuntu.com/core/docs/reference/assertions)**
+* **Digital signatures for {ref}`assertions <ref-index_assertions>`**
 </br>SHA3-384 and SHA512 for hashing, OpenPGP v4 signatures with RSA 4096/8192 keys
 * **Hashing of snaps**</br>
 SHA3-384
@@ -92,7 +92,7 @@ Snapd uses them via [gopkg.in/macaroon.v1](https://github.com/go-macaroon/macaro
 
 ### Snap Store cryptography
 
-* **Digital signatures for [assertions](https://ubuntu.com/core/docs/reference/assertions)**</br>
+* **Digital signatures for {ref}`assertions <ref-index_assertions>`**</br>
 The key ID of the signing key is encoded with SHA3-384, and the assertion is signed with either 4096-bit RSA or 8192-bit RSA
 * **Hashing of artifacts**</br>
 The store generates many hashes of an uploaded artifact using SHA3-384, SHA256 and SHA512 to ensure the uniqueness and integrity of the artifact.

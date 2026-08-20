@@ -147,7 +147,7 @@ with or patching the code to add new features or test fixes.
 
 Additionally, building your own initrd as part of this process
 enables you to introduce even more complex feature support, such
-as leveraging [OP-TEE for Full Disk Encryption on non-x86_64 platforms](https://documentation.ubuntu.com/core/explanation/full-disk-encryption-op-tee/).
+as leveraging {ref}`OP-TEE for Full Disk Encryption on non-x86_64 platforms <ref-explanation-full-disk-encryption>`.
 
 For instance the below two parts within a kernel snap's `snapcraft.yaml` will
 build an entirely different kernel from the standard Canonical ones, trimming

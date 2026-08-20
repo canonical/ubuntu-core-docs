@@ -30,7 +30,7 @@ There are two [system options](https://snapcraft.io/docs/system-options) that ca
 
 The first setting will permit **only** boot parameters verified against an _allow list_ in the gadget snap. See [gadget.yaml](https://snapcraft.io/docs/reference/development/yaml-schemas/the-gadget-snap/#dynamic-kernel-parameters) for further details.
 
-The second option is valid only for dangerous grade [models](https://ubuntu.com/core/docs/reference/assertions/model) and permits any parameter to be added.
+The second option is valid only for dangerous grade {ref}`models <reference-assertions-model>` and permits any parameter to be added.
 
 System options can be set either through the [snapd API](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/Asynchronous/setSnapConfig), or with the `snap set` command:
 

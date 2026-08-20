@@ -29,6 +29,7 @@ In addition to traditional snap metadata, the gadget snap also holds some setup 
 - **uboot.conf**: marker file that declares that the gadget needs the U-Boot bootloader and that files in the seed and boot partitions are used to store U-Boot environment. (Note: this is not needed when using a system-boot-state partition.)
 - **cloud.conf**: optional [cloud-init](https://cloudinit.readthedocs.io/en/latest/) configuration; cloud-init is disabled if missing. </br>Using cloud-init is _not recommended_ for production devices, and should only be included for testing and development purposes.
 
+(reference-gadget-snap-format-example-gadget-snaps)=
 ## Example gadget snaps
 
 The following gadget repositories contain the gadget snap definitions for _amd64_ (64 bit PC Gadget Snap) and the Raspberry Pi family of devices supported by Ubuntu Core:

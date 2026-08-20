@@ -9,7 +9,7 @@ myst:
 
 Ubuntu Core and its applications run within a confined and transaction-based environment. This provides the robustness and security that makes Ubuntu Core ideal for embedded device deployment, but it also requires a different approach from classic Ubuntu systems. 
 
-Application management, system configuration and update schedules in Ubuntu Core are managed by *snapd*, the snap packaging daemon. Snap features are explained comprehensively in the [Snap documentation](https://snapcraft.io/docs), while our [Ubuntu Core documentation](https://ubuntu.com/core/docs) handles the elements of the _snap_ ecosystem that are specifically applicable to Ubuntu Core.
+Application management, system configuration and update schedules in Ubuntu Core are managed by *snapd*, the snap packaging daemon. Snap features are explained comprehensively in the [Snap documentation](https://snapcraft.io/docs), while our {ref}`Ubuntu Core documentation <ref-index_ubuntu-core-documentation>` handles the elements of the _snap_ ecosystem that are specifically applicable to Ubuntu Core.
 
 ```{admonition} Create your own images
 :class: tip

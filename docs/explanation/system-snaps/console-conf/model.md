@@ -6,8 +6,7 @@ myst:
 
 # Including console-conf in a model assertion
 
-[Model
-assertions](https://documentation.ubuntu.com/core/reference/assertions/model/)
+{ref}`Model assertions <reference-assertions-model>`
 define the snaps that a system will install on first boot.
 
 Adding console-conf would be a matter of adding a snap to the snaps list in the
