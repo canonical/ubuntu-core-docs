@@ -176,6 +176,7 @@ Or
 snap known --remote model series=16 brand-id=canonical model=pi3
 ```
 
+(how-to-guides-image-creation-board-enablement-image-building)=
 ## Image building
 
 Images are built from a model assertion using [ubuntu-image](https://github.com/canonical/ubuntu-image), a tool to generate a bootable image. It can be installed on a [snap-supporting Linux system](https://snapcraft.io/docs/installing-snapd) as follows:

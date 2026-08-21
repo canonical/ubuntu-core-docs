@@ -11,7 +11,7 @@ Snaps in Ubuntu Core update automatically, and by default, the *snapd* daemon ch
 
 However, some projects can benefit from holding a deployed snap, or a set of snaps, at a tested _revision_ until any new release is separately validated, and this requires refresh control.
 
-A snap’s [revision](https://snapcraft.io/docs/glossary#heading--revision) is an automatic number assigned by the Snap Store to give each snap build a unique identity within its channel. Refresh control allows specific snaps to be kept at a specified revision, even when a new or different revision of a snap is released.
+A snap’s [revision](https://snapcraft.io/docs/reference/glossary/#revision) is an automatic number assigned by the Snap Store to give each snap build a unique identity within its channel. Refresh control allows specific snaps to be kept at a specified revision, even when a new or different revision of a snap is released.
 
 ```{admonition} Refresh control with validation sets
 :class: tip
@@ -241,7 +241,7 @@ In this example, if `roadmr-gating` is installed on a device, `roadmr-gated` wil
 
 ```{admonition} Installing new snaps after updated validation assertion
 :class: caution
-If a validation assertions is updated to include additional snaps, the new snaps will not be installed automatically. They will instead need to be installed locally through the _snap_ command or through the [snapd REST API](https://snapcraft.io/docs/snapd-api#heading--snaps-post).
+If a validation assertion is updated to include additional snaps, the new snaps will not be installed automatically. They will instead need to be installed locally through the _snap_ command or through the [snapd REST API](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/Asynchronous/manageSnaps).
 ```
 
 ## Revoking assertion validity

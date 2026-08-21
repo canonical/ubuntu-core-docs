@@ -67,7 +67,7 @@ Stores device identity backup data and data to facilitate recovery or re-install
 
 This partition is mandatory on encrypted systems where it should have a minimum size of approximately 20+MB to handle volume and file system creation (32MB is recommended).
 
-From _snapd 2.57+_, snaps can save small amounts of persistent data to the _ubuntu-save_ partition. This location is accessible from the [SNAP_SAVE_DATA](https://snapcraft.io/docs/environment-variables#heading--snap-save-data) environment variable.
+From _snapd 2.57+_, snaps can save small amounts of persistent data to the _ubuntu-save_ partition. This location is accessible from the [SNAP_SAVE_DATA](https://snapcraft.io/docs/reference/development/environment-variables/#snap-save-data) environment variable.
 
 This data might include certificates, data blobs, or configuration files, to help snaps function. This data will survive a {ref}`factory reset <ref-recovery-modes_factory-reset>`, and consequently, the stored data should be device-oriented and not specific to a particular user of the device.
 

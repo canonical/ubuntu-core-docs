@@ -69,8 +69,8 @@ releases as branches.
 
 ### Crafting the snap
 
-Snapcraft provides [kernel](https://documentation.ubuntu.com/snapcraft/stable/common/craft-parts/reference/plugins/kernel_plugin/)
-and [initrd](https://documentation.ubuntu.com/snapcraft/stable/common/craft-parts/reference/plugins/initrd_plugin/)
+Snapcraft provides [kernel](https://documentation.ubuntu.com/snapcraft/latest/reference/plugins/kernel_plugin/)
+and [initrd](https://documentation.ubuntu.com/snapcraft/latest/reference/plugins/initrd_plugin/)
 plugins for creating kernel snaps. Refer to their documentation to understand
 the available options and features.
 
@@ -147,7 +147,7 @@ with or patching the code to add new features or test fixes.
 
 Additionally, building your own initrd as part of this process
 enables you to introduce even more complex feature support, such
-as leveraging [OP-TEE for Full Disk Encryption on non-x86_64 platforms](https://documentation.ubuntu.com/core/explanation/full-disk-encryption-op-tee/).
+as leveraging {ref}`OP-TEE for Full Disk Encryption on non-x86_64 platforms <ref-explanation-full-disk-encryption>`.
 
 For instance the below two parts within a kernel snap's `snapcraft.yaml` will
 build an entirely different kernel from the standard Canonical ones, trimming
@@ -205,7 +205,7 @@ repackaging to end up with a kernel snap for your hardware platform!
 ## Build the snap
 
 The build system must support [snapd](https://snapcraft.io/docs/installing-snapd),
-and have both the [Snapcraft](https://documentation.ubuntu.com/snapcraft/stable/how-to/setup/set-up-snapcraft/)
+and have both the [Snapcraft](https://documentation.ubuntu.com/snapcraft/stable/how-to/set-up-snapcraft/)
 build tool and the [LXD](https://canonical.com/lxd) virtualisation platform
 installed, all of which are provided by any Ubuntu release.
 

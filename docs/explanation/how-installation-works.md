@@ -32,7 +32,7 @@ The first three (1-3) are also described in the {ref}`recovery mode <explanation
 
 A {ref}`gadget <reference-gadget-snap-format>` can optionally define an _install-device hook_ . This is invoked from **install mode** before rebooting into **run mode**, between steps 4 and 5 above, and also after a {ref}`factory reset <ref-recovery-modes_factory-reset>`, to perform early hardware and firmware configuration.
 
-The [snapctl system-mode](https://snapcraft.io/docs/using-snapctl#heading--system-mode) command can be run during execution of the hook to detect which mode the install-device hook has been executed under.
+The [snapctl system-mode](https://snapcraft.io/docs/how-to-guides/snap-development/use-snapctl/#system-mode) command can be run during execution of the hook to detect which mode the install-device hook has been executed under.
 
 All partitions are created and mounted when the install-device hook runs.
 
