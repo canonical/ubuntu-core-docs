@@ -41,7 +41,7 @@ Our preseeded system did not need a reboot, and neither did it require any furth
 
 All three bootchart excerpts below show:
 
-- **ping** read from storage utilisation
+- **pink** read from storage utilisation
 - **red** write to storage utilisation
 - **blue** CPU utilisation
 - **yellow** CPU wait time
