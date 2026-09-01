@@ -45,7 +45,7 @@ Other [risks levels](https://snapcraft.io/docs/channels) are available for testi
 
 ## Update mechanisms in Ubuntu Core
 
-When Ubuntu Core is running, its snap packages update (aka refresh) automatically. To manually control or modify this process, see {ref}`Refresh control <explanation-refresh-control>`. Essential snaps, such as the base and kernel snaps, can be refreshed assuming the updated version is built from the same build-base used in the original model definition. When refreshing the base or kernel snaps, the system will automatically reboot to apply the freshly installed snap. When refreshing the gadget snap, a reboot occurs if the [boot-assets](https://snapcraft.io/docs/gadget-boot-assets) are modified.
+When Ubuntu Core is running, its snap packages update (aka refresh) automatically. To manually control or modify this process, see {ref}`Refresh control <explanation-refresh-control>`. Essential snaps, such as the base and kernel snaps, can be refreshed assuming the updated version is built from the same build-base used in the original model definition. When refreshing the base or kernel snaps, the system will automatically reboot to apply the freshly installed snap. When refreshing the gadget snap, a reboot occurs if the {ref}`boot assets <interfaces-gadget-boot-assets>` are modified.
 
 To upgrade an Ubuntu Core image from one version to another, see {ref}`Upgrade Ubuntu Core <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>`. This process is known as {ref}`remodeling <explanation-remodeling>`.
 
@@ -128,7 +128,7 @@ New features for this release include:
 - New ROS integration for robotics developers
 - New documentation and documentation structure
 
-In addition to the above, Ubuntu Core 24 bundles both the latest Linux Kernel  6.8 and *systemd* 2.55 and includes all the latest features of _snapd_, including {ref}`Dynamic kernel boot parameters <how-to-guides-manage-ubuntu-core-modify-kernel-options>`, [Quota group limits for Journal log](https://snapcraft.io/docs/quota-groups#heading--journal) and {ref}`Offline remodeling <ref-remodelling_offline-remodeling>`.
+In addition to the above, Ubuntu Core 24 bundles both the latest Linux Kernel  6.8 and *systemd* 2.55 and includes all the latest features of _snapd_, including {ref}`Dynamic kernel boot parameters <how-to-guides-manage-ubuntu-core-modify-kernel-options>`, [Quota group limits for Journal log](https://snapcraft.io/docs/how-to-guides/manage-snaps/use-resource-quotas/#journal-log-limits) and {ref}`Offline remodeling <ref-remodelling_offline-remodeling>`.
 
 Support for Ubuntu Core has also been added to {ref}`Multipass <tutorials-get-started-try-pre-built-images-install-on-a-vm>`, for single-command deployment.
 
@@ -162,7 +162,7 @@ These snaps enable organisations to deploy, manage, and monitor OCI edge workloa
 
 Core 24 delivers production-ready integrations for developers deploying solutions with the Robot Operating System (ROS).
 
-Canonical has made [ROS foundational snaps](https://snapcraft.io/docs/ros2-applications#heading--content-sharing) available for modular deployments. These snaps are maintained by Canonical, and include sets of common ROS packages, such as ros_core, ros_base or desktop, available in several flavours per ROS distribution. With them, developers can design modular ROS snap deployments, enabling configurability and reducing overall memory and OTA update bandwidth.
+Canonical has made [ROS foundational snaps](https://documentation.ubuntu.com/snapcraft/stable/how-to/integrations/craft-an-ros-2-app/#share-content-between-ros-2-snaps) available for modular deployments. These snaps are maintained by Canonical, and include sets of common ROS packages, such as ros_core, ros_base or desktop, available in several flavours per ROS distribution. With them, developers can design modular ROS snap deployments, enabling configurability and reducing overall memory and OTA update bandwidth.
 
 ### New documentation and documentation structure
 

@@ -58,7 +58,7 @@ During a {ref}`snap refresh <explanation-refresh-control>`, _console-conf_ may d
 
 Despite the _no-ip_ message, you should still be able to connect to the device using SSH if you actually know the IP.
 
-The [snap changes](https://snapcraft.io/docs/keeping-snaps-up-to-date#heading--changes) command will show that one or more snaps are being updated and the device may need to reboot.
+The [snap changes](https://snapcraft.io/docs/how-to-guides/manage-snaps/manage-updates/#monitor-changes) command will show that one or more snaps are being updated and the device may need to reboot.
 
 The solution to the _no-ip_ error is to simply wait for any updates to complete.
 

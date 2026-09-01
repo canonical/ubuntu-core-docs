@@ -161,7 +161,7 @@ snapcraft -v
 ```
 This will create: `rabbitmq-docker-guide_demo_amd64.snap`
 
-You could use [`--destructive-mode`](https://snapcraft.io/docs/build-options#heading--snapcraft) flag to build it natively, instead of using LXD.
+You could use the [`--destructive-mode`](https://documentation.ubuntu.com/snapcraft/stable/reference/build-environment-options/#destructive-mode) flag to build it natively, instead of using LXD.
 This speeds up the build and is safe because building this snap makes no changes on the host and doesn't link against any of the host shared libraries (e.g. by using build/stage packages).
 
 ## Install the snap
@@ -169,7 +169,7 @@ This speeds up the build and is safe because building this snap makes no changes
 ```shell
 sudo snap install --dangerous ./rabbitmq-docker-guide_demo_amd64.snap
 ```
-The [`--dangerous`](https://snapcraft.io/docs/install-modes#heading--dangerous) flag is set because this is a locally built, unsigned snap.
+The [`--dangerous`](https://snapcraft.io/docs/install-modes#dangerous-mode) flag is set because this is a locally built, unsigned snap.
 
 Connect the following [interfacess](https://snapcraft.io/docs/interfaces):
 ```shell

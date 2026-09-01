@@ -7,7 +7,7 @@ myst:
 (reference-assertions-validation)=
 # validation
 
-The _validation_ {ref}`assertion <ref-index_assertions>`  declares that a certain [revision](https://snapcraft.io/docs/glossary#heading--revision) for a _snap that is gated by another snap_ has been validated for a given [series](https://snapcraft.io/docs/glossary#heading--series). It is closely related to the {ref}`snap-declaration <reference-assertions-snap-declaration>` assertion.
+The _validation_ {ref}`assertion <ref-index_assertions>`  declares that a certain [revision](https://snapcraft.io/docs/reference/glossary/#revision) for a _snap that is gated by another snap_ has been validated for a given [series](https://snapcraft.io/docs/reference/glossary/#series). It is closely related to the {ref}`snap-declaration <reference-assertions-snap-declaration>` assertion.
 
 ## Validation assertion fields
 

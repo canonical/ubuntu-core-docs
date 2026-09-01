@@ -9,7 +9,7 @@ myst:
 
 An assertion is a digitally signed document that either verifies the validity of a process, as attested by the signer, or carries policy information, as formulated by the signer.
 
-[Snapcraft](https://snapcraft.io/docs/snapcraft), [snapd](https://snapcraft.io/docs/glossary#heading--snapd), the [Snap Store](https://snapcraft.io/store) and {ref}`Brand stores <ref-dedicated-snap-store_dedicated-snap-store>` all use assertions to handle a variety of functions and processes, including authentication, policy setting, identification and validation.
+[Snapcraft](https://snapcraft.io/docs/snapcraft), [snapd](https://snapcraft.io/docs/reference/glossary/#snapd), the [Snap Store](https://snapcraft.io/store) and {ref}`Brand stores <ref-dedicated-snap-store_dedicated-snap-store>` all use assertions to handle a variety of functions and processes, including authentication, policy setting, identification and validation.
 
 Assertions are text-based and take a context-dependent format that always includes one or more headers, an optional body, and the encoded signature.
 

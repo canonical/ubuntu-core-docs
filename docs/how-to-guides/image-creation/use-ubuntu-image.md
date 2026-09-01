@@ -105,11 +105,11 @@ These additional snaps can include {ref}`custom snaps <how-to-guides-image-creat
 (ref-use-ubuntu-image_extra-assertions)=
 ## Extra assertions
 
-Arbitrary assertions, such as {ref}`system-user assertions <reference-assertions-system-user>`, can be included in the final image using the `--assertion` argument pointing to a file containing one or more assertions. This can help you, for example, in creating a system user or choosing a snap store proxy without the added manual configuration after the installation is complete.
+Extra assertions, such as store assertions or {ref}`system-user assertions <reference-assertions-system-user>`, can be included in the final image using the `--assertion` argument pointing to a file containing one or more assertions. This can help you, for example, in creating a system user or choosing a snap store proxy without the added manual configuration after the installation is complete.
 
 ```{note}
 
-System-user assertions can only be included using `ubuntu-image` if the model grade is set to `dangerous` and the assertion does not contain a password (use public key authentication instead).
+When using `--assertion` to seed a `system-user` assertion, the model must have `grade: dangerous`. Seeded `system-user` assertions must use public key authentication and must not contain a password.
 ```
 
 It is possible to add assertions of any kind except for `snap-declaration`, `snap-revision`, `model`, `serial` and `validation-set`.

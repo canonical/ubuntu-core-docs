@@ -75,11 +75,11 @@ Under the hood, the application runner does the following:
 
 The snap packaging system employs various cryptographic technologies to secure local and remote snap operations.
 
-Locally, these are handled by the snap daemon, *snapd*, while remote connections require mediation between snapd and the [Snap Store](https://snapcraft.io/docs/glossary#heading--snap-store), which supports its own set of cryptographic technologies. Both sets of these are listed below.
+Locally, these are handled by the snap daemon, *snapd*, while remote connections require mediation between snapd and the [Snap Store](https://snapcraft.io/docs/reference/glossary/#snap-store), which supports its own set of cryptographic technologies. Both sets of these are listed below.
 
 ### Snapd (snap daemon) cryptography
 
-* **Digital signatures for [assertions](https://ubuntu.com/core/docs/reference/assertions)**
+* **Digital signatures for {ref}`assertions <ref-index_assertions>`**
 </br>SHA3-384 and SHA512 for hashing, OpenPGP v4 signatures with RSA 4096/8192 keys
 * **Hashing of snaps**</br>
 SHA3-384
@@ -92,7 +92,7 @@ Snapd uses them via [gopkg.in/macaroon.v1](https://github.com/go-macaroon/macaro
 
 ### Snap Store cryptography
 
-* **Digital signatures for [assertions](https://ubuntu.com/core/docs/reference/assertions)**</br>
+* **Digital signatures for {ref}`assertions <ref-index_assertions>`**</br>
 The key ID of the signing key is encoded with SHA3-384, and the assertion is signed with either 4096-bit RSA or 8192-bit RSA
 * **Hashing of artifacts**</br>
 The store generates many hashes of an uploaded artifact using SHA3-384, SHA256 and SHA512 to ensure the uniqueness and integrity of the artifact.
@@ -113,7 +113,7 @@ When a snap is installed, its metadata is examined and is used to derive **AppAr
 
    As already mentioned, each command runs under an app-specific default policy that may be extended through declared interfaces which are expressed in the metadata as `plugs` and `slots`. AppArmor policy violations in strict mode snaps will be denied access, and typically have errno set to `EACCES`. The violation will typically be logged.
 
-  See [AppArmor violations](https://snapcraft.io/docs/debug-snaps#heading--apparmor) for help tracking AppArmor problems.
+  See [AppArmor violations](https://snapcraft.io/docs/how-to-guides/snap-development/debug-snaps/#understanding-apparmor-violations) for help tracking AppArmor problems.
 
 ### Seccomp
 
@@ -121,7 +121,7 @@ When a snap is installed, its metadata is examined and is used to derive **AppAr
    
    Processes with seccomp policy violations will be denied access to the system call with errno set to `EPERM` (snapd releases prior to 2.32 receive `SIGSYS`) and the violation is logged.
 
-  See [Seccomp violations](https://snapcraft.io/docs/debug-snaps#heading--seccomp) for help tracking Seccomp problems.
+  See [Seccomp violations](https://snapcraft.io/docs/how-to-guides/snap-development/debug-snaps/#understanding-seccomp-violations) for help tracking Seccomp problems.
 
 ### Device cgroup
 

@@ -181,7 +181,7 @@ This example turns a pre-built Ubuntu Core image into a network-accessible AI in
 > **Note:**
 > In a final product, snaps such as `gemma4` would normally be included and configured in your custom Ubuntu Core image, rather than installed manually after first boot. With this approach, the device or VM starts directly into the experience you have configured. End users do not need to see these setup instructions, interact with the Ubuntu Core login message, or log in to the Core instance unless your product design requires it. You control the product experience you choose to deliver.
 >
-> A custom Ubuntu Core image is described with a [model assertion](https://documentation.ubuntu.com/core/reference/assertions/model/), which defines the snaps that make up the device image, including required or optional application snaps.
+> A custom Ubuntu Core image is described with a {ref}`model assertion <reference-assertions-model>`, which defines the snaps that make up the device image, including required or optional application snaps.
 >
 > Alternatively, snaps can be installed, configured and managed later through a fleet management process. [Landscape](https://documentation.ubuntu.com/landscape/) provides centralised administration for Ubuntu deployments, including IoT devices.
 

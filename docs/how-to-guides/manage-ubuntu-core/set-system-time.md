@@ -60,7 +60,7 @@ System clock synchronized: yes
 
 ## Setting a timezone
 
-The timezone can be configured with the [system.timezone](https://snapcraft.io/docs/system-options#heading--timezone) system value:
+The timezone can be configured with the [system.timezone](https://snapcraft.io/docs/reference/administration/system-options/#system-system-timezone) system value:
 
 ```
 $ snap set system system.timezone="America/Chicago"
