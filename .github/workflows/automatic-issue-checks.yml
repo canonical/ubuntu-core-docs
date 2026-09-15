@@ -1,0 +1,54 @@
+name: Automatic issue checks
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  issuecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close empty issues
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const { data: issue } = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number
+            });
+
+            function isIssueTemplate(title, body) {
+              const isDefaultTitle = title === "docs: TYPE YOUR QUESTION HERE";
+
+              const bodyPattern = /^\*Please describe the question or issue you're facing with "[^"\r\n]*"\.\*(?:\r?\n){5}---\r?\n\*Reported from: https?:\/\/\S+?\*$/;
+
+              return isDefaultTitle && bodyPattern.test(body);
+            }
+
+            if (isIssueTemplate(issue.title, issue.body)) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: "closed",
+                state_reason: "not_planned"
+              });
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: "This issue was automatically closed because it did not contain any details. Please reopen it to provide feedback about the Ubuntu Core documentation."+
+                      "\n"+
+                      "If you wish to report a problem with one of the core snaps (core22, core24, core26 and later), please open an issue in the [core snaps repository](https://github.com/canonical/core-base)."
+                });
+
+              core.info(`Closed issue #${issue.number} because it matched the default empty template.`);
+              return;
+            }
+
+            core.info(`Issue #${issue.number} has meaningful content; no action taken.`);
