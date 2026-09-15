@@ -15,7 +15,11 @@ jobs:
         uses: actions/github-script@v9
         with:
           script: |
-            const issue = context.payload.issue;
+            const { data: issue } = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number
+            });
 
             function isIssueTemplate(title, body) {
               const isDefaultTitle = title === "docs: TYPE YOUR QUESTION HERE";
