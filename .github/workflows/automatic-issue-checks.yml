@@ -39,7 +39,9 @@ jobs:
                 repo: context.repo.repo,
                 issue_number: issue.number,
                 body: "This issue was automatically closed because it did not contain any details. Please reopen it to provide feedback about the Ubuntu Core documentation."+
-              });
+                      "\n"+
+                      "If you wish to report a problem with one of the core snaps (core22, core24, core26 and later), please open an issue in the [core snaps repository](https://github.com/canonical/core-base)."
+                });
 
               core.info(`Closed issue #${issue.number} because it matched the default empty template.`);
               return;
