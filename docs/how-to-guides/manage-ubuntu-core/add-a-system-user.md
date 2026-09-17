@@ -175,7 +175,7 @@ Name         SHA3-384
 my-key-name  E-n0AOKPFjIyy4S_i9JxTT4tkuaZf7rP9D2mBNXjlgTGDjL8euFSlb87U0NPl
 ```
 
-See {ref}`Signing a model assertion <ref-sign-the-model_sign-the-model>` for details on creating and uploading keys.
+See [Signing keys](https://snapcraft.io/docs/explanation/security/signing-keys/) for details on creating and registering keys.
 
 The contents of the `system-user` template needs to be signed. This is accomplished with the `snap` command, which can also generate the accompanying `account` and `account-key` assertions at the same time:
 
