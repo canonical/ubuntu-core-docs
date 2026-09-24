@@ -52,7 +52,7 @@ Understand the core concepts, design decisions, and technical internals of Ubunt
 * **Security**: {ref}`Full disk encryption <explanation-full-disk-encryption>` • {ref}`Full disk encryption with OP-TEE <ref-explanation-full-disk-encryption>` • {ref}`Sandboxing <explanation-security-and-sandboxing>` • {ref}`CVE remediation <explanation-cve-remediation>`
 * **Reference**: {ref}`Gadget snap format <reference-gadget-snap-format>` • {ref}`Assertions <ref-index_assertions>` • {ref}`Testing platforms <reference-testing-platforms>` • {ref}`Release notes <ref-release-notes_release-notes>`
 
-## How this documentation is organised
+## How this documentation is organized
 
 This documentation uses the [Diátaxis documentation structure](https://diataxis.fr/).
 
