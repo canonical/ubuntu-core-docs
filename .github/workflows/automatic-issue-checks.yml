@@ -24,7 +24,7 @@ jobs:
             function isIssueTemplate(title, body) {
               const isDefaultTitle = title === "docs: TYPE YOUR QUESTION HERE";
 
-              const bodyPattern = /^\*Please describe the question or issue you're facing with "[^"\r\n]*"\.\*(?:\r?\n){5}---\r?\n\*Reported from: https?:\/\/\S+?\*$/;
+              const bodyPattern = /^\*Please describe the question or issue you're facing with "[^"\r\n]*"\.\*(?:\r?\n){5}---\r?\n\*Reported from: https?:\/\/\S+?\*?$/;
 
               return isDefaultTitle && bodyPattern.test(body);
             }
