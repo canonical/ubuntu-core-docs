@@ -57,7 +57,7 @@ validation-sets        <list[dict]>   # Optional, see below for details
 
 The index for this assertion is the tuple \<`series`, `brand-id`, `model`\> and the fields are typically used in the following order:
 
-- `series` indicates which release series of the platform the device uses. It is included in the assertion index to allow assertion formats to vary from series to series. This lets a snap-based system to have a clear expectation of that assertion's structure and content.
+- `series` indicates which release series of the platform the device uses. It is included in the assertion headers to allow assertion formats to vary from series to series. This lets a snap-based system to have a clear expectation of that assertion's structure and content.
 
   The current model series accepted by snapd is `16`, corresponding to the year of the original release. This is because there has not yet been a need to break backwards compatibility.
 
