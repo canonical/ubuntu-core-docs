@@ -28,11 +28,10 @@ views:
   <view name>:
     summary:  <description of view>
     parameters:
-      -
-        <parameter>:
-          summary: <description of filter parameter>                        # optional
-          presence: <optional|required|required-on-write|required-on-read>  # defaults to optional
-        ...
+      <parameter>:
+        summary: <description of filter parameter>                        # optional
+        presence: <optional|required|required-on-write|required-on-read>  # defaults to optional
+      ...
     rules:
       -
         request: <request path>             # optional, defaults to storage
@@ -71,7 +70,7 @@ The `views` header can have any number of views, each with a fine-grained set of
 - **`content`** (*optional*)
     Describes a nested rule that will be created with the parent's rule `request` and `storage` paths as prefixes. The `access` value is inherited from the parent and cannot be overridden.
 
-Views can contain a `parameters` list to declare parameters names that can be used to constrain field filters. Parameters used in field filters must be declared, unlike path placeholders which can be used to filter without being declared as filtering parameters. Each parameter map can have two fields:
+Views can contain a `parameters` map to declare parameter names that can be used to constrain field filters. Parameters used in field filters must be declared, unlike path placeholders which can be used to filter without being declared as filtering parameters. Each parameter is a map that can have two fields:
 - **`summary`** (optional) Provides context on how the parameter may be used to filter data.
 - **`presence`** (optional) Determines whether the parameter must be constrained by the user or not and, if it must, whether it's required for reading, writing or both. Defaults to `optional`, in which case the parameter may be unconstrained.
    
