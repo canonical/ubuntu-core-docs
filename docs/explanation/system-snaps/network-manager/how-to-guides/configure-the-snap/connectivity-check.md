@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Configure NetworkManager connectivity checks in the network-manager snap on Ubuntu Core, including the interval, URI and expected response.
+---
+
 (explanation-system-snaps-network-manager-reference-snap-configuration-connectivity-check)=
 # Connectivity check
 
@@ -13,4 +19,3 @@ Some example commands on how to set a check every three minutes using the Ubuntu
 ```bash
 snap set network-manager connectivity.uri=http://connectivity-check.ubuntu.com/ $ snap set network-manager connectivity.interval=180
 ```
-

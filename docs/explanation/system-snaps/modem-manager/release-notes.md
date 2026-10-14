@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Release notes for the Modem Manager snap on Ubuntu Core. Find the version history of the snap and check which ModemManager version you have installed.
+---
+
 (explanation-system-snaps-modem-manager-reference-release-notes)=
 # Release Notes
 

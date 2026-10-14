@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Share connectivity from an Ubuntu Core device with NetworkManager by using it as a gateway with DHCP and masquerading for other devices.
+---
+
 (explanation-system-snaps-network-manager-how-to-guides-configure-shared-connections)=
 # Configure shared connections
 
@@ -10,4 +16,3 @@ nmcli c up <name>
 where  `<name>`  is an arbitrary name we give to the connection and  `<iface>`  is the name of the interface where external devices will connect to. In this case we are using an ethernet interface ( `type ethernet` ) and we provide IPv4 addresses, but this extends to other interfaces and to IPv6.
 
 When the connection is up, NM starts a DHCP server listening on  `<iface>`  and changes the networking configuration so we can forward packages and masquerading is enabled for the interface. Of course, for this to work we need an interface different from  `<iface>`  that has to have external connectivity.
-

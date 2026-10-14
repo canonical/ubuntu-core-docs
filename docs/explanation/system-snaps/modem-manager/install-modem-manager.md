@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Learn how to install the Modem Manager snap on Ubuntu Core, verify its interface connections, and check that the ModemManager service is running.
+---
+
 (explanation-system-snaps-modem-manager-install-modem-manager)=
 # Install Modem Manager
 

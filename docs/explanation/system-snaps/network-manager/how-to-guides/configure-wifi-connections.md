@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Connect an Ubuntu Core device to Wi-Fi with nmcli in the network-manager snap, including hidden networks and modifying connections.
+---
+
 (explanation-system-snaps-network-manager-how-to-guides-configure-wifi-connections)=
 # Configure Wi-Fi connections
 
@@ -63,4 +69,3 @@ nmcli c up <name>
 You will find further information and more detailed examples on following pages:
 
 - https://developer.gnome.org/NetworkManager/unstable/nmcli.html
-
