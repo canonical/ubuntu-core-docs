@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Understand how snap stores deliver snaps and assertions to Ubuntu Core devices, including the Snap Store, brand accounts, dedicated stores and scoping.
+---
+
 (ref-index_stores)=
 # Stores
 

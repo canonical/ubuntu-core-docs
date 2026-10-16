@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Download software bills of materials (SBOMs) for Ubuntu Core 20, 22 and 24 releases in SPDX format to support CRA compliance and supply chain transparency.
+---
+
 (reference-software-bill-of-materials)=
 # Software bill of materials
 

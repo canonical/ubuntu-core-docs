@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Use NetworkManager with Netplan on Ubuntu Core to configure the defaultrenderer, hand off devices to networkd and use the YAML backend.
+---
+
 (ref-networkmanager-and-netplan_networkmanager-and-netplan)=
 # NetworkManager and Netplan
 
@@ -52,4 +58,3 @@ sudo netplan set ethernets.enp0s2.addresses=[10.0.2.15/24]
 ```
 
 Configuration options that are not supported by the Network Manager YAML backend are stored in a `networkmanager.passthrough` YAML mapping to ensure they are not lost during the Netplan conversion.
-

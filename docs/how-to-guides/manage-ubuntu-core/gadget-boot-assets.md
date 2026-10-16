@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Update gadget boot assets automatically when a gadget snap refreshes on Ubuntu Core, using gadget.yaml editions, structures and rollback.
+---
+
 (interfaces-gadget-boot-assets)=
 # Updating gadget boot assets
 
@@ -125,4 +131,3 @@ The following are also unsupported:
 - using `preserve` inside non-filesystem structures
 - updating unnamed and unlabelled filesystem structures
 - updating devices not described inside `gadget.yaml`, such as the _BOOT1/2_ regions of SD cards
-

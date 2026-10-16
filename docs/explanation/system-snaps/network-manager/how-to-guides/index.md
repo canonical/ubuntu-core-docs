@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Configure and manage the network-manager snap on Ubuntu Core for cellular, VPN, Wi-Fi and shared connections, plus routing, logging and status.
+---
+
 (explanation-system-snaps-network-manager-how-to-guides-index)=
 # How-to guides
 

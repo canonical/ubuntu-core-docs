@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Learn how to enable debug logging in the Modem Manager snap on Ubuntu Core and view the logs with journalctl to troubleshoot modem failures and bug reports.
+---
+
 (explanation-system-snaps-modem-manager-reference-debug)=
 # Debug
 

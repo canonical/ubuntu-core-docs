@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Learn to use the Modem Manager snap on Ubuntu Core with mmcli, mbimcli and qmicli to inspect modems and establish cellular connections.
+---
+
 # Using Modem Manager
 
 If we have a modem in the system, we should be able to see it with _mmcli -L_, for instance:
@@ -84,4 +90,3 @@ Bearer '/org/freedesktop/ModemManager1/Bearer/0'
 ## D-Bus API
 
 Documentation for the D-Bus API is provided by the ModemManager upstream project [here](https://www.freedesktop.org/software/ModemManager/api/latest/).
-
