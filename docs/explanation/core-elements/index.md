@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Explore the core elements of Ubuntu Core, including its layout, storage partitions and default snaps, and how they differ from classic Ubuntu.
+---
+
 (ref-index_core-elements)=
 # Core elements
 

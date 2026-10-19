@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Configure OpenVPN and WireGuard VPN connections with the network-manager snap on Ubuntu Core using nmcli, including track requirements.
+---
+
 (explanation-system-snaps-network-manager-how-to-guides-configure-vpn-connections)=
 # Configure VPN connections
 
@@ -63,4 +69,3 @@ As with an OpenVPN connection, it is also possible to create a WireGuard connect
 To create a VPN connection programmatically, that is, from another snap, the user snap must define a [content interface](https://snapcraft.io/docs/content-interface). The connection must have a slot that  connects to the `vpn-creds` plug defined in the network-manager snap.
 
 Once connected, any files necessary for the connection can be placed into the directory shared by the content interface. This folder is seen by the Network Manager snap `/var/snap/network-manager/common/creds`, which means that file path configuration also needs also use this prefix. After that, a connection can be created using Network Manager's `dbus` interface where a connected network-manager plug is required.
-

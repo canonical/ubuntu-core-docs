@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Manage NetworkManager routing tables on Ubuntu Core, prioritize routes using interface metrics, and edit routes for your connections.
+---
+
 (explanation-system-snaps-network-manager-reference-routing-tables)=
 # Manage routing tables
 
@@ -65,4 +71,3 @@ $ nmcli c show
 Note that this kind of changes can be made separately for each connection thus it is possible to provide a fine grained control over how the packets directed to different networks are routed.
 
 It is also important to understand that bringing up and down connections with different values set for these options is in fact changing the routing table.
-

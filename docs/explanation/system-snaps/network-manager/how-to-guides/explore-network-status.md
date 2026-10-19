@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Explore network status on Ubuntu Core with nmcli, including NetworkManager devices, connections, radio state and live activity monitoring.
+---
+
 (explanation-system-snaps-network-manager-how-to-guides-explore-network-status)=
 # Explore network status
 
@@ -42,4 +48,3 @@ nmcli monitor
 ```
 
 See nmcli connection monitor and nmcli device monitor to watch for changes in certain connections or devices.
-

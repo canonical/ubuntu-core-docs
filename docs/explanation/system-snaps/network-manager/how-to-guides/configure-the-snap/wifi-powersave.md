@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Enable or disable Wi-Fi powersave with the wifi.powersave option of the network-manager snap on Ubuntu Core to manage radio power use.
+---
+
 (ref-wifi-powersave_wi-fi-powersave)=
 # Wi-Fi powersave
 
@@ -23,4 +29,3 @@ This configuration option accepts the following values:
 
 * **disabled (default):**  Wi-Fi powersaving is disabled
 * **enabled:**  Wi-Fi powersaving is enabled
-

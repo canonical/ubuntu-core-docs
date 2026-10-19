@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Change NetworkManager logging levels and domains with nmcli on Ubuntu Core to get fine-grained control over what the service logs.
+---
+
 (explanation-system-snaps-network-manager-how-to-guides-message-logging)=
 # Message logging
 
@@ -30,4 +36,3 @@ The <level> is the desired log level. You can choose from the following:
 - \<domain\> is the category of messages that shall be logged with given severity.
    - **Wi-Fi** will include only Wi-Fi related messages
    - **IP4** will include only IPv4 related messages, and so on.
-

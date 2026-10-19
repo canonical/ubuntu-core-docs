@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Configure Wake on WLAN (WoWLAN) triggers in the network-manager snap on Ubuntu Core, globally or per connection, to wake devices remotely.
+---
+
 (explanation-system-snaps-network-manager-reference-snap-configuration-wake-on-wlan)=
 # Wake on WLAN
 
@@ -81,4 +87,3 @@ If you don't have the  *iw*  utility on your system you can install it with the 
 snap install --devmode wireless-tools $ sudo wireless-tools.iw phy phy0 wowlan show WoWLAN is enabled: * wake up on magic packet
 ```
 See the help output of the  *iw*  command for more documentation and available options.
-

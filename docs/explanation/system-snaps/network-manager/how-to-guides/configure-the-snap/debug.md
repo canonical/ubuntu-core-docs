@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Enable debug logging for the network-manager snap on Ubuntu Core and view NetworkManager daemon logs with journalctl for troubleshooting.
+---
+
 (explanation-system-snaps-network-manager-reference-snap-configuration-debug)=
 # Debug the snap
 
@@ -34,4 +40,3 @@ The debug information, when enabled, will be available in the journal and can be
 ```bash
 journalctl --no-pager -l -u snap.network-manager.networkmanager.service
 ```
-

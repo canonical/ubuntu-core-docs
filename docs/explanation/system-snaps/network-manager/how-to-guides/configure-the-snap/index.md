@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: Configure the network-manager snap on Ubuntu Core with options for connectivity checks, debugging, default rendering, WoWLAN and powersave.
+---
+
 (explanation-system-snaps-network-manager-reference-snap-configuration-index)=
 # Configure the snap
 
