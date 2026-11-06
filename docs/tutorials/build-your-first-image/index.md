@@ -71,13 +71,9 @@ A _model assertion_ is a signed recipe that describes the components that compri
 
 Learn how to sign a model with a GPG key to make it into a _model assertion_.
 
-* {ref}`Create a key <ref-sign-the-model_create-a-key>`
+* {ref}`Check you have a registered key <ref-sign-the-model_signing-key>`
 
-  Use `snapcraft` to create a key that will be used across all models or model families.
-
-* {ref}`Register the key <ref-sign-the-model_register-the-key>`
-
-  Upload the key and register it with your Ubuntu One account by using `register-key` command. After creating the key, update the timestamp in `my-model.json`.
+  Confirm that a signing key is registered to your Ubuntu One account, and create one if it isn't. After creating a key, update the timestamp in `my-model.json`.
 
 * {ref}`Sign the model <ref-sign-the-model_sign-the-model>`
 

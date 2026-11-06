@@ -7,52 +7,15 @@ myst:
 (ref-sign-the-model_sign-the-model)=
 #  Sign the model
 
-After a model has been {ref}`created or modified <ref-create-a-model_create-a-model>`, it must be signed with a GPG key to become a _model assertion_. This ensures the model cannot be altered without the key and also links the created image to both the signed version of the model and your {ref}`Ubuntu One account <ref-access-ubuntu-one_access-ubuntu-one>`.
+After a model has been {ref}`created or modified <ref-create-a-model_create-a-model>`,
+it must be signed with a GPG key to become a _model assertion_. This ensures
+the model cannot be altered without the key and also links the created image
+to both the signed version of the model and your {ref}`Ubuntu One account <ref-access-ubuntu-one_access-ubuntu-one>`.
 
-(ref-sign-the-model_create-a-key)=
-## Create a key
+(ref-sign-the-model_signing-key)=
+## Check you have a registered key
 
-First make sure there are no keys already associated with your account by running the `snapcraft keys` command (you will only have a key if you've previously signed an assertion; if you already have a key, you can use that one):
-
-```bash
-$ snapcraft keys
-No keys have been registered. See 'snapcraft register-key --help' to register a key.
-```
-
-Now use `snapcraft` to create a key called **my-model-key** (the name is arbitrary):
-
-```bash
-$ snapcraft create-key my-model-key
-Passphrase: <passphrase>
-Confirm passphrase: <passphrase>
-```
-
-As shown above, you will be asked for a passphrase. You need to remember this as you'll be prompted to enter it whenever you use the key, including the very next step.
-
-```{admonition} Key management
-:class: tip
-
-Rather than creating a key for every device, the same key is typically used across all models or model families.
-
-```
-
-(ref-sign-the-model_register-the-key)=
-## Register the key
-
-We now need to upload the key and register it with your Ubuntu One account. This is accomplished with register-key:
-
-```bash
-$ snapcraft register-key my-model-key
-Enter your Ubuntu One e-mail address and password.
-If you do not have an Ubuntu One account, you can create one at https://snapcraft.io/account
-Email: <Ubuntu-SSO-email-address>
-Password: <Ubuntu-SSO-password>
-
-Registering key ...
-Done. The key "my-model-key" (<key fingerprint>) may be used to sign your assertions.
-```
-
-Regardless of whether you're logged in with snapcraft, you will be asked for your account and password details. You'll also need to unlock the key with your passphrase, and when the process is complete, the `snapcraft keys` command will now list the registered key:
+Signing requires a key registered to your Ubuntu One account. List the keys you have:
 
 ```bash
 $ snapcraft keys
@@ -60,7 +23,11 @@ $ snapcraft keys
 *   my-model-key  <key fingerprint>
 ```
 
-### Update the timestamp
+If no keys are listed, create one and register it before continuing. See
+[Signing keys](https://snapcraft.io/docs/explanation/security/signing-keys/) for
+details. One key normally covers all of your models, so this is a one-time step.
+
+## Update the timestamp
 
 As mentioned earlier, the timestamp in the model assertion must be set to a time and date _after_ the creation of our key. This means we need to edit `my-model.json` to update the timestamp with the current time.
 
@@ -77,12 +44,13 @@ $ date -Iseconds --utc
 
 ## Sign the model
 
-A model assertion is created by feeding the JSON file into the `snap sign` command with your recently-created key name and capturing the output in the corresponding model file:
+A model assertion is created by feeding the JSON file into the `snap sign`
+command with your key name and capturing the output in the corresponding model
+file:
 
 ```bash
 snap sign -k my-model-key my-model.json > my-model.model
 ```
-You will again be asked for your key's passphrase.
 
 The resultant `my-model.model` file contains the signed model assertion and can now be used to build the image.
 

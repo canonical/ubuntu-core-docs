@@ -31,6 +31,8 @@ Use of the Brand Account and its credentials should be strictly limited. Canonic
 
 When the Brand Account generates keys, they are only stored locally in ( ~/.snap/gnupg). These keys must be kept safe.
 
+Because a brand key signs assertions that deployed devices rely on, we recommend holding it on a hardware security module rather than on disk. See [Signing keys](https://snapcraft.io/docs/explanation/security/signing-keys/) for the reasoning, and [Sign assertions with an HSM](https://snapcraft.io/docs/explanation/security/sign-assertions-with-an-hsm/) for how to set one up.
+
 ```{admonition} Enable two-factor authentication
 :class: caution
 We recommend enabling two-factor authentication on all Ubuntu SSO accounts, but especially the brand and administrator accounts described below. See [SSO two-factor authentication](https://help.ubuntu.com/community/SSO/2FactorAuthentication) for details.
