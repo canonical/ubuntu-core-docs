@@ -11,9 +11,9 @@ Ubuntu Core has been designed to operate without users, or with the [Ubuntu SSO]
 
 Some systems suppress _console-conf_ and its user creation, and on those systems, the `system-user` {ref}`assertion <ref-index_assertions>` permits the creation of local system users on specific devices by their associated {ref}`Brand store <ref-dedicated-snap-store_dedicated-snap-store>`.
 
-To create a system user on these systems,  the `system-user` {ref}`assertion <ref-index_assertions>`, described on this page, needs to be embedded within a file called `auto-import.assert` that’s added to the system via the root directory of a removable USB storage device. For more details, see {ref}`System user <how-to-guides-manage-ubuntu-core-add-a-system-user>`.
+To create a system user on these systems,  the `system-user` {ref}`assertion <ref-index_assertions>`, described on this page, needs to be embedded within a file called `auto-import.assert` that’s added to the system via the root directory of a removable USB storage device.
 
-See {ref}`System user <how-to-guides-manage-ubuntu-core-add-a-system-user>` for further details on creating a system user.
+See {ref}`Add a system user <how-to-guides-manage-ubuntu-core-add-a-system-user>` for further details on creating a system user.
 
 ## System-user assertion fields
 
@@ -58,7 +58,9 @@ The index is the tuple \<`brand-id`, `email`\>, with `series` being as specified
 
 See {ref}`Assertion format <ref-index_assertion-format>` for more details on fields common to most assertions.
 
-The simple addition of such assertions to a device assertion database should not be enough to trigger the user creation. This must be initiated explicitly (via `snap create-user`, or in the context of the auto-import mechanism for assertions from removable devices, which requires physical access to the device).
+The simple addition of such assertions to a device assertion database does not trigger user creation. This must be initiated explicitly, in one of two ways:
+- by running `snap create-user --known`, if command-line access is available; or
+- by adding `auto-import.assert` to the root directory of a removable device; see {ref}`Add a system user <how-to-guides-manage-ubuntu-core-add-a-system-user-auto-import-assert>` for details.
 
 ## Example system-user assertion
 
