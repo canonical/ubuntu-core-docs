@@ -16,16 +16,22 @@ Any device booting an Ubuntu Core installation image will create or use the part
 The first three (1-3) are also described in the {ref}`recovery mode <explanation-recovery-modes>` boot process:
 
 1. Boot through the bootloader, its assets, and boot configuration in `ubuntu-seed`.
-1. Bootloader loads the kernel from a designated {ref}`recovery system <explanation-recovery-modes>`.
-1. Kernel initialises the system and runs the snaps from that system in **install mode**. At this point, the system is running from tmpfs in an ephemeral state with all snaps from the recovery system model marked for use in install mode (as indicated by the modes field values), including the _snapd_ snap, the gadget snap, the kernel snap and the base snap (usually the _core20_ snap).
-1. The snapd snap proceeds to install the actual run mode system by:
+1. Bootloader loads the kernel from a designated {ref}`recovery system <explanation-recovery-modes>` with option `snapd_recovery_mode=install`.
+1. Kernel initialises the system and loads the initramfs. The initramfs contains a reduced set of essential tools that are used to install the system by:
    - creating all missing partitions.
    - (*optionally*) encrypting `ubuntu-data` and `ubuntu-save` if supported and not disabled.
    - sealing the disk keys through hardware support.
    - setting up the run system in `ubuntu-data`.
-   - setting boot configuration and the run mode kernel in `ubuntu-boot` for run mode.
-1.  snapd proceeds to reboot into **run mode**.
-1.  From run mode, snapd  bootstraps itself and proceeds to _seeding_, installing and activating all the snaps marked for **run mode** use in the recovery system.
+   - setting boot configuration and the kernel option `snapd_recovery_mode=run` in `ubuntu-boot`.
+1.  The initramfs then boots into userspace to complete the installation.
+1.  Snapd bootstraps itself and proceeds to _seed_, install, and activate all the snaps marked for **run mode** use in the recovery system.
+1. Finally, it sets the system option `system.seed.loaded=true`.
+
+Until the system is rebooted, the kernel command line will include `snapd_recovery_mode=install` as an argument despite the system being fully installed and operational. The `system.seed.loaded` system option is the true marker that installation is complete.
+
+```{note}
+Until Ubuntu Core 24, the system was installed from a tmpfs in userspace instead of from the initramfs, and the device was rebooted to finalise installation. Here, the snapd kernel option was set to `run`.
+```
 
 (ref-how-installation-works_the-install-device-hook)=
 ## The install-device hook
