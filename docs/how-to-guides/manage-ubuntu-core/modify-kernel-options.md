@@ -20,6 +20,10 @@ snapd_recovery_mode=run console=ttyS0,115200n8 console=tty1 panic=-1
 
 In addition to parameters supported by the kernel, there are also *Ubuntu Core-specific* {ref}`kernel boot parameters <reference-kernel-boot-parameters>`.
 
+```{note}
+Since Ubuntu Core images for Raspberry Pi do not support GRUB, the modification methods in this guide do not apply to them.
+```
+
 (ref-modify-kernel-options_dynamic-kernel-parameter-modifications)=
 ## Dynamic kernel parameter modifications
 
