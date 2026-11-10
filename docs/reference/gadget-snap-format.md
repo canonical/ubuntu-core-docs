@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Gadget snap format reference. Complete guide to gadget snap properties, volumes, and configuration.
+    description: Reference documentation for the gadget snap format, including gadget.yaml properties, volume layouts, boot configuration, interface connections, and hooks.
 ---
 
 (reference-gadget-snap-format)=
