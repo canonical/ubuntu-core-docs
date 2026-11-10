@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Use Ubuntu One for SSH access to Ubuntu Core. Set up SSH authentication with Ubuntu One account credentials.
+    description: Use Ubuntu One for SSH access to Ubuntu Core. Generate and register a public key for the new user, then connect via SSH.
 ---
 
 (how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh)=
@@ -75,3 +75,6 @@ This SSH keys page lists all the keys associated with your account. It lets you 
 
 Every key listed here will be added to the `~/.ssh/authorized_keys` file on your Ubuntu Core devices when they are initialised, permitting SSH access to accounts with the private key.
 
+```{note}
+Adding or removing SSH keys in Ubuntu One later will not update the existing keys on the device.
+```
