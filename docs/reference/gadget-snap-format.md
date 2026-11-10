@@ -216,8 +216,10 @@ defaults:
 # Interface connection instructions for plugs and slots of seeded
 # snaps to connect at first boot. snap IDs can be the "system"
 # nick as well. Omitting "slot" in an instruction is allowed
-# and equivalent then to: slot: system:<plug>
-# (since 2.34) (optional)
+# and equivalent then to: slot: system:<plug> (since 2.34). 
+# If a specified plug or slot is unavailable on the device,
+# snapd logs it and skips the connection. This does not cause
+# installation to fail. (optional) 
 connections:
    -  plug: <plug snap id>:<plug>
       slot: <slot snap id>:<slot>
