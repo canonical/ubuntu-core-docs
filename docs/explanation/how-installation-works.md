@@ -24,7 +24,7 @@ The first three (1-3) are also described in the {ref}`recovery mode <explanation
    - setting up the run system in `ubuntu-data`.
    - setting boot configuration and the kernel option `snapd_recovery_mode=run` in `ubuntu-boot`.
 1.  The initramfs then boots into userspace to complete the installation.
-1.  Snapd bootstraps itself and proceeds to _seed_, install and activate all the snaps marked for **run mode** use in the recovery system.
+1.  Snapd bootstraps itself and proceeds to _seed_, install, and activate all the snaps marked for **run mode** use in the recovery system.
 1. Finally, it sets the system option `system.seed.loaded=true`.
 
 Until the system is rebooted, the kernel command line will include `snapd_recovery_mode=install` as an argument despite the system being fully installed and operational. The `system.seed.loaded` system option is the true marker that installation is complete.
