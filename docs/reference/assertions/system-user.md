@@ -1,17 +1,20 @@
 ---
 myst:
   html_meta:
-    description: System-user assertion reference. Create local system users on specific devices when console-conf is disabled.
+    description: Reference documentation for the system-user assertion, including its fields, format, and how it enables user creation on Ubuntu Core devices.
 ---
 
 (reference-assertions-system-user)=
 # system-user
 
-Ubuntu Core has been designed to operate without users, or with the [Ubuntu SSO](https://login.ubuntu.com/) user created by `console-conf`when the device first boots.
+Ubuntu Core has been designed to operate without users, or with the [Ubuntu SSO](https://login.ubuntu.com/) user created by `console-conf` when the device first boots.
 
 Some systems suppress _console-conf_ and its user creation, and on those systems, the `system-user` {ref}`assertion <ref-index_assertions>` permits the creation of local system users on specific devices by their associated {ref}`Brand store <ref-dedicated-snap-store_dedicated-snap-store>`.
 
-To create a system user on these systems,  the `system-user` {ref}`assertion <ref-index_assertions>`, described on this page, needs to be embedded within a file called `auto-import.assert` that’s added to the system via the root directory of a removable USB storage device.
+The `system-user` {ref}`assertion <ref-index_assertions>` can be used to create a system user in one of three ways:
+- injecting it into the ubuntu-seed partition using the {ref}`ubuntu-image utility <ref-use-ubuntu-image_extra-assertions>`;
+- embedding it within a file called `auto-import.assert` that’s added to the system via the root directory of a removable USB storage device; or
+- running `sudo snap create-user --known` if command-line access is available and the assertion is in the device's assertion database.
 
 See {ref}`Add a system user <how-to-guides-manage-ubuntu-core-add-a-system-user>` for further details on creating a system user.
 
@@ -50,7 +53,7 @@ The index is the tuple \<`brand-id`, `email`\>, with `series` being as specified
 
 - `since` and `until` define a period between a UTC _from date_ (since) and a UTC _to date_ (until) during which a new {ref}`system user <how-to-guides-manage-ubuntu-core-add-a-system-user>` is permitted to be created. An exception to this rule is if `until-expiration` has been set in `user-presence` (see below), in which case a user is removed when the corresponding assertion expires.
 
-   Using `since` and `util` requires a `password` to be embedded within the assertion.
+   Using `since` and `until` requires a `password` to be embedded within the assertion.
 
 - `force-password-change` (optional) requires that the password is set after login, and the new password cannot be empty.
 
@@ -58,13 +61,9 @@ The index is the tuple \<`brand-id`, `email`\>, with `series` being as specified
 
 See {ref}`Assertion format <ref-index_assertion-format>` for more details on fields common to most assertions.
 
-The simple addition of such assertions to a device assertion database does not trigger user creation. This must be initiated explicitly, in one of two ways:
-- by running `snap create-user --known`, if command-line access is available; or
-- by adding `auto-import.assert` to the root directory of a removable device; see {ref}`Add a system user <how-to-guides-manage-ubuntu-core-add-a-system-user-auto-import-assert>` for details.
-
 ## Example system-user assertion
 
-The following is a the JSON input for an example system-user assertion:
+The following is the JSON input for an example system-user assertion:
 
 ```json
 {
@@ -115,4 +114,3 @@ H5+p/e5UzcB7hqB8YOrwTtp5EsTPq/AOD0bu9EZdVS5eIAkGuvR3MJX+uGvTAXCCFMIPIxcNTPwp
 1pfdMtVNbQKyF30dswc5TctzZEOY/YazMI8CqB3ZuCGyUpkJ0px2FgJQqVHYdtIDePp33aTy170A
 5dHym5SUQZqowwHN/PSc7rTyGn4fJCdRpRsjj72uSQ==
 ```
-
