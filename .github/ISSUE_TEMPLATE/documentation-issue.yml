@@ -1,0 +1,20 @@
+name: Documentation issue
+description: Report issue related to the Ubuntu Core documentation
+title: "docs: TYPE YOUR QUESTION HERE"
+labels: ["documentation"]
+body:
+  - type: textarea
+    id: details
+    attributes:
+      label: Add a description
+      description: Describe the question or issue with the Ubuntu Core documentation.
+    validations:
+      required: true
+  - type: input
+    id: page_url
+    attributes:
+      label: Page URL
+      description: Please enter the URL of the documentation page you are referring to.
+      placeholder: https://documentation.ubuntu.com/core/
+    validations:
+      required: true
