@@ -158,6 +158,7 @@ You will be asked for the password and the output can be inserted into the `syst
 
 For further details on system-user fields, including `since` and `until`, see the {ref}`System-user assertion <reference-assertions-system-user>` documentation.
 
+(how-to-guides-manage-ubuntu-core-add-a-system-user-auto-import-assert)=
 ## Generating auto-import.assert
 
 First, make sure you're logged in with both `snap` and `snapcraft`:
