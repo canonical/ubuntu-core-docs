@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Gadget snap format reference. Complete guide to gadget snap properties, volumes, and configuration.
+    description: Reference documentation for the gadget snap format, including gadget.yaml properties, volume layouts, boot configuration, interface connections, and hooks.
 ---
 
 (reference-gadget-snap-format)=
@@ -216,8 +216,11 @@ defaults:
 # Interface connection instructions for plugs and slots of seeded
 # snaps to connect at first boot. snap IDs can be the "system"
 # nick as well. Omitting "slot" in an instruction is allowed
-# and equivalent then to: slot: system:<plug>
-# (since 2.34) (optional)
+# and equivalent then to "slot: system:<plug>".
+# If a specified plug or slot is unavailable on the device,
+# snapd logs it and skips the connection. This does not cause the
+# installation to fail.
+# (since 2.34) (optional) 
 connections:
    -  plug: <plug snap id>:<plug>
       slot: <slot snap id>:<slot>
