@@ -28,11 +28,11 @@ A {ref}`base <ref-snaps-in-ubuntu-core_types-of-snap>` snap is released with eac
 For example, when building an Ubuntu Core 24 image, the model uses the `core24` base snap. A kernel snap, in general from the `stable` risk-level, should be picked from the following options:
 
 ```{terminal}
-   :input: snap info pc-kernel | grep "^ *24[/|-]" | grep stable
-   :user: ubuntu
-   :host: machine-amd64
+:user: ubuntu
+:host: machine-amd64
 
 snap info pc-kernel | grep "^ *24[/|-]" | grep stable
+
   24-rt-hwe-edge/stable:    6.14.0-1010.10~24.04.1      2025-08-14 (2736) 377MB -
   24-rt-hwe/stable:         6.14.0-1010.10~24.04.1      2025-08-14 (2736) 377MB -
   24-rt/stable:             6.8.1-1030.31               2025-08-18 (2760) 360MB -
