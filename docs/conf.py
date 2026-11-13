@@ -191,13 +191,28 @@ redirects = {}
 
 linkcheck_ignore = [
     "http://127.0.0.1:8000",
-    "https://github.com/canonical/ACME/*"
+    "https://github.com/canonical/ACME/*",
+    # These pages work in a browser but reject automated linkcheck requests.
+    r"https://www\.bluetooth\.com/$",
+    r"https://gitlab\.gnome\.org/GNOME/gnome-multi-writer$",
+    r"https://linux\.die\.net/man/8/ip$",
+    r"https://www\.freedesktop\.org/wiki/Software/ModemManager/$",
+    r"https://www\.freedesktop\.org/wiki/Software/ModemManager/SupportedDevices/$",
+    r"https://www\.freedesktop\.org/wiki/Software/Plymouth/Scripts/$",
     ]
 
 
 # A regex list of URLs where anchors are ignored by 'make linkcheck'
 
-linkcheck_anchors_ignore_for_url = [r"https://github\.com/.*"]
+linkcheck_anchors_ignore_for_url = [
+    r"https://github\.com/.*",
+    # Matrix room addresses and REST API endpoints use JavaScript-managed fragments.
+    r"https://matrix\.to/$",
+    r"https://snapcraft\.io/docs/reference/development/snapd-rest-api/$",
+    # Confluence handles this section link in the browser, but Sphinx cannot find its anchor.
+    r"https://xilinx-wiki\.atlassian\.net/wiki/spaces/A/pages/3020685316/"
+    r"Kria\+SOM\+Boot\+Firmware\+Update$",
+]
 
 # give linkcheck multiple tries on failure
 # linkcheck_timeout = 30
@@ -247,6 +262,8 @@ extensions = [
 
 exclude_patterns = [
     "doc-cheat-sheet*",
+    # A local Python environment is not documentation source material.
+    ".venv",
 ]
 
 # Adds custom CSS files, located under 'html_static_path'

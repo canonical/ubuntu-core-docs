@@ -104,7 +104,7 @@ With the given configuration, the service's standard output will be written to J
 
 The snap is almost ready but we need to ensure that we can update the container image too, after the deployment. There are a few ways to do this, but we choose to rely on a publisher-managed delivery via the snap. In other words, we update the snap which in turn updates the docker image and the container instance.
 
-To realize that, we leverage the [post-refresh hook](https://snapcraft.io/docs/supported-snap-hooks#heading--post-refresh) which is a script executed whenever the snap has updated. All this script needs to do is to remove the container, so a new one gets created using the Docker tag specified in the `snapcraft.yaml` file.
+To realize that, we leverage the [post-refresh hook](https://snapcraft.io/docs/reference/development/supported-snap-hooks/#the-post-refresh-hook) which is a script executed whenever the snap has updated. All this script needs to do is to remove the container, so a new one gets created using the Docker tag specified in the `snapcraft.yaml` file.
 
 Add the following script at `snap/hooks/post-refresh`:
 
@@ -123,7 +123,7 @@ Then, make the script executable: `chmod +x snap/hooks/post-refresh`
 
 Here, we could add additional logic such as removing the old image, or preparing the application for this upgrade.
 
-For completeness, let's also create a [remove hook](https://snapcraft.io/docs/supported-snap-hooks#heading--remove), to remove the container when the snap is uninstalled. This prevents container name conflicts if the snap is re-installed.
+For completeness, let's also create a [remove hook](https://snapcraft.io/docs/reference/development/supported-snap-hooks/#the-remove-hook), to remove the container when the snap is uninstalled. This prevents container name conflicts if the snap is re-installed.
 
 Create the following script at `snap/hooks/remove`:
 ```bash
@@ -169,7 +169,7 @@ This speeds up the build and is safe because building this snap makes no changes
 ```shell
 sudo snap install --dangerous ./rabbitmq-docker-guide_demo_amd64.snap
 ```
-The [`--dangerous`](https://snapcraft.io/docs/install-modes#dangerous-mode) flag is set because this is a locally built, unsigned snap.
+The [`--dangerous`](https://snapcraft.io/docs/explanation/snap-development/install-modes/#dangerous-mode) flag is set because this is a locally built, unsigned snap.
 
 Connect the following [interfacess](https://snapcraft.io/docs/interfaces):
 ```shell
@@ -226,7 +226,7 @@ $ tree -L 2 /var/snap/rabbitmq-docker-guide/current/data/
 
 There are many ways to pass configuration to a Docker container on Ubuntu Core. This also heavily depends on the application inside the container.
 
-A nice way to enable configuration of snaps is via [snap configuration option](https://snapcraft.io/docs/configuration-in-snaps). To make use of this configuration mechanism, we need to implement a script which reads the snap configuration options and then writes equivalent environment variables into a file. We leverage the snap's [configure hook](https://snapcraft.io/docs/supported-snap-hooks#heading--the-configure-hook) for this purpose so that we perform the mapping every time the user sets snap configurations.
+A nice way to enable configuration of snaps is via [snap configuration option](https://snapcraft.io/docs/configuration-in-snaps). To make use of this configuration mechanism, we need to implement a script which reads the snap configuration options and then writes equivalent environment variables into a file. We leverage the snap's [configure hook](https://snapcraft.io/docs/reference/development/supported-snap-hooks/#the-configure-hook) for this purpose so that we perform the mapping every time the user sets snap configurations.
 
 To write environment variables into a file whenever the user sets a snap configuration option, create a script at `snap/hooks/configure` with the following content:
 ```bash
@@ -363,7 +363,7 @@ To verify that this works:
 5. Execute `docker ps` and look for `0.0.0.0:8072->5672/tcp`
 
 
-For setting defaults, a more maintainable approach would be to set them in the [install hook](https://snapcraft.io/docs/supported-snap-hooks#heading--install).
+For setting defaults, a more maintainable approach would be to set them in the [install hook](https://snapcraft.io/docs/reference/development/supported-snap-hooks/#the-install-hook).
 As an example, create an executable script at `snap/hooks/install` with the following content:
 ```bash
 #!/bin/bash -eu

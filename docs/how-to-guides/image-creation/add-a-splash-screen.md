@@ -11,7 +11,7 @@ By default, Ubuntu Core does not display a splash screen when a device is bootin
 
 ![Ubuntu Core Splash](https://assets.ubuntu.com/v1/72b8914b-core-splash_01.png)
 
-Ubuntu Core’s splash screen is based on Ubuntu’s [Plymouth-based splash screen](https://wiki.ubuntu.com/Plymouth#Splash_Theme) implementation. It’s enabled by adding `quiet splash` as a {ref}`kernel boot parameter <reference-kernel-boot-parameters>`:
+Ubuntu Core’s splash screen is based on Ubuntu’s [Plymouth-based splash screen](https://manpages.ubuntu.com/manpages/noble/man8/plymouth.8.html) implementation. It’s enabled by adding `quiet splash` as a {ref}`kernel boot parameter <reference-kernel-boot-parameters>`:
 
 ```yaml
 quiet splash
@@ -56,7 +56,7 @@ The image will be scaled accordingly and images with a 2:1 aspect ratio work bes
 
 ### Replacement Plymouth theme
 
-The most flexible way to change the appearance of the Ubuntu Core splash screen is to install a replacement [Plymouth](https://wiki.ubuntu.com/Plymouth) theme.
+The most flexible way to change the appearance of the Ubuntu Core splash screen is to install a replacement [Plymouth](https://manpages.ubuntu.com/manpages/noble/man8/plymouth.8.html) theme.
 
 While Plymouth itself supports a variety of different splash plugins, Ubuntu Core’s implementation only supports its [Scripts](https://gitlab.freedesktop.org/plymouth/plymouth/-/tree/main/themes/script?ref_type=heads) plugin. This is the most flexible plugin as it provides its own feature-rich [scripting language](https://www.freedesktop.org/wiki/Software/Plymouth/Scripts/).
 

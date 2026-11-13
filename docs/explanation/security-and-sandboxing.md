@@ -19,7 +19,7 @@ For more general details on what confinement entails, see [Snap confinement](htt
 
 Application developers should not need to know about, or understand, the low-level implementation details of how a security policy is enforced.
 
-Each command declared with the `apps` [snap metadata](https://snapcraft.io/docs/the-snap-format#heading--snapyaml) is tracked by the system assigning a security label to the command.
+Each command declared with the `apps` [snap metadata](https://snapcraft.io/docs/reference/development/yaml-schemas/the-snap-format/#heading--snapyaml) is tracked by the system assigning a security label to the command.
 
 This security label takes the form of `snap.<snap>.<app>` where `<snap>` is the name of the snap, and `<app>` is the application name. 
 
