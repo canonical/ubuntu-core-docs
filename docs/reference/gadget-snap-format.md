@@ -15,13 +15,13 @@ The gadget metadata and content defines:
 -   Configuration for the bootloader to use. The gadget also ships the bootloader itself and other boot assets.
 -   Default configuration options to use when snaps are installed.
 -   Interface connections configured in the `connections:` section are executed on the device’s first boot only. Later changes to this section -- that is, changes added to the device at run time through gadget refreshes -- are not applied.
--   Optional hooks that are invoked to control and customize the behavior over the device lifecycle, e.g. installation, initialisation and establishing device identity, factory reset.
+-   Optional hooks that are invoked to control and customize the behavior over the device lifecycle, e.g. installation, initialization and establishing device identity, factory reset.
 
 See {ref}`Building a gadget snap <how-to-guides-image-creation-build-a-gadget-snap>` for details on how a gadget snap can be built. For store deployment, gadget snaps must be produced by the device [brand](https://snapcraft.io/docs/reference/glossary/#brand-store), as defined in the {ref}`model assertion <reference-assertions-model>`, or a reference gadget must be used. It is perfectly possible for different models to share a gadget snap.
 
 ## Setup files
 
-In addition to traditional snap metadata, the gadget snap also holds some setup files fundamental to the initialisation and lifecycle of the device:
+In addition to traditional snap metadata, the gadget snap also holds some setup files fundamental to the initialization and lifecycle of the device:
 
 - **meta/snap.yaml**: traditional snap details, with `type: gadget` explicitly defined.
 - **meta/gadget.yaml**: gadget-specific information. See below.
@@ -193,7 +193,7 @@ The parameters from `append` will be added to the default command line. The para
 
 ### Specification
 
-The `meta/gadget.yaml` file contains the basic metadata for gadget-specific functionality, including a detailed specification of which structure items compose an image. The latter is used both by snapd and by ubuntu-image when creating images for these devices.
+The `meta/gadget.yaml` file contains the basic metadata for gadget-specific functionality, including a detailed specification of which structure items compose an image. The latter is used both by Snapd and by ubuntu-image when creating images for these devices.
 
 A gadget snap's boot assets can also be automatically updated when the snap is refreshed. See {ref}`Updating gadget boot assets <interfaces-gadget-boot-assets>` for further details.
 
@@ -399,11 +399,11 @@ connections:
 (ref-gadget-snap-format_prepare-device-hook)=
 ##  prepare-device hook
 
-The optional `prepare-device` hook will be called on the gadget at the start of the device initialisation process, after the gadget snap has been installed.
+The optional `prepare-device` hook will be called on the gadget at the start of the device initialization process, after the gadget snap has been installed.
 
-The hook will also be called if this process is retried later from scratch in case of initialisation failures.
+The hook will also be called if this process is retried later from scratch in case of initialization failures.
 
-The device initialisation process is, for example, responsible for setting the serial identification of the device through an exchange with a device service.
+The device initialization process is, for example, responsible for setting the serial identification of the device through an exchange with a device service.
 
 The `prepare-device` hook can for example redirect this exchange and dynamically set options relevant to it.
 
@@ -447,7 +447,7 @@ snapctl set registration.body='mac: "00:00:00:00:ff:00"'
 
 ## prepare-serial hook
 
-The optional `prepare-serial` hook will be called on the gadget at the start of the device initialisation process, after the gadget snap has been installed and if secure registration is required.
+The optional `prepare-serial` hook will be called on the gadget at the start of the device initialization process, after the gadget snap has been installed and if secure registration is required.
 
 This hook can be used to provide the necessary device attestation information which is passed back to the device service by setting the `registration.body` to the appropriate stanza suitable for method of secure registration being used.
 

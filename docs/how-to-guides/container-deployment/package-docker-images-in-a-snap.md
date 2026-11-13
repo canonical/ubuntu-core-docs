@@ -19,7 +19,7 @@ Downloading Docker images from an online registry during the installation is a c
 
 Consequently, bundling the Docker image inside a snap is useful for both existing and locally built images.
 
-Snaps are signed, which means the entire package, including the Docker image, is a verifiable artifact that can be pulled from an online or on-prem store, built into Ubuntu Core images, or passed around as standalone snaps.
+Snaps are signed, which means the entire package, including the Docker image, is a verifiable artifact that can be pulled from an online or on-premises store, built into Ubuntu Core images, or passed around as standalone snaps.
 
 Building a snap that contains and uses an existing image involves a few steps. 
 
@@ -76,7 +76,7 @@ Refer below for a complete example.
 
 Let's take the snap created in the {ref}`Docker companion snap <how-to-guides-container-deployment-deploy-docker-from-a-snap>` guide.
 
-With that snap, the Docker image was pulled from DockerHub on first startup and after every refresh (upgrade/downgrade). This is because the image wasn't available locally.
+With that snap, the Docker image was pulled from Docker Hub on first startup and after every refresh (upgrade/downgrade). This is because the image wasn't available locally.
 
 What we need to do is to make sure the image is packaged inside the snap and loaded into the Docker Engine before the container creation.
 

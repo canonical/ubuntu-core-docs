@@ -9,7 +9,7 @@ myst:
 
 Ubuntu Core and its applications run within a confined and transaction-based environment. This provides the robustness and security that makes Ubuntu Core ideal for embedded device deployment, but it also requires a different approach from classic Ubuntu systems. 
 
-Application management, system configuration and update schedules in Ubuntu Core are managed by *snapd*, the snap packaging daemon. Snap features are explained comprehensively in the [Snap documentation](https://snapcraft.io/docs), while our {ref}`Ubuntu Core documentation <ref-index_ubuntu-core-documentation>` handles the elements of the _snap_ ecosystem that are specifically applicable to Ubuntu Core.
+Application management, system configuration and update schedules in Ubuntu Core are managed by *Snapd*, the snap packaging daemon. Snap features are explained comprehensively in the [Snap documentation](https://snapcraft.io/docs), while our {ref}`Ubuntu Core documentation <ref-index_ubuntu-core-documentation>` handles the elements of the _snap_ ecosystem that are specifically applicable to Ubuntu Core.
 
 ```{admonition} Create your own images
 :class: tip
@@ -126,17 +126,17 @@ snap remove wpe-webkit-mir-kiosk
 
 Ubuntu Core is also an ideal platform for server applications because it can handle both system and application updates automatically if needed.
 
-To transform your device into a [NextCloud Server](https://nextcloud.com/athome/), for instance, install the [nextcloud](https://snapcraft.io/nextcloud) snap:
+To transform your device into a [Nextcloud Server](https://nextcloud.com/athome/), for instance, install the [nextcloud](https://snapcraft.io/nextcloud) snap:
 
 ```bash
 snap install nextcloud
 ```
 
-Open the IP address of your device in a web browser on the same network and you'll see NextCloud's [Create an admin account](https://docs.nextcloud.com/server/latest/admin_manual/installation/installation_wizard.html) prompt.
+Open the IP address of your device in a web browser on the same network and you'll see Nextcloud's [Create an admin account](https://docs.nextcloud.com/server/latest/admin_manual/installation/installation_wizard.html) prompt.
 
-![NextCloud admin account creation prompt](https://assets.ubuntu.com/v1/81d2e822-nextcloud.png)
+![Nextcloud admin account creation prompt](https://assets.ubuntu.com/v1/81d2e822-nextcloud.png)
 
-In common with other server applications, NextCloud runs various services in the background. Snapped services like these can be viewed with the `snap services` command:
+In common with other server applications, Nextcloud runs various services in the background. Snapped services like these can be viewed with the `snap services` command:
 
 ```{terminal}
    :input: snap services
@@ -165,9 +165,8 @@ For more information on services, take a look at [Services and daemons](https://
 
 ## Next steps
 
-The snap command includes comprehensive help output. To see this, type `snap help` followed by the command. The output will often include additional arguments that can be useful. Autocompletion can also help when tying snap commands, both to complete a command itself, and also to complete the names of snaps or interfaces. Type `snap` followed by a space and then the tab key to see the list of all possible commands, for instance.
+The snap command includes comprehensive help output. To see this, type `snap help` followed by the command. The output will often include additional arguments that can be useful. Autocompletion can also help when typing snap commands, both to complete a command itself, and also to complete the names of snaps or interfaces. Type `snap` followed by a space and then the tab key to see the list of all possible commands, for instance.
 
 For more information on how to work with snaps, including how to make data snapshots, how to install specific revisions, see the [Snap Documentation ](https://snapcraft.io/docs/). 
 
 To learn how to create your own custom image, see our {ref}`Build an image <ref-index-build-your-first-image>` guide.
-

@@ -13,9 +13,9 @@ To run Docker containers on a running Ubuntu Core instance, install the Docker s
 
 You can even create a {ref}`companion snap <explanation-docker-companion-snap>` that {ref}`runs the container <how-to-guides-container-deployment-deploy-docker-from-a-snap>` and takes care of updates to the {ref}`bundled container image <how-to-guides-container-deployment-package-docker-images-in-a-snap>`.
 
-To ship containerised applications with Ubuntu Core, you need to create a custom image. The custom image can then be used to create bootable media and can automate deployment of a production system.
+To ship containerized applications with Ubuntu Core, you need to create a custom image. The custom image can then be used to create bootable media and can automate deployment of a production system.
 
-To create a custom Ubuntu Core image with one or more containerised Docker applications, the applications need to be first packaged as {ref}`Docker companion snaps <explanation-docker-companion-snap>`, listed in the model assertion along with the Docker snap, and given the right permissions to operate.
+To create a custom Ubuntu Core image with one or more containerized Docker applications, the applications need to be first packaged as {ref}`Docker companion snaps <explanation-docker-companion-snap>`, listed in the model assertion along with the Docker snap, and given the right permissions to operate.
 
 The image may also include container configurations.
 
@@ -72,4 +72,3 @@ Finally, replace the default gadget snap listed in the model assertion with the 
 ```
 
 Omit `default-channel` and `id` if you want to {ref}`build the image using a custom gadget snap <how-to-guides-image-creation-add-custom-snaps>` that hasn't been uploaded to a store.
-

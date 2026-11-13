@@ -19,7 +19,7 @@ Whether it's an update to a single device, a specific subset of devices, or a de
 
 * **Critical update provision**: in specific circumstances when an ad-hoc or critical update needs to be made, the update system needs to give these priority and incorporate the update back into the regular update service
 
-* **Unpredictable hardware and network conditions**:  in situations that can’t be easily modelled or predicted, any update system needs to have enough redundancy to handle roll-backs, network-free bootstrapping and autonomous re-provisioning
+* **Unpredictable hardware and network conditions**:  in situations that can’t be easily modeled or predicted, any update system needs to have enough redundancy to handle roll-backs, network-free bootstrapping and autonomous re-provisioning
 
  Note: For further details on how snaps work and how they're built, see the [Snap documentation](https://snapcraft.io/docs).
 
@@ -29,7 +29,7 @@ Whether it's an update to a single device, a specific subset of devices, or a de
 The snap packaging ecosystem consists of the following parts:
 
 * **snap** is both the command line interface and the application package format
-* **snapd** is the background service that manages and maintains your snaps
+* **Snapd** is the background service that manages and maintains your snaps
 * **snapcraft** is the command and the framework used to build your own snaps
 * **[Snap Store](https://snapcraft.io/store)** provides a place to upload your snaps, and for users to browse and install
 
@@ -43,9 +43,9 @@ The {ref}`gadget snap <reference-gadget-snap-format>` is responsible for definin
 The [base snap](https://snapcraft.io/docs/base-snaps) provides the run-time environment with a minimal set of libraries that are common to most applications. Base snaps mirror Ubuntu LTS releases and include core20, built from Ubuntu 20.04 LTS, core18 based on Ubuntu 18.04 LTS, and core, based on Ubuntu 16.04 LTS. One of them, selected with the model assertion, also serves as the root file system for the Ubuntu Core system.
 For historical reasons the core snap has a different specific type: core.
 1. **snapd**: The snap daemon</br>
-Since core18, base snaps do not include the snap daemon. Instead, the snapd daemon is packaged as a separate upgradeable snap.
-  The core base snap used in Ubuntu Core 16 includes the snapd daemon, which therefore cannot be separately upgraded and is supported inline with the wider [Ubuntu release cycle](https://ubuntu.com/about/release-cycle).
+Since core18, base snaps do not include the snap daemon. Instead, the Snapd daemon is packaged as a separate upgradeable snap.
+  The core base snap used in Ubuntu Core 16 includes the Snapd daemon, which therefore cannot be separately upgraded and is supported inline with the wider [Ubuntu release cycle](https://ubuntu.com/about/release-cycle).
 1. **app**: Applications, daemons and tools</br>
-Packages applications, pulled from multiple upstream sources using diverse build systems. The snapd daemon is itself installed as a snap (except with an old core, where it's included).
+Packages applications, pulled from multiple upstream sources using diverse build systems. The Snapd daemon is itself installed as a snap (except with an old core, where it's included).
 
 As with the core file system, snaps are presented to the system as read-only and are granted access to whatever resources they need through a set of explicit permissions, known as interfaces. Interfaces are implemented using well-tested Linux kernel confinement features.

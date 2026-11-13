@@ -12,7 +12,7 @@ The purpose of the  *bluez*  snap is to provide the BlueZ Bluetooth stack. Apart
 |--------------------|---------------------------------------------------|
 | bluez.bluetoothctl | An interactive command-line interface to BlueZ    |
 | bluez.btattach     | Attaches a serial UART to the BT stack            |
-| bluez.btmgmt       | An interactive cli to talk to the kernel BT stack |
+| bluez.btmgmt       | An interactive CLI to talk to the kernel BT stack |
 | bluez.btmon        | A bluetooth monitor                               |
 | bluez.hciattach    | DEPRECATED in favor of btattach                   |
 | bluez.hciconfig    | DEPRECATED in favor of bluetoothctl and btmgmt    |

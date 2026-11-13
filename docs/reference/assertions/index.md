@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Assertions reference guide. Complete documentation of all assertion types used by snapd and the Snap Store.
+    description: Assertions reference guide. Complete documentation of all assertion types used by Snapd and the Snap Store.
 ---
 
 (ref-index_assertions)=
@@ -9,7 +9,7 @@ myst:
 
 An assertion is a digitally signed document that either verifies the validity of a process, as attested by the signer, or carries policy information, as formulated by the signer.
 
-[Snapcraft](https://snapcraft.io/docs/snapcraft), [snapd](https://snapcraft.io/docs/reference/glossary/#snapd), the [Snap Store](https://snapcraft.io/store) and {ref}`Brand stores <ref-dedicated-snap-store_dedicated-snap-store>` all use assertions to handle a variety of functions and processes, including authentication, policy setting, identification and validation.
+[Snapcraft](https://snapcraft.io/docs/snapcraft), [Snapd](https://snapcraft.io/docs/reference/glossary/#snapd), the [Snap Store](https://snapcraft.io/store) and {ref}`Brand stores <ref-dedicated-snap-store_dedicated-snap-store>` all use assertions to handle a variety of functions and processes, including authentication, policy setting, identification and validation.
 
 Assertions are text-based and take a context-dependent format that always includes one or more headers, an optional body, and the encoded signature.
 
@@ -27,10 +27,10 @@ These are the currently used assertion types:
 - **{ref}`snap-build <reference-assertions-snap-build>`**: the basic properties of a snap at the time it was built by the developer
 - **{ref}`snap-declaration <reference-assertions-snap-declaration>`**:  defines various snap properties, such as `snap-id`, its name, and the publisher, plus policy related to accessing privileged interfaces
 - **{ref}`snap-resource-pair <reference-assertions-snap-resource-pair>`**: links a snap revision to a component revision
-- **{ref}`snap-resource-revision <reference-assertions-snap-resource-revision>`**: store acknowledgement on receipt of a component build labelled with a revision
-- **{ref}`snap-revision <reference-assertions-snap-revision>`**: store acknowledgement on receipt of a snap build labelled with a revision
+- **{ref}`snap-resource-revision <reference-assertions-snap-resource-revision>`**: store acknowledgment on receipt of a component build labeled with a revision
+- **{ref}`snap-revision <reference-assertions-snap-revision>`**: store acknowledgment on receipt of a snap build labeled with a revision
 - **{ref}`store <reference-assertions-store>`**: defines the configuration needed to connect a device to a store
-- **{ref}`system-user <reference-assertions-system-user>`**: usually brand authorisation to create local system users on specified devices
+- **{ref}`system-user <reference-assertions-system-user>`**: usually brand authorization to create local system users on specified devices
 - **{ref}`validation <reference-assertions-validation>`**: validates a specific snap revision for a given series
 - **{ref}`validation-set <reference-assertions-validation-set>`**: a group of snaps that are either installed or permitted to be installed together
 

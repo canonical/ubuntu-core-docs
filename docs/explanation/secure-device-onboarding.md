@@ -37,7 +37,7 @@ This pair is created early in the device's life and stays with it forever; it is
 
 Along with the hardware identity key pair, each device gets a separate device key pair for day-to-day interactions with the model service:
 
-- snapd generates this during first boot (and can regenerate it during remodeling or re-imaging).
+- Snapd generates this during first boot (and can regenerate it during remodeling or re-imaging).
 - This key binds the device to its {ref}`serial assertion <reference-assertions-serial>`.
 - You can refresh this key at any time without touching the hardware identity key.
 
@@ -65,10 +65,10 @@ The whole process happens in stages. It starts in the factory and ends with the 
 **Process**:
 
 1. The device boots with a minimal factory image (or default Ubuntu Core image).
-2. snapd invokes the gadget snap's `prepare-device` hook.
+2. Snapd invokes the gadget snap's `prepare-device` hook.
 3. The gadget snap interfaces with the device's HSM or implements a software-based key generation mechanism.
 4. A unique hardware identity key pair is generated and stored securely (preferably in hardware).
-5. No information is returned to snapd at this stage; the gadget snap manages the keys internally.
+5. No information is returned to Snapd at this stage; the gadget snap manages the keys internally.
 
 By the end: The device has a hardware identity private key stored securely.
 
@@ -93,8 +93,8 @@ By the end: The model service now knows about the device's public key and can ve
 
 **Process**:
 
-1. Device boots and snapd initializes the seeding process.
-2. snapd requests a nonce from the model service by calling the `/v1/request-id` endpoint.
+1. Device boots and Snapd initializes the seeding process.
+2. Snapd requests a nonce from the model service by calling the `/v1/request-id` endpoint.
 3. Model service returns a unique nonce with a 600-second (10-minute) lifespan to prevent replay attacks.
 
 By the end: The device has a fresh nonce that's valid for the next 10 minutes.
@@ -105,14 +105,14 @@ By the end: The device has a fresh nonce that's valid for the next 10 minutes.
 
 **Process**:
 
-1. snapd invokes the gadget snap's `prepare-serial-request` hook, passing the nonce.
+1. Snapd invokes the gadget snap's `prepare-serial-request` hook, passing the nonce.
 2. The gadget snap retrieves the hardware identity private key from the HSM or software storage.
 3. The gadget snap signs the nonce using the hardware identity private key.
 4. The gadget snap populates the body of the serial assertion request with:
    - `hardware-id-key-sha3-384`: The SHA3-384 digest of the public key
    - `request-id-signature`: The cryptographic signature of the nonce
-5. snapd generates the device key pair and forms the serial assertion request with the populated body.
-6. snapd submits the serial assertion request to the model service without requiring an API key.
+5. Snapd generates the device key pair and forms the serial assertion request with the populated body.
+6. Snapd submits the serial assertion request to the model service without requiring an API key.
 
 By the end: The model service gets cryptographic proof that the request is genuine.
 
@@ -156,15 +156,15 @@ The model service API handles bulk imports, so you can upload multiple assertion
 
 ## Gadget snap requirements
 
-Your gadget snap acts as the bridge between snapd and your specific hardware. It handles the security-sensitive operations that need to know about your device:
+Your gadget snap acts as the bridge between Snapd and your specific hardware. It handles the security-sensitive operations that need to know about your device:
 
 ### Prepare-device hook
 
-This hook sets up the hardware identity key pair during installation. For details on implementation—including how to work with TPMs, HSMs, and detect factory mode—see the [snapd prepare-device hook documentation](https://snapcraft.io/docs/reference/development/yaml-schemas/the-gadget-snap/#prepare-device-hook).
+This hook sets up the hardware identity key pair during installation. For details on implementation—including how to work with TPMs, HSMs, and detect factory mode—see the [Snapd prepare-device hook documentation](https://snapcraft.io/docs/reference/development/yaml-schemas/the-gadget-snap/#prepare-device-hook).
 
 ### Prepare-serial-request hook
 
-This hook runs during device registration to sign the nonce with the hardware identity private key, proving the request is genuine. For implementation details and the expected input/output format, see the [snapd prepare-serial-request hook documentation](https://snapcraft.io/docs/reference/development/yaml-schemas/the-gadget-snap/#prepare-serial-hook).
+This hook runs during device registration to sign the nonce with the hardware identity private key, proving the request is genuine. For implementation details and the expected input/output format, see the [Snapd prepare-serial-request hook documentation](https://snapcraft.io/docs/reference/development/yaml-schemas/the-gadget-snap/#prepare-serial-hook).
 
 ## Remodeling considerations
 
@@ -172,7 +172,7 @@ When you remodel a device to a different model:
 
 - The hardware identity key pair is retained and does not regenerate.
 - The device key pair **can** be regenerated if needed.
-- Both models must use the same provisioning method (both hardware-identity or both api-key).
+- Both models must use the same provisioning method (either `hardware-identity` or `api-key`).
 - You can't remodel between different provisioning types.
 
 This keeps the hardware identity intact as devices move between product lines.

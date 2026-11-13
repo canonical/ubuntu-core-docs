@@ -17,7 +17,7 @@ The first three (1-3) are also described in the {ref}`recovery mode <explanation
 
 1. Boot through the bootloader, its assets, and boot configuration in `ubuntu-seed`.
 1. Bootloader loads the kernel from a designated {ref}`recovery system <explanation-recovery-modes>` with option `snapd_recovery_mode=install`.
-1. Kernel initialises the system and loads the initramfs. The initramfs contains a reduced set of essential tools that are used to install the system by:
+1. Kernel initializes the system and loads the initramfs. The initramfs contains a reduced set of essential tools that are used to install the system by:
    - creating all missing partitions.
    - (*optionally*) encrypting `ubuntu-data` and `ubuntu-save` if supported and not disabled.
    - sealing the disk keys through hardware support.
@@ -30,7 +30,7 @@ The first three (1-3) are also described in the {ref}`recovery mode <explanation
 Until the system is rebooted, the kernel command line will include `snapd_recovery_mode=install` as an argument despite the system being fully installed and operational. The `system.seed.loaded` system option is the true marker that installation is complete.
 
 ```{note}
-Until Ubuntu Core 24, the system was installed from a tmpfs in userspace instead of from the initramfs, and the device was rebooted to finalise installation. Here, the snapd kernel option was set to `run`.
+Until Ubuntu Core 24, the system was installed from a tmpfs in userspace instead of from the initramfs, and the device was rebooted to finalize installation. Here, the Snapd kernel option was set to `run`.
 ```
 
 (ref-how-installation-works_the-install-device-hook)=
@@ -66,4 +66,3 @@ See {ref}`Building the image <ref-index-build-your-first-image>` for details on 
 The factory image hint is cleared directly before rebooting into **run mode**. 
 
 For the current boot, the state of the factory image hint can be viewed by invoking `snapctl system-mode` and checking whether `factory: true` is included in its YAML output. See [The snapctl tool](https://snapcraft.io/docs/using-snapctl) for more information.
-

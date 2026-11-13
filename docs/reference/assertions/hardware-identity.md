@@ -10,7 +10,7 @@ myst:
 
 The _hardware-identity_ [assertion](/reference/assertions/index) binds a device to its unique hardware identity public key.
 
-Ubuntu Core and SnapD support Secure Device Registration to ensure that only authorised devices can obtain a serial assertion. During manufacturing, each device is provisioned with a unique key pair that remains unchanged throughout its lifecycle, serving as its root identity.
+Ubuntu Core and Snapd support Secure Device Registration to ensure that only authorized devices can obtain a serial assertion. During manufacturing, each device is provisioned with a unique key pair that remains unchanged throughout its lifecycle, serving as its root identity.
 
 The hardware-identity assertion contains the public portion of this key and is issued with the device. When presented to the Model Service, it allows the service to verify that a serial assertion request genuinely originates from that device.
 
@@ -37,7 +37,7 @@ sign-key-sha3-384:        <key id> # Encoded key id of signing key
 <signature>                 # Encoded signature
 ```
 
-The index is the tuple \<`issuer-id', `hardware-id-key-sha3-384`\>.
+The index is the tuple \<`issuer-id`, `hardware-id-key-sha3-384`\>.
 
 This assertion must be signed by the issuer. See [Assertion format](/reference/assertions/index) for more details on fields common to most assertions.
 
@@ -74,4 +74,3 @@ nu147uRGWTXfa31Mys9lAGNHMtEcMmA106f2XfATqNK99GlIIjOxqEe5zH3j51JtY+5kyJd9cqvl
 Pb0rZnPySeGxnV4Q2403As67AJrIExRrcrK2yXZjEW3G2zTsFNzBSSZr0U8id1UJ/EZLB/em2EHw
 D2FXTwfDiwGroHYUFAEu1DkHx7Sy
 ```
-

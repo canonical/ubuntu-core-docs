@@ -23,7 +23,7 @@ The quickest way to create a new model assertion is to edit a model that already
 
 For this project, we're going to modify the 64-bit reference model for the Raspberry Pi: [ubuntu-core-26-pi-arm64.json](https://raw.githubusercontent.com/canonical/models/master/ubuntu-core-26-pi-arm64.json).
 
-Download and save the file locally with the following _wget_ command. We've called the file `my-model.json`:
+Download and save the file locally with the following `wget` command. We've called the file `my-model.json`:
 
 ```bash
 wget -O my-model.json https://raw.githubusercontent.com/canonical/models/master/ubuntu-core-26-pi-arm64.json
@@ -49,7 +49,7 @@ The following fields in `my-model.json` need to be changed:
 "brand-id": "canonical",
 ```
 
-These properties define the authority responsible for the image. Change both instances of the string "canonical" to your developer id, retrieved with the `snapcraft whoami` command. ("xSfWKGdLoQBoQx88", in our example output). This links the image to your Ubuntu One account and ensures that only *you* can push image updates to devices using your model.
+These properties define the authority responsible for the image. Change both instances of the string "canonical" to your developer id, retrieved with the `snapcraft whoami` command. (`xSfWKGdLoQBoQx88`, in our example output). This links the image to your Ubuntu One account and ensures that only *you* can push image updates to devices using your model.
 
 (ref-create-a-model_timestamp)=
 ### timestamp

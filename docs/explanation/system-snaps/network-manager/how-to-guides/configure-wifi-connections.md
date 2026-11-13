@@ -11,7 +11,7 @@ This section explains how to establish a Wi-Fi connection. It covers creating an
 
 ## Establish a connection
 
-This section will show how to establish a wifi connection to the wireless network. Note that directly connecting will implicitly create a connection (that can be seen with "nmcli c"). The naming of such will follow "SSID N" pattern, where N is a number.
+This section will show how to establish a Wi-Fi connection to the wireless network. Note that directly connecting will implicitly create a connection (that can be seen with "nmcli c"). The naming of such will follow "SSID N" pattern, where N is a number.
 
 First, determine the name of the Wi-Fi interface:
 
@@ -37,7 +37,7 @@ $ nmcli d wifi list
    my_wifi      Infra  5     54 Mbit/s  89      ▂▄▆█  WPA2
 ```
 
-As an example, to connect to the access point 'my_wifi', you would use the following command:
+As an example, to connect to the access point `my_wifi`, you would use the following command:
 
 ```bash
 nmcli d wifi connect my_wifi password <password>

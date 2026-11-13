@@ -81,7 +81,7 @@ $ sudo snap recovery --show-keys
 recovery:  55055-39320-64491-48436-47667-15525-36879-32875
 ```
 
-If a TPM becomes reinitialised or reconfigured, the TPM-sealed keys will be inaccessible and Ubuntu Core will not be able to decrypt and boot the device.
+If a TPM becomes reinitialized or reconfigured, the TPM-sealed keys will be inaccessible and Ubuntu Core will not be able to decrypt and boot the device.
 
 During boot, Ubuntu Core will instead ask for the recovery key for specific encrypted partitions. The same keys recovered with `snap recovery --show-keys` can then be entered to restore the device:
 
@@ -89,4 +89,3 @@ During boot, Ubuntu Core will instead ask for the recovery key for specific encr
 🔐 Please enter the recovery key for disk /dev/disk/by-partuuid/c7f7971b: (press TAB for no echo)
 ```
 After entering a valid key, Ubuntu Core will decrypt the device, proceed with the boot, and restore the TPM from the recovered key. The recovery keys will remain the same and do not need to be retrieved again.
-

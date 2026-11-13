@@ -7,7 +7,7 @@ myst:
 (how-to-guides-manage-ubuntu-core-test-on-qemu)=
 # Test on QEMU
 
-You can test Ubuntu Core without specific hardware from within a virtual machine, using either Multipass or QEMU (https://www.qemu.org/).
+You can test Ubuntu Core without specific hardware from within a virtual machine, using either Multipass or QEMU ([QEMU website](https://www.qemu.org/)).
 
 - Multipass has integrated support for the latest Ubuntu Core images and is quicker to get started with
 - QEMU is more configurable and can boot either a supported image or a custom image, with or without TPM emulation and full disk encryption.
@@ -121,7 +121,7 @@ snap install --edge test-snapd-swtpm
 
 ### Boot an ARM64 Ubuntu Core image
 
-It is possible to boot Ubuntu Core arm64 images with qemu-system for arm64 on x86_64 systems. Additional requirements can be installed by running the following, which includes the ARM UEFI firmware:
+It is possible to boot Ubuntu Core arm64 images with `qemu-system` for arm64 on x86_64 systems. Additional requirements can be installed by running the following, which includes the ARM UEFI firmware:
 
 ```bash
 sudo apt install qemu-efi-aarch64 qemu-system-arm
@@ -183,4 +183,3 @@ ssh -i <path-to-private-key> <sso-username>@localhost -p 8022
 In addition to SSH access, QEMU will start a VNC-shared console which can be accessed at `vnc://localhost:5900` on the system. Some configurations may also forward port 80 to 8090 for any web server application you wish to install in the VM.
 
 For a brief introduction on how to get started with Ubuntu Core, see {ref}`Using Ubuntu Core <how-to-guides-using-ubuntu-core>`.
-

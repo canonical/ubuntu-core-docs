@@ -24,7 +24,7 @@ The upstream udisks2 provides interfaces to enumerate and perform operations on 
 
 ## Upstream documentation
 
-Documentation for the upstream project can be found at [https://storaged.org/doc/udisks2-api/](https://storaged.org/doc/udisks2-api/).
+See the [udisks2 API documentation](https://storaged.org/doc/udisks2-api/) on the upstream project's website.
 
 ```{toctree}
 :hidden:

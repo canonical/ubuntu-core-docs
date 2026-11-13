@@ -17,7 +17,7 @@ A gadget snap is built the same way other snaps are built, using [snapcraft](htt
 
 > For a general guide on building snaps, see [Create a new snap](https://snapcraft.io/docs/create-a-new-snap).
 
-A gadget snap's _snapcraft.yaml_ links to both the [gadget.yaml](https://snapcraft.io/docs/the-gadget-snap), which is used to describe the device, and the support, boot and configuration files that are necessary to initialise a device.
+A gadget snap's _snapcraft.yaml_ links to both the [gadget.yaml](https://snapcraft.io/docs/the-gadget-snap), which is used to describe the device, and the support, boot and configuration files that are necessary to initialize a device.
 
 - **snapcraft.yaml** defines the gadget snap metadata alongside build and boot parameters
 - **gadget.yaml** defines the system properties specific to one or more devices
@@ -361,7 +361,7 @@ There are typically two methods for building a gadget snap, _native building_ an
 
 ### Requirements
 
-The build system must support [snap](https://snapcraft.io/docs/installing-snapd), and have both the [Snapcraft](https://snapcraft.io/docs/snapcraft-overview) build tool and the [LXD](https://canonical.com/lxd/install) virtualisation platform installed, all of which are provided by any Ubuntu release. Ensure your user has been added to the `lxd` group and you've initialized LXD with `lxd init` before proceeding. See [Set up Snapcraft](https://documentation.ubuntu.com/snapcraft/stable/how-to/set-up-snapcraft/#install-lxd) for further details.
+The build system must support [snap](https://snapcraft.io/docs/installing-snapd), and have both the [Snapcraft](https://snapcraft.io/docs/snapcraft-overview) build tool and the [LXD](https://canonical.com/lxd/install) virtualization platform installed, all of which are provided by any Ubuntu release. Ensure your user has been added to the `lxd` group and you've initialized LXD with `lxd init` before proceeding. See [Set up Snapcraft](https://documentation.ubuntu.com/snapcraft/stable/how-to/set-up-snapcraft/#install-lxd) for further details.
 
 ### Native building
 

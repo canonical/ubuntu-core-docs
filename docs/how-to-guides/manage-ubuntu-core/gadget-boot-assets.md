@@ -28,11 +28,11 @@ volumes:
 ```
 The `edition` property identifies the version of assets for a particular `structure`.
 
-Updates are performed when the `edition` value is higher than the value in the currently installed gadget snap. If this is the case, *snapd* next attempts to analyze the currently written assets so that only those that differ are updated.
+Updates are performed when the `edition` value is higher than the value in the currently installed gadget snap. If this is the case, *Snapd* next attempts to analyze the currently written assets so that only those that differ are updated.
 
 ### Backup and rollback
 
-When an update is performed, snapd first creates a backup of all modified boot assets for both filesystem and non-filesystem structures. Backups are kept on the `writable` partition inside the snapd *state* directory and are cleaned-up after an update has been applied.
+When an update is performed, Snapd first creates a backup of all modified boot assets for both filesystem and non-filesystem structures. Backups are kept on the `writable` partition inside the Snapd *state* directory and are cleaned-up after an update has been applied.
 
 A rollback is only performed when the process of writing updated boot assets fails. Once the assets have been written, the changes will not be undone, even if a later step of snap installation fails.
 
@@ -52,13 +52,13 @@ The volume layout describes the exact position of each structure (partition) and
 - `name` structures are identified using `/dev/disk/by-partlabel` symlinks
 - `filesystem-label` structures are identified using `/dev/disk/by-label` symlinks
 
-Both `name` and `filesystem-label` must be unique amongst all named structures and labelled filesystems. 
+Both `name` and `filesystem-label` must be unique among all named structures and labeled filesystems.
 
-Volume structures obviously need to be named, and the filesystem needs to be labelled, to allow snapd to easily identify corresponding partitions and mount locations.
+Volume structures obviously need to be named, and the filesystem needs to be labeled, to allow Snapd to easily identify corresponding partitions and mount locations.
 
 ## Filesystem structures
 
-Structures containing filesystems can be updated if the filesystem is mounted at runtime and is accessible to snapd. The update process then writes the files and directories listed in the `content` section of the structure.
+Structures containing filesystems can be updated if the filesystem is mounted at runtime and is accessible to Snapd. The update process then writes the files and directories listed in the `content` section of the structure.
 
 Specific entries can be retained during the update by listing each individual item in the `preserve` list of the `update` structure, as shown below:
 
@@ -85,7 +85,7 @@ volumes:
 
 In the above example, the boot assets update process will:
 - deploy the `a.data` file into the root (`/`)
-- copy the contents of `some-assets/` to `dir/
+- copy the contents of `some-assets/` to `dir/`
 
 Should any of the entries listed in the `preserve` section exist beforehand, they will be preserved intact.
 
@@ -93,7 +93,7 @@ Should any of the entries listed in the `preserve` section exist beforehand, the
 
 Support for unnamed _non-filesystem_ structures, or structures without a partition table entry, `type: bare` or `filesystem: none`, for example, are enabled via a fallback mechanism:
 
-snapd identifies the partition carrying the `writable` filesystem and proceeds to apply the updates to the parent device. For example, assuming `/writable` is mounted from `/dev/mmcblk0p2`, the fallback mechanism would identify `/dev/mmcblk0` as the parent device.
+Snapd identifies the partition carrying the `writable` filesystem and proceeds to apply the updates to the parent device. For example, assuming `/writable` is mounted from `/dev/mmcblk0p2`, the fallback mechanism would identify `/dev/mmcblk0` as the parent device.
 
 The contents of these structures can also be updated in the boot assets update process. Each image listed in the `content` section is written to the structure, as shown below:
 
@@ -113,7 +113,7 @@ volumes:
           edition: 2
 ```
 
-With the above example, the boot assets update process will write the contents of `raw.img` at the 0 offset inside the partition corresponding to the structure, while `other.img` is written at 10kB offset from the start of the partition.
+With the above example, the boot assets update process will write the contents of `raw.img` at the 0 offset inside the partition corresponding to the structure, while `other.img` is written at a 10 KiB offset from the start of the partition.
 
 Use of `preserve` to retain specific files inside non-filesystem structures is unsupported.
 
@@ -129,5 +129,5 @@ Currently, boot asset updates have the following limitations:
 The following are also unsupported:
 - encrypted or otherwise nested structures, such as LVM volumes
 - using `preserve` inside non-filesystem structures
-- updating unnamed and unlabelled filesystem structures
+- updating unnamed and unlabeled filesystem structures
 - updating devices not described inside `gadget.yaml`, such as the _BOOT1/2_ regions of SD cards

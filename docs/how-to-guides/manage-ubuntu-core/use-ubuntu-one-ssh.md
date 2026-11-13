@@ -20,7 +20,7 @@ The process of creating and registering this key is described below.
 
 ![Ubuntu SSO Create Account](https://assets.ubuntu.com/v1/9ecc0252-sso-03.png)
 
-Fill out the form that appears. Your "full name" and "username" will be displayed next to any snaps you publish in the Snap Store, so you should choose appropriate branding. Use your organisation's name for both if you are publishing or generating Ubuntu Core images on their behalf.
+Fill out the form that appears. Your "full name" and "username" will be displayed next to any snaps you publish in the Snap Store, so you should choose appropriate branding. Use your organization's name for both if you are publishing or generating Ubuntu Core images on their behalf.
 
 Ensure you read and accept the following:
 
@@ -73,5 +73,4 @@ Click on **Import SSH key** to complete the process.
 
 This SSH keys page lists all the keys associated with your account. It lets you delete those you no longer need, and add new keys.
 
-Every key listed here will be added to the `~/.ssh/authorized_keys` file on your Ubuntu Core devices when they are initialised, permitting SSH access to accounts with the private key.
-
+Every key listed here will be added to the `~/.ssh/authorized_keys` file on your Ubuntu Core devices when they are initialized, permitting SSH access to accounts with the private key.

@@ -13,15 +13,15 @@ OP-TEE is an open source Trusted Execution Environment (TEE) for Arm systems. It
 
 Snapd (the snap daemon) integrates with a Canonical-provided [OP-TEE TA](https://github.com/canonical/optee-uc-fde) that knows how to seal and unseal LUKS keys inside the secure world.
 
-During installation, snapd decides how to seal the LUKS disk keys. It first looks for a kernel [`fde-setup` hook](https://snapcraft.io/docs/reference/development/uc20-fde-hooks/#heading--fde-setup), then for the dedicated OP-TEE TA, and finally falls back to TPM-backed sealing. The selection is automatic and requires no user input.
+During installation, Snapd decides how to seal the LUKS disk keys. It first looks for a kernel [`fde-setup` hook](https://snapcraft.io/docs/reference/development/uc20-fde-hooks/#heading--fde-setup), then for the dedicated OP-TEE TA, and finally falls back to TPM-backed sealing. The selection is automatic and requires no user input.
 
-When OP-TEE is selected, snapd asks the TA to seal the disk key. The TA performs the encryption inside the secure world and hands back the sealed key. The encrypted key is stored on disk so that it can be used to decrypt the LUKS partition later. Note that only the TA can decrypt the sealed key, so storing the sealed key is safe.
+When OP-TEE is selected, Snapd asks the TA to seal the disk key. The TA performs the encryption inside the secure world and hands back the sealed key. The encrypted key is stored on disk so that it can be used to decrypt the LUKS partition later. Note that only the TA can decrypt the sealed key, so storing the sealed key is safe.
 
-During boot snapd loads the sealed key from disk, asks the TA to decrypt the key, and then uses the plaintext key to unlock the LUKS partition. Then, snapd locks the TA for the rest of the boot so no further requests are accepted.
+During boot Snapd loads the sealed key from disk, asks the TA to decrypt the key, and then uses the plaintext key to unlock the LUKS partition. Then, Snapd locks the TA for the rest of the boot so no further requests are accepted.
 
 ## Prerequisites
 
-A system must meet the following criteria before using snapd's OP-TEE integration:
+A system must meet the following criteria before using Snapd's OP-TEE integration:
 
 * The installation target should be either an armhf or arm64 Ubuntu Core system.
 * The device firmware must ship OP-TEE with the Canonical FDE TA as an early TA. 
@@ -35,13 +35,13 @@ The FDE TA must be built as an [early TA](https://optee.readthedocs.io/en/latest
 1. Build OP-TEE OS with `CFG_EARLY_TA=y` and list the TA in `EARLY_TA_PATHS` alongside any other early TAs. Review the sample gadget's `optee-os` part for an example.  
 1. Package the resulting OP-TEE firmware (`tee-header_v2.bin`, `tee-pager_v2.bin`, `tee-pageable_v2.bin`, and `tee.elf`) together with the rest of the boot firmware.
 
-This ensures that snapd can interface with the TA during installation and subsequent boots.
+This ensures that Snapd can interface with the TA during installation and subsequent boots.
 
 ## Migrating from `fde-setup` Hooks
 
-Earlier OP-TEE deployments used kernel `fde-setup` hooks to interface with OP-TEE. The easiest migration path is to {ref}`remodel <explanation-remodeling>` the device onto a kernel snap that omits those hooks and allows snapd to talk to the TA directly.
+Earlier OP-TEE deployments used kernel `fde-setup` hooks to interface with OP-TEE. The easiest migration path is to {ref}`remodel <explanation-remodeling>` the device onto a kernel snap that omits those hooks and allows Snapd to talk to the TA directly.
 
 1. Create a kernel snap that no longer ships the `fde-setup` hook.  
-2. Remodel the system to refresh the kernel and reboot. On the first boot after the remodel, snapd detects that no hook is present, reseals the encryption keys through OP-TEE, and stores the new sealed keys.
+2. Remodel the system to refresh the kernel and reboot. On the first boot after the remodel, Snapd detects that no hook is present, reseals the encryption keys through OP-TEE, and stores the new sealed keys.
 
-Note that an existing TA that might have been used with a hooks-based implementation should still be compatible with snapd's integration.  
+Note that an existing TA that might have been used with a hooks-based implementation should still be compatible with Snapd's integration.  

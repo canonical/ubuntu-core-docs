@@ -61,12 +61,11 @@ From the live desktop that now appears, we need to do three things:
 
 1. **Download Ubuntu Core**
     Ubuntu Core images are hosted at:
-    [https://cdimage.ubuntu.com/ubuntu-core/26/stable/current/](https://cdimage.ubuntu.com/ubuntu-core/26/stable/current/)
+    [Ubuntu releases image site](https://cdimage.ubuntu.com/ubuntu-core/26/stable/current/)
 
     Images are compressed with *XZ* and have a corresponding `.xz` file extension.
 
-    Use Firefox to download the following amd64 image for your device:
-    [ubuntu-core-26-amd64.img.xz](https://cdimage.ubuntu.com/ubuntu-core/26/stable/current/ubuntu-core-26-amd64.img.xz) **(450MB)** 
+    Use Firefox to download the [Ubuntu Core 26 AMD64 image](https://cdimage.ubuntu.com/ubuntu-core/26/stable/current/ubuntu-core-26-amd64.img.xz) (`ubuntu-core-26-amd64.img.xz`, **450 MB**) for your device.
 
 1. **Discover the internal storage device name**
    This is usually `/dev/sda` but it's important to first make sure. One of the easiest ways is to open _GPartEd_ and use the drop-down menu in the top-right to select the correct device. You'll see storage space and layout below. Make a note of the device name.
@@ -187,4 +186,3 @@ designed for appliances, firmware and fixed-function VMs.
 As shown above, the first time you connect to a new device you will be asked to accept its authenticity. You can check the _ECDSA_ key fingerprint against the finger print shown on the screen after a first reboot. ECDSA is the second one listed.
 
 Congratulations! You have successfully downloaded, installed, and connected to Ubuntu Core on your PC.  See {ref}`First steps with Ubuntu Core <how-to-guides-using-ubuntu-core>` for an introduction to using your new Ubuntu Core installation.
-

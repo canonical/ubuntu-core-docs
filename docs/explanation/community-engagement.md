@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Engage with the Ubuntu Core community. Learn about contributing to snapd, kernel snaps, gadget snaps, and documentation.
+    description: Engage with the Ubuntu Core community. Learn about contributing to Snapd, kernel snaps, gadget snaps, and documentation.
 ---
 
 (ref-community-engagement_community-engagement)=
@@ -17,9 +17,9 @@ We're committed to:
 
 ## Where to find the project
 
-Ubuntu Core does not have a its own code repository.  It is instead built entirely from {ref}`snap packages <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>` and managed by the snap daemon, snapd. As a result, the source code for the project is split across several locations, alongside any other snap packages that may be installed:
+Ubuntu Core does not have a its own code repository.  It is instead built entirely from {ref}`snap packages <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>` and managed by the snap daemon, Snapd. As a result, the source code for the project is split across several locations, alongside any other snap packages that may be installed:
 
-- **[snapd](https://github.com/canonical/snapd)** is the background service that manages and maintains snaps, and provides the `snap` command line tool.
+- **[Snapd](https://github.com/canonical/snapd)** is the background service that manages and maintains snaps, and provides the `snap` command line tool.
 - **[gadget snaps](https://github.com/search?q=org%3Acanonical+gadget&type=repositories)** define and configures system properties specific to one or more devices.
 - **[kernel snaps](https://github.com/canonical/sample-kernels)** define the Linux kernel to run on each system.
 - **[base snaps](https://snapcraft.io/docs/base-snaps)** provide the run-time environment and a minimal set of libraries.

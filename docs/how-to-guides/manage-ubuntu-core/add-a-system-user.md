@@ -42,7 +42,7 @@ The following are required by for the `system-user` assertion and by the creatio
 - the `brand-id` and `model` fields taken from a device's model assertion
 - access to the key used to sign the new assertion
 
-The snap daemon (_snapd_) can import these assertions through the `auto-import.assert` file on an external USB storage device. If those assertions are valid for the given system, a system user is created. After this, you can log into the device (locally or over SSH) using the username and password defined.
+The snap daemon (_Snapd_) can import these assertions through the `auto-import.assert` file on an external USB storage device. If those assertions are valid for the given system, a system user is created. After this, you can log into the device (locally or over SSH) using the username and password defined.
 
 ### Model assertions
 
@@ -71,7 +71,7 @@ Another source of the store account ID is the _Snap account-id_ from [https://da
 ![Ubuntu Core store account id](https://assets.ubuntu.com/v1/ee17a14e-uc-store-credentials.png)
 
 When a model assertion lacks a `system-user-authority` field, the system-user assertion can only be signed by:
-- a key registered to the store account specified by the `brand-id` field (_bJzr2XzZg6Qv6Z53dsjhg20975Skjs_  in our example)
+- a key registered to the store account specified by the `brand-id` field (`bJzr2XzZg6Qv6Z53dsjhg20975Skjs` in our example)
 - the key that's part of the {ref}`account-key <reference-assertions-account-key>` assertion when the system-user assertion is submitted to the device
 
 
