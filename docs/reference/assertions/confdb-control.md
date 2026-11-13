@@ -69,7 +69,7 @@ A list of confdb views, each in the form `<account-id>/<confdb-schema>/<view>`. 
 
 ## Managing delegations
 
-Any change to the assertion, whether delegating control to a new operator or revoking an existing delegation, is made through the [`POST /v2/confdb`](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/AuthenticationRequired/postConfdbControl) snapd API endpoint rather than by editing the assertion directly. Each change increments the assertion's revision, which snapd re-signs and acknowledges automatically. Modifying the assertion requires root privileges.
+Any change to the assertion, whether delegating control to a new operator or revoking an existing delegation, is made through the [`POST /v2/confdb`](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/AuthenticationRequired/postConfdbControl) Snapd API endpoint rather than by editing the assertion directly. Each change increments the assertion's revision, which Snapd re-signs and acknowledges automatically. Modifying the assertion requires root privileges.
 
 The endpoint provides two actions. Delegating grants an operator control over a set of views under a chosen set of authentication methods. Undelegating withdraws an operator's control, either over specific views and authentication methods or, if none are given, entirely.
 

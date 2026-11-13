@@ -20,7 +20,7 @@ The snaps declared in the model assertion can be {ref}`updated <explanation-refr
 
 ## Remodeling viability
 
-After a model assertion has been updated, the remodeling process is triggered from either the [snapd's REST API](https://snapcraft.io/docs/snapd-api), or by running the `snap remodel` command.
+After a model assertion has been updated, the remodeling process is triggered from either the [Snapd's REST API](https://snapcraft.io/docs/snapd-api), or by running the `snap remodel` command.
 
 Remodeling can never downgrade the system's base snap. For example, remodeling from `core22` to `core20` is not supported.
 
@@ -37,7 +37,7 @@ snap ack key.assert
 
 Remodeling triggers the generation of a new recovery system, which means care needs to be taken to ensure the {ref}`ubuntu-seed <ref-storage-layout_the-ubuntu-seed-partition>` partition is sized accordingly. The process also ensures the newly created recovery system is valid. Therefore, the previous recovery system can be safely removed after remodeling has completed. An {ref}`API call <ref-create-a-recovery-system-from-the-api_removing-api-usage>` is available to perform this removal.
 
-Remodeling is the responsibility of the snap daemon (_snapd_) running on the device. It both mediates the update process and the re-registration of the device after the update (if required). But the complexity and viability of the remodeling process is dependent on several factors outside of snapd’s control.
+Remodeling is the responsibility of the snap daemon (_Snapd_) running on the device. It both mediates the update process and the re-registration of the device after the update (if required). But the complexity and viability of the remodeling process is dependent on several factors outside of Snapd’s control.
 
 At its simplest, a device can be successfully remodeled when using the same model name and the same dedicated Snap Store but with a new model revision where the only difference is an added or removed snap, or changed snap track or channel. The device also needs to have a {ref}`Serial assertion <reference-assertions-serial>`.
 
@@ -118,9 +118,9 @@ If a snap or assertion is not available locally, either referenced directly from
 
 ### Offline with `--offline`
 
-From snapd 2.61.2 onwards, the `snap remodel` command includes an optional `--offline` flag.
+From Snapd 2.61.2 onwards, the `snap remodel` command includes an optional `--offline` flag.
 
-The `--offline` flag forces snapd to perform the requested remodel process without requiring a network connection, regardless of whether the specified snaps are available locally or not.
+The `--offline` flag forces Snapd to perform the requested remodel process without requiring a network connection, regardless of whether the specified snaps are available locally or not.
 
 This impacts models using new channels and updated validation sets:
 

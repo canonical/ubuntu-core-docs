@@ -7,7 +7,7 @@ myst:
 (explanation-refresh-control)=
 # Refresh control
 
-Snaps in Ubuntu Core update automatically, and by default, the *snapd* daemon checks for updates 4 times a day. Each update check is called a *refresh* .
+Snaps in Ubuntu Core update automatically, and by default, the *Snapd* daemon checks for updates 4 times a day. Each update check is called a *refresh* .
 
 However, some projects can benefit from holding a deployed snap, or a set of snaps, at a tested _revision_ until any new release is separately validated, and this requires refresh control.
 
@@ -46,7 +46,7 @@ Establishing the relationship between a gating and gated snap is required only o
 
 ## Setting up the signing key
 
-Gating involves pushing {ref}`validation assertions <reference-assertions-validation>` signed by the publisher, indicating their authorisation to restrict updates of snaps. To do this, several GPG keys must be generated and published to the store. If a store key already exists, it can be used. If not, one must be generated and registered.
+Gating involves pushing {ref}`validation assertions <reference-assertions-validation>` signed by the publisher, indicating their authorization to restrict updates of snaps. To do this, several GPG keys must be generated and published to the store. If a store key already exists, it can be used. If not, one must be generated and registered.
 
 1.  `snapcraft create-key` to create a key. (by default it's named "default" but a key name can be given to create a custom one so e.g. each snap is signed with its own key). Do not forget the passphrase used to secure the key or misplace the key files.
 
@@ -113,7 +113,7 @@ As described earlier, this means that, if the gating snap is installed on the sy
 If the gating snap is not installed on the system, the gated snap is not restricted and will be installable or updatable to whichever revision is available in the requested channel. The revision of the gating snap is not relevant here; what's relevant is the latest validation assertion which tells which revision of `roadmr-gated` is allowed.
 
 * To control the revision of a gated snap, the gating snap Publisher signs and issues a validation assertion that names the gating snap and the gated snap name and revision.
-* To sign the validation assertion, the Publisher must name/use a snapcraft key (snapcraft create-key KEYNAME) that has been registered (snapcraft register-key KEYNAME). See below.
+* To sign the validation assertion, the Publisher must name/use a snapcraft key (`snapcraft create-key KEYNAME`) that has been registered (`snapcraft register-key KEYNAME`). See below.
 * When signing a validation assertion where the gating snap is published in a Brand Store, the `SNAPCRAFT_UBUNTU_STORE` environment variable must be defined to equal the Brand Store’s store ID.
 
 The snapcraft gated command can tell you which snaps are gated by a particular snap:
@@ -241,7 +241,7 @@ In this example, if `roadmr-gating` is installed on a device, `roadmr-gated` wil
 
 ```{admonition} Installing new snaps after updated validation assertion
 :class: caution
-If a validation assertion is updated to include additional snaps, the new snaps will not be installed automatically. They will instead need to be installed locally through the _snap_ command or through the [snapd REST API](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/Asynchronous/manageSnaps).
+If a validation assertion is updated to include additional snaps, the new snaps will not be installed automatically. They will instead need to be installed locally through the _snap_ command or through the [Snapd REST API](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/Asynchronous/manageSnaps).
 ```
 
 ## Revoking assertion validity
@@ -265,4 +265,3 @@ $ snapcraft validate roadmr-gating 99T7MUlRhtI3U0QFgl5mXXESAiSwt776=1234
 Getting details for 99T7MUlRhtI3U0QFgl5mXXESAiSwt776
 Signing validations assertion for 99T7MUlRhtI3U0QFgl5mXXESAiSwt776=1234
 ```
-

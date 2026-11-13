@@ -7,9 +7,9 @@ myst:
 (reference-assertions-confdb-schema)=
 # confdb-schema
 
-The confdb-schema assertion acts as a contract that allows us to define granular views onto a custom configuration namespace that can be evolved separately from the persisted configuration data. This decouples the configurations exposed to snaps from the stored data, making it easier to evolve the data's schema without requiring snaps to change with it. The rules also support other useful features for controlling configurations such as fine-grained access control, cross-snap configuration and applying constraints on configuration values.
+The confdb-schema assertion acts as a contract that allows us to define granular views onto a custom configuration namespace that can be evolved separately from the persisted configuration data. This decouples the configurations exposed to snaps from the stored data, making it easier to evolve the data schema without requiring changes to the snaps. The rules also support other useful features for controlling configurations such as fine-grained access control, cross-snap configuration and applying constraints on configuration values.
 
-The assertion is composed of two main elements: a `views` header and a storage schema. The `views` header contains sets of rules that each expose a "view" onto the configuration namespace. In practice, these look like mappings of request paths to storage paths. When a snap accesses a particular confdb path, snapd matches it to a rule's request path and uses the corresponding storage path to access the configuration data in its storage. The storage schema, defined in the body of the assertion, describes the schema that the stored data must conform to to be accepted. This schema is expressed as types and constraints in JSON format.
+The assertion is composed of two main elements: a `views` header and a storage schema. The `views` header contains sets of rules that each expose a "view" onto the configuration namespace. In practice, these look like mappings of request paths to storage paths. When a snap accesses a particular confdb path, Snapd matches it to a rule's request path and uses the corresponding storage path to access the configuration data in its storage. The storage schema, defined in the body of the assertion, describes the schema that the stored data must conform to to be accepted. This schema is expressed as types and constraints in JSON format.
 
 
 In a sense, this assertion provides two schemas: the rules in each view act as a schema describing the "public" configuration space that snaps interact with, while the body of the assertion describes the schema of the stored data.
@@ -58,7 +58,7 @@ sign-key-sha3-384:  <key id>                # Encoded key id of signing key
 <signature>                                 # Encoded signature
 ```
 
-The `views` header can have any number of views, each with a fine-grained set of rules and access controls tailored to a specific use case. Each view must contain a `rules` list with each rule describing how a particular configuration can be accessed from outside the system and where snapd should store and retrieve it:
+The `views` header can have any number of views, each with a fine-grained set of rules and access controls tailored to a specific use case. Each view must contain a `rules` list with each rule describing how a particular configuration can be accessed from outside the system and where Snapd should store and retrieve it:
 
 - **`request`** (*optional*)
     A path describing how the configuration can be accessed. The path parts are separated by dots or square brackets, corresponding to maps or arrays being accessed. If omitted, defaults to the storage path. May contain placeholder path parts wrapped in curly brackets (see example) which match any request value. The placeholder value is mapped to an equally named placeholder in the storage path.
@@ -341,7 +341,7 @@ Type definitions can also take the form of a list of alternative types. When val
 ```
 
 ### Ephemeral Data
-Paths to ephemeral data can be marked as such with a `ephemeral: true` field. This is supported by any schema type and does not apply any constraint to the data itself. It is only used by snapd to know whether a custodian might want to store it externally.
+Paths to ephemeral data can be marked as such with a `ephemeral: true` field. This is supported by any schema type and does not apply any constraint to the data itself. It is only used by Snapd to know whether a custodian might want to store it externally.
 
 ```
 {
@@ -358,7 +358,7 @@ Paths to ephemeral data can be marked as such with a `ephemeral: true` field. Th
 The `ephemeral` field defaults to `false`, if omitted.
 
 ### Secret data
-*Note: secret data is only available from snapd 2.76+*
+*Note: secret data is only available from Snapd 2.76+*
 
 Data that should only be readable by admins should be marked with a `"visibility": "secret"` field. Snapd will filter out any data and its descendants marked as such when returning data requested by non-admins.
 

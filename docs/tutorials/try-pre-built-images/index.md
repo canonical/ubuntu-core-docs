@@ -23,7 +23,7 @@ Start by exploring Ubuntu Core in a virtual machine using Multipass. This is the
 
 Once you're comfortable with Ubuntu Core, install it on physical hardware. Pre-built images are available for Raspberry Pi and amd64 platforms. Choose the installation method that matches your hardware and preference.
 
-- {ref}`Use Raspberry Pi imager <ref-use-raspberry-pi-imager_use-raspberry-pi-imager>`
+- {ref}`Use Raspberry Pi Imager <ref-use-raspberry-pi-imager_use-raspberry-pi-imager>`
 
   Install on Raspberry Pi using the graphical Imager tool.
 

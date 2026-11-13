@@ -19,7 +19,7 @@ All necessary plugs and slots will be automatically connected within the install
  snap connections network-manager
 ```
 
-**NOTE:**  The  *network-manager:modem-manager*  plug only gets connected when the  *modem-manager*  snap is installed too. Otherwise it stays disconnected. Similarly, there is a  *network-manager:wpa*  plug in case we would want to use a custom wpa supplicant snap instead of the one supplied by the core snap (this is not generally recommended).
+**NOTE:**  The  *network-manager:modem-manager*  plug only gets connected when the  *modem-manager*  snap is installed too. Otherwise it stays disconnected. Similarly, there is a  *network-manager:wpa*  plug in case we would want to use a custom WPA supplicant snap instead of the one supplied by the core snap (this is not generally recommended).
 
 Once the installation has successfully finished the NetworkManager service is running in the background. You can check its current status with
 
@@ -40,4 +40,3 @@ The network-manager snap has currently five tracks, and with the exception of th
 * **latest** : Contains upstream 1.2.2 and has a core16 base. Despite the unfortunate name (there are historical reasons for that) it is the oldest version.
 
 All these tracks are available with the usual risks: stable, candidate, beta, and edge, but only the stable version should be used for production devices. The meaning of the other risk levels is internal to the development team of the network-manager snap.
-

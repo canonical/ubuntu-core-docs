@@ -7,7 +7,7 @@ myst:
 (reference-assertions-repair)=
 # repair
 
-A _repair assertion_ is a unique type of {ref}`assertion <ref-index_assertions>` that is designed to be a **last resort feature** to repair unresponsive Ubuntu Core devices. Such devices are connected to a network but are otherwise beyond what can be fixed with a regular snapd refresh.
+A _repair assertion_ is a unique type of {ref}`assertion <ref-index_assertions>` that is designed to be a **last resort feature** to repair unresponsive Ubuntu Core devices. Such devices are connected to a network but are otherwise beyond what can be fixed with a regular Snapd refresh.
 
 Repair assertions:
 - can only be issued by Canonical
@@ -18,7 +18,7 @@ Repair assertions:
 - are logged by devices to maintain a history of applied repair assertions
 - are publicly visible, including their payloads, to help prevent harmful operations
 
-A repair assertion will include a payload of _repair code_ to run via the assertion. This code should be as minimal as possible, and be just enough to make the regular snapd refresh update mechanism work again.
+A repair assertion will include a payload of _repair code_ to run via the assertion. This code should be as minimal as possible, and be just enough to make the regular Snapd refresh update mechanism work again.
 
 Repair code also needs to be idempotent and typically capable of checking for whether an issue exists, or could occur at a later point, such as with a potential future update.
 
@@ -86,4 +86,3 @@ The following is an example repair assertion used by the testing suite at Canoni
   }
 }
 ```
-

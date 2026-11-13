@@ -83,5 +83,4 @@ sudo docker compose
 
 ---
 
-Another way to run Docker containers on Ubuntu Core is via companion snaps. This means each container will be managed by its own snap package, containing its configuration. Such a package has a safer upgrade path, with rollback of config and data if something went wrong. To learn how to create such a companion snap, refer {ref}`here <how-to-guides-container-deployment-deploy-docker-from-a-snap>`.
-
+Another way to run Docker containers on Ubuntu Core is via companion snaps. This means each container will be managed by its own snap package, containing its configuration. Such a package has a safer upgrade path, with rollback of configuration and data if something went wrong. To learn how to create such a companion snap, refer {ref}`here <how-to-guides-container-deployment-deploy-docker-from-a-snap>`.

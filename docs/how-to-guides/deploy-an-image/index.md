@@ -36,7 +36,7 @@ The following guides provide device-specific installation instructions. Each gui
 
 For generic devices not listed above (such as Raspberry Pi or Intel NUC), use these image writing methods to deploy your Ubuntu Core image to storage media.
 
-- {ref}`Use Raspberry Pi imager <ref-use-raspberry-pi-imager_use-raspberry-pi-imager>`
+- {ref}`Use Raspberry Pi Imager <ref-use-raspberry-pi-imager_use-raspberry-pi-imager>`
 
   Write an Ubuntu Core image to a Raspberry Pi
 - {ref}`Use the dd command <tutorials-get-started-try-pre-built-images-install-on-a-device-use-the-dd-command>`

@@ -47,17 +47,17 @@ snaps:
 
 ## Phase 1: Download
 
-Prior to any local modifications being made, snapd downloads all the snaps and assertions required to perform the remodel. This ensures there's enough storage space on the device for the remodel, and reduces the network dependency on the Snap store.
+Prior to any local modifications being made, Snapd downloads all the snaps and assertions required to perform the remodel. This ensures there's enough storage space on the device for the remodel, and reduces the network dependency on the Snap store.
 
 ## Phase 2: Staging and test preparation
 
 Snapd carefully orchestrates the swap to either a new kernel or new base snap in a way that enables either of those snaps to be rolled back if an error is detected.
 
-The process is initiated by partially setting up the new snap. It's only after a successful reboot using the new snap that snapd officially considers the new snap verified and installed.
+The process is initiated by partially setting up the new snap. It's only after a successful reboot using the new snap that Snapd officially considers the new snap verified and installed.
 
 ### modeenv
 
-As a part of this partial setup, snapd writes information to a file referred to as the `modeenv`. Here is an example of what this file could look like:
+As a part of this partial setup, Snapd writes information to a file referred to as the `modeenv`. Here is an example of what this file could look like:
 
 ```
 mode=run
@@ -70,7 +70,7 @@ model=canonical/ubuntu-core-24-amd64
 grade=signed
 ```
 
-This file acts as a bridge between snapd and programs that run early in the boot process.
+This file acts as a bridge between Snapd and programs that run early in the boot process.
 
 In addition to defining the set of essential snaps that the system should boot with, the fields `try_base` and `base_status` in the `modeenv` are used to specify whether to perform a test boot with a new base snap:
 
@@ -87,15 +87,15 @@ The {ref}`gadget snap <reference-gadget-snap-format>` is not verified during a r
 
 ## Phase 3: Boot verification
 
-Once the aforementioned data in the `modeenv` file or the bootloader environment is set, a reboot is initiated. On reboot, the bootloader is configured to coordinate with snapd to test the kernel. Similarly, snap-bootstrap, a program that is run early in the boot process, helps orchestrate the testing of the new base snap.
+Once the aforementioned data in the `modeenv` file or the bootloader environment is set, a reboot is initiated. On reboot, the bootloader is configured to coordinate with Snapd to test the kernel. Similarly, snap-bootstrap, a program that is run early in the boot process, helps orchestrate the testing of the new base snap.
 
-Once started, snapd will confirm that the boot was successful. A successful boot will result in the continuation of the remodel process. A failed boot will result in the cancelation of the remodel. Any changes up to that point will be undone.
+Once started, Snapd will confirm that the boot was successful. A successful boot will result in the continuation of the remodel process. A failed boot will result in the cancellation of the remodel. Any changes up to that point will be undone.
 
-During a remodel, snapd performs these reboots to switch essential snaps sequentially.
+During a remodel, Snapd performs these reboots to switch essential snaps sequentially.
 
 ## Phase 4: Recovery system creation
 
-Ubuntu Core has the concept of a recovery system. This system enables the user to repair a broken Ubuntu Core system by booting into {ref}`recovery mode <how-to-guides-manage-ubuntu-core-use-a-recovery-mode>`. Generally, this system is created when the image for the Ubuntu Core system is created. This recovery system contains the essential snaps defined in the original model. With a remodel operation, snapd creates a new recovery system that contains the snaps from the incoming model.
+Ubuntu Core has the concept of a recovery system. This system enables the user to repair a broken Ubuntu Core system by booting into {ref}`recovery mode <how-to-guides-manage-ubuntu-core-use-a-recovery-mode>`. Generally, this system is created when the image for the Ubuntu Core system is created. This recovery system contains the essential snaps defined in the original model. With a remodel operation, Snapd creates a new recovery system that contains the snaps from the incoming model.
 
 In a very similar fashion to the process described above, this new recovery system is verified with a reboot. Information about the recovery system being tested is shared via the modeenv file. Failing to verify the functionality of the new recovery system will result in the remodel being aborted and all changes being undone.
 

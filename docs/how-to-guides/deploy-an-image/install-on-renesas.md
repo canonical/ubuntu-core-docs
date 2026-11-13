@@ -61,7 +61,7 @@ If you connect with the UART, you will see a welcoming prompt from the board:
 please send !
 ```
 
-On the host machine, download the following Renesas boot assets (zip) archive from [the official website](https://ubuntu.com/download/renesas-iot). Please note each board has a separate bootassets tarball. The G2L/G2LC/G2UL boards also have an alternative SKU that support Secure Boot, if you are interested in this feature please make sure to select the bootassets tarball with the `-secure` suffix.
+On the host machine, download the following Renesas boot assets (zip) archive from [the official website](https://ubuntu.com/download/renesas-iot). Please note each board has a separate boot assets tarball. The G2L/G2LC/G2UL boards also have an alternative SKU that support Secure Boot, if you are interested in this feature please make sure to select the boot assets tarball with the `-secure` suffix.
 
 Unzip the archive and locate the file called `Flash_Writer_SCIF_RZG2L_SMARC_DDR4_2GB.mot`, the Renesas Flash Writer tool. Transfer this file to your device with the following command, replacing `/dev/ttyUSB0` with the host PC serial port connected to your device:
 
@@ -70,7 +70,7 @@ sudo su
 cat Flash_Writer_SCIF_RZG2L_SMARC_DDR4_2GB.mot > /dev/ttyUSB0
 ```
 
-When the transfer has completed, press Ctrl-C to return to you normal shell.
+When the transfer has completed, press `Ctrl-C` to return to your normal shell.
 
 We now need to open a serial console on the device itself, using a tool like [Minicom](https://help.ubuntu.com/community/Minicom) or `screen`.
 
@@ -102,13 +102,13 @@ When you regain control of the terminal, set the serial bitrate back to `115200`
 
 ## Write the Ubuntu Core image to the microSD card
 
-Next, download the latest Renesas RZ/G2L Ubuntu Core image from [the official webpage](https://ubuntu.com/download/renesas-iot).
+Next, download the latest Renesas RZ/G2L Ubuntu Core image from [the official download page](https://ubuntu.com/download/renesas-iot).
 
 We're going to use the Raspberry Pi Foundation's _Raspberry Pi Imager_ to write the Ubuntu Core image to the microSD card. Raspberry Pi Imager both downloads and safely installs an image to your microSD card.
 
 Download and install Raspberry Pi Imager from one of the following locations:
--  Official download page: [https://www.raspberrypi.org/software](https://www.raspberrypi.org/software/)
--  Snap package for Linux users: [https://snapcraft.io/rpi-imager](https://snapcraft.io/rpi-imager)
+-  Official download page: [Raspberry Pi Imager download page](https://www.raspberrypi.org/software/)
+-  Snap package for Linux users: [Raspberry Pi Imager snap](https://snapcraft.io/rpi-imager)
 
 After it's installed and running, you will see its main window showing buttons for the three step download and write process:
 
@@ -124,7 +124,7 @@ After it's installed and running, you will see its main window showing buttons f
 
 When the process has finished, Raspberry Pi Imager will proclaim "Write Successful" and you can remove the card from the reader. It's now ready to be inserted into your device.
 
-If there's any errors during write, check your sd card. Optionally you might unpack the .xz archive and subsequently write the .img file with the Raspberry Pi imager.
+If there's any errors during write, check your SD card. Optionally you might unpack the .xz archive and subsequently write the `.img` file with Raspberry Pi Imager.
 
 ## Boot Ubuntu Core for the first time
 

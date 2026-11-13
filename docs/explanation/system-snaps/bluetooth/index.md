@@ -57,7 +57,7 @@ The bluez snap has different tracks that should be used for different Ubuntu Cor
   name (there are historical reasons for that) it is the oldest version.
 
 The naming scheme for the *bluez* snap version includes the BlueZ version being
-packaged in the snap and a version separated by a hypen for the snap itself.
+packaged in the snap and a version separated by a hyphen for the snap itself.
 For instance, the version could be 5.64-7, for BlueZ 5.64 and snap subversion
 7 - whenever the snap is updated but still provides BlueZ version 5.64 the last
 digit will be incremented. The

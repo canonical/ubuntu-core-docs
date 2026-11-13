@@ -90,7 +90,7 @@ The following will build an _amd64_ image using the [ubuntu-core-24-amd64.model]
 ubuntu-image snap ubuntu-core-24-amd64.model
 ```
 
-The output includes the _img_ file itself, alongside a _seed.manifest_ file. The manifest file simply lists the specific revision numbers of the snapd, pc, pc-kernel and core snaps built within the image, plus any other snaps added to the model.
+The output includes the `.img` file itself, alongside a _seed.manifest_ file. The manifest file simply lists the specific revision numbers of the snapd, pc, pc-kernel and core snaps built within the image, plus any other snaps added to the model.
 
 ## Additional snaps
 
@@ -120,17 +120,17 @@ The size of a generated disk image can optionally be controlled with the `--imag
 
 The value is the size in bytes, with allowable suffixes M for MiB and G for GiB and if this size is smaller than the minimum calculated size of the volume, a warning is issued and the option is ignored.
 
-An extended syntax is supported for {ref}`Gadget snaps <how-to-guides-image-creation-build-a-gadget-snap>` that specify multiple volumes (i.e. disk images). In that case, a single SIZE argument is used for all the defined volumes, with the same rules for ignoring values that are too small. You can specify the image size for a single volume using an indexing prefix on the SIZE parameter, where the index is either a volume name or an integer index starting at zero. For example, to set the image size only on the second volume, which might be called sdcard in gadget.yaml, use: `--image-size 1:8G` (the number 1 index indicates the second volume; volumes are 0-indexed). Or use `--image-size sdcard:8G`.
+An extended syntax is supported for {ref}`Gadget snaps <how-to-guides-image-creation-build-a-gadget-snap>` that specify multiple volumes (i.e. disk images). In that case, a single SIZE argument is used for all the defined volumes, with the same rules for ignoring values that are too small. You can specify the image size for a single volume using an indexing prefix on the SIZE parameter, where the index is either a volume name or an integer index starting at zero. For example, to set the image size only on the second volume, which might be called `sdcard` in gadget.yaml, use: `--image-size 1:8G` (the number 1 index indicates the second volume; volumes are 0-indexed). Or use `--image-size sdcard:8G`.
 
 You can also specify multiple volume sizes by separating them with commas, and you can mix and match integer indices and volume-name indices. Thus, if gadget.yaml names three volumes, and you want to set all three to different sizes, you can use `--image-size 0:2G,sdcard:8G,eMMC:4G`.
 
 ## Testing an image
 
-Rather than immediately booting an image on native hardware, it's good practice to boot an image first with QEMU ([https://www.qemu.org/](https://www.qemu.org)). See {ref}`Testing Ubuntu Core with QEMU <how-to-guides-manage-ubuntu-core-test-on-qemu>` for further details.
+Rather than immediately booting an image on native hardware, it's good practice to boot an image first with QEMU ([QEMU website](https://www.qemu.org/)). See {ref}`Testing Ubuntu Core with QEMU <how-to-guides-manage-ubuntu-core-test-on-qemu>` for further details.
 
-After a successful boot, Ubuntu Core initialisation will ask for both networking parameters and an Ubuntu One account (see <a href="https://snapcraft.io/account" class="uri">https://snapcraft.io/account</a>).
+After a successful boot, Ubuntu Core initialization will ask for both networking parameters and an Ubuntu One account (see <a href="https://snapcraft.io/account" class="uri">https://snapcraft.io/account</a>).
 
-When the initialisation process has finished, and rebooted, you can SSH to the device using either the physical device network address,  or localhost port 8022 for the above QEMU example command:
+When the initialization process has finished, and rebooted, you can SSH to the device using either the physical device network address,  or localhost port 8022 for the above QEMU example command:
 
 ``` bash
 ssh <username>@localhost -p 8022
