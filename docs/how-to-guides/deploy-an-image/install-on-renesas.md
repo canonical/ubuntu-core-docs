@@ -72,7 +72,7 @@ cat Flash_Writer_SCIF_RZG2L_SMARC_DDR4_2GB.mot > /dev/ttyUSB0
 
 When the transfer has completed, press Ctrl-C to return to you normal shell.
 
-We now need to open a serial console on the device itself, using a tool like [Minicom](https://help.ubuntu.com/community/Minicom) or `screen`.
+We now need to open a serial console on the device itself, using a tool like [Minicom](https://man7.org/linux/man-pages/man1/minicom.1.html) or `screen`.
 
 While connected to the device, run `SUP` to change the baud rate from 115200 to 921600. You will then need to disconnect and reset the baud rate for the serial port to 921600:
 

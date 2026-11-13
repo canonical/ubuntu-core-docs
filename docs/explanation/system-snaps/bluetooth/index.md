@@ -15,7 +15,7 @@ Bluetooth 5 and its successors are a big step forward to support the IoT market
 and it's needs.
 
 Bluetooth is developed and published by the [Bluetooth Special Interest
-Group](http://www.bluetooth.com/)
+Group](https://www.bluetooth.com/)
 
 ## BlueZ
 
@@ -31,7 +31,7 @@ Currently BlueZ consists of many separate modules:
 * Configuration and testing utilities
 * Protocol decoding and analysis tools
 
-You can find more information about this on the BlueZ upstream homepage [here](http://www.bluez.org/)
+You can find more information about this on the BlueZ upstream homepage [here](https://bluez.github.io/)
 
 ## Bluetooth interfaces
 

@@ -26,7 +26,7 @@ $ kvm-ok
 INFO: /dev/kvm exists
 KVM acceleration can be used
 ```
-To ensure compatibility with the required UEFI features in Ubuntu Core, also install the [OVMF](https://wiki.ubuntu.com/UEFI/OVMF) package, which includes the UEFI firmware file, `OVMF_CODE_4M.secboot.fd`: 
+To ensure compatibility with the required UEFI features in Ubuntu Core, also install the [OVMF](https://packages.ubuntu.com/noble/ovmf) package, which includes the UEFI firmware file, `OVMF_CODE_4M.secboot.fd`:
 
 ```bash
 sudo apt install ovmf
@@ -183,4 +183,3 @@ ssh -i <path-to-private-key> <sso-username>@localhost -p 8022
 In addition to SSH access, QEMU will start a VNC-shared console which can be accessed at `vnc://localhost:5900` on the system. Some configurations may also forward port 80 to 8090 for any web server application you wish to install in the VM.
 
 For a brief introduction on how to get started with Ubuntu Core, see {ref}`Using Ubuntu Core <how-to-guides-using-ubuntu-core>`.
-
