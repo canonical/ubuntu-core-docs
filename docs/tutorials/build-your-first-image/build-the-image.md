@@ -18,7 +18,7 @@ First, install the `ubuntu-image` command from its snap:
 sudo snap install ubuntu-image --classic --edge
 ```
 
-The `ubuntu-image` command requires three arguments; `snap` to indicate we're building a snap-based Ubuntu Core image, `--allow-snapd-kernel-mismatch` to ignore a difference in the versions of snapd we're using, and finally, the filename of our previously-signed model assertion to build an image:
+The `ubuntu-image` command requires three arguments; `snap` to indicate we're building a snap-based Ubuntu Core image, `--allow-snapd-kernel-mismatch` to ignore a difference in the versions of Snapd we're using, and finally, the filename of our previously-signed model assertion to build an image:
 
 ```bash
 $ ubuntu-image snap --allow-snapd-kernel-mismatch my-model.model 

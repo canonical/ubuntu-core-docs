@@ -15,7 +15,7 @@ After the application starts, we will see a message.
 
 ![Initial message](init.png)
 
-Then we will be allowed to configure networking for the device, using any ethernet or wifi devices detected. We also have the possibility of bonding them.
+Then we will be allowed to configure networking for the device, using any Ethernet or Wi-Fi devices detected. We also have the possibility of bonding them.
 
 ![Connectivity](connectivity.png)
 

@@ -31,7 +31,7 @@ timestamp: 2022-01-26T11:15:49.885580Z
 sign-key-sha3-384: some-account-key
 ```
 
-With the release of [snapd](https://snapcraft.io/docs/reference/glossary/#snapd)  version _2.36_ in 2018, the snap-declaration assertion was updated to include a {ref}`dedicated snap store <ref-dedicated-snap-store_dedicated-snap-store>` definition for each granted interface:
+With the release of [Snapd](https://snapcraft.io/docs/reference/glossary/#snapd)  version _2.36_ in 2018, the snap-declaration assertion was updated to include a {ref}`dedicated snap store <ref-dedicated-snap-store_dedicated-snap-store>` definition for each granted interface:
 
 ```yaml
 type: snap-declaration
@@ -75,11 +75,11 @@ The [Snap Store team](https://snapcraft.io/docs/permission-requests) admins can 
 
 ## Devices on shelves
 
-The oldest version of snapd that supports snap-declaration store scoping is _2.36_.
+The oldest version of Snapd that supports snap-declaration store scoping is _2.36_.
 
-If a customer has devices already flashed and sitting on shelves with a snapd version _2.36_ or newer, the addition of store scoping will be transparent to those devices when first booted. 
+If a customer has devices already flashed and sitting on shelves with a Snapd version _2.36_ or newer, the addition of store scoping will be transparent to those devices when first booted. 
 
-If a customer has devices on shelves flashed with a version of snapd _older_ than 2.36, they should also update autonomously, with snapd updating first before migrating the assertions to the newer formats. This assumes refreshing is correctly in place.
+If a customer has devices on shelves flashed with a version of Snapd _older_ than 2.36, they should also update autonomously, with Snapd updating first before migrating the assertions to the newer formats. This assumes refreshing is correctly in place.
 
 Lastly, if a customer has **existing** snaps that require **new** auto-connections in newer revisions, they should consider defining the [assumes attribute](https://documentation.ubuntu.com/snapcraft/stable/reference/snapcraft-yaml/#assumes) in their snapcraft.yaml file.
 
@@ -87,5 +87,4 @@ Pre-existing auto-connections in a pre store-scoped snap-declaration should not 
 
 ## Rolling back store scoping
 
-In the unlikely event that enabling store scoping causes a customer to experience issues, the constraint can be disabled. It's possible for a snap to have a snap-declaration assertion revision with the `on-store` constraint and next one without, for example, and snapd will use the newer revision.
-
+In the unlikely event that enabling store scoping causes a customer to experience issues, the constraint can be disabled. It's possible for a snap to have a snap-declaration assertion revision with the `on-store` constraint and next one without, for example, and Snapd will use the newer revision.

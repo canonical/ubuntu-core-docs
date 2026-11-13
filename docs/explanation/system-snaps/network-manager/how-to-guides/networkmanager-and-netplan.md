@@ -17,7 +17,7 @@ This behavior can be controlled with the `defaultrenderer` snap option. By defau
 snap set network-manager defaultrenderer=false
 ```
 
-Note that only devices explicitly configured within Netplan configuration files, usually only ethernet or wifi, are given back to networkd.
+Note that only devices explicitly configured within Netplan configuration files, usually only Ethernet or Wi-Fi, are given back to networkd.
 
 ## YAML backend
 

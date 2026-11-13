@@ -13,17 +13,17 @@ The NetworkManager snap allows to configure this option by either enabling or di
 
 You can read more about the Wi-Fi Powersave feature on the following sites:
 
-* https://wireless.wiki.kernel.org/en/developers/documentation/ieee80211/power-savings
+* [Wi-Fi power-saving documentation](https://wireless.wiki.kernel.org/en/developers/documentation/ieee80211/power-savings) on the Linux Wireless website
 
 ## Enable Wi-Fi Powersave
 
 To allow users to enable or disable Wi-Fi Powersave, the snap provides a single configuration option:
 
-* wifi.powersave
+* `wifi.powersave`
 
 Option can be set via the configuration API snaps provide. See [Managing snap configuration](https://snapcraft.io/docs/configuration-in-snaps) for more details.
 
-### wifi.powersave
+### `wifi.powersave`
 
 This configuration option accepts the following values:
 

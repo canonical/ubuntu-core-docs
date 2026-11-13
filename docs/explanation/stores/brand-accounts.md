@@ -29,7 +29,7 @@ The kernel and gadget snaps are special snaps that can only be registered by the
 
 Use of the Brand Account and its credentials should be strictly limited. Canonical recommends that the Brand Account not be assigned any Roles that are not strictly needed. Do not make the Brand Account a store Administrator, a Reviewer or a Viewer.
 
-When the Brand Account generates keys, they are only stored locally in ( ~/.snap/gnupg). These keys must be kept safe.
+When the Brand Account generates keys, they are only stored locally in `~/.snap/gnupg`. These keys must be kept safe.
 
 ```{admonition} Enable two-factor authentication
 :class: caution
@@ -55,4 +55,3 @@ The viewer role in the App Store has the fewest permissions granted. Viewers can
 The publisher role in the App Store is linked to publishing snaps to the Store, including registering snap names, uploading releases and specific revisions and configuring team collaborators.
 
 See [Setting up account roles](https://ubuntu.com/core/services/guide/setting-up-account-roles) for more details on how roles are created and what they can do, and take a look at our [IoT App Store](https://ubuntu.com/core/services/guide/iot-app-store-intro) documentation for a more comprehensive look at dedicated snap stores.
-

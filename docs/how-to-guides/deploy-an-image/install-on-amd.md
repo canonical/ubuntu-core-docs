@@ -50,14 +50,14 @@ Make sure the latest [boot firmware](https://xilinx-wiki.atlassian.net/wiki/spac
 
 ## Write the Ubuntu Core image to the microSD card
 
-Next, download the latest AMD Kria Ubuntu Core image from [the official webpage](https://ubuntu.com/download/amd).
+Next, download the latest AMD Kria Ubuntu Core image from [the official download page](https://ubuntu.com/download/amd).
 
 We're going to use the Raspberry Pi Foundation's _Raspberry Pi Imager_ to write the Ubuntu Core image to the microSD card. Raspberry Pi Imager both downloads and safely installs an image to your microSD card.
 
 Download and install Raspberry Pi Imager from one of the following locations:
 
-- Official download page: [https://www.raspberrypi.org/software](https://www.raspberrypi.org/software/)
-- Snap package for Linux users: [https://snapcraft.io/rpi-imager](https://snapcraft.io/rpi-imager)
+- Official download page: [Raspberry Pi Imager download page](https://www.raspberrypi.org/software/)
+- Snap package for Linux users: [Raspberry Pi Imager snap](https://snapcraft.io/rpi-imager)
 
 After it's installed and running, you will see its main window showing buttons for the three step process to download and write the image:
 
@@ -73,7 +73,7 @@ After it's installed and running, you will see its main window showing buttons f
 
 When the process has finished, Raspberry Pi Imager will proclaim "Write Successful" and you can remove the card from the reader. It's now ready to be inserted into your device.
 
-If there are any errors during write, check your SD card. Optionally you might unpack the .xz archive and subsequently write the .img file with the Raspberry Pi imager.
+If there are any errors during write, check your SD card. Optionally you might unpack the .xz archive and subsequently write the `.img` file with Raspberry Pi Imager.
 
 ## Boot Ubuntu Core for the first time
 
@@ -103,7 +103,7 @@ If an Ethernet cable is connected to your device, a network connection will atte
 
 ![Choose eth0](https://assets.ubuntu.com/v1/74586cbe-74586cbe2090bb63c3e7017907011293dc950458.png)
 
-To configure an Ethernet connection manually, select the ethernet device and select _Edit IPv4_ from the small menu that appears. By default, the network device will be configured to use _Automatic (DHCP)_, which is why the connection attempts to automatically configure itself. Press **Enter** to reveal two further options, _Manual_ and _Disabled_:
+To configure an Ethernet connection manually, select the Ethernet device and select _Edit IPv4_ from the small menu that appears. By default, the network device will be configured to use _Automatic (DHCP)_, which is why the connection attempts to automatically configure itself. Press **Enter** to reveal two further options, _Manual_ and _Disabled_:
 
 ![Select Manual](https://assets.ubuntu.com/v1/01acc192-01acc19205a26a77cbb96021a47e36f0a3f9eff6.png)
 

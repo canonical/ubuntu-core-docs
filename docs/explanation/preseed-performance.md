@@ -13,13 +13,13 @@ The resultant image is called a _preseeded_ image, and a preseeded image is part
 
 With a preseeded image, the snap installation and update process is performed as part of the image creation process, before device deployment. This means a device is ready to go from the first boot, rather than requiring the further snap installation and updates that may be required with a non-preseeded image.
 
-For details on how to create a preseeded image, see {ref}`Optimise boot speed <how-to-guides-image-creation-optimise-boot-speed>`.
+For details on how to create a preseeded image, see {ref}`Optimize boot speed <how-to-guides-image-creation-optimise-boot-speed>`.
 
 ## Measuring boot performance
 
 The time it takes for a new device to be ready can be measured with the {ref}`ubuntu_core.bootchart <reference-kernel-boot-parameters>` kernel option. When enabled, a performance profile is built for each device boot, allowing you to compare how a non-preseeded image performs against a preseeded image.
 
-The following are real examples of bootchart performance profiles, generated for the same deployment with and without preseeding and initialised over cell data.
+The following are real examples of bootchart performance profiles, generated for the same deployment with and without preseeding and initialized over cell data.
 ## Without preseeding
 
 Without preseeding, a device will need to reboot after the base and system snaps have been updated, and this has a significant impact on the length of time a device takes to become available.H
@@ -41,9 +41,9 @@ Our preseeded system did not need a reboot, and neither did it require any furth
 
 All three bootchart excerpts below show:
 
-- **pink** read from storage utilisation
-- **red** write to storage utilisation
-- **blue** CPU utilisation
+- **pink** read from storage utilization
+- **red** write to storage utilization
+- **blue** CPU utilization
 - **yellow** CPU wait time
 
 ### Without preseeding
@@ -57,4 +57,3 @@ The following shows two separate boots, the first for **22.8 seconds** and the s
 The following shows the only boot required for a preseeded image, lasting **11.4 seconds**.
 
 ![Preseeded Ubuntu Core bootchart](https://assets.ubuntu.com/v1/35aabcc9-preseed-bootchart.png)
-

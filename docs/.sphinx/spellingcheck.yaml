@@ -2,7 +2,7 @@ matrix:
   - name: rST files
     aspell:
       lang: en
-      d: en_GB
+      d: en_US
     dictionary:
       wordlists:
         - .sphinx/.wordlist.txt
@@ -17,6 +17,8 @@ matrix:
             - title
             - alt
           ignores:
+            - aside.sidebar-drawer
+            - aside.toc-drawer
             - code
             - pre
             - spellexception

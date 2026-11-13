@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Create recovery systems via snapd API on Ubuntu Core. Use validation sets to constrain snap revisions in recovery systems.
+    description: Create recovery systems via Snapd API on Ubuntu Core. Use validation sets to constrain snap revisions in recovery systems.
 ---
 
 (how-to-guides-manage-ubuntu-core-create-a-recovery-system-from-the-api)=
@@ -11,7 +11,7 @@ An {ref}`Ubuntu Core image <ref-index-build-your-first-image>` contains a recove
 
 One issue with this approach is that there may be snaps included in the recovery system that have since received security updates. This will have been updated automatically in the running system, but not in the image-based recovery system. 
 
-To resolve this, the recovery system [snapd REST API](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/AuthenticationRequired/performSystemAction) enables users to create new recovery systems with snaps that are constrained by a set of {ref}`validation-sets assertions <reference-assertions-validation-set>`.
+To resolve this, the recovery system [Snapd REST API](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/AuthenticationRequired/performSystemAction) enables users to create new recovery systems with snaps that are constrained by a set of {ref}`validation-sets assertions <reference-assertions-validation-set>`.
 
 This is specifically useful for ensuring that a recovery system is built from a set of snaps with well known revisions.
 
@@ -54,7 +54,7 @@ Note the distinction between the most recently seeded system (which is denoted b
 
 Validation sets are provided as a list of strings. Each string is in the format of “<account-id>/<validation-set-name>=<sequence-number>”. The sequence number is optional. If the sequence number is not provided, then the latest validation set in the sequence will be used.
 
-The “offline” field is used to force snapd to create a recovery system without reaching out to the store. This means that all snaps and assertions that are needed to create the system must already be installed on the system. To create a recovery system from locally provided snaps/assertions that are not already installed, see _Form-based_ usage below.
+The “offline” field is used to force Snapd to create a recovery system without reaching out to the store. This means that all snaps and assertions that are needed to create the system must already be installed on the system. To create a recovery system from locally provided snaps/assertions that are not already installed, see _Form-based_ usage below.
 
 ### Form-based
 
@@ -79,7 +79,7 @@ curl -X POST --unix-socket /run/snapd.socket \
   http://localhost/v2/systems
 ```
 
-In this example, “validation-set.assert”, “pc.assert”, “pc-kernel.assert”, “pc.snap”, and “pc-kernel.snap” are all files on the local system. Note that the “assertion” field expects the literal string contents to be the value of the field. The “snap” field is processed as an HTTP form file upload.
+In this example, `validation-set.assert`, `pc.assert`, `pc-kernel.assert`, `pc.snap`, and `pc-kernel.snap` are all files on the local system. Note that the “assertion” field expects the literal string contents to be the value of the field. The “snap” field is processed as an HTTP form file upload.
 
 (ref-create-a-recovery-system-from-the-api_removing-api-usage)=
 ## Removing API Usage
@@ -93,4 +93,3 @@ Example POST to /v2/system/\<label\>:
   "action": "remove"
 }
 ```
-

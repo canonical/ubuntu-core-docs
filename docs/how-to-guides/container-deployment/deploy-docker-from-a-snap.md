@@ -22,7 +22,7 @@ Start by initializing a snap project in a clean directory:
 snapcraft init
 ```
 
-Open the newly created `snap/snapcraft.yaml` file with your favourite editor. Modify and make it technically equivalent to the following. Choose suitable metadata if you plan to publish this snap.
+Open the newly created `snap/snapcraft.yaml` file with your favorite editor. Modify and make it technically equivalent to the following. Choose suitable metadata if you plan to publish this snap.
 
 ```yaml
 name: rabbitmq-docker-guide
@@ -171,7 +171,7 @@ sudo snap install --dangerous ./rabbitmq-docker-guide_demo_amd64.snap
 ```
 The [`--dangerous`](https://snapcraft.io/docs/install-modes#dangerous-mode) flag is set because this is a locally built, unsigned snap.
 
-Connect the following [interfacess](https://snapcraft.io/docs/interfaces):
+Connect the following [interfaces](https://snapcraft.io/docs/interfaces):
 ```shell
 # For access to Docker Daemon
 sudo snap connect rabbitmq-docker-guide:docker docker:docker-daemon
@@ -188,7 +188,7 @@ Verify that everything is working and setup correctly by looking into the follow
 - Snap logs: `snap logs -n 100 rabbitmq-docker-guide`
 - Docker containers: `docker ps`
 
-You should be able to access the RabbitMQ's management dashboard via a web browser.
+You should be able to access the RabbitMQ management dashboard via a web browser.
 By default, it is available at `http://localhost:15672` (username/password: `guest`).
 
 ![RabbitMQ Management Dashboard|800x397](https://assets.ubuntu.com/v1/616d2ae4-deploy-docker-from-a-snap.png)
@@ -202,7 +202,7 @@ home dir       : /var/lib/rabbitmq
 data dir       : /var/lib/rabbitmq/mnesia/rabbit@b3c91694093c
 ```
 
-First we need to set a hostname for the container so that the data directory name doesn't change with the container. Docker generate a random hostname by default. Set the hostname to `demo` by setting `--hostname demo` argument for the `docker create` command inside `run.sh`. You may need to revisit this if you plan to run a RabbitMQ cluster.
+First we need to set a hostname for the container so that the data directory name doesn't change with the container. Docker generates a random hostname by default. Set the hostname to `demo` by setting `--hostname demo` argument for the `docker create` command inside `run.sh`. You may need to revisit this if you plan to run a RabbitMQ cluster.
 
 The Docker image specifies a volume at `/var/lib/rabbitmq` and the Docker engine maintains it internally. However, the volume will be lost if the container is removed, for example during an upgrade.
 We will mount `SNAP_DATA/data` as a volume inside the container, so that the container data gets persisted as snap's own data and copied from one version of the snap to the next. Read more about snap's [data locations](https://snapcraft.io/docs/data-locations) and [snapshots](https://snapcraft.io/docs/snapshots).
@@ -334,7 +334,7 @@ if [ ! "$(docker ps --all --quiet --filter name="$container_name")" ]; then
 
 This would work if those ports are available on the host. However, it is generally risky to make strong deployment-specific assumptions at packaging time.
 
-We can make the port mapping configurable using snap configuration options. For example, to make RabbitMQ's AMQP listener port configurable, but falling back to the default:
+We can make the port mapping configurable using snap configuration options. For example, to make the RabbitMQ AMQP listener port configurable, but falling back to the default:
 ```bash
 # Read the value set via snap config option
 amqp_port="$(snapctl get amqp-port)"
@@ -417,4 +417,3 @@ The companion snap can be extended to take care of many other requirements inclu
 Apart from installing the snap, we performed a few manual operations on target such as for interface connections and setting snap configuration options. This went against our initial goal of deploying the application without manual interaction. Ubuntu Core leverages other tools and services to automate such operations. These include Ubuntu Core {ref}`image creation <ref-index-build-your-first-image>` with custom snaps, [gadget snaps](https://snapcraft.io/docs/the-gadget-snap) for adding default configurations and connections into the image, and {ref}`dedicated snap stores <ref-dedicated-snap-store_dedicated-snap-store>` with deployment-specific interface auto-connection assertions.
 
 The created snap and its future revisions can be published to a snap store to allow remote deployment and OTA updates of the Docker container.
-

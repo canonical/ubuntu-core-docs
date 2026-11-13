@@ -16,7 +16,7 @@ snap set system some.option="some value"
 snap get system some.option
 ```
 
-Configuration options can be unset by either passing their names to the unset command or by adding an exclamation mark (!) to the end of an option name: (from *snapd 2.41+*):
+Configuration options can be unset by either passing their names to the unset command or by adding an exclamation mark (!) to the end of an option name: (from *Snapd 2.41+*):
 
 ``` bash
 snap unset system some.option

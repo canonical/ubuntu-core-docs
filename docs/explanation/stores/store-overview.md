@@ -52,7 +52,6 @@ For more details on this process, see [Register a snap](https://documentation.ub
 
 When you've registered snap(s) using a brand/umbrella account, you should add team members' personal accounts to the umbrella/brand account via the Dashboard for your snap. For example:
 
-https://dashboard.snapcraft.io/snaps/yoursnapname/collaboration/
+`https://dashboard.snapcraft.io/snaps/yoursnapname/collaboration/`
 
 Collaborators can then push and release snaps using their personal accounts.
-

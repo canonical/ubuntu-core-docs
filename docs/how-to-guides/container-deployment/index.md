@@ -22,7 +22,7 @@ Install and run Docker from within the Ubuntu Core environment. Build a snap whi
 
 How Docker images can be bundled inside snaps to be deployed together with other resources within the package.
 
-Ship containerised applications with Ubuntu Core by building a custom image that can then be used to create bootable media and can automate deployment of a production system.
+Ship containerized applications with Ubuntu Core by building a custom image that can then be used to create bootable media and can automate deployment of a production system.
 
 
 - {ref}`Package Docker images in a snap <how-to-guides-container-deployment-package-docker-images-in-a-snap>`

@@ -7,7 +7,7 @@ myst:
 (ref-inside-ubuntu-core_inside-ubuntu-core)=
 # Inside Ubuntu Core
 
-The kernel, boot assets, runtime environment, applications and device enablement capabilities are all delivered as snaps that are controlled by _snapd_ (the snap daemon), which is itself packaged as a snap.
+The kernel, boot assets, runtime environment, applications and device enablement capabilities are all delivered as snaps that are controlled by _Snapd_ (the snap daemon), which is itself packaged as a snap.
 
 See below for how these elements combine in Ubuntu Core:
 
@@ -21,7 +21,7 @@ Ubuntu Core typically uses the following storage partitions:
 * **ubuntu-seed** (role: system-seed; read-only, vfat-formatted): contains the configuration for the first-stage/recovery boot loader and at least one recovery system. This is a set of snaps (base, kernel, gadget and application snaps), together with a model assertion and snap assertions, that define the device and from which the device can be recovered or reinstalled. This is the only partition actually created by the auto installable image built by `ubuntu-image`.
 * **ubuntu-boot** (role: system-boot; read-only, ext4 or vfat): contains the second-state/run bootloader and unpacked kernel(s) to boot and with initramfs which decrypts the ubuntu-data and ubuntu-save partition.
 * **ubuntu-save** (role: system-save; writable, ext4): stores device identity backup data and data to facilitate recovery or re-install. This partition is mandatory on encrypted systems where it should have a minimum size of approximately 20+MB to handle volume and file system creation.
-* **ubuntu-data** (role: system-data; writable, ext4): stores user and system data. This partition is often minimally sized in the image but extended during device initialisation to use all the space available.
+* **ubuntu-data** (role: system-data; writable, ext4): stores user and system data. This partition is often minimally sized in the image but extended during device initialization to use all the space available.
 
 All these partitions but `ubuntu-seed` are created at installation time.
 
@@ -31,8 +31,8 @@ The system boot process:
 
 * verifies the bootloaders and kernel signatures
 * measures the above and the kernel command line with the TPM
-* on top of the above trusted set the snapd initrd code measures the snap device model
-* snapd then separately verifies other snaps with their assertions as needed
+* on top of the above trusted set the Snapd initrd code measures the snap device model
+* Snapd then separately verifies other snaps with their assertions as needed
 
 *snap-bootstrap* is the main executable that is run during the early _initramfs_ booting stage of UC2x. It has the following responsibilities:
 
@@ -48,19 +48,19 @@ The system boot process:
 ## Ubuntu Core snaps 
 
 The following components make up Ubuntu Core:
-- **snapd** is the system daemon that supervises all other snaps on Ubuntu Core. It exposes a REST API that makes Ubuntu Core appliances IP-addressable by default. This API facilitates device management.
+- **Snapd** is the system daemon that supervises all other snaps on Ubuntu Core. It exposes a REST API that makes Ubuntu Core appliances IP-addressable by default. This API facilitates device management.
 
 - **application snaps** define the functionality of an embedded device and are confined with all their dependencies to their own sandbox. Interfaces to other applications or to the system must be explicitly defined.
 
 - **system snaps** are considered critical to the function of the system, and include the snaps for _network-manager_, _modem-manager_, _bluez_ and _console-conf_.
 
-  Related to system snaps, but in a less critical category, are snaps that enable device capabilities like audio, power and disk storage, alongside Docker container orchestration and virtualisation capabilities, including Microk8s and LXD.
+  Related to system snaps, but in a less critical category, are snaps that enable device capabilities like audio, power and disk storage, alongside Docker container orchestration and virtualization capabilities, including MicroK8s and LXD.
 
-- **boot assets**  come from the {ref}`gadget snap <reference-gadget-snap-format>` and include board-specific binaries and data, such as bootloader, device tree, configuration files, and cloud-init configuration for edge virtualisation use cases. The gadget snap is typically issued and signed by board OEM/ODMs.
+- **boot assets**  come from the {ref}`gadget snap <reference-gadget-snap-format>` and include board-specific binaries and data, such as bootloader, device tree, configuration files, and cloud-init configuration for edge virtualization use cases. The gadget snap is typically issued and signed by board OEM/ODMs.
 
 - **base snap** holds the execution environment inside which applications run. It also serves as the root file system for Ubuntu Core images. Core snaps include basic Ubuntu 2x.04 LTS packages.
 
-- **kernel snap** holds the kernel image and associated modules. It will also contain an initial ramdisk image for system initialisation. Firmware and device tree files can optionally be packaged here. The kernel snap can be updated but it cannot be swapped.
+- **kernel snap** holds the kernel image and associated modules. It will also contain an initial ramdisk image for system initialization. Firmware and device tree files can optionally be packaged here. The kernel snap can be updated but it cannot be swapped.
 
 The above snaps are combined using the `ubuntu-image` tool to create the Ubuntu Core installation image. The typical layout will be a disk with a single partition (`ubuntu-seed`) as follows:
 
@@ -77,6 +77,3 @@ Ubuntu Core exposes a built-in [REST API](https://snapcraft.io/docs/snapd-api) f
 ![core-partition-layout (1)|628x168](https://assets.ubuntu.com/v1/e9bba730-uc-diag-01.png) 
 
 See also {ref}`Snaps in Ubuntu Core <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>` for a general overview.
-
-
-

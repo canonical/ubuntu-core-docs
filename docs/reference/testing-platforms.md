@@ -19,17 +19,13 @@ These images are a great way to quickly get started with Ubuntu Core and to expl
 | **MediaTek Genio** <br /> `core-22-genio-arm64` <br />| [core-22-genio-arm64][22-genio-arm64-model] <br />| [core-22-genio-arm64][ubuntu-core-22-genio-arm64] <br />|
 | **NVIDIA Tegra Jetson** <br /> `core-22-tegra-jetson` <br />| [core-22-tegra-jetson][22-tegra-jetson-model] <br />| [core-22-tegra-jetson][ubuntu-core-22-tegra-jetson] <br />|
 
-**Ubuntu Core 26** (UC26) images are available from:</br>
-[http://cdimage.ubuntu.com/ubuntu-core/26/stable/current/](http://cdimage.ubuntu.com/ubuntu-core/26/stable/current/)
+**Ubuntu Core 26** (UC26) images are available on the [Ubuntu releases image site](http://cdimage.ubuntu.com/ubuntu-core/26/stable/current/).
 
-**Ubuntu Core 24** (UC24) images are available from:</br>
-[http://cdimage.ubuntu.com/ubuntu-core/24/stable/current/](http://cdimage.ubuntu.com/ubuntu-core/24/stable/current/)
+**Ubuntu Core 24** (UC24) images are available on the [Ubuntu releases image site](http://cdimage.ubuntu.com/ubuntu-core/24/stable/current/).
 
-**Ubuntu Core 22** (UC22) images are available from:</br>
-[http://cdimage.ubuntu.com/ubuntu-core/22/stable/current/](http://cdimage.ubuntu.com/ubuntu-core/22/stable/current/)
+**Ubuntu Core 22** (UC22) images are available on the [Ubuntu releases image site](http://cdimage.ubuntu.com/ubuntu-core/22/stable/current/).
 
-**Ubuntu Core 20** (UC20) images are available from:</br>
-[http://cdimage.ubuntu.com/ubuntu-core/20/stable/current/](http://cdimage.ubuntu.com/ubuntu-core/20/stable/current/)
+**Ubuntu Core 20** (UC20) images are available on the [Ubuntu releases image site](http://cdimage.ubuntu.com/ubuntu-core/20/stable/current/).
 
 
 Ubuntu community members also work with, and produce, images for other platforms and CPUs. Refer to these individual projects for more information on what other unofficial images might work for your use cases.

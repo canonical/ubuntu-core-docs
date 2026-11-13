@@ -26,7 +26,7 @@ The system time value and update process is tightly coupled to the {ref}`boots p
    - **on devices without an RTC**
       System time is taken from the modified file timestamp (mtime) of `/var/lib/systemd/timesync/clock` on the data partition (which may be encrypted). The timestamp for this file is updated periodically after a network connection has been established, and before the system reboots.
   
-   When the network becomes available, the device will begin to use NTP to periodically update the system time. See {ref}`Network time synchronisation <ref-set-system-time_network-time-synchronisation>` below for more details.
+   When the network becomes available, the device will begin to use NTP to periodically update the system time. See {ref}`Network time synchronization <ref-set-system-time_network-time-synchronisation>` below for more details.
 
 ## Current time
 
@@ -69,9 +69,9 @@ $ timedatectl | grep zone
 ```
 
 (ref-set-system-time_network-time-synchronisation)=
-## Network time synchronisation
+## Network time synchronization
 
-By default, _timesyncd_ is configured to use the Network Time Protocol (NTP) for network time synchronisation as soon as the network becomes available.
+By default, _timesyncd_ is configured to use the Network Time Protocol (NTP) for network time synchronization as soon as the network becomes available.
 
 The NTP server and update frequency can be checked with _timedatectl timesync-status_:
 
@@ -91,4 +91,3 @@ Root distance: 30.234ms (max: 5s)
  Packet count: 4
     Frequency: -14.982ppm
 ```
-

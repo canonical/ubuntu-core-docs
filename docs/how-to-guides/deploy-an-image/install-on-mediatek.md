@@ -35,8 +35,6 @@ A pre-built Ubuntu Core image does not use a username and password to login to t
    
 [Genio tools](https://gitlab.com/mediatek/aiot/bsp/genio-tools) are a set of tools to flash, control or configure MediaTek boards, and in particular, Genio evaluation kits. Genio tools can be installed as follows:
 
-Install genio-tool from the snap:
-
 ```
 sudo snap install genio-tools
 ```
@@ -58,11 +56,11 @@ Download the MediaTek Genio Ubuntu Core image from the following location:</br>
 
  ````{tabs}
  ```{tab} Ubuntu Core 24
- [genio-core-noble-emmc-20260526-44.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-core-24/genio-core-noble-emmc-20260526-44.tar.xz)
+  [Ubuntu Core 24 image for MediaTek Genio](https://people.canonical.com/~platform/images/mediatek/ubuntu-core-24/genio-core-noble-emmc-20260526-44.tar.xz)
  ```
 
  ```{tab} Ubuntu Core 22
- [genio-core-22-20250423-201.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-core-22/genio-core-22-20250423-201.tar.xz)
+ [Ubuntu Core 22 image for MediaTek Genio](https://people.canonical.com/~platform/images/mediatek/ubuntu-core-22/genio-core-22-20250423-201.tar.xz)
  ```
  ````
 
@@ -75,14 +73,14 @@ Boot firmware is a series of files used to boot the operating system. Choose you
 
    |Device Model|Link|
    |---|---|
-   |Genio 720 EVK|[genio-g720-evk-boot-assets-20260506-50.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g720-evk-boot-assets-20260506-50.tar.xz)|
-   |Genio 520 EVK|[genio-g520-evk-boot-assets-20260506-50.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g520-evk-boot-assets-20260506-50.tar.xz)|
-   |Genio 1200 EVK|[genio-g1200-evk-boot-assets-20260506-50.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g1200-evk-boot-assets-20260506-50.tar.xz)|
-   |Genio 700 EVK|[genio-g700-boot-assets-20260506-50.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g700-boot-assets-20260506-50.tar.xz)|
-   |Genio 510 EVK|[genio-g510-boot-assets-20260506-50.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g510-boot-assets-20260506-50.tar.xz)|
-   |Genio 350 EVK|[genio-g350-boot-assets-20260506-50.tar.xz](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g350-boot-assets-20260506-50.tar.xz)|
+   |Genio 720 EVK|[Download boot assets](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g720-evk-boot-assets-20260506-50.tar.xz)|
+   |Genio 520 EVK|[Download boot assets](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g520-evk-boot-assets-20260506-50.tar.xz)|
+   |Genio 1200 EVK|[Download boot assets](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g1200-evk-boot-assets-20260506-50.tar.xz)|
+   |Genio 700 EVK|[Download boot assets](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g700-boot-assets-20260506-50.tar.xz)|
+   |Genio 510 EVK|[Download boot assets](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g510-boot-assets-20260506-50.tar.xz)|
+   |Genio 350 EVK|[Download boot assets](https://people.canonical.com/~platform/images/mediatek/ubuntu-server-24.04/genio-g350-boot-assets-20260506-50.tar.xz)|
 
-Extract all the files from the download archive, replacing the archive name (genio-g720-evk-boot-assets-20260506-50.tar.xz) with the name of the file you specifically downloaded.
+Extract all the files from the download archive, replacing the archive name (`genio-g720-evk-boot-assets-20260506-50.tar.xz`) with the name of the file you specifically downloaded.
 
 First, extract the Ubuntu Core image archive:
 
@@ -116,12 +114,12 @@ Boot firmware is a series of files used to boot the operating system. Choose you
 
    |Device Model|Link|
    |---|---|
-   |Genio 1200 EVK|[ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz](https://download.mediatek.com/iot/download/ubuntu/boot-firmware/v24.1/ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz)|
-   |Genio 700 EVK|[ubuntu-boot-firmware-genio-700-evk-v24.1-ubuntu1.tar.gz](https://download.mediatek.com/iot/download/ubuntu/boot-firmware/v24.1/ubuntu-boot-firmware-genio-700-evk-v24.1-ubuntu1.tar.gz)|
-   |Genio 510 EVK|[ubuntu-boot-firmware-genio-510-evk-v24.1-ubuntu1.tar.gz](https://download.mediatek.com/iot/download/ubuntu/boot-firmware/v24.1/ubuntu-boot-firmware-genio-510-evk-v24.1-ubuntu1.tar.gz)|
-   |Genio 350 EVK|[ubuntu-boot-firmware-genio-350-evk-v24.1-ubuntu1.tar.gz](https://download.mediatek.com/iot/download/ubuntu/boot-firmware/v24.1/ubuntu-boot-firmware-genio-350-evk-v24.1-ubuntu1.tar.gz)|
+   |Genio 1200 EVK|[`ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz`](https://download.mediatek.com/iot/download/ubuntu/boot-firmware/v24.1/ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz)|
+   |Genio 700 EVK|[`ubuntu-boot-firmware-genio-700-evk-v24.1-ubuntu1.tar.gz`](https://download.mediatek.com/iot/download/ubuntu/boot-firmware/v24.1/ubuntu-boot-firmware-genio-700-evk-v24.1-ubuntu1.tar.gz)|
+   |Genio 510 EVK|[`ubuntu-boot-firmware-genio-510-evk-v24.1-ubuntu1.tar.gz`](https://download.mediatek.com/iot/download/ubuntu/boot-firmware/v24.1/ubuntu-boot-firmware-genio-510-evk-v24.1-ubuntu1.tar.gz)|
+   |Genio 350 EVK|[`ubuntu-boot-firmware-genio-350-evk-v24.1-ubuntu1.tar.gz`](https://download.mediatek.com/iot/download/ubuntu/boot-firmware/v24.1/ubuntu-boot-firmware-genio-350-evk-v24.1-ubuntu1.tar.gz)|
 
-Extract all the files from the download archive, replacing the archive name (ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz) with the name of the file you specifically downloaded:
+Extract all the files from the download archive, replacing the archive name (`ubuntu-boot-firmware-genio-1200-evk-v24.1-ubuntu1.tar.gz`) with the name of the file you specifically downloaded:
 
 First, extract the Ubuntu Core image archive:
 
@@ -179,7 +177,7 @@ Wait until you see the following output from genio-tools:
  INFO:root:Continue flashing...
  ```
 
-Now connect the USB Type-C cable between your host and the USB Type-C port labelled  _Image Download_ port on your device. Refer to the following images to locate the port:
+Now connect the USB Type-C cable between your host and the USB Type-C port labeled  _Image Download_ port on your device. Refer to the following images to locate the port:
 
  ````{tabs}
 
@@ -271,7 +269,7 @@ If an Ethernet cable is connected to your device, a network connection will atte
 
 ![Choose eth0](https://assets.ubuntu.com/v1/bfbccb33-network-setup-ethernet.png)
 
-To configure an Ethernet connection manually, select the eth0 device and select _Edit IPv4_ from the small menu that appears. By default, the network device will be configured to use _Automatic (DHCP)_, which is why the connection attempts to automatically configure itself. Press **Enter** to reveal two further options, _Manual_ and _Disabled_:
+To configure an Ethernet connection manually, select the `eth0` device and select _Edit IPv4_ from the small menu that appears. By default, the network device will be configured to use _Automatic (DHCP)_, which is why the connection attempts to automatically configure itself. Press **Enter** to reveal two further options, _Manual_ and _Disabled_:
 
 ![Select Manual](https://assets.ubuntu.com/v1/b0dabd89-ethernet-manual.png)
 
@@ -289,7 +287,7 @@ Select **Save** to apply those changes and for the connection to be attempted. Y
 
 ![Choose wlan0](https://assets.ubuntu.com/v1/3765991b-3765991b629df12859941fe22c7c2fa90a693289.png)
 
-To configure Wi-Fi, press the cursor up key until the wireless device (such as _wlan0_) is selected and press **Enter**. You will see a small menu and you need to select **Edit Wi-Fi**.
+To configure Wi-Fi, press the cursor up key until the wireless device (such as `wlan0`) is selected and press **Enter**. You will see a small menu and you need to select **Edit Wi-Fi**.
 
 ![Edit Wi-Fi](https://assets.ubuntu.com/v1/f4889452-f4889452487e4f2eb052ad7410d078a8c0bddd06.png)
 

@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Modify kernel boot parameters on Ubuntu Core. Customize kernel options dynamically via snapd API or statically in gadget snap.
+    description: Modify kernel boot parameters on Ubuntu Core. Customize kernel options dynamically via Snapd API or statically in gadget snap.
 ---
 
 (how-to-guides-manage-ubuntu-core-modify-kernel-options)=
@@ -9,7 +9,7 @@ myst:
 
 When using the default GNU GRUB bootloader, kernel boot parameters can be customized without breaking the integrity of the TPM backed full disk encryption.
 
-Parameters can be modified either _statically_, by editing `cmdline` files, or _dynamically_, by  specific system settings (by dynamically we mean that snapd API can be used to set them, but the parameters do survive across reboots). Both of these methods are covered below.
+Parameters can be modified either _statically_, by editing `cmdline` files, or _dynamically_, by  specific system settings (by dynamically we mean that Snapd API can be used to set them, but the parameters do survive across reboots). Both of these methods are covered below.
 
 Ubuntu Core boot-time kernel parameters can be viewed from `/proc/cmdline`:
 
@@ -32,7 +32,7 @@ The first setting will permit **only** boot parameters verified against an _allo
 
 The second option is valid only for dangerous grade {ref}`models <reference-assertions-model>` and permits any parameter to be added.
 
-System options can be set either through the [snapd API](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/Asynchronous/setSnapConfig), or with the `snap set` command:
+System options can be set either through the [Snapd API](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/Asynchronous/setSnapConfig), or with the `snap set` command:
 
 ```bash
 snap set system system.kernel.dangerous-cmdline-append="core.bootchart"
@@ -49,7 +49,7 @@ snap unset system system.kernel.dangerous-cmdline-append
 (ref-modify-kernel-options_static-boot-option-modifications)=
 ## Static boot option modifications
 
-Static kernel boot-time options are formed from mode arguments set by _snapd_, a static element declared in the bootloader configuration script, and optional extra arguments.
+Static kernel boot-time options are formed from mode arguments set by _Snapd_, a static element declared in the bootloader configuration script, and optional extra arguments.
 
 For example, the **run mode** kernel command line is:
 
@@ -63,9 +63,9 @@ The **recovery mode** of a system labeled 20210512 would look like this:
 snapd_recovery_mode=recover snapd_recovery_system=20210512 console=ttyS0 console=tty1 panic=-1
 ```
 
-In the above examples, the mode arguments are `snapd_recovery_mode` and `snapd_recovery_system`. The static command line content for the grub bootloader is `console=ttyS0 console=tty1 panic=-1` which is defined in the snapd source code.
+In the above examples, the mode arguments are `snapd_recovery_mode` and `snapd_recovery_system`. The static command line content for the grub bootloader is `console=ttyS0 console=tty1 panic=-1` which is defined in the Snapd source code.
 
-Below we describe how to add additional static parameters (static with the meaning that they cannot be manipulated dynamically from the snapd API).
+Below we describe how to add additional static parameters (static with the meaning that they cannot be manipulated dynamically from the Snapd API).
 
 ### Adding static parameters from the gadget
 

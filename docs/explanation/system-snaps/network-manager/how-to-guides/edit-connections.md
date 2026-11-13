@@ -24,9 +24,9 @@ Alternatively, if you know the valid connection types, you could jump straight t
 nmcli connection edit type <type>
 ```
 
-where <type> must be a valid connection type such as 'wifi'.
+where <type> must be a valid connection type such as `wifi`.
 
-An attempt to edit the wifi connection type would look like:
+An attempt to edit the `wifi` connection type would look like:
 ```bash
 $ nmcli c edit
 
@@ -48,7 +48,7 @@ You may edit the following settings: connection, 802-11-wireless (wifi),
 nmcli>
 ```
 
-From now on it is possible to edit the wifi connection settings. The list of settings is provided as in the example above. The nmcli console offers a set of commands that can be used to navigate between settings. To get the list of available commands type 'help' or '?'
+From now on it is possible to edit the `wifi` connection settings. The list of settings is provided as in the example above. The nmcli console offers a set of commands that can be used to navigate between settings. To get the list of available commands type 'help' or '?'
 
 ```bash
 nmcli> ?
