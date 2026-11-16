@@ -1,7 +1,7 @@
 name: Documentation issue
 description: Report issue related to the Ubuntu Core documentation
 title: "docs: TYPE YOUR QUESTION HERE"
-labels: ["documentation"]
+labels: ["Documentation content"]
 body:
   - type: textarea
     id: details
