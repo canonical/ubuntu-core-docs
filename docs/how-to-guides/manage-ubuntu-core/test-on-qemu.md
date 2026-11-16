@@ -26,7 +26,7 @@ $ kvm-ok
 INFO: /dev/kvm exists
 KVM acceleration can be used
 ```
-To ensure compatibility with the required UEFI features in Ubuntu Core, also install the [OVMF](https://packages.ubuntu.com/noble/ovmf) package, which includes the UEFI firmware file, `OVMF_CODE_4M.secboot.fd`:
+To ensure compatibility with the required UEFI features in Ubuntu Core, also install the [OVMF](https://wiki.ubuntu.com/OVMF) package, which includes the UEFI firmware file, `OVMF_CODE_4M.secboot.fd`:
 
 ```bash
 sudo apt install ovmf
