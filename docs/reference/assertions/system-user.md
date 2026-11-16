@@ -14,7 +14,7 @@ Some systems suppress _console-conf_ and its user creation, and on those systems
 The `system-user` {ref}`assertion <ref-index_assertions>` can be used to create a system user in one of three ways:
 - injecting it into the ubuntu-seed partition using the {ref}`ubuntu-image utility <ref-use-ubuntu-image_extra-assertions>`;
 - embedding it within a file called `auto-import.assert` that’s added to the system via the root directory of a removable USB storage device; or
-- running `sudo snap create-user --known` if command-line access is available and the assertion is in the device's assertion database.
+- requesting the creation of the user from an assertion already in the device's assertion database, either using `sudo snap create-user --known` or making a `POST` request to Snapd REST API's `/v2/users` endpoint with `{"action":"create","known":true}`.
 
 See {ref}`Add a system user <how-to-guides-manage-ubuntu-core-add-a-system-user>` for further details on creating a system user.
 
