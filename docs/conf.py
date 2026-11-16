@@ -199,6 +199,7 @@ linkcheck_ignore = [
     r"https://www\.freedesktop\.org/wiki/Software/ModemManager/$",
     r"https://www\.freedesktop\.org/wiki/Software/ModemManager/SupportedDevices/$",
     r"https://www\.freedesktop\.org/wiki/Software/Plymouth/Scripts/$",
+    r"https://www\.renesas\.com/en/products/rz-g2l$",
     ]
 
 
