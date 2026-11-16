@@ -19,7 +19,7 @@ The following guides provide device-specific installation instructions. Each gui
 
 - {ref}`Install on a Renesas RZ/G2L <ref-install-on-renesas_install-a-pre-built-ubuntu-core-image-on-a-renesas-rz-g2l>`
 
-  Deploy Ubuntu Core on a [Renesas RZ/G2L](https://www.renesas.com/en/products/microcontrollers-microprocessors/rz-mpus/rzg2l-general-purpose-mpu-dual-core-arm-cortex-a55-cpus-and-single-core-cortex-m33-cpu-3d-graphics-and)
+  Deploy Ubuntu Core on a [Renesas RZ/G2L](https://www.renesas.com/en/products/rz-g2l)
 - {ref}`Install on a MediaTek Genio <ref-install-on-mediatek_install-a-pre-built-ubuntu-core-image-on-a-mediatek-genio-device>`
 
   Deploy Ubuntu Core on a [MediaTek Genio](https://www.mediatek.com/products/iot/genio-iot)
