@@ -264,7 +264,8 @@ rediraffe_redirects = "redirects.txt"
 
 # html_js_files = []
 html_js_files = [
-    "js/bundle.js"
+    "js/bundle.js",
+    "js/issue-links.js",
 ]
 
 # Specifies a reST snippet to be appended to each .rst file
@@ -275,9 +276,9 @@ rst_epilog = """
 
 # Feedback button at the top; enabled by default
 #
-# TODO: To disable the button, uncomment this.
+# Disabled because we have a custom button linking to GitHub's template chooser.
 
-# disable_feedback_button = True
+disable_feedback_button = True
 
 
 # Your manpage URL

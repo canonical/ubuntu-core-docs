@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report snapd bugs
+    url: https://bugs.launchpad.net/snapd/+filebug
+    about: Please report snapd bugs here
+  - name: Report bugs related to Ubuntu Core snaps
+    url: https://github.com/canonical/core-base/issues/new/choose
+    about: Please report bugs in core20, core22, core24, core26 and later in the core snaps repository
