@@ -11,7 +11,7 @@ Pre-built images are ideal for exploration and experimentation of Ubuntu Core, b
 
 You can find more information about building Core images in the {ref}`Build your first image <ref-index-build-your-first-image>` tutorial.
 
-Ubuntu Core runs on a large range of hardware, and pre-built images are available for the [Renesas RZ/G2L](https://www.renesas.com/en/products/microcontrollers-microprocessors/rz-mpus/rzg2l-general-purpose-mpu-dual-core-arm-cortex-a55-cpus-and-single-core-cortex-m33-cpu-3d-graphics-and).
+Ubuntu Core runs on a large range of hardware, and pre-built images are available for the [Renesas RZ/G2L](https://www.renesas.com/en/products/rz-g2l).
 
 Renesas RZ/G2L installation is accomplished in two stages; with the first stage preparing the board and installing the bootloader, and the second stage installing the Ubuntu Core image.
 
@@ -29,7 +29,7 @@ For the used to write the images:
 - An {ref}`Ubuntu SSO account with associated SSH keys <how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh>`.
 
 The target device:
-- [Renesas RZ/G2L](https://www.renesas.com/en/products/microcontrollers-microprocessors/rz-mpus/rzg2l-general-purpose-mpu-dual-core-arm-cortex-a55-cpus-and-single-core-cortex-m33-cpu-3d-graphics-and)
+- [Renesas RZ/G2L](https://www.renesas.com/en/products/rz-g2l)
 - USB Type-C power supply 5V
 
 A pre-built Ubuntu Core image does not use a username and password to login to the system. It instead uses SSH and your public SSH key, which is uploaded to your Ubuntu One account. This is handled by the console-conf snap bundled in pre-built test images. SSH is otherwise not a requirement for Ubuntu Core images. See Connect to Ubuntu Core with SSH for further details.
