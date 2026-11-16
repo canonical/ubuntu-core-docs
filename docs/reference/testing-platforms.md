@@ -47,19 +47,19 @@ Ubuntu community members also work with, and produce, images for other platforms
 [20-amd64]:     https://cdimage.ubuntu.com/ubuntu-core/20/stable/current/ubuntu-core-20-amd64.img.xz
 [20-pi-arm64]:  https://cdimage.ubuntu.com/ubuntu-core/20/stable/current/ubuntu-core-20-arm64+raspi.img.xz
 
-[26-pi-arm64-model]:  https://github.com/canonical/models/blob/master/ubuntu-core-26-pi-arm64.json
-[26-amd64-model]:     https://github.com/canonical/models/blob/master/ubuntu-core-26-amd64.json
-[24-pi-arm64-model]:  https://github.com/canonical/models/blob/master/ubuntu-core-24-pi-arm64.json
-[24-amd64-model]:     https://github.com/canonical/models/blob/master/ubuntu-core-24-amd64.json
-[22-pi-armhf-model]:  https://github.com/canonical/models/blob/master/ubuntu-core-22-pi-armhf.json
-[22-amd64-model]:     https://github.com/canonical/models/blob/master/xinyi-classic-22-amd64.json
-[22-pi-arm64-model]:  https://github.com/canonical/models/blob/master/ubuntu-core-22-pi-arm64.json
-[20-pi-armhf-model]:  https://github.com/canonical/models/blob/master/ubuntu-core-20-pi-armhf.json
-[20-amd64-model]:     https://github.com/canonical/models/blob/master/ubuntu-core-20-amd64.json
-[20-pi-arm64-model]:  https://github.com/canonical/models/blob/master/ubuntu-core-20-pi-arm64.json
+[26-pi-arm64-model]:  https://github.com/canonical/models/blob/main/ubuntu-core-26-pi-arm64.json
+[26-amd64-model]:     https://github.com/canonical/models/blob/main/ubuntu-core-26-amd64.json
+[24-pi-arm64-model]:  https://github.com/canonical/models/blob/main/ubuntu-core-24-pi-arm64.json
+[24-amd64-model]:     https://github.com/canonical/models/blob/main/ubuntu-core-24-amd64.json
+[22-pi-armhf-model]:  https://github.com/canonical/models/blob/main/ubuntu-core-22-pi-armhf.json
+[22-amd64-model]:     https://github.com/canonical/models/blob/main/xinyi-classic-22-amd64.json
+[22-pi-arm64-model]:  https://github.com/canonical/models/blob/main/ubuntu-core-22-pi-arm64.json
+[20-pi-armhf-model]:  https://github.com/canonical/models/blob/main/ubuntu-core-20-pi-armhf.json
+[20-amd64-model]:     https://github.com/canonical/models/blob/main/ubuntu-core-20-amd64.json
+[20-pi-arm64-model]:  https://github.com/canonical/models/blob/main/ubuntu-core-20-pi-arm64.json
 
-[22-genio-arm64-model]: https://github.com/canonical/models/blob/master/devices/mediatek/genio/ubuntu-core-22-genio-arm64.model
+[22-genio-arm64-model]: https://github.com/canonical/models/blob/main/devices/mediatek/genio/ubuntu-core-22-genio-arm64.model
 [ubuntu-core-22-genio-arm64]: https://people.canonical.com/~platform/images/mediatek/ubuntu-core-22/genio-core-22-20250423-201.tar.xz
 
-[22-tegra-jetson-model]: https://github.com/canonical/models/blob/master/devices/nvidia/jetson/ubuntu-core-22-tegra-jetson.model
+[22-tegra-jetson-model]: https://github.com/canonical/models/blob/main/devices/nvidia/jetson/ubuntu-core-22-tegra-jetson.model
 [ubuntu-core-22-tegra-jetson]: https://cdimage.ubuntu.com/releases/jammy/release/nvidia-tegra/ubuntu-core-22-arm64+tegra-jetson.img.xz

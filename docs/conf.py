@@ -217,6 +217,8 @@ linkcheck_anchors_ignore_for_url = [
 # give linkcheck multiple tries on failure
 # linkcheck_timeout = 30
 linkcheck_retries = 3
+# Avoid bursts of requests to hosts that rate-limit link checks.
+linkcheck_workers = 2
 
 ########################
 # Configuration extras #
