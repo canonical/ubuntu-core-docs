@@ -405,6 +405,7 @@ symlinks
 syscall
 syscalls
 syscheck
+[Ss]ysfs
 syslog
 systemd
 systemd's
