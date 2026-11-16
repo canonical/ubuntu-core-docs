@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Use Ubuntu One for SSH access to Ubuntu Core. Generate and register a public key for the new user, then connect via SSH.
+    description: Set up SSH access to Ubuntu Core with your Ubuntu One account. Register public keys before device initialization, then connect via SSH.
 ---
 
 (how-to-guides-manage-ubuntu-core-use-ubuntu-one-ssh)=
