@@ -102,7 +102,7 @@ The general practice is that either the operator who invoked `snap remodel` comm
 
 A network connection is not required if there is local access to:
 
-- **the target {ref}`Model assertion <reference-assertions-model>` with a new revision**</br>The `series`, `brand-id`, and `model` fields cannot currently be different from the original model.
+- **the target {ref}`Model assertion <reference-assertions-model>` with a new revision**</br> The `series`, `brand-id`, and `model` fields cannot currently be different from the original model.
 - **assertions for any referenced snaps**</br> This includes {ref}`snap-declaration <reference-assertions-snap-declaration>` and {ref}`snap-revision <reference-assertions-snap-revision>` assertions and the keys necessary for validation of the former.
 
 The `snap remodel` command can then be used to list the required snaps and assertions for the new model:

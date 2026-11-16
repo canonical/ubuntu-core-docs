@@ -83,7 +83,7 @@ If a customer has devices on shelves flashed with a version of Snapd _older_ tha
 
 Lastly, if a customer has **existing** snaps that require **new** auto-connections in newer revisions, they should consider defining the [assumes attribute](https://documentation.ubuntu.com/snapcraft/stable/reference/snapcraft-yaml/#assumes) in their snapcraft.yaml file.
 
-Pre-existing auto-connections in a pre store-scoped snap-declaration should not be affected because of the assertion format handling.
+Pre-existing auto-connections in a snap-declaration from before store scoping should not be affected because of the assertion format handling.
 
 ## Rolling back store scoping
 
