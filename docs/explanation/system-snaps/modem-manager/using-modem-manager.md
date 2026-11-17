@@ -28,7 +28,7 @@ The ModemManager upstream project comes with a few commands which can be used to
 
 The  **mmcli**  command offers a command-line based way to control and manage the ModemManager service.
 
-An explanatory description of the command and available options is available [here](https://www.freedesktop.org/software/ModemManager/man/latest/mmcli.8.html)
+An explanatory description of the command and available options is available [here](https://www.freedesktop.org/software/ModemManager/man/latest/mmcli.1.html)
 
 ### modem-manager.mbimcli
 

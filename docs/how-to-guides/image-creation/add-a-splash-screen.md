@@ -11,7 +11,7 @@ By default, Ubuntu Core does not display a splash screen when a device is bootin
 
 ![Ubuntu Core Splash](https://assets.ubuntu.com/v1/72b8914b-core-splash_01.png)
 
-Ubuntu Core’s splash screen is based on Ubuntu’s [Plymouth-based splash screen](https://wiki.ubuntu.com/Plymouth#Splash_Theme) implementation. It’s enabled by adding `quiet splash` as a {ref}`kernel boot parameter <reference-kernel-boot-parameters>`:
+Ubuntu Core’s splash screen is based on Ubuntu’s [Plymouth-based splash screen](https://wiki.ubuntu.com/Plymouth) implementation. It’s enabled by adding `quiet splash` as a {ref}`kernel boot parameter <reference-kernel-boot-parameters>`:
 
 ```yaml
 quiet splash
