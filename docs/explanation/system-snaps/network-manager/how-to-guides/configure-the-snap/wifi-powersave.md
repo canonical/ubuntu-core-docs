@@ -23,7 +23,7 @@ To allow users to enable or disable Wi-Fi Powersave, the snap provides a single 
 
 Option can be set via the configuration API snaps provide. See [Managing snap configuration](https://snapcraft.io/docs/configuration-in-snaps) for more details.
 
-### `wifi.powersave`
+### wifi.powersave
 
 This configuration option accepts the following values:
 
