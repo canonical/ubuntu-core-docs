@@ -18,6 +18,7 @@ METRICSDIR      = $(SOURCEDIR)/.sphinx/metrics
 REQPDFPACKS     = latexmk fonts-freefont-otf texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-font-utils texlive-lang-cjk texlive-xetex plantuml xindy tex-gyre dvipng
 CONFIRM_SUDO    ?= N
 VALE_CONFIG     = $(SPHINXDIR)/vale.ini
+VALEDIR         ?= $(VENVDIR)/lib/python*/site-packages/vale
 VOCAB_CANONICAL = $(SPHINXDIR)/styles/config/vocabularies/Canonical
 SPHINX_HOST     ?= 127.0.0.1
 SPHINX_PORT     ?= 8000
@@ -100,6 +101,34 @@ clean-doc:
 	git clean -fx "$(BUILDDIR)"
 	rm -rf $(SPHINXDIR)/.doctrees
 
+linkcheck: install
+	. $(VENV) ; $(SPHINXBUILD) -b linkcheck "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) || { grep --color -F "[broken]" "$(BUILDDIR)/output.txt"; exit 1; }
+	exit 0
+
+pa11y: pa11y-install html
+	find $(BUILDDIR) -name *.html -print0 | xargs -n 1 -0 $(PA11Y)
+
+vale-install: install
+	@. $(VENV); test -f $(VALE_CONFIG) || python3 $(SPHINXDIR)/get_vale_conf.py
+	@echo '.Name=="Canonical.400-Enforce-inclusive-terms"' > $(SPHINXDIR)/styles/woke.filter
+	@echo '.Level=="error" and .Name!="Canonical.500-Repeated-words" and .Name!="Canonical.000-US-spellcheck"' > $(SPHINXDIR)/styles/error.filter
+	@echo '.Name=="Canonical.000-US-spellcheck"' > $(SPHINXDIR)/styles/spelling.filter
+	@. $(VENV); find $(VALEDIR)/vale_bin -size 195c -exec vale --version \;
+
+woke: vale-install
+	@cat $(VOCAB_CANONICAL)/accept.txt > $(VOCAB_CANONICAL)/accept_backup.txt
+	@cat $(SOURCEDIR)/.custom_wordlist.txt >> $(VOCAB_CANONICAL)/accept.txt
+	@echo "Running Vale acceptable term check against $(TARGET). To change target set TARGET= with make command"
+	@. $(VENV); vale --config="$(VALE_CONFIG)" --filter='$(SPHINXDIR)/styles/woke.filter' --glob='*.{md,rst}' $(TARGET)
+	@cat $(VOCAB_CANONICAL)/accept_backup.txt > $(VOCAB_CANONICAL)/accept.txt && rm $(VOCAB_CANONICAL)/accept_backup.txt
+
+vale: vale-install
+	@cat $(VOCAB_CANONICAL)/accept.txt > $(VOCAB_CANONICAL)/accept_backup.txt
+	@cat $(SOURCEDIR)/.custom_wordlist.txt >> $(VOCAB_CANONICAL)/accept.txt
+	@echo "Running Vale against $(TARGET). To change target set TARGET= with make command"
+	@. $(VENV); vale --config="$(VALE_CONFIG)" --filter='$(SPHINXDIR)/styles/error.filter' --glob='*.{md,rst}' $(TARGET)
+	@cat $(VOCAB_CANONICAL)/accept_backup.txt > $(VOCAB_CANONICAL)/accept.txt && rm $(VOCAB_CANONICAL)/accept_backup.txt
+
 spelling: vale-install
 	@cat $(VOCAB_CANONICAL)/accept.txt > $(VOCAB_CANONICAL)/accept_backup.txt
 	@cat $(SOURCEDIR)/.custom_wordlist.txt >> $(VOCAB_CANONICAL)/accept.txt
@@ -109,42 +138,6 @@ spelling: vale-install
 
 spellcheck: spelling
 	@echo "Please note that the \`make spellcheck\` command is being deprecated in favor of \`make spelling\`"
-
-linkcheck: install
-	. $(VENV) ; $(SPHINXBUILD) -b linkcheck "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) || { grep --color -F "[broken]" "$(BUILDDIR)/output.txt"; exit 1; }
-	exit 0
-
-pa11y: pa11y-install html
-	find $(BUILDDIR) -name *.html -print0 | xargs -n 1 -0 $(PA11Y)
-
-vale-install: install
-	@. $(VENV); test -d $(SPHINXDIR)/venv/lib/python*/site-packages/vale || pip install rst2html vale
-	@. $(VENV); test -f $(VALE_CONFIG) -a -f $(SPHINXDIR)/styles/config/dictionaries/en_US.dic -a -f $(SPHINXDIR)/styles/config/dictionaries/en_US.aff || python3 $(SPHINXDIR)/get_vale_conf.py
-	@echo '.Name=="Canonical.400-Enforce-inclusive-terms"' > $(SPHINXDIR)/styles/woke.filter
-	@echo '.Level=="error" and .Name!="Canonical.500-Repeated-words" and .Name!="Canonical.000-US-spellcheck"' > $(SPHINXDIR)/styles/error.filter
-	@echo '.Name=="Canonical.000-US-spellcheck"' > $(SPHINXDIR)/styles/spelling.filter
-	@. $(VENV); find $(SPHINXDIR)/venv/lib/python*/site-packages/vale/vale_bin -size 195c -exec vale --config "$(VALE_CONFIG)" $(TARGET) > /dev/null \;
-
-woke: vale-install
-	@cat $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept.txt > $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept_backup.txt
-	@cat $(SOURCEDIR)/.custom_wordlist.txt >> $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept.txt
-	@echo "Running Vale acceptable term check against $(TARGET). To change target set TARGET= with make command"
-	@. $(VENV); vale --config="$(VALE_CONFIG)" --filter='$(SPHINXDIR)/styles/woke.filter' --glob='*.{md,rst}' $(TARGET)
-	@cat $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept_backup.txt > $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept.txt && rm $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept_backup.txt
-
-vale: vale-install
-	@cat $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept.txt > $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept_backup.txt
-	@cat $(SOURCEDIR)/.custom_wordlist.txt >> $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept.txt
-	@echo "Running Vale against $(TARGET). To change target set TARGET= with make command"
-	@. $(VENV); vale --config="$(VALE_CONFIG)" --filter='$(SPHINXDIR)/styles/error.filter' --glob='*.{md,rst}' $(TARGET)
-	@cat $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept_backup.txt > $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept.txt && rm $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept_backup.txt
-
-vale-spelling: vale-install
-	@cat $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept.txt > $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept_backup.txt
-	@cat $(SOURCEDIR)/.custom_wordlist.txt >> $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept.txt
-	@echo "Running Vale against $(TARGET). To change target set TARGET= with make command"
-	@. $(VENV); vale --config="$(VALE_CONFIG)" --filter='$(SPHINXDIR)/styles/spelling.filter' --glob='*.{md,rst}' $(TARGET)
-	@cat $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept_backup.txt > $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept.txt && rm $(SPHINXDIR)/styles/config/vocabularies/Canonical/accept_backup.txt
 
 pdf-prep: install
 	@for packageName in $(REQPDFPACKS); do (dpkg-query -W -f='$${Status}' $$packageName 2>/dev/null | \

@@ -17,4 +17,5 @@ sphinx-sitemap
 myst-parser==4.0.1
 
 # Vale-based spelling and style checks
+rst2html
 vale
