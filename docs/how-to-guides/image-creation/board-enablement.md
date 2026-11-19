@@ -15,7 +15,7 @@ Examples given are for a _Roseapple Pi_.
 
 The kernel snap contains the Linux kernel for the device.
 
-Ubuntu Core kernels are based on the `multiv7_defconfig` Linux kernel build target plus some mandatory Ubuntu configs.
+Ubuntu Core kernels are based on the `multiv7_defconfig` Linux kernel build target plus some mandatory Ubuntu configuration options.
 
 You can find reference kernels here: <https://github.com/canonical/sample-kernels>
 

@@ -44,8 +44,8 @@ Both SSH and the network configuration become optional when {ref}`building a cus
 We're going to use the Raspberry Pi Foundation's _Raspberry Pi Imager_ to write the Ubuntu Core image to the microSD card. Raspberry Pi Imager both downloads and safely installs an image to your microSD card.
 
 Download and install Raspberry Pi Imager from one of the following locations:
--  Official download page: [https://www.raspberrypi.org/software](https://www.raspberrypi.org/software/)
--  Snap package for Linux users: [https://snapcraft.io/rpi-imager](https://snapcraft.io/rpi-imager)
+-  Official download page: [Raspberry Pi Imager download page](https://www.raspberrypi.org/software/)
+-  Snap package for Linux users: [Raspberry Pi Imager snap](https://snapcraft.io/rpi-imager)
 
 After it's installed and running, you will see its main window showing buttons for the three step download and write process:
 
@@ -55,7 +55,7 @@ After it's installed and running, you will see its main window showing buttons f
 
 2. Select **Choose OS** and a pop-up list appears. Scroll down and select **Other general-purpose OS** followed by **Ubuntu**. Now scroll to the bottom of the Ubuntu list and select **Ubuntu Core 24 (64-bit)**. 
 
-   You can alternatively download the image manually ([ubuntu-core-24-arm64+raspi.img.xz](https://cdimage.ubuntu.com/ubuntu-core/24/stable/current/ubuntu-core-24-arm64+raspi.img.xz)) and instead choose **Use custom** from bottom of the **Choose OS** menu. In the file requester that appears, select the image you just downloaded. The _xz_ file can be selected without being decompressed first.
+   Alternatively, download the [Ubuntu Core 24 Raspberry Pi image](https://cdimage.ubuntu.com/ubuntu-core/24/stable/current/ubuntu-core-24-arm64+raspi.img.xz) (`ubuntu-core-24-arm64+raspi.img.xz`) manually, then select **Use custom** from the bottom of the **Choose OS** menu. In the file requester that appears, select the image you just downloaded. The _xz_ file can be selected without being decompressed first.
 
 3. Select **Choose Storage** and insert your microSD if you haven't already. Now select the device from the list.
 
@@ -180,4 +180,3 @@ As shown above, the first time you connect to a new device you will be asked to 
 Congratulations! You have successfully downloaded, installed, and connected to a pre-built Ubuntu Core image on your Raspberry Pi.
 
 See {ref}`First steps with Ubuntu Core <how-to-guides-using-ubuntu-core>` for an introduction to using your new Ubuntu Core installation or learn how to {ref}`build your Ubuntu Core image <ref-index-build-your-first-image>`.
-

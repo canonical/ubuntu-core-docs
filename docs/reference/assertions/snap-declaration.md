@@ -59,7 +59,7 @@ This assertion gives control on several aspects of the snap behavior to the auth
 
 -   `aliases` gives a list of the explicit aliases that we want to automatically enable when installing the snap. Aliases provide short names for applications contained in the snap, so we do not need to use the full command name `<snap-name>`.`<target-command>`. 
 
--   `plugs` and `slots` define flags per interface. This lets define restrictions on how the snap plugs/slots used by the snap are handled. For instance, we can allow or deny connections with `allow-connection` and `deny-connection`. With `allow-auto-connection` or `deny-auto-connection` we let snapd know if it should automatically connect plugs/slots on snap installation.
+-   `plugs` and `slots` define flags per interface. This lets define restrictions on how the snap plugs/slots used by the snap are handled. For instance, we can allow or deny connections with `allow-connection` and `deny-connection`. With `allow-auto-connection` or `deny-auto-connection` we let Snapd know if it should automatically connect plugs/slots on snap installation.
 
     See {ref}`Connection management <ref-snap-declaration_connection-management>` (below) for more details on  these restrictions, and see {ref}`snap-declaration store scoping <explanation-stores-store-overview>` for more information on how auto-connections can be linked to a brand store.
 
@@ -77,9 +77,9 @@ The overall structure of the snap-declaration has two top-level keys, plugs and 
 * `allow-auto-connection`
 * `deny-auto-connection`
 
-Each of these keys can either have a static value of true/false in the assertion or can be a more complex object/list which then is “evaluated” by snapd on a device to determine the actual value, be it true or false. If there is no such a rule in the snap-declaration for an interface plug/slot that a snap is using, then the base-declaration from inside snapd is used to populate rules, more on that below.
+Each of these keys can either have a static value of true/false in the assertion or can be a more complex object/list which then is “evaluated” by Snapd on a device to determine the actual value, be it true or false. If there is no such a rule in the snap-declaration for an interface plug/slot that a snap is using, then the base-declaration from inside Snapd is used to populate rules, more on that below.
 
-The `deny-*` variant of keys are almost never used in snap-declarations and are instead mainly used in the base-declaration inside snapd to express more complex default behaviors, for example some interfaces should auto-connect only on classic but not on Core or vice versa, and having `deny-*` keys makes this simpler/easier to express, but when granting snap-declarations for brand store users, `allow-*` keys are almost always used so this document only covers allow-* keys below.
+The `deny-*` variant of keys are almost never used in snap-declarations and are instead mainly used in the base-declaration inside Snapd to express more complex default behaviors, for example some interfaces should auto-connect only on classic but not on Core or vice versa, and having `deny-*` keys makes this simpler/easier to express, but when granting snap-declarations for brand store users, `allow-*` keys are almost always used so this document only covers allow-* keys below.
 
 ### allow-installation
 
@@ -140,7 +140,7 @@ plugs:
 
 ### allow-auto-connection
 
-The`allow-auto-connection` key is the final key to consider when snapd is considering automatic connection of interface plugs and slots. 
+The`allow-auto-connection` key is the final key to consider when Snapd is considering automatic connection of interface plugs and slots. 
 
 If this key evaluates to true, then this plug/slot combination is considered a valid candidate for automatic connection. This is the most common key used when granting {ref}`snap-declaration assertions <reference-assertions-snap-declaration>` since many interfaces are not super-privileged, so they do not need `allow-installation` set in the assertion and they also do not have any `allow-connection` rules in the base-declaration, so the only thing that needs to be setup is `allow-auto-connection`.
 

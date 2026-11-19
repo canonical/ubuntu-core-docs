@@ -13,7 +13,7 @@ when building a {ref}`custom image <how-to-guides-image-creation-add-custom-snap
 The snap can be updated but it cannot be swapped for a different kernel snap.
 
 Canonical publishes several kernel snaps, including ones for certified public
-clouds, realtime, and general purpose devices such as x86_64 machines and the
+clouds, real-time, and general purpose devices such as x86_64 machines and the
 Raspberry Pi.
 
 A custom Linux kernel build allows for device-specific configuration and
@@ -76,8 +76,8 @@ the available options and features.
 
 #### The minimal case
 
-The most basic kernel snap would be repackaging an available debian package
-from the archive into a snap. This allows you to control the flavour (generic,
+The most basic kernel snap would be repackaging an available Debian package
+from the archive into a snap. This allows you to control the flavor (generic,
 lowlatency, etc.) as well as the overall size of the snap by filtering out
 unnecessary kernel modules.
 
@@ -204,9 +204,9 @@ repackaging to end up with a kernel snap for your hardware platform!
 
 ## Build the snap
 
-The build system must support [snapd](https://snapcraft.io/docs/installing-snapd),
+The build system must support [Snapd](https://snapcraft.io/docs/installing-snapd),
 and have both the [Snapcraft](https://documentation.ubuntu.com/snapcraft/stable/how-to/set-up-snapcraft/)
-build tool and the [LXD](https://canonical.com/lxd) virtualisation platform
+build tool and the [LXD](https://canonical.com/lxd) virtualization platform
 installed, all of which are provided by any Ubuntu release.
 
 ### Important considerations

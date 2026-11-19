@@ -16,7 +16,7 @@ See {ref}`Building a gadget snap <how-to-guides-image-creation-build-a-gadget-sn
 The gadget defines valid size ranges with two parameters:
 
 * `min-size` is the lower bound for the size
-* `size` is the upper bound. Currently, it is also the default size applied on UC auto-installations and for partitions created by {ref}`ubuntu-image <how-to-guides-image-creation-use-ubuntu-image>`
+* `size` is the upper bound. Currently, it is also the default size applied on Ubuntu Core auto-installations and for partitions created by {ref}`ubuntu-image <how-to-guides-image-creation-use-ubuntu-image>`
 
 The recommended sizes for each partition type and role are as follows:
 
@@ -26,21 +26,21 @@ The recommended sizes for each partition type and role are as follows:
 
   It will be possible to carefully remove older recovery systems after a remodel, which means there is no need for more space than 2 recovery systems.
 
-* _system-boot_: This partition contains the kernel image files (kernel.efi / kernel.img) for each kernel revision in the system. In addition, this partition requires the space for an additional kernel that is temporarily stored when refreshing the kernel snap.
+* _system-boot_: This partition contains the kernel image files (`kernel.efi` / `kernel.img`) for each kernel revision in the system. In addition, this partition requires the space for an additional kernel that is temporarily stored when refreshing the kernel snap.
 
-  For example, the size of kernel.efi is around 52 MiBs. If we take a [refresh.retain=3](https://snapcraft.io/docs/how-to-guides/manage-snaps/manage-updates/#refresh-retain) (the default for Ubuntu Core, and for classic/hybrid it is 2) and 10 MiBs for additional boot components, such as grub and u-boot, this would give a minimum size of around:
+  For example, the size of `kernel.efi` is around 52 MiB. If we take a [refresh.retain=3](https://snapcraft.io/docs/how-to-guides/manage-snaps/manage-updates/#refresh-retain) (the default for Ubuntu Core, and for classic/hybrid it is 2) and 10 MiB for additional boot components, such as grub and u-boot, this would give a minimum size of around:
 
-  52*4 + 10 = 218 MiBs
+  52*4 + 10 = 218 MiB
 
-  Here, the multiplication of the kernel.efi by 4 is due to the requirement of 3 snap files due to the specified refresh.retain, plus 1 for a temporary file while doing a refresh.
+  Here, the multiplication of the size of `kernel.efi` by 4 is due to the requirement of 3 snap files due to the specified refresh.retain, plus 1 for a temporary file while doing a refresh.
 
    Therefore the minimum system-boot required is:
 
 
-   *system_boot*  = (*refresh.retain* + 1)*_kernel.efi_ or _.img_ +10
+   *system_boot* = (*refresh.retain* + 1) × (size of `kernel.efi` or `kernel.img`) + 10 MiB
 
 
-* _system-save_: This partition stores device identity backup data and data to facilitate recovery or re-install. The size it needs depends on how much information our snaps need to store there. A minimum of 32 MiBs is needed for encryption to work.
+* _system-save_: This partition stores device identity backup data and data to facilitate recovery or re-install. The size it needs depends on how much information our snaps need to store there. A minimum of 32 MiB is needed for encryption to work.
 * _system-data_: This is the writable partition, and contains the snap files installed in the system and snaps data.
 
 ### Minimum size calculation
@@ -50,17 +50,17 @@ The recommended sizes for each partition type and role are as follows:
 Where:
 
 * *system_seed* is the initial seed size
-* *system_save* is the minimum 32 MiBs required
-* *system_boot* is (refresh.retain+1)kernel.ef or .img + 10
+* *system_save* is the minimum 32 MiB required
+* *system_boot* is (*refresh.retain* + 1) × (size of `kernel.efi` or `kernel.img`) + 10 MiB
 * &Sigma;  *snap_size_i* is the sum of all snaps installed in the system, including customer snaps, snapd, kernel and gadget. We add one to the refresh.retain, because all snaps will need temporary space while installing a new snap.
 
 With a `refresh.retain` of 3, a bare minimum of 2GiB (~4 seeds) would be needed, but usually more is expected as the snaps have their own data.
 
 ## How to calculate your Ubuntu Core minimum sizes
 
-The following table presents minimum sizes for current and future Ubuntu C releases. For future releases, the metrics are approximations and may change. 
+The following table presents minimum sizes for current and future Ubuntu Core releases. For future releases, the metrics are approximations and may change. 
 
-| System | base (MiBs) | \*kernel (MiBs) | \*gadget (MiBs) | snapd (MiBs) | \*kernel.efi (MiBs) |
+| System | base (MiB) | \*kernel (MiB) | \*gadget (MiB) | snapd (MiB) | \*`kernel.efi` (MiB) |
 | ------ | ----------- | --------------- | --------------- | ------------ | ------------------- |
 | UC20   | 64          | 379             | 2               | 41           | 40                  |
 | UC22   | 75          | 335             | 3               | 41           | 49                  |
@@ -76,7 +76,7 @@ For example, let’s calculate the bare minimum storage for Ubuntu Core 24 using
  
 - *system_seed*= 457 MiB
 - *system_save* = 32 MiB
-- *system_boot* = (*refresh.retain*+1) * *kernel.efi* + 10 = 160 MiB
+- *system_boot* = (*refresh.retain* + 1) × (size of `kernel.efi`) + 10 MiB = 160 MiB
 -  &Sigma; *snap_size_i*  = *base_snap* + *kernel_snap* + *gadget_snap* + *snapd_snap* + *other_snaps*   
       = 75 + 343 + 3 + 40 + 0 =4 61 MiB 
 
@@ -87,4 +87,3 @@ Replacing these values we get:
 
 
 Again, this is not considering any additional application snap and it will represent the bare minimum size.
-

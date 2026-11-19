@@ -29,7 +29,7 @@ Start by exploring Ubuntu Core with pre-built images and learning the fundamenta
 Create tailored Ubuntu Core images for your specific hardware and requirements, then deploy them to your target devices.
 
 * **Getting started**: {ref}`Build your first Ubuntu Core image <ref-index-build-your-first-image>` • {ref}`Image creation guides <ref-index_image-creation>` • {ref}`Use ubuntu-image <how-to-guides-image-creation-use-ubuntu-image>`
-* **Customization**: {ref}`Add custom snaps <how-to-guides-image-creation-add-custom-snaps>` • {ref}`Build a gadget snap <how-to-guides-image-creation-build-a-gadget-snap>` • {ref}`Build a kernel snap <how-to-guides-image-creation-build-a-kernel-snap>` • {ref}`Add console conf <ref-add-console-conf_add-console-conf>` • {ref}`Optimise boot speed <how-to-guides-image-creation-optimise-boot-speed>` • {ref}`Add a splash screen <how-to-guides-image-creation-add-a-splash-screen>` • {ref}`Calculate partition sizes <how-to-guides-image-creation-calculate-partition-sizes>`
+* **Customization**: {ref}`Add custom snaps <how-to-guides-image-creation-add-custom-snaps>` • {ref}`Build a gadget snap <how-to-guides-image-creation-build-a-gadget-snap>` • {ref}`Build a kernel snap <how-to-guides-image-creation-build-a-kernel-snap>` • {ref}`Add console conf <ref-add-console-conf_add-console-conf>` • {ref}`Optimize boot speed <how-to-guides-image-creation-optimise-boot-speed>` • {ref}`Add a splash screen <how-to-guides-image-creation-add-a-splash-screen>` • {ref}`Calculate partition sizes <how-to-guides-image-creation-calculate-partition-sizes>`
 * **New hardware**: {ref}`Board enablement <how-to-guides-image-creation-board-enablement>`
 * **Deploy to hardware**: {ref}`Install on AMD Kria <ref-install-on-amd_install-a-pre-built-ubuntu-core-image-on-an-amd-kria>` • {ref}`Install on MediaTek Genio <ref-install-on-mediatek_install-a-pre-built-ubuntu-core-image-on-a-mediatek-genio-device>` • {ref}`Install on Renesas RZ/G2L <ref-install-on-renesas_install-a-pre-built-ubuntu-core-image-on-a-renesas-rz-g2l>` • {ref}`Install on NVIDIA Jetson <ref-install-on-jetson_install-a-pre-built-ubuntu-core-image-on-a-nvidia-jetson-device>`
 * **Snap stores**: {ref}`Store overview <explanation-stores-store-overview>` • {ref}`Brand accounts <explanation-stores-brand-accounts>` • {ref}`Dedicated snap store <ref-dedicated-snap-store_dedicated-snap-store>` • {ref}`Store scoping <explanation-stores-store-scoping>`
@@ -52,7 +52,7 @@ Understand the core concepts, design decisions, and technical internals of Ubunt
 * **Security**: {ref}`Full disk encryption <explanation-full-disk-encryption>` • {ref}`Full disk encryption with OP-TEE <ref-explanation-full-disk-encryption>` • {ref}`Sandboxing <explanation-security-and-sandboxing>` • {ref}`CVE remediation <explanation-cve-remediation>`
 * **Reference**: {ref}`Gadget snap format <reference-gadget-snap-format>` • {ref}`Assertions <ref-index_assertions>` • {ref}`Testing platforms <reference-testing-platforms>` • {ref}`Release notes <ref-release-notes_release-notes>`
 
-## How this documentation is organised
+## How this documentation is organized
 
 This documentation uses the [Diátaxis documentation structure](https://diataxis.fr/).
 

@@ -58,7 +58,7 @@ The index for this assertion is the tuple \<`series`, `brand-id`, `model`\> and 
 
 - `series` indicates which release series of the platform the device uses. It is included in the assertion headers to allow snap-related assertion formats and the namespace of snap ids to vary from series to series. This lets a snap-based system have a clear expectation of that assertion's structure and content.
 
-  The current model series accepted by snapd is `16`, corresponding to the year of the original release. This is because there has not yet been a need to break backwards compatibility.
+  The current model series accepted by Snapd is `16`, corresponding to the year of the original release. This is because there has not yet been a need to break backwards compatibility.
 
 - `authority-id` and `brand-id` fields define the authority signing the assertion. Reference assertions are signed by Canonical and non-reference assertions are signed by their {ref}`brand store <explanation-stores-store-overview>`. For a custom model assertion, this needs to be the developer ID.
 
@@ -89,7 +89,7 @@ Using _dangerous_ does weaken security, and as a result, this grade is meant onl
 
 - `store` (optional) header specifies a particular branded virtual store to be used for this model. The store in question has custom content specific to that model, curated by that brand, and managed by the store owner or the relevant brand. Each model knows which store it needs to speak to in order to get the appropriate content. If left out the device defaults to use the main Ubuntu store.
 
-- `snaps` lists the snap package to include in the image. “pc”, “pc-kernel”, “core<number>” and “snapd” are all required for a functioning device. Optional additional snaps can also be listed. It consists of the following keywords and mappings:
+- `snaps` lists the snap package to include in the image. `pc`, `pc-kernel`, `core<number>` and `snapd` are all required for a functioning device. Optional additional snaps can also be listed. It consists of the following keywords and mappings:
   * `name` *(mandatory)*: name of the snap. Cross-checked at image build time but ignored later.
   * `type` *(mandatory)*: type of the snap, needs to be either: `base|gadget|kernel|app|core`. *app* is the default.
   * `id` *(optional)*: id of the snap if assigned by a store. Must be omitted for local snaps.
@@ -98,7 +98,7 @@ Default is *[run]* which should not be used for types `kernel|gadget` and for th
 For "recovery" and "install" modes, "ephemeral" can be used. This will install the snaps only while the system is in an ephemeral state (running from tmpfs). They will not be installed on *ubuntu-data* unless explicitly declared, such as with `[run, ephemeral]`, although those snaps will still reside on *ubuntu-seed*.
   * `presence` *(optional)*:  set to mark a snap whose absence will not fail installation or recovery. Can be either _optional_ or _required_ but defaults to _required_.
     * A _required_ snap cannot be removed from the system.
-    * An _optional_ snap is not added to the {ref}`ubuntu-seed <explanation-core-elements-storage-layout>` partition when the image is created with {ref}`ubuntu-image <how-to-guides-image-creation-use-ubuntu-image>` unless the `--snap` option is used to add the snap explicitly. Optional snaps can be used to adapt the same base model for different hardware configurations, deployment objectives, and for use with a dynamic modelling agent.
+    * An _optional_ snap is not added to the {ref}`ubuntu-seed <explanation-core-elements-storage-layout>` partition when the image is created with {ref}`ubuntu-image <how-to-guides-image-creation-use-ubuntu-image>` unless the `--snap` option is used to add the snap explicitly. Optional snaps can be used to adapt the same base model for different hardware configurations, deployment objectives, and for use with a dynamic modeling agent.
   * `components` *(optional)*: snap components to include in the image. See the following Components section for details.
   * `default-channel` *(optional)*: initial tracking channel for the snap, default is “latest/stable”.
 
@@ -130,7 +130,7 @@ The following example adds optional NVIDIA components to the `pc-kernel` snap en
 
 ### Validation sets
 
-- `validation-sets` (optional, from _snapd 2.60_ onwards) list specific snaps that are either required to be installed together or are permitted to be installed together on a device or system.
+- `validation-sets` (optional, from _Snapd 2.60_ onwards) list specific snaps that are either required to be installed together or are permitted to be installed together on a device or system.
   * `account-id` (optional): if not set, the account-id is taken from the model itself.
   * `sequence` (optional): the sequence number for the validation set.
     - If a sequence _is_ specified, then **only** that sequence is permitted for the lifetime of the device.

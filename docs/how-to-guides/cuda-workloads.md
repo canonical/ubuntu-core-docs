@@ -18,7 +18,7 @@ to them.
 ## Ubuntu Core 24
 
 ```{note}
-This guide requires snapd 2.67 or later, which introduced stable support for snap components. Existing devices may need to refresh snapd to enable full components support.
+This guide requires Snapd 2.67 or later, which introduced stable support for snap components. Existing devices may need to refresh Snapd to enable full components support.
 ```
 
 On Ubuntu Core 24, most of the setup for kernel drivers and libraries is already
@@ -111,10 +111,10 @@ plugs:
     default-provider: mesa-2404
 ```
 
-Upon (automatic) connection, **$SNAP/gpu-2404/** will contain the CUDA libraries.
+Upon (automatic) connection, `$SNAP/gpu-2404/` will contain the CUDA libraries.
 The application needs to be configured to utilize them. Follow the instructions
-from the [canonical/gpu-snap](https://github.com/canonical/gpu-snap#base-core24-snaps)
-repository to set up the required wrapper script and ``command-chain`` property.
+from [Canonical's gpu-snap](https://github.com/canonical/gpu-snap#base-core24-snaps)
+on GitHub to set up the required wrapper script and ``command-chain`` property.
 
 The app also requires (at least) the following plugs:
 
@@ -156,9 +156,9 @@ docker run --runtime nvidia --gpus all <image name>:<tag>
 The container can be built using a base Ubuntu image (e.g. `ubuntu:24.04`) without
 including userspace libraries. The **docker** snap accesses the libraries from the
 **mesa-2404** snap through the content plug **gpu-2404**. The shared directory is
-found at **/snap/docker/<revision>/gpu-2404/usr/lib/x86_64-linux-gnu** on the host,
+found at `/snap/docker/<revision>/gpu-2404/usr/lib/x86_64-linux-gnu` on the host,
 and the docker snap mounts it inside the container when using the NVIDIA runtime.
-This path is accessible inside the container as **$NVIDIA_CTK_LIBCUDA_DIR**.
+This path is accessible inside the container as `$NVIDIA_CTK_LIBCUDA_DIR`.
 
 ## Ubuntu Core 22
 
@@ -207,7 +207,7 @@ The **nvidia-assemble** snap uses two interfaces:
 2. [nvidia-driver-support](https://snapcraft.io/docs/nvidia-drivers-support-interface)
 
 The **kernel-module-load** interface is used to dynamically load the required
-kernel modules for the NVIDIA GPU (**nvidia.ko** et al.).
+kernel modules for the NVIDIA GPU (**nvidia.ko** and others).
 
 The **nvidia-driver-support** interface provides the nvidia-assemble snap the
 ability to dynamically create character device nodes under **/dev** which
@@ -215,7 +215,7 @@ correspond to the NVIDIA GPU on the device.
 
 These interfaces should autoconnect when installed from the Global Store.
 
-The **nvidia-core22** snap functions similarly to the **mesa-XXXX** snaps by providing
+The **nvidia-core22** snap functions similarly to the mesa-`<XXXX>` snaps by providing
 a content interface to grant other snaps access to the relevant userspace
 libraries for the NVIDIA GPU. This interface is called **graphics-core22**. The
 snap which requires these libraries to use CUDA cores will have to declare this
@@ -268,7 +268,7 @@ the known-signing keys at module load-time. The **nvidia-assemble** daemon runs 
 build script **BUILD** provided by the pc-kernel snap which
 
 1. Builds the **.ko** files, and
-2. Appends the module **.sig** files
+2. Appends the module `.sig` files
 
 This means that using an NVIDIA GPU should work seamlessly on Ubuntu Core
 devices with SecureBoot enabled.

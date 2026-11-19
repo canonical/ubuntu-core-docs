@@ -15,7 +15,7 @@ External I2C/SPI-based TPM modules are not currently supported.
 
 Otherwise, the full disk encryption implementation in Ubuntu Core is generic and widely compatible to help support a range of hardware.
 
-TPM-based FDE seals the FDE secret key to the full EFI state, including the kernel command line, which is subsequently unsealed by the initrd code in the secure-boot protected _kernel.efi_ at boot time.
+TPM-based FDE seals the FDE secret key to the full EFI state, including the kernel command line, which is subsequently unsealed by the initrd code in the secure-boot protected `kernel.efi` at boot time.
 
 The following factors affect how a device is encrypted:
 - {ref}`Storage layouts <ref-full-disk-encryption_storage-layouts>`: the potential partitions created on the device
@@ -42,8 +42,8 @@ The system boot process:
 
 1. verifies the bootloaders and kernel signatures
 1. measures the above and the kernel command line with the TPM
-1. on-top of the above _trusted set_, the snapd initrd code measures the snap device model
-1. snapd then separately verifies other snaps with their assertions as needed
+1. on-top of the above _trusted set_, the Snapd initrd code measures the snap device model
+1. Snapd then separately verifies other snaps with their assertions as needed
 
 When run normally, the snap content comes from snaps in the encrypted data partition, with the exception of the kernel image which is loaded from the system boot partition via secure boot. In any case the unsealing of the disk encryption key(s) is tied to the correct TPM boot measurements.
 

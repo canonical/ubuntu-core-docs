@@ -7,16 +7,16 @@ myst:
 (ref-release-notes_release-notes)=
 # Release notes
 
-This page outlines the release notes of Ubuntu Core, summarising new features, bug fixes and changes in each version.
+This page outlines the release notes of Ubuntu Core, summarizing new features, bug fixes and changes in each version.
 
 ## Latest stable release
 
-* **{ref}`Ubuntu Core 26 <ref-release-notes_ubuntu-core-26-release-notes>`** (14th May 2026)
+* **{ref}`Ubuntu Core 26 <ref-release-notes_ubuntu-core-26-release-notes>`** (14 May 2026)
 
 ## Older releases
 
-* **{ref}`Ubuntu Core 24 <ref-release-notes_ubuntu-core-24-release-notes>`** (4th June 2024)
-* **{ref}`Ubuntu Core 22 <ref-release-notes_ubuntu-core-22-release-notes>`** (15th June 2022)
+* **{ref}`Ubuntu Core 24 <ref-release-notes_ubuntu-core-24-release-notes>`** (4 June 2024)
+* **{ref}`Ubuntu Core 22 <ref-release-notes_ubuntu-core-22-release-notes>`** (15 June 2022)
 
 (ref-release-notes_release-policy-and-schedule)=
 ## Release policy and schedule
@@ -49,14 +49,14 @@ When Ubuntu Core is running, its snap packages update (aka refresh) automaticall
 
 To upgrade an Ubuntu Core image from one version to another, see {ref}`Upgrade Ubuntu Core <how-to-guides-manage-ubuntu-core-upgrade-ubuntu-core>`. This process is known as {ref}`remodeling <explanation-remodeling>`.
 
-The snap daemon, snapd, manages snap package updates and Ubuntu Core functionality. For the snapd release plan and a complete list of changes, please refer to the [snapd roadmap](https://snapcraft.io/docs/snapd-roadmap). Feel free to provide your test feedback on the [forum](https://forum.snapcraft.io/c/snapd/5), or directly in [Launchpad](https://bugs.launchpad.net/snapd/+filebug).
+The snap daemon, Snapd, manages snap package updates and Ubuntu Core functionality. For the Snapd release plan and a complete list of changes, please refer to the [Snapd roadmap](https://snapcraft.io/docs/snapd-roadmap). Feel free to provide your test feedback on the [forum](https://forum.snapcraft.io/c/snapd/5), or directly in [Launchpad](https://bugs.launchpad.net/snapd/+filebug).
 
-To ensure you receive latest security updates and bug fixes, ensure you upgrade to a new release of snapd shortly after it is released.
+To ensure you receive latest security updates and bug fixes, ensure you upgrade to a new release of Snapd shortly after it is released.
 
 (ref-release-notes_ubuntu-core-26-release-notes)=
 ## Ubuntu Core 26 release notes
 
-Released: 14th May 2026.
+Released: 14 May 2026.
 
 Ubuntu Core 26 (UC26) is the latest Ubuntu Core release, and is built on the foundations of [Ubuntu 26.04 LTS (Resolute Raccoon)](https://releases.ubuntu.com/26.04/).
 
@@ -113,7 +113,7 @@ However, since not every user requires cloud-init, a new track will be available
 (ref-release-notes_ubuntu-core-24-release-notes)=
 ## Ubuntu Core 24 release notes
 
-Released: 4th June 2024.
+Released: 4 June 2024.
 
 Ubuntu Core 24 (UC24) is the latest Ubuntu Core release, and is built on the foundations of [Ubuntu 24.04 LTS (Noble Numbat)](https://releases.ubuntu.com/24.04/).
 
@@ -128,7 +128,7 @@ New features for this release include:
 - New ROS integration for robotics developers
 - New documentation and documentation structure
 
-In addition to the above, Ubuntu Core 24 bundles both the latest Linux Kernel  6.8 and *systemd* 2.55 and includes all the latest features of _snapd_, including {ref}`Dynamic kernel boot parameters <how-to-guides-manage-ubuntu-core-modify-kernel-options>`, [Quota group limits for Journal log](https://snapcraft.io/docs/how-to-guides/manage-snaps/use-resource-quotas/#journal-log-limits) and {ref}`Offline remodeling <ref-remodelling_offline-remodeling>`.
+In addition to the above, Ubuntu Core 24 bundles both the latest Linux Kernel  6.8 and *systemd* 2.55 and includes all the latest features of _Snapd_, including {ref}`Dynamic kernel boot parameters <how-to-guides-manage-ubuntu-core-modify-kernel-options>`, [Quota group limits for Journal log](https://snapcraft.io/docs/how-to-guides/manage-snaps/use-resource-quotas/#journal-log-limits) and {ref}`Offline remodeling <ref-remodelling_offline-remodeling>`.
 
 Support for Ubuntu Core has also been added to {ref}`Multipass <tutorials-get-started-try-pre-built-images-install-on-a-vm>`, for single-command deployment.
 
@@ -136,13 +136,13 @@ See {ref}`Get started with Ubuntu Core <tutorials-index>`  to build your own ima
 
 ### Improved GPU integration
 
-This release improves hardware compatibility through updated graphics drivers and optimises resource utilisation via a shared userspace environment. For more information, please review the [interface documentation](https://mir-server.io/docs/the-gpu-2404-snap-interface?_ga=2.82007062.1233933483.1719497012-1412176395.1700477775). 
+This release improves hardware compatibility through updated graphics drivers and optimizes resource utilization via a shared userspace environment. For more information, please review the [interface documentation](https://mir-server.io/docs/the-gpu-2404-snap-interface?_ga=2.82007062.1233933483.1719497012-1412176395.1700477775).
 
 Developers can use the GPU interface to embed graphical applications with graphics acceleration, making it a robust platform to deploy interactive kiosks, digital signage solutions, or any other products that require a graphical output.
 
 Ubuntu Frame, Ubuntu Core display server, also has new features, including support for hybrid GPU systems, multi-display device solutions, screen locking, seamless boot, support for drag and drop, power-saving displays, remote assistance support, runtime display layout modification, and a new user-configurable diagnostic screen. For more information please visit [Ubuntu Frame's documentation](https://mir-server.io/docs). 
 
-Access to Nvidia drivers will be available by Q4 this year due to Nvidia's licensing policy. 
+Access to NVIDIA drivers will be available by Q4 this year due to NVIDIA's licensing policy. 
 
 ### Device management with Landscape
 
@@ -156,13 +156,13 @@ Landscape is available for Core customers. Users with an Ubuntu Pro subscription
 
 The [Azure IoT Edge Agent snaps](https://canonical.com/blog/canonicals-ubuntu-core-receives-microsoft-azure-iot-edge-tier-1-supported-platform-status) deliver seamless integration of Ubuntu Core devices with Microsoft Azure cloud.
 
-These snaps enable organisations to deploy, manage, and monitor OCI edge workloads across fleets of compatible devices directly from Azure.
+These snaps enable organizations to deploy, manage, and monitor OCI edge workloads across fleets of compatible devices directly from Azure.
 
 ### New ROS integration for robotics developers
 
 Core 24 delivers production-ready integrations for developers deploying solutions with the Robot Operating System (ROS).
 
-Canonical has made [ROS foundational snaps](https://documentation.ubuntu.com/snapcraft/stable/how-to/integrations/craft-an-ros-2-app/#share-content-between-ros-2-snaps) available for modular deployments. These snaps are maintained by Canonical, and include sets of common ROS packages, such as ros_core, ros_base or desktop, available in several flavours per ROS distribution. With them, developers can design modular ROS snap deployments, enabling configurability and reducing overall memory and OTA update bandwidth.
+Canonical has made [ROS foundational snaps](https://documentation.ubuntu.com/snapcraft/stable/how-to/integrations/craft-an-ros-2-app/#share-content-between-ros-2-snaps) available for modular deployments. These snaps are maintained by Canonical, and include sets of common ROS packages, such as ros_core, ros_base or desktop, available in several flavors per ROS distribution. With them, developers can design modular ROS snap deployments, enabling configurability and reducing overall memory and OTA update bandwidth.
 
 ### New documentation and documentation structure
 
@@ -184,7 +184,7 @@ This release adds many other new features, including:
 (ref-release-notes_ubuntu-core-22-release-notes)=
 ## Ubuntu Core 22 release notes
 
-Released: 15th June 2022.
+Released: 15 June 2022.
 
 Ubuntu Core 22 (UC22) is built on the foundations of [Ubuntu 22.04 LTS (Jammy Jellyfish)](https://releases.ubuntu.com/22.04/). It’s the next generation of Ubuntu for embedded devices, and builds on the advances we've made in both Ubuntu Core 20 and Ubuntu Core 18.
 
@@ -201,24 +201,24 @@ New features for this release include:
 
 Previous updates to Ubuntu Core have added:
 
-* {ref}`Raspberry Pi support <ref-use-raspberry-pi-imager_use-raspberry-pi-imager>` (both ARMv7 and ARM v8)
+* {ref}`Raspberry Pi support <ref-use-raspberry-pi-imager_use-raspberry-pi-imager>` (both ARM v7 and ARM v8)
 * Full-disk encryption via {ref}`TPM integration <explanation-full-disk-encryption>`
    _Currently x86-only with ARM to follow.  TPM integration works with existing CA_
 * New {ref}`recovery and reinstall <explanation-recovery-modes>` modes
 * A {ref}`recovery mode menu and chooser <explanation-recovery-modes>`
 
-## Base snap ChangeLog
+## Base snap changelog
 
-Each release of the base snap includes a ChangeLog at
-`/usr/share/doc/ChangeLog` that summarises the package updates bundled in
+Each release of the base snap includes a changelog at
+`/usr/share/doc/ChangeLog` that summarizes the package updates bundled in
 that release, along with the aggregated updates from previous releases.
 In the examples below, replace `<base>` with the name of
 your base snap (for example, `core24`). Note that `core26` does not
-currently include a ChangeLog.
+currently include a changelog.
 
 ### When the snap is already installed
 
-If the base snap is already installed on the system, the ChangeLog is available
+If the base snap is already installed on the system, the changelog is available
 at `/snap/<base>/current/usr/share/doc/ChangeLog`.
 
 You can list all installed revisions with `snap list --all <base>`. To inspect
@@ -228,7 +228,7 @@ revision number (e.g. `/snap/<base>/<revision>/usr/share/doc/ChangeLog`).
 ### Via `snap download`
 
 You can download a snap without installing it, then extract the
-ChangeLog from the squashfs image:
+changelog from the squashfs image:
 
 ```bash
 # Download the snap
@@ -238,4 +238,4 @@ snap download <base>
 unsquashfs -d <base>-unpacked <base>_*.snap usr/share/doc/ChangeLog
 ```
 
-The ChangeLog is then available at `<base>-unpacked/usr/share/doc/ChangeLog`.
+The changelog is then available at `<base>-unpacked/usr/share/doc/ChangeLog`.

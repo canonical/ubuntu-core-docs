@@ -88,6 +88,5 @@ The resultant `my-model.model` file contains the signed model assertion and can 
 
 ```{admonition} Signing failed error?
 :class: tip
-If you encounter a _gpg: signing failed_ error while signing your assertion from a non-desktop session, such as over SSH, run `export GPG_TTY=$(tty)` first.
+If you encounter a `gpg: signing failed` error while signing your assertion from a non-desktop session, such as over SSH, run `export GPG_TTY=$(tty)` first.
 ```
-

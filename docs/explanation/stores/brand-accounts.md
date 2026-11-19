@@ -29,7 +29,7 @@ The kernel and gadget snaps are special snaps that can only be registered by the
 
 Use of the Brand Account and its credentials should be strictly limited. Canonical recommends that the Brand Account not be assigned any Roles that are not strictly needed. Do not make the Brand Account a store Administrator, a Reviewer or a Viewer.
 
-When the Brand Account generates keys, they are only stored locally in ( ~/.snap/gnupg). These keys must be kept safe.
+When the Brand Account generates keys, they are only stored locally in `~/.snap/gnupg`. These keys must be kept safe.
 
 ```{admonition} Enable two-factor authentication
 :class: caution

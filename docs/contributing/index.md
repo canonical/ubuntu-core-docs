@@ -76,7 +76,7 @@ We reserve the right to reject any contribution at our own discretion where:
 
 ## AI policy
 
-The Ubuntu Core documentation has been created by humans, for humans. The occasional "jagged edges" you might find (typos, slightly unconventional wording, humour) represent the very human voices of the people who collaborated
+The Ubuntu Core documentation has been created by humans, for humans. The occasional "jagged edges" you might find (typos, slightly unconventional wording, humor) represent the very human voices of the people who collaborated
 to create it. We don't want to average those away by passing the documentation through LLMs.
 
 This policy exists to protect our readers, our community of contributors, and the project maintainers.

@@ -25,7 +25,7 @@ Start here if you have an existing hardware platform and want to customize the U
 
   Enable interactive onboarding and device configuration.
 
-- {ref}`Optimise boot speed <how-to-guides-image-creation-optimise-boot-speed>` and {ref}`Add a splash screen <how-to-guides-image-creation-add-a-splash-screen>`
+- {ref}`Optimize boot speed <how-to-guides-image-creation-optimise-boot-speed>` and {ref}`Add a splash screen <how-to-guides-image-creation-add-a-splash-screen>`
 
   Improve the user experience with faster boot times and custom visuals.
 
@@ -58,7 +58,7 @@ If you're bringing Ubuntu Core to new hardware, these guides walk through the co
 :glob:
 
 Use ubuntu-image <use-ubuntu-image>
-Optimise boot speed <optimise-boot-speed>
+Optimize boot speed <optimise-boot-speed>
 Add custom snaps <add-custom-snaps>
 Add a splash screen <add-a-splash-screen>
 Add console-conf <add-console-conf>

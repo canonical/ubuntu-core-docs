@@ -52,8 +52,8 @@ Under the hood, the application runner does the following:
     * `SNAP_COMMON`: writable area common across all revisions of the snap
     * `SNAP_LIBRARY_PATH`: additional directories which should be added to `LD_LIBRARY_PATH`
     * `SNAP_NAME`: snap name
-    * `SNAP_INSTANCE_NAME`: snap instance name incl. instance key if one is set (snapd 2.36+)
-    * `SNAP_INSTANCE_KEY`: instance key if any (snapd 2.36+)
+    * `SNAP_INSTANCE_NAME`: snap instance name incl. instance key if one is set (Snapd 2.36+)
+    * `SNAP_INSTANCE_KEY`: instance key if any (Snapd 2.36+)
     * `SNAP_REVISION`: store revision of the snap
     * `SNAP_USER_DATA`: per-user writable area for a particular revision of the snap
     * `SNAP_USER_COMMON`: per-user writable area common across all revisions of the snap
@@ -75,7 +75,7 @@ Under the hood, the application runner does the following:
 
 The snap packaging system employs various cryptographic technologies to secure local and remote snap operations.
 
-Locally, these are handled by the snap daemon, *snapd*, while remote connections require mediation between snapd and the [Snap Store](https://snapcraft.io/docs/reference/glossary/#snap-store), which supports its own set of cryptographic technologies. Both sets of these are listed below.
+Locally, these are handled by the snap daemon, *Snapd*, while remote connections require mediation between Snapd and the [Snap Store](https://snapcraft.io/docs/reference/glossary/#snap-store), which supports its own set of cryptographic technologies. Both sets of these are listed below.
 
 ### Snapd (snap daemon) cryptography
 
@@ -87,8 +87,8 @@ SHA3-384
 Snapd uses the [golang standard library TLS package](https://pkg.go.dev/crypto/tls) as client, always configured to use at least TLS >= 1.2
 * **Device session request signing**</br>
 Same as digital signatures for assertions; the device key is RSA 4096
-* **Macaroons for authorisation and authentication**</br>
-Snapd uses them via [gopkg.in/macaroon.v1](https://github.com/go-macaroon/macaroon/tree/v1.0.0), which means SHA256 HMACs and [NaCL secretbox](https://pkg.go.dev/golang.org/x/crypto/nacl/secretbox).
+* **Macaroons for authorization and authentication**</br>
+Snapd uses them via [`gopkg.in/macaroon.v1`](https://github.com/go-macaroon/macaroon/tree/v1.0.0), which means SHA256 HMACs and [NaCl secretbox](https://pkg.go.dev/golang.org/x/crypto/nacl/secretbox).
 
 ### Snap Store cryptography
 
@@ -96,7 +96,7 @@ Snapd uses them via [gopkg.in/macaroon.v1](https://github.com/go-macaroon/macaro
 The key ID of the signing key is encoded with SHA3-384, and the assertion is signed with either 4096-bit RSA or 8192-bit RSA
 * **Hashing of artifacts**</br>
 The store generates many hashes of an uploaded artifact using SHA3-384, SHA256 and SHA512 to ensure the uniqueness and integrity of the artifact.
-* **Macaroons for authorisation and authentication**</br>
+* **Macaroons for authorization and authentication**</br>
 HMAC SHA256, NaCl crypto_secretbox
 * **Macaroons encryption of 3rd party caveats**</br>
 Salsa20 (NaCl crypto_secretbox)
@@ -119,7 +119,7 @@ When a snap is installed, its metadata is examined and is used to derive **AppAr
 
    A seccomp filter is generated for each command in a snap to run under, enabling allowlist syscall filtering, which can then be extended through declared interfaces expressed in the metadata as `plugs` and `slots`.
    
-   Processes with seccomp policy violations will be denied access to the system call with errno set to `EPERM` (snapd releases prior to 2.32 receive `SIGSYS`) and the violation is logged.
+   Processes with seccomp policy violations will be denied access to the system call with errno set to `EPERM` (Snapd releases prior to 2.32 receive `SIGSYS`) and the violation is logged.
 
   See [Seccomp violations](https://snapcraft.io/docs/how-to-guides/snap-development/debug-snaps/#understanding-seccomp-violations) for help tracking Seccomp problems.
 
@@ -127,7 +127,7 @@ When a snap is installed, its metadata is examined and is used to derive **AppAr
 
     udev rules are generated for each command to tag devices so they may be added/removed to the command's device cgroup. By default, however, no devices are tagged and the device cgroup is not used, with AppArmor used to mediate access.
     
-    As determined by snapd, a device cgroup may be used in addition to AppArmor when a dependent interface is declared, as expressed through `plugs` and `slots` in the metadata.
+    As determined by Snapd, a device cgroup may be used in addition to AppArmor when a dependent interface is declared, as expressed through `plugs` and `slots` in the metadata.
     
     Processes accessing devices not in the snap-specific device cgroup will be denied access with errno set to `EPERM`. Access violations are not logged.
 
@@ -149,7 +149,7 @@ System data typically includes databases, data files, and configuration files, a
 
 Reverting a snap with `snap revert` restores a snap’s system data to its prior state, and services accessing this data need to be stopped to protect the integrity of the data and also to facilitate changes to security policy that are required when a snap updates its system data location.
 
-To help mitigate any potential issues when a restart is required, _snapd_ will check for running processes associated with the snap before each refresh:
+To help mitigate any potential issues when a restart is required, _Snapd_ will check for running processes associated with the snap before each refresh:
 
 * if **no processes are running**, the refresh is performed.
 * if **systemd-initiated processes** are detected, their associated units are first stopped, the snap refreshed, and those units started again.
@@ -185,4 +185,3 @@ Interfaces can be declared either per-snap or per-command:
 - if declared per-command, only the commands within the snap that declare use of the interface have the specified interface security policy added to them
 
 An interface may either auto-connect upon install, or require the user to manually connect them. Interface connections and disconnections are performed via the  `snap connect`  and  `snap disconnect` commands. See [interfaces](https://snapcraft.io/docs/interfaces) for details.
-

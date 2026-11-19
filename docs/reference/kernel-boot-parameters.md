@@ -15,7 +15,7 @@ Alongside parameters supported by the kernel, such as `splash` to display the {r
 
 ## snapd.debug
 
-If `snapd.debug` is set to `1`, debug traces for snapd and other commands included in the snapd snap will be produced. They will be accessible from the journal:
+If `snapd.debug` is set to `1`, debug traces for Snapd and other commands included in the snapd snap will be produced. They will be accessible from the journal:
 
 ```
 $ sudo journalctl --no-pager -l -u snapd
@@ -29,7 +29,7 @@ Aug 20 16:00:47 host snapd[792]: logger.go:99: DEBUG: pid=768;uid=0;socket=/run/
 
 ## ubuntu_core.bootchart
 
-The [systemd-bootchart](https://manpages.ubuntu.com/manpages/jammy/man1/systemd-bootchart.1.html) performance graphing tool is a standard feature of the Linux Systemd initialisation and service manager.
+The [systemd-bootchart](https://manpages.ubuntu.com/manpages/jammy/man1/systemd-bootchart.1.html) performance graphing tool is a standard feature of the Linux Systemd initialization and service manager.
 
 _Bootchart_ collects metrics on CPU load, memory usage and process resources during a system boot. On Ubuntu Core, the sample collector will run until the system is seeded, stopping when when the `snapd.seeded.service` stops. It then renders these details as text and charts into an SVG-formatted image file.
 
@@ -58,11 +58,10 @@ snap unset system system.kernel.dangerous-cmdline-append
 
 ## snapd_system_disk
 
- Requires _snapd 2.59_.
+ Requires _Snapd 2.59_.
 
 This kernel boot parameter is used to specify which system storage device is used for booting as a _sysfs_ `/dev` device location:
 
 ```yaml
 snapd_system_disk=/dev/sda
 ```
-

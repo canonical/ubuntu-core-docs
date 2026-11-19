@@ -90,7 +90,7 @@ multipass shell aibox
 The Ubuntu Core instance will initially update itself, and may restart automatically.
 
 > **Note:**
-> Inference snaps use snap components for runtime and model weights. `gemma4` requires snapd 2.68 or newer, which should be installed automatically when the instance updates.
+> Inference snaps use snap components for runtime and model weights. `gemma4` requires Snapd 2.68 or newer, which should be installed automatically when the instance updates.
 >
 > Check your version with:
 >
@@ -98,12 +98,12 @@ The Ubuntu Core instance will initially update itself, and may restart automatic
 > snap version
 > ```
 >
-> If needed, update snapd:
+> If needed, update Snapd:
 >
 > ```bash
 > sudo snap refresh snapd
 > ```
-> After refreshing snapd, stop and start the Ubuntu Core instance from your host machine:
+> After refreshing Snapd, stop and start the Ubuntu Core instance from your host machine:
 >
 >```bash
 >multipass stop aibox
@@ -183,7 +183,6 @@ This example turns a pre-built Ubuntu Core image into a network-accessible AI in
 >
 > A custom Ubuntu Core image is described with a {ref}`model assertion <reference-assertions-model>`, which defines the snaps that make up the device image, including required or optional application snaps.
 >
-> Alternatively, snaps can be installed, configured and managed later through a fleet management process. [Landscape](https://documentation.ubuntu.com/landscape/) provides centralised administration for Ubuntu deployments, including IoT devices.
+> Alternatively, snaps can be installed, configured and managed later through a fleet management process. [Landscape](https://documentation.ubuntu.com/landscape/) provides centralized administration for Ubuntu deployments, including IoT devices.
 
 You are now operating within the Ubuntu Core environment. See {ref}`First steps with Ubuntu Core <how-to-guides-using-ubuntu-core>` for suggestions on what to try outside a VM.
-

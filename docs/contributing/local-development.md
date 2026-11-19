@@ -152,7 +152,7 @@ build a live preview:
 make run
 ```
 
-This builds **and serves** the documentation at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+This builds **and serves** the documentation at [`http://127.0.0.1:8000/`](http://127.0.0.1:8000/).
 It watches the folder so that whenever you save changes to a file, the page gets
 rebuilt. In this way, you can see the effect of your changes (or be warned if
 something got broken!).

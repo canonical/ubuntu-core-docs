@@ -9,7 +9,7 @@ myst:
 
 Network Manager is a system network service that manages your network devices and connections and attempts to keep network connectivity active when available. It manages Ethernet, Wi-Fi, mobile broadband (WWAN) and PPPoE devices while also providing VPN integration with a variety of different VPN services.
 
-By default network management on [Ubuntu Core](https://www.ubuntu.com/core) is handled by systemd's [networkd](https://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) and [netplan](https://launchpad.net/netplan). However, when Network Manager is installed, it will take control of all networking devices in the system by creating a netplan configuration file in which it sets itself as the default network renderer.
+By default network management on [Ubuntu Core](https://www.ubuntu.com/core) is handled by systemd's [networkd](https://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) and [Netplan](https://launchpad.net/netplan). However, when Network Manager is installed, it will take control of all networking devices in the system by creating a Netplan configuration file in which it sets itself as the default network renderer.
 
 ## What NetworkManager Offers
 

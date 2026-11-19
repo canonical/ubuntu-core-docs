@@ -10,7 +10,7 @@ myst:
 
 The snap-build assertion defines the basic properties of a snap at the time it was built by the developer. These are assertions are created and uploaded to the store with the command `snapcraft sign-build <snap>`.
 
-Currently, the only usage of this assertion is to provide traceability between publisher and snap. It is not checked by snapd or other parts of the system.
+Currently, the only usage of this assertion is to provide traceability between publisher and snap. It is not checked by Snapd or other parts of the system.
 
 The format is as follows:
 
@@ -28,7 +28,7 @@ sign-key-sha3-384: <key id> # Encoded key id of signing key
 <signature>                 # Encoded signature
 ```
 
-The index is the digest of the snap blob, `snap-sha3-384`. `grade` tells us whether the snap can be published to the candidate or stable channel (if stable) or not (if devel).
+The index is the digest of the snap blob, `snap-sha3-384`. `grade` tells us whether the snap can be published to the candidate or stable channel (if `stable`) or not (if `devel`).
 
 An example for this assertion:
 
@@ -54,4 +54,3 @@ NjagDzsTHYPo2XlV93cyNJwPbjlshmS0NA/wAJRiwq0AkqgCaZweHuriJeewFnfAg2wyCz1nfh9X
 XWJSX+DR6tLnkZ1evRG9g0a8LzBtKwlrq7+sMAvxglAQlw3JZG/4yRw4NTZJQ4t4+9Eybzkf587f
 SDhf+j3c0JNUgb9o8isewL2+LLcvgM8tTSAmRxYqTw==
 ```
-
