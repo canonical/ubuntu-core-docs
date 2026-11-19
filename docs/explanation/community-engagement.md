@@ -17,7 +17,7 @@ We're committed to:
 
 ## Where to find the project
 
-Ubuntu Core does not have a its own code repository.  It is instead built entirely from {ref}`snap packages <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>` and managed by the snap daemon, Snapd. As a result, the source code for the project is split across several locations, alongside any other snap packages that may be installed:
+Ubuntu Core does not have its own code repository.  It is instead built entirely from {ref}`snap packages <ref-snaps-in-ubuntu-core_snaps-in-ubuntu-core>` and managed by the snap daemon, Snapd. As a result, the source code for the project is split across several locations, alongside any other snap packages that may be installed:
 
 - **[Snapd](https://github.com/canonical/snapd)** is the background service that manages and maintains snaps, and provides the `snap` command line tool.
 - **[gadget snaps](https://github.com/search?q=org%3Acanonical+gadget&type=repositories)** define and configures system properties specific to one or more devices.

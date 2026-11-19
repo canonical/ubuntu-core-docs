@@ -61,7 +61,7 @@ If you connect with the UART, you will see a welcoming prompt from the board:
 please send !
 ```
 
-On the host machine, download the following Renesas boot assets (zip) archive from [the official website](https://ubuntu.com/download/renesas-iot). Please note each board has a separate boot assets tarball. The G2L/G2LC/G2UL boards also have an alternative SKU that support Secure Boot, if you are interested in this feature please make sure to select the boot assets tarball with the `-secure` suffix.
+On the host machine, download the following Renesas boot assets (zip) archive from [the official website](https://ubuntu.com/download/renesas-iot). Please note each board has a separate boot assets tarball. The G2L/G2LC/G2UL boards also have alternative SKUs that support Secure Boot. If you are interested in this feature, make sure to select the boot assets tarball with the `-secure` suffix.
 
 Unzip the archive and locate the file called `Flash_Writer_SCIF_RZG2L_SMARC_DDR4_2GB.mot`, the Renesas Flash Writer tool. Transfer this file to your device with the following command, replacing `/dev/ttyUSB0` with the host PC serial port connected to your device:
 

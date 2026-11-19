@@ -374,6 +374,7 @@ setpriv
 setuid
 sg
 SHA
+SKUs
 Silverblue
 SMS
 snapcraft

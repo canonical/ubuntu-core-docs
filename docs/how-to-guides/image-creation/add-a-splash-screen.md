@@ -82,7 +82,7 @@ A new theme must be placed within a `/splash/plymouth/themes/vendor` directory i
 $GADGET/splash/plymouth/themes/vendor/
 ```
 
-Pathnames specified in a custom Plymouth configuration file need to use the prefix `/run/mnt/gadget/splash/` rather than `/snap/gadget-snap/current/splash/` as the former is mounted in the _initramfs_ before Plymouth is starts, whereas the latter is not.
+Pathnames specified in a custom Plymouth configuration file need to use the prefix `/run/mnt/gadget/splash/` rather than `/snap/gadget-snap/current/splash/` as the former is mounted in the _initramfs_ before Plymouth starts, whereas the latter is not.
 
 ```
 [Plymouth Theme]
