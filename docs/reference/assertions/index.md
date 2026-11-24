@@ -23,6 +23,8 @@ These are the currently used assertion types:
 - **{ref}`confdb-schema <reference-assertions-confdb-schema>`**: describes the access rules and data schema for the configuration of a set of snaps or a facet of the system
 - **{ref}`model <reference-assertions-model>`**: brand-specified properties for the device, used to drive the building of an Ubuntu Core image
 - **{ref}`repair <reference-assertions-repair>`**: a unique assertion used to restore a device as a last resort feature
+- **{ref}`request-message <reference-assertions-request-message>`**: triggers an action on a device, such as reading or changing its confdb configuration
+- **{ref}`response-message <reference-assertions-response-message>`**: the device's signed response to a request-message
 - **{ref}`serial <reference-assertions-serial>`**: binds the device identity to the device's key by carrying the public part
 - **{ref}`snap-build <reference-assertions-snap-build>`**: the basic properties of a snap at the time it was built by the developer
 - **{ref}`snap-declaration <reference-assertions-snap-declaration>`**:  defines various snap properties, such as `snap-id`, its name, and the publisher, plus policy related to accessing privileged interfaces

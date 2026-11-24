@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Confdb-control assertion reference. Delegate control of confdb views to operators.
+    description: Confdb-control assertion reference. Delegate control of confdb views to operators, and set which authentication methods they may use.
 ---
 
 (reference-assertions-confdb-control)=
@@ -9,7 +9,7 @@ myst:
 
 The confdb-control assertion grants operators control over specific subsets of a device's [confdb views](https://snapcraft.io/docs/explanation/how-snaps-work/confdb-configuration-mechanism/). Operators are accounts, typically in the Snap Store, that the device delegates this control to. The device is the authority over those views: it issues and signs the assertion itself, and holds only one at a time.
 
-The assertion follows the principle of least privilege: each operator receives precisely the access defined by the views it is granted, where the read or write access level comes from the view's own definition in its {ref}`confdb-schema assertion <reference-assertions-confdb-schema>`.
+The assertion follows the principle of least privilege: operators receive precisely the access defined by the views they are granted, where the read or write access level comes from the view's own definition in the {ref}`confdb-schema assertion <reference-assertions-confdb-schema>`.
 
 ## Fields
 
@@ -20,6 +20,7 @@ type:        confdb-control
 brand-id:    <brand-id>
 model:       <model>
 serial:      <serial>
+revision:    <int>
 groups:
   - operators:       [ <operator-id>, ... ]
     authentications: [ operator-key | store | ... ]
@@ -52,14 +53,15 @@ Each delegation in `groups` grants one or more operators control over a set of c
 
 A list of the account IDs being delegated to.
 
+(reference-assertions-confdb-control-authentications)=
 #### Authentications
 
-Operators manage the device by sending it signed confdb request messages, and the `authentications` field limits which keys may sign those messages on an operator's behalf. Two methods are supported:
+Operators manage the device by sending it signed confdb {ref}`request messages <reference-assertions-request-message>`, and the `authentications` field limits which keys may sign those messages on an operator's behalf. Two methods can be specified:
 
 - **`operator-key`**
     Messages must be signed with the operator's own private key(s).
 - **`store`**
-    The operator delegates signing authority to the Snap Store, which signs messages using its own key(s).
+    The operator delegates signing authority to the Snap Store, which signs messages using its own key(s). This method isn't yet supported: snapd responds to a message signed by the Store with status `unauthorized`.
 
 Multiple methods can be listed, in which case a message signed by any of them is accepted.
 
@@ -69,36 +71,34 @@ A list of confdb views, each in the form `<account-id>/<confdb-schema>/<view>`. 
 
 ## Managing delegations
 
-Any change to the assertion, whether delegating control to a new operator or revoking an existing delegation, is made through the [`POST /v2/confdb`](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/AuthenticationRequired/postConfdbControl) snapd API endpoint rather than by editing the assertion directly. Each change increments the assertion's revision, which snapd re-signs and acknowledges automatically. Modifying the assertion requires root privileges.
+Any change to the assertion, whether delegating control to a new operator or revoking an existing delegation, is made through the [`POST /v2/confdb`](https://snapcraft.io/docs/reference/development/snapd-rest-api/#/AuthenticatedAccess/postConfdbControl) snapd API endpoint rather than by editing the assertion directly. Each change increments the assertion's revision, which snapd re-signs and acknowledges automatically. Modifying the assertion requires root privileges.
 
 The endpoint provides two actions. Delegating grants an operator control over a set of views under a chosen set of authentication methods. Undelegating withdraws an operator's control, either over specific views and authentication methods or, if none are given, entirely.
 
+(reference-assertions-confdb-control-example)=
 ## Example assertion
 
-A device's confdb-control assertion can be viewed with `sudo snap known confdb-control`. For example:
+A device's confdb-control assertion can be viewed with `snap known confdb-control`. For example:
 
 ```yaml
 type: confdb-control
 brand-id: acme
-model: assembly-robot
+model: edge-gateway
 serial: 8e8af03a-4b32-4e91-b10a-b9e5d1f0c72f
+revision: 3
 groups:
-  - operators: [ acme-robotics ]
-    authentications: [ operator-key, store ]
-    views:
-      - acme/controls/accelerometer-admin
-      - acme/controls/accelerometer-state
-      - acme/controls/actuator-admin
-  - operators: [ acme-monitor ]
-    authentications: [ store ]
-    views:
-      - acme/controls/accelerometer-state
-  - operators: [ acme-ops ]
+  - operators: [ alice ]
     authentications: [ operator-key ]
     views:
-      - system/network/wifi-admin
-      - system/network/wifi-state
-sign-key-sha3-384: BWDEoaqyr25nF5SNCvEv2v7QnM9QsfCc0PBMYD_i2NGSQ32EF2d4D0hqUel3m8ul
+      - acme/network/proxy-admin
+      - acme/network/proxy-state
+  - operators: [ bob ]
+    authentications: [ operator-key, store ]
+    views:
+      - acme/network/proxy-state
+sign-key-sha3-384: t9yuKGLyiezBq_PXMJZsGdkTukmL7MgrgqXAlxxiZF4TYryOjZcy48nnjDmEHQDp
 
 AcLBUgQAAQoABgUCWCIWcgAAReg...
 ```
+
+The {ref}`request-message <reference-assertions-request-message-example>` and {ref}`response-message <reference-assertions-response-message-example>` examples use these delegations.
