@@ -9,8 +9,7 @@ myst:
 
 The confdb-schema assertion acts as a contract that allows us to define granular views onto a custom configuration namespace that can be evolved separately from the persisted configuration data. This decouples the configurations exposed to snaps from the stored data, making it easier to evolve the data's schema without requiring snaps to change with it. The rules also support other useful features for controlling configurations such as fine-grained access control, cross-snap configuration and applying constraints on configuration values.
 
-The assertion is composed of two main elements: a `views` header and a storage schema. The `views` header contains sets of rules that each expose a "view" onto the configuration namespace. In practice, these look like mappings of request paths to storage paths. When a snap accesses a particular confdb path, snapd matches it to a rule's request path and uses the corresponding storage path to access the configuration data in its storage. The storage schema, defined in the body of the assertion, describes the schema that the stored data must conform to to be accepted. This schema is expressed as types and constraints in JSON format.
-
+The assertion is composed of two main elements: a `views` header and a storage schema. The `views` header contains sets of rules that each expose a "view" onto the configuration namespace. In practice, these look like mappings of request paths to storage paths. When a snap accesses a particular confdb path, snapd matches it to a rule's request path and uses the corresponding storage path to access the configuration data in its storage. The storage schema, defined in the body of the assertion, describes the schema that the stored data must conform to in order to be accepted. This schema is expressed as types and constraints in JSON format.
 
 In a sense, this assertion provides two schemas: the rules in each view act as a schema describing the "public" configuration space that snaps interact with, while the body of the assertion describes the schema of the stored data.
 
@@ -50,7 +49,7 @@ sign-key-sha3-384:  <key id>                # Encoded key id of signing key
 {
   "storage": {
     "schema": {
-      ... 
+      ...
     }
   }
 }
@@ -64,16 +63,18 @@ The `views` header can have any number of views, each with a fine-grained set of
     A path describing how the configuration can be accessed. The path parts are separated by dots or square brackets, corresponding to maps or arrays being accessed. If omitted, defaults to the storage path. May contain placeholder path parts wrapped in curly brackets (see example) which match any request value. The placeholder value is mapped to an equally named placeholder in the storage path.
 - **`storage`** (*required*)
     A path to a stored JSON value, following the same syntax as the `request` path. Must not be prohibited by the storage schema declared in the body. May contain placeholder path parts matching the ones in the request path.
-    Storage paths parts can be succeeded by field filters with the syntax `[.field={param}]` where `.field` is a field in the map and `{param}` is a parameter that the user can constrain to filter subsequent data.
+    Storage path parts can be followed by field filters with the syntax `[.field={param}]` where `.field` is a field in the map and `{param}` is a parameter that the user can constrain to filter subsequent data.
 - **`access`** (*optional*)
     Access control for the given rule. Can be read-only, write-only or read-write. If omitted, defaults to read-write.
 - **`content`** (*optional*)
     Describes a nested rule that will be created with the parent's rule `request` and `storage` paths as prefixes. The `access` value is inherited from the parent and cannot be overridden.
 
+Several rules in a view can have the same `request` path, as long as at most one of them allows reading (that is, its `access` is `read` or `read-write`). Any number of write-only rules can share it.
+
 Views can contain a `parameters` map to declare parameter names that can be used to constrain field filters. Parameters used in field filters must be declared, unlike path placeholders which can be used to filter without being declared as filtering parameters. Each parameter is a map that can have two fields:
 - **`summary`** (optional) Provides context on how the parameter may be used to filter data.
 - **`presence`** (optional) Determines whether the parameter must be constrained by the user or not and, if it must, whether it's required for reading, writing or both. Defaults to `optional`, in which case the parameter may be unconstrained.
-   
+
 An example of this assertion is:
 
 ```yaml
@@ -89,7 +90,7 @@ views:
     rules:
       -
         request: accelerometers.{sensor}
-        storage: sensors.accelerometers.{sensor}
+        storage: v1.sensors.accelerometers.{sensor}
         content:
           -
             storage: sample-rate
@@ -106,7 +107,7 @@ views:
     rules:
       -
         request: actuators.{act}
-        storage: actuators.{act}[.mode={mode}]
+        storage: v1.actuators.{act}[.mode={mode}]
         content:
           -
             storage: mode
@@ -115,54 +116,58 @@ views:
           -
             storage: auto-max-speed
 
-body-length: 552
+body-length: 1361
 sign-key-sha3-384: 74KHeq1foV...
 
 {
   "storage": {
     "aliases": {
       "gadget-name": {
-        "type": "string"
-        "pattern": "^[a-z](?:-?[a-z0-9])*$",
+        "type": "string",
+        "pattern": "^[a-z](?:-?[a-z0-9])*$"
       }
     },
     "schema": {
-      "actuators": {
-        "keys": "${gadget-name}",
-        "values": {
-          "schema": {
-            "auto-max-speed": {
-              "type": "number",
-              "min": 0.1
-            },
-            "manual-speed": {
-              "type": "number",
-              "min": 0.1
-            },
-            "mode": {
-              "type": "string",
-              "choices": [
-                "manual",
-                "auto"
-              ]
-            }
-          }
-        }
-      },
-      "sensors": {
+      "v1": {
         "schema": {
-          "accelerometers": {
+          "actuators": {
             "keys": "${gadget-name}",
             "values": {
               "schema": {
-                "low-pass-filter-cutoff": "number",
-                "sample-rate": {
-                  "type": "int",
+                "auto-max-speed": {
+                  "type": "number",
+                  "min": 0.1
+                },
+                "manual-speed": {
+                  "type": "number",
+                  "min": 0.1
+                },
+                "mode": {
+                  "type": "string",
                   "choices": [
-                    100,
-                    500,
-                    800
+                    "manual",
+                    "auto"
                   ]
+                }
+              }
+            }
+          },
+          "sensors": {
+            "schema": {
+              "accelerometers": {
+                "keys": "${gadget-name}",
+                "values": {
+                  "schema": {
+                    "low-pass-filter-cutoff": "number",
+                    "sample-rate": {
+                      "type": "int",
+                      "choices": [
+                        100,
+                        500,
+                        800
+                      ]
+                    }
+                  }
                 }
               }
             }
@@ -184,18 +189,18 @@ There are seven predefined types: `map`, `array`, `string`, `int`, `number`, `bo
 Typically, a type will look like:
 
 ```
-{ 
-  "type": "some_type",
+{
+  "type": "some-type",
   "some-constraint": ...
 }
 ```
 
-If no constraints are required, the type may be a simple string. For instance, `int` is this example:
+If no constraints are required, the type may be a simple string. For instance, `int` in this example:
 
 ```
 {
   "type": "map",                # "complex" type definition as map
-  "schema”: {
+  "schema": {
     "sequence": "int"           # "simple" type definition as string
   }
 }
@@ -211,7 +216,7 @@ Maps can take two forms. The first defines a `schema` constraint, which associat
 ```
 {
   "type": "map",
-  "schema”: {
+  "schema": {
     "name": "string",
     "revision": "int",
     "version": "string"
@@ -224,7 +229,7 @@ The schema above is correct but can be simplified in two ways. First, the `map` 
 
 ```
 {
-  "schema”: {
+  "schema": {
     "name": "string",
     "revision": "int",
     "version": "string"
@@ -247,16 +252,16 @@ Alternatively, maps can also be constrained without a strict schema. It’s poss
 Strings can be constrained using regular expression patterns.
 
 ```
-{ 
+{
   "type": "string",
-  "pattern": "^(\d+\.)?(\d+\.)?(\d+)$"
+  "pattern": "^(\\d+\\.)?(\\d+\\.)?(\\d+)$"
 }
 ```
 
 Alternatively, we can list accepted values:
 
 ```
-{ 
+{
   "type": "string",
   "choices": ["2.69", "2.68.3", "3"]
 }
@@ -267,10 +272,24 @@ Alternatively, we can list accepted values:
 The `array` type requires a `values` constraint to define its elements’ type. It also permits setting the `unique` constraint to true, if we want all values to be distinct:
 
 ```
-{ 
+{
   "type": "array",
   "values": "int",
   "unique": true
+}
+```
+
+Elements are not limited to scalars. Any type can be used, including maps:
+
+```
+{
+  "type": "array",
+  "values": {
+    "schema": {
+      "name": "string",
+      "revision": "int"
+    }
+  }
 }
 ```
 
@@ -278,26 +297,37 @@ The `array` type requires a `values` constraint to define its elements’ type. 
 The `number` and `int` types work in a similar fashion, with the difference that `number` allows floating point numbers and `int` only allows integers. Both types support the optional constraints `min` and `max`:
 
 ```
-{ 
+{
   "type": "number",
   "min": 1.337,
-  "max": 3.14,
+  "max": 3.14
 }
 ```
 
 ```
-{ 
+{
   "type": "int",
   "min": 5,
   "max": 11
 }
 ```
 
+Alternatively, we can list the accepted values with `choices`:
+
+```
+{
+  "type": "int",
+  "choices": [100, 500, 800]
+}
+```
+
+The `choices` constraint cannot be combined with `min` or `max`.
+
 ### Boolean
 The `bool` type accepts the `true` or `false` values and does not support any constraints.
 
 ```
-{ 
+{
   "type": "bool"
 }
 ```
@@ -306,7 +336,7 @@ The `bool` type accepts the `true` or `false` values and does not support any co
 The `any` type accepts any JSON value other than `null`.
 
 ```
-{ 
+{
   "type": "any"
 }
 ```
@@ -315,8 +345,10 @@ The `any` type accepts any JSON value other than `null`.
 Type definitions can also take the form of a list of alternative types. When validating data against alternatives, each type is tried in order until one accepts the input data.
 
 ```
-{ 
-  "schema": ["string", "number"]
+{
+  "schema": {
+    "version": ["string", "number"]
+  }
 }
 ```
 
@@ -327,15 +359,15 @@ Type definitions can also take the form of a list of alternative types. When val
 {
   "storage": {
     "aliases": {
-      "version_str": { 
+      "version-str": {
         "type": "string",
-        "pattern": "^(\d+\.)?(\d+\.)?(\d+)$"
+        "pattern": "^(\\d+\\.)?(\\d+\\.)?(\\d+)$"
       }
+    },
+    "schema": {
+      "name": "string",
+      "version": "${version-str}"
     }
-  },
-  "schema": {
-    "name": "string",
-    "version": "${version_str}"
   }
 }
 ```
