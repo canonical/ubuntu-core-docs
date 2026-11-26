@@ -61,7 +61,7 @@ The `status` header gives a broad categorization of the outcome:
 
 ### Confdb messages
 
-The body of a response to a {ref}`get action <reference-assertions-request-message-get>` is a JSON object with the values that were read. Each key is a path from the request, and its value is the data found there, which can be a nested object:
+The body of a response to a {ref}`get action <reference-assertions-request-message-get>` is a JSON object with the values that were read. If the request specified `keys`, each key in `values` is a path from the request, and its value is the data found there, which can be a nested object:
 
 ```text
 {
@@ -72,6 +72,8 @@ The body of a response to a {ref}`get action <reference-assertions-request-messa
   }
 }
 ```
+
+If the request specified no `keys`, `values` is instead a single object holding all the data that the view exposes.
 
 The body of a successful response to a {ref}`set action <reference-assertions-request-message-set>` is an empty JSON object:
 

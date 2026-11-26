@@ -73,11 +73,13 @@ Different sequences are applied independently, so a sequence that's blocked wait
 (reference-assertions-request-message-validation)=
 ## Validation
 
-Snapd validates each request message it receives. It checks the message format, its signature, whether it's addressed to the device, and whether it's within its validity window, which is the time between `valid-since` and `valid-until`. The subsystem handling the message then validates the payload. A message that fails validation is rejected, and snapd responds with a response-message with status `rejected`.
+Snapd first decodes each request message it receives. A malformed message, one that isn't a well-formed request-message assertion, is dropped: snapd acknowledges it but doesn't process it, and sends no response.
+
+Snapd then validates the decoded message. It checks its signature, whether it's addressed to the device, and whether it's within its validity window, which is the time between `valid-since` and `valid-until`. The subsystem handling the message then validates the payload. A message that fails validation is rejected, and snapd responds with a response-message with status `rejected`.
 
 If the operator isn't authorized to perform the action, snapd responds with status `unauthorized` instead.
 
-If a message in a sequence is rejected, snapd evicts the sequence and discards the remaining messages. If more messages for the same sequence are received, the same process is repeated.
+If a message in a sequence doesn't get a `success` response, whether it's rejected, unauthorized, or fails with an error, snapd evicts the sequence and discards the remaining messages. If more messages for the same sequence are received, the same process is repeated.
 
 (reference-assertions-request-message-confdb)=
 ## Confdb messages
