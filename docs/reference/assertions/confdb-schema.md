@@ -122,8 +122,8 @@ sign-key-sha3-384: 74KHeq1foV...
   "storage": {
     "aliases": {
       "gadget-name": {
-        "type": "string"
-        "pattern": "^[a-z](?:-?[a-z0-9])*$",
+        "type": "string",
+        "pattern": "^[a-z](?:-?[a-z0-9])*$"
       }
     },
     "schema": {
